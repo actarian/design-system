@@ -1,0 +1,61 @@
+<!--- text.stories.mdx --->
+
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ArgsTable } from '@storybook/addon-docs';
+import { Text, TextProps, TextTypes } from '@components';
+
+<Meta title="Design System / Components/ Text" component={Text} />
+
+# Text
+
+This is the doc of the different Text components.
+
+[View source](https://github.com/actarian/design-system/tree/main/@components/text)
+
+## Imports
+
+```js
+import { Text } from '@strapi/design-system/Text';
+```
+
+## Usage of the different variants
+
+The main way to display text content on the screen
+
+<Canvas>
+  <Story name="variants">
+    <Layout>
+      <Page>
+          <Text as="h1" type="h1">Header H1</Text>
+          <Text as="h2" type="h2">Header H2</Text>
+          <Text as="h3" type="h3">Header H3</Text>
+          <Text as="h4" type="h4">Header H4</Text>
+          <Text as="h5" type="h5">Header H5</Text>
+          <Text as="h6" type="h6">Header H6</Text>
+          <Text type="default">Default text</Text>
+          <Text type="small">Small text</Text>
+          <Text type="smaller">Smaller text</Text>
+          <Text type="smallest">Smallest text</Text>
+      </Page>
+    </Layout>
+  </Story>
+</Canvas>
+
+### Ellipsis
+
+By using the prop `ellipsis` it is possible to limit the text to one line and to
+signal to the user there is more to it.
+
+<Canvas>
+  <Story name="ellipsis">
+    <Layout>
+      <Page>
+          <Text type="default" ellipsis>Loong text, that will be cut off</Text>
+      </Page>
+    </Layout>
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={TextProps} />
