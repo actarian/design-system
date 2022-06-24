@@ -22,17 +22,9 @@ const defaultProps = {
 }
 
 interface Props {
-  type?: ButtonTypes
-  ghost?: boolean
-  loading?: boolean
-  shadow?: boolean
-  auto?: boolean
-  effect?: boolean
-  disabled?: boolean
-  htmlType?: React.ButtonHTMLAttributes<any>['type']
-  icon?: React.ReactNode
-  iconRight?: React.ReactNode
-  onClick?: React.MouseEventHandler<HTMLButtonElement>
+  variant?: string
+  // htmlType?: React.ButtonHTMLAttributes<any>['type']
+  // onClick?: React.MouseEventHandler<HTMLButtonElement>
   className?: string
 }
 
@@ -41,18 +33,34 @@ type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
 export type ButtonProps = Props & NativeAttrs;
 
 const Button = styled.button<ButtonProps>`
-  display: inline-block;
-  background: ${props => props.type === 'default' ? "blue" : "white"};
-  color: ${props => props.type === 'default' ? "white" : "blue"};
+  display: inline-flex;
+  align-items: center;
+  background: ${props => props.variant === 'default' ? 'blue' : 'white'};
+  color: ${props => props.variant === 'default' ? 'white' : 'blue'};
   font-size: 1em;
   margin: 1em 0;
   padding: 0.25em 1em;
   border: 2px solid blue;
   border-radius: 3px;
   cursor: pointer;
+
+  & > svg {
+    width: 1em;
+    height: 1em;
+    margin: 0 0.4em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
 `;
 
 export default Button;
+
 /*
 import {
   getButtonColors,

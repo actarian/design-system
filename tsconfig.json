@@ -18,6 +18,8 @@
     "paths": {
       "@components*": ["@components*"],
       "@components": ["@components/index"],
+      "@icons*": ["@icons*"],
+      "@icons": ["@icons/index"],
       "@styles*": ["@styles*"],
       "@styles": ["@styles/index"],
       "@tests*": ["@tests*"],
@@ -26,5 +28,5 @@
     }
   },
   "exclude": ["node_modules", ".next", "out", "storybook-static"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@components/button/button.stories.__tsx"]
 }

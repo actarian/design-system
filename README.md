@@ -1,4 +1,4 @@
-# Example app with Storybook
+# Storybook
 
 This example shows a default set up of Storybook using [storybook-addon-next](https://github.com/RyanClementsHax/storybook-addon-next). Included in this example are stories that demonstrate the ability to use Next.js features in Storybook.
 

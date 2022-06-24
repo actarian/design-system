@@ -1,0 +1,118 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ShoppingCart } from '@icons';
+import { default as Button, ButtonProps } from './button';
+
+<Meta
+  title="Components / Button"
+  component={Button}
+  argTypes={{
+    label: {
+      name: 'label',
+      type: { name: 'string', required: false },
+      defaultValue: 'Button',
+      description: 'overwritten description',
+      table: {
+        // disable: true, // to disable row
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'Hello' },
+      },
+      // control: false, // to disable control
+      control: {
+        type: 'text'
+      }
+    },
+    variant: {
+      name: 'type',
+      type: { name: 'ButtonType', required: false },
+      defaultValue: 'default',
+      description: 'overwritten description',
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'default' },
+      },
+      // if: { arg: 'label', truthy: false },
+    }
+  }}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+  }}
+/>
+
+# Button
+
+Used to trigger an operation.
+
+[View source](https://github.com/actarian/wsdesign-system/tree/main/@components/button)
+
+## Imports
+
+```js
+import { Button } from '@wsdesign-system';
+```
+
+## Props
+
+<ArgsTable of={ButtonProps} />
+
+## Basic
+
+The basic `Button` contains an animation effect.
+
+export const Basic = ({ data, ...args }) => (<>
+  <div style={{ margin: '0 1em' }}>
+    <Button {...args}>Action</Button>
+  </div>
+</>);
+
+<Canvas>
+  <Story
+    name="basic"
+    args={{ variant: 'default' }}
+  >
+    {Basic.bind({})}
+  </Story>
+</Canvas>
+
+
+Let's define a story for our `Button` component:
+
+<Story name="positive">
+  <Button status="positive">Positive</Button>
+</Story>
+
+We can drop it in a `Canvas` to get a code snippet:
+
+<Canvas>
+  <Story name="negative">
+    <Button status="negative">Negative</Button>
+  </Story>
+</Canvas>
+
+We can even preview multiple stories in a block. This
+gets rendered as a group, but defines individual stories
+with unique URLs and isolated snapshot tests.
+
+<Canvas>
+  <Story name="warning">
+    <Button status="warning">Warning</Button>
+  </Story>
+  <Story name="neutral">
+    <Button status="neutral">Neutral</Button>
+  </Story>
+  <Story name="error">
+    <Button status="error">Error</Button>
+  </Story>
+  <Story name="with icon">
+    <Button status="warning">
+      <span>Add to cart</span><ShoppingCart />
+    </Button>
+  </Story>
+</Canvas>

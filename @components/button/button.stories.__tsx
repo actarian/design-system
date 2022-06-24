@@ -1,0 +1,94 @@
+
+import { action } from '@storybook/addon-actions';
+import { ArgsTable, Description, Primary, PRIMARY_STORY, Stories, Subtitle, Title } from '@storybook/addon-docs';
+
+import Button from './button';
+
+export default {
+  title: 'Components / Button',
+  component: Button,
+  argTypes: {
+    label: {
+      name: 'label',
+      type: { name: 'string', required: false },
+      defaultValue: 'Button',
+      description: 'overwritten description',
+      table: {
+        // disable: true, // to disable row
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'Hello' },
+      },
+      // control: false, // to disable control
+      control: {
+        type: 'text'
+      }
+    },
+    type: {
+      name: 'type',
+      type: { name: 'ButtonType', required: false },
+      defaultValue: 'default',
+      description: 'overwritten description',
+      options: ['default', 'primary', 'secondary'],
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'default' },
+      },
+      // if: { arg: 'label', truthy: false },
+    }
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title />
+          <Subtitle />
+          <Description />
+          <Primary />
+          <ArgsTable story={PRIMARY_STORY} />
+          <Stories />
+        </>
+      ),
+      source: {
+        code: '<Button type="default" onClick={() => {}}>Button</Button>',
+        language: "tsx",
+        type: "auto",
+      },
+    },
+    backgrounds: { disable: true, grid: { disable: true } },
+  },
+  /*
+  decorators: [
+    (Story) => (
+      <Layout>
+        <Page>
+          <Story />
+        </Page>
+      </Layout>
+    ),
+  ],
+  */
+}
+
+const Story = ({ data, ...args }: any) => (<>
+  <Button {...args} onClick={action('clicked')}>Button</Button>
+</>);
+
+const ButtonStory: any = Story.bind({});
+
+ButtonStory.parameters = {
+  layout: 'centered',
+};
+ButtonStory.args = {
+  label: 'Button',
+  type: 'default',
+};
+
+export { ButtonStory as Button };
+

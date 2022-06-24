@@ -1,4 +1,5 @@
 import { Button, Layout, Page, Text } from '@components';
+import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
 export default function Homepage() {
@@ -17,7 +18,7 @@ export default function Homepage() {
       <Layout>
         <Page>
           <Text as="h1" type="h1">Index</Text>
-          <Button as="a" onClick={onClick}>button</Button>
+          <Button as="a" onClick={onClick}>button <ShoppingCart /></Button>
         </Page>
       </Layout>
     </div>
