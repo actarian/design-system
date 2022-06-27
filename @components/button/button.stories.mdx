@@ -73,20 +73,32 @@ export const Basic = ({ data, ...args }) => (<>
 </>);
 
 <Canvas>
-  <Story
-    name="basic"
-    args={{ variant: 'default' }}
-  >
+  <Story name="basic" args={{ variant: 'default' }} parameters={{
+    docs: {
+      source: {
+        code: '<Button type="default" onClick={() => {}}>Button</Button>',
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
     {Basic.bind({})}
   </Story>
 </Canvas>
 
+<Canvas>
+  <Story name="basic2">
+    <Button>Basic</Button>
+  </Story>
+</Canvas>
 
 Let's define a story for our `Button` component:
 
-<Story name="positive">
-  <Button status="positive">Positive</Button>
-</Story>
+<Canvas>
+  <Story name="positive">
+    <Button status="positive">Positive</Button>
+  </Story>
+</Canvas>
 
 We can drop it in a `Canvas` to get a code snippet:
 

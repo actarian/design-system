@@ -11,7 +11,7 @@ export type LayoutProps = Props & NativeAttrs;
 const Layout = styled.div<LayoutProps>`
   background: white;
   width: 100%;
-  min-height: 100vh;
+  // min-height: 100vh;
   margin: 0;
   padding: 0;
 `;

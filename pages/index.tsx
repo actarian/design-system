@@ -1,4 +1,4 @@
-import { Button, Layout, Page, Text } from '@components';
+import { Button, Grid, Layout, Page, Text } from '@components';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -17,8 +17,49 @@ export default function Homepage() {
       </Head>
       <Layout>
         <Page>
-          <Text as="h1" type="h1">Index</Text>
-          <Button as="a" onClick={onClick}>button <ShoppingCart /></Button>
+          <Grid.Container>
+            <Grid sm={6}>
+              <Text as="h1" type="h1">Index</Text>
+            </Grid>
+            <Grid sm={6}>
+              <Button as="a" onClick={onClick}>button <ShoppingCart /></Button>
+            </Grid>
+
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+            <Grid sm={1}>1</Grid>
+
+            <Grid sm={2}>2</Grid>
+            <Grid sm={2}>2</Grid>
+            <Grid sm={2}>2</Grid>
+            <Grid sm={2}>2</Grid>
+            <Grid sm={2}>2</Grid>
+            <Grid sm={2}>2</Grid>
+
+            <Grid sm={3}>3</Grid>
+            <Grid sm={3}>3</Grid>
+            <Grid sm={3}>3</Grid>
+            <Grid sm={3}>3</Grid>
+
+            <Grid sm={4}>4</Grid>
+            <Grid sm={4}>4</Grid>
+            <Grid sm={4}>4</Grid>
+
+            <Grid sm={6}>6</Grid>
+            <Grid sm={6}>6</Grid>
+
+            <Grid sm={12}>12</Grid>
+
+          </Grid.Container>
         </Page>
       </Layout>
     </div>
