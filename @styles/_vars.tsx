@@ -48,6 +48,8 @@
   --color-danger-500: #ee5e52;
   --color-danger-600: #d02b20;
   --color-danger-700: #b72b1a;
+  --font-primary: 'Montserrat Alternates', sans-serif;
+  --font-secondary: 'Noto Serif Display', serif;
   --grid-columns: 12;
   --grid-size: 1fr;
   --grid-gap: 20px;

@@ -1,4 +1,4 @@
-import { Button, Card, Grid, Layout, Media, Page, Text } from '@components';
+import { Button, Card, Grid, Header, Hero, Layout, Media, Page, Text } from '@components';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -18,8 +18,14 @@ export default function Homepage() {
       <Layout>
         <Page>
 
-          <Grid.Container style={{ maxWidth: '1000px' }}>
-            <Grid xs={6} sm={4}>
+          <Header>
+
+          </Header>
+
+          <Hero></Hero>
+
+          <Grid.Container>
+            <Grid xs={6} md={4}>
               <Card type="alpha" aspect={1 / 1}>
                 <Media aspect={2 / 1}>
                   <img src={'https://picsum.photos/640/480'} />
@@ -27,7 +33,7 @@ export default function Homepage() {
                 <Card.Content paddingTop='100px'>content</Card.Content>
               </Card>
             </Grid>
-            <Grid xs={6} sm={4}>
+            <Grid xs={6} md={4}>
               <Card type="beta" aspect={1 / 1} background={
                 <Media aspect={2 / 1}>
                   <img src={'https://picsum.photos/640/480'} />
@@ -36,7 +42,7 @@ export default function Homepage() {
                 <Card.Content paddingTop='100px'>content</Card.Content>
               </Card>
             </Grid>
-            <Grid xs={6} sm={4}>
+            <Grid xs={6} md={4}>
               <Card type="gamma" aspect={1 / 1} rounded>
                 <Media>
                   <img src={'https://picsum.photos/640/480'} />
@@ -44,7 +50,7 @@ export default function Homepage() {
                 <Card.Content>content</Card.Content>
               </Card>
             </Grid>
-            <Grid xs={6} sm={4}>
+            <Grid xs={6} md={4}>
               <Card type="delta" aspect={1 / 1}>
                 <Card.Content>content</Card.Content>
                 <Card.Footer>footer</Card.Footer>

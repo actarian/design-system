@@ -1,12 +1,6 @@
-import { ComponentBoxAttrs, getMargin, getPadding } from '@components/types';
+import { ComponentBoxAttrs } from '@components/types';
 import styled from 'styled-components';
-
-export const FlexContainer = styled.div<FlexProps>`
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-  display: flex;
-  flex-wrap: wrap;
-`;
+import { FlexContainer } from './flex-container';
 
 const Flex = styled.div<FlexProps>`
   display: flex;

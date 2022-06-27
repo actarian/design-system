@@ -46,7 +46,9 @@
     "danger600": "#d02b20",
     "danger700": "#b72b1a"
   },
-  "typography": {
+  "font": {
+    "primary": "'Montserrat Alternates', sans-serif",
+    "secondary": "'Noto Serif Display', serif"
   },
   "grid": {
     "columns": 12,
