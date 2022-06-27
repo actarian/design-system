@@ -1,13 +1,27 @@
 // import { themes } from '@storybook/theming';
-
+import { addDecorator } from '@storybook/react';
+import { theme } from '@styles/theme';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../@styles/style';
+import themeJson from '../@styles/theme.json';
 import { createCustomTheme } from './utils/create-custom-theme';
-import { theme } from './utils/theme';
 
-import '@styles/globals.scss';
+addDecorator((story) => (
+  <>
+    <GlobalStyle />
+    { story() }
+  </>
+));
+
+const themes = [theme];
+addDecorator(withThemesProvider(themes, ThemeProvider));
+
+// import '@styles/globals.scss';
 
 export const parameters = {
   docs: {
-    theme: createCustomTheme({ theme, options: { base: 'light' } }),
+    theme: createCustomTheme({ theme: themeJson, options: { base: 'light' } }),
   },
   backgrounds: {
     default: 'twitter',

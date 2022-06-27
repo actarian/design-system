@@ -4,10 +4,10 @@
     "module": "esnext",
     "moduleResolution": "node",
     "isolatedModules": true,
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "strict": true,
-    "resolveJsonModule": true,
     "jsx": "preserve",
     "allowJs": true,
     "forceConsistentCasingInFileNames": true,
@@ -28,5 +28,5 @@
     }
   },
   "exclude": ["node_modules", ".next", "out", "storybook-static"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@components/button/button.stories.__tsx"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@components/button/button.stories.__tsx", "@styles/theme.js"]
 }

@@ -1,4 +1,4 @@
-import { Button, Grid, Layout, Page, Text } from '@components';
+import { Button, Card, Grid, Layout, Media, Page, Text } from '@components';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -17,47 +17,89 @@ export default function Homepage() {
       </Head>
       <Layout>
         <Page>
+
+          <Grid.Container style={{ maxWidth: '1000px' }}>
+            <Grid xs={6} sm={4}>
+              <Card type="alpha" aspect={1 / 1}>
+                <Media aspect={2 / 1}>
+                  <img src={'https://picsum.photos/640/480'} />
+                </Media>
+                <Card.Content paddingTop='100px'>content</Card.Content>
+              </Card>
+            </Grid>
+            <Grid xs={6} sm={4}>
+              <Card type="beta" aspect={1 / 1} background={
+                <Media aspect={2 / 1}>
+                  <img src={'https://picsum.photos/640/480'} />
+                </Media>
+              }>
+                <Card.Content paddingTop='100px'>content</Card.Content>
+              </Card>
+            </Grid>
+            <Grid xs={6} sm={4}>
+              <Card type="gamma" aspect={1 / 1} rounded>
+                <Media>
+                  <img src={'https://picsum.photos/640/480'} />
+                </Media>
+                <Card.Content>content</Card.Content>
+              </Card>
+            </Grid>
+            <Grid xs={6} sm={4}>
+              <Card type="delta" aspect={1 / 1}>
+                <Card.Content>content</Card.Content>
+                <Card.Footer>footer</Card.Footer>
+              </Card>
+            </Grid>
+          </Grid.Container>
+
           <Grid.Container>
-            <Grid sm={6}>
+            <Grid className="debug" sm={6}>
               <Text as="h1" type="h1">Index</Text>
             </Grid>
-            <Grid sm={6}>
+            <Grid className="debug" sm={6}>
               <Button as="a" onClick={onClick}>button <ShoppingCart /></Button>
             </Grid>
 
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
-            <Grid sm={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1}>1</Grid>
 
-            <Grid sm={2}>2</Grid>
-            <Grid sm={2}>2</Grid>
-            <Grid sm={2}>2</Grid>
-            <Grid sm={2}>2</Grid>
-            <Grid sm={2}>2</Grid>
-            <Grid sm={2}>2</Grid>
+            <Grid className="debug" xs={2}>2</Grid>
+            <Grid className="debug" xs={2}>2</Grid>
+            <Grid className="debug" xs={2}>2</Grid>
+            <Grid className="debug" xs={2}>2</Grid>
+            <Grid className="debug" xs={2}>2</Grid>
+            <Grid className="debug" xs={2}>2</Grid>
 
-            <Grid sm={3}>3</Grid>
-            <Grid sm={3}>3</Grid>
-            <Grid sm={3}>3</Grid>
-            <Grid sm={3}>3</Grid>
+            <Grid className="debug" xs={3}>3</Grid>
+            <Grid className="debug" xs={3}>3</Grid>
+            <Grid className="debug" xs={3}>3</Grid>
+            <Grid className="debug" xs={3}>3</Grid>
 
-            <Grid sm={4}>4</Grid>
-            <Grid sm={4}>4</Grid>
-            <Grid sm={4}>4</Grid>
+            <Grid className="debug" xs={4}>4</Grid>
+            <Grid className="debug" xs={4}>4</Grid>
+            <Grid className="debug" xs={4}>4</Grid>
 
-            <Grid sm={6}>6</Grid>
-            <Grid sm={6}>6</Grid>
+            <Grid className="debug" xs={6}>6</Grid>
+            <Grid className="debug" xs={6}>6</Grid>
 
-            <Grid sm={12}>12</Grid>
+            <Grid className="debug" xs={12}>12</Grid>
+
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
 
           </Grid.Container>
         </Page>

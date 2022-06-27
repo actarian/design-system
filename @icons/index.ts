@@ -1,3 +1,4 @@
+// https://github.com/feathericons/react-feather 
 export { default as Activity } from './activity.svg';
 export { default as Airplay } from './airplay.svg';
 export { default as AlertCircle } from './alert-circle.svg';

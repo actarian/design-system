@@ -1,11 +1,7 @@
-import React from 'react';
+import { ComponentBoxAttrs, setClass } from '@components/types';
 import styled from 'styled-components';
 
 export type TextTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'default' | 'small' | 'smaller' | 'smallest';
-
-interface Props {
-  type?: TextTypes;
-}
 
 const fontSizes = {
   h1: '60px',
@@ -20,11 +16,14 @@ const fontSizes = {
   smallest: '10px',
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+type Props = {
+  type?: TextTypes;
+}
 
-export type TextProps = Props & NativeAttrs;
+export type TextProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-const Text = styled.div<TextProps>`
+/* const Text = styled.div<TextProps>` */
+const Text = styled.div.attrs(setClass<TextProps>('text'))`
   font-size: ${props => fontSizes[props.type || 'default']};
   margin-bottom: 0.4em;
 `;

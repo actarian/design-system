@@ -1,20 +1,19 @@
 import { addons } from '@storybook/addons';
-
-/*
-import { themes } from '@storybook/theming';
-
-console.log(themes.dark);
-
-addons.setConfig({
-  theme: themes.dark,
-});
-*/
-
+// import { themes } from '@storybook/theming';
+import { addDecorator } from '@storybook/react';
+import { withThemesProvider } from 'storybook-addon-styled-component-theme';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '../@styles/theme';
+import themeJson from '../@styles/theme.json';
 import { createCustomTheme } from './utils/create-custom-theme';
-import { theme } from './utils/theme';
+
+const themes = [theme];
+addDecorator(withThemesProvider(themes, ThemeProvider));
+
+// import '@styles/globals.scss';
 
 addons.setConfig({
-  theme: createCustomTheme({ theme, options: { base: 'light' } }),
+  theme: createCustomTheme({ theme: themeJson, options: { base: 'light' } }),
 
   isFullscreen: false,
   showNav: true,

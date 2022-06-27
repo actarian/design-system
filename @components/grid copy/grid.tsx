@@ -1,28 +1,18 @@
-import { ComponentBoxAttrs, getMargin, getPadding, setClass } from '@components/types';
 import { sizes } from '@styles';
+import React from 'react';
 import styled from 'styled-components';
-import { GridContainer } from './grid-container';
 
-type Props = {
-  xs?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
-}
+export const GridContainer = styled.div<GridProps>`
+  display: grid;
+  grid-template-columns: repeat(var(--grid-columns),  var(--grid-size));
+  grid-gap: var(--grid-gap);
+`;
 
-export type GridProps = ComponentBoxAttrs<Props, HTMLDivElement>;
-
-/* export const Grid = styled.div<GridProps>` */
-export const Grid = styled.div.attrs(setClass<GridProps>('grid'))`
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-
-  grid-column: span var(--grid-columns);
-
+const Grid = styled.div<GridProps>`
   ${props => getSizes(props)}
-
+  grid-column: span ${props => props.sm || 'var(--grid-columns)'};
   display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -33,7 +23,7 @@ function getSizes(props: GridProps) {
   const theme = props.theme;
   return sizes.map(k => {
     const key = k as keyof GridProps;
-    if (typeof props[key] === 'number' && theme.mediaQuery) {
+    if (typeof props[key] === 'number') {
       const value = theme.mediaQuery[key];
       return `
 @media(min-width: ${value}px) {
@@ -49,6 +39,18 @@ function getSizes(props: GridProps) {
 (Grid as IGrid).Container = GridContainer;
 
 export default Grid as IGrid;
+
+interface Props {
+  xs?: number;
+  sm?: number;
+  md?: number;
+  lg?: number;
+  xl?: number;
+}
+
+type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+
+export type GridProps = Props & { theme: any } & NativeAttrs;
 
 type IGrid = typeof Grid & {
   Container: typeof GridContainer;

@@ -1,16 +1,16 @@
-import React from 'react';
+import { ComponentBoxAttrs, getMargin, getPadding, setClass } from '@components/types';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type PageProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-export type PageProps = Props & NativeAttrs;
-
-const Page = styled.div<PageProps>`
+/* const Page = styled.div<PageProps>` */
+const Page = styled.div.attrs(setClass<PageProps>('page'))`
+  ${props => getMargin(props, { margin: '0 auto' })}
+  ${props => getPadding(props)}
   max-width: calc(100vw - 80px);
-  margin: 0 auto;
 `;
 
 export default Page;

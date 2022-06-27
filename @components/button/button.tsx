@@ -5,7 +5,7 @@ import styled from 'styled-components';
 // import useTheme from '../use-theme'
 // import ButtonDrip from './button.drip'
 // import ButtonLoading from './button-loading'
-import { ButtonTypes } from '@components/types';
+import { ButtonTypes, ComponentBoxAttrs, setClass } from '@components/types';
 // import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
 // import { useButtonGroupContext } from '../button-group/button-group-context'
 
@@ -21,18 +21,16 @@ const defaultProps = {
   className: '',
 }
 
-interface Props {
+type Props = {
   variant?: string
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
-  className?: string
 }
 
-type NativeAttrs = Omit<React.ButtonHTMLAttributes<any>, keyof Props>;
+export type ButtonProps = ComponentBoxAttrs<Props, HTMLButtonElement>;
 
-export type ButtonProps = Props & NativeAttrs;
-
-const Button = styled.button<ButtonProps>`
+/* const Button = styled.div<ButtonProps>` */
+const Button = styled.div.attrs(setClass<ButtonProps>('button'))`
   display: inline-flex;
   align-items: center;
   background: ${props => props.variant === 'default' ? 'blue' : 'white'};

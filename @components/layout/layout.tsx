@@ -1,14 +1,13 @@
-import React from 'react';
+import { ComponentBoxAttrs, setClass } from '@components/types';
 import styled from 'styled-components';
 
-interface Props {
+type Props = {
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
+export type LayoutProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-export type LayoutProps = Props & NativeAttrs;
-
-const Layout = styled.div<LayoutProps>`
+/* const Layout = styled.div<LayoutProps>` */
+const Layout = styled.div.attrs(setClass<LayoutProps>('layout'))`
   background: white;
   width: 100%;
   // min-height: 100vh;

@@ -9,12 +9,14 @@
     "/esm"
   ],
   "scripts": {
-    "dev:icons": "node .icons/index.js",
+    "dev:vars": "node .scripts/vars.js",
+    "dev:icons": "node .scripts/icons.js",
     "dev:next": "next dev",
     "dev": "run-p dev:*",
     "build": "next build",
     "start": "next start",
-    "storybook:icons": "node .icons/index.js",
+    "storybook:vars": "node .scripts/vars.js",
+    "storybook:icons": "node .scripts/icons.js",
     "storybook:storybook": "start-storybook -p 6006 -s public",
     "storybook": "run-p storybook:*",
     "build-storybook": "build-storybook -s public",
@@ -56,12 +58,14 @@
     "serve": "^13.0.2",
     "styled-components": "^5.3.5",
     "storybook-addon-next": "^1.6.6",
+    "storybook-addon-styled-component-theme": "^2.0.0",
     "tsconfig-paths-webpack-plugin": "^3.5.2",
     "ts-jest": "^27.0.3",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
     "react": ">=16.9.0",
-    "react-dom": ">=16.9.0"
+    "react-dom": ">=16.9.0",
+    "styled-components": ">=5.3.5"
   }
 }
