@@ -1,7 +1,7 @@
 {
   "font": {
-    "primary": "'Work Sans', sans-serif",
-    "secondary": "'Nunito', serif",
+    "primary": "'Open Sans', sans-serif",
+    "secondary": "'Petrona', serif",
     "size": {
       "xs": "13px",
       "sm": "16px",
@@ -91,7 +91,7 @@
     "danger100": "#7A0A2A"
   },
   "colorBak": {
-    "url": "https://coolors.co/030911-236ca4-bc9710-a1a9b0-aa4c32",
+    "url": "'https://coolors.co/030911-236ca4-bc9710-a1a9b0-aa4c32, https://colors.eva.design/'",
 
     "neutral100": "#030911",
     "neutral200": "#0c2545",

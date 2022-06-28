@@ -10,6 +10,7 @@ export type CardFooterProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 /* export const CardFooter = styled.div<CardFooterProps>` */
 export const CardFooter = styled.div.attrs(setClass<CardFooterProps>('card__footer'))`
   flex: 0 0 4em;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;

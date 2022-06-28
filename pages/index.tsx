@@ -1,4 +1,4 @@
-import { Button, Card, Footer, Grid, Header, Hero, Layout, Media, Page, Text } from '@components';
+import { Button, Card, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -18,9 +18,32 @@ export default function Homepage() {
       <Layout>
         <Page>
 
-          <Header></Header>
+          <Header fixed></Header>
 
-          <Hero>
+          <Section padding="0">
+
+            <Card type="alfa" justifyContent="flex-end" height="100vh" margin="0" background={
+              <Media overlay>
+                <video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                  <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
+                </video>
+              </Media>
+            }>
+              <Card.Content>
+                <Grid.Container>
+                  <Grid md={6} padding="48px 0">
+                    <Text type="h2">Sustainable agriculture</Text>
+                  </Grid>
+                  <Grid md={6} padding="48px 0">
+                    <Text type="h6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
+                  </Grid>
+                </Grid.Container>
+              </Card.Content>
+            </Card>
+
+          </Section>
+
+          <Section>
 
             <Grid.Container type="beta">
               <Grid md={8}>
@@ -37,7 +60,7 @@ export default function Homepage() {
               </Grid>
             </Grid.Container>
 
-          </Hero>
+          </Section>
 
           <Grid.Container type="beta" padding="48px 0">
             <Grid xs={6} md={4}>
@@ -49,20 +72,20 @@ export default function Homepage() {
               </Card>
             </Grid>
             <Grid xs={6} md={4}>
-              <Card type="beta" aspect={1 / 1} background={
+              <Card type="beta" aspect={1 / 1} rounded>
+                <Media>
+                  <img src={'https://picsum.photos/640/480'} />
+                </Media>
+                <Card.Content>content</Card.Content>
+              </Card>
+            </Grid>
+            <Grid xs={6} md={4}>
+              <Card type="gamma" aspect={1 / 1} background={
                 <Media aspect={2 / 1}>
                   <img src={'https://picsum.photos/640/480'} />
                 </Media>
               }>
                 <Card.Content paddingTop='100px'>content</Card.Content>
-              </Card>
-            </Grid>
-            <Grid xs={6} md={4}>
-              <Card type="gamma" aspect={1 / 1} rounded>
-                <Media>
-                  <img src={'https://picsum.photos/640/480'} />
-                </Media>
-                <Card.Content>content</Card.Content>
               </Card>
             </Grid>
             <Grid xs={6} md={4}>
@@ -86,48 +109,57 @@ export default function Homepage() {
               <Button type="zeta" as="a" onClick={onClick}><span>zeta</span> <ShoppingCart /></Button>
             </Grid>
 
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
-            <Grid className="debug" xs={1}>1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
+            <Grid className="debug" xs={1} padding="1em">1</Grid>
 
-            <Grid className="debug" xs={2}>2</Grid>
-            <Grid className="debug" xs={2}>2</Grid>
-            <Grid className="debug" xs={2}>2</Grid>
-            <Grid className="debug" xs={2}>2</Grid>
-            <Grid className="debug" xs={2}>2</Grid>
-            <Grid className="debug" xs={2}>2</Grid>
+            <Grid className="debug" xs={2} padding="1em">2</Grid>
+            <Grid className="debug" xs={2} padding="1em">2</Grid>
+            <Grid className="debug" xs={2} padding="1em">2</Grid>
+            <Grid className="debug" xs={2} padding="1em">2</Grid>
+            <Grid className="debug" xs={2} padding="1em">2</Grid>
+            <Grid className="debug" xs={2} padding="1em">2</Grid>
 
-            <Grid className="debug" xs={3}>3</Grid>
-            <Grid className="debug" xs={3}>3</Grid>
-            <Grid className="debug" xs={3}>3</Grid>
-            <Grid className="debug" xs={3}>3</Grid>
+            <Grid className="debug" xs={3} padding="1em">3</Grid>
+            <Grid className="debug" xs={3} padding="1em">3</Grid>
+            <Grid className="debug" xs={3} padding="1em">3</Grid>
+            <Grid className="debug" xs={3} padding="1em">3</Grid>
 
-            <Grid className="debug" xs={4}>4</Grid>
-            <Grid className="debug" xs={4}>4</Grid>
-            <Grid className="debug" xs={4}>4</Grid>
+            <Grid className="debug" xs={4} padding="1em">4</Grid>
+            <Grid className="debug" xs={4} padding="1em">4</Grid>
+            <Grid className="debug" xs={4} padding="1em">4</Grid>
 
-            <Grid className="debug" xs={6}>6</Grid>
-            <Grid className="debug" xs={6}>6</Grid>
+            <Grid className="debug" xs={6} padding="1em">6</Grid>
+            <Grid className="debug" xs={6} padding="1em">6</Grid>
 
-            <Grid className="debug" xs={12}>12</Grid>
+            <Grid className="debug" xs={12} padding="1em">12</Grid>
 
-            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
-            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
-            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
-            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
-            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
-            <Grid className="debug" xs={6} sm={4} md={3} xl={2}>col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
+            <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
 
           </Grid.Container>
+
+          <Section height="calc(100vh - 120px)" padding="0" background={
+            <Media overlay>
+              <video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
+              </video>
+            </Media>
+          }>
+          </Section>
 
           <Footer></Footer>
 

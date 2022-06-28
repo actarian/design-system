@@ -6,21 +6,21 @@ import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
 
 const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
-  alfa: css`
+  beta: css`
   border: 1px solid #eee;
   border-radius: 20px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `,
-  beta: css`
+  gamma: css`
   background: #111;
   border-radius: 2px;
 `,
-  gamma: css`
+  delta: css`
   border: 1px solid #eee;
   border-radius: 20px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `,
-  delta: css`
+  epsilon: css`
   border: 1px solid #eee;
   border-radius: 20px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
@@ -31,6 +31,20 @@ const getVariant = (type: Variant = 'alfa') => {
   return Variants[type] ? Variants[type] : '';
 }
 
+type Props = {
+  type?: Variant;
+  aspect?: number;
+  background?: ReactNode;
+
+  justifyContent?: string;
+
+  shadow?: boolean;
+  rounded?: boolean;
+  bordered?: boolean;
+}
+
+export type CardProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+
 /* const CardContainer = styled.div<CardProps>` */
 const CardContainer = styled.div.attrs(setClass<CardProps>('card'))`
   display: flex;
@@ -39,6 +53,10 @@ const CardContainer = styled.div.attrs(setClass<CardProps>('card'))`
   ${props => getSize(props)}
   ${props => getMargin(props, { margin: '0 0 40px 0' })}
   ${props => getPadding(props)}
+
+  ${props => props.justifyContent ? css`
+    justify-content: ${props.justifyContent};
+  `: ''}
 
   ${props => props.bordered ? css`
     border: 1px solid #eee;
@@ -61,6 +79,18 @@ const CardContainer = styled.div.attrs(setClass<CardProps>('card'))`
       left: 0;
       width: 100%;
       height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &>img,
+      &>video,
+      &>canvas,
+      &>iframe {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   `: ''}
 
@@ -101,17 +131,6 @@ const CardInner = styled.div.attrs(setClass<CardInnerProps>('card__inner'))`
     object-fit: cover;
   ` : ''};
 `;
-
-type Props = {
-  type?: Variant;
-  aspect?: number;
-  background?: ReactNode;
-  shadow?: boolean;
-  rounded?: boolean;
-  bordered?: boolean;
-}
-
-export type CardProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 const Card = (props: CardProps) => {
   return (

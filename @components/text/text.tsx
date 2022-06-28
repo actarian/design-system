@@ -31,12 +31,12 @@ const fontSize = {
 }
 
 const fontWeight = {
-  h1: '100',
-  h2: '200',
-  h3: '300',
-  h4: '400',
-  h5: '500',
-  h6: '600',
+  h1: '300',
+  h2: '400',
+  h3: '500',
+  h4: '600',
+  h5: '700',
+  h6: '800',
   'default': '400',
   small: '500',
   smaller: '500',
@@ -44,16 +44,16 @@ const fontWeight = {
 }
 
 const lineHeight = {
-  h1: '1.0',
-  h2: '1.1',
-  h3: '1.2',
-  h4: '1.3',
-  h5: '1.4',
-  h6: '1.5',
-  'default': '1.6',
-  small: '1.7',
-  smaller: '1.8',
-  smallest: '1.9',
+  h1: '0.9',
+  h2: '1.0',
+  h3: '1.1',
+  h4: '1.2',
+  h5: '1.3',
+  h6: '1.4',
+  'default': '1.5',
+  small: '1.6',
+  smaller: '1.7',
+  smallest: '1.8',
 }
 
 const marginBottom = {
@@ -82,6 +82,7 @@ const Text = styled.div.attrs(setClass<TextProps>('text'))`
   font-weight: ${props => fontWeight[props.type || 'default']};
   line-height: ${props => lineHeight[props.type || 'default']};
   margin-bottom: ${props => marginBottom[props.type || 'default']};
+  max-width: 30ch;
 `;
 
 export default Text;

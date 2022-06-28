@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 
 type Props = {
   aspect?: number;
+  overlay?: boolean;
 }
 
 export type MediaProps = ComponentBoxAttrs<Props, HTMLDivElement>;
@@ -31,6 +32,18 @@ const Media = styled.div.attrs(setClass<MediaProps>('media'))`
         object-fit: cover;
       }
     ` : ''};
+    ${props => props.overlay ? css`
+      position: relative;
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.1) 15.9%, rgba(0, 0, 0, 0) 41.67%, rgba(0, 0, 0, 0.1) 61.79%, rgba(0, 0, 0, 0.5) 100%)
+      }
+    `: ''}
 `;
 
 export default Media;

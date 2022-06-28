@@ -10,7 +10,7 @@ const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pa
     <>
       <Head>
         <style>
-          @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@100;200;300;400;500;600;700;800&family=Nunito:wght@300&display=swap');
+          @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800&family=Petrona:wght@300&display=swap');
         </style>
       </Head>
       <ThemeProvider theme={theme}>

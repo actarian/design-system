@@ -18,6 +18,8 @@
     "paths": {
       "@components*": ["@components*"],
       "@components": ["@components/index"],
+      "@hooks*": ["@hooks*"],
+      "@hooks": ["@hooks/index"],
       "@icons*": ["@icons*"],
       "@icons": ["@icons/index"],
       "@styles*": ["@styles*"],
