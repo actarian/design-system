@@ -1,42 +1,44 @@
-import { ComponentAttrs, ComponentBoxAttrs, getMargin, getPadding, setClass } from '@components/types';
+import { ComponentAttrs, ComponentBoxAttrs, Variant } from '@components/types';
+import { getMargin, getPadding, getSize, setClass } from '@components/utils';
 import { ReactNode } from 'react';
-import styled, { css, FlattenSimpleInterpolation } from 'styled-components';
+import styled, { css, FlattenInterpolation } from 'styled-components';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
 
-const CardVariant: { [key in CardTypes]: FlattenSimpleInterpolation } = {
-  alpha: css`
+const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
+  alfa: css`
   border: 1px solid #eee;
   border-radius: 20px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `,
   beta: css`
-background: #111;
-border-radius: 2px;
+  background: #111;
+  border-radius: 2px;
 `,
   gamma: css`
-border: 1px solid #eee;
-border-radius: 20px;
-box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  border: 1px solid #eee;
+  border-radius: 20px;
+  box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `,
   delta: css`
-border: 1px solid #eee;
-border-radius: 20px;
-box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  border: 1px solid #eee;
+  border-radius: 20px;
+  box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `
 };
 
-export type CardTypes = 'alpha' | 'beta' | 'gamma' | 'delta';
+const getVariant = (type: Variant = 'alfa') => {
+  return Variants[type] ? Variants[type] : '';
+}
 
 /* const CardContainer = styled.div<CardProps>` */
 const CardContainer = styled.div.attrs(setClass<CardProps>('card'))`
-  ${props => getMargin(props, { margin: '0 0 40px 0' })}
-  ${props => getPadding(props)}
-
   display: flex;
   flex-direction: column;
-
-  ${props => props.type && CardVariant[props.type] ? CardVariant[props.type] : ''}
+  ${props => getVariant(props.type)}
+  ${props => getSize(props)}
+  ${props => getMargin(props, { margin: '0 0 40px 0' })}
+  ${props => getPadding(props)}
 
   ${props => props.bordered ? css`
     border: 1px solid #eee;
@@ -101,7 +103,7 @@ const CardInner = styled.div.attrs(setClass<CardInnerProps>('card__inner'))`
 `;
 
 type Props = {
-  type?: CardTypes;
+  type?: Variant;
   aspect?: number;
   background?: ReactNode;
   shadow?: boolean;

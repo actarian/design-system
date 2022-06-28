@@ -2,7 +2,7 @@ import { CssDebug } from '@styles/_debug';
 import { CssReset } from '@styles/_reset';
 import { CssTypography } from '@styles/_typography';
 import { CssVars } from '@styles/_vars';
-import { createGlobalStyle, ThemeProps } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -10,11 +10,6 @@ const GlobalStyle = createGlobalStyle`
   ${CssVars}
   ${CssTypography}
   ${CssDebug}
-
-  html,
-  body {
-    color: ${({ theme }: ThemeProps<any>) => theme.color.neutral1000};
-  }
 
   a {
     color: inherit;

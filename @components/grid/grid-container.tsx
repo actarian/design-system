@@ -1,18 +1,48 @@
-import { ComponentBoxAttrs, getMargin, getPadding, setClass } from '@components/types';
-import styled from 'styled-components';
+import { ComponentGridAttrs, ThemeAttrs, Variant } from '@components/types';
+import { getGrid, getMargin, getPadding, getSize, setClass } from '@components/utils';
+import styled, { css, FlattenInterpolation } from 'styled-components';
 
-type Props = {
+const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
+  alfa: css`
+  margin: 0 var(--grid-column-gap);
+`,
+  beta: css`
+  margin: 0 auto;
+  ${props => getMaxWidths(props)}
+`,
+};
+
+const getMaxWidths = (props: ThemeAttrs) => {
+  const theme = props.theme;
+  if (theme.maxWidth && theme.mediaQuery) {
+    return Object.keys(theme.mediaQuery).map(key => {
+      const value = theme.mediaQuery[key];
+      return `
+@media(min-width: ${value}px) {
+  max-width: ${theme.maxWidth[key]};
+}
+    `
+    }).join('\n');
+  } else {
+    return '';
+  }
 }
 
-export type GridContainerProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+const getVariant = (type: Variant = 'alfa') => {
+  return Variants[type] ? Variants[type] : '';
+}
+
+type Props = {
+  type?: Variant;
+}
+
+export type GridContainerProps = ComponentGridAttrs<Props, HTMLDivElement>;
 
 /* export const GridContainer = styled.div<GridContainerProps>` */
 export const GridContainer = styled.div.attrs(setClass<GridContainerProps>('grid-container'))`
+  ${props => getGrid(props)}
+  ${props => getVariant(props.type)}
+  ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
-  display: grid;
-  grid-template-columns: repeat(var(--grid-columns),  var(--grid-size));
-  grid-gap: var(--grid-gap);
-  margin: 0 auto;
-  max-width: Min(1000px, calc(100vw - 80px));
 `;

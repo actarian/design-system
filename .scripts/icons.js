@@ -5,7 +5,7 @@ const path = require('path');
 buildAndWatch('@icons');
 
 async function buildAndWatch(directory) {
-  console.log('icons.buildAndWatch');
+  // console.log('icons.buildAndWatch');
   await rebuild(directory);
   fs.watch(directory, { interval: 2000 }, async (eventType, filename) => { // (current, previous) => {}
     await rebuild(directory, filename);
@@ -13,10 +13,10 @@ async function buildAndWatch(directory) {
 }
 
 async function rebuild(directory, filename = null) {
-  // console.log('icons.rebuild', filename);
   if (!isSvg(filename)) {
     return;
   }
+  console.log('icons.rebuild', filename);
   if (filename === null || fs.existsSync(path.join(directory, filename))) {
     fs.readdir(directory, async (err, files) => {
       const indexTs = '// https://github.com/feathericons/react-feather \n' + files.filter(x => isSvg(x)).map(file => {

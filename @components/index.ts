@@ -4,6 +4,7 @@ export { CardContent } from './card/card-content';
 export { CardFooter } from './card/card-footer';
 export { default as Flex } from './flex/flex';
 export { FlexContainer } from './flex/flex-container';
+export { default as Footer } from './footer/footer';
 export { default as Grid } from './grid/grid';
 export { GridContainer } from './grid/grid-container';
 export { default as Header } from './header/header';
@@ -12,5 +13,6 @@ export { default as Layout } from './layout/layout';
 export { default as Media } from './media/media';
 export { default as Page } from './page/page';
 export { default as Text } from './text/text';
-
+export * from './types';
+export * from './utils';
 

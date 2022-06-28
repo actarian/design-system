@@ -7,7 +7,7 @@ export const createCustomTheme = ({ theme, options = {} }) => {
     appBg: '#ffffff', // theme.colors.neutral100,
     appBorderColor: 'rgba(0,0,0,.1)', // theme.colors.neutral200,
     appBorderRadius: 2,
-    appContentBg: '#ffffff', // theme.colors.neutral0,
+    appContentBg: '#ffffff', // theme.colors.neutral900,
 
     // Text colors
     textColor: '#333333', // theme.colors.neutral800,
@@ -19,7 +19,7 @@ export const createCustomTheme = ({ theme, options = {} }) => {
     colorSecondary: "#0000ff",
 
     // Toolbar default and active colors
-    barBg: '#ffffff', // theme.colors.neutral0,
+    barBg: '#ffffff', // theme.colors.neutral900,
     barSelectedColor: '#000000', // theme.colors.primary600,
     barTextColor: '#000000', // theme.colors.neutral800,
 

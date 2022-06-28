@@ -1,4 +1,5 @@
-import { ComponentBoxAttrs, setClass } from '@components/types';
+import { ComponentBoxAttrs } from '@components/types';
+import { setClass } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {

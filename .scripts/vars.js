@@ -5,7 +5,7 @@ const path = require('path');
 buildAndWatch('@styles/theme.json');
 
 async function buildAndWatch(fileName) {
-  console.log('vars.buildAndWatch');
+  // console.log('vars.buildAndWatch');
   await rebuild(fileName);
   fs.watchFile(fileName, { interval: 2000 }, async () => { // (current, previous) => {}
     await rebuild(fileName);
@@ -13,7 +13,7 @@ async function buildAndWatch(fileName) {
 }
 
 async function rebuild(fileName) {
-  // console.log('vars.rebuild', filename);
+  console.log('vars.rebuild', fileName);
   const theme = await fsReadJson(fileName);
   const nameAndValues = collectNameAndValues(theme);
   const scssVars = getScssVars(nameAndValues);

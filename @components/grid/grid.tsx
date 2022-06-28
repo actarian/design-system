@@ -1,4 +1,5 @@
-import { ComponentBoxAttrs, getMargin, getPadding, setClass } from '@components/types';
+import { ComponentBoxAttrs } from '@components/types';
+import { getMargin, getPadding, getSize, setClass } from '@components/utils';
 import { sizes } from '@styles';
 import styled from 'styled-components';
 import { GridContainer } from './grid-container';
@@ -15,6 +16,7 @@ export type GridProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 /* export const Grid = styled.div<GridProps>` */
 export const Grid = styled.div.attrs(setClass<GridProps>('grid'))`
+  ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
 
@@ -22,11 +24,17 @@ export const Grid = styled.div.attrs(setClass<GridProps>('grid'))`
 
   ${props => getSizes(props)}
 
+  /*
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  */
+
+  /*
   justify-content: center;
   align-items: center;
-
   min-height: 40px;
+  */
 `;
 
 function getSizes(props: GridProps) {

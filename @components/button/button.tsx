@@ -1,28 +1,78 @@
-import React from 'react';
-import styled from 'styled-components';
-// import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
-// import useScale, { withScale } from '../use-scale'
-// import useTheme from '../use-theme'
-// import ButtonDrip from './button.drip'
-// import ButtonLoading from './button-loading'
-import { ButtonTypes, ComponentBoxAttrs, setClass } from '@components/types';
-// import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
-// import { useButtonGroupContext } from '../button-group/button-group-context'
+import { ComponentBoxAttrs, Variant } from '@components/types';
+import { setClass } from '@components/utils';
+import styled, { css, FlattenInterpolation } from 'styled-components';
 
-const defaultProps = {
-  type: 'default' as ButtonTypes,
-  htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
-  ghost: false,
-  loading: false,
-  shadow: false,
-  auto: false,
-  effect: true,
-  disabled: false,
-  className: '',
+const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
+  alfa: css`
+  padding: 0.5em 2em;
+  border-radius: var(--button-border-radius);
+  background: var(--color-primary-500);
+  color: var(--color-neutral-900);
+  border: 2px solid var(--color-primary-500);
+
+  &:hover {
+    background: var(--color-primary-400);
+    color: var(--color-neutral-900);
+    border: 2px solid var(--color-primary-400);
+  }
+`,
+  beta: css`
+  padding: 0.5em 2em;
+  border-radius: var(--button-border-radius);
+  color: var(--color-primary-500);
+  border: 2px solid var(--color-primary-500);
+
+  &:hover {
+    color: var(--color-primary-400);
+    border: 2px solid var(--color-primary-400);
+  }
+`,
+  gamma: css`
+  color: var(--color-primary-500);
+
+  &:hover {
+    color: var(--color-primary-400);
+  }
+`,
+  delta: css`
+  padding: 0.5em 2em;
+  border-radius: var(--button-border-radius);
+  background: var(--color-secondary-500);
+  color: var(--color-neutral-900);
+  border: 2px solid var(--color-secondary-500);
+
+  &:hover {
+    background: var(--color-secondary-400);
+    color: var(--color-neutral-900);
+    border: 2px solid var(--color-secondary-500);
+  }
+  `,
+  epsilon: css`
+  padding: 0.5em 2em;
+  border-radius: var(--button-border-radius);
+  color: var(--color-secondary-500);
+  border: 2px solid var(--color-secondary-500);
+
+  &:hover {
+    color: var(--color-secondary-400);
+    border: 2px solid var(--color-secondary-400);
+  }
+`,
+  zeta: css`
+color: var(--color-secondary-500);
+
+&:hover {
+  color: var(--color-secondary-400);
+}
+`,
+};
+
+const getVariant = (type: Variant = 'alfa') => {
+  return Variants[type] ? Variants[type] : '';
 }
 
 type Props = {
-  variant?: string
+  type?: Variant
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
@@ -33,19 +83,20 @@ export type ButtonProps = ComponentBoxAttrs<Props, HTMLButtonElement>;
 const Button = styled.div.attrs(setClass<ButtonProps>('button'))`
   display: inline-flex;
   align-items: center;
-  background: ${props => props.variant === 'default' ? 'blue' : 'white'};
-  color: ${props => props.variant === 'default' ? 'white' : 'blue'};
+
   font-size: 1em;
-  margin: 1em 0;
-  padding: 0.25em 1em;
-  border: 2px solid blue;
-  border-radius: 3px;
+  margin: 0.2em;
+  padding: 0.5em;
+
+  transition: ease-in-out 250ms;
+  transition-property: background-color, color, border;
   cursor: pointer;
+  ${props => getVariant(props.type)}
 
   & > svg {
     width: 1em;
     height: 1em;
-    margin: 0 0.4em;
+    margin: 0 0.3em;
 
     &:first-child {
       margin-left: 0;
@@ -58,6 +109,28 @@ const Button = styled.div.attrs(setClass<ButtonProps>('button'))`
 `;
 
 export default Button;
+
+// import React, { useRef, useState, MouseEvent, useMemo, useImperativeHandle } from 'react'
+// import useScale, { withScale } from '../use-scale'
+// import useTheme from '../use-theme'
+// import ButtonDrip from './button.drip'
+// import ButtonLoading from './button-loading'
+// import { filterPropsWithGroup, getButtonChildrenWithIcon } from './utils'
+// import { useButtonGroupContext } from '../button-group/button-group-context'
+
+/*
+const defaultProps = {
+  type: 'default' as ButtonTypes,
+  htmlType: 'button' as React.ButtonHTMLAttributes<any>['type'],
+  ghost: false,
+  loading: false,
+  shadow: false,
+  auto: false,
+  effect: true,
+  disabled: false,
+  className: '',
+}
+*/
 
 /*
 import {
