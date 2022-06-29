@@ -2,36 +2,54 @@
 const fs = require('fs');
 const path = require('path');
 
-buildAndWatch('@icons');
+buildAndWatch('@icons/icons');
 
 async function buildAndWatch(directory) {
   // console.log('icons.buildAndWatch');
   await rebuild(directory);
-  fs.watch(directory, { interval: 2000 }, async (eventType, filename) => { // (current, previous) => {}
-    await rebuild(directory, filename);
+  return;
+  fs.watch(directory, { interval: 2000 }, async (eventType, fileName) => { // (current, previous) => {}
+    await rebuild(directory, fileName);
   });
 }
 
-async function rebuild(directory, filename = null) {
-  if (!isSvg(filename)) {
+async function rebuild(directory, fileName = null) {
+  if (fileName && !isSvg(fileName)) {
     return;
   }
-  console.log('icons.rebuild', filename);
-  if (filename === null || fs.existsSync(path.join(directory, filename))) {
-    fs.readdir(directory, async (err, files) => {
-      const indexTs = '// https://github.com/feathericons/react-feather \n' + files.filter(x => isSvg(x)).map(file => {
-        const className = camelize(file.replace('.svg', ''));
-        // console.log(file, className);
-        return `export { default as ${className} } from './${file}';`;
-      }).join('\n');
-      // console.log(indexTs);
-      await fsWrite(path.join(directory, 'index.ts'), indexTs);
+  console.log('icons.rebuild', fileName);
+  await fsClear(path.join(directory, '../components'));
+  if (fileName === null || fs.existsSync(path.join(directory, fileName))) {
+    fs.readdir(directory, async (err, fileNames) => {
+      fileNames = fileNames.filter(x => isSvg(x));
+      const classNames = fileNames.map(fileName => camelize(fileName.replace('.svg', '')));
+      const imports = fileNames.map((fileName, i) => `export { default as ${classNames[i]} } from './icons/${fileName}';`);
+      const icons = fileNames.map((fileName, i) => (`  ${classNames[i]}: lazy(() => import('./components/${fileName.replace('.svg', '')}'))`));
+      const promises = fileNames.map((fileName, i) => fsWrite(path.join(directory, `../components/${fileName.replace('.svg', '.tsx')}`), `
+import React from 'react';
+import ${classNames[i]} from '../icons/${fileName}';
+
+export default () => <${classNames[i]} />;
+        `, 'utf8'));
+      await Promise.all(promises);
+      // console.log(imports);
+      await fsWrite(path.join(directory, '../icons.ts'), `
+import { lazy } from 'react';
+
+// https://github.com/feathericons/react-feather
+
+${imports.join('\n')}
+
+export const Icons = {
+${icons.join(',\n')}
+}
+      `, 'utf8');
     });
   }
 }
 
-function isSvg(filename) {
-  return filename && filename.indexOf('.svg') !== -1;
+function isSvg(fileName) {
+  return fileName && fileName.indexOf('.svg') !== -1;
 }
 
 function camelize(text) {
@@ -43,5 +61,16 @@ async function fsWrite(pathname, data, encoding = 'utf8') {
     await fs.promises.writeFile(pathname, data, encoding);
   } catch (error) {
     console.log('fsWrite', error, pathname);
+  }
+}
+
+async function fsClear(directory) {
+  try {
+    const fileNames = await fs.promises.readdir(directory);
+    for (const fileName of fileNames) {
+      await fs.promises.unlink(path.join(directory, fileName));
+    }
+  } catch (error) {
+    console.log('fsClear', error, directory);
   }
 }

@@ -1,5 +1,5 @@
 import { ComponentGridAttrs, ThemeAttrs, Variant } from '@components/types';
-import { getGrid, getMargin, getPadding, getSize, setClass } from '@components/utils';
+import { getGrid, getMargin, getPadding, getSize } from '@components/utils';
 import styled, { css, FlattenInterpolation } from 'styled-components';
 
 const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
@@ -38,8 +38,7 @@ type Props = {
 
 export type GridContainerProps = ComponentGridAttrs<Props, HTMLDivElement>;
 
-/* export const GridContainer = styled.div<GridContainerProps>` */
-export const GridContainer = styled.div.attrs(setClass<GridContainerProps>('grid-container'))`
+export const GridContainer = styled.div<GridContainerProps>`
   ${props => getGrid(props)}
   ${props => getVariant(props.type)}
   ${props => getSize(props)}

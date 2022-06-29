@@ -1,19 +1,19 @@
-import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize, setClass } from '@components/utils';
+import { ComponentFlexAttrs } from '@components/types';
+import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
 }
 
-export type CardContentProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type CardContentProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
-/* export const CardContent = styled.div<CardContentProps>` */
-export const CardContent = styled.div.attrs(setClass<CardContentProps>('card__content'))`
+export const CardContent = styled.div<CardContentProps>`
   flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;
   ${props => getSize(props)}
   ${props => getMargin(props)}
-  ${props => getPadding(props, { padding: '1em' })}
+  ${props => getPadding(props, { padding: '8px' })}
+  ${props => getFlex(props)}
 `;

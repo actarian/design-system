@@ -1,6 +1,5 @@
 import Flex from '@components/flex/flex';
 import { ComponentAttrs } from '@components/types';
-import { setClass } from '@components/utils';
 import { useScroll } from '@hooks/useScroll/useScroll';
 
 import styled, { css } from 'styled-components';
@@ -12,7 +11,7 @@ type ContainerProps = {
 
 export type HeaderContainerProps = ComponentAttrs<ContainerProps, HTMLDivElement>;
 
-const HeaderContainer = styled.div.attrs(setClass<HeaderContainerProps>('header'))`
+const HeaderContainer = styled.div<HeaderContainerProps>`
   display: flex;
   align-items: center;
   min-height: 120px;
@@ -43,7 +42,7 @@ const Header = (props: HeaderProps) => {
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
   return (
     <HeaderContainer {...containerProps}>
-      <Flex.Container width="100%" maxWidth="Min(1440px, calc(100% - 64px))" padding="1em">
+      <Flex.Container width="100%" maxWidth="Min(1440px, calc(100% - 64px))" padding="1em" justifyContent="space-between">
         <Flex>L</Flex>
         <Flex>{props.children}</Flex>
         <Flex>R</Flex>

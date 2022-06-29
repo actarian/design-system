@@ -1,5 +1,5 @@
 import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize, setClass } from '@components/utils';
+import { getMargin, getPadding, getSize } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 type Props = {
@@ -9,11 +9,24 @@ type Props = {
 
 export type MediaProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-/* const Media = styled.div<MediaProps>` */
-const Media = styled.div.attrs(setClass<MediaProps>('media'))`
+const Media = styled.div<MediaProps>`
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &>img,
+  &>video,
+  &>iframe,
+  &>canvas,
+  &>svg {
+    object-fit: cover;
+    width: 100%;
+  }
+
   ${props => props.aspect ? css`
       position: relative;
       width: 100%;
@@ -23,7 +36,8 @@ const Media = styled.div.attrs(setClass<MediaProps>('media'))`
       &>img,
       &>video,
       &>iframe,
-      &>canvas {
+      &>canvas,
+      &>svg {
         position: absolute;
         top: 0;
         left: 0;

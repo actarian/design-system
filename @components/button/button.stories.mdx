@@ -68,7 +68,7 @@ The basic `Button` contains an animation effect.
 
 export const Basic = ({ data, ...args }) => (<>
   <div style={{ margin: '0 1em' }}>
-    <Button {...args}>Action</Button>
+    <Button {...args} onClick={() => alert('click')}>Action</Button>
   </div>
 </>);
 
@@ -76,7 +76,7 @@ export const Basic = ({ data, ...args }) => (<>
   <Story name="basic" args={{ type: 'default' }} parameters={{
     docs: {
       source: {
-        code: '<Button type="default" onClick={() => {}}>Button</Button>',
+        code: '<Button onClick={() => {}}>Button</Button>',
         language: "tsx",
         type: "auto",
       }
@@ -95,16 +95,16 @@ export const Basic = ({ data, ...args }) => (<>
 Let's define a story for our `Button` component:
 
 <Canvas>
-  <Story name="positive">
-    <Button status="positive">Positive</Button>
+  <Story name="alfa">
+    <Button type="alfa">Alfa</Button>
   </Story>
 </Canvas>
 
 We can drop it in a `Canvas` to get a code snippet:
 
 <Canvas>
-  <Story name="negative">
-    <Button status="negative">Negative</Button>
+  <Story name="beta">
+    <Button type="beta">Beta</Button>
   </Story>
 </Canvas>
 
@@ -113,18 +113,16 @@ gets rendered as a group, but defines individual stories
 with unique URLs and isolated snapshot tests.
 
 <Canvas>
-  <Story name="warning">
-    <Button status="warning">Warning</Button>
+  <Story name="gamma">
+    <Button type="gamma">Gamma</Button>
   </Story>
-  <Story name="neutral">
-    <Button status="neutral">Neutral</Button>
+  <Story name="delta">
+    <Button type="delta">Delta</Button>
   </Story>
-  <Story name="error">
-    <Button status="error">Error</Button>
+  <Story name="epsilon">
+    <Button type="epsilon">Epsilon</Button>
   </Story>
-  <Story name="with icon">
-    <Button status="warning">
-      <span>Add to cart</span><ShoppingCart />
-    </Button>
+  <Story name="zeta">
+    <Button type="zeta">Zeta</Button>
   </Story>
 </Canvas>

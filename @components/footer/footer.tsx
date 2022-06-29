@@ -1,6 +1,5 @@
 import Grid from '@components/grid/grid';
 import { ComponentAttrs } from '@components/types';
-import { setClass } from '@components/utils';
 
 import styled from 'styled-components';
 
@@ -9,7 +8,7 @@ type Props = {
 
 export type FooterProps = ComponentAttrs<Props, HTMLDivElement>;
 
-const FooterContainer = styled.div.attrs(setClass<FooterProps>('footer'))`
+const FooterContainer = styled.div<FooterProps>`
   display: flex;
   align-items: center;
   min-height: 120px;

@@ -31,6 +31,12 @@ export type MarginAttrs = {
   marginLeft?: string;
 };
 
+export type FlexAttrs = {
+  flexDirection?: string;
+  justifyContent?: string;
+  alignItems?: string;
+};
+
 export type GridAttrs = {
   columns?: string;
   size?: string;
@@ -38,13 +44,17 @@ export type GridAttrs = {
   rowGap?: string;
 };
 
-export type BoxAttrs = PaddingAttrs & MarginAttrs;
+export type BoxAttrs = PaddingAttrs & MarginAttrs & SizeAttrs;
 
-export type ComponentAttrs<T, U extends HTMLElement> = T & ThemeAttrs & NativeAttrs<U, T>;
+export type NativeThemedAttrs<T, U extends HTMLElement> = NativeAttrs<U, T> & ThemeAttrs & T;
 
-export type ComponentBoxAttrs<T, U extends HTMLElement> = T & ThemeAttrs & BoxAttrs & SizeAttrs & NativeAttrs<U, T>;
+export type ComponentAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U>;
 
-export type ComponentGridAttrs<T, U extends HTMLElement> = T & ThemeAttrs & GridAttrs & BoxAttrs & SizeAttrs & NativeAttrs<U, T>;
+export type ComponentBoxAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs;
+
+export type ComponentFlexAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs & FlexAttrs;
+
+export type ComponentGridAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs & GridAttrs;
 
 export type Variant = 'alfa' | 'beta' | 'gamma' | 'delta' | 'epsilon' | 'zeta' | 'eta' | 'theta' | 'iota' | 'kappa' | 'lambda' | 'mu' | 'nu' | 'xi' | 'omicron' | 'pi' | 'rho' | 'sigma' | 'tau' | 'upsilon' | 'phi' | 'psi' | 'chi' | 'omega';
 

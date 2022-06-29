@@ -1,5 +1,4 @@
 import { ComponentBoxAttrs } from '@components/types';
-import { setClass } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
@@ -7,8 +6,7 @@ type Props = {
 
 export type LayoutProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-/* const Layout = styled.div<LayoutProps>` */
-const Layout = styled.div.attrs(setClass<LayoutProps>('layout'))`
+const Layout = styled.div<LayoutProps>`
   background: white;
   width: 100%;
   // min-height: 100vh;

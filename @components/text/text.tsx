@@ -1,5 +1,4 @@
 import { ComponentBoxAttrs } from '@components/types';
-import { setClass } from '@components/utils';
 import styled from 'styled-components';
 
 export type TextTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'default' | 'small' | 'smaller' | 'smallest';
@@ -75,13 +74,14 @@ type Props = {
 
 export type TextProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-/* const Text = styled.div<TextProps>` */
-const Text = styled.div.attrs(setClass<TextProps>('text'))`
+const Text = styled.div<TextProps>`
   font-family: ${props => fontFamily[props.type || 'default']};
   font-size: ${props => fontSize[props.type || 'default']};
   font-weight: ${props => fontWeight[props.type || 'default']};
   line-height: ${props => lineHeight[props.type || 'default']};
-  margin-bottom: ${props => marginBottom[props.type || 'default']};
+  &:not(:last-child) {
+    margin-bottom: ${props => marginBottom[props.type || 'default']};
+  }
   max-width: 30ch;
 `;
 

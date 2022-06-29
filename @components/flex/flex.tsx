@@ -1,9 +1,14 @@
-import { ComponentBoxAttrs } from '@components/types';
+import { ComponentFlexAttrs } from '@components/types';
+import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
 import styled from 'styled-components';
 import { FlexContainer } from './flex-container';
 
 const Flex = styled.div<FlexProps>`
   display: flex;
+  ${props => getSize(props)}
+  ${props => getMargin(props, { margin: '8px' })}
+  ${props => getPadding(props)}
+  ${props => getFlex(props)}
 `;
 
 (Flex as IFlex).Container = FlexContainer;
@@ -11,14 +16,9 @@ const Flex = styled.div<FlexProps>`
 export default Flex as IFlex;
 
 type Props = {
-  xs?: number;
-  sm?: number;
-  md?: number;
-  lg?: number;
-  xl?: number;
 }
 
-export type FlexProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type FlexProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
 type IFlex = typeof Flex & {
   Container: typeof FlexContainer;

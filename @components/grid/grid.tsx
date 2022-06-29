@@ -1,7 +1,7 @@
 import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize, setClass } from '@components/utils';
+import { getMargin, getPadding, getSize } from '@components/utils';
 import { sizes } from '@styles';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { GridContainer } from './grid-container';
 
 type Props = {
@@ -14,15 +14,16 @@ type Props = {
 
 export type GridProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-/* export const Grid = styled.div<GridProps>` */
-export const Grid = styled.div.attrs(setClass<GridProps>('grid'))`
+export const Grid = styled.div<GridProps>`
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
 
+  // default grid column
   grid-column: span var(--grid-columns);
 
-  ${props => getSizes(props)}
+  // get media query column
+  ${props => getMediaQueryColumn(props)}
 
   /*
   display: flex;
@@ -37,17 +38,18 @@ export const Grid = styled.div.attrs(setClass<GridProps>('grid'))`
   */
 `;
 
-function getSizes(props: GridProps) {
+function getMediaQueryColumn(props: GridProps) {
   const theme = props.theme;
   return sizes.map(k => {
     const key = k as keyof GridProps;
-    if (typeof props[key] === 'number' && theme.mediaQuery) {
-      const value = theme.mediaQuery[key];
-      return `
-@media(min-width: ${value}px) {
-  grid-column: span ${props[key]};
-}
-    `
+    const columns = props[key];
+    if (typeof columns === 'number' && theme.mediaQuery) {
+      const width = theme.mediaQuery[key];
+      return css`
+        @media(min-width: ${width}px) {
+          grid-column: span ${columns};
+        }
+      `;
     } else {
       return '';
     }

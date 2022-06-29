@@ -1,5 +1,5 @@
 import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize, setClass } from '@components/utils';
+import { getMargin, getPadding, getSize } from '@components/utils';
 import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -10,8 +10,7 @@ type Props = {
 
 export type SectionProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-/* const SectionContainer = styled.div<SectionProps>` */
-const SectionContainer = styled.div.attrs(setClass<SectionProps>('section'))`
+const SectionContainer = styled.div<SectionProps>`
   background: var(--color-alternative-100);
   color: var(--color-neutral-900);
   ${props => getSize(props)}

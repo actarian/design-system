@@ -1,5 +1,4 @@
 import { ComponentBoxAttrs, Variant } from '@components/types';
-import { setClass } from '@components/utils';
 import styled, { css, FlattenInterpolation } from 'styled-components';
 
 const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
@@ -79,8 +78,7 @@ type Props = {
 
 export type ButtonProps = ComponentBoxAttrs<Props, HTMLButtonElement>;
 
-/* const Button = styled.div<ButtonProps>` */
-const Button = styled.div.attrs(setClass<ButtonProps>('button'))`
+const Button = styled.div<ButtonProps>`
   display: inline-flex;
   align-items: center;
 

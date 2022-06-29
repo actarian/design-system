@@ -1,5 +1,5 @@
 import { ComponentAttrs, ComponentBoxAttrs, Variant } from '@components/types';
-import { getMargin, getPadding, getSize, setClass } from '@components/utils';
+import { getMargin, getPadding, getSize } from '@components/utils';
 import { ReactNode } from 'react';
 import styled, { css, FlattenInterpolation } from 'styled-components';
 import { CardContent } from './card-content';
@@ -7,21 +7,21 @@ import { CardFooter } from './card-footer';
 
 const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
   beta: css`
-  border: 1px solid #eee;
-  border-radius: 20px;
-  box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  border: 1px solid #ddd;
+  border-radius: 0.5em;
+  // box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `,
   gamma: css`
   background: #111;
   border-radius: 2px;
 `,
   delta: css`
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   border-radius: 20px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `,
   epsilon: css`
-  border: 1px solid #eee;
+  border: 1px solid #ddd;
   border-radius: 20px;
   box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
 `
@@ -45,8 +45,7 @@ type Props = {
 
 export type CardProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
-/* const CardContainer = styled.div<CardProps>` */
-const CardContainer = styled.div.attrs(setClass<CardProps>('card'))`
+const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   ${props => getVariant(props.type)}
@@ -117,8 +116,7 @@ type InnerProps = {
 
 export type CardInnerProps = ComponentAttrs<InnerProps, HTMLDivElement>;
 
-/* const CardInner = styled.div<CardInnerProps>` */
-const CardInner = styled.div.attrs(setClass<CardInnerProps>('card__inner'))`
+const CardInner = styled.div<CardInnerProps>`
   display: flex;
   flex-direction: column;
 

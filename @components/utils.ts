@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs } from './types';
+import { FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -89,6 +89,21 @@ export function getPadding(props: PaddingAttrs, defaultValue: PaddingAttrs = {})
   `;
 }
 
+export function getFlex(props: FlexAttrs, defaultValue: FlexAttrs = {}) {
+  props = { ...defaultValue, ...props };
+  return css`
+    ${(props.flexDirection) ? css`
+      flex-direction: ${props.flexDirection};
+    `: ''}
+    ${props.justifyContent ? css`
+      justify-content: ${props.justifyContent};
+    `: ''}
+    ${props.alignItems ? css`
+      align-items: ${props.alignItems};
+    `: ''}
+  `;
+}
+
 export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
   props = { ...defaultValue, ...props };
   return css`
@@ -110,12 +125,6 @@ export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
     grid-row-gap: var(--grid-row-gap);
   `;
 }
-
-/*
-export function getStyled<T>(tagName: keyof StyledInterface, className: string) {
-  return (styled[tagName] as ThemedStyledFunction<typeof tagName, any, {}, never>).attrs(setClass<T>(className));
-}
-*/
 
 function className_(...args: ({ [key: string]: boolean } | string)[]): string {
   return args.map(x => {

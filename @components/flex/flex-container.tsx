@@ -1,19 +1,19 @@
-import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentFlexAttrs } from '@components/types';
+import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
 }
 
-export type FlexContainerProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type FlexContainerProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
 export const FlexContainer = styled.div<FlexContainerProps>`
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 auto;
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  margin: 0 auto;
+  ${props => getFlex(props)}
 `;
