@@ -4,7 +4,6 @@ import { default as Layout, LayoutProps } from './layout';
 <Meta
   title="Components / Layout"
   component={Layout}
-  argTypes={{}}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 
@@ -20,9 +19,11 @@ A component to display a `Layout`.
 import { Layout } from '@wsdesign-system';
 ```
 
+<!--
 ## Props
 
 <ArgsTable of={LayoutProps} />
+-->
 
 ## Example
 
@@ -30,6 +31,6 @@ A basic example of `Layout`.
 
 <Canvas>
   <Story name="Layout">
-    <Layout></Layout>
+    <Layout>Layout</Layout>
   </Story>
 </Canvas>

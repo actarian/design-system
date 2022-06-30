@@ -4,8 +4,8 @@ import { css } from 'styled-components';
 export const CssTypography = css`
 html,
 body {
-  color: var(--color-neutral100);
-  background: var(--color-neutral900);
+  background: var(--color-neutral-100);
+  color: var(--color-neutral-900);
   font-family: var(--font-primary);
   ${props => getSizes(props)}
 }

@@ -13,7 +13,7 @@ import { createElement, lazy, Suspense, useMemo, useState } from 'react';
   }}
 />
 
-# Button
+# Icons
 
 Used to trigger an operation.
 
@@ -38,7 +38,7 @@ export const IconsList = ({ data, ...args }) => {
   const [visibleIcons, setVisibleIcons] = useState(iconsList);
   function onSearch(event) {
     const query = event.target.value.toLowerCase();
-    console.log(query);
+    // console.log(query);
     const icons = iconsList.filter(x => x.key.toLowerCase().indexOf(query) !== -1);
     setVisibleIcons(icons);
   }
@@ -74,7 +74,9 @@ export const IconsList = ({ data, ...args }) => {
   <Story name="icons" args={{ type: 'default' }} parameters={{
     docs: {
       source: {
-        code: '<Button type="default" onClick={() => {}}>Button</Button>',
+        code: `import { ShoppingCart } from '@wsdesign-system';
+        <ShoppingCart />
+        `,
         language: "tsx",
         type: "auto",
       }

@@ -7,12 +7,12 @@ const variants: Variants = {
   padding: 0.5em 2em;
   border-radius: var(--button-border-radius);
   background: var(--color-primary-500);
-  color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
   border: 2px solid var(--color-primary-500);
 
   &:hover {
-    background: var(--color-primary-400);
-    color: var(--color-neutral-900);
+    background: var(--color-primary-600);
+    color: var(--color-neutral-100);
     border: 2px solid var(--color-primary-400);
   }
 `,
@@ -23,7 +23,7 @@ const variants: Variants = {
   border: 2px solid var(--color-primary-500);
 
   &:hover {
-    color: var(--color-primary-400);
+    color: var(--color-primary-600);
     border: 2px solid var(--color-primary-400);
   }
 `,
@@ -31,20 +31,20 @@ const variants: Variants = {
   color: var(--color-primary-500);
 
   &:hover {
-    color: var(--color-primary-400);
+    color: var(--color-primary-600);
   }
 `,
   delta: css`
   padding: 0.5em 2em;
   border-radius: var(--button-border-radius);
   background: var(--color-secondary-500);
-  color: var(--color-neutral-900);
+  color: var(--color-neutral-100);
   border: 2px solid var(--color-secondary-500);
 
   &:hover {
-    background: var(--color-secondary-400);
-    color: var(--color-neutral-900);
-    border: 2px solid var(--color-secondary-500);
+    background: var(--color-secondary-600);
+    color: var(--color-neutral-100);
+    border: 2px solid var(--color-secondary-400);
   }
   `,
   epsilon: css`
@@ -54,15 +54,15 @@ const variants: Variants = {
   border: 2px solid var(--color-secondary-500);
 
   &:hover {
-    color: var(--color-secondary-400);
+    color: var(--color-secondary-600);
     border: 2px solid var(--color-secondary-400);
   }
 `,
   zeta: css`
-color: var(--color-secondary-500);
+  color: var(--color-secondary-500);
 
 &:hover {
-  color: var(--color-secondary-400);
+  color: var(--color-secondary-600);
 }
 `,
 };
@@ -75,11 +75,18 @@ type Props = {
 
 export type ButtonProps = ComponentBoxAttrs<Props, HTMLButtonElement>;
 
-const Button = styled.div<ButtonProps>`
+const Button = styled.button<ButtonProps>`
+  display: inline-block;
+  border: none;
+  text-decoration: none;
+  background: none;
+  appearance: none;
+
   display: inline-flex;
   align-items: center;
 
   font-size: 1em;
+  line-height: 1;
   margin: 0.2em;
   padding: 0.5em;
 

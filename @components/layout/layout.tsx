@@ -7,9 +7,7 @@ type Props = {
 export type LayoutProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 const Layout = styled.div<LayoutProps>`
-  background: white;
   width: 100%;
-  // min-height: 100vh;
   margin: 0;
   padding: 0;
 `;

@@ -7,23 +7,23 @@ import { CardFooter } from './card-footer';
 
 const variants: Variants = {
   beta: css`
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-neutral-100);
   border-radius: 0.5em;
-  // box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  // box-shadow: var(--card-shadow);
 `,
   gamma: css`
-  background: #111;
+  background: var(--color-neutral-900);
   border-radius: 2px;
 `,
   delta: css`
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-neutral-100);
   border-radius: 20px;
-  box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  box-shadow: var(--card-shadow);
 `,
   epsilon: css`
-  border: 1px solid #ddd;
+  border: 1px solid var(--color-neutral-100);
   border-radius: 20px;
-  box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  box-shadow: var(--card-shadow);
 `
 };
 
@@ -44,6 +44,7 @@ export type CardProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   ${props => getVariant(props.type, variants)}
   ${props => getSize(props)}
   ${props => getMargin(props, { margin: '0 0 40px 0' })}
@@ -54,7 +55,7 @@ const CardContainer = styled.div<CardProps>`
   `: ''}
 
   ${props => props.bordered ? css`
-    border: 1px solid #eee;
+    border: 1px solid var(--color-neutral-100);
   `: ''}
 
   ${props => props.rounded ? css`
@@ -62,11 +63,12 @@ const CardContainer = styled.div<CardProps>`
   `: ''}
 
   ${props => props.shadow ? css`
-    box-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+    box-shadow: var(--card-shadow);
   `: ''}
 
   ${props => props.background ? css`
     position: relative;
+    color: var(--color-neutral-100);
 
     &>:first-child {
       position: absolute;

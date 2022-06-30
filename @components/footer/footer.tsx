@@ -12,7 +12,7 @@ const FooterContainer = styled.div<FooterProps>`
   display: flex;
   align-items: center;
   min-height: 120px;
-  background: var(--color-alternative-100);
+  background: var(--color-neutral-200);
   color: var(--color-neutral-900);
 `;
 

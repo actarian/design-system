@@ -14,6 +14,6 @@ export const CardContent = styled.div<CardContentProps>`
   flex-direction: column;
   ${props => getSize(props)}
   ${props => getMargin(props)}
-  ${props => getPadding(props)}
+  ${props => getPadding(props, { padding: '8px' })}
   ${props => getFlex(props)}
 `;

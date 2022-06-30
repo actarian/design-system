@@ -58,13 +58,15 @@ Used to trigger an operation.
 import { Button } from '@wsdesign-system';
 ```
 
+<!--
 ## Props
 
 <ArgsTable of={ButtonProps} />
+-->
 
 ## Basic
 
-The basic `Button` contains an animation effect.
+A basic example of `Button`.
 
 export const Basic = ({ data, ...args }) => (<>
   <div style={{ margin: '0 1em' }}>
@@ -87,32 +89,12 @@ export const Basic = ({ data, ...args }) => (<>
 </Canvas>
 
 <Canvas>
-  <Story name="basic2">
-    <Button>Basic</Button>
-  </Story>
-</Canvas>
-
-Let's define a story for our `Button` component:
-
-<Canvas>
   <Story name="alfa">
     <Button type="alfa">Alfa</Button>
   </Story>
-</Canvas>
-
-We can drop it in a `Canvas` to get a code snippet:
-
-<Canvas>
   <Story name="beta">
     <Button type="beta">Beta</Button>
   </Story>
-</Canvas>
-
-We can even preview multiple stories in a block. This
-gets rendered as a group, but defines individual stories
-with unique URLs and isolated snapshot tests.
-
-<Canvas>
   <Story name="gamma">
     <Button type="gamma">Gamma</Button>
   </Story>
@@ -124,5 +106,11 @@ with unique URLs and isolated snapshot tests.
   </Story>
   <Story name="zeta">
     <Button type="zeta">Zeta</Button>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="with icon">
+    <Button type="alfa"><span>Buy</span> <ShoppingCart /></Button>
   </Story>
 </Canvas>

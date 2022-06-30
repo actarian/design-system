@@ -1,10 +1,9 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
-import { default as Grid, GridProps } from './card';
+import { default as Grid, GridProps } from './grid';
 
 <Meta
   title="Components / Grid"
   component={Grid}
-  argTypes={{}}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 
@@ -20,9 +19,11 @@ A component to display a `Grid`.
 import { Grid } from '@wsdesign-system';
 ```
 
+<!--
 ## Props
 
 <ArgsTable of={GridProps} />
+-->
 
 ## Example
 
@@ -93,19 +94,16 @@ A basic example of `Grid`.
 <Canvas>
   <Story name="Custom">
     <Grid.Row columns={5} columnGap='10px' rowGap='10px'>
-
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
-
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
       <Grid className="debug" xs={1} padding="1em">1</Grid>
-
     </Grid.Row>
   </Story>
 </Canvas>

@@ -11,7 +11,7 @@ type Props = {
 export type SectionProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 const SectionContainer = styled.div<SectionProps>`
-  background: var(--color-alternative-100);
+  background: var(--color-alternative-200);
   color: var(--color-neutral-900);
   ${props => getSize(props)}
   ${props => getMargin(props)}

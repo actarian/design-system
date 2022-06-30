@@ -15,8 +15,8 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
   display: flex;
   align-items: center;
   min-height: 120px;
-  background: var(--color-alternative-100);
-  color: var(--color-neutral-900);
+  background: var(--color-neutral-200);
+  color: var(--color-neutral-100);
 
   ${props => props.fixed ? css`
     position: fixed;
@@ -26,7 +26,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
     z-index: 1000;
     transition: background-color ease-in-out 350ms;
     background: ${props.scrolled ? 'var(--color-neutral-900)' : 'transparent'};
-    color: ${props.scrolled ? 'var(--color-neutral-100)' : 'var(--color-neutral-900)'};
+    // color: ${props.scrolled ? 'var(--color-neutral-100)' : 'var(--color-neutral-100)'};
   ` : ''};
 `;
 

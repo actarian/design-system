@@ -1,11 +1,11 @@
-import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentFlexAttrs } from '@components/types';
+import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
 }
 
-export type CardFooterProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type CardFooterProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
 export const CardFooter = styled.div<CardFooterProps>`
   flex: 0 0 4em;
@@ -17,4 +17,5 @@ export const CardFooter = styled.div<CardFooterProps>`
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props, { padding: '8px' })}
+  ${props => getFlex(props)}
 `;

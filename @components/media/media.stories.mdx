@@ -4,7 +4,6 @@ import { default as Media, MediaProps } from './media';
 <Meta
   title="Components / Media"
   component={Media}
-  argTypes={{}}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 
@@ -20,9 +19,11 @@ A component to display a `Media`.
 import { Media } from '@wsdesign-system';
 ```
 
+<!--
 ## Props
 
 <ArgsTable of={MediaProps} />
+-->
 
 ## Example
 
@@ -30,7 +31,7 @@ A basic example of `Media`.
 
 <Canvas>
   <Story name="Media">
-    <Media aspect={2 / 1}>
+    <Media width="320px">
       <img src={'https://picsum.photos/640/480'} />
     </Media>
   </Story>

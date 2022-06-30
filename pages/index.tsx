@@ -71,7 +71,10 @@ export default function Homepage() {
                   <Media aspect={2 / 1}>
                     <img src={'https://picsum.photos/640/480'} />
                   </Media>
-                  <Card.Content paddingTop='100px'>content</Card.Content>
+                  <Card.Content paddingTop='100px'>
+                    <Text type="h6">Title</Text>
+                    <Text type="default">Abstract</Text>
+                  </Card.Content>
                 </Card>
               </Grid>
               <Grid xs={6} md={4}>
@@ -79,7 +82,10 @@ export default function Homepage() {
                   <Media>
                     <img src={'https://picsum.photos/640/480'} />
                   </Media>
-                  <Card.Content>content</Card.Content>
+                  <Card.Content>
+                    <Text type="h6">Title</Text>
+                    <Text type="default">Abstract</Text>
+                  </Card.Content>
                 </Card>
               </Grid>
               <Grid xs={6} md={4}>
@@ -88,13 +94,21 @@ export default function Homepage() {
                     <img src={'https://picsum.photos/640/480'} />
                   </Media>
                 }>
-                  <Card.Content paddingTop='100px'>content</Card.Content>
+                  <Card.Content paddingTop='100px'>
+                    <Text type="h6">Title</Text>
+                    <Text type="default">Abstract</Text>
+                  </Card.Content>
                 </Card>
               </Grid>
               <Grid xs={6} md={4}>
                 <Card type="delta" aspect={1 / 1}>
-                  <Card.Content>content</Card.Content>
-                  <Card.Footer>footer</Card.Footer>
+                  <Card.Content>
+                    <Text type="h6">Title</Text>
+                    <Text type="default">Abstract</Text>
+                  </Card.Content>
+                  <Card.Footer>
+                    <Text type="small">Description</Text>
+                  </Card.Footer>
                 </Card>
               </Grid>
             </Grid.Row>
