@@ -3,16 +3,16 @@
 
   export const CssVars = css`
 :root {
-  --font-primary: 'Open Sans', sans-serif;
+  --font-primary: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-secondary: 'Petrona', serif;
-  --font-size-xs: 13px;
+  --font-size-xs: 16px;
   --font-size-sm: 16px;
-  --font-size-md: 19px;
-  --font-size-lg: 22px;
-  --font-size-xl: 25px;
+  --font-size-md: 16px;
+  --font-size-lg: 16px;
+  --font-size-xl: 16px;
   --grid-columns: 12;
   --grid-size: 1fr;
-  --grid-column-gap: 16px;
+  --grid-column-gap: 64px;
   --grid-row-gap: 0;
   --max-width-xs: calc(100% - var(--grid-column-gap) * 2);
   --max-width-sm: calc(100% - var(--grid-column-gap) * 2);
@@ -26,15 +26,15 @@
   --media-query-xl: 1600;
   --button-border-radius: 1.5em;
   --card-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
-  --color-neutral-100: #F8F8FA;
-  --color-neutral-200: #F1F1F5;
-  --color-neutral-300: #DDDDE2;
-  --color-neutral-400: #BFBFC5;
-  --color-neutral-500: #99999f;
-  --color-neutral-600: #6F6F88;
-  --color-neutral-700: #4D4D72;
-  --color-neutral-800: #30305C;
-  --color-neutral-900: #1D1D4C;
+  --color-neutral-100: #FFFFFF;
+  --color-neutral-200: #DFDFE2;
+  --color-neutral-300: #BFBFC5;
+  --color-neutral-400: #9F9FA8;
+  --color-neutral-500: #7E7E8B;
+  --color-neutral-600: #61616B;
+  --color-neutral-700: #4444B;
+  --color-neutral-800: #27272B;
+  --color-neutral-900: #09090A;
   --color-primary-100: #CCCCFF;
   --color-primary-200: #9999FF;
   --color-primary-300: #6666FF;

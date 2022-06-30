@@ -17,12 +17,13 @@ const fontFamily = {
 }
 
 const fontSize = {
-  h1: '5.61rem',
-  h2: '4.209rem',
-  h3: '3.157rem',
-  h4: '2.369rem',
-  h5: '1.777rem',
-  h6: '1.333rem',
+  h1: '6.25rem',
+  h2: '4.5rem',
+  h3: '2.75rem',
+  h4: '2.5rem',
+  h5: '2.25rem',
+  h6: '1.875rem',
+  h7: '1.5rem',
   'default': '1rem',
   small: '0.75rem',
   smaller: '0.563rem',
@@ -30,12 +31,12 @@ const fontSize = {
 }
 
 const fontWeight = {
-  h1: '300',
-  h2: '400',
-  h3: '500',
-  h4: '600',
+  h1: '700',
+  h2: '700',
+  h3: '700',
+  h4: '700',
   h5: '700',
-  h6: '800',
+  h6: '700',
   'default': '400',
   small: '500',
   smaller: '500',

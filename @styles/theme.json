@@ -1,19 +1,19 @@
 {
   "font": {
-    "primary": "'Open Sans', sans-serif",
+    "primary": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
     "secondary": "'Petrona', serif",
     "size": {
-      "xs": "13px",
+      "xs": "16px",
       "sm": "16px",
-      "md": "19px",
-      "lg": "22px",
-      "xl": "25px"
+      "md": "16px",
+      "lg": "16px",
+      "xl": "16px"
     }
   },
   "grid": {
     "columns": 12,
     "size": "1fr",
-    "columnGap": "16px",
+    "columnGap": "64px",
     "rowGap": "0"
   },
   "maxWidth": {
@@ -37,15 +37,15 @@
     "shadow": "0 20px 20px -10px rgba(0,0,0,0.2)"
   },
   "color": {
-    "neutral100": "#F8F8FA",
-    "neutral200": "#F1F1F5",
-    "neutral300": "#DDDDE2",
-    "neutral400": "#BFBFC5",
-    "neutral500": "#99999f",
-    "neutral600": "#6F6F88",
-    "neutral700": "#4D4D72",
-    "neutral800": "#30305C",
-    "neutral900": "#1D1D4C",
+    "neutral100": "#FFFFFF",
+    "neutral200": "#DFDFE2",
+    "neutral300": "#BFBFC5",
+    "neutral400": "#9F9FA8",
+    "neutral500": "#7E7E8B",
+    "neutral600": "#61616B",
+    "neutral700": "#4444B",
+    "neutral800": "#27272B",
+    "neutral900": "#09090A",
 
     "primary100": "#CCCCFF",
     "primary200": "#9999FF",

@@ -9,9 +9,9 @@ const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pa
   return (
     <>
       <Head>
-        <style>
+        {false && <style>
           @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;200;300;400;500;600;700;800&family=Petrona:wght@300&display=swap');
-        </style>
+        </style>}
       </Head>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
