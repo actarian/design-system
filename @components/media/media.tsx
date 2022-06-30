@@ -4,6 +4,7 @@ import styled, { css } from 'styled-components';
 
 type Props = {
   aspect?: number;
+  circle?: boolean;
   overlay?: boolean;
 }
 
@@ -27,12 +28,16 @@ const Media = styled.div<MediaProps>`
     width: 100%;
   }
 
-  ${props => props.aspect ? css`
+  ${props => (props.circle || props.aspect) ? css`
       position: relative;
+      overflow: hidden;
+      ${props.circle && css`
+      border-radius: 50%;
+      `}
+      ${props.aspect && css`
       width: 100%;
       padding-top: ${100 / props.aspect}%;
-      overflow: hidden;
-
+      `}
       &>img,
       &>video,
       &>iframe,

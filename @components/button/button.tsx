@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components';
 
 const variants: Variants = {
   alfa: css`
-  padding: 0.5em 2em;
+  padding: 1em 2em;
   border-radius: var(--button-border-radius);
   background: var(--color-primary-500);
   color: var(--color-neutral-100);
@@ -17,7 +17,7 @@ const variants: Variants = {
   }
 `,
   beta: css`
-  padding: 0.5em 2em;
+  padding: 1em 2em;
   border-radius: var(--button-border-radius);
   color: var(--color-primary-500);
   border: 2px solid var(--color-primary-500);
@@ -35,7 +35,7 @@ const variants: Variants = {
   }
 `,
   delta: css`
-  padding: 0.5em 2em;
+  padding: 1em 2em;
   border-radius: var(--button-border-radius);
   background: var(--color-secondary-500);
   color: var(--color-neutral-100);
@@ -48,7 +48,7 @@ const variants: Variants = {
   }
   `,
   epsilon: css`
-  padding: 0.5em 2em;
+  padding: 1em 2em;
   border-radius: var(--button-border-radius);
   color: var(--color-secondary-500);
   border: 2px solid var(--color-secondary-500);
@@ -81,6 +81,7 @@ const Button = styled.button<ButtonProps>`
   text-decoration: none;
   background: none;
   appearance: none;
+  color: inherit;
 
   display: inline-flex;
   align-items: center;
@@ -96,8 +97,10 @@ const Button = styled.button<ButtonProps>`
   ${props => getVariant(props.type, variants)}
 
   & > svg {
+    /*
     width: 1em;
     height: 1em;
+    */
     margin: 0 0.3em;
 
     &:first-child {

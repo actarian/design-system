@@ -1,6 +1,7 @@
-import { Container, Flex } from '@components';
+import { Button, Container, Flex, Text } from '@components';
 import { ComponentAttrs } from '@components/types';
 import { useScroll } from '@hooks/useScroll/useScroll';
+import { Hexagon, ShoppingCart, User } from '@icons';
 
 import styled, { css } from 'styled-components';
 
@@ -44,9 +45,15 @@ const Header = (props: HeaderProps) => {
     <HeaderContainer {...containerProps}>
       <Container>
         <Flex.Row justifyContent="space-between">
-          <Flex>L</Flex>
+          <Flex>
+            <Hexagon width="48px" height="48px" color="var(--color-neutral-100)" />
+            <Text type="h6" padding="0 8px">Hexagon</Text>
+          </Flex>
           <Flex>{props.children}</Flex>
-          <Flex>R</Flex>
+          <Flex width="96px" justifyContent="space-between">
+            <Button><User width="32px" height="32px" /></Button>
+            <Button><ShoppingCart width="32px" height="32px" /></Button>
+          </Flex>
         </Flex.Row>
       </Container>
     </HeaderContainer>

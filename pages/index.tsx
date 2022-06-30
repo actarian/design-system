@@ -1,4 +1,4 @@
-import { Button, Card, Container, ContainerFluid, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
+import { Button, Card, Container, ContainerFluid, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -43,6 +43,86 @@ export default function Homepage() {
               </Card.Content>
             </Card>
 
+          </Section>
+
+          <Section padding="48px 0">
+            <ContainerFluid>
+              <Grid.Row>
+                <Grid md={6}>
+                  <Text type="h5">
+                    Learn How to Pre-render Pages Using Static Generation with Next.js
+                  </Text>
+                  <Text type="h8">March 8, 2020</Text>
+                </Grid>
+                <Grid md={6}>
+                  <Text type="h8" marginBottom="16px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.</Text>
+                  <Flex.Row>
+                    <Media width="48px" height="48px" circle>
+                      <img src="https://i.pravatar.cc/128?u=3" />
+                    </Media>
+                    <Text type="h8" marginLeft="8px">Tim Neutkens</Text>
+                  </Flex.Row>
+                </Grid>
+              </Grid.Row>
+            </ContainerFluid>
+          </Section>
+
+          <Section padding="48px 0">
+            <ContainerFluid>
+                <Text type="h2" marginBottom="48px">More Stories</Text>
+                <Grid.Row>
+                <Grid md={6}>
+                  <Card type="alfa">
+                    <Media aspect={5 / 3} marginBottom="16px">
+                      <img src={'https://picsum.photos/640/480'} />
+                    </Media>
+                    <Card.Content>
+                      <Text type="h5">Preview Mode for Static Generation</Text>
+                      <Text type="h8" marginBottom="16px">March 8, 2020</Text>
+                      <Text type="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.</Text>
+                    </Card.Content>
+                    <Card.Footer>
+                      <Flex.Row>
+                        <Media width="48px" height="48px" circle>
+                          <img src="https://i.pravatar.cc/128?u=3" />
+                        </Media>
+                        <Text type="h8" marginLeft="8px">Joe Haddad</Text>
+                      </Flex.Row>
+                    </Card.Footer>
+                  </Card>
+                </Grid>
+                <Grid md={6}>
+                  <Card type="alfa">
+                    <Media aspect={5 / 3} marginBottom="16px">
+                      <img src={'https://picsum.photos/640/480'} />
+                    </Media>
+                    <Card.Content>
+                      <Text type="h5">Dynamic Routing and Static Generation</Text>
+                      <Text type="h8" marginBottom="16px">March 8, 2020</Text>
+                      <Text type="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.</Text>
+                    </Card.Content>
+                    <Card.Footer>
+                      <Flex.Row>
+                        <Media width="48px" height="48px" circle>
+                          <img src="https://i.pravatar.cc/128?u=3" />
+                        </Media>
+                        <Text type="h8" marginLeft="8px">JJ Kasper</Text>
+                      </Flex.Row>
+                    </Card.Footer>
+                  </Card>
+                </Grid>
+              </Grid.Row>
+            </ContainerFluid>
+          </Section>
+
+          <Section padding="7rem 0" style={{ background: 'var(--color-neutral-200)' }}>
+            <Container>
+              <Flex.Col justifyContent="center" alignItems="center">
+                <Text type="h3" marginBottom="1rem">Statically Generated with Next.js.</Text>
+                <Button as="a" type="alfa">Read documentation</Button>
+                <Button as="a" type="gamma">view on GitHub</Button>
+              </Flex.Col>
+            </Container>
           </Section>
 
           <Section>
