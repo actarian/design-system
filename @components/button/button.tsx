@@ -1,7 +1,8 @@
-import { ComponentBoxAttrs, Variant } from '@components/types';
-import styled, { css, FlattenInterpolation } from 'styled-components';
+import { ComponentBoxAttrs, Variant, Variants } from '@components/types';
+import { getVariant } from '@components/utils';
+import styled, { css } from 'styled-components';
 
-const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
+const variants: Variants = {
   alfa: css`
   padding: 0.5em 2em;
   border-radius: var(--button-border-radius);
@@ -66,10 +67,6 @@ color: var(--color-secondary-500);
 `,
 };
 
-const getVariant = (type: Variant = 'alfa') => {
-  return Variants[type] ? Variants[type] : '';
-}
-
 type Props = {
   type?: Variant
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
@@ -89,7 +86,7 @@ const Button = styled.div<ButtonProps>`
   transition: ease-in-out 250ms;
   transition-property: background-color, color, border;
   cursor: pointer;
-  ${props => getVariant(props.type)}
+  ${props => getVariant(props.type, variants)}
 
   & > svg {
     width: 1em;

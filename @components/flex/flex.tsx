@@ -1,7 +1,8 @@
 import { ComponentFlexAttrs } from '@components/types';
 import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
 import styled from 'styled-components';
-import { FlexContainer } from './flex-container';
+import { FlexCol } from './flex-col';
+import { FlexRow } from './flex-row';
 
 const Flex = styled.div<FlexProps>`
   display: flex;
@@ -11,7 +12,8 @@ const Flex = styled.div<FlexProps>`
   ${props => getFlex(props)}
 `;
 
-(Flex as IFlex).Container = FlexContainer;
+(Flex as IFlex).Row = FlexRow;
+(Flex as IFlex).Col = FlexCol;
 
 export default Flex as IFlex;
 
@@ -21,5 +23,6 @@ type Props = {
 export type FlexProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
 type IFlex = typeof Flex & {
-  Container: typeof FlexContainer;
+  Row: typeof FlexRow;
+  Col: typeof FlexCol;
 };

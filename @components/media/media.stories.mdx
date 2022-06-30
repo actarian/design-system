@@ -1,0 +1,37 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Media, MediaProps } from './media';
+
+<Meta
+  title="Components / Media"
+  component={Media}
+  argTypes={{}}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Media
+
+A component to display a `Media`.
+
+[View source](https://github.com/actarian/wsdesign-system/tree/main/@components/card)
+
+## Imports
+
+```js
+import { Media } from '@wsdesign-system';
+```
+
+## Props
+
+<ArgsTable of={MediaProps} />
+
+## Example
+
+A basic example of `Media`.
+
+<Canvas>
+  <Story name="Media">
+    <Media aspect={2 / 1}>
+      <img src={'https://picsum.photos/640/480'} />
+    </Media>
+  </Story>
+</Canvas>

@@ -1,4 +1,4 @@
-import Flex from '@components/flex/flex';
+import { Container, Flex } from '@components';
 import { ComponentAttrs } from '@components/types';
 import { useScroll } from '@hooks/useScroll/useScroll';
 
@@ -42,11 +42,13 @@ const Header = (props: HeaderProps) => {
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
   return (
     <HeaderContainer {...containerProps}>
-      <Flex.Container width="100%" maxWidth="Min(1440px, calc(100% - 64px))" padding="1em" justifyContent="space-between">
-        <Flex>L</Flex>
-        <Flex>{props.children}</Flex>
-        <Flex>R</Flex>
-      </Flex.Container>
+      <Container>
+        <Flex.Row justifyContent="space-between">
+          <Flex>L</Flex>
+          <Flex>{props.children}</Flex>
+          <Flex>R</Flex>
+        </Flex.Row>
+      </Container>
     </HeaderContainer>
   );
 }

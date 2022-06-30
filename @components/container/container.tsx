@@ -9,6 +9,8 @@ type Props = {
 export type ContainerProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 const Container = styled.div<ContainerProps>`
+  width: 100%;
+  margin: 0 auto;
   ${props => getContainer(props, props.fluid)}
   ${props => getSize(props)}
   ${props => getMargin(props)}
@@ -17,3 +19,4 @@ const Container = styled.div<ContainerProps>`
 
 export default Container;
 
+export const ContainerFluid = (props: ContainerProps) => <Container fluid>{props.children}</Container>

@@ -1,7 +1,7 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Activity, Airplay, AlertCircle, AlertOctagon, AlertTriangle, AlignCenter, AlignJustify, ShoppingCart } from '@icons';
 import { Icons } from './icons';
-import { Flex, Text, Card, Media, Grid } from '@components';
+import { Container, Flex, Text, Card, Media, Grid } from '@components';
 import { createElement, lazy, Suspense, useMemo, useState } from 'react';
 
 <Meta
@@ -44,26 +44,28 @@ export const IconsList = ({ data, ...args }) => {
   }
   return (
   <>
-    <Grid.Container padding="32px 0">
-      <Grid>
-        <Text type="h4">Search Icon</Text>
-        <input name="search" style={{ width: '100%', fontSize: '20px', lineHeight: '1.6' }} onChange={onSearch} />
-        <Flex.Container>
-          {visibleIcons.map(icon => (
-            <Flex key={icon.key}>
-              <Card type="beta" width="180px">
-                <Media height="64px">
-                  <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
-                </Media>
-                <Card.Content alignItems="center">
-                  <Text type="smaller">{icon.key}</Text>
-                </Card.Content>
-              </Card>
-            </Flex>
-          ))}
-        </Flex.Container>
-      </Grid>
-    </Grid.Container>
+    <Container>
+      <Grid.Row padding="32px 0">
+        <Grid>
+          <Text type="h4">Search Icon</Text>
+          <input name="search" style={{ width: '100%', fontSize: '20px', lineHeight: '1.6' }} onChange={onSearch} />
+          <Flex.Row>
+            {visibleIcons.map(icon => (
+              <Flex key={icon.key}>
+                <Card type="beta" width="180px">
+                  <Media height="64px">
+                    <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
+                  </Media>
+                  <Card.Content alignItems="center">
+                    <Text type="smaller">{icon.key}</Text>
+                  </Card.Content>
+                </Card>
+              </Flex>
+            ))}
+          </Flex.Row>
+        </Grid>
+      </Grid.Row>
+    </Container>
   </>
   )
 };
@@ -84,14 +86,16 @@ export const IconsList = ({ data, ...args }) => {
 
 <Canvas>
   <Story name="example">
-    <Flex.Container padding="1em">
-      <Flex><Activity /></Flex>
-      <Flex><Airplay /></Flex>
-      <Flex><AlertCircle /></Flex>
-      <Flex><AlertOctagon /></Flex>
-      <Flex><AlertTriangle /></Flex>
-      <Flex><AlignCenter /></Flex>
-      <Flex><AlignJustify /></Flex>
-    </Flex.Container>
+    <Container>
+      <Flex.Row padding="1em">
+        <Flex><Activity /></Flex>
+        <Flex><Airplay /></Flex>
+        <Flex><AlertCircle /></Flex>
+        <Flex><AlertOctagon /></Flex>
+        <Flex><AlertTriangle /></Flex>
+        <Flex><AlignCenter /></Flex>
+        <Flex><AlignJustify /></Flex>
+      </Flex.Row>
+    </Container>
   </Story>
 </Canvas>

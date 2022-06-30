@@ -5,12 +5,13 @@ import styled from 'styled-components';
 type Props = {
 }
 
-export type FlexContainerProps = ComponentFlexAttrs<Props, HTMLDivElement>;
+export type FlexRowProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
-export const FlexContainer = styled.div<FlexContainerProps>`
+export const FlexRow = styled.div<FlexRowProps>`
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  width: 100%;
   margin: 0 auto;
   ${props => getSize(props)}
   ${props => getMargin(props)}

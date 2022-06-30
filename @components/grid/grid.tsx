@@ -2,7 +2,7 @@ import { ComponentBoxAttrs } from '@components/types';
 import { getMargin, getPadding, getSize } from '@components/utils';
 import { sizes } from '@styles';
 import styled from 'styled-components';
-import { GridContainer } from './grid-container';
+import { GridRow } from './grid-row';
 
 type Props = {
   xs?: number;
@@ -15,15 +15,15 @@ type Props = {
 export type GridProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 export const Grid = styled.div<GridProps>`
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-
   // default grid column
   grid-column: span var(--grid-columns);
 
   // get media query column
   ${props => getMediaQueryColumn(props)}
+
+  ${props => getSize(props)}
+  ${props => getMargin(props)}
+  ${props => getPadding(props)}
 
   /*
   display: flex;
@@ -56,10 +56,10 @@ function getMediaQueryColumn(props: GridProps) {
   }).join('\n');
 }
 
-(Grid as IGrid).Container = GridContainer;
+(Grid as IGrid).Row = GridRow;
 
 export default Grid as IGrid;
 
 type IGrid = typeof Grid & {
-  Container: typeof GridContainer;
+  Row: typeof GridRow;
 };

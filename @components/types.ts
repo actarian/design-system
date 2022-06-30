@@ -1,4 +1,5 @@
 import React from 'react';
+import { FlattenInterpolation } from 'styled-components';
 
 export type NativeAttrs<T extends HTMLElement, U> = Omit<React.HTMLAttributes<T>, keyof U>;
 
@@ -57,6 +58,8 @@ export type ComponentFlexAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, 
 export type ComponentGridAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs & GridAttrs;
 
 export type Variant = 'alfa' | 'beta' | 'gamma' | 'delta' | 'epsilon' | 'zeta' | 'eta' | 'theta' | 'iota' | 'kappa' | 'lambda' | 'mu' | 'nu' | 'xi' | 'omicron' | 'pi' | 'rho' | 'sigma' | 'tau' | 'upsilon' | 'phi' | 'psi' | 'chi' | 'omega';
+
+export type Variants = { [key in Variant]?: FlattenInterpolation<any> };
 
 /*
 

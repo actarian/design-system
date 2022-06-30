@@ -1,5 +1,5 @@
-import { css } from 'styled-components';
-import { FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs } from './types';
+import { css, FlattenInterpolation } from 'styled-components';
+import { FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -13,15 +13,15 @@ export function setClass<T>(className: string) {
 
 export function getContainer(props: ThemeAttrs, fluid?: boolean) {
   if (fluid) {
-    return css`
-    margin: 0 var(--grid-column-gap);
+    return `
+    max-width: calc(100% - var(--grid-column-gap) * 2);
   `;
   } else {
     const theme = props.theme;
     if (theme.maxWidth && theme.mediaQuery) {
       return Object.keys(theme.mediaQuery).map(key => {
         const value = theme.mediaQuery[key];
-        return css`
+        return `
 @media(min-width: ${value}px) {
   max-width: ${theme.maxWidth[key]};
 }
@@ -146,6 +146,10 @@ export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
     grid-column-gap: var(--grid-column-gap);
     grid-row-gap: var(--grid-row-gap);
   `;
+}
+
+export function getVariant(type: Variant = 'alfa', variants: { [key in Variant]?: FlattenInterpolation<any> }) {
+  return variants[type] ? variants[type] : '';
 }
 
 function className_(...args: ({ [key: string]: boolean } | string)[]): string {

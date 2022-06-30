@@ -1,4 +1,4 @@
-import Grid from '@components/grid/grid';
+import { Container, Grid } from '@components';
 import { ComponentAttrs } from '@components/types';
 
 import styled from 'styled-components';
@@ -19,12 +19,14 @@ const FooterContainer = styled.div<FooterProps>`
 const Footer = (props: FooterProps) => {
   return (
     <FooterContainer {...props}>
-      <Grid.Container type="beta" width="100%">
-        <Grid sm={2} md={3}>1</Grid>
-        <Grid sm={2} md={3}>2</Grid>
-        <Grid sm={2} md={3}>3</Grid>
-        <Grid sm={2} md={3}>4</Grid>
-      </Grid.Container>
+      <Container>
+        <Grid.Row>
+          <Grid sm={2} md={3}>1</Grid>
+          <Grid sm={2} md={3}>2</Grid>
+          <Grid sm={2} md={3}>3</Grid>
+          <Grid sm={2} md={3}>4</Grid>
+        </Grid.Row>
+      </Container>
     </FooterContainer>
   );
 }

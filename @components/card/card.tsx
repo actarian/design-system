@@ -1,11 +1,11 @@
-import { ComponentAttrs, ComponentBoxAttrs, Variant } from '@components/types';
-import { getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentAttrs, ComponentBoxAttrs, Variant, Variants } from '@components/types';
+import { getMargin, getPadding, getSize, getVariant } from '@components/utils';
 import { ReactNode } from 'react';
-import styled, { css, FlattenInterpolation } from 'styled-components';
+import styled, { css } from 'styled-components';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
 
-const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
+const variants: Variants = {
   beta: css`
   border: 1px solid #ddd;
   border-radius: 0.5em;
@@ -27,10 +27,6 @@ const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
 `
 };
 
-const getVariant = (type: Variant = 'alfa') => {
-  return Variants[type] ? Variants[type] : '';
-}
-
 type Props = {
   type?: Variant;
   aspect?: number;
@@ -48,7 +44,7 @@ export type CardProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
-  ${props => getVariant(props.type)}
+  ${props => getVariant(props.type, variants)}
   ${props => getSize(props)}
   ${props => getMargin(props, { margin: '0 0 40px 0' })}
   ${props => getPadding(props)}

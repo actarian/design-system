@@ -1,0 +1,39 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Flex, FlexProps } from './flex';
+
+<Meta
+  title="Components / Flex"
+  component={Flex}
+  argTypes={{}}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Flex
+
+A component to display a `Flex`.
+
+[View source](https://github.com/actarian/wsdesign-system/tree/main/@components/card)
+
+## Imports
+
+```js
+import { Flex } from '@wsdesign-system';
+```
+
+## Props
+
+<ArgsTable of={FlexProps} />
+
+## Example
+
+A basic example of `Flex`.
+
+<Canvas>
+  <Story name="Flex">
+    <Flex.Row justifyContent="space-between">
+      <Flex>Left</Flex>
+      <Flex>Center</Flex>
+      <Flex>Right</Flex>
+    </Flex.Row>
+  </Story>
+</Canvas>
