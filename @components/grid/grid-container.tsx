@@ -1,5 +1,5 @@
-import { ComponentGridAttrs, ThemeAttrs, Variant } from '@components/types';
-import { getGrid, getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentGridAttrs, Variant } from '@components/types';
+import { getContainer, getGrid, getMargin, getPadding, getSize } from '@components/utils';
 import styled, { css, FlattenInterpolation } from 'styled-components';
 
 const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
@@ -8,25 +8,9 @@ const Variants: { [key in Variant]?: FlattenInterpolation<any> } = {
 `,
   beta: css`
   margin: 0 auto;
-  ${props => getMaxWidths(props)}
+  ${props => getContainer(props)}
 `,
 };
-
-const getMaxWidths = (props: ThemeAttrs) => {
-  const theme = props.theme;
-  if (theme.maxWidth && theme.mediaQuery) {
-    return Object.keys(theme.mediaQuery).map(key => {
-      const value = theme.mediaQuery[key];
-      return `
-@media(min-width: ${value}px) {
-  max-width: ${theme.maxWidth[key]};
-}
-    `
-    }).join('\n');
-  } else {
-    return '';
-  }
-}
 
 const getVariant = (type: Variant = 'alfa') => {
   return Variants[type] ? Variants[type] : '';

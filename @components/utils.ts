@@ -1,5 +1,5 @@
 import { css } from 'styled-components';
-import { FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs } from './types';
+import { FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -8,6 +8,28 @@ export function setClass<T>(className: string) {
       classNames.unshift((props as any).className);
     }
     return ({ ...props, className: className_(...classNames) });
+  }
+}
+
+export function getContainer(props: ThemeAttrs, fluid?: boolean) {
+  if (fluid) {
+    return css`
+    margin: 0 var(--grid-column-gap);
+  `;
+  } else {
+    const theme = props.theme;
+    if (theme.maxWidth && theme.mediaQuery) {
+      return Object.keys(theme.mediaQuery).map(key => {
+        const value = theme.mediaQuery[key];
+        return css`
+@media(min-width: ${value}px) {
+  max-width: ${theme.maxWidth[key]};
+}
+`
+      }).join('\n');
+    } else {
+      return '';
+    }
   }
 }
 

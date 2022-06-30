@@ -1,7 +1,7 @@
 import { ComponentBoxAttrs } from '@components/types';
 import { getMargin, getPadding, getSize } from '@components/utils';
 import { sizes } from '@styles';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { GridContainer } from './grid-container';
 
 type Props = {
@@ -45,7 +45,7 @@ function getMediaQueryColumn(props: GridProps) {
     const columns = props[key];
     if (typeof columns === 'number' && theme.mediaQuery) {
       const width = theme.mediaQuery[key];
-      return css`
+      return `
         @media(min-width: ${width}px) {
           grid-column: span ${columns};
         }
