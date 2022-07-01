@@ -96,11 +96,9 @@ const Button = styled.button<ButtonProps>`
   cursor: pointer;
   ${props => getVariant(props.type, variants)}
 
-  & > svg {
-    /*
+  svg {
     width: 1em;
     height: 1em;
-    */
     margin: 0 0.3em;
 
     &:first-child {

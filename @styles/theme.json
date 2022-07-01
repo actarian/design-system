@@ -3,17 +3,17 @@
     "primary": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
     "secondary": "'Petrona', serif",
     "size": {
-      "xs": "16px",
-      "sm": "16px",
-      "md": "16px",
-      "lg": "16px",
+      "xs": "12px",
+      "sm": "13px",
+      "md": "14px",
+      "lg": "15px",
       "xl": "16px"
     }
   },
   "grid": {
     "columns": 12,
     "size": "1fr",
-    "columnGap": "64px",
+    "columnGap": "Max(4vw, Min(96px, 5vw))",
     "rowGap": "0"
   },
   "maxWidth": {
@@ -31,7 +31,7 @@
     "xl": 1600
   },
   "button": {
-    "borderRadius": "1.5em"
+    "borderRadius": "0"
   },
   "card": {
     "shadow": "0 20px 20px -10px rgba(0,0,0,0.2)"

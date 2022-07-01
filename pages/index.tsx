@@ -49,16 +49,14 @@ export default function Homepage() {
             <ContainerFluid>
               <Grid.Row>
                 <Grid md={6}>
-                  <Text type="h5">
-                    Learn How to Pre-render Pages Using Static Generation with Next.js
-                  </Text>
+                  <Text type="h5">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
                   <Text type="h8">March 8, 2020</Text>
                 </Grid>
                 <Grid md={6}>
-                  <Text type="h8" marginBottom="16px">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.</Text>
+                  <Text type="h8" marginBottom="16px">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
                   <Flex.Row>
                     <Media width="48px" height="48px" circle>
-                      <img src="https://i.pravatar.cc/128?u=3" />
+                      <img src="https://i.pravatar.cc/128?u=1" />
                     </Media>
                     <Text type="h8" marginLeft="8px">Tim Neutkens</Text>
                   </Flex.Row>
@@ -69,17 +67,17 @@ export default function Homepage() {
 
           <Section padding="48px 0">
             <ContainerFluid>
-                <Text type="h2" marginBottom="48px">More Stories</Text>
-                <Grid.Row>
+              <Text type="h2" marginBottom="48px">More Stories</Text>
+              <Grid.Row>
                 <Grid md={6}>
                   <Card type="alfa">
                     <Media aspect={5 / 3} marginBottom="16px">
-                      <img src={'https://picsum.photos/640/480'} />
+                      <img src={'https://picsum.photos/640/480?u=2'} />
                     </Media>
                     <Card.Content>
-                      <Text type="h5">Preview Mode for Static Generation</Text>
+                      <Text type="h5">We choose to go to the moon.</Text>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>
-                      <Text type="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.</Text>
+                      <Text type="h8"> We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.</Text>
                     </Card.Content>
                     <Card.Footer>
                       <Flex.Row>
@@ -94,17 +92,17 @@ export default function Homepage() {
                 <Grid md={6}>
                   <Card type="alfa">
                     <Media aspect={5 / 3} marginBottom="16px">
-                      <img src={'https://picsum.photos/640/480'} />
+                      <img src={'https://picsum.photos/640/480?u=4'} />
                     </Media>
                     <Card.Content>
-                      <Text type="h5">Dynamic Routing and Static Generation</Text>
+                      <Text type="h5">The view of the earth from the moon</Text>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>
-                      <Text type="h8">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilisi morbi tempus.</Text>
+                      <Text type="h8">A small disk, 240,000 mniles away. It was hard to think that that little thing held so many problems, so many frustrations. But the samw wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space. From out there it really is 'one world'.</Text>
                     </Card.Content>
                     <Card.Footer>
                       <Flex.Row>
                         <Media width="48px" height="48px" circle>
-                          <img src="https://i.pravatar.cc/128?u=3" />
+                          <img src="https://i.pravatar.cc/128?u=5" />
                         </Media>
                         <Text type="h8" marginLeft="8px">JJ Kasper</Text>
                       </Flex.Row>
@@ -118,7 +116,7 @@ export default function Homepage() {
           <Section padding="7rem 0" style={{ background: 'var(--color-neutral-200)' }}>
             <Container>
               <Flex.Col justifyContent="center" alignItems="center">
-                <Text type="h3" marginBottom="1rem">Statically Generated with Next.js.</Text>
+                <Text type="h3" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
                 <Button as="a" type="alfa">Read documentation</Button>
                 <Button as="a" type="gamma">view on GitHub</Button>
               </Flex.Col>
@@ -146,10 +144,10 @@ export default function Homepage() {
 
           <Container padding="48px 0">
             <Grid.Row>
-              <Grid xs={6} md={4}>
+              <Grid sm={6} md={4}>
                 <Card type="alfa" aspect={1 / 1}>
                   <Media aspect={2 / 1}>
-                    <img src={'https://picsum.photos/640/480'} />
+                    <img src={'https://picsum.photos/640/480?u=6'} />
                   </Media>
                   <Card.Content paddingTop='100px'>
                     <Text type="h6">Title</Text>
@@ -157,10 +155,10 @@ export default function Homepage() {
                   </Card.Content>
                 </Card>
               </Grid>
-              <Grid xs={6} md={4}>
+              <Grid sm={6} md={4}>
                 <Card type="beta" aspect={1 / 1} rounded>
                   <Media>
-                    <img src={'https://picsum.photos/640/480'} />
+                    <img src={'https://picsum.photos/640/480?u=7'} />
                   </Media>
                   <Card.Content>
                     <Text type="h6">Title</Text>
@@ -168,10 +166,10 @@ export default function Homepage() {
                   </Card.Content>
                 </Card>
               </Grid>
-              <Grid xs={6} md={4}>
+              <Grid sm={6} md={4}>
                 <Card type="gamma" aspect={1 / 1} background={
                   <Media aspect={2 / 1}>
-                    <img src={'https://picsum.photos/640/480'} />
+                    <img src={'https://picsum.photos/640/480?u=8'} />
                   </Media>
                 }>
                   <Card.Content paddingTop='100px'>
@@ -180,7 +178,7 @@ export default function Homepage() {
                   </Card.Content>
                 </Card>
               </Grid>
-              <Grid xs={6} md={4}>
+              <Grid sm={6} md={4}>
                 <Card type="delta" aspect={1 / 1}>
                   <Card.Content>
                     <Text type="h6">Title</Text>
@@ -208,39 +206,26 @@ export default function Homepage() {
                 <Button type="zeta" as="a" onClick={onClick}><span>zeta</span> <ShoppingCart /></Button>
               </Grid>
 
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
-              <Grid className="debug" xs={1} padding="1em">1</Grid>
+              <Grid className="debug" md={2} padding="1em">2</Grid>
+              <Grid className="debug" md={2} padding="1em">2</Grid>
+              <Grid className="debug" md={2} padding="1em">2</Grid>
+              <Grid className="debug" md={2} padding="1em">2</Grid>
+              <Grid className="debug" md={2} padding="1em">2</Grid>
+              <Grid className="debug" md={2} padding="1em">2</Grid>
 
-              <Grid className="debug" xs={2} padding="1em">2</Grid>
-              <Grid className="debug" xs={2} padding="1em">2</Grid>
-              <Grid className="debug" xs={2} padding="1em">2</Grid>
-              <Grid className="debug" xs={2} padding="1em">2</Grid>
-              <Grid className="debug" xs={2} padding="1em">2</Grid>
-              <Grid className="debug" xs={2} padding="1em">2</Grid>
+              <Grid className="debug" md={3} padding="1em">3</Grid>
+              <Grid className="debug" md={3} padding="1em">3</Grid>
+              <Grid className="debug" md={3} padding="1em">3</Grid>
+              <Grid className="debug" md={3} padding="1em">3</Grid>
 
-              <Grid className="debug" xs={3} padding="1em">3</Grid>
-              <Grid className="debug" xs={3} padding="1em">3</Grid>
-              <Grid className="debug" xs={3} padding="1em">3</Grid>
-              <Grid className="debug" xs={3} padding="1em">3</Grid>
+              <Grid className="debug" md={4} padding="1em">4</Grid>
+              <Grid className="debug" md={4} padding="1em">4</Grid>
+              <Grid className="debug" md={4} padding="1em">4</Grid>
 
-              <Grid className="debug" xs={4} padding="1em">4</Grid>
-              <Grid className="debug" xs={4} padding="1em">4</Grid>
-              <Grid className="debug" xs={4} padding="1em">4</Grid>
+              <Grid className="debug" md={6} padding="1em">6</Grid>
+              <Grid className="debug" md={6} padding="1em">6</Grid>
 
-              <Grid className="debug" xs={6} padding="1em">6</Grid>
-              <Grid className="debug" xs={6} padding="1em">6</Grid>
-
-              <Grid className="debug" xs={12} padding="1em">12</Grid>
+              <Grid className="debug" md={12} padding="1em">12</Grid>
 
               <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
               <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>

@@ -51,8 +51,8 @@ const Header = (props: HeaderProps) => {
           </Flex>
           <Flex>{props.children}</Flex>
           <Flex width="96px" justifyContent="space-between">
-            <Button><User width="32px" height="32px" /></Button>
-            <Button><ShoppingCart width="32px" height="32px" /></Button>
+            <Button style={{ padding: 0, fontSize: '2rem' }}><User width="32px" height="32px" /></Button>
+            <Button style={{ padding: 0, fontSize: '2rem' }}><ShoppingCart width="32px" height="32px" /></Button>
           </Flex>
         </Flex.Row>
       </Container>
