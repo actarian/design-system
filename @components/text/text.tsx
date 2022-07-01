@@ -81,7 +81,6 @@ const marginBottom = {
 
 type Props = {
   type?: TextTypes;
-  chars?: number;
 }
 
 export type TextProps = ComponentBoxAttrs<Props, HTMLDivElement>;
@@ -97,9 +96,8 @@ const Text = styled.div<TextProps>`
   }
   */
   ${props => getSize(props)}
-  ${props => getMargin(props, { marginBottom: '8px' } )}
+  ${props => getMargin(props, { marginBottom: '8px' })}
   ${props => getPadding(props)}
-  ${props => props.chars ? `max-width: ${props.chars}ch;` : ''}
 `;
 
 export default Text;

@@ -53,7 +53,7 @@ export default function Homepage() {
                   <Text type="h8">March 8, 2020</Text>
                 </Grid>
                 <Grid md={6}>
-                  <Text type="h8" marginBottom="16px">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
+                  <Text type="h8" maxWidth="60ch" marginBottom="16px">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
                   <Flex.Row>
                     <Media width="48px" height="48px" circle>
                       <img src="https://i.pravatar.cc/128?u=1" />
