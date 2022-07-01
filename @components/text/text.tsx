@@ -64,21 +64,6 @@ const lineHeight = {
   smallest: '1.8',
 }
 
-const marginBottom = {
-  h1: '8px',
-  h2: '8px',
-  h3: '8px',
-  h4: '8px',
-  h5: '8px',
-  h6: '8px',
-  h7: '8px',
-  h8: '8px',
-  'default': '8px',
-  small: '8px',
-  smaller: '8px',
-  smallest: '8px',
-}
-
 type Props = {
   type?: TextTypes;
 }
@@ -90,11 +75,6 @@ const Text = styled.div<TextProps>`
   font-size: ${props => fontSize[props.type || 'default']};
   font-weight: ${props => fontWeight[props.type || 'default']};
   line-height: ${props => lineHeight[props.type || 'default']};
-  /*
-  &:not(:last-child) {
-    margin-bottom: ${props => marginBottom[props.type || 'default']};
-  }
-  */
   ${props => getSize(props)}
   ${props => getMargin(props, { marginBottom: '8px' })}
   ${props => getPadding(props)}
