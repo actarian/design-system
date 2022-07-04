@@ -40,12 +40,14 @@ export const Grid = styled.div<GridProps>`
 
 function getMediaQueryColumn(props: GridProps) {
   const theme = props.theme;
-  return sizes.map(k => {
-    const key = k as keyof GridProps;
+  return sizes.map(size => {
+    const key = size as keyof GridProps;
     const columns = props[key];
     if (typeof columns === 'number' && theme.mediaQuery) {
       const width = theme.mediaQuery[key];
-      return `
+      return key === 'xs' ?
+        `grid-column: span ${columns};
+        ` : `
         @media(min-width: ${width}px) {
           grid-column: span ${columns};
         }

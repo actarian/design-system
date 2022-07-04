@@ -12,8 +12,9 @@ export const CardContent = styled.div<CardContentProps>`
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   ${props => getSize(props)}
   ${props => getMargin(props)}
-  ${props => getPadding(props, { padding: '8px' })}
+  ${props => getPadding(props)}
   ${props => getFlex(props)}
 `;

@@ -1,5 +1,5 @@
 import { css, FlattenInterpolation } from 'styled-components';
-import { FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
+import { BaseAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -31,6 +31,29 @@ export function getContainer(props: ThemeAttrs, fluid?: boolean) {
       return '';
     }
   }
+}
+
+const propMap = {
+  p: 'padding',
+};
+
+export function getBase(props: BaseAttrs & ThemeAttrs, defaultValue: BaseAttrs = {}) {
+  props = { ...defaultValue, ...props };
+  const css = Object.keys(props).map(key => {
+    const value = (props as any)[key];
+    const keys = key.split(':');
+    const kp:any = keys[0];
+    const rule = `${(propMap as any)[kp]}: ${value};`;
+    if (keys.length > 1) {
+      const km:any = keys[1];
+      return `@media(min-width: ${props.theme.mediaQuery[km]}px) {
+        ${rule}
+      }`;
+    } else {
+      return rule;
+    }
+  }).join('\n');
+  return css;
 }
 
 export function getSize(props: SizeAttrs, defaultValue: SizeAttrs = {}) {
@@ -122,6 +145,9 @@ export function getFlex(props: FlexAttrs, defaultValue: FlexAttrs = {}) {
     `: ''}
     ${props.alignItems ? css`
       align-items: ${props.alignItems};
+    `: ''}
+    ${props.gap ? css`
+      gap: ${props.gap};
     `: ''}
   `;
 }

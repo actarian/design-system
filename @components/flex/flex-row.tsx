@@ -13,6 +13,7 @@ export const FlexRow = styled.div<FlexRowProps>`
   flex-wrap: wrap;
   width: 100%;
   margin: 0 auto;
+  gap: 0.5rem;
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}

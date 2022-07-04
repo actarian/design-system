@@ -16,6 +16,6 @@ export const CardFooter = styled.div<CardFooterProps>`
   border-top: 1px solid var(--color-neutral-100);
   ${props => getSize(props)}
   ${props => getMargin(props)}
-  ${props => getPadding(props, { padding: '8px' })}
+  ${props => getPadding(props)}
   ${props => getFlex(props)}
 `;

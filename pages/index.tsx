@@ -1,4 +1,4 @@
-import { Button, Card, Container, ContainerFluid, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
+import { Button, Card, Container, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -22,7 +22,7 @@ export default function Homepage() {
 
           <Section padding="0">
 
-            <Card type="alfa" justifyContent="flex-end" height="100vh" margin="0" background={
+            <Card justifyContent="flex-end" height="100vh" margin="0" background={
               <Media overlay>
                 <video playsInline={true} autoPlay={true} muted={true} loop={true}>
                   <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
@@ -30,94 +30,98 @@ export default function Homepage() {
               </Media>
             }>
               <Card.Content>
-                <ContainerFluid>
+                <Container.Fluid>
                   <Grid.Row>
                     <Grid md={6} padding="48px 0">
-                      <Text type="h2">Sustainable agriculture</Text>
+                      <Text type="h2" fontWeight="700">Sustainable agriculture</Text>
                     </Grid>
                     <Grid md={6} padding="48px 0">
                       <Text type="h6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
                     </Grid>
                   </Grid.Row>
-                </ContainerFluid>
+                </Container.Fluid>
               </Card.Content>
             </Card>
 
           </Section>
 
           <Section padding="48px 0">
-            <ContainerFluid>
+            <Container.Fluid>
               <Grid.Row>
                 <Grid md={6}>
                   <Text type="h5">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
                   <Text type="h8">March 8, 2020</Text>
                 </Grid>
                 <Grid md={6}>
-                  <Text type="h8" maxWidth="60ch" marginBottom="16px">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
-                  <Flex.Row>
+                  <Text type="h8" maxWidth="60ch">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
+                  <Flex.Row marginTop="1rem">
                     <Media width="48px" height="48px" circle>
                       <img src="https://i.pravatar.cc/128?u=1" />
                     </Media>
-                    <Text type="h8" marginLeft="8px">Tim Neutkens</Text>
+                    <Text type="h8">Tim Neutkens</Text>
                   </Flex.Row>
                 </Grid>
               </Grid.Row>
-            </ContainerFluid>
+            </Container.Fluid>
           </Section>
 
           <Section padding="48px 0">
-            <ContainerFluid>
-              <Text type="h2" marginBottom="48px">More Stories</Text>
+            <Container.Fluid>
+              <Text type="h2" fontWeight="700" marginBottom="48px">More Stories</Text>
               <Grid.Row>
                 <Grid md={6}>
-                  <Card type="alfa">
+                  <Card>
                     <Media aspect={5 / 3} marginBottom="16px">
                       <img src={'https://picsum.photos/640/480?u=2'} />
                     </Media>
                     <Card.Content>
-                      <Text type="h5">We choose to go to the moon.</Text>
+                      <Button href="#" as="a" type="gamma" marginBottom="1em">
+                        <Text type="h5">We choose to go to the moon.</Text>
+                      </Button>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>
-                      <Text type="h8"> We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.</Text>
+                      <Text type="h8">We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.</Text>
                     </Card.Content>
-                    <Card.Footer>
+                    <Card.Footer marginTop="1em">
                       <Flex.Row>
                         <Media width="48px" height="48px" circle>
                           <img src="https://i.pravatar.cc/128?u=3" />
                         </Media>
-                        <Text type="h8" marginLeft="8px">Joe Haddad</Text>
+                        <Text type="h8">Joe Haddad</Text>
                       </Flex.Row>
                     </Card.Footer>
                   </Card>
                 </Grid>
                 <Grid md={6}>
-                  <Card type="alfa">
+                  <Card>
                     <Media aspect={5 / 3} marginBottom="16px">
                       <img src={'https://picsum.photos/640/480?u=4'} />
                     </Media>
                     <Card.Content>
-                      <Text type="h5">The view of the earth from the moon</Text>
+                      <Button href="#" as="a" type="gamma" marginBottom="1em">
+                        <Text type="h5">The view of the earth from the moon</Text>
+                      </Button>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>
                       <Text type="h8">A small disk, 240,000 mniles away. It was hard to think that that little thing held so many problems, so many frustrations. But the samw wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space. From out there it really is 'one world'.</Text>
                     </Card.Content>
-                    <Card.Footer>
+                    <Card.Footer marginTop="1em">
                       <Flex.Row>
                         <Media width="48px" height="48px" circle>
                           <img src="https://i.pravatar.cc/128?u=5" />
                         </Media>
-                        <Text type="h8" marginLeft="8px">JJ Kasper</Text>
+                        <Text type="h8">JJ Kasper</Text>
                       </Flex.Row>
                     </Card.Footer>
                   </Card>
                 </Grid>
               </Grid.Row>
-            </ContainerFluid>
+            </Container.Fluid>
           </Section>
 
           <Section padding="7rem 0" style={{ background: 'var(--color-neutral-200)' }}>
             <Container>
               <Flex.Col justifyContent="center" alignItems="center">
-                <Text type="h3" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
-                <Button as="a" type="alfa">Read documentation</Button>
+                <Text type="h3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
+                <Button as="a" type="alfa" marginBottom="1rem">Read documentation</Button>
                 <Button as="a" type="gamma">view on GitHub</Button>
               </Flex.Col>
             </Container>
@@ -192,18 +196,20 @@ export default function Homepage() {
             </Grid.Row>
           </Container>
 
-          <ContainerFluid padding="48px 0">
+          <Container.Fluid padding="48px 0">
             <Grid.Row>
               <Grid className="debug" sm={6}>
                 <Text as="h1" type="h1">Index</Text>
               </Grid>
               <Grid className="debug" sm={6}>
-                <Button type="alfa" as="a" onClick={onClick}><span>alfa</span> <ShoppingCart /></Button>
-                <Button type="beta" as="a" onClick={onClick}><span>beta</span> <ShoppingCart /></Button>
-                <Button type="gamma" as="a" onClick={onClick}><span>gamma</span> <ShoppingCart /></Button>
-                <Button type="delta" as="a" onClick={onClick}><span>delta</span> <ShoppingCart /></Button>
-                <Button type="epsilon" as="a" onClick={onClick}><span>epsilon</span> <ShoppingCart /></Button>
-                <Button type="zeta" as="a" onClick={onClick}><span>zeta</span> <ShoppingCart /></Button>
+                <Flex.Row gap="1rem">
+                  <Button type="alfa" as="a" onClick={onClick}><span>alfa</span> <ShoppingCart /></Button>
+                  <Button type="beta" as="a" onClick={onClick}><span>beta</span> <ShoppingCart /></Button>
+                  <Button type="gamma" as="a" onClick={onClick}><span>gamma</span> <ShoppingCart /></Button>
+                  <Button type="delta" as="a" onClick={onClick}><span>delta</span> <ShoppingCart /></Button>
+                  <Button type="epsilon" as="a" onClick={onClick}><span>epsilon</span> <ShoppingCart /></Button>
+                  <Button type="zeta" as="a" onClick={onClick}><span>zeta</span> <ShoppingCart /></Button>
+                </Flex.Row>
               </Grid>
 
               <Grid className="debug" md={2} padding="1em">2</Grid>
@@ -235,7 +241,7 @@ export default function Homepage() {
               <Grid className="debug" xs={6} sm={4} md={3} xl={2} padding="1em">col</Grid>
 
             </Grid.Row>
-          </ContainerFluid>
+          </Container.Fluid>
 
           <Section height="calc(100vh - 120px)" padding="0" background={
             <Media overlay>

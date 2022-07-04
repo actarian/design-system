@@ -1,6 +1,6 @@
 import { ComponentBoxAttrs } from '@components/types';
 import { getMargin, getPadding, getSize } from '@components/utils';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export type TextTypes = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7' | 'h8' | 'default' | 'small' | 'smaller' | 'smallest';
 
@@ -29,9 +29,9 @@ const fontSize = {
   h7: '1.5rem',
   h8: '1.125rem',
   'default': '1rem',
-  small: '0.75rem',
-  smaller: '0.563rem',
-  smallest: '0.422rem',
+  small: '0.9rem',
+  smaller: '0.8rem',
+  smallest: '0.7rem',
 }
 
 const fontWeight = {
@@ -66,17 +66,21 @@ const lineHeight = {
 
 type Props = {
   type?: TextTypes;
+  fontWeight?: string;
 }
 
 export type TextProps = ComponentBoxAttrs<Props, HTMLDivElement>;
 
 const Text = styled.div<TextProps>`
-  font-family: ${props => fontFamily[props.type || 'default']};
   font-size: ${props => fontSize[props.type || 'default']};
-  font-weight: ${props => fontWeight[props.type || 'default']};
   line-height: ${props => lineHeight[props.type || 'default']};
+  // font-family: ${props => fontFamily[props.type || 'default']};
+  // font-weight: ${props => fontWeight[props.type || 'default']};
+  ${props => props.fontWeight && css`
+    font-weight: ${props.fontWeight};
+  `}
   ${props => getSize(props)}
-  ${props => getMargin(props, { marginBottom: '8px' })}
+  ${props => getMargin(props)}
   ${props => getPadding(props)}
 `;
 

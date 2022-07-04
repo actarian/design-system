@@ -17,6 +17,12 @@ const Container = styled.div<ContainerProps>`
   ${props => getPadding(props)}
 `;
 
-export default Container;
+const ContainerFluid = (props: ContainerProps) => <Container fluid>{props.children}</Container>
 
-export const ContainerFluid = (props: ContainerProps) => <Container fluid>{props.children}</Container>
+(Container as IContainer).Fluid = ContainerFluid;
+
+export default Container as IContainer;
+
+type IContainer = typeof Container & {
+  Fluid: typeof ContainerFluid;
+};

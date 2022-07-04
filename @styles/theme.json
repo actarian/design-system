@@ -3,11 +3,11 @@
     "primary": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
     "secondary": "'Petrona', serif",
     "size": {
-      "xs": "12px",
-      "sm": "13px",
-      "md": "14px",
-      "lg": "15px",
-      "xl": "16px"
+      "xs": "13px",
+      "sm": "14px",
+      "md": "15px",
+      "lg": "16px",
+      "xl": "17px"
     }
   },
   "grid": {

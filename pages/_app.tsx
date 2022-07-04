@@ -21,4 +21,9 @@ const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pa
   )
 }
 
+/*
+  <StyleSheetManager disableVendorPrefixes>
+  </StyleSheetManager>
+*/
+
 export default Application;

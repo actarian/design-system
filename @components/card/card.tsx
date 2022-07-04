@@ -6,21 +6,21 @@ import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
 
 const variants: Variants = {
-  beta: css`
+  alfa: css`
   border: 1px solid var(--color-neutral-100);
   border-radius: 0.5em;
   // box-shadow: var(--card-shadow);
 `,
-  gamma: css`
+  beta: css`
   background: var(--color-neutral-900);
   border-radius: 2px;
 `,
-  delta: css`
+  gamma: css`
   border: 1px solid var(--color-neutral-100);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
 `,
-  epsilon: css`
+  delta: css`
   border: 1px solid var(--color-neutral-100);
   border-radius: 20px;
   box-shadow: var(--card-shadow);

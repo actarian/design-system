@@ -1,5 +1,5 @@
 import { ComponentBoxAttrs, Variant, Variants } from '@components/types';
-import { getVariant } from '@components/utils';
+import { getMargin, getPadding, getSize, getVariant } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 const variants: Variants = {
@@ -28,10 +28,30 @@ const variants: Variants = {
   }
 `,
   gamma: css`
+  position: relative;
+  line-height: 1.5;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0.2em;
+    background: currentColor;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform ease-in-out 250ms;
+  }
+
   color: var(--color-primary-500);
 
   &:hover {
     color: var(--color-primary-600);
+
+    &:after {
+      transform: scale(1, 1);
+    }
   }
 `,
   delta: css`
@@ -59,11 +79,31 @@ const variants: Variants = {
   }
 `,
   zeta: css`
+  position: relative;
+  line-height: 1.5;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 0.2em;
+    background: currentColor;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform ease-in-out 250ms;
+  }
+
   color: var(--color-secondary-500);
 
-&:hover {
-  color: var(--color-secondary-600);
-}
+  &:hover {
+    color: var(--color-secondary-600);
+
+    &:after {
+      transform: scale(1, 1);
+    }
+  }
 `,
 };
 
@@ -88,8 +128,9 @@ const Button = styled.button<ButtonProps>`
 
   font-size: 1em;
   line-height: 1;
-  margin: 0.2em;
-  padding: 0.5em;
+
+  // margin: 0.2em;
+  // padding: 0.5em;
 
   transition: ease-in-out 250ms;
   transition-property: background-color, color, border;
@@ -109,6 +150,9 @@ const Button = styled.button<ButtonProps>`
       margin-right: 0;
     }
   }
+  ${props => getSize(props)}
+  ${props => getMargin(props)}
+  ${props => getPadding(props)}
 `;
 
 export default Button;
