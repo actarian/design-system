@@ -10,107 +10,181 @@ export type ThemeAttrs = {
 
 export type BaseAttrs = {
   // display
-  'di'?: string;
-  'di:sm'?: string;
-  'di:md'?: string;
-  'di:lg'?: string;
-  'di:xl'?: string;
+  di?: string;
+  diSm?: string;
+  diMd?: string;
+  diLg?: string;
+  diXl?: string;
 
   // position
-  'po'?: string;
-  'po:sm'?: string;
-  'po:md'?: string;
-  'po:lg'?: string;
-  'po:xl'?: string;
+  po?: string;
+  poSm?: string;
+  poMd?: string;
+  poLg?: string;
+  poXl?: string;
 
   // width
-  'w'?: string;
-  'w:sm'?: string;
-  'w:md'?: string;
-  'w:lg'?: string;
-  'w:xl'?: string;
+  w?: string;
+  wSm?: string;
+  wMd?: string;
+  wLg?: string;
+  wXl?: string;
 
   // minWidth
+  miw?: string;
+  miwSm?: string;
+  miwMd?: string;
+  miwLg?: string;
+  miwXl?: string;
 
   // maxWidth
+  maw?: string;
+  mawSm?: string;
+  mawMd?: string;
+  mawLg?: string;
+  mawXl?: string;
 
   // height
-  'h'?: string;
-  'h:sm'?: string;
-  'h:md'?: string;
-  'h:lg'?: string;
-  'h:xl'?: string;
+  h?: string;
+  hSm?: string;
+  hMd?: string;
+  hLg?: string;
+  hXl?: string;
 
   // minHeight
+  mih?: string;
+  mihSm?: string;
+  mihMd?: string;
+  mihLg?: string;
+  mihXl?: string;
 
   // maxHeight
+  mah?: string;
+  mahSm?: string;
+  mahMd?: string;
+  mahLg?: string;
+  mahXl?: string;
 
   // top
+  to?: string;
+  toSm?: string;
+  toMd?: string;
+  toLg?: string;
+  toXl?: string;
+
   // right
+  ri?: string;
+  riSm?: string;
+  riMd?: string;
+  riLg?: string;
+  riXl?: string;
+
   // bottom
+  bo?: string;
+  boSm?: string;
+  boMd?: string;
+  boLg?: string;
+  boXl?: string;
+
   // left
+  le?: string;
+  leSm?: string;
+  leMd?: string;
+  leLg?: string;
+  leXl?: string;
 
   // padding
-  'p'?: string;
-  'p:sm'?: string;
-  'p:md'?: string;
-  'p:lg'?: string;
-  'p:xl'?: string;
+  p?: string;
+  pSm?: string;
+  pMd?: string;
+  pLg?: string;
+  pXl?: string;
 
-  'pt'?: string;
-  'pt:sm'?: string;
-  'pt:md'?: string;
-  'pt:lg'?: string;
-  'pt:xl'?: string;
+  pt?: string;
+  ptSm?: string;
+  ptMd?: string;
+  ptLg?: string;
+  ptXl?: string;
 
-  'pr'?: string;
-  'pr:sm'?: string;
-  'pr:md'?: string;
-  'pr:lg'?: string;
-  'pr:xl'?: string;
+  pr?: string;
+  prSm?: string;
+  prMd?: string;
+  prLg?: string;
+  prXl?: string;
 
-  'pb'?: string;
-  'pb:sm'?: string;
-  'pb:md'?: string;
-  'pb:lg'?: string;
-  'pb:xl'?: string;
+  pb?: string;
+  pbSm?: string;
+  pbMd?: string;
+  pbLg?: string;
+  pbXl?: string;
 
-  'pl'?: string;
-  'pl:sm'?: string;
-  'pl:md'?: string;
-  'pl:lg'?: string;
-  'pl:xl'?: string;
+  pl?: string;
+  plSm?: string;
+  plMd?: string;
+  plLg?: string;
+  plXl?: string;
 
   // margin
-  'm'?: string;
-  'm:sm'?: string;
-  'm:md'?: string;
-  'm:lg'?: string;
-  'm:xl'?: string;
+  m?: string;
+  mSm?: string;
+  mMd?: string;
+  mLg?: string;
+  mXl?: string;
 
-  'mt'?: string;
-  'mt:sm'?: string;
-  'mt:md'?: string;
-  'mt:lg'?: string;
-  'mt:xl'?: string;
+  mt?: string;
+  mtSm?: string;
+  mtMd?: string;
+  mtLg?: string;
+  mtXl?: string;
 
-  'mr'?: string;
-  'mr:sm'?: string;
-  'mr:md'?: string;
-  'mr:lg'?: string;
-  'mr:xl'?: string;
+  mr?: string;
+  mrSm?: string;
+  mrMd?: string;
+  mrLg?: string;
+  mrXl?: string;
 
-  'mb'?: string;
-  'mb:sm'?: string;
-  'mb:md'?: string;
-  'mb:lg'?: string;
-  'mb:xl'?: string;
+  mb?: string;
+  mbSm?: string;
+  mbMd?: string;
+  mbLg?: string;
+  mbXl?: string;
 
-  'ml'?: string;
-  'ml:sm'?: string;
-  'ml:md'?: string;
-  'ml:lg'?: string;
-  'ml:xl'?: string;
+  ml?: string;
+  mlSm?: string;
+  mlMd?: string;
+  mlLg?: string;
+  mlXl?: string;
+
+  // border
+  b?: string;
+  bSm?: string;
+  bMd?: string;
+  bLg?: string;
+  bXl?: string;
+
+  bt?: string;
+  btSm?: string;
+  btMd?: string;
+  btLg?: string;
+  btXl?: string;
+
+  br?: string;
+  brSm?: string;
+  brMd?: string;
+  brLg?: string;
+  brXl?: string;
+
+  bb?: string;
+  bbSm?: string;
+  bbMd?: string;
+  bbLg?: string;
+  bbXl?: string;
+
+  bl?: string;
+  blSm?: string;
+  blMd?: string;
+  blLg?: string;
+  blXl?: string;
 };
 
 export type SizeAttrs = {

@@ -1,4 +1,5 @@
-import { Button, Card, Container, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
+import { Button, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Text } from '@components';
+import Base from '@components/base/base';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 
@@ -45,12 +46,15 @@ export default function Homepage() {
 
           </Section>
 
+          {false &&
+            <Base p="8px" pMd="30px" bb="1px solid black" bbLg="2px solid red">Base</Base>
+          }
 
           <Section padding="48px 0">
             <Container.Fluid>
               <Grid.Row>
                 <Grid md={6}>
-                  <Text type="h5">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
+                  <Text type="h5" marginBottom="8px">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
                   <Text type="h8">March 8, 2020</Text>
                 </Grid>
                 <Grid md={6}>
@@ -128,6 +132,14 @@ export default function Homepage() {
             </Container>
           </Section>
 
+          <Section padding="48px 0">
+            <Container>
+              <Text type="h2" fontWeight="700" textAlign="center">Examples</Text>
+            </Container>
+          </Section>
+
+          <Divider marginBottom="4rem">Typography</Divider>
+
           <Section>
             <Container>
               <Grid.Row>
@@ -146,6 +158,8 @@ export default function Homepage() {
               </Grid.Row>
             </Container>
           </Section>
+
+          <Divider marginBottom="4rem">Cards</Divider>
 
           <Container padding="48px 0">
             <Grid.Row>
@@ -196,6 +210,8 @@ export default function Homepage() {
               </Grid>
             </Grid.Row>
           </Container>
+
+          <Divider marginBottom="4rem">Grid</Divider>
 
           <Container.Fluid padding="48px 0">
             <Grid.Row>

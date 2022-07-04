@@ -33,25 +33,60 @@ export function getContainer(props: ThemeAttrs, fluid?: boolean) {
   }
 }
 
-const propMap = {
-  p: 'padding',
-};
+const propMap = new Map([
+  ['di', 'display'],
+  ['po', 'position'],
+  ['w', 'width'],
+  ['miw', 'min-width'],
+  ['maw', 'max-width'],
+  ['h', 'height'],
+  ['mih', 'min-height'],
+  ['mah', 'max-height'],
+  ['to', 'top'],
+  ['ri', 'right'],
+  ['bo', 'bottom'],
+  ['le', 'left'],
+  ['p', 'padding'],
+  ['pt', 'padding-top'],
+  ['pr', 'padding-right'],
+  ['pb', 'padding-bottom'],
+  ['pl', 'padding-left'],
+  ['m', 'margin'],
+  ['mt', 'margin-top'],
+  ['mr', 'margin-right'],
+  ['mb', 'margin-bottom'],
+  ['ml', 'margin-left'],
+  ['b', 'border'],
+  ['bt', 'border-top'],
+  ['br', 'border-right'],
+  ['bb', 'border-bottom'],
+  ['bl', 'border-left'],
+]);
 
 export function getBase(props: BaseAttrs & ThemeAttrs, defaultValue: BaseAttrs = {}) {
   props = { ...defaultValue, ...props };
   const css = Object.keys(props).map(key => {
     const value = (props as any)[key];
-    const keys = key.split(':');
-    const kp: any = keys[0];
-    const rule = `${(propMap as any)[kp]}: ${value};`;
-    if (keys.length > 1) {
-      const km: any = keys[1];
-      return `@media(min-width: ${props.theme.mediaQuery[km]}px) {
-        ${rule}
-      }`;
-    } else {
-      return rule;
-    }
+    const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
+      const prop: any = g1;
+      if (propMap.has(prop)) {
+        // console.log('prop', prop);
+        const rule = `${(propMap as any).get(prop)}: ${value};`;
+        if (g2) {
+          const size: any = g2.toLowerCase();
+          // console.log('size', size, 'rule', rule);
+          return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
+              ${rule}
+            }`;
+        } else {
+          // console.log('rule', rule);
+          return rule;
+        }
+      } else {
+        return '';
+      }
+    });
+    return rule;
   }).join('\n');
   return css;
 }

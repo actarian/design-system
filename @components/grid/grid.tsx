@@ -1,7 +1,7 @@
-import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentFlexAttrs } from '@components/types';
+import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
 import { sizes } from '@styles';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { GridRow } from './grid-row';
 
 type Props = {
@@ -12,7 +12,7 @@ type Props = {
   xl?: number;
 }
 
-export type GridProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type GridProps = ComponentFlexAttrs<Props, HTMLDivElement>;
 
 export const Grid = styled.div<GridProps>`
   // default grid column
@@ -25,6 +25,10 @@ export const Grid = styled.div<GridProps>`
   ${props => getMargin(props)}
   ${props => getPadding(props)}
 
+  ${props => (props.justifyContent || props.alignItems) ? css`
+    display: flex;
+    ${getFlex(props)}
+  ` : ''}
   /*
   display: flex;
   flex-direction: column;

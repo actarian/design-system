@@ -67,6 +67,7 @@ const lineHeight = {
 type Props = {
   type?: TextTypes;
   fontWeight?: string;
+  textAlign?: string;
 }
 
 export type TextProps = ComponentBoxAttrs<Props, HTMLDivElement>;
@@ -78,6 +79,9 @@ const Text = styled.div<TextProps>`
   // font-weight: ${props => fontWeight[props.type || 'default']};
   ${props => props.fontWeight && css`
     font-weight: ${props.fontWeight};
+  `}
+  ${props => props.textAlign && css`
+    text-align: ${props.textAlign};
   `}
   ${props => getSize(props)}
   ${props => getMargin(props)}
