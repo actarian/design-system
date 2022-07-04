@@ -52,7 +52,7 @@ export const IconsList = ({ data, ...args }) => {
           <Flex.Row>
             {visibleIcons.map(icon => (
               <Flex key={icon.key}>
-                <Card type="beta" width="180px">
+                <Card type="alfa" width="180px">
                   <Media height="64px">
                     <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
                   </Media>
@@ -71,7 +71,7 @@ export const IconsList = ({ data, ...args }) => {
 };
 
 <Canvas>
-  <Story name="icons" args={{ type: 'default' }} parameters={{
+  <Story name="icons" parameters={{
     docs: {
       source: {
         code: `import { ShoppingCart } from '@wsdesign-system';

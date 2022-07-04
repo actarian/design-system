@@ -31,9 +31,7 @@ type Props = {
   type?: Variant;
   aspect?: number;
   background?: ReactNode;
-
   justifyContent?: string;
-
   shadow?: boolean;
   rounded?: boolean;
   bordered?: boolean;
@@ -45,7 +43,7 @@ const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  ${props => getVariant(props.type, variants)}
+  ${props => getVariant(variants, props.type)}
   ${props => getSize(props)}
   ${props => getMargin(props, { margin: '0 0 40px 0' })}
   ${props => getPadding(props)}
@@ -148,4 +146,3 @@ type ICard = typeof Card & {
   Content: typeof CardContent;
   Footer: typeof CardFooter;
 };
-

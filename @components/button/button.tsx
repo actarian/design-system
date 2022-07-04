@@ -108,7 +108,7 @@ const variants: Variants = {
 };
 
 type Props = {
-  type?: Variant
+  type?: Variant;
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
@@ -135,7 +135,7 @@ const Button = styled.button<ButtonProps>`
   transition: ease-in-out 250ms;
   transition-property: background-color, color, border;
   cursor: pointer;
-  ${props => getVariant(props.type, variants)}
+  ${props => getVariant(variants, props.type)}
 
   svg {
     width: 1em;

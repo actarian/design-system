@@ -11,8 +11,8 @@ export default function Homepage() {
   return (
     <div>
       <Head>
-        <title>Storybook with Next</title>
-        <meta name="description" content="description" />
+        <title>Homepage</title>
+        <meta name="description" content="Homepage description" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
@@ -45,6 +45,7 @@ export default function Homepage() {
 
           </Section>
 
+
           <Section padding="48px 0">
             <Container.Fluid>
               <Grid.Row>
@@ -75,7 +76,7 @@ export default function Homepage() {
                       <img src={'https://picsum.photos/640/480?u=2'} />
                     </Media>
                     <Card.Content>
-                      <Button href="#" as="a" type="gamma" marginBottom="1em">
+                      <Button type="gamma" href="#" as="a" marginBottom="1em">
                         <Text type="h5">We choose to go to the moon.</Text>
                       </Button>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>
@@ -97,7 +98,7 @@ export default function Homepage() {
                       <img src={'https://picsum.photos/640/480?u=4'} />
                     </Media>
                     <Card.Content>
-                      <Button href="#" as="a" type="gamma" marginBottom="1em">
+                      <Button type="gamma" href="#" as="a" marginBottom="1em">
                         <Text type="h5">The view of the earth from the moon</Text>
                       </Button>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>
@@ -121,8 +122,8 @@ export default function Homepage() {
             <Container>
               <Flex.Col justifyContent="center" alignItems="center">
                 <Text type="h3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
-                <Button as="a" type="alfa" marginBottom="1rem">Read documentation</Button>
-                <Button as="a" type="gamma">view on GitHub</Button>
+                <Button type="alfa" as="a" marginBottom="1rem">Read documentation</Button>
+                <Button type="gamma" as="a">view on GitHub</Button>
               </Flex.Col>
             </Container>
           </Section>

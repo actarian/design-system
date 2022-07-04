@@ -1,4 +1,4 @@
-import { ThemeAttrs } from '@components';
+import { ThemeAttrs } from '@components/types';
 import { css } from 'styled-components';
 
 export const CssTypography = css`

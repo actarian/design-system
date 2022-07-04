@@ -42,10 +42,10 @@ export function getBase(props: BaseAttrs & ThemeAttrs, defaultValue: BaseAttrs =
   const css = Object.keys(props).map(key => {
     const value = (props as any)[key];
     const keys = key.split(':');
-    const kp:any = keys[0];
+    const kp: any = keys[0];
     const rule = `${(propMap as any)[kp]}: ${value};`;
     if (keys.length > 1) {
-      const km:any = keys[1];
+      const km: any = keys[1];
       return `@media(min-width: ${props.theme.mediaQuery[km]}px) {
         ${rule}
       }`;
@@ -174,7 +174,7 @@ export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
   `;
 }
 
-export function getVariant(type: Variant = 'default', variants: { [key in Variant]?: FlattenInterpolation<any> }) {
+export function getVariant(variants: { [key in Variant]?: FlattenInterpolation<any> }, type: Variant = 'default') {
   return variants[type] ? variants[type] : '';
 }
 

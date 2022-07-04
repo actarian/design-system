@@ -2,7 +2,7 @@ export { default as Button } from './button/button';
 export { default as Card } from './card/card';
 export { CardContent } from './card/card-content';
 export { CardFooter } from './card/card-footer';
-export { default as Container } from './container/container';
+export { ContainerFluid, default as Container } from './container/container';
 export { default as Flex } from './flex/flex';
 export { FlexRow } from './flex/flex-row';
 export { default as Footer } from './footer/footer';

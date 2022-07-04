@@ -23,6 +23,7 @@ export const parameters = {
   docs: {
     theme: createCustomTheme({ theme: themeJson, options: { base: 'light' } }),
   },
+  /*
   backgrounds: {
     default: 'twitter',
     values: [
@@ -36,15 +37,18 @@ export const parameters = {
       },
     ],
   },
+  */
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
-    expanded: true,
+    expanded: false,
+    /*
     presetColors: [{ color: '#ff4785', title: 'Coral' }, 'rgba(0, 159, 183, 1)', '#fe4a49'],
     matchers: {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+    */
   },
   nextRouter: {
     query: {
