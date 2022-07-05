@@ -2,5 +2,9 @@
 import React from 'react';
 import Share from '../icons/share.svg';
 
-export default () => <Share />;
+export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<Share {...props} ref={ref} />);
+});
+
+// export default () => <Share />;
         

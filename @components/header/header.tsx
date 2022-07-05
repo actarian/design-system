@@ -1,7 +1,8 @@
-import { Button, Container, Flex, Text } from '@components';
+import { Button, Container, Flex, Nav, Text } from '@components';
 import { ComponentAttrs } from '@components/types';
 import { useScroll } from '@hooks/useScroll/useScroll';
 import { Hexagon, ShoppingCart, User } from '@icons';
+import Link from 'next/link';
 
 import styled, { css } from 'styled-components';
 
@@ -43,19 +44,27 @@ const Header = (props: HeaderProps) => {
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
   return (
     <HeaderContainer {...containerProps}>
-      <Container>
+      <Container.Fluid>
         <Flex.Row justifyContent="space-between">
           <Flex>
             <Hexagon width="48px" height="48px" color="var(--color-neutral-100)" />
             <Text type="h6" padding="0 8px">Hexagon</Text>
           </Flex>
-          <Flex>{props.children}</Flex>
+          <Flex>
+            <Nav.Row gap="3rem">
+              <Link href="#marketing"><Button as="a" type="eta">Solutions</Button></Link>
+              <Link href="#analytics"><Button as="a" type="eta">Company</Button></Link>
+              <Link href="#commerce"><Button as="a" type="eta">Magazine</Button></Link>
+              <Link href="#insights"><Button as="a" type="eta">More</Button></Link>
+            </Nav.Row>
+          </Flex>
           <Flex width="96px" justifyContent="space-between">
-            <Button style={{ padding: 0, fontSize: '2rem' }}><User width="32px" height="32px" /></Button>
-            <Button style={{ padding: 0, fontSize: '2rem' }}><ShoppingCart width="32px" height="32px" /></Button>
+            <Link href="#auth"><Button as="a"><User width="32px" height="32px" /></Button></Link>
+            <Link href="#cart"><Button as="a"><ShoppingCart width="32px" height="32px" /></Button></Link>
           </Flex>
         </Flex.Row>
-      </Container>
+      </Container.Fluid>
+      {props.children}
     </HeaderContainer>
   );
 }

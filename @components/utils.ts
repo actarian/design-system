@@ -218,3 +218,5 @@ function className_(...args: ({ [key: string]: boolean } | string)[]): string {
     return (typeof x === 'object') ? Object.keys(x).filter(key => x[key]).join(' ') : x.toString();
   }).join(' ');
 }
+
+export const className = className_;

@@ -2,5 +2,9 @@
 import React from 'react';
 import Cloud from '../icons/cloud.svg';
 
-export default () => <Cloud />;
+export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<Cloud {...props} ref={ref} />);
+});
+
+// export default () => <Cloud />;
         

@@ -1,8 +1,6 @@
 import React from 'react';
 import { FlattenInterpolation } from 'styled-components';
 
-export type NativeAttrs<T extends HTMLElement, U> = Omit<React.HTMLAttributes<T>, keyof U>;
-
 export type ThemeAttrs = {
   theme?: any;
   className?: string;
@@ -226,19 +224,30 @@ export type GridAttrs = {
   rowGap?: string;
 };
 
+// Polymorphic
+export type PropsOf<E extends keyof JSX.IntrinsicElements | React.JSXElementConstructor<any>> = JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>;
+export interface PolymorphicElementOwnProps<E extends React.ElementType = React.ElementType> { as?: E; }
+export type PolymorphicElementProps<E extends React.ElementType> = PolymorphicElementOwnProps<E> & Omit<PropsOf<E>, keyof PolymorphicElementOwnProps>;
+export type PolymorphicProps<E extends React.ElementType, P> = P & PolymorphicElementProps<E>;
+// Polymorphic
+
 export type BoxAttrs = PaddingAttrs & MarginAttrs & SizeAttrs;
 
-export type NativeThemedAttrs<T, U extends HTMLElement> = NativeAttrs<U, T> & ThemeAttrs & T;
+export type NativeElement = Element;
 
-export type ComponentAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U>;
+export type NativeAttrs<T extends NativeElement, U> = Omit<React.HTMLAttributes<T>, keyof U> & { as?: React.ElementType };
 
-export type ComponentBaseAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BaseAttrs;
+export type NativeThemedAttrs<T, U extends NativeElement> = NativeAttrs<U, T> & ThemeAttrs & T;
 
-export type ComponentBoxAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs;
+export type ComponentAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U>;
 
-export type ComponentFlexAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs & FlexAttrs;
+export type ComponentBaseAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & BaseAttrs;
 
-export type ComponentGridAttrs<T, U extends HTMLElement> = NativeThemedAttrs<T, U> & BoxAttrs & GridAttrs;
+export type ComponentBoxAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & BoxAttrs;
+
+export type ComponentFlexAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & BoxAttrs & FlexAttrs;
+
+export type ComponentGridAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & BoxAttrs & GridAttrs;
 
 export type Variant = 'default' | 'alfa' | 'beta' | 'gamma' | 'delta' | 'epsilon' | 'zeta' | 'eta' | 'theta' | 'iota' | 'kappa' | 'lambda' | 'mu' | 'nu' | 'xi' | 'omicron' | 'pi' | 'rho' | 'sigma' | 'tau' | 'upsilon' | 'phi' | 'psi' | 'chi' | 'omega';
 

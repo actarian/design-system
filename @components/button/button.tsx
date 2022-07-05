@@ -1,5 +1,6 @@
 import { ComponentBoxAttrs, Variant, Variants } from '@components/types';
 import { getMargin, getPadding, getSize, getVariant } from '@components/utils';
+import React from 'react';
 import styled, { css } from 'styled-components';
 
 const variants: Variants = {
@@ -105,6 +106,29 @@ const variants: Variants = {
     }
   }
 `,
+  eta: css`
+  position: relative;
+  line-height: 1.5;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: currentColor;
+    transform: scale(0, 1);
+    transform-origin: left;
+    transition: transform ease-in-out 250ms;
+  }
+
+  &:hover {
+    &:after {
+      transform: scale(1, 1);
+    }
+  }
+  `,
 };
 
 type Props = {
@@ -113,9 +137,9 @@ type Props = {
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export type ButtonProps = ComponentBoxAttrs<Props, HTMLButtonElement>;
+export type ButtonProps = ComponentBoxAttrs<Props, Element>;
 
-const Button = styled.button<ButtonProps>`
+const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
   border: none;
   text-decoration: none;
@@ -138,8 +162,6 @@ const Button = styled.button<ButtonProps>`
   ${props => getVariant(variants, props.type)}
 
   svg {
-    width: 1em;
-    height: 1em;
     margin: 0 0.3em;
 
     &:first-child {
@@ -150,10 +172,15 @@ const Button = styled.button<ButtonProps>`
       margin-right: 0;
     }
   }
+
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
 `;
+
+const Button = React.forwardRef<Element, ButtonProps>((props: ButtonProps, ref?: React.Ref<Element>) => {
+  return (<StyledButton {...props} ref={ref}>{props.children}</StyledButton>);
+});
 
 export default Button;
 

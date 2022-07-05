@@ -5,6 +5,11 @@ import { AppProps } from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 
+// Import Swiper styles
+import 'swiper/scss';
+// import 'swiper/scss/navigation';
+// import 'swiper/scss/pagination';
+
 const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pageProps }) => {
   return (
     <>
