@@ -1,5 +1,5 @@
 import { css, FlattenInterpolation } from 'styled-components';
-import { BaseAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
+import { BaseAttrs, DisplayAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -72,6 +72,41 @@ export function getBase(props: BaseAttrs & ThemeAttrs, defaultValue: BaseAttrs =
       if (propMap.has(prop)) {
         // console.log('prop', prop);
         const rule = `${(propMap as any).get(prop)}: ${value};`;
+        if (g2) {
+          const size: any = g2.toLowerCase();
+          // console.log('size', size, 'rule', rule);
+          return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
+              ${rule}
+            }`;
+        } else {
+          // console.log('rule', rule);
+          return rule;
+        }
+      } else {
+        return '';
+      }
+    });
+    return rule;
+  }).join('\n');
+  return css;
+}
+
+const displayMap = new Map([
+  ['display', 'display'],
+  ['position', 'position'],
+  ['order', 'order'],
+  ['zIndex', 'z-index'],
+]);
+
+export function getDisplay(props: DisplayAttrs & ThemeAttrs, defaultValue: DisplayAttrs = {}) {
+  props = { ...defaultValue, ...props };
+  const css = Object.keys(props).map(key => {
+    const value = (props as any)[key];
+    const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
+      const prop: any = g1;
+      if (displayMap.has(prop)) {
+        // console.log('prop', prop);
+        const rule = `${(displayMap as any).get(prop)}: ${value};`;
         if (g2) {
           const size: any = g2.toLowerCase();
           // console.log('size', size, 'rule', rule);

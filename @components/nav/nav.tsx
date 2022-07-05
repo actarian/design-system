@@ -1,5 +1,5 @@
 import { ComponentFlexAttrs, Variant, Variants } from '@components/types';
-import { getFlex, getMargin, getPadding, getSize, getVariant } from '@components/utils';
+import { getDisplay, getFlex, getMargin, getPadding, getSize, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -26,6 +26,7 @@ const NavUl = styled.ul<NavProps>`
   padding: 0;
   display: flex;
   ${props => getVariant(variants, props.type)}
+  ${props => getDisplay(props)}
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}

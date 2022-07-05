@@ -185,6 +185,28 @@ export type BaseAttrs = {
   blXl?: string;
 };
 
+export type DisplayAttrs = {
+  display?: string;
+  displaySm?: string;
+  displayMd?: string;
+  displayLg?: string;
+  displayXl?: string;
+
+  position?: string;
+  positionSm?: string;
+  positionMd?: string;
+  positionLg?: string;
+  positionXl?: string;
+
+  zIndex?: string;
+
+  order?: string;
+  orderSm?: string;
+  orderMd?: string;
+  orderLg?: string;
+  orderXl?: string;
+};
+
 export type SizeAttrs = {
   width?: string;
   maxWidth?: string;
@@ -231,7 +253,7 @@ export type PolymorphicElementProps<E extends React.ElementType> = PolymorphicEl
 export type PolymorphicProps<E extends React.ElementType, P> = P & PolymorphicElementProps<E>;
 // Polymorphic
 
-export type BoxAttrs = PaddingAttrs & MarginAttrs & SizeAttrs;
+export type BoxAttrs = DisplayAttrs & SizeAttrs & MarginAttrs & PaddingAttrs;
 
 export type NativeElement = Element;
 

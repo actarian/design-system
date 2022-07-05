@@ -1,5 +1,5 @@
 import { ComponentBoxAttrs, Variant, Variants } from '@components/types';
-import { getMargin, getPadding, getSize, getVariant } from '@components/utils';
+import { getDisplay, getMargin, getPadding, getSize, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -173,6 +173,7 @@ const StyledButton = styled.button<ButtonProps>`
     }
   }
 
+  ${props => getDisplay(props)}
   ${props => getSize(props)}
   ${props => getMargin(props)}
   ${props => getPadding(props)}
