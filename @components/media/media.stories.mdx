@@ -4,6 +4,11 @@ import { default as Media, MediaProps } from './media';
 <Meta
   title="Components / Media"
   component={Media}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

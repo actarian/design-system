@@ -7,6 +7,11 @@ import { Text, TextProps, TextTypes, Layout, Page } from '@components';
 <Meta
   title="Components / Text"
   component={Text}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   argTypes={{
     label: {
       name: 'label',

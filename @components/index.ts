@@ -16,6 +16,7 @@ export { default as Nav } from './nav/nav';
 export { default as Page } from './page/page';
 export { default as Section } from './section/section';
 export { default as Swiper } from './swiper/swiper';
+export type { SwiperComponentProps } from './swiper/swiper';
 export { default as Text } from './text/text';
 export * from './types';
 export * from './utils';

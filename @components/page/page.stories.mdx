@@ -4,6 +4,11 @@ import { default as Page, PageProps } from './page';
 <Meta
   title="Components / Page"
   component={Page}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

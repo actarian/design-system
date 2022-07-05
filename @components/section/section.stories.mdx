@@ -4,6 +4,11 @@ import { default as Section, SectionProps } from './section';
 <Meta
   title="Components / Section"
   component={Section}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

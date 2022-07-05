@@ -6,7 +6,9 @@ import { Swiper, SwiperProps, SwiperSlide } from 'swiper/react';
 import { SwiperNext, SwiperPrev } from './swiper-navigation';
 import SwiperPagination from './swiper-pagination';
 
-const SwiperComponent = (props: SwiperProps & { children: ReactNode[] }) => {
+export type SwiperComponentProps = SwiperProps & { children: ReactNode[] };
+
+const SwiperComponent = (props: SwiperComponentProps) => {
   const defaultProps = {
     // modules: [Virtual],
     // virtual: true,
@@ -21,7 +23,7 @@ const SwiperComponent = (props: SwiperProps & { children: ReactNode[] }) => {
   };
   const swiperProps = { ...defaultProps, ...props };
   return (
-    <Swiper {...defaultProps}>
+    <Swiper {...swiperProps}>
       {React.Children.map(swiperProps.children, (child, i) => (
         <SwiperSlide key={i} virtualIndex={i}>{child}</SwiperSlide>
       ))}

@@ -5,6 +5,15 @@ module.exports = {
   },
   webpack(config) {
     config.module.rules.push({
+      test: /\.css$/i,
+      issuer: { and: [/\.(js|ts|md)x?$/] },
+      use: [
+        {
+          loader: 'raw-loader'
+        },
+      ],
+    });
+    config.module.rules.push({
       test: /\.svg$/i,
       issuer: { and: [/\.(js|ts|md)x?$/] },
       use: [

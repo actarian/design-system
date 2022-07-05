@@ -1,10 +1,15 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
-import { default as Divider, DividerProps } from './card';
+import { default as Divider, DividerProps } from './divider';
 import { Media, Text } from '@components';
 
 <Meta
   title="Components / Divider"
   component={Divider}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 
@@ -12,7 +17,7 @@ import { Media, Text } from '@components';
 
 A component to display a `Divider`.
 
-[View source](https://github.com/actarian/wsdesign-system/tree/main/@components/card)
+[View source](https://github.com/actarian/wsdesign-system/tree/main/@components/divider)
 
 ## Imports
 

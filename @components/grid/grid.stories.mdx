@@ -4,6 +4,11 @@ import { default as Grid, GridProps } from './grid';
 <Meta
   title="Components / Grid"
   component={Grid}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

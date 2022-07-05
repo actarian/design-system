@@ -1,9 +1,11 @@
 import { Button, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Swiper, Text } from '@components';
 import Base from '@components/base/base';
 import { Carousel } from '@components/carousel/carousel';
+import SwiperHero from '@components/swiper-hero/swiper-hero';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 import Link from 'next/link';
+import { useMemo } from 'react';
 
 export default function Homepage() {
 
@@ -11,8 +13,9 @@ export default function Homepage() {
     alert('click!');
   }
 
-  const slides = [{
+  const items = useMemo(() => [{
     id: 1,
+    url: '#',
     title: 'Sustainable agriculture',
     abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
     media: {
@@ -21,21 +24,23 @@ export default function Homepage() {
     }
   }, {
     id: 2,
-    title: 'Sustainable agriculture',
-    abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
+    url: '#',
+    title: 'Trusted Group',
+    abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
     media: {
       type: 'image',
       src: 'https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600',
     }
   }, {
     id: 3,
-    title: 'Sustainable agriculture',
-    abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
+    url: '#',
+    title: 'Expertise and tailor-made services',
+    abstract: 'We support our clients to develop both new and existing chemical solutions.',
     media: {
       type: 'image',
       src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
     }
-  }]
+  }], []);
 
   return (
     <div>
@@ -49,65 +54,73 @@ export default function Homepage() {
 
           <Header fixed></Header>
 
-          <Swiper navigation pagination={{ clickable: true }}>
-            {slides.map((item, i) => (
-              <Card key={i} justifyContent="flex-end" height="100vh" margin="0" background={
+          <SwiperHero items={items} />
+
+          {false &&
+            <Swiper navigation pagination={{ clickable: true }}>
+              {items.map((item, i) => (
+                <Card key={i} justifyContent="flex-end" height="100vh" margin="0" background={
+                  <Media overlay>
+                    {item.media.type === 'video' ?
+                      (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                        <source src={item.media.src} type="video/mp4"></source>
+                      </video>) :
+                      (<img draggable={false} alt={item.title} src={item.media.src} />)}
+                  </Media>
+                }>
+                  <Card.Content>
+                    <Container.Fluid>
+                      <Grid.Row>
+                        <Grid md={6} padding="48px 0 96px 0">
+                          <Text type="h2" fontWeight="700">{item.title}</Text>
+                        </Grid>
+                        <Grid md={6} padding="48px 0 96px 0">
+                          <Text type="h6">{item.abstract}</Text>
+                        </Grid>
+                      </Grid.Row>
+                    </Container.Fluid>
+                  </Card.Content>
+                </Card>
+              ))}
+            </Swiper>
+          }
+
+          {false &&
+            <Section padding="0">
+              <Card justifyContent="flex-end" height="100vh" margin="0" background={
                 <Media overlay>
-                  {item.media.type === 'video' ?
-                    (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                      <source src={item.media.src} type="video/mp4"></source>
-                    </video>) :
-                    (<img draggable={false} alt={item.title} src={item.media.src} />)}
+                  <video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                    <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
+                  </video>
                 </Media>
               }>
                 <Card.Content>
                   <Container.Fluid>
                     <Grid.Row>
-                      <Grid md={6} padding="48px 0 96px 0">
-                        <Text type="h2" fontWeight="700">{item.title}</Text>
+                      <Grid md={6} padding="48px 0">
+                        <Text type="h2" fontWeight="700">Sustainable agriculture</Text>
                       </Grid>
-                      <Grid md={6} padding="48px 0 96px 0">
-                        <Text type="h6">{item.abstract}</Text>
+                      <Grid md={6} padding="48px 0">
+                        <Text type="h6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
                       </Grid>
                     </Grid.Row>
                   </Container.Fluid>
                 </Card.Content>
               </Card>
-            ))}
-          </Swiper>
+            </Section>
+          }
 
-          {false && <Section padding="0">
-            <Card justifyContent="flex-end" height="100vh" margin="0" background={
-              <Media overlay>
-                <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                  <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
-                </video>
-              </Media>
-            }>
-              <Card.Content>
-                <Container.Fluid>
-                  <Grid.Row>
-                    <Grid md={6} padding="48px 0">
-                      <Text type="h2" fontWeight="700">Sustainable agriculture</Text>
-                    </Grid>
-                    <Grid md={6} padding="48px 0">
-                      <Text type="h6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
-                    </Grid>
-                  </Grid.Row>
-                </Container.Fluid>
-              </Card.Content>
-            </Card>
-          </Section>}
-
-          {false && <div style={{ width: '100%', height: 500 }}>
-            <Carousel>{({ index }) => {
-              const modulo = index % slides.length;
-              const imageIndex = modulo < 0 ? slides.length + modulo : modulo;
-              return (
-                <img draggable={false} alt="Mountain" style={{ width: "100%" }} src={slides[imageIndex].media.src} />
-              );
-            }}</Carousel>
-          </div>}
+          {false &&
+            <div style={{ width: '100%', height: 500 }}>
+              <Carousel>{({ index }) => {
+                const modulo = index % items.length;
+                const imageIndex = modulo < 0 ? items.length + modulo : modulo;
+                return (
+                  <img draggable={false} alt="Mountain" style={{ width: "100%" }} src={items[imageIndex].media.src} />
+                );
+              }}</Carousel>
+            </div>
+          }
 
           {false &&
             <Base p="8px" pMd="30px" bb="1px solid black" bbLg="2px solid red">Base</Base>

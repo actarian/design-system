@@ -4,6 +4,11 @@ import { default as Container, ContainerProps } from './container';
 <Meta
   title="Components / Container"
   component={Container}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

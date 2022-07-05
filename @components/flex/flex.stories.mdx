@@ -4,6 +4,11 @@ import { default as Flex, FlexProps } from './flex';
 <Meta
   title="Components / Flex"
   component={Flex}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

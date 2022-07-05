@@ -5,6 +5,11 @@ import { Media, Text } from '@components';
 <Meta
   title="Components / Card"
   component={Card}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
 />
 

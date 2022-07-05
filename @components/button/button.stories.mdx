@@ -5,6 +5,11 @@ import { default as Button, ButtonProps } from './button';
 <Meta
   title="Components / Button"
   component={Button}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
   argTypes={{
     label: {
       name: 'label',
