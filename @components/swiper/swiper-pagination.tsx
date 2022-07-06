@@ -3,7 +3,7 @@ import { useSwiperIndex } from '@hooks';
 import { ReactNode } from 'react';
 import styled from 'styled-components';
 
-const Circle = styled.div`
+const Bullet = styled.div`
   position: relative;
   width: 1rem;
   height: 1rem;
@@ -66,7 +66,7 @@ const SwiperPagination = (props: { items: ReactNode[] }) => {
       <Flex.Row justifyContent='center' gap='1rem'>
         {props.items.map((_, i) => (
           <Button key={i} title={i.toString()} onClick={() => onSetSlide((i + 1))}>
-            <Circle className={className({ active: index === i })} />
+            <Bullet className={className({ active: index === i })} />
           </Button>
         ))}
       </Flex.Row>

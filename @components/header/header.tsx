@@ -48,10 +48,10 @@ const Header = (props: HeaderProps) => {
         <Flex.Row gap="3rem">
           <Flex>
             <Hexagon width="3rem" height="3rem" color="var(--color-neutral-100)" />
-            <Text type="h6" padding="0 8px">Hexagon</Text>
+            <Text type="h6" padding="0 0.5rem">Hexagon</Text>
           </Flex>
           <Flex flex="1" justifyContent="center">
-            <Nav.Row gap="3rem" display='none' displaySm='flex'>
+            <Nav.Row gap="3rem" display="none" displaySm="flex">
               <Link href="#solutions">
                 <Button as="a" type="eta">Solutions</Button>
               </Link>
@@ -75,7 +75,7 @@ const Header = (props: HeaderProps) => {
             </Link>
             <Link href="#menu">
               <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
-            </Button></Link>
+              </Button></Link>
           </Flex>
         </Flex.Row>
       </Container.Fluid>

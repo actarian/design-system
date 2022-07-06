@@ -1,4 +1,5 @@
 import { css, FlattenInterpolation } from 'styled-components';
+import { CssMap, CssResponsiveAttrs } from './css';
 import { BaseAttrs, DisplayAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
 
 export function setClass<T>(className: string) {
@@ -31,6 +32,35 @@ export function getContainer(props: ThemeAttrs, fluid?: boolean) {
       return '';
     }
   }
+}
+
+export function getCssResponsive(props: CssResponsiveAttrs & ThemeAttrs, defaultValue: CssResponsiveAttrs = {}) {
+  props = { ...defaultValue, ...props };
+  let rules = '';
+  for (const [key, value] of Object.entries(props)) {
+    // console.log(`${key}: ${value}`);
+    const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
+      const prop: any = g1;
+      if (CssMap.has(prop)) {
+        // console.log('prop', prop);
+        const rule = `${CssMap.get(prop)}: ${value};`;
+        if (g2) {
+          const size: any = g2.toLowerCase();
+          // console.log('size', size, 'rule', rule);
+          return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
+              ${rule}
+            }`;
+        } else {
+          // console.log('rule', rule);
+          return rule;
+        }
+      } else {
+        return '';
+      }
+    });
+    rules += rule + '\n';
+  }
+  return rules;
 }
 
 const propMap = new Map([

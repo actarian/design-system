@@ -1,5 +1,6 @@
 import React from 'react';
 import { FlattenInterpolation } from 'styled-components';
+import { CssResponsiveAttrs } from './css';
 
 export type ThemeAttrs = {
   theme?: any;
@@ -265,6 +266,8 @@ export type NativeThemedAttrs<T, U extends NativeElement> = NativeAttrs<U, T> & 
 export type ComponentAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U>;
 
 export type ComponentBaseAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & BaseAttrs;
+
+export type ComponentCssResponsiveAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & CssResponsiveAttrs;
 
 export type ComponentBoxAttrs<T, U extends NativeElement> = NativeThemedAttrs<T, U> & BoxAttrs;
 

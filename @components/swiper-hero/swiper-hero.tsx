@@ -70,15 +70,15 @@ export default function SwiperHero(props: SwiperHeroProps) {
           <Card.Content>
             <Container.Fluid>
               <Grid.Row>
-                <Grid className='left' md={6} padding="48px 0 96px 0">
+                <Grid className='left' md={6} padding="3rem 0 6rem 0">
                   <Text type="h2" fontWeight="700">{item.title}</Text>
                 </Grid>
-                <Grid className='right' md={6} padding="48px 0 96px 0">
+                <Grid className='right' md={6} padding="3rem 0 6rem 0">
                   <Text type="h6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
-                  <Link href={item.link.url}>
-                    <Button as="a" type="gamma"><Text fontWeight="700">{item.link.label}</Text> <ArrowRight /></Button>
-                  </Link>}
+                    <Link href={item.link.url}>
+                      <Button as="a" type="gamma"><Text fontWeight="700">{item.link.label}</Text> <ArrowRight /></Button>
+                    </Link>}
                 </Grid>
               </Grid.Row>
             </Container.Fluid>

@@ -24,7 +24,7 @@ const DividerContainer = styled.div<DividerProps>`
   background-color: var(--color-neutral-300);
   ${props => getVariant(variants, props.type)}
   ${props => getSize(props, { height: '1px', maxWidth: '100%' })}
-  ${props => getMargin(props, { margin: props.children ? '16px 0' : '8px 0' })}
+  ${props => getMargin(props, { margin: props.children ? '1rem 0' : '0.5rem 0' })}
   ${props => getPadding(props)}
 `;
 

@@ -28,8 +28,8 @@ const SwiperButton = styled.button`
   transition: all ease-in-out 250ms;
 
   svg {
-    width: 48px;
-    height: 48px;
+    width: 3rem;
+    height: 3rem;
   }
 
   &:hover {
