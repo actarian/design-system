@@ -233,6 +233,7 @@ export type MarginAttrs = {
 };
 
 export type FlexAttrs = {
+  flex?: string;
   flexDirection?: string;
   justifyContent?: string;
   alignItems?: string;

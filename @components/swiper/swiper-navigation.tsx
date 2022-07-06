@@ -42,7 +42,7 @@ const SwiperButton = styled.button`
 `;
 
 const SwiperButtonNext = styled(SwiperButton)`
-  right: 2rem;
+  right: var(--grid-column-gap);
 `;
 
 export const SwiperNext = () => {
@@ -56,7 +56,7 @@ export const SwiperNext = () => {
 }
 
 const SwiperButtonPrev = styled(SwiperButton)`
-  left: 2rem;
+  left: var(--grid-column-gap);
 `;
 
 export const SwiperPrev = () => {

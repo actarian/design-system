@@ -8,7 +8,7 @@ const Flex = styled.div<FlexProps>`
   display: flex;
   align-items: center;
   ${props => getSize(props)}
-  ${props => getMargin(props, { margin: '8px' })}
+  ${props => getMargin(props)}
   ${props => getPadding(props)}
   ${props => getFlex(props)}
 `;

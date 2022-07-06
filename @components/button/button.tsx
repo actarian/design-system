@@ -45,10 +45,10 @@ const variants: Variants = {
     transition: transform ease-in-out 250ms;
   }
 
-  color: var(--color-primary-500);
+  color: var(--color-primary-400);
 
   &:hover {
-    color: var(--color-primary-600);
+    color: var(--color-primary-500);
 
     &:after {
       transform: scale(1, 1);

@@ -45,23 +45,37 @@ const Header = (props: HeaderProps) => {
   return (
     <HeaderContainer {...containerProps}>
       <Container.Fluid>
-        <Flex.Row justifyContent="space-between">
+        <Flex.Row gap="3rem">
           <Flex>
             <Hexagon width="3rem" height="3rem" color="var(--color-neutral-100)" />
             <Text type="h6" padding="0 8px">Hexagon</Text>
           </Flex>
-          <Flex>
+          <Flex flex="1" justifyContent="center">
             <Nav.Row gap="3rem" display='none' displaySm='flex'>
-              <Link href="#marketing"><Button as="a" type="eta">Solutions</Button></Link>
-              <Link href="#analytics"><Button as="a" type="eta">Company</Button></Link>
-              <Link href="#commerce"><Button as="a" type="eta">Magazine</Button></Link>
-              <Link href="#insights"><Button as="a" type="eta">More</Button></Link>
+              <Link href="#solutions">
+                <Button as="a" type="eta">Solutions</Button>
+              </Link>
+              <Link href="#company">
+                <Button as="a" type="eta">Company</Button>
+              </Link>
+              <Link href="#magazine">
+                <Button as="a" type="eta">Magazine</Button>
+              </Link>
+              <Link href="#more">
+                <Button as="a" type="eta">More</Button>
+              </Link>
             </Nav.Row>
           </Flex>
           <Flex gap="1rem">
-            <Link href="#auth"><Button as="a"><User width="2rem" height="2rem" /></Button></Link>
-            <Link href="#cart"><Button as="a"><ShoppingCart width="2rem" height="2rem" /></Button></Link>
-            <Link href="#menu"><Button as="a" displaySm='none'><Menu width="2rem" height="2rem" /></Button></Link>
+            <Link href="#auth">
+              <Button as="a"><User width="2rem" height="2rem" /></Button>
+            </Link>
+            <Link href="#cart">
+              <Button as="a"><ShoppingCart width="2rem" height="2rem" /></Button>
+            </Link>
+            <Link href="#menu">
+              <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
+            </Button></Link>
           </Flex>
         </Flex.Row>
       </Container.Fluid>

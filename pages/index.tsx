@@ -15,27 +15,36 @@ export default function Homepage() {
 
   const items = useMemo(() => [{
     id: 1,
-    url: '#',
     title: 'Sustainable agriculture',
     abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
+    link: {
+      url: '#',
+      label: 'Do you want to know more?',
+    },
     media: {
       type: 'video',
       src: 'https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
     }
   }, {
     id: 2,
-    url: '#',
     title: 'Trusted Group',
     abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
+    link: {
+      url: '#',
+      label: 'Do you want to know more?',
+    },
     media: {
       type: 'image',
       src: 'https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600',
     }
   }, {
     id: 3,
-    url: '#',
     title: 'Expertise and tailor-made services',
     abstract: 'We support our clients to develop both new and existing chemical solutions.',
+    link: {
+      url: '#',
+      label: 'Do you want to know more?',
+    },
     media: {
       type: 'image',
       src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
@@ -182,7 +191,7 @@ export default function Homepage() {
                     <Card.Content>
                       <Link href="#the-view-of-the-earth-from-the-moon">
                         <Button type="gamma" as="a" marginBottom="1em">
-                          <Text type="h5">The view of the earth from the moon.</Text>
+                          <Text type="h5">The earth from the moon.</Text>
                         </Button>
                       </Link>
                       <Text type="h8" marginBottom="16px">March 8, 2020</Text>

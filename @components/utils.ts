@@ -207,6 +207,9 @@ export function getPadding(props: PaddingAttrs, defaultValue: PaddingAttrs = {})
 export function getFlex(props: FlexAttrs, defaultValue: FlexAttrs = {}) {
   props = { ...defaultValue, ...props };
   return css`
+    ${(props.flex) ? css`
+      flex: ${props.flex};
+    `: ''}
     ${(props.flexDirection) ? css`
       flex-direction: ${props.flexDirection};
     `: ''}

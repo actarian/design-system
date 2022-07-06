@@ -1,4 +1,6 @@
-import { Card, Container, Grid, Media, Swiper, Text } from '@components';
+import { Button, Card, Container, Grid, Media, Swiper, Text } from '@components';
+import { ArrowRight } from '@icons';
+import Link from 'next/link';
 import styled from 'styled-components';
 import { SwiperProps } from 'swiper/react';
 
@@ -9,17 +11,21 @@ const CardHero = styled(Card)`
   }
   .left,
   .right {
-    transform: translateY(100%);
-    transition: all ease-out 350ms;
+    opacity: 0;
+    transform: translateY(30%);
+  }
+  .left {
+    transition: all ease-out 350ms 200ms;
   }
   .right {
-    transition-delay: 150ms;
+    transition: all ease-out 250ms 500ms;
   }
   .swiper-slide-active & {
     .media {
       transform: scale(1);
     }
     .left, .right {
+      opacity: 1;
       transform: translateY(0);
     }
   }
@@ -30,11 +36,16 @@ export type SwiperHeroItemMedia = {
   src: string;
 }
 
+export type SwiperHeroItemLink = {
+  url: string;
+  label: string;
+}
+
 export type SwiperHeroItem = {
   id: number;
-  url: string;
   title: string;
   abstract: string;
+  link: SwiperHeroItemLink;
   media: SwiperHeroItemMedia;
 }
 
@@ -63,7 +74,11 @@ export default function SwiperHero(props: SwiperHeroProps) {
                   <Text type="h2" fontWeight="700">{item.title}</Text>
                 </Grid>
                 <Grid className='right' md={6} padding="48px 0 96px 0">
-                  <Text type="h6">{item.abstract}</Text>
+                  <Text type="h6" marginBottom="1rem">{item.abstract}</Text>
+                  {item.link &&
+                  <Link href={item.link.url}>
+                    <Button as="a" type="gamma"><Text fontWeight="700">{item.link.label}</Text> <ArrowRight /></Button>
+                  </Link>}
                 </Grid>
               </Grid.Row>
             </Container.Fluid>
