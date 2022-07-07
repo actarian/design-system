@@ -18,9 +18,9 @@ const defaultProps = {
   name: 'transition',
 };
 
-export type CssTransitionProps = Props
+export type TransitionProps = Props
 
-const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps | any>> = ({ children, className, visible, enterTime, leaveTime, clearTime, name, ...props }: React.PropsWithChildren<CssTransitionProps> & typeof defaultProps) => { // !!! any
+const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ children, className, visible, enterTime, leaveTime, clearTime, name, ...props }: React.PropsWithChildren<TransitionProps> & typeof defaultProps) => { // !!! any
 
   const [classes, setClasses] = useState<string>('');
 
@@ -57,7 +57,7 @@ const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps | any>>
   return React.cloneElement(children, { ...props, className: `${children.props.className} ${className} ${classes}` });
 }
 
-CssTransition.defaultProps = defaultProps;
-CssTransition.displayName = 'CssTransition';
+Transition.defaultProps = defaultProps;
+Transition.displayName = 'Transition';
 
-export default CssTransition;
+export default Transition;

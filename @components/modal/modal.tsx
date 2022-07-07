@@ -1,33 +1,33 @@
-import { useBodyScroll } from '@hooks/useBodyScroll/useBodyScroll';
-import { KeyCode, useKeyboard } from '@hooks/useKeyboard/useKeyboard';
-import { usePortal } from '@hooks/usePortal/usePortal';
+import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@hooks';
 import React, { MouseEvent, ReactNode, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Backdrop from '../backdrop/backdrop';
-import ModalAction from './modal-action';
-import ModalActions from './modal-actions';
+import ModalButton from './modal-button';
 import { ModalConfig, ModalContext } from './modal-context';
+import ModalFooter from './modal-footer';
 import ModalWrapper from './modal-wrapper';
 
 interface Props {
+  width?: string;
+  backdropClassName?: string;
+  positionClassName?: string;
+  layerClassName?: string;
+  wrapClassName?: string;
+  visible?: boolean;
   disableBackdropClick?: boolean;
+  keyboard?: boolean;
   onClose?: () => void;
   onContentClick?: (event: MouseEvent<HTMLElement>) => void;
-  visible?: boolean;
-  keyboard?: boolean;
-  wrapClassName?: string;
-  positionClassName?: string;
-  backdropClassName?: string;
-  layerClassName?: string;
 }
 
 const defaultProps = {
-  wrapClassName: '',
-  keyboard: true,
-  disableBackdropClick: false,
-  positionClassName: '',
+  width: '26rem',
   backdropClassName: '',
+  positionClassName: '',
   layerClassName: '',
+  wrapClassName: '',
+  disableBackdropClick: false,
+  keyboard: true,
 };
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
@@ -35,19 +35,22 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 export type ModalProps = Props & NativeAttrs;
 
 const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
-  ({ visible: customVisible, onClose, children, keyboard, wrapClassName, onContentClick, disableBackdropClick, positionClassName, backdropClassName, layerClassName }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => { // !!! any
+  ({ width, backdropClassName, positionClassName, layerClassName, wrapClassName,
+    disableBackdropClick, keyboard, visible: customVisible, onClose, children, onContentClick }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => { // !!! any
+
+    console.log(width);
 
     const portal = usePortal('modal');
 
-    const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 });
-
     const [visible, setVisible] = useState<boolean>(false);
 
-    const [withoutActionsChildren, ActionsChildren] = pickChild(children, ModalAction);
+    const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 });
 
-    const hasActions = ActionsChildren && React.Children.count(ActionsChildren) > 0;
+    const [buttonChildren, otherChildren] = getChildsByType(children, ModalButton);
 
-    const closeModal = () => {
+    const hasButtons = buttonChildren && React.Children.count(buttonChildren) > 0;
+
+    const close = () => {
       if (onClose) {
         onClose();
       }
@@ -65,56 +68,54 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
 
     const { bindings } = useKeyboard(() => {
       if (keyboard) {
-        closeModal();
+        close();
       }
     }, KeyCode.Escape, { disableGlobalEvent: true });
 
-    const closeFromBackdrop = () => {
-      if (disableBackdropClick) {
-        return;
+    const onBackdropClick = () => {
+      if (!disableBackdropClick) {
+        close();
       }
-      closeModal();
     }
 
-    const modalConfig: ModalConfig = useMemo(() => ({ close: closeModal }), []);
+    const modalContextValue: ModalConfig = useMemo(() => ({ close }), []);
 
     if (!portal) {
       return null;
     }
 
     return createPortal(
-      <ModalContext.Provider value={modalConfig}>
-        <Backdrop width={'26rem'}
+      <ModalContext.Provider value={modalContextValue}>
+        <Backdrop width={width}
           positionClassName={positionClassName} backdropClassName={backdropClassName} layerClassName={layerClassName}
-          onClick={closeFromBackdrop} onContentClick={onContentClick} visible={visible}
+          visible={visible} onClick={onBackdropClick} onContentClick={onContentClick}
           {...bindings}>
-          <ModalWrapper visible={visible} className={wrapClassName}>
-            {withoutActionsChildren}
-            {hasActions && <ModalActions>{ActionsChildren}</ModalActions>}
+          <ModalWrapper className={wrapClassName} visible={visible}>
+            {otherChildren}
+            {hasButtons && <ModalFooter>{buttonChildren}</ModalFooter>}
           </ModalWrapper>
         </Backdrop>
-      </ModalContext.Provider>,
-      portal,
-    );
-  }
+      </ModalContext.Provider>
+    , portal);
+  };
 
 ModalComponent.defaultProps = defaultProps;
 ModalComponent.displayName = 'Modal';
 
-export function pickChild(children: ReactNode | undefined, child: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
-  let targets: ReactNode[] = [];
-  const withoutTargetChildren = React.Children.map(children, (item) => {
+export function getChildsByType(children: ReactNode | undefined, child: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
+  let items: ReactNode[] = [];
+  const others = React.Children.map(children, (item) => {
     if (!React.isValidElement(item)) {
       return item;
     }
     if (item.type === child) {
-      targets.push(item);
+      items.push(item);
       return null;
     }
     return item;
   });
-  const targetChildren = targets.length >= 0 ? targets : undefined;
-  return [withoutTargetChildren, targetChildren];
+  const childs = items.length >= 0 ? items : undefined;
+  return [childs, others];
 }
 
 import ModalContent from './modal-content';
@@ -125,15 +126,15 @@ export type ModalComponentType = typeof ModalComponent & {
   Title: typeof ModalTitle
   Subtitle: typeof ModalSubtitle
   Content: typeof ModalContent
-  Action: typeof ModalAction
+  Button: typeof ModalButton
 };
 
 (ModalComponent as ModalComponentType).Title = ModalTitle;
 (ModalComponent as ModalComponentType).Subtitle = ModalSubtitle;
 (ModalComponent as ModalComponentType).Content = ModalContent;
-(ModalComponent as ModalComponentType).Action = ModalAction;
+(ModalComponent as ModalComponentType).Button = ModalButton;
 
-export type { ModalActionProps } from './modal-action';
+export type { ModalButtonProps } from './modal-button';
 export type { ModalContentProps } from './modal-content';
 export type { ModalSubtitleProps } from './modal-subtitle';
 export type { ModalTitleProps } from './modal-title';

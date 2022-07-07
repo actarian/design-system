@@ -1,5 +1,6 @@
-import { useClasses } from '@hooks/useClasses/useClasses';
+import { useClasses } from '@hooks';
 import React from 'react';
+import styled from 'styled-components';
 
 interface Props {
   className?: string;
@@ -13,30 +14,26 @@ type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>;
 
 export type ModalContentProps = Props & NativeAttrs;
 
+const StyleContent = styled.div`
+  position: relative;
+  text-align: left;
+  font-size: 1rem;
+  padding: 1.3125rem 1.3125rem 0.6625rem 1.3125rem;
+  margin: 0;
+
+  & > :global(*:first-child) {
+    margin-top: 0;
+  }
+  & > :global(*:last-child) {
+    margin-bottom: 0;
+  }
+`;
+
 const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => { // !!! any
   return (
-    <>
-      <div className={useClasses('content', className)} {...props}>
-        {children}
-      </div>
-      <style jsx>{`
-        .content {
-          position: relative;
-          text-align: left;
-          font-size: 1rem;
-          width: 500px;
-          height: 400px;
-          padding: 1.3125rem 1.3125rem 0.6625rem 1.3125rem;
-          margin: 0 0 0 0;
-        }
-        .content > :global(*:first-child) {
-          margin-top: 0;
-        }
-        .content > :global(*:last-child) {
-          margin-bottom: 0;
-        }
-      `}</style>
-    </>
+    <StyleContent className={useClasses('content', className)} {...props}>
+      {children}
+    </StyleContent>
   )
 }
 

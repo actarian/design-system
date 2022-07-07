@@ -1,6 +1,6 @@
 import { Button, Container, Flex, Nav, Text } from '@components';
 import { ComponentAttrs } from '@components/types';
-import { useScroll } from '@hooks/useScroll/useScroll';
+import { useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
 import Link from 'next/link';
 

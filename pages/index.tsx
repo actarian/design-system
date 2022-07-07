@@ -53,8 +53,8 @@ export default function Homepage() {
   }], []);
 
   const [showModal, setShowModal] = useState(false);
-  const onModalOpen = () => setShowModal(true);
-  const onModalClose = (_: any) => {
+  const onOpenModal = () => setShowModal(true);
+  const onCloseModal = (_: any) => {
     setShowModal(false);
     console.log('closed');
   }
@@ -224,7 +224,7 @@ export default function Homepage() {
               <Flex.Col justifyContent="center" alignItems="center">
                 <Text type="h3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
                 <Link href="https://design-system-ruddy.vercel.app" target="_blank">
-                  <Button type="alfa" as="a" marginBottom="1rem" onClick={onModalOpen}>Read documentation</Button>
+                  <Button type="alfa" as="a" marginBottom="1rem" onClick={onOpenModal}>Read documentation</Button>
                 </Link>
                 <Link href="https://github.com/actarian/design-system" target="_blank">
                   <Button type="gamma" as="a">view on GitHub</Button>
@@ -233,14 +233,14 @@ export default function Homepage() {
             </Container>
           </Section>
 
-          <Modal visible={showModal} onClose={onModalClose}>
+          <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
             <Modal.Title>Modal</Modal.Title>
             <Modal.Subtitle>This is a modal</Modal.Subtitle>
             <Modal.Content>
               <p>Some content contained within the modal.</p>
             </Modal.Content>
-            <Modal.Action passive onClick={onModalClose}>Cancel</Modal.Action>
-            <Modal.Action>Submit</Modal.Action>
+            <Modal.Button passive onClick={onCloseModal}>Cancel</Modal.Button>
+            <Modal.Button>Confirm</Modal.Button>
           </Modal>
 
           <Section padding="3rem 0">

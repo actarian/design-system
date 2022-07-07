@@ -18,6 +18,7 @@ export { default as Section } from './section/section';
 export { default as Swiper } from './swiper/swiper';
 export type { SwiperComponentProps } from './swiper/swiper';
 export { default as Text } from './text/text';
+export { default as Transition } from './transition/transition';
 export * from './types';
 export * from './utils';
 
