@@ -1,22 +1,19 @@
-import { useClasses } from '@hooks/useClasses/useClasses'
-import React from 'react'
+import { useClasses } from '@hooks/useClasses/useClasses';
+import React from 'react';
 
 interface Props {
-  className?: string
+  className?: string;
 }
 
 const defaultProps = {
   className: '',
-}
+};
 
-type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>
-export type ModalContentProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>;
 
-const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps | any>> = ({ // !!! any
-  className,
-  children,
-  ...props
-}: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => {
+export type ModalContentProps = Props & NativeAttrs;
+
+const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalContentProps> & typeof defaultProps) => { // !!! any
   return (
     <>
       <div className={useClasses('content', className)} {...props}>
@@ -43,6 +40,7 @@ const ModalContentComponent: React.FC<React.PropsWithChildren<ModalContentProps 
   )
 }
 
-ModalContentComponent.defaultProps = defaultProps
-ModalContentComponent.displayName = 'GeistModalContent'
-export default ModalContentComponent
+ModalContentComponent.defaultProps = defaultProps;
+ModalContentComponent.displayName = 'ModalContent';
+
+export default ModalContentComponent;

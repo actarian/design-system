@@ -26,6 +26,9 @@
   --media-query-xl: 1600;
   --button-border-radius: 0;
   --card-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
+  --border-radius: 0.5em;
+  --shadow-lg: 0 1rem 4rem -0.5rem rgba(0, 0, 0, 0.9);
+  --backdrop-opacity: 0.5;
   --color-neutral-100: #FFFFFF;
   --color-neutral-200: #DFDFE2;
   --color-neutral-300: #BFBFC5;

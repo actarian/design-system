@@ -1,8 +1,7 @@
 import Button, { ButtonProps } from '@components/button/button';
 import { useClasses } from '@hooks/useClasses/useClasses';
-import { useTheme } from '@hooks/useTheme/useTheme';
 import React, { MouseEvent, useImperativeHandle, useMemo, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import styled, { css, useTheme } from 'styled-components';
 import { useModalContext } from './modal-context';
 
 type ModalActionEvent = MouseEvent<HTMLButtonElement> & {
@@ -24,41 +23,38 @@ const defaultProps = {
 
 export type ModalActionProps = Props & Omit<ButtonProps, keyof Props>
 
-const ModalActionComponent = React.forwardRef<
-  HTMLButtonElement,
-  React.PropsWithChildren<ModalActionProps | any> // !!! any
+const ModalActionComponent = React.forwardRef<HTMLButtonElement, React.PropsWithChildren<ModalActionProps | any> // !!! any
 >(
   (
-    {
-      className,
-      children,
-      onClick,
-      passive,
-      disabled,
-      ...props
-    }: React.PropsWithChildren<ModalActionProps> & typeof defaultProps,
-    ref: React.Ref<HTMLButtonElement | null>,
-  ) => {
+    { className, children, onClick, passive, disabled, ...props }: React.PropsWithChildren<ModalActionProps> & typeof defaultProps, ref: React.Ref<HTMLButtonElement | null>) => {
+
     const theme = useTheme();
-    const btnRef = useRef<HTMLButtonElement>(null)
-    const { close } = useModalContext()
-    useImperativeHandle(ref, () => btnRef.current)
+
+    const btnRef = useRef<HTMLButtonElement>(null);
+
+    const { close } = useModalContext();
+
+    useImperativeHandle(ref, () => btnRef.current);
 
     const clickHandler = (event: MouseEvent<HTMLButtonElement>) => {
-      if (disabled) return
+      if (disabled) {
+        return;
+      }
       const actionEvent = Object.assign({}, event, {
         close: () => close && close(),
-      })
-      onClick && onClick(actionEvent)
+      });
+      if (onClick) {
+        onClick(actionEvent);
+      }
     }
 
     const color = useMemo(() => {
-      return passive ? theme.palette.accents_5 : theme.palette.foreground
-    }, [theme.palette, passive, disabled])
+      return passive ? (theme as any).color.primary500 : (theme as any).color.neutral900;
+    }, [(theme as any).color, passive, disabled]);
 
     const bgColor = useMemo(() => {
-      return disabled ? theme.palette.accents_1 : theme.palette.background
-    }, [theme.palette, disabled])
+      return disabled ? (theme as any).color.primary100 : (theme as any).color.neutral100;
+    }, [(theme as any).color, disabled]);
 
     // const { className: resolveClassName, styles } = css`
     const resolveClassName = '.my-class'; // !!!
@@ -68,11 +64,9 @@ const ModalActionComponent = React.forwardRef<
         font-size: 0.75rem;
         border: none;
         color: ${color};
-        background-color: ${theme.palette.background};
+        background-color: ${(theme as any).color.neutral100};
         display: flex;
-        -webkit-box-align: center;
         align-items: center;
-        -webkit-box-pack: center;
         justify-content: center;
         flex: 1;
         height: 3.5625rem;
@@ -81,8 +75,8 @@ const ModalActionComponent = React.forwardRef<
       }
       button.btn:hover,
       button.btn:focus {
-        color: ${disabled ? color : theme.palette.foreground};
-        background-color: ${disabled ? bgColor : theme.palette.accents_1};
+        color: ${disabled ? color : (theme as any).color.neutral900};
+        background-color: ${disabled ? bgColor : (theme as any).color.primary100};
       }
     `;
 
@@ -91,11 +85,9 @@ const ModalActionComponent = React.forwardRef<
         font-size: 0.75rem;
         border: none;
         color: ${color};
-        background-color: ${theme.palette.background};
+        background-color: ${(theme as any).color.neutral100};
         display: flex;
-        -webkit-box-align: center;
         align-items: center;
-        -webkit-box-pack: center;
         justify-content: center;
         flex: 1;
         height: 3.5625rem;
@@ -104,22 +96,16 @@ const ModalActionComponent = React.forwardRef<
       }
       button.btn:hover,
       button.btn:focus {
-        color: ${disabled ? color : theme.palette.foreground};
-        background-color: ${disabled ? bgColor : theme.palette.accents_1};
+        color: ${disabled ? color : (theme as any).color.neutral900};
+        background-color: ${disabled ? bgColor : (theme as any).color.primary100};
       }
     `
-    const classes = useClasses(resolveClassName, className)
+    const classes = useClasses(resolveClassName, className);
 
-    const overrideProps = {
-      ...props,
-      effect: false,
-      ref: btnRef,
-    }
+    const overrideProps = { ...props, effect: false, ref: btnRef };
 
     return (
-      <StyledButton
-        className={classes}
-        onClick={clickHandler}
+      <StyledButton className={classes} onClick={clickHandler}
         // disabled={disabled} // !!!
         {...overrideProps}>
         {children}
@@ -129,6 +115,7 @@ const ModalActionComponent = React.forwardRef<
   },
 )
 
-ModalActionComponent.defaultProps = defaultProps
-ModalActionComponent.displayName = 'GeistModalAction'
+ModalActionComponent.defaultProps = defaultProps;
+ModalActionComponent.displayName = 'ModalAction';
+
 export default ModalActionComponent;

@@ -1,16 +1,13 @@
-import { useTheme } from '@hooks/useTheme/useTheme';
 import React from 'react';
+import { useTheme } from 'styled-components';
 
 const defaultProps = {
   className: '',
-}
+};
 
-const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({ // !!! any
-  className,
-  children,
-  ...props
-}: React.PropsWithChildren<ModalTitleProps> & typeof defaultProps) => {
-  const theme = useTheme()
+const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalTitleProps> & typeof defaultProps) => { // !!! any
+
+  const theme = useTheme();
 
   return (
     <>
@@ -29,7 +26,7 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | an
           word-break: break-word;
           text-transform: capitalize;
           font-size: 1.5rem;
-          color: ${theme.palette.foreground};
+          color: ${(theme as any).color.neutral900};
           padding: 0;
           margin: 0;
         }
@@ -39,13 +36,14 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | an
 }
 
 interface Props {
-  className?: string
+  className?: string;
 }
 
 type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 
 export type ModalTitleProps = Props & NativeAttrs;
 
-ModalTitleComponent.defaultProps = defaultProps
-ModalTitleComponent.displayName = 'GeistModalTitle'
+ModalTitleComponent.defaultProps = defaultProps;
+ModalTitleComponent.displayName = 'ModalTitle';
+
 export default ModalTitleComponent;

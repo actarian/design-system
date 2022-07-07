@@ -379,6 +379,6 @@ return (
 )
 
 ButtonComponent.defaultProps = defaultProps
-ButtonComponent.displayName = 'GeistButton'
+ButtonComponent.displayName = 'Button'
 const Button = withScale(ButtonComponent)
 */

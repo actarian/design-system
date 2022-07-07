@@ -45,8 +45,8 @@ export const useKeyboard: UseKeyboard = (handler, keyBindings, options = {}) => 
     elementEventType: 'keydown' | 'keypress' | 'keyup',
     isCapture: boolean = false,
   ) => {
-    if (elementEventType !== event) return () => {};
-    if (isCapture !== capture) return () => {};
+    if (elementEventType !== event) return () => { };
+    if (isCapture !== capture) return () => { };
     return (e: React.KeyboardEvent) => eventHandler(e);
   }
   return {

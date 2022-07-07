@@ -1,23 +1,22 @@
-import { useTheme } from '@hooks/useTheme/useTheme'
-import React from 'react'
+import React from 'react';
+import { useTheme } from "styled-components";
 
 interface Props {
-  className?: string
+  className?: string;
 }
 
 const defaultProps = {
   className: '',
-}
+};
 
-type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>
-export type ModalSubtitleProps = Props & NativeAttrs
+type NativeAttrs = Omit<React.HTMLAttributes<HTMLHeadingElement>, keyof Props>;
 
-const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProps | any>> = ({ // !!! any
-  className,
-  children,
-  ...props
-}: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => {
-  const theme = useTheme()
+export type ModalSubtitleProps = Props & NativeAttrs;
+
+const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => { // !!! any
+
+  const theme = useTheme();
+
   return (
     <>
       <p className={className} {...props}>
@@ -30,7 +29,7 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
           text-align: center;
           word-break: break-word;
           text-transform: uppercase;
-          color: ${theme.palette.accents_5};
+          color: ${(theme as any).color.primary500};
           font-size: 0.875rem;
           line-height: 1.5em;
           padding: 0;
@@ -41,6 +40,7 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
   )
 }
 
-ModalSubtitleComponent.defaultProps = defaultProps
-ModalSubtitleComponent.displayName = 'GeistModalSubtitle'
+ModalSubtitleComponent.defaultProps = defaultProps;
+ModalSubtitleComponent.displayName = 'ModalSubtitle';
+
 export default ModalSubtitleComponent;

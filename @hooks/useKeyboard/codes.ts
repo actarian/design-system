@@ -7,7 +7,7 @@
  * but use the Browser's KeyboardEvent event implementation, and all values are used only as identification.
  */
 
- export enum KeyCode {
+export enum KeyCode {
   Unknown = 0,
   Backspace = 8,
   Tab = 9,

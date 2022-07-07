@@ -1,11 +1,12 @@
 import { Button, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Swiper, Text } from '@components';
 import Base from '@components/base/base';
 import { Carousel } from '@components/carousel/carousel';
+import Modal from '@components/modal/modal';
 import SwiperHero from '@components/swiper-hero/swiper-hero';
 import { ShoppingCart } from '@icons';
 import Head from 'next/head';
 import Link from 'next/link';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
 
 export default function Homepage() {
 
@@ -50,6 +51,13 @@ export default function Homepage() {
       src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
     }
   }], []);
+
+  const [showModal, setShowModal] = useState(false);
+  const onModalOpen = () => setShowModal(true);
+  const onModalClose = (_: any) => {
+    setShowModal(false);
+    console.log('closed');
+  }
 
   return (
     <div>
@@ -216,7 +224,7 @@ export default function Homepage() {
               <Flex.Col justifyContent="center" alignItems="center">
                 <Text type="h3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
                 <Link href="https://design-system-ruddy.vercel.app" target="_blank">
-                  <Button type="alfa" as="a" marginBottom="1rem">Read documentation</Button>
+                  <Button type="alfa" as="a" marginBottom="1rem" onClick={onModalOpen}>Read documentation</Button>
                 </Link>
                 <Link href="https://github.com/actarian/design-system" target="_blank">
                   <Button type="gamma" as="a">view on GitHub</Button>
@@ -224,6 +232,16 @@ export default function Homepage() {
               </Flex.Col>
             </Container>
           </Section>
+
+          <Modal visible={showModal} onClose={onModalClose}>
+            <Modal.Title>Modal</Modal.Title>
+            <Modal.Subtitle>This is a modal</Modal.Subtitle>
+            <Modal.Content>
+              <p>Some content contained within the modal.</p>
+            </Modal.Content>
+            <Modal.Action passive onClick={onModalClose}>Cancel</Modal.Action>
+            <Modal.Action>Submit</Modal.Action>
+          </Modal>
 
           <Section padding="3rem 0">
             <Container>

@@ -1,4 +1,4 @@
-import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef, useState } from "react"
+import { Dispatch, MutableRefObject, SetStateAction, useEffect, useRef, useState } from 'react';
 
 export type CurrentStateType<S> = [S, Dispatch<SetStateAction<S>>, MutableRefObject<S>]
 

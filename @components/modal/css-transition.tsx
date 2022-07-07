@@ -1,12 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 
 interface Props {
-  visible?: boolean
-  enterTime?: number
-  leaveTime?: number
-  clearTime?: number
-  className?: string
-  name?: string
+  visible?: boolean;
+  enterTime?: number;
+  leaveTime?: number;
+  clearTime?: number;
+  className?: string;
+  name?: string;
 }
 
 const defaultProps = {
@@ -16,60 +16,48 @@ const defaultProps = {
   clearTime: 60,
   className: '',
   name: 'transition',
-}
+};
 
 export type CssTransitionProps = Props
 
-const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps | any>> = ({ // !!! any
-  children,
-  className,
-  visible,
-  enterTime,
-  leaveTime,
-  clearTime,
-  name,
-  ...props
-}: React.PropsWithChildren<CssTransitionProps> & typeof defaultProps) => {
-  const [classes, setClasses] = useState<string>('')
-  const [renderable, setRenderable] = useState<boolean>(visible)
+const CssTransition: React.FC<React.PropsWithChildren<CssTransitionProps | any>> = ({ children, className, visible, enterTime, leaveTime, clearTime, name, ...props }: React.PropsWithChildren<CssTransitionProps> & typeof defaultProps) => { // !!! any
+
+  const [classes, setClasses] = useState<string>('');
+
+  const [renderable, setRenderable] = useState<boolean>(visible);
 
   useEffect(() => {
-    const statusClassName = visible ? 'enter' : 'leave'
-    const time = visible ? enterTime : leaveTime
+    const statusClassName = visible ? 'enter' : 'leave';
+    const time = visible ? enterTime : leaveTime;
     if (visible && !renderable) {
-      setRenderable(true)
+      setRenderable(true);
     }
-
-    setClasses(`${name}-${statusClassName}`)
-
+    setClasses(`${name}-${statusClassName}`);
     // set class to active
     const timer = setTimeout(() => {
-      setClasses(`${name}-${statusClassName} ${name}-${statusClassName}-active`)
-      clearTimeout(timer)
-    }, time)
-
+      setClasses(`${name}-${statusClassName} ${name}-${statusClassName}-active`);
+      clearTimeout(timer);
+    }, time);
     // remove classess when animation over
     const clearClassesTimer = setTimeout(() => {
       if (!visible) {
-        setClasses('')
-        setRenderable(false)
+        setClasses('');
+        setRenderable(false);
       }
-      clearTimeout(clearClassesTimer)
-    }, time + clearTime)
-
+      clearTimeout(clearClassesTimer);
+    }, time + clearTime);
     return () => {
-      clearTimeout(timer)
-      clearTimeout(clearClassesTimer)
+      clearTimeout(timer);
+      clearTimeout(clearClassesTimer);
     }
-  }, [visible, renderable])
-  if (!React.isValidElement(children) || !renderable) return null
-
-  return React.cloneElement(children, {
-    ...props,
-    className: `${children.props.className} ${className} ${classes}`,
-  })
+  }, [visible, renderable]);
+  if (!React.isValidElement(children) || !renderable) {
+    return null;
+  }
+  return React.cloneElement(children, { ...props, className: `${children.props.className} ${className} ${classes}` });
 }
 
-CssTransition.defaultProps = defaultProps
-CssTransition.displayName = 'GeistCssTransition'
-export default CssTransition
+CssTransition.defaultProps = defaultProps;
+CssTransition.displayName = 'CssTransition';
+
+export default CssTransition;

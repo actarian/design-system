@@ -1,8 +1,8 @@
-import CssTransition from '@components/modal/css-transition'
-import { useClasses } from '@hooks/useClasses/useClasses'
-import useCurrentState from '@hooks/useCurrentState/useCurrentState'
-import { useTheme } from '@hooks/useTheme/useTheme'
-import React, { MouseEvent } from 'react'
+import CssTransition from '@components/modal/css-transition';
+import { useClasses } from '@hooks/useClasses/useClasses';
+import useCurrentState from '@hooks/useCurrentState/useCurrentState';
+import React, { MouseEvent } from 'react';
+import { useTheme } from 'styled-components';
 
 interface Props {
   onClick?: (event: MouseEvent<HTMLElement>) => void
@@ -15,9 +15,9 @@ interface Props {
 }
 
 const defaultProps = {
-  onClick: () => {},
+  onClick: () => { },
   visible: false,
-  onContentClick: () => {},
+  onContentClick: () => { },
   backdropClassName: '',
   positionClassName: '',
   layerClassName: '',
@@ -27,42 +27,35 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
 export type BackdropProps = Props & NativeAttrs
 
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.memo( // !!! any
-  ({
-    children,
-    onClick,
-    visible,
-    width,
-    onContentClick,
-    backdropClassName,
-    positionClassName,
-    layerClassName,
-    ...props
-  }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => {
-    const theme = useTheme()
-    const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false)
+  ({ children, onClick, visible, width, onContentClick, backdropClassName, positionClassName, layerClassName, ...props }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => {
+
+    const theme = useTheme();
+
+    const [_, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false);
+
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
-      if (IsContentMouseDownRef.current) return
-      onClick && onClick(event)
+      if (IsContentMouseDownRef.current) {
+        return;
+      }
+      if (onClick) {
+        onClick(event);
+      }
     }
+
     const mouseUpHandler = () => {
-      if (!IsContentMouseDownRef.current) return
+      if (!IsContentMouseDownRef.current) return;
       const timer = setTimeout(() => {
-        setIsContentMouseDown(false)
-        clearTimeout(timer)
-      }, 0)
+        setIsContentMouseDown(false);
+        clearTimeout(timer);
+      }, 0);
     }
+
     return (
       <CssTransition name="backdrop-wrapper" visible={visible} clearTime={300}>
-        <div
-          className={useClasses('backdrop', backdropClassName)}
-          onClick={clickHandler}
-          onMouseUp={mouseUpHandler}
+        <div className={useClasses('backdrop', backdropClassName)} onClick={clickHandler} onMouseUp={mouseUpHandler}
           {...props}>
           <div className={useClasses('layer', layerClassName)} />
-          <div
-            onClick={onContentClick}
-            className={useClasses('position', positionClassName)}
-            onMouseDown={() => setIsContentMouseDown(true)}>
+          <div className={useClasses('position', positionClassName)} onClick={onContentClick} onMouseDown={() => setIsContentMouseDown(true)}>
             {children}
           </div>
           <style jsx>{`
@@ -103,7 +96,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.m
               bottom: 0;
               width: 100%;
               height: 100%;
-              opacity: ${theme.expressiveness.portalOpacity};
+              opacity: ${(theme as any).backdrop.opacity};
               background-color: black;
               transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
               pointer-events: none;
@@ -113,10 +106,10 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.m
               opacity: 0;
             }
             .backdrop-wrapper-enter-active .layer {
-              opacity: ${theme.expressiveness.portalOpacity};
+              opacity: ${(theme as any).backdrop.opacity};
             }
             .backdrop-wrapper-leave .layer {
-              opacity: ${theme.expressiveness.portalOpacity};
+              opacity: ${(theme as any).backdrop.opacity};
             }
             .backdrop-wrapper-leave-active .layer {
               opacity: 0;
@@ -128,7 +121,7 @@ const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.m
   },
 )
 
-Backdrop.defaultProps = defaultProps
-Backdrop.displayName = 'GeistBackdrop'
+Backdrop.defaultProps = defaultProps;
+Backdrop.displayName = 'Backdrop';
 
 export default Backdrop;
