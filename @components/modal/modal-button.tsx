@@ -24,15 +24,17 @@ const StyledButton = styled(Button)`
   font-size: 0.75rem;
   border: none;
   color: {color};
-  background-color: {props => props.theme.color.neutral100};
+  background-color: var(--color-neutral-100);
   */
+  /*
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
   height: 3.5625rem;
   border-radius: 0;
   min-width: 0;
+  */
+  align-items: center;
+  justify-content: center;
   /*
   &:hover,
   &:focus {
@@ -84,8 +86,8 @@ const ModalButtonComponent = React.forwardRef<HTMLButtonElement, React.PropsWith
     const overrideProps = { ...props, effect: false, ref: btnRef };
 
     return (
-      <StyledButton className={classes} {...overrideProps} onClick={onButtonClick}
-        // disabled={disabled} // !!!
+      <StyledButton type="default" className={classes} {...overrideProps} onClick={onButtonClick}
+      // disabled={disabled} // !!!
       >
         {children}
       </StyledButton>

@@ -1,3 +1,4 @@
+export { default as ButtonGroup } from './button-group/button-group';
 export { default as Button } from './button/button';
 export { default as Card } from './card/card';
 export { CardContent } from './card/card-content';
@@ -12,9 +13,11 @@ export { GridRow } from './grid/grid-row';
 export { default as Header } from './header/header';
 export { default as Layout } from './layout/layout';
 export { default as Media } from './media/media';
+export { default as Modal } from './modal/modal';
 export { default as Nav } from './nav/nav';
 export { default as Page } from './page/page';
 export { default as Section } from './section/section';
+export { default as SwiperHero } from './swiper-hero/swiper-hero';
 export { default as Swiper } from './swiper/swiper';
 export type { SwiperComponentProps } from './swiper/swiper';
 export { default as Text } from './text/text';

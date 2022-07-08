@@ -1,23 +1,16 @@
+import ButtonGroup from '@components/button-group/button-group';
 import React, { useEffect, useRef, useState } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
-const StyledFooter = styled.div`
-  display: flex;
+const StyledFooter = styled(ButtonGroup)`
   overflow: hidden;
   width: 100%;
-  height: auto;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  ${props => (css`
-    border-top: 1px solid ${props.theme.color.neutral300};
-    border-bottom-left-radius: ${props.theme.border.radius};
-    border-bottom-right-radius: ${props.theme.border.radius};
-    & > :global(button.btn + button.btn) {
-      border-left: 1px solid ${props.theme.color.neutral300};
-    }
-  `)}
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
 `;
 
 const ModalFooterComponent: React.FC<React.PropsWithChildren<unknown>> = ({ children, ...props }) => {

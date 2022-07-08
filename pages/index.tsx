@@ -1,9 +1,7 @@
-import { Button, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Page, Section, Swiper, Text } from '@components';
+import { Button, ButtonGroup, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Modal, Page, Section, Swiper, SwiperHero, Text } from '@components';
 import Base from '@components/base/base';
 import { Carousel } from '@components/carousel/carousel';
-import Modal from '@components/modal/modal';
-import SwiperHero from '@components/swiper-hero/swiper-hero';
-import { ShoppingCart } from '@icons';
+import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
@@ -234,18 +232,20 @@ export default function Homepage() {
           </Section>
 
           <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
-            <Modal.Title>Modal</Modal.Title>
-            <Modal.Subtitle>This is a modal</Modal.Subtitle>
+            <Modal.Title>
+              <Text type="h7" fontWeight="700">Foreign Market detected</Text>
+            </Modal.Title>
+            <Modal.Subtitle>Attention Please.</Modal.Subtitle>
             <Modal.Content>
-              <p>Some content contained within the modal.</p>
+              <p>You seem to be browsing a different market than yours.</p>
             </Modal.Content>
-            <Modal.Button passive onClick={onCloseModal}>Cancel</Modal.Button>
-            <Modal.Button>Confirm</Modal.Button>
+            <Modal.Button type="default" passive onClick={onCloseModal}>Proceed</Modal.Button>
+            <Modal.Button type="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
           </Modal>
 
           <Section padding="3rem 0">
             <Container>
-              <Text type="h2" fontWeight="700" textAlign="center">Examples</Text>
+              <Text type="h2" fontWeight="700" textAlign="center">Workbench</Text>
             </Container>
           </Section>
 
@@ -267,6 +267,26 @@ export default function Homepage() {
                   <Text type="smallest">Smallest text</Text>
                 </Grid>
               </Grid.Row>
+            </Container>
+          </Section>
+
+          <Divider marginBottom="4rem">Button Group</Divider>
+
+          <Section>
+            <Container marginBottom="1rem">
+              <ButtonGroup style={{ width: '40rem' }}>
+                <Button type="default">Read documentation</Button>
+                <Button type="default">View on Github</Button>
+                <Button type="default"><span>Open</span> <ChevronDown /></Button>
+              </ButtonGroup>
+            </Container>
+
+            <Container>
+              <ButtonGroup vertical>
+                <Button type="default">Read documentation</Button>
+                <Button type="default">View on Github</Button>
+                <Button type="default"><span>Open</span> <ChevronDown /></Button>
+              </ButtonGroup>
             </Container>
           </Section>
 

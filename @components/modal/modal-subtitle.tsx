@@ -15,7 +15,7 @@ const StyledSubtitle = styled.div`
   text-align: center;
   word-break: break-word;
   text-transform: uppercase;
-  color: ${props => props.theme.color.primary500};
+  color: var(--color-primary-500);
   font-size: 0.875rem;
   line-height: 1.5em;
   padding: 0;
@@ -26,7 +26,7 @@ const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProp
 
   return (
     <StyledSubtitle className={className} {...props}>
-        {children}
+      {children}
     </StyledSubtitle>
   )
 }

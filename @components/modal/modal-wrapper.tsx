@@ -1,6 +1,6 @@
 import { useClasses } from '@hooks';
 import React, { useEffect, useRef } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import Transition from '../transition/transition';
 
 interface Props {
@@ -30,12 +30,10 @@ const StyledWrapper = styled.div`
   transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s,
   transform 0.35s cubic-bezier(0.4, 0, 0.2, 1) 0s;
 
-  ${props => (css`
-    border-radius: ${props.theme.border.radius};
-    box-shadow: ${props.theme.shadow.lg};
-    background-color: ${props.theme.color.neutral100};
-    color: ${props.theme.color.neutral900};
-  `)}
+  border-radius: var(--border-radius);
+  box-shadow: var(-shadow-lg);
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-900);
 
   &.wrapper-enter {
     opacity: 0;

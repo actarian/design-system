@@ -38,8 +38,6 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
   ({ width, backdropClassName, positionClassName, layerClassName, wrapClassName,
     disableBackdropClick, keyboard, visible: customVisible, onClose, children, onContentClick }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => { // !!! any
 
-    console.log(width);
-
     const portal = usePortal('modal');
 
     const [visible, setVisible] = useState<boolean>(false);
@@ -96,7 +94,7 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
           </ModalWrapper>
         </Backdrop>
       </ModalContext.Provider>
-    , portal);
+      , portal);
   };
 
 ModalComponent.defaultProps = defaultProps;

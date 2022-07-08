@@ -22,7 +22,7 @@ const StyledTitle = styled.h2`
   line-height: 1.6;
   font-weight: normal;
   font-size: 1.5rem;
-  color: ${props => props.theme.color.neutral900};
+  color: var(--color-neutral-900);
 `;
 
 const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalTitleProps> & typeof defaultProps) => { // !!! any

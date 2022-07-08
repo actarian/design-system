@@ -277,8 +277,8 @@ export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
   `;
 }
 
-export function getVariant(variants: { [key in Variant]?: FlattenInterpolation<any> }, type: Variant = 'default') {
-  return variants[type] ? variants[type] : '';
+export function getVariant(variants: { [key in Variant]?: FlattenInterpolation<any> }, type?: Variant) {
+  return (type && variants[type]) ? variants[type] : '';
 }
 
 function className_(...args: ({ [key: string]: boolean } | string)[]): string {

@@ -13,9 +13,9 @@ import { default as Button, ButtonProps } from './button';
   argTypes={{
     label: {
       name: 'label',
+      description: 'overwritten description',
       type: { name: 'string', required: false },
       defaultValue: 'Button',
-      description: 'overwritten description',
       table: {
         // disable: true, // to disable row
         type: {
@@ -31,17 +31,17 @@ import { default as Button, ButtonProps } from './button';
     },
     type: {
       name: 'type',
-      type: { name: 'Variant', required: false },
-      defaultValue: 'default',
       description: 'overwritten description',
-      options: ['alpha', 'beta', 'gamma', 'delta'],
+      type: { name: 'Variant', required: false },
+      defaultValue: null,
+      options: [null, 'default', 'alfa', 'beta', 'gamma', 'delta'],
       control: { type: 'select' },
       table: {
         type: {
           summary: 'something short',
           detail: 'something really really long'
         },
-        defaultValue: { summary: 'alpha' },
+        defaultValue: { summary: 'alfa' },
       },
       // if: { arg: 'label', truthy: false },
     }
@@ -74,13 +74,11 @@ import { Button } from '@wsdesign-system';
 A basic example of `Button`.
 
 export const Basic = ({ data, ...args }) => (<>
-  <div style={{ margin: '0 1em' }}>
-    <Button {...args} onClick={() => alert('click')}>Action</Button>
-  </div>
+  <Button {...args} onClick={() => alert('click')}>Action</Button>
 </>);
 
 <Canvas>
-  <Story name="basic" args={{ type: 'default' }} parameters={{
+  <Story name="basic" parameters={{
     docs: {
       source: {
         code: '<Button onClick={() => {}}>Button</Button>',
@@ -94,6 +92,9 @@ export const Basic = ({ data, ...args }) => (<>
 </Canvas>
 
 <Canvas>
+  <Story name="default">
+    <Button type="default">Default</Button>
+  </Story>
   <Story name="alfa">
     <Button type="alfa">Alfa</Button>
   </Story>
@@ -116,6 +117,6 @@ export const Basic = ({ data, ...args }) => (<>
 
 <Canvas>
   <Story name="with icon">
-    <Button type="alfa"><span>Buy</span> <ShoppingCart width="1em" height="1em" /></Button>
+    <Button type="alfa"><span>Buy</span> <ShoppingCart /></Button>
   </Story>
 </Canvas>

@@ -3,6 +3,8 @@ import { getMargin, getPadding, getSize, getVariant } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 const variants: Variants = {
+  default: css`
+`,
   alfa: css`
 `,
   beta: css`

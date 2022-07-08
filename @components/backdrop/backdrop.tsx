@@ -64,7 +64,7 @@ const StyledBackdrop = styled.div`
     transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
     z-index: 1000;
-    opacity: ${props => props.theme.backdrop.opacity};
+    opacity: var(--backdrop-opacity);
   }
 
   .backdrop-wrapper-enter .layer {
@@ -72,11 +72,11 @@ const StyledBackdrop = styled.div`
   }
 
   .backdrop-wrapper-enter-active .layer {
-    opacity: ${props => props.theme.backdrop.opacity};
+    opacity: var(--backdrop-opacity);
   }
 
   .backdrop-wrapper-leave .layer {
-    opacity: ${props => props.theme.backdrop.opacity};
+    opacity: var(--backdrop-opacity);
   }
 
   .backdrop-wrapper-leave-active .layer {

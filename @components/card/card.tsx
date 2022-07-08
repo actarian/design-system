@@ -6,6 +6,8 @@ import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
 
 const variants: Variants = {
+  default: css`
+`,
   alfa: css`
   border: 1px solid var(--color-neutral-100);
   border-radius: 0.5em;
