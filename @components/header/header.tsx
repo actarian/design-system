@@ -1,8 +1,9 @@
-import { Button, Container, Flex, Nav, Text } from '@components';
+import { Button, Container, Drawer, Flex, Nav, Text } from '@components';
 import { ComponentAttrs } from '@components/types';
 import { useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
 import Link from 'next/link';
+import { useState } from 'react';
 
 import styled, { css } from 'styled-components';
 
@@ -22,9 +23,9 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
 
   ${props => props.fixed ? css`
     position: fixed;
-    width: 100%;
     top: 0;
     left: 0;
+    right: var(--locked-padding-right, 0);
     z-index: 1000;
     transition: background-color ease-in-out 350ms;
     background: ${props.scrolled ? 'var(--color-neutral-900)' : 'transparent'};
@@ -41,6 +42,11 @@ export type HeaderProps = ComponentAttrs<Props, HTMLDivElement>;
 
 const Header = (props: HeaderProps) => {
   const scroll = useScroll();
+  const [showDrawer, setShowDrawer] = useState(false);
+  const onOpenDrawer = () => setShowDrawer(true);
+  const onCloseDrawer = () => {
+    setShowDrawer(false);
+  }
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
   return (
     <HeaderContainer {...containerProps}>
@@ -70,12 +76,18 @@ const Header = (props: HeaderProps) => {
             <Link href="#auth">
               <Button as="a"><User width="2rem" height="2rem" /></Button>
             </Link>
-            <Link href="#cart">
-              <Button as="a"><ShoppingCart width="2rem" height="2rem" /></Button>
-            </Link>
+            <Button as="a" onClick={onOpenDrawer}><ShoppingCart width="2rem" height="2rem" /></Button>
+            <Drawer visible={showDrawer} onClose={onCloseDrawer} placement="right">
+              <Drawer.Title>Drawer</Drawer.Title>
+              <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
+              <Drawer.Content>
+                <p>Some content contained within the drawer.</p>
+              </Drawer.Content>
+            </Drawer>
             <Link href="#menu">
               <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
-              </Button></Link>
+              </Button>
+            </Link>
           </Flex>
         </Flex.Row>
       </Container.Fluid>

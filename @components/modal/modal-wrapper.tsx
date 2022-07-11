@@ -1,3 +1,4 @@
+import { isChildElement } from '@components/utils';
 import { useClasses } from '@hooks';
 import React, { useEffect, useRef } from 'react';
 import styled from 'styled-components';
@@ -115,19 +116,5 @@ ModalWrapper.defaultProps = defaultProps;
 ModalWrapper.displayName = 'ModalWrapper';
 
 export default ModalWrapper;
-
-export function isChildElement(parent: Element | null | undefined, child: Element | null | undefined): boolean {
-  if (!parent || !child) {
-    return false;
-  }
-  let node: (Node & ParentNode) | null = child;
-  while (node) {
-    if (node === parent) {
-      return true;
-    }
-    node = node.parentNode;
-  }
-  return false;
-}
 
 export type ModalWrapperProps = Props;

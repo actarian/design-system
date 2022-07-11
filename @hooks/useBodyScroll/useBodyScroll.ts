@@ -22,21 +22,21 @@ export function useBodyScroll(elementRef?: RefObject<HTMLElement> | null, option
     if (!elementRef || !elementRef.current) {
       return;
     }
-
     const lastOverflow = elementRef.current.style.overflow;
-
     if (hidden) {
       if (elementStack.has(elementRef.current)) {
         return;
       }
       const paddingRight = getOwnerPaddingRight(elementRef.current);
       const scrollbarWidth = getOwnerScrollbarWidth(elementRef.current);
+      // console.log('paddingRight', paddingRight, 'scrollbarWidth', scrollbarWidth);
       elementStack.set(elementRef.current, {
         overflow: lastOverflow,
         paddingRight: elementRef.current.style.paddingRight,
       });
+      elementRef.current.style.setProperty('--locked-padding-right', `${paddingRight + scrollbarWidth}px`);
       elementRef.current.style.overflow = 'hidden';
-      elementRef.current.style.paddingRight = `${paddingRight + scrollbarWidth}px`;
+      elementRef.current.style.paddingRight = 'var(--locked-padding-right)';
       return;
     }
 
@@ -50,6 +50,7 @@ export function useBodyScroll(elementRef?: RefObject<HTMLElement> | null, option
       if (!store) {
         return;
       }
+      element.style.setProperty('--locked-padding-right', '0');
       element.style.overflow = store.overflow;
       element.style.paddingRight = store.paddingRight;
       elementStack.delete(element);

@@ -230,3 +230,17 @@ function className_(...args: ({ [key: string]: boolean } | string)[]): string {
 }
 
 export const className = className_;
+
+export function isChildElement(parent: Element | null | undefined, child: Element | null | undefined): boolean {
+  if (!parent || !child) {
+    return false;
+  }
+  let node: (Node & ParentNode) | null = child;
+  while (node) {
+    if (node === parent) {
+      return true;
+    }
+    node = node.parentNode;
+  }
+  return false;
+}

@@ -67,19 +67,19 @@ const StyledBackdrop = styled.div`
     opacity: var(--backdrop-opacity);
   }
 
-  .backdrop-wrapper-enter .layer {
+  &.backdrop-wrapper-enter .layer {
     opacity: 0;
   }
 
-  .backdrop-wrapper-enter-active .layer {
+  &.backdrop-wrapper-enter-active .layer {
     opacity: var(--backdrop-opacity);
   }
 
-  .backdrop-wrapper-leave .layer {
+  &.backdrop-wrapper-leave .layer {
     opacity: var(--backdrop-opacity);
   }
 
-  .backdrop-wrapper-leave-active .layer {
+  &.backdrop-wrapper-leave-active .layer {
     opacity: 0;
   }
 `;

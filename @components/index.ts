@@ -14,6 +14,7 @@ export { default as Header } from './header/header';
 export { default as Layout } from './layout/layout';
 export { default as Media } from './media/media';
 export { default as Modal } from './modal/modal';
+export { default as Drawer } from './drawer/drawer';
 export { default as Nav } from './nav/nav';
 export { default as Page } from './page/page';
 export { default as Section } from './section/section';
