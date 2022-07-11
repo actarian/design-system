@@ -16,7 +16,9 @@ const CssObj = {
   "background": "background",
   "backgroundAttachment": "background-attachment",
   "backgroundClip": "background-clip",
+  */
   "backgroundColor": "background-color",
+  /*
   "backgroundImage": "background-image",
   "backgroundOrigin": "background-origin",
   "backgroundPosition": "background-position",

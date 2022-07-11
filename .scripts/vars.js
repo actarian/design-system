@@ -82,7 +82,7 @@ function collectVars(object, parentKey = '') {
 }
 
 function hypenize(text) {
-  return text.replace(/(?<![A-Z])[A-Z]|(?<![0-9])[0-9]/g, m => '-' + m.toLowerCase());
+  return text.replace(/(?<![A-Z])[A-Z]|(?<![0-9]|^)[0-9]/g, m => '-' + m.toLowerCase());
 }
 
 function camelize(text) {

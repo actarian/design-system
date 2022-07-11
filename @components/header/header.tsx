@@ -1,9 +1,8 @@
 import { Button, Container, Drawer, Flex, Nav, Text } from '@components';
 import { ComponentAttrs } from '@components/types';
-import { useScroll } from '@hooks';
+import { useDrawer, useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
 import Link from 'next/link';
-import { useState } from 'react';
 
 import styled, { css } from 'styled-components';
 
@@ -42,11 +41,14 @@ export type HeaderProps = ComponentAttrs<Props, HTMLDivElement>;
 
 const Header = (props: HeaderProps) => {
   const scroll = useScroll();
+  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  /*
   const [showDrawer, setShowDrawer] = useState(false);
   const onOpenDrawer = () => setShowDrawer(true);
   const onCloseDrawer = () => {
     setShowDrawer(false);
   }
+  */
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
   return (
     <HeaderContainer {...containerProps}>
@@ -76,8 +78,8 @@ const Header = (props: HeaderProps) => {
             <Link href="#auth">
               <Button as="a"><User width="2rem" height="2rem" /></Button>
             </Link>
-            <Button as="a" onClick={onOpenDrawer}><ShoppingCart width="2rem" height="2rem" /></Button>
-            <Drawer visible={showDrawer} onClose={onCloseDrawer} placement="right">
+            <Button as="a" onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
+            <Drawer visible={drawer == 'cart'} onClose={onCloseDrawer} placement="right">
               <Drawer.Title>Drawer</Drawer.Title>
               <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
               <Drawer.Content>

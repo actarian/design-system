@@ -1,0 +1,50 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Flex, Card, Text } from '@components';
+import { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+
+<Meta
+  title="Colors"
+  decorators={[(story) => (
+    <div style={ { padding: '0' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+  }}
+/>
+
+# Colors
+
+export const Colors = ({ data, ...args }) => {
+  const theme = useContext(ThemeContext);
+  const keys = Object.keys(theme.color);
+  // const sizes = new Array(9).fill().map((_, i) => (i + 1) * 100);
+  return (<>
+    {keys.map(key => (
+      <Flex.Row key={key} gap="0">
+        {Object.keys(theme.color[key]).map(size => (
+          <Flex key={size} width={100 / 9 + '%'}>
+            <Card
+              aspect={1}
+              margin='0'
+              backgroundColor={theme.color[key][size]}
+              color={theme.color[key][(parseInt(size) >= 500 ? '100' : '900')]}
+            >
+              <Card.Content alignItems='center' justifyContent="center">
+                <Text fontWeight="700">{key} {size}</Text>
+              </Card.Content>
+            </Card>
+          </Flex>
+        ))}
+      </Flex.Row>
+    ))}
+  </>);
+};
+
+<Canvas>
+  <Story name="colors">
+    {Colors.bind({})}
+  </Story>
+</Canvas>

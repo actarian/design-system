@@ -1,5 +1,6 @@
 import { Button, ButtonGroup, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Modal, Page, Section, Swiper, SwiperHero, Text } from '@components';
 import { Carousel } from '@components/carousel/carousel';
+import { useDrawer } from '@hooks';
 import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -54,6 +55,8 @@ export default function Homepage() {
   const onCloseModal = (_: any) => {
     setShowModal(false);
   }
+
+  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
 
   return (
     <div>
@@ -219,7 +222,7 @@ export default function Homepage() {
                   <Button type="alfa" as="a" marginBottom="1rem" onClick={onOpenModal}>Read documentation</Button>
                 </Link>
                 <Link href="https://github.com/actarian/design-system" target="_blank">
-                  <Button type="gamma" as="a">view on GitHub</Button>
+                  <Button type="gamma" as="a" onClick={() => onOpenDrawer('cart')}>view on GitHub</Button>
                 </Link>
               </Flex.Col>
             </Container>
