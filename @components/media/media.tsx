@@ -1,5 +1,5 @@
-import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentCssResponsiveAttrs } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 type Props = {
@@ -8,12 +8,10 @@ type Props = {
   overlay?: boolean;
 }
 
-export type MediaProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type MediaProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 const Media = styled.div<MediaProps>`
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
+  ${props => getCssResponsive(props)}
 
   display: flex;
   justify-content: center;

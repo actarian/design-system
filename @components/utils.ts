@@ -1,6 +1,6 @@
 import { css, FlattenInterpolation } from 'styled-components';
 import { CssMap, CssResponsiveAttrs } from './css';
-import { BaseAttrs, DisplayAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
+import { DisplayAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -61,64 +61,6 @@ export function getCssResponsive(props: CssResponsiveAttrs & ThemeAttrs, default
     rules += rule + '\n';
   }
   return rules;
-}
-
-const propMap = new Map([
-  ['di', 'display'],
-  ['po', 'position'],
-  ['w', 'width'],
-  ['miw', 'min-width'],
-  ['maw', 'max-width'],
-  ['h', 'height'],
-  ['mih', 'min-height'],
-  ['mah', 'max-height'],
-  ['to', 'top'],
-  ['ri', 'right'],
-  ['bo', 'bottom'],
-  ['le', 'left'],
-  ['p', 'padding'],
-  ['pt', 'padding-top'],
-  ['pr', 'padding-right'],
-  ['pb', 'padding-bottom'],
-  ['pl', 'padding-left'],
-  ['m', 'margin'],
-  ['mt', 'margin-top'],
-  ['mr', 'margin-right'],
-  ['mb', 'margin-bottom'],
-  ['ml', 'margin-left'],
-  ['b', 'border'],
-  ['bt', 'border-top'],
-  ['br', 'border-right'],
-  ['bb', 'border-bottom'],
-  ['bl', 'border-left'],
-]);
-
-export function getBase(props: BaseAttrs & ThemeAttrs, defaultValue: BaseAttrs = {}) {
-  props = { ...defaultValue, ...props };
-  const css = Object.keys(props).map(key => {
-    const value = (props as any)[key];
-    const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
-      const prop: any = g1;
-      if (propMap.has(prop)) {
-        // console.log('prop', prop);
-        const rule = `${(propMap as any).get(prop)}: ${value};`;
-        if (g2) {
-          const size: any = g2.toLowerCase();
-          // console.log('size', size, 'rule', rule);
-          return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
-              ${rule}
-            }`;
-        } else {
-          // console.log('rule', rule);
-          return rule;
-        }
-      } else {
-        return '';
-      }
-    });
-    return rule;
-  }).join('\n');
-  return css;
 }
 
 const displayMap = new Map([

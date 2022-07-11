@@ -1,5 +1,5 @@
-import { ComponentBoxAttrs } from '@components/types';
-import { getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentCssResponsiveAttrs } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -8,14 +8,13 @@ type Props = {
   background?: ReactNode;
 }
 
-export type SectionProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type SectionProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 const SectionContainer = styled.div<SectionProps>`
   background: var(--color-alternative-200);
   color: var(--color-neutral-900);
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props, { padding: '64px 0' })}
+  padding: 64px 0;
+  ${props => getCssResponsive(props)}
 
   ${props => props.background ? css`
     position: relative;

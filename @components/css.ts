@@ -13,9 +13,7 @@ const CssObj = {
   "animationPlayState": "animation-play-state",
   "animationTimingFunction": "animation-timing-function",
   "backfaceVisibility": "backface-visibility",
-  */
   "background": "background",
-  /*
   "backgroundAttachment": "background-attachment",
   "backgroundClip": "background-clip",
   "backgroundColor": "background-color",
@@ -117,6 +115,10 @@ const CssObj = {
   */
   "fontWeight": "font-weight",
   "gap": "gap",
+  "gridTemplateColumns": "grid-template-columns",
+  "gridAutoColumns": "grid-auto-columns",
+  "grid": "grid",
+  "gridTemplate": "grid-template",
   "height": "height",
   "justifyContent": "justify-content",
   "left": "left",
@@ -169,10 +171,13 @@ const CssObj = {
   "resize": "resize",
   */
   "right": "right",
+  "rowGap": "row-gap",
   /*
   "tabSize": "tab-size",
   "tableLayout": "table-layout",
+  */
   "textAlign": "text-align",
+  /*
   "textAlignLast": "text-align-last",
   "textDecoration": "text-decoration",
   "textDecorationColor": "text-decoration-color",

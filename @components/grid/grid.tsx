@@ -1,5 +1,5 @@
-import { ComponentFlexAttrs } from '@components/types';
-import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentCssResponsiveAttrs } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { sizes } from '@styles';
 import styled, { css } from 'styled-components';
 import { GridRow } from './grid-row';
@@ -12,34 +12,19 @@ type Props = {
   xl?: number;
 }
 
-export type GridProps = ComponentFlexAttrs<Props, HTMLDivElement>;
+export type GridProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 export const Grid = styled.div<GridProps>`
   // default grid column
   grid-column: span var(--grid-columns);
 
-  // get media query column
-  ${props => getMediaQueryColumn(props)}
-
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-
   ${props => (props.justifyContent || props.alignItems) ? css`
     display: flex;
-    ${getFlex(props)}
   ` : ''}
-  /*
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  */
 
-  /*
-  justify-content: center;
-  align-items: center;
-  min-height: 40px;
-  */
+  // get media query column
+  ${props => getMediaQueryColumn(props)}
+  ${props => getCssResponsive(props)}
 `;
 
 function getMediaQueryColumn(props: GridProps) {

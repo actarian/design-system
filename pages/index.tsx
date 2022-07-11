@@ -1,5 +1,4 @@
 import { Button, ButtonGroup, Card, Container, Divider, Flex, Footer, Grid, Header, Layout, Media, Modal, Page, Section, Swiper, SwiperHero, Text } from '@components';
-import Base from '@components/base/base';
 import { Carousel } from '@components/carousel/carousel';
 import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
 import Head from 'next/head';
@@ -54,7 +53,6 @@ export default function Homepage() {
   const onOpenModal = () => setShowModal(true);
   const onCloseModal = (_: any) => {
     setShowModal(false);
-    console.log('closed');
   }
 
   return (
@@ -135,10 +133,6 @@ export default function Homepage() {
                 );
               }}</Carousel>
             </div>
-          }
-
-          {false &&
-            <Base p="0.5rem" pMd="30px" bb="1px solid black" bbLg="2px solid red">Base</Base>
           }
 
           <Section padding="3rem 0">
@@ -308,7 +302,7 @@ export default function Homepage() {
                   </Card>
                 </Grid>
                 <Grid sm={6} md={4}>
-                  <Card type="beta" aspect={1 / 1} rounded>
+                  <Card type="beta" aspect={1 / 1}>
                     <Media>
                       <img src={'https://picsum.photos/640/480?u=7'} />
                     </Media>
@@ -347,7 +341,7 @@ export default function Homepage() {
           </>}
 
 
-          {false && <>
+          {true && <>
 
             <Divider marginBottom="4rem">Grid</Divider>
 

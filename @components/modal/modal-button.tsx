@@ -62,7 +62,7 @@ const ModalButtonComponent = React.forwardRef<HTMLButtonElement, React.PropsWith
       const actionEvent = Object.assign({}, event, {
         close: () => close && close(),
       });
-      console.log('onButtonClick', disabled, onClick);
+      // console.log('onButtonClick', disabled, onClick);
       if (onClick) {
         onClick(actionEvent);
       }

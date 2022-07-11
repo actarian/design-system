@@ -1,11 +1,11 @@
-import { ComponentFlexAttrs } from '@components/types';
-import { getFlex, getMargin, getPadding, getSize } from '@components/utils';
+import { ComponentCssResponsiveAttrs } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
 }
 
-export type CardContentProps = ComponentFlexAttrs<Props, HTMLDivElement>;
+export type CardContentProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 export const CardContent = styled.div<CardContentProps>`
   flex: 1;
@@ -13,8 +13,5 @@ export const CardContent = styled.div<CardContentProps>`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-  ${props => getFlex(props)}
+  ${props => getCssResponsive(props)}
 `;

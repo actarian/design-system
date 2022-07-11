@@ -1,5 +1,5 @@
-import { ComponentFlexAttrs, Variant, Variants } from '@components/types';
-import { getDisplay, getFlex, getMargin, getPadding, getSize, getVariant } from '@components/utils';
+import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { getCssResponsive, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -20,7 +20,7 @@ type Props = {
   type?: Variant;
 }
 
-export type NavProps = ComponentFlexAttrs<Props, HTMLUListElement>;
+export type NavProps = ComponentCssResponsiveAttrs<Props, HTMLUListElement>;
 
 const NavUl = styled.ul<NavProps>`
   list-style: none;
@@ -28,11 +28,7 @@ const NavUl = styled.ul<NavProps>`
   padding: 0;
   display: flex;
   ${props => getVariant(variants, props.type)}
-  ${props => getDisplay(props)}
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-  ${props => getFlex(props, { gap: '0.6rem' })}
+  ${props => getCssResponsive(props, { gap: '0.6rem' })}
 `;
 
 const NavLi = styled.li<NavProps>`

@@ -1,5 +1,5 @@
-import { ComponentBoxAttrs, Variant, Variants } from '@components/types';
-import { getDisplay, getMargin, getPadding, getSize, getVariant } from '@components/utils';
+import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { getCssResponsive, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
@@ -164,7 +164,7 @@ type Props = {
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export type ButtonProps = ComponentBoxAttrs<Props, Element>;
+export type ButtonProps = ComponentCssResponsiveAttrs<Props, Element>;
 
 const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
@@ -182,15 +182,10 @@ const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
 
   ${props => getVariant(variants, props.type)}
-
-  ${props => getDisplay(props)}
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
+  ${props => getCssResponsive(props)}
 `;
 
 const Button = React.forwardRef<Element, ButtonProps>((props: ButtonProps, ref?: React.Ref<Element>) => {
-  console.log(props);
   return (<StyledButton {...props} ref={ref}>{props.children}</StyledButton>);
 });
 

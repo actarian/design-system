@@ -1,5 +1,5 @@
-import { ComponentBoxAttrs, Variant, Variants } from '@components/types';
-import { getMargin, getPadding, getSize, getVariant } from '@components/utils';
+import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { getCssResponsive, getVariant } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 const variants: Variants = {
@@ -19,15 +19,15 @@ type Props = {
   type?: Variant;
 }
 
-export type DividerProps = ComponentBoxAttrs<Props, HTMLDivElement>;
+export type DividerProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 const DividerContainer = styled.div<DividerProps>`
   position: relative;
+  height: 1px;
+  max-width: 100%;
   background-color: var(--color-neutral-300);
   ${props => getVariant(variants, props.type)}
-  ${props => getSize(props, { height: '1px', maxWidth: '100%' })}
-  ${props => getMargin(props, { margin: props.children ? '1rem 0' : '0.5rem 0' })}
-  ${props => getPadding(props)}
+  ${props => getCssResponsive(props, { margin: props.children ? '1rem 0' : '0.5rem 0' })}
 `;
 
 const DividerTitle = styled.span<DividerProps>`

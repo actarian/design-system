@@ -1,5 +1,5 @@
 import { ComponentCssResponsiveAttrs } from '@components/types';
-import { getCssResponsive, getFlex, getMargin, getPadding, getSize } from '@components/utils';
+import { getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 import { FlexCol } from './flex-col';
 import { FlexRow } from './flex-row';
@@ -7,12 +7,6 @@ import { FlexRow } from './flex-row';
 const Flex = styled.div<FlexProps>`
   display: flex;
   align-items: center;
-  /*
-  ${props => getSize(props)}
-  ${props => getMargin(props)}
-  ${props => getPadding(props)}
-  ${props => getFlex(props)}
-  */
   ${props => getCssResponsive(props)}
 `;
 
