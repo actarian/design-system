@@ -36,7 +36,7 @@ const Footer = (props: FooterProps) => {
             </Flex.Row>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
-            <Nav.Col marginBottom="2rem" style={{ fontSize: '0.9rem' }}>
+            <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text type="h8">Solutions</Text>
               <Link href="#marketing"><Button as="a" type="eta">Marketing</Button></Link>
               <Link href="#analytics"><Button as="a" type="eta">Analytics</Button></Link>
@@ -45,7 +45,7 @@ const Footer = (props: FooterProps) => {
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
-            <Nav.Col marginBottom="2rem" style={{ fontSize: '0.9rem' }}>
+            <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text type="h8">Support</Text>
               <Link href="#pricing"><Button as="a" type="eta">Pricing</Button></Link>
               <Link href="#documentation"><Button as="a" type="eta">Documentation</Button></Link>
@@ -54,7 +54,7 @@ const Footer = (props: FooterProps) => {
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
-            <Nav.Col marginBottom="2rem" style={{ fontSize: '0.9rem' }}>
+            <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text type="h8">Company</Text>
               <Link href="#about"><Button as="a" type="eta">About</Button></Link>
               <Link href="#blog"><Button as="a" type="eta">Blog</Button></Link>
@@ -64,7 +64,7 @@ const Footer = (props: FooterProps) => {
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
-            <Nav.Col marginBottom="2rem" style={{ fontSize: '0.9rem' }}>
+            <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text type="h8">Legal</Text>
               <Link href="#claim"><Button as="a" type="eta">Claim</Button></Link>
               <Link href="#privacy"><Button as="a" type="eta">Privacy</Button></Link>

@@ -109,7 +109,9 @@ const CssObj = {
   /*
   "font": "font",
   "fontFamily": "font-family",
+  */
   "fontSize": "font-size",
+  /*
   "fontSizeAdjust": "font-size-adjust",
   "fontStretch": "font-stretch",
   "fontStyle": "font-style",
