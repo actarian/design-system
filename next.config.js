@@ -3,7 +3,13 @@ module.exports = {
   compiler: {
     styledComponents: true,
   },
+  /*
+  experimental: {
+    forceSwcTransforms: true,
+  },
+  */
   webpack(config) {
+    /*
     config.module.rules.push({
       test: /\.css$/i,
       issuer: { and: [/\.(js|ts|md)x?$/] },
@@ -13,6 +19,7 @@ module.exports = {
         },
       ],
     });
+    */
     config.module.rules.push({
       test: /\.svg$/i,
       issuer: { and: [/\.(js|ts|md)x?$/] },

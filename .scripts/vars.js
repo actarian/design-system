@@ -55,30 +55,36 @@ ${nameAndValues.names.map((key, i) => {
 }
 
 function collectNameAndValues(object, parentKey = '', collection = { names: [], values: [] }) {
-  Object.keys(object).map(key => {
-    let value = object[key];
-    key = (parentKey.length ? `${parentKey}-` : '') + hypenize(key);
-    if (typeof value === 'object') {
-      collection = collectNameAndValues(value, key, collection);
-    } else {
-      collection.names.push(key);
-      collection.values.push(value);
-    }
-  });
+  if (object) {
+    Object.keys(object).map(key => {
+      let value = object[key];
+      key = (parentKey.length ? `${parentKey}-` : '') + hypenize(key);
+      if (typeof value === 'object') {
+        collection = collectNameAndValues(value, key, collection);
+      } else {
+        collection.names.push(key);
+        collection.values.push(value);
+      }
+    });
+  }
   return collection;
 }
 
 function collectVars(object, parentKey = '') {
-  return Object.keys(object).map(key => {
-    let value = object[key];
-    key = (parentKey.length ? `${parentKey}-` : '') + hypenize(key);
-    if (typeof value === 'object') {
-      value = collectVars(value, key);
-      return value;
-    } else {
-      return `$${key}: ${value};`;
-    }
-  }).join('\n');
+  if (value) {
+    return Object.keys(object).map(key => {
+      let value = object[key];
+      key = (parentKey.length ? `${parentKey}-` : '') + hypenize(key);
+      if (typeof value === 'object') {
+        value = collectVars(value, key);
+        return value;
+      } else {
+        return `$${key}: ${value};`;
+      }
+    }).join('\n');
+  } else {
+    return '';
+  }
 }
 
 function hypenize(text) {

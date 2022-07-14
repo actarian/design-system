@@ -250,6 +250,19 @@ export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
   `;
 }
 
+export function eachMedia(props: ThemeAttrs, callback: (key: string) => string | void) {
+  const theme = props.theme;
+  if (theme.mediaQuery && typeof callback === 'function') {
+    return Object.keys(theme.mediaQuery).map(key => {
+      const value = theme.mediaQuery[key];
+      const rule = callback(key);
+      return rule ? `@media(min-width: ${value}px) { ${rule} }` : '';
+    }).join('\n');
+  } else {
+    return '';
+  }
+}
+
 export function getVariant(variants: { [key in Variant]?: FlattenInterpolation<any> }, type?: Variant) {
   return (type && variants[type]) ? variants[type] : '';
 }
@@ -293,8 +306,16 @@ export function getChildsByType(children: ReactNode | undefined, child: React.El
   return [childs, others];
 }
 
-export function hasChildOfType(children: ReactNode | undefined, child: React.ElementType):boolean {
+export function hasChildOfType(children: ReactNode | undefined, child: React.ElementType): boolean {
   const [foundChildren, otherChildren] = getChildsByType(children, child);
   const hasChildOfType = foundChildren !== undefined;
   return hasChildOfType;
+}
+
+export function hypenize(text: string): string {
+  return text.replace(/(?<![A-Z])[A-Z]|(?<![0-9]|^)[0-9]/g, m => '-' + m.toLowerCase());
+}
+
+export function camelize(text: string): string {
+  return text.replace(/(^[a-z])|-([a-z0-9])/gi, ($0, $1, $2) => $2 ? $2.toUpperCase() : $1.toUpperCase());
 }

@@ -53,7 +53,7 @@ const Header = (props: HeaderProps) => {
   return (
     <HeaderContainer {...containerProps}>
       <Container.Fluid>
-        <Flex.Row gap="3rem">
+        <Flex.Row gap="1rem" gapSm="3rem">
           <Flex>
             <Hexagon width="3rem" height="3rem" color="var(--color-neutral-100)" />
             <Text type="h6" padding="0 0.5rem">Hexagon</Text>
@@ -76,7 +76,7 @@ const Header = (props: HeaderProps) => {
           </Flex>
           <Flex gap="1rem">
             <Link href="#auth">
-              <Button as="a"><User width="2rem" height="2rem" /></Button>
+              <Button as="a" display='none' displaySm='block'><User width="2rem" height="2rem" /></Button>
             </Link>
             <Button as="a" onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
             <Drawer visible={drawer == 'cart'} onClose={onCloseDrawer} placement="right">
