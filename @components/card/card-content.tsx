@@ -8,7 +8,6 @@ type Props = {
 export type CardContentProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 export const CardContent = styled.div<CardContentProps>`
-  flex: 1;
   position: relative;
   display: flex;
   flex-direction: column;

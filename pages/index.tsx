@@ -75,15 +75,16 @@ export default function Homepage() {
           {false &&
             <Swiper navigation pagination={{ clickable: true }}>
               {items.map((item, i) => (
-                <Card key={i} justifyContent="flex-end" height="100vh" margin="0" background={
-                  <Media overlay>
-                    {item.media.type === 'video' ?
-                      (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                        <source src={item.media.src} type="video/mp4"></source>
-                      </video>) :
-                      (<img draggable={false} alt={item.title} src={item.media.src} />)}
-                  </Media>
-                }>
+                <Card key={i} justifyContent="flex-end" height="100vh" margin="0">
+                  <Card.Background>
+                    <Media overlay>
+                      {item.media.type === 'video' ?
+                        (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                          <source src={item.media.src} type="video/mp4"></source>
+                        </video>) :
+                        (<img draggable={false} alt={item.title} src={item.media.src} />)}
+                    </Media>
+                  </Card.Background>
                   <Card.Content>
                     <Container.Fluid>
                       <Grid.Row>
@@ -103,13 +104,14 @@ export default function Homepage() {
 
           {false &&
             <Section padding="0">
-              <Card justifyContent="flex-end" height="100vh" margin="0" background={
-                <Media overlay>
-                  <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                    <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
-                  </video>
-                </Media>
-              }>
+              <Card justifyContent="flex-end" height="100vh" margin="0">
+                <Card.Background>
+                  <Media overlay>
+                    <video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                      <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
+                    </video>
+                  </Media>
+                </Card.Background>
                 <Card.Content>
                   <Container.Fluid>
                     <Grid.Row>
@@ -161,10 +163,10 @@ export default function Homepage() {
           <Section padding="3rem 0">
             <Container>
               <Text type="h2" fontWeight="700" marginBottom="3rem">More Stories</Text>
-              <Grid.Row>
+              <Grid.Row rowGap='3rem'>
                 <Grid md={6}>
                   <Card>
-                    <Media aspect={5 / 3} marginBottom="1rem">
+                    <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
                       <img src={'https://picsum.photos/640/480?u=2'} />
                     </Media>
                     <Card.Content>
@@ -188,7 +190,7 @@ export default function Homepage() {
                 </Grid>
                 <Grid md={6}>
                   <Card>
-                    <Media aspect={5 / 3} marginBottom="1rem">
+                    <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
                       <img src={'https://picsum.photos/640/480?u=4'} />
                     </Media>
                     <Card.Content>
@@ -240,6 +242,17 @@ export default function Homepage() {
             <Modal.Button type="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
           </Modal>
 
+          <Section aspectRatio={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
+            <Section.Background>
+              <Media overlay>
+                <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
+              </Media>
+            </Section.Background>
+            <Container textAlign='center'>
+              <Text type="h1" fontWeight="700">Workbench.</Text>
+            </Container>
+          </Section>
+
           <Section padding="3rem 0">
             <Container>
               <Text type="h2" fontWeight="700" textAlign="center">Workbench</Text>
@@ -287,53 +300,54 @@ export default function Homepage() {
             </Container>
           </Section>
 
-          {false && <>
+          {true && <>
 
             <Divider marginBottom="4rem">Cards</Divider>
 
             <Container padding="3rem 0">
               <Grid.Row>
                 <Grid sm={6} md={4}>
-                  <Card type="alfa" aspect={1 / 1}>
-                    <Media aspect={2 / 1}>
+                  <Card type="alfa" aspectRatio={1 / 1}>
+                    <Media aspectRatio={2 / 1}>
                       <img src={'https://picsum.photos/640/480?u=6'} />
                     </Media>
-                    <Card.Content paddingTop='100px'>
+                    <Card.Content padding='1rem'>
                       <Text type="h6">Title</Text>
                       <Text type="default">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
                 <Grid sm={6} md={4}>
-                  <Card type="beta" aspect={1 / 1}>
+                  <Card type="beta" aspectRatio={1 / 1}>
                     <Media>
                       <img src={'https://picsum.photos/640/480?u=7'} />
                     </Media>
-                    <Card.Content>
+                    <Card.Content padding='1rem'>
                       <Text type="h6">Title</Text>
                       <Text type="default">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
                 <Grid sm={6} md={4}>
-                  <Card type="gamma" aspect={1 / 1} background={
-                    <Media aspect={2 / 1}>
-                      <img src={'https://picsum.photos/640/480?u=8'} />
-                    </Media>
-                  }>
-                    <Card.Content paddingTop='100px'>
+                  <Card type="gamma" aspectRatio={1 / 1}>
+                    <Card.Background>
+                      <Media overlay>
+                        <img src={'https://picsum.photos/640/480?u=8'} />
+                      </Media>
+                    </Card.Background>
+                    <Card.Content padding='1rem'>
                       <Text type="h6">Title</Text>
                       <Text type="default">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
                 <Grid sm={6} md={4}>
-                  <Card type="delta" aspect={1 / 1}>
-                    <Card.Content>
+                  <Card type="delta" aspectRatio={1 / 1}>
+                    <Card.Content padding='1rem'>
                       <Text type="h6">Title</Text>
                       <Text type="default">Abstract</Text>
                     </Card.Content>
-                    <Card.Footer>
+                    <Card.Footer padding='1rem'>
                       <Text type="small">Description</Text>
                     </Card.Footer>
                   </Card>
@@ -397,13 +411,14 @@ export default function Homepage() {
 
           </>}
 
-          <Section aspect={3 / 1} padding="0" background={
-            <Media overlay>
-              <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
-              </video>
-            </Media>
-          }>
+          <Section aspectRatio={4 / 3} aspectRatioMd={2 / 1} aspectRatioLg={3 / 1} padding="0">
+            <Section.Background>
+              <Media overlay>
+                <video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                  <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
+                </video>
+              </Media>
+            </Section.Background>
           </Section>
 
           <Footer></Footer>

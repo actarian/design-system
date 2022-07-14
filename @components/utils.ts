@@ -1,3 +1,4 @@
+import React, { ReactNode } from 'react';
 import { css, FlattenInterpolation } from 'styled-components';
 import { CssMap, CssResponsiveAttrs } from './css';
 import { DisplayAttrs, FlexAttrs, GridAttrs, MarginAttrs, PaddingAttrs, SizeAttrs, ThemeAttrs, Variant } from './types';
@@ -44,6 +45,36 @@ export function getCssResponsive(props: CssResponsiveAttrs & ThemeAttrs, default
       if (CssMap.has(prop)) {
         // console.log('prop', prop);
         const rule = `${CssMap.get(prop)}: ${value};`;
+        if (g2) {
+          const size: any = g2.toLowerCase();
+          // console.log('size', size, 'rule', rule);
+          return `@media(min-width: ${props.theme.mediaQuery[size]}px) {
+              ${rule}
+            }`;
+        } else {
+          // console.log('rule', rule);
+          return rule;
+        }
+      } else {
+        return '';
+      }
+    });
+    rules += rule + '\n';
+  }
+  return rules;
+}
+
+export function getAspectResponsive(props: CssResponsiveAttrs & ThemeAttrs, defaultValue: CssResponsiveAttrs = {}) {
+  props = { ...defaultValue, ...props };
+  let rules = '';
+  for (const [key, value] of Object.entries(props)) {
+    const rule = key.replace(/(.+?)(Sm|Md|Lg|Xl)?$/, function (m, g1, g2) {
+      const prop: any = g1;
+      if (prop === 'aspectRatio') {
+        const rule = `
+          position: relative;
+          overflow: hidden;
+        `;
         if (g2) {
           const size: any = g2.toLowerCase();
           // console.log('size', size, 'rule', rule);
@@ -243,4 +274,27 @@ export function isChildElement(parent: Element | null | undefined, child: Elemen
     node = node.parentNode;
   }
   return false;
+}
+
+export function getChildsByType(children: ReactNode | undefined, child: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
+  let items: ReactNode[] = [];
+  const others = React.Children.map(children, (item) => {
+    if (!React.isValidElement(item)) {
+      return item;
+    }
+    if (item.type === child) {
+      items.push(item);
+      return null;
+    }
+    return item;
+  });
+  // console.log(items);
+  const childs = items.length > 0 ? items : undefined;
+  return [childs, others];
+}
+
+export function hasChildOfType(children: ReactNode | undefined, child: React.ElementType):boolean {
+  const [foundChildren, otherChildren] = getChildsByType(children, child);
+  const hasChildOfType = foundChildren !== undefined;
+  return hasChildOfType;
 }

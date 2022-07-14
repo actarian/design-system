@@ -1,6 +1,6 @@
-import { ComponentAttrs, ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
-import { getCssResponsive, getVariant } from '@components/utils';
-import { ReactNode } from 'react';
+import { Background } from '@components/background/background';
+import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '@components/utils';
 import styled, { css } from 'styled-components';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
@@ -14,7 +14,7 @@ const variants: Variants = {
   // box-shadow: var(--card-shadow);
 `,
   beta: css`
-  background: var(--color-neutral-900);
+  // background: var(--color-neutral-900);
   border-radius: 2px;
 `,
   gamma: css`
@@ -31,11 +31,8 @@ const variants: Variants = {
 
 type Props = {
   type?: Variant;
-  aspect?: number;
-  background?: ReactNode;
-  justifyContent?: string;
   bordered?: boolean;
-}
+};
 
 export type CardProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
@@ -43,13 +40,41 @@ const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  margin: 0 0 40px 0;
+  // margin: 0 0 40px 0;
 
   ${props => getVariant(variants, props.type)}
   ${props => getCssResponsive(props)}
+  ${props => getAspectResponsive(props)};
 
-  ${props => props.background ? css`
+  ${props => hasBackground(props) ? css`
+    color: var(--color-neutral-100);
     position: relative;
+
+    &>:not(.background) {
+      position: relative;
+    }
+  `: ''}
+`;
+
+  /*
+  ${props => props.aspect ? css`
+    width: 100%;
+    padding-top: ${100 / props.aspect}%;
+    overflow: hidden;
+
+    &>div {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  ` : ''};
+  */
+
+  /*
+  ${props => props.background ? css`
     color: var(--color-neutral-100);
 
     &>:first-child {
@@ -72,61 +97,28 @@ const CardContainer = styled.div<CardProps>`
       }
     }
   `: ''}
-
-  ${props => props.aspect ? css`
-    position: relative;
-    width: 100%;
-    padding-top: ${100 / props.aspect}%;
-    overflow: hidden;
-
-    &>div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  ` : ''};
-`;
-
-type InnerProps = {
-  aspect?: number;
-}
-
-export type CardInnerProps = ComponentAttrs<InnerProps, HTMLDivElement>;
-
-const CardInner = styled.div<CardInnerProps>`
-  display: flex;
-  flex-direction: column;
-
-  ${props => props.aspect ? css`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  ` : ''};
-`;
+  */
 
 const Card = (props: CardProps) => {
   return (
     <CardContainer {...props}>
-      {props.background && props.background}
-      <CardInner {...props}>
-        {props.children}
-      </CardInner>
+      {props.children}
     </CardContainer>
   );
 }
 
+(Card as ICard).Background = Background;
 (Card as ICard).Content = CardContent;
 (Card as ICard).Footer = CardFooter;
 
 export default Card as ICard;
 
 type ICard = typeof Card & {
+  Background: typeof Background;
   Content: typeof CardContent;
   Footer: typeof CardFooter;
 };
+
+function hasBackground(props: CardProps):boolean {
+  return hasChildOfType(props.children, Background);
+}

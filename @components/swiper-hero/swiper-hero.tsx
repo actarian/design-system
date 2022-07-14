@@ -58,15 +58,16 @@ export default function SwiperHero(props: SwiperHeroProps) {
   return (
     <Swiper {...props} navigation pagination={{ clickable: true }}>
       {items.map((item, i) => (
-        <CardHero key={i} justifyContent="flex-end" height="100vh" margin="0" background={
-          <Media className="media" overlay>
-            {item.media.type === 'video' ?
-              (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                <source src={item.media.src} type="video/mp4"></source>
-              </video>) :
-              (<img draggable={false} alt={item.title} src={item.media.src} />)}
-          </Media>
-        }>
+        <CardHero key={i} justifyContent="flex-end" height="100vh" margin="0">
+          <Card.Background>
+            <Media className="media" overlay>
+              {item.media.type === 'video' ?
+                (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                  <source src={item.media.src} type="video/mp4"></source>
+                </video>) :
+                (<img draggable={false} alt={item.title} src={item.media.src} />)}
+            </Media>
+          </Card.Background>
           <Card.Content>
             <Container.Fluid>
               <Grid.Row>

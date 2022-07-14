@@ -1,45 +1,32 @@
+import { Background } from '@components/background/background';
 import { ComponentCssResponsiveAttrs } from '@components/types';
-import { getCssResponsive } from '@components/utils';
-import { ReactNode } from 'react';
+import { getAspectResponsive, getCssResponsive, hasChildOfType } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 type Props = {
-  aspect?: number;
-  background?: ReactNode;
-}
+};
 
 export type SectionProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
 
 const SectionContainer = styled.div<SectionProps>`
-  background: var(--color-alternative-200);
-  color: var(--color-neutral-900);
-  padding: 64px 0;
-  ${props => getCssResponsive(props)}
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
-  ${props => props.background ? css`
+  ${props => getCssResponsive(props, { padding: '3rem 0' })}
+  ${props => getAspectResponsive(props)};
+
+  ${props => hasBackground(props) ? css`
+    color: var(--color-neutral-100);
     position: relative;
 
-    &>:first-child {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &>img,
-      &>video,
-      &>canvas,
-      &>iframe {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
+    &>:not(.background) {
+      position: relative;
     }
   `: ''}
+`;
 
+  /*
   ${props => props.aspect ? css`
     position: relative;
     width: 100%;
@@ -55,16 +42,24 @@ const SectionContainer = styled.div<SectionProps>`
       object-fit: cover;
     }
   ` : ''};
-`;
+  */
 
 const Section = (props: SectionProps) => {
   return (
     <SectionContainer {...props}>
-      {props.background && props.background}
       {props.children}
     </SectionContainer>
   );
 }
 
-export default Section;
+(Section as ISection).Background = Background;
 
+export default Section as ISection;
+
+type ISection = typeof Section & {
+  Background: typeof Background;
+};
+
+function hasBackground(props: SectionProps):boolean {
+  return hasChildOfType(props.children, Background);
+}

@@ -12,6 +12,9 @@ const CssObj = {
   "animationName": "animation-name",
   "animationPlayState": "animation-play-state",
   "animationTimingFunction": "animation-timing-function",
+  */
+ "aspectRatio": "aspect-ratio",
+  /*
   "backfaceVisibility": "backface-visibility",
   "background": "background",
   "backgroundAttachment": "background-attachment",
@@ -228,28 +231,30 @@ export type CssKeys = keyof typeof CssObj;
 
 export type CssAttrs = Record<CssKeys, string>;
 
-export type PropertyOfAttrs<Type> = {
-  [Property in keyof Type]?: string;
+export type PropertyOfAttrs<Type, U> = {
+  [Property in keyof Type]?: U;
 };
 
-export type PropertyOfAttrsSm<Type> = {
-  [Property in keyof Type as `${Uncapitalize<string & Property>}Sm`]?: string;
+export type PropertyOfAttrsSm<Type, U> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Sm`]?: U;
 };
 
-export type PropertyOfAttrsMd<Type> = {
-  [Property in keyof Type as `${Uncapitalize<string & Property>}Md`]?: string;
+export type PropertyOfAttrsMd<Type, U> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Md`]?: U;
 };
 
-export type PropertyOfAttrsLg<Type> = {
-  [Property in keyof Type as `${Uncapitalize<string & Property>}Lg`]?: string;
+export type PropertyOfAttrsLg<Type, U> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Lg`]?: U;
 };
 
-export type PropertyOfAttrsXl<Type> = {
-  [Property in keyof Type as `${Uncapitalize<string & Property>}Xl`]?: string;
+export type PropertyOfAttrsXl<Type, U> = {
+  [Property in keyof Type as `${Uncapitalize<string & Property>}Xl`]?: U;
 };
 
-export type CssResponsiveAttrs = PropertyOfAttrs<CssAttrs> &
-  PropertyOfAttrsSm<CssAttrs> &
-  PropertyOfAttrsMd<CssAttrs> &
-  PropertyOfAttrsLg<CssAttrs> &
-  PropertyOfAttrsXl<CssAttrs>;
+export type ResponsiveAttrs<T, U> = PropertyOfAttrs<T, U> &
+PropertyOfAttrsSm<T, U> &
+PropertyOfAttrsMd<T, U> &
+PropertyOfAttrsLg<T, U> &
+PropertyOfAttrsXl<T, U>;
+
+export type CssResponsiveAttrs = ResponsiveAttrs<CssAttrs, string | number>;

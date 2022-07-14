@@ -27,7 +27,7 @@ export const Colors = ({ data, ...args }) => {
         {Object.keys(theme.color[key]).map(size => (
           <Flex key={size} width={100 / 9 + '%'}>
             <Card
-              aspect={1}
+              aspectRatio={1}
               margin='0'
               backgroundColor={theme.color[key][size]}
               color={theme.color[key][(parseInt(size) >= 500 ? '100' : '900')]}

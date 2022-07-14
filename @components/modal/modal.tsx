@@ -1,5 +1,5 @@
 import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@hooks';
-import React, { MouseEvent, ReactNode, useEffect, useMemo, useState } from 'react';
+import React, { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Backdrop from '../backdrop/backdrop';
 import ModalButton from './modal-button';
@@ -100,22 +100,7 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
 ModalComponent.defaultProps = defaultProps;
 ModalComponent.displayName = 'Modal';
 
-export function getChildsByType(children: ReactNode | undefined, child: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
-  let items: ReactNode[] = [];
-  const others = React.Children.map(children, (item) => {
-    if (!React.isValidElement(item)) {
-      return item;
-    }
-    if (item.type === child) {
-      items.push(item);
-      return null;
-    }
-    return item;
-  });
-  const childs = items.length >= 0 ? items : undefined;
-  return [childs, others];
-}
-
+import { getChildsByType } from '@components/utils';
 import ModalContent from './modal-content';
 import ModalSubtitle from './modal-subtitle';
 import ModalTitle from './modal-title';
