@@ -3,14 +3,9 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: [
-    '../stories/pages/*.stories.@(js|jsx|ts|tsx)',
-    // '../stories/**/*.stories.mdx',
-    // '../stories/**/*.stories.@(js|jsx|ts|tsx)',
-    '../@components/**/*.stories.mdx',
-    '../@components/**/*.stories.@(js|jsx|ts|tsx)',
-    '../@icons/**/*.stories.mdx',
-    '../@icons/**/*.stories.@(js|jsx|ts|tsx)',
-    '../@styles/**/*.stories.mdx',
+    // '../src/stories/pages/*.stories.@(js|jsx|ts|tsx)',
+    '../src/**/*.stories.@(js|jsx|ts|tsx)',
+    '../src/**/*.stories.mdx',
   ],
   addons: [
     '@storybook/addon-links',

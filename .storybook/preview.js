@@ -1,10 +1,10 @@
 // import { themes } from '@storybook/theming';
 import { addDecorator } from '@storybook/react';
-import { theme } from '@styles/theme';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../@styles/style';
-import themeJson from '../@styles/theme.json';
+import GlobalStyle from '../src/@styles/style';
+import { theme } from '../src/@styles/theme';
+import themeJson from '../src/@styles/theme.json';
 import { createCustomTheme } from './utils/create-custom-theme';
 
 addDecorator((story) => (
@@ -22,6 +22,14 @@ addDecorator(withThemesProvider(themes, ThemeProvider));
 export const parameters = {
   docs: {
     theme: createCustomTheme({ theme: themeJson, options: { base: 'light' } }),
+  },
+  options: {
+    storySort: {
+      method: 'alphabetical',
+      // order: ['Introduction', 'Styleguide', 'Atoms', 'Molecules', 'Organisms'],
+      order: ['Introduction', 'Styleguide', 'Colors', 'Icons', 'Components', 'Forms', 'Sections', 'Pages'],
+      locales: 'en-US',
+    }
   },
   /*
   backgrounds: {

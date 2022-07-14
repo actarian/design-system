@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-buildAndWatch('@icons/icons');
+buildAndWatch('src/@icons/icons');
 
 async function buildAndWatch(directory) {
   // console.log('icons.buildAndWatch');

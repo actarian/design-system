@@ -3,8 +3,8 @@ import { addons } from '@storybook/addons';
 import { addDecorator } from '@storybook/react';
 import { withThemesProvider } from 'storybook-addon-styled-component-theme';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../@styles/theme';
-import themeJson from '../@styles/theme.json';
+import { theme } from '../src/@styles/theme';
+import themeJson from '../src/@styles/theme.json';
 import { createCustomTheme } from './utils/create-custom-theme';
 
 const themes = [theme];

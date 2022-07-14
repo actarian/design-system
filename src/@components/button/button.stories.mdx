@@ -1,0 +1,122 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { ShoppingCart } from '@icons';
+import { default as Button, ButtonProps } from './button';
+
+<Meta
+  title="Components / Button"
+  component={Button}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
+  argTypes={{
+    label: {
+      name: 'label',
+      description: 'overwritten description',
+      type: { name: 'string', required: false },
+      defaultValue: 'Button',
+      table: {
+        // disable: true, // to disable row
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'Hello' },
+      },
+      // control: false, // to disable control
+      control: {
+        type: 'text'
+      }
+    },
+    type: {
+      name: 'type',
+      description: 'overwritten description',
+      type: { name: 'Variant', required: false },
+      defaultValue: null,
+      options: [null, 'default', 'alfa', 'beta', 'gamma', 'delta'],
+      control: { type: 'select' },
+      table: {
+        type: {
+          summary: 'something short',
+          detail: 'something really really long'
+        },
+        defaultValue: { summary: 'alfa' },
+      },
+      // if: { arg: 'label', truthy: false },
+    }
+  }}
+  parameters={{
+    backgrounds: { disable: true, grid: { disable: true } },
+  }}
+/>
+
+# Button
+
+Used to trigger an operation.
+
+[View source](https://github.com/actarian/design-system/tree/main/@components/button)
+
+## Imports
+
+```js
+import { Button } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={ButtonProps} />
+-->
+
+## Basic
+
+A basic example of `Button`.
+
+export const Basic = ({ data, ...args }) => (<>
+  <Button {...args} onClick={() => alert('click')}>Action</Button>
+</>);
+
+<Canvas>
+  <Story name="basic" parameters={{
+    docs: {
+      source: {
+        code: '<Button onClick={() => {}}>Button</Button>',
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
+    {Basic.bind({})}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="default">
+    <Button type="default">Default</Button>
+  </Story>
+  <Story name="alfa">
+    <Button type="alfa">Alfa</Button>
+  </Story>
+  <Story name="beta">
+    <Button type="beta">Beta</Button>
+  </Story>
+  <Story name="gamma">
+    <Button type="gamma">Gamma</Button>
+  </Story>
+  <Story name="delta">
+    <Button type="delta">Delta</Button>
+  </Story>
+  <Story name="epsilon">
+    <Button type="epsilon">Epsilon</Button>
+  </Story>
+  <Story name="zeta">
+    <Button type="zeta">Zeta</Button>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="with icon">
+    <Button type="alfa"><span>Buy</span> <ShoppingCart /></Button>
+  </Story>
+</Canvas>

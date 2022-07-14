@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 
-buildAndWatch('@styles/theme.json');
+buildAndWatch('src/@styles/theme.json');
 
 async function buildAndWatch(fileName) {
   // console.log('vars.buildAndWatch');
@@ -19,7 +19,7 @@ async function rebuild(fileName) {
   const scssVars = getScssVars(nameAndValues);
   const rootVars = getRootVars(nameAndValues);
   // const vars = collectVars(theme);
-  await fsWrite('@styles/_vars.scss', scssVars + '\n' + rootVars);
+  await fsWrite('src/@styles/_vars.scss', scssVars + '\n' + rootVars);
   const vars = `
   import { css } from 'styled-components';
 
@@ -32,7 +32,7 @@ ${nameAndValues.names.map((key, i) => {
 }
 \`;
   `;
-  await fsWrite('@styles/_vars.tsx', vars);
+  await fsWrite('src/@styles/_vars.tsx', vars);
 }
 
 function getScssVars(nameAndValues) {

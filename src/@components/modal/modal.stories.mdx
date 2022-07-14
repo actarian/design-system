@@ -1,0 +1,93 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Modal, ModalProps } from './modal';
+import { useState } from 'react';
+import { ChevronDown } from '@icons';
+import { Text, Button } from '@components';
+import Link from 'next/link';
+
+<Meta
+  title="Components / Modal"
+  component={Modal}
+  decorators={[(story) => (
+    <div style={ { padding: '2rem' } }>
+      { story() }
+    </div>
+  )]}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Modal
+
+A component to display a `Modal`.
+
+[View source](https://github.com/actarian/design-system/tree/main/@components/modal)
+
+## Imports
+
+```js
+import { Modal } from '@design-system';
+```
+
+<!--
+## Props
+
+<ArgsTable of={ModalProps} />
+-->
+
+## Example
+
+A basic example of `Modal`.
+
+export const Basic = ({ data, ...args }) => {
+  const [showModal, setShowModal] = useState(false);
+  const onOpenModal = () => setShowModal(true);
+  const onCloseModal = () => {
+    setShowModal(false);
+  }
+  return (<>
+    <div style={{ margin: '0 1em' }}>
+      <Button type="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
+      <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
+        <Modal.Title>Modal Title</Modal.Title>
+        <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
+        <Modal.Content>
+          <p>Modal content lorem ispum.</p>
+        </Modal.Content>
+        <Modal.Button passive onClick={onCloseModal}>Cancel</Modal.Button>
+        <Modal.Button>Confirm</Modal.Button>
+      </Modal>
+    </div>
+  </>);
+}
+
+<Canvas>
+  <Story name="basic" args={{ type: 'default' }} parameters={{
+    docs: {
+      source: {
+        code: `
+  const [showModal, setShowModal] = useState(false);
+  const onOpenModal = () => setShowModal(true);
+  const onCloseModal = (_: any) => {
+    setShowModal(false);
+  }
+  return (<>
+      <Button type="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
+      <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
+        <Modal.Title>Modal Title</Modal.Title>
+        <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
+        <Modal.Content>
+          <p>Modal content lorem ispum.</p>
+        </Modal.Content>
+        <Modal.Button passive onClick={onCloseModal}>Cancel</Modal.Button>
+        <Modal.Button>Confirm</Modal.Button>
+      </Modal>
+  </>);
+        `,
+        language: "tsx",
+        type: "auto",
+      }
+    },
+  }}>
+    {Basic.bind({})}
+  </Story>
+</Canvas>
