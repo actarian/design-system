@@ -2,6 +2,7 @@ import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Activity, Airplay, AlertCircle, AlertOctagon, AlertTriangle, AlignCenter, AlignJustify, ShoppingCart } from '@icons';
 import { Icons } from './icons';
 import { Container, Flex, Text, Card, Media, Grid } from '@components';
+import { Input } from '@forms';
 import { createElement, lazy, Suspense, useMemo, useState } from 'react';
 
 <Meta
@@ -10,6 +11,9 @@ import { createElement, lazy, Suspense, useMemo, useState } from 'react';
   argTypes={{ }}
   parameters={{
     backgrounds: { disable: true, grid: { disable: true } },
+    docs: {
+      page: null,
+    },
   }}
 />
 
@@ -47,20 +51,18 @@ export const IconsList = ({ data, ...args }) => {
     <Container>
       <Grid.Row padding="32px 0">
         <Grid>
-          <Text type="h4">Search Icon</Text>
-          <input name="search" style={{ width: '100%', fontSize: '20px', lineHeight: '1.6' }} onChange={onSearch} />
-          <Flex.Row>
+          <Text type="h4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
+          <Input name="search" placeholder="start typing..." onChange={onSearch} marginBottom="2rem" />
+          <Flex.Row gap="1rem" justifyContent="center">
             {visibleIcons.map(icon => (
-              <Flex key={icon.key}>
-                <Card type="alfa" width="180px">
-                  <Media height="64px">
-                    <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
-                  </Media>
-                  <Card.Content alignItems="center">
-                    <Text type="smaller">{icon.key}</Text>
-                  </Card.Content>
-                </Card>
-              </Flex>
+              <Card key={icon.key} type="alfa" flexGrow="1" width="180px" padding="0.5rem" border="2px solid var(--color-neutral-200)">
+                <Media height="64px">
+                  <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
+                </Media>
+                <Card.Content alignItems="center">
+                  <Text type="smaller">{icon.key}</Text>
+                </Card.Content>
+              </Card>
             ))}
           </Flex.Row>
         </Grid>
@@ -71,7 +73,7 @@ export const IconsList = ({ data, ...args }) => {
 };
 
 <Canvas>
-  <Story name="icons" parameters={{
+  <Story name="Icons" parameters={{
     docs: {
       source: {
         code: `import { ShoppingCart } from '@design-system';
@@ -86,6 +88,7 @@ export const IconsList = ({ data, ...args }) => {
   </Story>
 </Canvas>
 
+<!--
 <Canvas>
   <Story name="example">
     <Container>
@@ -101,3 +104,4 @@ export const IconsList = ({ data, ...args }) => {
     </Container>
   </Story>
 </Canvas>
+-->

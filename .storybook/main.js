@@ -3,9 +3,14 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: [
-    // '../src/stories/pages/*.stories.@(js|jsx|ts|tsx)',
-    '../src/**/*.stories.@(js|jsx|ts|tsx)',
-    '../src/**/*.stories.mdx',
+    // '../src/stories/pages/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/@components/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/@forms/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/@hooks/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/@icons/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/@sections/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/@styles/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/stories/pages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   addons: [
     '@storybook/addon-links',
@@ -74,6 +79,7 @@ module.exports = {
       type: 'javascript/auto',
       issuer: { and: [/\.(js|ts|md)x?$/] },
     });
+    /*
     config.module.rules.push({
       test: /\.css$/i,
       issuer: { and: [/\.(js|ts|md)x?$/] },
@@ -83,6 +89,7 @@ module.exports = {
         },
       ],
     });
+    */
     return config;
   }
 }

@@ -14,8 +14,8 @@ const Media = styled.div<MediaProps>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--color-neutral-900);
-  color: var(--color-neutral-100);
+  // background: var(--color-neutral-900);
+  // color: var(--color-neutral-100);
 
   ${props => getCssResponsive(props)}
 

@@ -12,9 +12,7 @@ const Hero = (props: HeroProps) => {
       <Card justifyContent="flex-end" height="100vh" margin="0">
         <Card.Background>
           <Media overlay>
-            <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-              <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
-            </video>
+            <img draggable={false} alt="Trusted Group" src="https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600" />
           </Media>
         </Card.Background>
         <Card.Content>

@@ -48,6 +48,7 @@ export const parameters = {
   */
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
+  showPanel: false,
   controls: {
     expanded: false,
     /*
