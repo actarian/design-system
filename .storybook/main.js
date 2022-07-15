@@ -3,7 +3,6 @@ const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
 
 module.exports = {
   stories: [
-    // '../src/stories/pages/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../src/@components/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../src/@forms/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../src/@hooks/**/*.stories.@(js|jsx|ts|tsx|mdx)',
