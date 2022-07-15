@@ -61,6 +61,10 @@
       }
     }
   },
+  "form": {
+    "fontSize": "1.125rem",
+    "lineHeight": "1.625"
+  },
   "grid": {
     "columns": 12,
     "size": "1fr",

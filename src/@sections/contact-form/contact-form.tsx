@@ -1,6 +1,6 @@
 import { Container, Grid } from '@components';
 import { ComponentAttrs } from '@components/types';
-import { Field, Input, Label } from '@forms';
+import { Field, Input, Label, Radio } from '@forms';
 import React from 'react';
 
 import styled from 'styled-components';
@@ -28,26 +28,32 @@ const ContactForm = (props: ContactFormProps) => {
         <Grid.Row rowGap='1rem'>
           <Grid md={6}>
             <Field>
-              <Label>First Name</Label>
-              <Input onChange={onChange} />
+              <Label>First name</Label>
+              <Input placeholder="First name" onChange={onChange} />
             </Field>
           </Grid>
           <Grid md={6}>
             <Field>
-              <Label>Last Name</Label>
-              <Input />
+              <Label>Last name</Label>
+              <Input placeholder="Last name" />
             </Field>
           </Grid>
           <Grid md={6}>
             <Field>
               <Label>Email</Label>
-              <Input />
+              <Input placeholder="Email" />
             </Field>
           </Grid>
           <Grid md={6}>
             <Field>
               <Label>Country</Label>
-              <Input />
+              <Input placeholder="Country" />
+            </Field>
+          </Grid>
+          <Grid>
+            <Field>
+              <Label>Radio</Label>
+              <Radio />
             </Field>
           </Grid>
         </Grid.Row>

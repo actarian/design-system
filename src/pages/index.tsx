@@ -243,6 +243,16 @@ export default function Homepage() {
             <Modal.Button type="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
           </Modal>
 
+          <Section padding="3rem 0">
+            <Container>
+              <Text type="h2" fontWeight="700" textAlign="center">Workbench</Text>
+            </Container>
+          </Section>
+
+          <Divider marginBottom="4rem">Forms</Divider>
+
+          <ContactForm></ContactForm>
+
           <Section aspectRatio={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
             <Section.Background>
               <Media overlay>
@@ -251,16 +261,6 @@ export default function Homepage() {
             </Section.Background>
             <Container textAlign='center'>
               <Text type="h1" fontWeight="700">Workbench.</Text>
-            </Container>
-          </Section>
-
-          <Divider marginBottom="4rem">Forms</Divider>
-
-          <ContactForm></ContactForm>
-
-          <Section padding="3rem 0">
-            <Container>
-              <Text type="h2" fontWeight="700" textAlign="center">Workbench</Text>
             </Container>
           </Section>
 

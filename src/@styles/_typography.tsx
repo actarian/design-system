@@ -11,4 +11,14 @@ body {
   return `font-size: var(--font-size-${key});`;
 })}
 }
+
+/*
+* {
+  outline-offset: 0.2rem;
+  &:focus-visible {
+    outline: 2px solid var(--color-neutral-400);
+  }
+}
+*/
+
 `;

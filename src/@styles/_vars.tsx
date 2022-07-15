@@ -34,6 +34,8 @@
   --font-variant-smaller-line-height: 1.7;
   --font-variant-smallest-size: 0.7rem;
   --font-variant-smallest-line-height: 1.8;
+  --form-font-size: 1.125rem;
+  --form-line-height: 1.625;
   --grid-columns: 12;
   --grid-size: 1fr;
   --grid-column-gap: Max(4vw, Min(96px, 5vw));
