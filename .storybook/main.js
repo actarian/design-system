@@ -74,6 +74,15 @@ module.exports = {
       type: 'javascript/auto',
       issuer: { and: [/\.(js|ts|md)x?$/] },
     });
+    config.module.rules.push({
+      test: /\.css$/i,
+      issuer: { and: [/\.(js|ts|md)x?$/] },
+      use: [
+        {
+          loader: 'raw-loader'
+        },
+      ],
+    });
     return config;
   }
 }

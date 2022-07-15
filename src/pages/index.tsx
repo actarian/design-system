@@ -1,5 +1,4 @@
-import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Modal, Page, Section, Swiper, Text } from '@components';
-import { Carousel } from '@components/carousel/carousel';
+import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Modal, Page, Section, Text } from '@components';
 import { useDrawer } from '@hooks';
 import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
 import { ContactForm, Footer, Header, SwiperHero } from '@sections';
@@ -73,74 +72,6 @@ export default function Homepage() {
 
           <SwiperHero items={items} />
 
-          {false &&
-            <Swiper navigation pagination={{ clickable: true }}>
-              {items.map((item, i) => (
-                <Card key={i} justifyContent="flex-end" height="100vh" margin="0">
-                  <Card.Background>
-                    <Media overlay>
-                      {item.media.type === 'video' ?
-                        (<video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                          <source src={item.media.src} type="video/mp4"></source>
-                        </video>) :
-                        (<img draggable={false} alt={item.title} src={item.media.src} />)}
-                    </Media>
-                  </Card.Background>
-                  <Card.Content>
-                    <Container.Fluid>
-                      <Grid.Row>
-                        <Grid md={6} padding="3rem 0 6rem 0">
-                          <Text type="h2" fontWeight="700">{item.title}</Text>
-                        </Grid>
-                        <Grid md={6} padding="3rem 0 6rem 0">
-                          <Text type="h6">{item.abstract}</Text>
-                        </Grid>
-                      </Grid.Row>
-                    </Container.Fluid>
-                  </Card.Content>
-                </Card>
-              ))}
-            </Swiper>
-          }
-
-          {false &&
-            <Section padding="0">
-              <Card justifyContent="flex-end" height="100vh" margin="0">
-                <Card.Background>
-                  <Media overlay>
-                    <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                      <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
-                    </video>
-                  </Media>
-                </Card.Background>
-                <Card.Content>
-                  <Container.Fluid>
-                    <Grid.Row>
-                      <Grid md={6} padding="3rem 0">
-                        <Text type="h2" fontWeight="700">Sustainable agriculture</Text>
-                      </Grid>
-                      <Grid md={6} padding="3rem 0">
-                        <Text type="h6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
-                      </Grid>
-                    </Grid.Row>
-                  </Container.Fluid>
-                </Card.Content>
-              </Card>
-            </Section>
-          }
-
-          {false &&
-            <div style={{ width: '100%', height: 500 }}>
-              <Carousel>{({ index }) => {
-                const modulo = index % items.length;
-                const imageIndex = modulo < 0 ? items.length + modulo : modulo;
-                return (
-                  <img draggable={false} alt="Mountain" style={{ width: "100%" }} src={items[imageIndex].media.src} />
-                );
-              }}</Carousel>
-            </div>
-          }
-
           <Section padding="3rem 0">
             <Container>
               <Grid.Row>
@@ -154,7 +85,7 @@ export default function Homepage() {
                     <Media width="3rem" height="3rem" circle>
                       <img src="https://i.pravatar.cc/128?u=1" />
                     </Media>
-                    <Text type="h8">Tim Neutkens</Text>
+                    <Text type="h8" fontWeight="700">Tim Neutkens</Text>
                   </Flex.Row>
                 </Grid>
               </Grid.Row>
@@ -165,7 +96,7 @@ export default function Homepage() {
             <Container>
               <Text type="h2" fontWeight="700" marginBottom="3rem">More Stories</Text>
               <Grid.Row rowGap='3rem'>
-                <Grid md={6}>
+                <Grid sm={6}>
                   <Card>
                     <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
                       <img src={'https://picsum.photos/640/480?u=2'} />
@@ -184,12 +115,12 @@ export default function Homepage() {
                         <Media width="3rem" height="3rem" circle>
                           <img src="https://i.pravatar.cc/128?u=3" />
                         </Media>
-                        <Text type="h8">Joe Haddad</Text>
+                        <Text type="h8" fontWeight="700">Joe Haddad</Text>
                       </Flex.Row>
                     </Card.Footer>
                   </Card>
                 </Grid>
-                <Grid md={6}>
+                <Grid sm={6}>
                   <Card>
                     <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
                       <img src={'https://picsum.photos/640/480?u=4'} />
@@ -208,7 +139,7 @@ export default function Homepage() {
                         <Media width="3rem" height="3rem" circle>
                           <img src="https://i.pravatar.cc/128?u=5" />
                         </Media>
-                        <Text type="h8">JJ Kasper</Text>
+                        <Text type="h8" fontWeight="700">JJ Kasper</Text>
                       </Flex.Row>
                     </Card.Footer>
                   </Card>
@@ -243,7 +174,7 @@ export default function Homepage() {
             <Modal.Button type="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
           </Modal>
 
-          <Section aspectRatio={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
+          <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
             <Section.Background>
               <Media overlay>
                 <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
