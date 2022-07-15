@@ -29,7 +29,8 @@ export const parameters = {
       // order: ['Introduction', 'Styleguide', 'Atoms', 'Molecules', 'Organisms'],
       order: ['Introduction', 'Styleguide', 'Colors', 'Icons', 'Components', 'Forms', 'Sections', 'Pages'],
       locales: 'en-US',
-    }
+    },
+    showPanel: false,
   },
   /*
   backgrounds: {
@@ -48,7 +49,6 @@ export const parameters = {
   */
   layout: 'fullscreen',
   actions: { argTypesRegex: '^on[A-Z].*' },
-  showPanel: false,
   controls: {
     expanded: false,
     /*
