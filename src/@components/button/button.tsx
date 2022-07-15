@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { ComponentCssResponsiveProps, SizeVariant, Variant, Variants } from '@components/types';
 import { getCssResponsive, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
@@ -60,7 +60,7 @@ const CssAfter = css`
 
 const variants: Variants = {
   default: css`
-  padding: 1em 2em;
+  padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   color: var(--color-primary-500);
   border: 2px solid var(--color-primary-100);
@@ -73,7 +73,7 @@ const variants: Variants = {
   ${CssSvg}
 `,
   alfa: css`
-  padding: 1em 2em;
+  padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   background: var(--color-primary-500);
   color: var(--color-neutral-100);
@@ -88,7 +88,7 @@ const variants: Variants = {
   ${CssSvg}
 `,
   beta: css`
-  padding: 1em 2em;
+  padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   color: var(--color-primary-500);
   border: 2px solid var(--color-primary-500);
@@ -113,7 +113,7 @@ const variants: Variants = {
   ${CssSvg}
 `,
   delta: css`
-  padding: 1em 2em;
+  padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   background: var(--color-secondary-500);
   color: var(--color-neutral-100);
@@ -126,7 +126,7 @@ const variants: Variants = {
   }
   `,
   epsilon: css`
-  padding: 1em 2em;
+  padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   color: var(--color-secondary-500);
   border: 2px solid var(--color-secondary-500);
@@ -161,11 +161,12 @@ const variants: Variants = {
 
 type Props = {
   type?: Variant;
+  size?: SizeVariant;
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-export type ButtonProps = ComponentCssResponsiveAttrs<Props, Element>;
+export type ButtonProps = ComponentCssResponsiveProps<Props, Element>;
 
 const StyledButton = styled.button<ButtonProps>`
   display: inline-block;
@@ -183,6 +184,7 @@ const StyledButton = styled.button<ButtonProps>`
   cursor: pointer;
 
   ${props => getVariant(variants, props.type)}
+  ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
   ${props => getCssResponsive(props)}
 `;
 

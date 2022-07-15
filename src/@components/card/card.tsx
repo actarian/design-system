@@ -1,5 +1,5 @@
 import { Background } from '@components/background/background';
-import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '@components/utils';
 import styled, { css } from 'styled-components';
 import { CardContent } from './card-content';
@@ -34,7 +34,7 @@ type Props = {
   bordered?: boolean;
 };
 
-export type CardProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type CardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const CardContainer = styled.div<CardProps>`
   display: flex;
@@ -56,48 +56,48 @@ const CardContainer = styled.div<CardProps>`
   `: ''}
 `;
 
-  /*
-  ${props => props.aspect ? css`
-    width: 100%;
-    padding-top: ${100 / props.aspect}%;
-    overflow: hidden;
+/*
+${props => props.aspect ? css`
+  width: 100%;
+  padding-top: ${100 / props.aspect}%;
+  overflow: hidden;
 
-    &>div {
-      position: absolute;
-      top: 0;
-      left: 0;
+  &>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+` : ''};
+*/
+
+/*
+${props => props.background ? css`
+  color: var(--color-neutral-100);
+
+  &>:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &>img,
+    &>video,
+    &>canvas,
+    &>iframe {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-  ` : ''};
-  */
-
-  /*
-  ${props => props.background ? css`
-    color: var(--color-neutral-100);
-
-    &>:first-child {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &>img,
-      &>video,
-      &>canvas,
-      &>iframe {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
-  `: ''}
-  */
+  }
+`: ''}
+*/
 
 const Card = (props: CardProps) => {
   return (
@@ -119,6 +119,6 @@ type ICard = typeof Card & {
   Footer: typeof CardFooter;
 };
 
-function hasBackground(props: CardProps):boolean {
+function hasBackground(props: CardProps): boolean {
   return hasChildOfType(props.children, Background);
 }

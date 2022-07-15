@@ -1,5 +1,5 @@
 import { Button, Container, Flex, Grid, Nav, Text } from '@components';
-import { ComponentAttrs } from '@components/types';
+import { ComponentProps } from '@components/types';
 import { Facebook, Github, Hexagon, Instagram, Linkedin, Twitter } from '@icons';
 import Link from 'next/link';
 
@@ -8,7 +8,7 @@ import styled from 'styled-components';
 type Props = {
 }
 
-export type FooterProps = ComponentAttrs<Props, HTMLDivElement>;
+export type FooterProps = ComponentProps<Props, HTMLDivElement>;
 
 const FooterContainer = styled.div<FooterProps>`
   padding: 6rem 0 4rem 0;

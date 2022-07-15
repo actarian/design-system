@@ -1,17 +1,20 @@
+import { ComponentProps } from '@components/types';
 import { useClasses, useCurrentState } from '@hooks';
 import React, { MouseEvent } from 'react';
 import styled from 'styled-components';
 import Transition from '../transition/transition';
 
 interface Props {
-  onClick?: (event: MouseEvent<HTMLElement>) => void
   visible?: boolean
   width?: string
+  onClick?: (event: MouseEvent<HTMLElement>) => void
   onContentClick?: (event: MouseEvent<HTMLElement>) => void
   backdropClassName?: string
   positionClassName?: string
   layerClassName?: string
 }
+
+export type BackdropProps = ComponentProps<Props, HTMLDivElement>;
 
 const defaultProps = {
   onClick: () => { },
@@ -124,7 +127,3 @@ Backdrop.defaultProps = defaultProps;
 Backdrop.displayName = 'Backdrop';
 
 export default Backdrop;
-
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-
-export type BackdropProps = Props & NativeAttrs

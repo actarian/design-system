@@ -1,6 +1,6 @@
-import { Container, Grid } from '@components';
-import { ComponentAttrs } from '@components/types';
-import { Field, Input, Label, Radio } from '@forms';
+import { Button, Container, Flex, Grid } from '@components';
+import { ComponentProps } from '@components/types';
+import { Checkbox, Field, Input, Label, Radio, Select, TextArea } from '@forms';
 import React from 'react';
 
 import styled from 'styled-components';
@@ -8,12 +8,12 @@ import styled from 'styled-components';
 type Props = {
 }
 
-export type ContactFormProps = ComponentAttrs<Props, HTMLDivElement>;
+export type ContactFormProps = ComponentProps<Props, HTMLDivElement>;
 
 const ContactFormContainer = styled.div<ContactFormProps>`
   padding: 6rem 0 4rem 0;
-  border-top: 1px solid var(--color-neutral-200);
-  border-bottom: 1px solid var(--color-neutral-200);
+  // border-top: 1px solid var(--color-neutral-200);
+  // border-bottom: 1px solid var(--color-neutral-200);
   // background: var(--color-neutral-900);
   // color: var(--color-neutral-100);
 `;
@@ -47,14 +47,37 @@ const ContactForm = (props: ContactFormProps) => {
           <Grid md={6}>
             <Field>
               <Label>Country</Label>
-              <Input placeholder="Country" />
+              <Select name='country' id='country' defaultValue='Italia'>
+                <option>Italia</option>
+                <option>Canada</option>
+                <option>Francia</option>
+                <option>Germania</option>
+                <option>Stati Uniti</option>
+              </Select>
             </Field>
           </Grid>
           <Grid>
             <Field>
-              <Label>Radio</Label>
-              <Radio />
+              <Label>Message</Label>
+              <TextArea placeholder="Message" />
             </Field>
+          </Grid>
+          <Grid>
+            <Field>
+              <Label><Radio name='color' id='red' value='red' /> Red</Label>
+              <Label><Radio name='color' id='green' value='green' /> Green</Label>
+              <Label><Radio name='color' id='blue' value='blue' /> Blue</Label>
+            </Field>
+          </Grid>
+          <Grid>
+            <Field>
+              <Label><Checkbox name='privacy' id='privacy' /> Privacy</Label>
+            </Field>
+          </Grid>
+          <Grid>
+            <Flex.Row justifyContent="center">
+              <Button type="alfa" size="lg">Submit</Button>
+            </Flex.Row>
           </Grid>
         </Grid.Row>
       </Container>

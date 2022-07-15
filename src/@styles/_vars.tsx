@@ -50,7 +50,12 @@
   --media-query-md: 1024;
   --media-query-lg: 1440;
   --media-query-xl: 1600;
-  --button-border-radius: 0;
+  --button-size-xs: 0.7rem;
+  --button-size-sm: 0.8rem;
+  --button-size-md: 1rem;
+  --button-size-lg: 1.25rem;
+  --button-size-xl: 1.45rem;
+  --button-border-radius: 0.2em;
   --card-shadow: 0 20px 20px -10px rgba(0,0,0,0.2);
   --border-radius: 0.5em;
   --shadow-lg: 0 1rem 4rem -0.5rem rgba(0, 0, 0, 0.9);

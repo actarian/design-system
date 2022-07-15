@@ -1,4 +1,5 @@
 import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Modal, Page, Section, Text } from '@components';
+import { Label } from '@forms';
 import { useDrawer } from '@hooks';
 import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
 import { ContactForm, Footer, Header, SwiperHero } from '@sections';
@@ -184,17 +185,6 @@ export default function Homepage() {
 
           <ContactForm></ContactForm>
 
-          <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
-            <Section.Background>
-              <Media overlay>
-                <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
-              </Media>
-            </Section.Background>
-            <Container textAlign='center'>
-              <Text type="h1" fontWeight="700">Workbench.</Text>
-            </Container>
-          </Section>
-
           <Divider marginBottom="4rem">Typography</Divider>
 
           <Section>
@@ -216,6 +206,37 @@ export default function Homepage() {
             </Container>
           </Section>
 
+          <Divider marginBottom="4rem">Buttons</Divider>
+
+          <Section>
+            <Container>
+              <Label>Alfa</Label>
+              <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                <Button type="alfa" size="xs" as="button">Button Xs</Button>
+                <Button type="alfa" size="sm" as="button">Button Sm</Button>
+                <Button type="alfa" size="md" as="button">Button Md</Button>
+                <Button type="alfa" size="lg" as="button">Button Lg</Button>
+                <Button type="alfa" size="xl" as="button">Button Xl</Button>
+              </Flex.Col>
+              <Label>Beta</Label>
+              <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                <Button type="beta" size="xs" as="button">Button Xs</Button>
+                <Button type="beta" size="sm" as="button">Button Sm</Button>
+                <Button type="beta" size="md" as="button">Button Md</Button>
+                <Button type="beta" size="lg" as="button">Button Lg</Button>
+                <Button type="beta" size="xl" as="button">Button Xl</Button>
+              </Flex.Col>
+              <Label>Gamma</Label>
+              <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                <Button type="gamma" size="xs" as="button">Button Xs</Button>
+                <Button type="gamma" size="sm" as="button">Button Sm</Button>
+                <Button type="gamma" size="md" as="button">Button Md</Button>
+                <Button type="gamma" size="lg" as="button">Button Lg</Button>
+                <Button type="gamma" size="xl" as="button">Button Xl</Button>
+              </Flex.Col>
+            </Container>
+          </Section>
+
           <Divider marginBottom="4rem">Button Group</Divider>
 
           <Section>
@@ -233,6 +254,17 @@ export default function Homepage() {
                 <Button type="default">View on Github</Button>
                 <Button type="default"><span>Open</span> <ChevronDown /></Button>
               </ButtonGroup>
+            </Container>
+          </Section>
+
+          <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
+            <Section.Background>
+              <Media overlay>
+                <img draggable={false} src='https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600' />
+              </Media>
+            </Section.Background>
+            <Container textAlign='center'>
+              <Text type="h1" fontWeight="700">Workbench.</Text>
             </Container>
           </Section>
 
@@ -293,8 +325,7 @@ export default function Homepage() {
 
           </>}
 
-
-          {true && <>
+          {false && <>
 
             <Divider marginBottom="4rem">Grid</Divider>
 

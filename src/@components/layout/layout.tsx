@@ -1,17 +1,17 @@
 import { Box } from '@components';
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 type Props = {
 };
 
-export type LayoutProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type LayoutProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const StyledLayout = styled(Box)`
 `;
 
-const Layout = forwardRef<any, LayoutProps>((props, ref) => (
+const Layout = forwardRef<HTMLDivElement, LayoutProps>((props, ref) => (
   <StyledLayout ref={ref} as='div' {...props} />
 ));
 

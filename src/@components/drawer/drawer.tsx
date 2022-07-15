@@ -1,4 +1,5 @@
 import Backdrop from '@components/backdrop/backdrop';
+import { ComponentProps } from '@components/types';
 import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@hooks';
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
@@ -18,15 +19,14 @@ interface Props {
   placement?: DrawerPlacement
 }
 
+export type DrawerProps = ComponentProps<Props, HTMLDivElement>;
+
 const defaultProps = {
   wrapClassName: '',
   keyboard: true,
   disableBackdropClick: false,
   placement: 'right' as DrawerPlacement,
 }
-
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type DrawerProps = Props & NativeAttrs
 
 const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
   visible: customVisible,

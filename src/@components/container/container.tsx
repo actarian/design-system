@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getContainer, getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 
@@ -6,7 +6,7 @@ type Props = {
   fluid?: boolean;
 }
 
-export type ContainerProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type ContainerProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const Container = styled.div<ContainerProps>`
   width: 100%;

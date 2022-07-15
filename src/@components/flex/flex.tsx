@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 import { FlexCol } from './flex-col';
@@ -18,7 +18,7 @@ export default Flex as IFlex;
 type Props = {
 }
 
-export type FlexProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type FlexProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 type IFlex = typeof Flex & {
   Row: typeof FlexRow;

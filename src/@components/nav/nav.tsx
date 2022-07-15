@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getCssResponsive, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
@@ -20,7 +20,7 @@ type Props = {
   type?: Variant;
 }
 
-export type NavProps = ComponentCssResponsiveAttrs<Props, HTMLUListElement>;
+export type NavProps = ComponentCssResponsiveProps<Props, HTMLUListElement>;
 
 const NavUl = styled.ul<NavProps>`
   list-style: none;

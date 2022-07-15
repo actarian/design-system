@@ -1,3 +1,4 @@
+import { ComponentProps } from '@components/types';
 import { useClasses } from '@hooks';
 import React from 'react';
 import styled from 'styled-components';
@@ -10,9 +11,7 @@ const defaultProps = {
   className: '',
 };
 
-type NativeAttrs = Omit<React.HTMLAttributes<HTMLElement>, keyof Props>;
-
-export type ModalContentProps = Props & NativeAttrs;
+export type ModalContentProps = ComponentProps<Props, HTMLDivElement>;
 
 const StyleContent = styled.div`
   position: relative;

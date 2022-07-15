@@ -31,8 +31,17 @@
       "@tests*": ["src/@tests*"],
       "@tests": ["src/@tests/index"],
       "pages*": ["src/pages*"],
-    }
+    },
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitUseStrict": false,
+    "noStrictGenericChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "importsNotUsedAsValues": "preserve",
   },
   "exclude": ["node_modules", ".next", "out", "storybook-static"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@components/button/button.stories.__tsx", "@styles/theme.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@components/button/button.stories.__tsx", "src/@styles/theme.js"]
 }

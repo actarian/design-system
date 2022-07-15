@@ -1,11 +1,11 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
 }
 
-export type BackgroundProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type BackgroundProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 export const Background = styled.div<BackgroundProps>`
   position: absolute;

@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import { sizes } from '@styles';
 import styled, { css } from 'styled-components';
@@ -12,7 +12,7 @@ type Props = {
   xl?: number;
 }
 
-export type GridProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type GridProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 export const Grid = styled.div<GridProps>`
   // default grid column

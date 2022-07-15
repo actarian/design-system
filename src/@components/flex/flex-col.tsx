@@ -1,11 +1,11 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 
 type Props = {
 }
 
-export type FlexColProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type FlexColProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 export const FlexCol = styled.div<FlexColProps>`
   display: flex;

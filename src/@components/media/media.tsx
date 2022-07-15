@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getAspectResponsive, getCssResponsive } from '@components/utils';
 import styled, { css } from 'styled-components';
 
@@ -7,7 +7,7 @@ type Props = {
   overlay?: boolean;
 };
 
-export type MediaProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type MediaProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const Media = styled.div<MediaProps>`
   display: flex;

@@ -1,14 +1,12 @@
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps, TextVariant } from '@components/types';
 import { getCssResponsive, hypenize } from '@components/utils';
 import styled, { css } from 'styled-components';
 
-export type TextType = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7' | 'h8' | 'default' | 'small' | 'smaller' | 'smallest';
-
 type Props = {
-  type?: TextType;
+  type?: TextVariant;
 }
 
-export type TextProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type TextProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const Text = styled.div<TextProps>`
   ${({ type = 'default' }) => {

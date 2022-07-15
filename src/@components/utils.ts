@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { css, FlattenInterpolation } from 'styled-components';
-import { CssMap, CssResponsiveAttrs } from './css';
-import { GridAttrs, ThemeAttrs, Variant } from './types';
+import { CssMap, CssResponsiveProps } from './css';
+import { GridProps, ThemeProps, Variant } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -13,7 +13,7 @@ export function setClass<T>(className: string) {
   }
 }
 
-export function getContainer(props: ThemeAttrs, fluid?: boolean) {
+export function getContainer(props: ThemeProps, fluid?: boolean) {
   if (fluid) {
     return `
     max-width: calc(100% - var(--grid-column-gap) * 2);
@@ -35,7 +35,7 @@ export function getContainer(props: ThemeAttrs, fluid?: boolean) {
   }
 }
 
-export function getCssResponsive(props: CssResponsiveAttrs & ThemeAttrs, defaultValue: CssResponsiveAttrs = {}) {
+export function getCssResponsive(props: CssResponsiveProps & ThemeProps, defaultValue: CssResponsiveProps = {}) {
   props = { ...defaultValue, ...props };
   let rules = '';
   for (const [key, value] of Object.entries(props)) {
@@ -64,7 +64,7 @@ export function getCssResponsive(props: CssResponsiveAttrs & ThemeAttrs, default
   return rules;
 }
 
-export function getAspectResponsive(props: CssResponsiveAttrs & ThemeAttrs, defaultValue: CssResponsiveAttrs = {}) {
+export function getAspectResponsive(props: CssResponsiveProps & ThemeProps, defaultValue: CssResponsiveProps = {}) {
   props = { ...defaultValue, ...props };
   let rules = '';
   for (const [key, value] of Object.entries(props)) {
@@ -94,7 +94,7 @@ export function getAspectResponsive(props: CssResponsiveAttrs & ThemeAttrs, defa
   return rules;
 }
 
-export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
+export function getGrid(props: GridProps, defaultValue: GridProps = {}) {
   props = { ...defaultValue, ...props };
   return css`
     ${(props.columns) ? css`
@@ -116,7 +116,7 @@ export function getGrid(props: GridAttrs, defaultValue: GridAttrs = {}) {
   `;
 }
 
-export function eachMedia(props: ThemeAttrs, callback: (key: string) => string | void) {
+export function eachMedia(props: ThemeProps, callback: (key: string) => string | void) {
   const theme = props.theme;
   if (theme.mediaQuery && typeof callback === 'function') {
     return Object.keys(theme.mediaQuery).map(key => {

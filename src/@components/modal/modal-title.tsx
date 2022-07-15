@@ -1,13 +1,16 @@
+import { ComponentProps } from '@components/types';
 import React from 'react';
 import styled from 'styled-components';
+
+const defaultProps = {
+  className: '',
+};
 
 interface Props {
   className?: string;
 }
 
-const defaultProps = {
-  className: '',
-};
+export type ModalTitleProps = ComponentProps<Props, HTMLDivElement>;
 
 const StyledTitle = styled.h2`
   flex-shrink: 0;
@@ -32,10 +35,6 @@ const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | an
     </StyledTitle>
   )
 }
-
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
-
-export type ModalTitleProps = Props & NativeAttrs;
 
 ModalTitleComponent.defaultProps = defaultProps;
 ModalTitleComponent.displayName = 'ModalTitle';

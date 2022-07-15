@@ -1,12 +1,12 @@
 import { Box } from '@components';
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
 type Props = {
 };
 
-export type FieldProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type FieldProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const StyledField = styled(Box)`
   display: flex;
@@ -14,7 +14,7 @@ const StyledField = styled(Box)`
   margin-bottom: 0.5rem;
 `;
 
-const Field = forwardRef<any, FieldProps>((props, ref) => (
+const Field = forwardRef<HTMLDivElement, FieldProps>((props, ref) => (
   <StyledField ref={ref} as='div' {...props} />
 ));
 

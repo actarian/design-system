@@ -6,9 +6,9 @@ import styled from 'styled-components';
 type Props = {
 }
 
-export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type TextAreaProps = ComponentCssResponsiveProps<Props, HTMLTextAreaElement>;
 
-const StyledInput = styled(Box)`
+const StyledTextArea = styled(Box)`
   display: block;
   width: 100%;
   padding: 1rem;
@@ -20,6 +20,8 @@ const StyledInput = styled(Box)`
   color: inherit;
   background-color: transparent;
   border-color: var(--color-neutral-200);
+  resize: vertical;
+  min-height: 4rem;
 
   &::placeholder {
     color: inherit;
@@ -36,8 +38,8 @@ const StyledInput = styled(Box)`
   }
 `;
 
-const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-  <StyledInput ref={ref} as='input' type='text' {...props} />
+const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => (
+  <StyledTextArea ref={ref} as='textarea' {...props} />
 ));
 
-export default Input;
+export default TextArea;

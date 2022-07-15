@@ -7,6 +7,16 @@ import { ModalConfig, ModalContext } from './modal-context';
 import ModalFooter from './modal-footer';
 import ModalWrapper from './modal-wrapper';
 
+const defaultProps = {
+  width: '26rem',
+  backdropClassName: '',
+  positionClassName: '',
+  layerClassName: '',
+  wrapClassName: '',
+  disableBackdropClick: false,
+  keyboard: true,
+};
+
 interface Props {
   width?: string;
   backdropClassName?: string;
@@ -20,19 +30,7 @@ interface Props {
   onContentClick?: (event: MouseEvent<HTMLElement>) => void;
 }
 
-const defaultProps = {
-  width: '26rem',
-  backdropClassName: '',
-  positionClassName: '',
-  layerClassName: '',
-  wrapClassName: '',
-  disableBackdropClick: false,
-  keyboard: true,
-};
-
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
-
-export type ModalProps = Props & NativeAttrs;
+export type ModalProps = ComponentProps<Props, HTMLDivElement>;
 
 const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
   ({ width, backdropClassName, positionClassName, layerClassName, wrapClassName,
@@ -100,6 +98,7 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
 ModalComponent.defaultProps = defaultProps;
 ModalComponent.displayName = 'Modal';
 
+import { ComponentProps } from '@components/types';
 import { getChildsByType } from '@components/utils';
 import ModalContent from './modal-content';
 import ModalSubtitle from './modal-subtitle';

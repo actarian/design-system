@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getCssResponsive, getVariant } from '@components/utils';
 import styled, { css } from 'styled-components';
 
@@ -19,7 +19,7 @@ type Props = {
   type?: Variant;
 }
 
-export type DividerProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type DividerProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const DividerContainer = styled.div<DividerProps>`
   position: relative;

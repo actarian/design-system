@@ -1,4 +1,4 @@
-import { ComponentCssResponsiveAttrs, Variant, Variants } from '@components/types';
+import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getCssResponsive, getVariant } from '@components/utils';
 import React, { ReactElement, useMemo } from 'react';
 import styled, { css } from 'styled-components';
@@ -30,7 +30,7 @@ type Props = {
   vertical?: boolean;
 }
 
-export type ButtonGroupProps = ComponentCssResponsiveAttrs<Props, Element>;
+export type ButtonGroupProps = ComponentCssResponsiveProps<Props, Element>;
 
 const StyledButtonGroup = styled.div<ButtonGroupProps>`
   display: inline-flex;

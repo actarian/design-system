@@ -1,12 +1,12 @@
 import { Background } from '@components/background/background';
-import { ComponentCssResponsiveAttrs } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
 import { getAspectResponsive, getCssResponsive, hasChildOfType } from '@components/utils';
 import styled, { css } from 'styled-components';
 
 type Props = {
 };
 
-export type SectionProps = ComponentCssResponsiveAttrs<Props, HTMLDivElement>;
+export type SectionProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const SectionContainer = styled.div<SectionProps>`
   display: flex;
@@ -26,23 +26,23 @@ const SectionContainer = styled.div<SectionProps>`
   `: ''}
 `;
 
-  /*
-  ${props => props.aspect ? css`
-    position: relative;
-    width: 100%;
-    padding-top: ${100 / props.aspect}%;
-    overflow: hidden;
+/*
+${props => props.aspect ? css`
+  position: relative;
+  width: 100%;
+  padding-top: ${100 / props.aspect}%;
+  overflow: hidden;
 
-    &>div {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  ` : ''};
-  */
+  &>div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+` : ''};
+*/
 
 const Section = (props: SectionProps) => {
   return (
@@ -60,6 +60,6 @@ type ISection = typeof Section & {
   Background: typeof Background;
 };
 
-function hasBackground(props: SectionProps):boolean {
+function hasBackground(props: SectionProps): boolean {
   return hasChildOfType(props.children, Background);
 }

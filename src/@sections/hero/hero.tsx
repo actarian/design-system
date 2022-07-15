@@ -1,10 +1,10 @@
 import { Card, Container, Grid, Media, Section, Text } from '@components';
-import { ComponentAttrs } from '@components/types';
+import { ComponentProps } from '@components/types';
 
 type Props = {
 }
 
-export type HeroProps = ComponentAttrs<Props, HTMLDivElement>;
+export type HeroProps = ComponentProps<Props, HTMLDivElement>;
 
 const Hero = (props: HeroProps) => {
   return (

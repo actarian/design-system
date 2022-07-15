@@ -1,3 +1,4 @@
+import { CssScrollbar } from '@styles/mixins/_scrollbar';
 import { CssDebug } from '@styles/_debug';
 import { CssReset } from '@styles/_reset';
 import { CssTypography } from '@styles/_typography';
@@ -17,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
   ${CssReset}
   ${CssVars}
   ${CssTypography}
+  ${CssScrollbar}
   ${CssDebug}
 
   a {

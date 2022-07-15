@@ -1,5 +1,5 @@
 import { Button, Container, Drawer, Flex, Nav, Text } from '@components';
-import { ComponentAttrs } from '@components/types';
+import { ComponentProps } from '@components/types';
 import { useDrawer, useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
 import Link from 'next/link';
@@ -11,7 +11,7 @@ type ContainerProps = {
   scrolled?: boolean;
 }
 
-export type HeaderContainerProps = ComponentAttrs<ContainerProps, HTMLDivElement>;
+export type HeaderContainerProps = ComponentProps<ContainerProps, HTMLDivElement>;
 
 const HeaderContainer = styled.div<HeaderContainerProps>`
   display: flex;
@@ -37,7 +37,7 @@ type Props = {
   scrolled?: boolean;
 }
 
-export type HeaderProps = ComponentAttrs<Props, HTMLDivElement>;
+export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
 
 const Header = (props: HeaderProps) => {
   const scroll = useScroll();
