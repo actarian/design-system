@@ -1,5 +1,5 @@
-import { Box } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -8,7 +8,7 @@ interface Props extends ComponentPropsWithRef<'input'> {
 
 export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
-const StyledInput = styled(Box)`
+const StyledInput = styled.div<InputProps>`
   display: block;
   width: 100%;
   padding: 1rem;
@@ -34,6 +34,7 @@ const StyledInput = styled(Box)`
       opacity: 0.5;
     }
   }
+  ${props => getCssResponsive(props)}
 `;
 
 const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (

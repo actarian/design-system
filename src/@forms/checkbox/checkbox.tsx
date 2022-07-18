@@ -1,6 +1,6 @@
 
-import { Box } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 
@@ -70,8 +70,9 @@ const StyledCheckboxIcon = styled.div`
   }
 `
 
-const StyledCheckbox = styled(Box)`
+const StyledCheckbox = styled.div<CheckboxProps>`
   position: relative;
+  ${props => getCssResponsive(props)}
 `
 
 // // variant = 'radio',

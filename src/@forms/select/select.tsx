@@ -1,5 +1,5 @@
-import { Box } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 
@@ -22,7 +22,7 @@ const DownArrow = styled(DownArrowSvg)`
   pointer-events: none;
 `;
 
-const StyledSelectSelect = styled(Box)`
+const StyledSelectSelect = styled.div`
   display: block;
   width: 100%;
   padding: 1rem;
@@ -48,11 +48,13 @@ const StyledSelectSelect = styled(Box)`
       opacity: 0.5;
     }
   }
+  ${props => getCssResponsive(props)}
 `;
 
-const StyledSelect = styled(Box)`
+const StyledSelect = styled.div`
   display: flex;
   align-items: center;
+  ${props => getCssResponsive(props)}
 `
 
 const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (

@@ -16,7 +16,9 @@ const CssObj = {
   "aspectRatio": "aspect-ratio",
   /*
   "backfaceVisibility": "backface-visibility",
+  */
   "background": "background",
+  /*
   "backgroundAttachment": "background-attachment",
   "backgroundClip": "background-clip",
   */

@@ -2,13 +2,13 @@
 
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ArgsTable } from '@storybook/addon-docs';
-import { Text, TextProps, TextVariant, Layout, Page } from '@components';
+import { Text, TextProps, TextVariant, Container } from '@components';
 
 <Meta
   title="Components / Text"
   component={Text}
   decorators={[(story) => (
-    <div style={ { padding: '2rem' } }>
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
       { story() }
     </div>
   )]}
@@ -73,35 +73,54 @@ import { Text } from '@strapi/design-system/Text';
 The main way to display text content on the screen
 
 <Canvas>
-  <Story name="variants">
-    <Layout>
-      <Page>
-          <Text type="1" as="h1">Header H1</Text>
-          <Text type="2" as="h2">Header H2</Text>
-          <Text type="3" as="h3">Header H3</Text>
-          <Text type="4" as="h4">Header H4</Text>
-          <Text type="5" as="h5">Header H5</Text>
-          <Text type="6" as="h6">Header H6</Text>
-          <Text type="7">Default text</Text>
-          <Text type="8">Small text</Text>
-          <Text type="9">Smaller text</Text>
-          <Text type="10">Smallest text</Text>
-      </Page>
-    </Layout>
+  <Story name="Text 1">
+    <Container.Fluid>
+      <Text type="1" as="h1">Header H1</Text>
+    </Container.Fluid>
   </Story>
-</Canvas>
-
-### Ellipsis
-
-By using the prop `ellipsis` it is possible to limit the text to one line and to
-signal to the user there is more to it.
-
-<Canvas>
-  <Story name="ellipsis">
-    <Layout>
-      <Page>
-          <Text ellipsis>Loong text, that will be cut off</Text>
-      </Page>
-    </Layout>
+  <Story name="Text 2">
+    <Container.Fluid>
+      <Text type="2" as="h2">Header H2</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 3">
+    <Container.Fluid>
+      <Text type="3" as="h3">Header H3</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 4">
+    <Container.Fluid>
+      <Text type="4" as="h4">Header H4</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 5">
+    <Container.Fluid>
+      <Text type="5" as="h5">Header H5</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 6">
+    <Container.Fluid>
+      <Text type="6" as="h6">Header H6</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 7">
+    <Container.Fluid>
+      <Text type="7">Default text</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 8">
+    <Container.Fluid>
+      <Text type="8">Small text</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 9">
+    <Container.Fluid>
+      <Text type="9">Smaller text</Text>
+    </Container.Fluid>
+  </Story>
+  <Story name="Text 10">
+    <Container.Fluid>
+      <Text type="10">Smallest text</Text>
+    </Container.Fluid>
   </Story>
 </Canvas>

@@ -67,7 +67,7 @@ const variants: Variants = {
 
   &:hover {
     color: var(--color-primary-600);
-    border-color: var(--color-primary-300);
+    border-color: var(--color-primary-200);
   }
 
   ${CssSvg}
@@ -82,7 +82,7 @@ const variants: Variants = {
   &:hover {
     background-color: var(--color-primary-600);
     color: var(--color-neutral-100);
-    border-color: var(--color-primary-400);
+    border-color: var(--color-primary-600);
   }
 
   ${CssSvg}
@@ -90,12 +90,13 @@ const variants: Variants = {
   beta: css`
   padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
+  background: var(--color-primary-100);
   color: var(--color-primary-500);
-  border: 2px solid var(--color-primary-500);
+  border: 2px solid var(--color-primary-100);
 
   &:hover {
     color: var(--color-primary-600);
-    border-color: var(--color-primary-400);
+    border-color: var(--color-primary-200);
   }
 
   ${CssSvg}

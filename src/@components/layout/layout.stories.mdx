@@ -5,7 +5,7 @@ import { default as Layout, LayoutProps } from './layout';
   title="Components / Layout"
   component={Layout}
   decorators={[(story) => (
-    <div style={ { padding: '2rem' } }>
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
       { story() }
     </div>
   )]}

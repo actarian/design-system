@@ -1,11 +1,12 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import { default as Container, ContainerProps } from './container';
+import { Section } from '@components';
 
 <Meta
   title="Components / Container"
   component={Container}
   decorators={[(story) => (
-    <div style={ { padding: '2rem' } }>
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
       { story() }
     </div>
   )]}
@@ -36,8 +37,13 @@ A basic example of `Container`.
 
 <Canvas>
   <Story name="Container">
-    <Container padding="3rem 0">
-      Container
-    </Container>
+    <Section background="var(--color-warning-100)">
+      <Container background="var(--color-warning-200)" height="4rem"></Container>
+    </Section>
+  </Story>
+  <Story name="Container Fluid">
+    <Section background="var(--color-warning-100)">
+      <Container.Fluid background="var(--color-warning-200)" height="4rem"></Container.Fluid>
+    </Section>
   </Story>
 </Canvas>
