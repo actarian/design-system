@@ -5,7 +5,7 @@ import { default as Page, PageProps } from './page';
   title="Components / Page"
   component={Page}
   decorators={[(story) => (
-    <div style={ { padding: '2rem' } }>
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
       { story() }
     </div>
   )]}

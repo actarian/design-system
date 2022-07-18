@@ -6,7 +6,7 @@ import { Media, Text } from '@components';
   title="Components / Divider"
   component={Divider}
   decorators={[(story) => (
-    <div style={ { padding: '2rem' } }>
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
       { story() }
     </div>
   )]}
@@ -42,7 +42,7 @@ A basic example of `Divider`.
 </Canvas>
 
 <Canvas>
-  <Story name="with title">
+  <Story name="Divider with title">
     <Divider>Title</Divider>
   </Story>
 </Canvas>

@@ -17,7 +17,7 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
   display: flex;
   align-items: center;
   min-height: 120px;
-  background: var(--color-neutral-200);
+  background: var(--color-neutral-900);
   color: var(--color-neutral-100);
 
   ${props => props.fixed ? css`

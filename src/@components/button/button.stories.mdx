@@ -1,12 +1,14 @@
 import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
 import { ShoppingCart } from '@icons';
+import { Flex } from '@components';
+import { Label } from '@forms';
 import { default as Button, ButtonProps } from './button';
 
 <Meta
   title="Components / Button"
   component={Button}
   decorators={[(story) => (
-    <div style={ { padding: '2rem' } }>
+    <div style={ { padding: '2rem', width: '100vw', maxWidth: '100%' } }>
       { story() }
     </div>
   )]}
@@ -93,25 +95,44 @@ export const Basic = ({ data, ...args }) => (<>
 
 <Canvas>
   <Story name="default">
-    <Button type="default">Default</Button>
+    <Label>Default</Label>
+    <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button type="default" size="xs" as="button">Button Xs</Button>
+      <Button type="default" size="sm" as="button">Button Sm</Button>
+      <Button type="default" size="md" as="button">Button Md</Button>
+      <Button type="default" size="lg" as="button">Button Lg</Button>
+      <Button type="default" size="xl" as="button">Button Xl</Button>
+    </Flex.Col>
   </Story>
   <Story name="alfa">
-    <Button type="alfa">Alfa</Button>
+    <Label>Alfa</Label>
+    <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button type="alfa" size="xs" as="button">Button Xs</Button>
+      <Button type="alfa" size="sm" as="button">Button Sm</Button>
+      <Button type="alfa" size="md" as="button">Button Md</Button>
+      <Button type="alfa" size="lg" as="button">Button Lg</Button>
+      <Button type="alfa" size="xl" as="button">Button Xl</Button>
+    </Flex.Col>
   </Story>
   <Story name="beta">
-    <Button type="beta">Beta</Button>
+    <Label>Beta</Label>
+    <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button type="beta" size="xs" as="button">Button Xs</Button>
+      <Button type="beta" size="sm" as="button">Button Sm</Button>
+      <Button type="beta" size="md" as="button">Button Md</Button>
+      <Button type="beta" size="lg" as="button">Button Lg</Button>
+      <Button type="beta" size="xl" as="button">Button Xl</Button>
+    </Flex.Col>
   </Story>
   <Story name="gamma">
-    <Button type="gamma">Gamma</Button>
-  </Story>
-  <Story name="delta">
-    <Button type="delta">Delta</Button>
-  </Story>
-  <Story name="epsilon">
-    <Button type="epsilon">Epsilon</Button>
-  </Story>
-  <Story name="zeta">
-    <Button type="zeta">Zeta</Button>
+    <Label>Gamma</Label>
+    <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+      <Button type="gamma" size="xs" as="button">Button Xs</Button>
+      <Button type="gamma" size="sm" as="button">Button Sm</Button>
+      <Button type="gamma" size="md" as="button">Button Md</Button>
+      <Button type="gamma" size="lg" as="button">Button Lg</Button>
+      <Button type="gamma" size="xl" as="button">Button Xl</Button>
+    </Flex.Col>
   </Story>
 </Canvas>
 

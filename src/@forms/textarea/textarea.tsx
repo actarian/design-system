@@ -1,5 +1,5 @@
-import { Box } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -8,7 +8,7 @@ type Props = {
 
 export type TextAreaProps = ComponentCssResponsiveProps<Props, HTMLTextAreaElement>;
 
-const StyledTextArea = styled(Box)`
+const StyledTextArea = styled.div`
   display: block;
   width: 100%;
   padding: 1rem;
@@ -36,6 +36,7 @@ const StyledTextArea = styled(Box)`
       opacity: 0.5;
     }
   }
+  ${props => getCssResponsive(props)}
 `;
 
 const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => (

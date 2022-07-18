@@ -1,6 +1,6 @@
 
-import { Box } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 
@@ -46,15 +46,16 @@ const RadioIcon = (props: SVGProps<SVGSVGElement>) =>
     <RadioUnchecked {...props} />
   </>
 
-const StyledRadioInput = styled(Box)`
+const StyledRadioInput = styled.div`
   position: absolute;
   opacity: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  ${props => getCssResponsive(props)}
 `
 
-const StyledRadioIcon = styled(Box)`
+const StyledRadioIcon = styled.div`
   border-radius: 50%;
   margin-right: 0.5rem;
   color: var(--color-neutral-300);
@@ -68,10 +69,12 @@ const StyledRadioIcon = styled(Box)`
     outline: 2px solid var(--color-primary-100);
     outline-offset: 2px;
   }
+  ${props => getCssResponsive(props)}
 `
 
-const StyledRadio = styled(Box)`
+const StyledRadio = styled.div`
   position: relative;
+  ${props => getCssResponsive(props)}
 `
 
 // // variant = 'radio',

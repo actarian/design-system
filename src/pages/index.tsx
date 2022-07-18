@@ -1,11 +1,9 @@
-import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Modal, Page, Section, Text } from '@components';
+import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
 import { Label } from '@forms';
-import { useDrawer } from '@hooks';
-import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
-import { Colors, ContactForm, Footer, Header, Icons, SwiperHero, Typography } from '@sections';
+import { ChevronDown, ShoppingCart } from '@icons';
+import { BlogMore, BlogProposition, Colors, ContactForm, Footer, Header, Icons, Proposition, SwiperHero, Typography } from '@sections';
 import Head from 'next/head';
-import Link from 'next/link';
-import { useMemo, useState } from 'react';
+import { useMemo } from 'react';
 
 export default function Homepage() {
 
@@ -51,14 +49,6 @@ export default function Homepage() {
     }
   }], []);
 
-  const [showModal, setShowModal] = useState(false);
-  const onOpenModal = () => setShowModal(true);
-  const onCloseModal = (_: any) => {
-    setShowModal(false);
-  }
-
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-
   return (
     <div>
       <Head>
@@ -73,107 +63,11 @@ export default function Homepage() {
 
           <SwiperHero items={items} />
 
-          <Section padding="3rem 0">
-            <Container>
-              <Grid.Row>
-                <Grid md={6}>
-                  <Text.Secondary type="5" marginBottom="1rem">There is no strife, no prejudice, no national conflict in outer space as yet.</Text.Secondary>
-                  <Text type="8" marginBottom="1rem">March 8, 2020</Text>
-                </Grid>
-                <Grid md={6}>
-                  <Text type="8" maxWidth="60ch">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
-                  <Flex.Row marginTop="1rem">
-                    <Media width="3rem" height="3rem" circle>
-                      <img src="https://i.pravatar.cc/128?u=1" />
-                    </Media>
-                    <Text type="8" fontWeight="700">Tim Neutkens</Text>
-                  </Flex.Row>
-                </Grid>
-              </Grid.Row>
-            </Container>
-          </Section>
+          <BlogProposition />
 
-          <Section padding="3rem 0">
-            <Container>
-              <Text type="2" fontWeight="700" marginBottom="3rem">More Stories</Text>
-              <Grid.Row rowGap='3rem'>
-                <Grid sm={6}>
-                  <Card>
-                    <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
-                      <img src={'https://picsum.photos/640/480?u=2'} />
-                    </Media>
-                    <Card.Content>
-                      <Link href="#we-choose-to-go-to-the-moon">
-                        <Button type="gamma" as="a" marginBottom="1rem">
-                          <Text type="5">We choose to go to the moon.</Text>
-                        </Button>
-                      </Link>
-                      <Text type="8" marginBottom="1rem">March 8, 2020</Text>
-                      <Text type="8">We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.</Text>
-                    </Card.Content>
-                    <Card.Footer marginTop="1rem">
-                      <Flex.Row>
-                        <Media width="3rem" height="3rem" circle>
-                          <img src="https://i.pravatar.cc/128?u=3" />
-                        </Media>
-                        <Text type="8" fontWeight="700">Joe Haddad</Text>
-                      </Flex.Row>
-                    </Card.Footer>
-                  </Card>
-                </Grid>
-                <Grid sm={6}>
-                  <Card>
-                    <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
-                      <img src={'https://picsum.photos/640/480?u=4'} />
-                    </Media>
-                    <Card.Content>
-                      <Link href="#the-view-of-the-earth-from-the-moon">
-                        <Button type="gamma" as="a" marginBottom="1rem">
-                          <Text type="5">The earth from the moon.</Text>
-                        </Button>
-                      </Link>
-                      <Text type="8" marginBottom="1rem">March 8, 2020</Text>
-                      <Text type="8">A small disk, 240,000 mniles away. It was hard to think that that little thing held so many problems, so many frustrations. But the samw wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space. From out there it really is 'one world'.</Text>
-                    </Card.Content>
-                    <Card.Footer marginTop="1rem">
-                      <Flex.Row>
-                        <Media width="3rem" height="3rem" circle>
-                          <img src="https://i.pravatar.cc/128?u=5" />
-                        </Media>
-                        <Text type="8" fontWeight="700">JJ Kasper</Text>
-                      </Flex.Row>
-                    </Card.Footer>
-                  </Card>
-                </Grid>
-              </Grid.Row>
-            </Container>
-          </Section>
+          <BlogMore />
 
-          <Section padding="7rem 0" style={{ background: 'var(--color-neutral-200)' }}>
-            <Container>
-              <Flex.Col justifyContent="center" alignItems="center">
-                <Text type="3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
-                <Link href="https://design-system-ruddy.vercel.app" target="_blank">
-                  <Button type="alfa" as="a" marginBottom="1rem" onClick={onOpenModal}>Read documentation</Button>
-                </Link>
-                <Link href="https://github.com/actarian/design-system" target="_blank">
-                  <Button type="gamma" as="a" onClick={() => onOpenDrawer('cart')}>view on GitHub</Button>
-                </Link>
-              </Flex.Col>
-            </Container>
-          </Section>
-
-          <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
-            <Modal.Title>
-              <Text type="7" fontWeight="700">Foreign Market detected</Text>
-            </Modal.Title>
-            <Modal.Subtitle>Attention Please.</Modal.Subtitle>
-            <Modal.Content>
-              <p>You seem to be browsing a different market than yours.</p>
-            </Modal.Content>
-            <Modal.Button type="default" passive onClick={onCloseModal}>Proceed</Modal.Button>
-            <Modal.Button type="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
-          </Modal>
+          <Proposition />
 
           <Section padding="3rem 0">
             <Container>
@@ -184,18 +78,6 @@ export default function Homepage() {
           <Divider marginBottom="4rem">Forms</Divider>
 
           <ContactForm></ContactForm>
-
-          <Divider marginBottom="4rem">Typography</Divider>
-
-          <Typography></Typography>
-
-          <Divider marginBottom="4rem">Colors</Divider>
-
-          <Colors></Colors>
-
-          <Divider marginBottom="4rem">Icons</Divider>
-
-          <Icons></Icons>
 
           <Divider marginBottom="4rem">Buttons</Divider>
 
@@ -228,6 +110,20 @@ export default function Homepage() {
             </Container>
           </Section>
 
+          {false && <>
+            <Divider marginBottom="4rem">Typography</Divider>
+
+            <Typography></Typography>
+
+            <Divider marginBottom="4rem">Colors</Divider>
+
+            <Colors></Colors>
+
+            <Divider marginBottom="4rem">Icons</Divider>
+
+            <Icons></Icons>
+          </>}
+
           <Divider marginBottom="4rem">Button Group</Divider>
 
           <Section>
@@ -259,7 +155,7 @@ export default function Homepage() {
             </Container>
           </Section>
 
-          {true && <>
+          {false && <>
 
             <Divider marginBottom="4rem">Cards</Divider>
 
@@ -369,15 +265,19 @@ export default function Homepage() {
 
           </>}
 
-          <Section aspectRatio={4 / 3} aspectRatioMd={2 / 1} aspectRatioLg={3 / 1} padding="0">
-            <Section.Background>
-              <Media overlay>
-                <video playsInline={true} autoPlay={true} muted={true} loop={true}>
-                  <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
-                </video>
-              </Media>
-            </Section.Background>
-          </Section>
+          {false && <>
+
+            <Section aspectRatio={4 / 3} aspectRatioMd={2 / 1} aspectRatioLg={3 / 1} padding="0">
+              <Section.Background>
+                <Media overlay>
+                  <video playsInline={true} autoPlay={true} muted={true} loop={true}>
+                    <source src="https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4" type="video/mp4"></source>
+                  </video>
+                </Media>
+              </Section.Background>
+            </Section>
+
+          </>}
 
           <Footer></Footer>
 

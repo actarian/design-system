@@ -1,5 +1,6 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getContainer, getCssResponsive } from '@components/utils';
+import React from 'react';
 import styled from 'styled-components';
 
 type Props = {
@@ -15,7 +16,9 @@ const Container = styled.div<ContainerProps>`
   ${props => getCssResponsive(props)}
 `;
 
-export const ContainerFluid = (props: ContainerProps) => (<Container fluid>{props.children}</Container>);
+export const ContainerFluid = React.forwardRef<Element, ContainerProps>((props: ContainerProps, ref?: React.Ref<Element>) => {
+  return (<Container {...props} ref={ref} fluid>{props.children}</Container>);
+});
 
 (Container as IContainer).Fluid = ContainerFluid;
 
