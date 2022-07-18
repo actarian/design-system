@@ -1,10 +1,10 @@
 import { Box } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
-import { forwardRef } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 
-type Props = {
-}
+interface Props extends ComponentPropsWithRef<'input'> {
+};
 
 export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
