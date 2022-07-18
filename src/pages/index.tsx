@@ -2,7 +2,7 @@ import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Medi
 import { Label } from '@forms';
 import { useDrawer } from '@hooks';
 import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
-import { ContactForm, Footer, Header, SwiperHero, Typography } from '@sections';
+import { Colors, ContactForm, Footer, Header, Icons, SwiperHero, Typography } from '@sections';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
@@ -188,6 +188,14 @@ export default function Homepage() {
           <Divider marginBottom="4rem">Typography</Divider>
 
           <Typography></Typography>
+
+          <Divider marginBottom="4rem">Colors</Divider>
+
+          <Colors></Colors>
+
+          <Divider marginBottom="4rem">Icons</Divider>
+
+          <Icons></Icons>
 
           <Divider marginBottom="4rem">Buttons</Divider>
 

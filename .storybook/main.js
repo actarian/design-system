@@ -10,7 +10,7 @@ module.exports = {
     '../src/@icons/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../src/@sections/**/*.stories.@(js|jsx|ts|tsx|mdx)',
     '../src/@styles/**/*.stories.@(js|jsx|ts|tsx|mdx)',
-    '../src/stories/pages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
+    '../src/pages/**/*.stories.@(js|jsx|ts|tsx|mdx)',
   ],
   addons: [
     '@storybook/addon-links',

@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Index } from './index';
+
+<Meta
+  title="Pages / Index"
+  component={Index}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Index
+
+A component to display a `Index`.
+
+[View source](https://github.com/actarian/design-system/tree/main/pages/index)
+
+## Imports
+
+```js
+import { Index } from '@design-system';
+```
+
+## Example
+
+A basic example of `Index`.
+
+<Canvas>
+  <Story name="Index">
+    <Index />
+  </Story>
+</Canvas>
