@@ -1,4 +1,4 @@
-import { Background } from '@components/background/background';
+import Background from '@components/background/background';
 import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '@components/utils';
 import styled, { css } from 'styled-components';
@@ -99,6 +99,10 @@ ${props => props.background ? css`
 `: ''}
 */
 
+function hasBackground(props: CardProps): boolean {
+  return hasChildOfType(props.children, Background);
+}
+
 const Card = (props: CardProps) => {
   return (
     <CardContainer {...props}>
@@ -118,7 +122,3 @@ type ICard = typeof Card & {
   Content: typeof CardContent;
   Footer: typeof CardFooter;
 };
-
-function hasBackground(props: CardProps): boolean {
-  return hasChildOfType(props.children, Background);
-}

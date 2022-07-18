@@ -1,3 +1,4 @@
+import { Breakpoint } from '@components';
 import { GlobalStyle, theme } from '@styles';
 // import '@styles/globals.scss';
 import { NextPage } from 'next';
@@ -16,6 +17,7 @@ const Application: NextPage<AppProps<{ [key: string]: any }>> = ({ Component, pa
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Component {...pageProps} />
+        <Breakpoint></Breakpoint>
       </ThemeProvider>
     </>
   )

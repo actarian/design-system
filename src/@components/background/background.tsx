@@ -7,7 +7,7 @@ type Props = {
 
 export type BackgroundProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-export const Background = styled.div<BackgroundProps>`
+const Background = styled.div<BackgroundProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -32,3 +32,5 @@ export const Background = styled.div<BackgroundProps>`
 Background.defaultProps = {
   className: 'background',
 };
+
+export default Background;

@@ -2,7 +2,7 @@ import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Medi
 import { Label } from '@forms';
 import { useDrawer } from '@hooks';
 import { ArrowRight, ChevronDown, ShoppingCart } from '@icons';
-import { ContactForm, Footer, Header, SwiperHero } from '@sections';
+import { ContactForm, Footer, Header, SwiperHero, Typography } from '@sections';
 import Head from 'next/head';
 import Link from 'next/link';
 import { useMemo, useState } from 'react';
@@ -77,16 +77,16 @@ export default function Homepage() {
             <Container>
               <Grid.Row>
                 <Grid md={6}>
-                  <Text type="h5" marginBottom="1rem">There is no strife, no prejudice, no national conflict in outer space as yet.</Text>
-                  <Text type="h8" marginBottom="1rem">March 8, 2020</Text>
+                  <Text.Secondary type="5" marginBottom="1rem">There is no strife, no prejudice, no national conflict in outer space as yet.</Text.Secondary>
+                  <Text type="8" marginBottom="1rem">March 8, 2020</Text>
                 </Grid>
                 <Grid md={6}>
-                  <Text type="h8" maxWidth="60ch">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
+                  <Text type="8" maxWidth="60ch">Its hazards are hostile to us all. Its conquest deserves the best of all mankind, and its opportunity for peaceful cooperation many never come again. But why, some say, the moon? Why choose this as our goal? And they may well ask why climb the highest mountain?</Text>
                   <Flex.Row marginTop="1rem">
                     <Media width="3rem" height="3rem" circle>
                       <img src="https://i.pravatar.cc/128?u=1" />
                     </Media>
-                    <Text type="h8" fontWeight="700">Tim Neutkens</Text>
+                    <Text type="8" fontWeight="700">Tim Neutkens</Text>
                   </Flex.Row>
                 </Grid>
               </Grid.Row>
@@ -95,7 +95,7 @@ export default function Homepage() {
 
           <Section padding="3rem 0">
             <Container>
-              <Text type="h2" fontWeight="700" marginBottom="3rem">More Stories</Text>
+              <Text type="2" fontWeight="700" marginBottom="3rem">More Stories</Text>
               <Grid.Row rowGap='3rem'>
                 <Grid sm={6}>
                   <Card>
@@ -105,18 +105,18 @@ export default function Homepage() {
                     <Card.Content>
                       <Link href="#we-choose-to-go-to-the-moon">
                         <Button type="gamma" as="a" marginBottom="1rem">
-                          <Text type="h5">We choose to go to the moon.</Text>
+                          <Text type="5">We choose to go to the moon.</Text>
                         </Button>
                       </Link>
-                      <Text type="h8" marginBottom="1rem">March 8, 2020</Text>
-                      <Text type="h8">We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.</Text>
+                      <Text type="8" marginBottom="1rem">March 8, 2020</Text>
+                      <Text type="8">We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.</Text>
                     </Card.Content>
                     <Card.Footer marginTop="1rem">
                       <Flex.Row>
                         <Media width="3rem" height="3rem" circle>
                           <img src="https://i.pravatar.cc/128?u=3" />
                         </Media>
-                        <Text type="h8" fontWeight="700">Joe Haddad</Text>
+                        <Text type="8" fontWeight="700">Joe Haddad</Text>
                       </Flex.Row>
                     </Card.Footer>
                   </Card>
@@ -129,18 +129,18 @@ export default function Homepage() {
                     <Card.Content>
                       <Link href="#the-view-of-the-earth-from-the-moon">
                         <Button type="gamma" as="a" marginBottom="1rem">
-                          <Text type="h5">The earth from the moon.</Text>
+                          <Text type="5">The earth from the moon.</Text>
                         </Button>
                       </Link>
-                      <Text type="h8" marginBottom="1rem">March 8, 2020</Text>
-                      <Text type="h8">A small disk, 240,000 mniles away. It was hard to think that that little thing held so many problems, so many frustrations. But the samw wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space. From out there it really is 'one world'.</Text>
+                      <Text type="8" marginBottom="1rem">March 8, 2020</Text>
+                      <Text type="8">A small disk, 240,000 mniles away. It was hard to think that that little thing held so many problems, so many frustrations. But the samw wayward stranger would certainly know instinctively that if the earth were inhabited, then the destinies of all who lived on it must inevitably be interwoven and joined. We are one hunk of ground, water, air, clouds, floating around in space. From out there it really is 'one world'.</Text>
                     </Card.Content>
                     <Card.Footer marginTop="1rem">
                       <Flex.Row>
                         <Media width="3rem" height="3rem" circle>
                           <img src="https://i.pravatar.cc/128?u=5" />
                         </Media>
-                        <Text type="h8" fontWeight="700">JJ Kasper</Text>
+                        <Text type="8" fontWeight="700">JJ Kasper</Text>
                       </Flex.Row>
                     </Card.Footer>
                   </Card>
@@ -152,7 +152,7 @@ export default function Homepage() {
           <Section padding="7rem 0" style={{ background: 'var(--color-neutral-200)' }}>
             <Container>
               <Flex.Col justifyContent="center" alignItems="center">
-                <Text type="h3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
+                <Text type="3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>
                 <Link href="https://design-system-ruddy.vercel.app" target="_blank">
                   <Button type="alfa" as="a" marginBottom="1rem" onClick={onOpenModal}>Read documentation</Button>
                 </Link>
@@ -165,7 +165,7 @@ export default function Homepage() {
 
           <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
             <Modal.Title>
-              <Text type="h7" fontWeight="700">Foreign Market detected</Text>
+              <Text type="7" fontWeight="700">Foreign Market detected</Text>
             </Modal.Title>
             <Modal.Subtitle>Attention Please.</Modal.Subtitle>
             <Modal.Content>
@@ -177,7 +177,7 @@ export default function Homepage() {
 
           <Section padding="3rem 0">
             <Container>
-              <Text type="h2" fontWeight="700" textAlign="center">Workbench</Text>
+              <Text type="2" fontWeight="700" textAlign="center">Workbench</Text>
             </Container>
           </Section>
 
@@ -187,24 +187,7 @@ export default function Homepage() {
 
           <Divider marginBottom="4rem">Typography</Divider>
 
-          <Section>
-            <Container>
-              <Grid.Row>
-                <Grid md={8}>
-                  <Text type="h1" as="h1">Header H1</Text>
-                  <Text type="h2" as="h2">Header H2</Text>
-                  <Text type="h3" as="h3">Header H3</Text>
-                  <Text type="h4" as="h4">Header H4</Text>
-                  <Text type="h5" as="h5">Header H5</Text>
-                  <Text type="h6" as="h6">Header H6</Text>
-                  <Text type="default">Default text</Text>
-                  <Text type="small">Small text</Text>
-                  <Text type="smaller">Smaller text</Text>
-                  <Text type="smallest">Smallest text</Text>
-                </Grid>
-              </Grid.Row>
-            </Container>
-          </Section>
+          <Typography></Typography>
 
           <Divider marginBottom="4rem">Buttons</Divider>
 
@@ -264,7 +247,7 @@ export default function Homepage() {
               </Media>
             </Section.Background>
             <Container textAlign='center'>
-              <Text type="h1" fontWeight="700">Workbench.</Text>
+              <Text type="1" fontWeight="700">Workbench.</Text>
             </Container>
           </Section>
 
@@ -280,8 +263,8 @@ export default function Homepage() {
                       <img src={'https://picsum.photos/640/480?u=6'} />
                     </Media>
                     <Card.Content padding='1rem'>
-                      <Text type="h6">Title</Text>
-                      <Text type="default">Abstract</Text>
+                      <Text type="6">Title</Text>
+                      <Text type="7">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
@@ -291,8 +274,8 @@ export default function Homepage() {
                       <img src={'https://picsum.photos/640/480?u=7'} />
                     </Media>
                     <Card.Content padding='1rem'>
-                      <Text type="h6">Title</Text>
-                      <Text type="default">Abstract</Text>
+                      <Text type="6">Title</Text>
+                      <Text type="7">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
@@ -304,19 +287,19 @@ export default function Homepage() {
                       </Media>
                     </Card.Background>
                     <Card.Content padding='1rem'>
-                      <Text type="h6">Title</Text>
-                      <Text type="default">Abstract</Text>
+                      <Text type="6">Title</Text>
+                      <Text type="7">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
                 <Grid sm={6} md={4}>
                   <Card type="delta" aspectRatio={1 / 1}>
                     <Card.Content padding='1rem'>
-                      <Text type="h6">Title</Text>
-                      <Text type="default">Abstract</Text>
+                      <Text type="6">Title</Text>
+                      <Text type="7">Abstract</Text>
                     </Card.Content>
                     <Card.Footer padding='1rem'>
-                      <Text type="small">Description</Text>
+                      <Text type="8">Description</Text>
                     </Card.Footer>
                   </Card>
                 </Grid>
@@ -332,7 +315,7 @@ export default function Homepage() {
             <Container.Fluid padding="3rem 0">
               <Grid.Row>
                 <Grid className="debug" sm={6}>
-                  <Text as="h1" type="h1">Index</Text>
+                  <Text type="1" as="h1">Index</Text>
                 </Grid>
                 <Grid className="debug" sm={6}>
                   <Flex.Row gap="1rem">

@@ -56,7 +56,7 @@ const Header = (props: HeaderProps) => {
         <Flex.Row gap="1rem" gapSm="3rem">
           <Flex>
             <Hexagon width="3rem" height="3rem" color="var(--color-neutral-100)" />
-            <Text type="h6" padding="0 0.5rem">Hexagon</Text>
+            <Text type="6" padding="0 0.5rem">Hexagon</Text>
           </Flex>
           <Flex flex="1" justifyContent="center">
             <Nav.Row gap="3rem" display="none" displaySm="flex">

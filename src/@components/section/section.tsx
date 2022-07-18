@@ -1,4 +1,4 @@
-import { Background } from '@components/background/background';
+import Background from '@components/background/background';
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getAspectResponsive, getCssResponsive, hasChildOfType } from '@components/utils';
 import styled, { css } from 'styled-components';

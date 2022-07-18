@@ -27,10 +27,16 @@ export const parameters = {
     storySort: {
       method: 'alphabetical',
       // order: ['Introduction', 'Styleguide', 'Atoms', 'Molecules', 'Organisms'],
-      order: ['Introduction', 'Styleguide', 'Colors', 'Icons', 'Components', 'Forms', 'Sections', 'Pages'],
+      order: ['Introduction', 'Styleguide', 'Typography', 'Colors', 'Icons', 'Components', 'Forms', 'Sections', 'Pages'],
       locales: 'en-US',
     },
     showPanel: false,
+  },
+  backgrounds: {
+    disable: true,
+    grid: {
+      disable: true,
+    }
   },
   /*
   backgrounds: {

@@ -1,4 +1,5 @@
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
+export { useBreakpoint } from './useBreakpoint/useBreakpoint';
 export { useClasses } from './useClasses/useClasses';
 export { useCurrentState } from './useCurrentState/useCurrentState';
 export { useDrawer } from './useDrawer/useDrawer';

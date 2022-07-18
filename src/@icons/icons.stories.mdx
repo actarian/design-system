@@ -47,11 +47,10 @@ export const IconsList = ({ data, ...args }) => {
     setVisibleIcons(icons);
   }
   return (
-  <>
     <Container>
       <Grid.Row padding="32px 0">
         <Grid>
-          <Text type="h4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
+          <Text type="4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
           <Input name="search" placeholder="start typing..." onChange={onSearch} marginBottom="2rem" />
           <Flex.Row gap="1rem" justifyContent="center">
             {visibleIcons.map(icon => (
@@ -60,7 +59,7 @@ export const IconsList = ({ data, ...args }) => {
                   <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
                 </Media>
                 <Card.Content alignItems="center">
-                  <Text type="smaller">{icon.key}</Text>
+                  <Text type="9">{icon.key}</Text>
                 </Card.Content>
               </Card>
             ))}
@@ -68,7 +67,6 @@ export const IconsList = ({ data, ...args }) => {
         </Grid>
       </Grid.Row>
     </Container>
-  </>
   )
 };
 
