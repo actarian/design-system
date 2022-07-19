@@ -9,7 +9,7 @@ export type HeroProps = ComponentProps<Props, HTMLDivElement>;
 const Hero = (props: HeroProps) => {
   return (
     <Section padding="0">
-      <Card justifyContent="flex-end" height="100vh" margin="0">
+      <Card justifyContent="flex-end" height="100vh">
         <Card.Background>
           <Media overlay>
             <img draggable={false} alt="Trusted Group" src="https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600" />

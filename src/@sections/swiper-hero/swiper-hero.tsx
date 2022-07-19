@@ -58,7 +58,7 @@ export default function SwiperHero(props: SwiperHeroProps) {
   return (
     <Swiper {...props} navigation pagination={{ clickable: true }}>
       {items.map((item, i) => (
-        <CardHero key={i} justifyContent="flex-end" height="100vh" margin="0">
+        <CardHero key={i} justifyContent="flex-end" height="100vh">
           <Card.Background>
             <Media className="media" overlay>
               {item.media.type === 'video' ?

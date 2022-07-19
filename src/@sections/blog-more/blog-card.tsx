@@ -1,5 +1,5 @@
-import { Button, Card, Flex, Media, Text } from '@components';
-import { ComponentProps } from '@components/types';
+import { Card, Flex, Media, Text } from '@components';
+import { ComponentCssResponsiveProps } from '@components/types';
 import Link from 'next/link';
 
 type Props = {
@@ -7,25 +7,25 @@ type Props = {
 }
 
 export type BlogItem = {
-  id: number,
-  url: string,
-  title: string,
-  abstract: string,
-  date: string | Date,
+  id: number;
+  url: string;
+  title: string;
+  abstract: string;
+  date: string | Date;
   media: {
-    type: 'image' | 'video',
-    src: string,
-  },
+    type: 'image' | 'video';
+    src: string;
+  };
   author: {
-    fullName: string,
+    fullName: string;
     media: {
-      type: 'image',
-      src: string,
-    }
-  },
+      type: 'image';
+      src: string;
+    };
+  };
 }
 
-export type BlogCardProps = ComponentProps<Props, HTMLDivElement>;
+export type BlogCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const BlogCard = ({ item, ...props }: BlogCardProps) => {
   const getDate = (value: Date | string): string => {
@@ -40,28 +40,26 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
     return formattedValue;
   };
   return (
-    <Card {...props}>
-      <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
-        <img src={item.media.src} />
-      </Media>
-      <Card.Content>
-        <Link href={item.url}>
-          <Button type="gamma" as="a" marginBottom="1rem">
-            <Text type="5">{item.title}</Text>
-          </Button>
-        </Link>
-        <Text type="8" marginBottom="1rem">{getDate(item.date)}</Text>
-        <Text type="8">{item.abstract}</Text>
-      </Card.Content>
-      <Card.Footer marginTop="1rem">
-        <Flex.Row>
-          <Media width="3rem" height="3rem" circle>
-            <img src={item.author.media.src} />
-          </Media>
-          <Text type="8" fontWeight="700">{item.author.fullName}</Text>
-        </Flex.Row>
-      </Card.Footer>
-    </Card>
+    <Link href={item.url}>
+      <Card {...props} hoverable>
+        <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem">
+          <img src={item.media.src} />
+        </Media>
+        <Card.Content>
+          <Text type="5">{item.title}</Text>
+          <Text type="8" marginBottom="1rem">{getDate(item.date)}</Text>
+          <Text type="8">{item.abstract}</Text>
+        </Card.Content>
+        <Card.Footer marginTop="1rem">
+          <Flex.Row>
+            <Media width="3rem" height="3rem" circle>
+              <img src={item.author.media.src} />
+            </Media>
+            <Text type="8" fontWeight="700">{item.author.fullName}</Text>
+          </Flex.Row>
+        </Card.Footer>
+      </Card>
+    </Link>
   )
 }
 

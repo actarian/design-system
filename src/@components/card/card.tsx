@@ -32,6 +32,7 @@ const variants: Variants = {
 type Props = {
   type?: Variant;
   bordered?: boolean;
+  hoverable?: boolean;
 };
 
 export type CardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
@@ -45,7 +46,25 @@ const CardContainer = styled.div<CardProps>`
   ${props => getVariant(variants, props.type)}
   ${props => getCssResponsive(props)}
   ${props => getAspectResponsive(props)};
-
+  ${props => props.hoverable ? css`
+    cursor: pointer;
+    .media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      &>* {
+        transition: transform ease-in-out 200ms;
+      }
+    }
+    &:hover {
+      .media {
+        &>* {
+          transform: scale(1.1);
+        }
+      }
+    }
+  ` : ''}
   ${props => hasBackground(props) ? css`
     color: var(--color-neutral-100);
     position: relative;

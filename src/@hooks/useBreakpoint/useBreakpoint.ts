@@ -24,12 +24,14 @@ export function useBreakpoint(): Breakpoint {
     if (c < windowSize.width) {
       p.key = breakpoints[i];
       p.min = c;
-      p.max = c;
-    } else if (p.min === p.max) {
-      p.max = c;
+      if (i + 1 < values.length) {
+        p.max = values[i + 1];
+      } else {
+        p.max = Number.POSITIVE_INFINITY;
+      }
     }
     return p;
-  }, { key: 'xs' as BreakpointType, min: 0, max: Number.POSITIVE_INFINITY }), [windowSize.width]);
+  }, { key: 'xs' as BreakpointType, min: -Number.NEGATIVE_INFINITY, max: -Number.NEGATIVE_INFINITY }), [windowSize.width]);
 
   return breakpoint;
 }

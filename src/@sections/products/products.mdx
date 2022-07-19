@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { Products } from '@sections';
+import ProductItem from './product-item';
+
+<Meta
+  title="Sections / Products"
+  component={Products}
+  subcomponents={{ ProductItem }}
+/>
+
+# Products
+
+A component to display a `Products`.
+
+[View source](https://github.com/actarian/design-system/tree/main/@sections/products\)
+
+## Imports
+
+```js
+import { Products } from '@design-system';
+```
+
+## Example
+
+A basic example of `Products`.
+
+<Canvas>
+  <Story name="Products">
+    <Products />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Product Item">
+    <ProductItem maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>

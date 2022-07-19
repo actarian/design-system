@@ -10,8 +10,8 @@ export type BreakpointProps = ComponentCssResponsiveProps<Props, HTMLDivElement>
 
 const StyledBreakpoint = styled.div<BreakpointProps>`
   position: fixed;
-  right: 0.5rem;
-  bottom: 0.5rem;
+  right: 6px;
+  bottom: 6px;
   padding: 0.3em 0.8em;
   background: var(--color-warning-500);
   color: var(--color-warning-900);
@@ -23,9 +23,9 @@ const StyledBreakpoint = styled.div<BreakpointProps>`
 
 const Breakpoint = ((props: BreakpointProps) => {
   const breakpoint = useBreakpoint();
-  return (
+  return breakpoint.max > 0 ? (
     <StyledBreakpoint as='div' {...props}>{breakpoint.key} {breakpoint.min}-{breakpoint.max}</StyledBreakpoint>
-  );
+  ) : null;
 });
 
 export default Breakpoint;

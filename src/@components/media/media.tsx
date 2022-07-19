@@ -53,3 +53,7 @@ const Media = styled.div<MediaProps>`
 `;
 
 export default Media;
+
+Media.defaultProps = {
+  className: 'media',
+};
