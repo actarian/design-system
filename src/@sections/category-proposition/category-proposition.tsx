@@ -20,14 +20,14 @@ const CategoryProposition = ({ items }: CategoryPropositionProps) => {
             <Button type="gamma"><span>Browse all categories</span> <ArrowRight /></Button>
           </Link>
         </Flex.Row>
-        <Grid.Row columnGap="1rem">
+        <Grid.Row columnGap="1rem" rowGap="1rem">
           <Grid sm={6}>
-            <CategoryCard heightSm='100%' item={items[0]}></CategoryCard>
+            <CategoryCard aspectRatio={1} aspectRatioSm='auto' heightSm='100%' item={items[0]}></CategoryCard>
           </Grid>
           <Grid sm={6}>
             <Flex.Col rowGap="1rem">
-              <CategoryCard aspectRatio={2 / 1} item={items[1]}></CategoryCard>
-              <CategoryCard aspectRatio={2 / 1} item={items[2]}></CategoryCard>
+              <CategoryCard aspectRatio={4 / 3} aspectRatioMd={2 / 1} item={items[1]}></CategoryCard>
+              <CategoryCard aspectRatio={4 / 3} aspectRatioMd={2 / 1} item={items[2]}></CategoryCard>
             </Flex.Col>
           </Grid>
         </Grid.Row>

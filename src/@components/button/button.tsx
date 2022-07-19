@@ -8,6 +8,7 @@ const CssSvg = css`
     width: 1em;
     height: 1em;
     margin: 0 0.3em;
+    transition: transform ease-in-out 200ms;
 
     &:first-child {
       margin-left: 0;
@@ -15,6 +16,11 @@ const CssSvg = css`
 
     &:last-child {
       margin-right: 0;
+    }
+  }
+  &:hover {
+    svg {
+      transform: scale(1.1);
     }
   }
 `;

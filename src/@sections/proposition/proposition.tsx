@@ -19,7 +19,7 @@ const Proposition = (props: PropositionProps) => {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   return (
     <>
-      <Section padding="7rem 0" style={{ background: 'var(--color-primary-100)' }}>
+      <Section padding="7rem 0" background="var(--color-primary-100)" color="var(--color-primary-900)">
         <Container>
           <Flex.Col justifyContent="center" alignItems="center">
             <Text type="3" fontWeight="700" marginBottom="2rem">Prow scuttle parrel provost Sail.</Text>

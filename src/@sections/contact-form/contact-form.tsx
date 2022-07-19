@@ -1,6 +1,7 @@
 import { Button, Container, Flex, Grid } from '@components';
 import { ComponentProps } from '@components/types';
 import { Checkbox, Field, Input, Label, Radio, Select, TextArea } from '@forms';
+import { Send } from '@icons';
 import React from 'react';
 
 import styled from 'styled-components';
@@ -76,7 +77,7 @@ const ContactForm = (props: ContactFormProps) => {
           </Grid>
           <Grid>
             <Flex.Row justifyContent="center">
-              <Button type="alfa" size="lg">Submit</Button>
+              <Button type="alfa" size="lg"><span>Submit</span> <Send /></Button>
             </Flex.Row>
           </Grid>
         </Grid.Row>

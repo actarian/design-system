@@ -22,17 +22,17 @@ export type ProductItem = {
 export type ProductCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const ProductCard = ({ item, ...props }: ProductCardProps) => {
-const getPrice = (value: number): string => {
-  const options = {
-    style: 'currency', currency: 'EUR'
+  const getPrice = (value: number): string => {
+    const options = {
+      style: 'currency', currency: 'EUR'
+    };
+    const formattedValue = new Intl.NumberFormat('en-US', options).format(value);
+    return formattedValue;
   };
-  const formattedValue = new Intl.NumberFormat('en-US', options).format(value);
-  return formattedValue;
-};
   return (
     <Link href={item.url}>
       <Card {...props} hoverable>
-        <Media aspectRatio={1} aspectRatioMd={3 / 4} borderRadius="0.4rem" marginBottom="1rem">
+        <Media aspectRatio={4 / 3} aspectRatioMd={3 / 4} borderRadius="0.4rem" marginBottom="1rem">
           <img src={item.media.src} />
         </Media>
         <Card.Content>

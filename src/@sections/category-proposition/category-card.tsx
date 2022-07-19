@@ -21,7 +21,7 @@ export type CategoryCardProps = ComponentCssResponsiveProps<Props, HTMLDivElemen
 const CategoryCard = ({ item, ...props }: CategoryCardProps) => {
   return (
     <Link href={item.url}>
-      <Card {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
+      <Card aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
         <Card.Background>
           <Media overlay>
             <img src={item.media.src} />
@@ -29,7 +29,7 @@ const CategoryCard = ({ item, ...props }: CategoryCardProps) => {
         </Card.Background>
         <Card.Content padding="1rem" justifyContent="flex-end">
           <Text type="8" fontWeight="700">{item.title}</Text>
-          <Text type="8">{'Shop now'}</Text>
+          <Text type="10">{'Shop now'}</Text>
         </Card.Content>
       </Card>
     </Link>

@@ -1,6 +1,7 @@
 import Background from '@components/background/background';
 import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '@components/utils';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
@@ -122,13 +123,9 @@ function hasBackground(props: CardProps): boolean {
   return hasChildOfType(props.children, Background);
 }
 
-const Card = (props: CardProps) => {
-  return (
-    <CardContainer {...props}>
-      {props.children}
-    </CardContainer>
-  );
-}
+const Card = React.forwardRef<Element, CardProps>((props: CardProps, ref?: React.Ref<Element>) => {
+  return (<CardContainer {...props} ref={ref}>{props.children}</CardContainer>);
+});
 
 (Card as ICard).Background = Background;
 (Card as ICard).Content = CardContent;
