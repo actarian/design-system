@@ -1,4 +1,4 @@
-import { Button, Container, Drawer, Flex, Nav, NavLink, Text } from '@components';
+import { Button, Container, Drawer, Flex, Nav, NavLink, Popover, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { useDrawer, useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
@@ -51,6 +51,17 @@ type Props = {
 
 export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
 
+const SubMenu = () => (
+  <Nav.Col>
+    <NavLink href="#link-1">
+      <Button as="a" type="eta">Link 1</Button>
+    </NavLink>
+    <NavLink href="#link-2">
+      <Button as="a" type="eta">Link 2</Button>
+    </NavLink>
+  </Nav.Col>
+)
+
 const Header = (props: HeaderProps) => {
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
@@ -62,6 +73,7 @@ const Header = (props: HeaderProps) => {
   }
   */
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
+
   return (
     <HeaderContainer {...containerProps}>
       <Container.Fluid>
@@ -85,9 +97,9 @@ const Header = (props: HeaderProps) => {
               <NavLink href="/contacts">
                 <Button as="a" type="eta">Contacts</Button>
               </NavLink>
-              <NavLink href="#more">
+              <Popover content={SubMenu}>
                 <Button as="a" type="eta">More</Button>
-              </NavLink>
+              </Popover>
             </Nav.Row>
           </Flex>
           <Flex gap="1rem">

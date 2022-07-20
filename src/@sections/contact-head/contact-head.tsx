@@ -1,4 +1,4 @@
-import { Button, Card, Code, Container, Flex, Grid, Section, Text, Tooltip } from '@components';
+import { Button, Card, Container, Flex, Grid, Section, Text, Tooltip } from '@components';
 import { ComponentProps } from '@components/types';
 import { Search, Send } from '@icons';
 
@@ -27,16 +27,19 @@ const ContactHead = ({ item }: ContactHeadProps) => {
             <Card.Content justifyContent="center" height="100%">
               <Text type="10" marginBottom="0.5rem" textTransform="uppercase">Contacts</Text>
               <Text type="1" marginBottom="2rem" fontWeight="700">Contacts</Text>
-              <Text type="7" marginBottom="3rem">Functional, contemporary products with an atypical and unmistakable style, able to combine the highest cabinet-making tradition with the use of sophisticated production technologies.</Text>
+              <Text type="7" marginBottom="3rem">
+                <span>Functional, contemporary products with an atypical and </span>
+                <Tooltip text={<>Perfect for working with a CMS.</>}>
+                  <u>unmistakable</u>
+                </Tooltip> <span>style, able to combine the highest cabinet-making
+                tradition with the use of </span>
+                <Tooltip text={<>Perfect for working with a CMS.</>} placement="bottom">
+                  <u>sophisticated</u>
+                </Tooltip> <span>production technologies.</span>
+              </Text>
               <Flex.Responsive>
                 <Button type="alfa"><span>Search agents</span> <Search /></Button>
                 <Button type="beta"><span>Contact Us</span> <Send /></Button>
-                <Tooltip text={<>Perfect for working with a <Code>CMS</Code>.</>}>
-                  <span>Top</span>
-                </Tooltip>
-                <Tooltip text={<><Text>Perfect</Text> for working with a CMS.</>} placement="bottom">
-                  <span>Bottom</span>
-                </Tooltip>
               </Flex.Responsive>
             </Card.Content>
           </Grid>

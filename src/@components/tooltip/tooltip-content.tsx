@@ -25,27 +25,28 @@ export type TooltipIconOffset = {
 };
 
 const StyledTooltipContent = styled.div<{ rect: TooltipPosition, iconOffset: TooltipIconOffset, hasShadow: boolean }>`
+  --tooltip-background: var(--color-neutral-100);
+  --tooltip-foreground: var(--color-neutral-900);
   --tooltip-icon-offset-x: ${props => props.iconOffset.x};
   --tooltip-icon-offset-y: ${props => props.iconOffset.y};
-  --tooltip-content-bg: var(--color-neutral-100);
   box-sizing: border-box;
   position: absolute;
   top: ${props => props.rect.top};
   left: ${props => props.rect.left};
   transform: ${props => props.rect.transform};
-  background-color: var(--tooltip-content-bg);
-  color: var(--color-neutral-900);
+  background-color: var(--tooltip-background);
+  color: var(--tooltip-foreground);
   border-radius: var(--border-radius);
   padding: 0;
   z-index: 1000;
-  box-shadow: ${props => props.hasShadow ? 'var(--shadow-lg)' : 'none'};
+  filter: drop-shadow(0px 0px 1px var(--color-neutral-300));
+  box-shadow: ${props => props.hasShadow ? 'var(--shadow-xs)' : 'none'};
   width: 'auto';
   height: 'auto';
 
   .inner {
-    box-sizing: border-box;
+    // box-sizing: border-box;
     position: relative;
-    font-size: 1;
     padding: 0.65rem 0.9rem 0.65rem 0.9rem;
     height: 100%;
   }
