@@ -9,8 +9,5 @@ export type CardContentProps = ComponentCssResponsiveProps<Props, HTMLDivElement
 
 export const CardContent = styled.div<CardContentProps>`
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
   ${props => getCssResponsive(props)}
 `;

@@ -10,7 +10,7 @@ const variants: Variants = {
   default: css`
 `,
   alfa: css`
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   border-radius: 0.5em;
   // box-shadow: var(--card-shadow);
 `,
@@ -19,12 +19,12 @@ const variants: Variants = {
   border-radius: 2px;
 `,
   gamma: css`
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
 `,
   delta: css`
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
 `
@@ -32,7 +32,6 @@ const variants: Variants = {
 
 type Props = {
   type?: Variant;
-  bordered?: boolean;
   hoverable?: boolean;
 };
 

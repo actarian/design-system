@@ -1,6 +1,8 @@
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
 export { useBreakpoint } from './useBreakpoint/useBreakpoint';
 export { useClasses } from './useClasses/useClasses';
+export { useClickAnyWhere } from './useClickAnyWhere/useClickAnyWhere';
+export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrentState } from './useCurrentState/useCurrentState';
 export { useDrawer } from './useDrawer/useDrawer';
 export { useEventListener } from './useEventListener/useEventListener';

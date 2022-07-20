@@ -12,10 +12,10 @@
     "primary": {
       "family": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
       "size": [
-        "6.25rem",
-        "4.5rem",
-        "2.75rem",
-        "2.5rem",
+        "Min(6.25rem, 16vw)",
+        "Min(4.5rem, 11.5vw)",
+        "Min(2.75rem, 7vw)",
+        "Min(2.5rem, 6.4vw)",
         "2.25rem",
         "1.875rem",
         "1.5rem",
@@ -82,19 +82,28 @@
     "columnGap": "Max(4vw, Min(96px, 5vw))",
     "rowGap": "0"
   },
-  "maxWidth": {
-    "xs": "calc(100% - var(--grid-column-gap) * 2)",
-    "sm": "calc(100% - var(--grid-column-gap) * 2)",
-    "md": "Min(928px, calc(100% - var(--grid-column-gap) * 2))",
-    "lg": "Min(1344px, calc(100% - var(--grid-column-gap) * 4))",
-    "xl": "Min(1204px, calc(100% - var(--grid-column-gap) * 6))"
-  },
   "mediaQuery": {
     "xs": 0,
     "sm": 768,
     "md": 1024,
     "lg": 1440,
     "xl": 1600
+  },
+  "container": {
+    "maxWidth": {
+      "xs": "calc(100% - var(--grid-column-gap) * 2)",
+      "sm": "calc(100% - var(--grid-column-gap) * 2)",
+      "md": "calc(1024px - var(--grid-column-gap) * 2)",
+      "lg": "calc(1440px - var(--grid-column-gap) * 2)",
+      "xl": "calc(1600px - var(--grid-column-gap) * 2)"
+    }
+  },
+  "maxWidth": {
+    "xs": "calc(100% - var(--grid-column-gap) * 2)",
+    "sm": "calc(100% - var(--grid-column-gap) * 2)",
+    "md": "Min(928px, calc(100% - var(--grid-column-gap) * 2))",
+    "lg": "Min(1344px, calc(100% - var(--grid-column-gap) * 4))",
+    "xl": "Min(1204px, calc(100% - var(--grid-column-gap) * 6))"
   },
   "button": {
     "size": {

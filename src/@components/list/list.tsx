@@ -9,6 +9,7 @@ type Props = {
 export type ListProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const StyledList = styled.div<ListProps>`
+  width: 100%;
   padding: 0.5rem 0;
   border-bottom: 1px solid var(--color-neutral-200);
   ${props => getCssResponsive(props)}

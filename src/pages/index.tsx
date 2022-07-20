@@ -50,7 +50,7 @@ export default function Homepage() {
   }], []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Homepage</title>
         <meta name="description" content="Homepage description" />
@@ -78,14 +78,18 @@ export default function Homepage() {
           <Section padding="3rem 0">
             <Container>
               <Flex.Row justifyContent="center">
-                <Text type="1" fontWeight="700" gradient>Workbench</Text>
+                <Text type="1" as="span" fontWeight="700" gradient>Workbench</Text>
               </Flex.Row>
             </Container>
           </Section>
 
           <Divider marginBottom="4rem">Forms</Divider>
 
-          <ContactForm></ContactForm>
+          <Section>
+            <Container>
+              <ContactForm></ContactForm>
+            </Container>
+          </Section>
 
           <Divider marginBottom="4rem">Buttons</Divider>
 
@@ -291,6 +295,6 @@ export default function Homepage() {
 
         </Page>
       </Layout>
-    </div>
+    </>
   )
 }

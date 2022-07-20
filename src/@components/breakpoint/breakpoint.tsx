@@ -18,13 +18,16 @@ const StyledBreakpoint = styled.div<BreakpointProps>`
   border: 1px solid var(--color-warning-700);
   border-radius: 0.3em;
   z-index: 10000;
+  font-family: monospace;
+  font-size: 0.8rem;
+  line-height: 1;
   ${props => getCssResponsive(props)}
 `;
 
 const Breakpoint = ((props: BreakpointProps) => {
   const breakpoint = useBreakpoint();
   return breakpoint.max > 0 ? (
-    <StyledBreakpoint as='div' {...props}>{breakpoint.key} {breakpoint.min}-{breakpoint.max}</StyledBreakpoint>
+    <StyledBreakpoint as='div' {...props}>{breakpoint.key} ({breakpoint.min}/{breakpoint.max < 50000 ? breakpoint.max : '∞'})</StyledBreakpoint>
   ) : null;
 });
 

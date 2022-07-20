@@ -13,7 +13,6 @@ type Props = {
 export type TextProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const Text = styled.div<TextProps>`
-  display: inline-block;
   font-family: var(--font-primary-family);
   ${({ type }) => {
     if (!type) return '';

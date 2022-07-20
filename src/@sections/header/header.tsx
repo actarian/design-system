@@ -1,13 +1,13 @@
-import { Button, Container, Drawer, Flex, Nav, Text } from '@components';
+import { Button, Container, Drawer, Flex, Nav, NavLink, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { useDrawer, useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
-import Link from 'next/link';
 
 import styled, { css } from 'styled-components';
 
 type ContainerProps = {
   fixed?: boolean;
+  sticky?: boolean;
   scrolled?: boolean;
 }
 
@@ -30,11 +30,23 @@ const HeaderContainer = styled.div<HeaderContainerProps>`
     background: ${props.scrolled ? 'var(--color-neutral-900)' : 'transparent'};
     // color: ${props.scrolled ? 'var(--color-neutral-100)' : 'var(--color-neutral-100)'};
   ` : ''};
+
+  ${props => props.sticky ? css`
+    position: sticky;
+    min-height: 80px;
+    top: 0;
+    right: var(--locked-padding-right, 0);
+    z-index: 1000;
+    transition: background-color ease-in-out 350ms;
+    background: ${props.scrolled ? 'var(--color-neutral-900)' : 'var(--color-neutral-100)'};
+    color: ${props.scrolled ? 'var(--color-neutral-100)' : 'var(--color-neutral-900)'};
+    border-bottom: 1px solid ${props.scrolled ? 'var(--color-neutral-900)' : 'var(--color-neutral-300)'};
+  ` : ''};
 `;
 
 type Props = {
   fixed?: boolean;
-  scrolled?: boolean;
+  sticky?: boolean;
 }
 
 export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
@@ -55,29 +67,33 @@ const Header = (props: HeaderProps) => {
       <Container.Fluid>
         <Flex.Row gap="1rem" gapSm="3rem">
           <Flex>
-            <Hexagon width="3rem" height="3rem" color="var(--color-neutral-100)" />
-            <Text type="6" padding="0 0.5rem">Hexagon</Text>
+            <NavLink href="/">
+              <Button as="a">
+                <Hexagon width="3rem" height="3rem" />
+                <Text type="6" padding="0 0.5rem">Hexagon</Text>
+              </Button>
+            </NavLink>
           </Flex>
           <Flex flex="1" justifyContent="center">
             <Nav.Row gap="3rem" display="none" displaySm="flex">
-              <Link href="#solutions">
+              <NavLink href="#solutions">
                 <Button as="a" type="eta">Solutions</Button>
-              </Link>
-              <Link href="#company">
-                <Button as="a" type="eta">Company</Button>
-              </Link>
-              <Link href="#magazine">
+              </NavLink>
+              <NavLink href="#magazine">
                 <Button as="a" type="eta">Magazine</Button>
-              </Link>
-              <Link href="#more">
+              </NavLink>
+              <NavLink href="/contacts">
+                <Button as="a" type="eta">Contacts</Button>
+              </NavLink>
+              <NavLink href="#more">
                 <Button as="a" type="eta">More</Button>
-              </Link>
+              </NavLink>
             </Nav.Row>
           </Flex>
           <Flex gap="1rem">
-            <Link href="#auth">
+            <NavLink href="#auth">
               <Button as="a" display='none' displaySm='block'><User width="2rem" height="2rem" /></Button>
-            </Link>
+            </NavLink>
             <Button as="a" onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
             <Drawer visible={drawer == 'cart'} onClose={onCloseDrawer} placement="right">
               <Drawer.Title>Drawer</Drawer.Title>
@@ -86,10 +102,10 @@ const Header = (props: HeaderProps) => {
                 <p>Some content contained within the drawer.</p>
               </Drawer.Content>
             </Drawer>
-            <Link href="#menu">
+            <NavLink href="#menu">
               <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
               </Button>
-            </Link>
+            </NavLink>
           </Flex>
         </Flex.Row>
       </Container.Fluid>

@@ -3,6 +3,28 @@ import { getCssResponsive, getVariant } from '@components/utils';
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+const CssResponsive = css`
+  @media (max-width: 399.9px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const CssFocus = css`
+  &:focus {
+    outline: 2px solid var(--color-primary-100);
+    outline-offset: 2px;
+  }
+`;
+
+const CssDisabled = css`
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+`;
+
 const CssSvg = css`
   svg {
     width: 1em;
@@ -18,7 +40,8 @@ const CssSvg = css`
       margin-right: 0;
     }
   }
-  &:hover {
+  &:hover,
+  &.active {
     svg {
       transform: scale(1.1);
     }
@@ -57,7 +80,8 @@ const CssAfter = css`
     transition: transform ease 200ms;
   }
 
-  &:hover {
+  &:hover,
+  &.active {
     &:after {
       transform: scale(1, 1);
     }
@@ -71,7 +95,8 @@ const variants: Variants = {
   color: var(--color-primary-500);
   border: 2px solid var(--color-primary-100);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-primary-600);
     border-color: var(--color-primary-200);
   }
@@ -85,13 +110,17 @@ const variants: Variants = {
   color: var(--color-neutral-100);
   border: 2px solid var(--color-primary-500);
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: var(--color-primary-600);
     color: var(--color-neutral-100);
     border-color: var(--color-primary-600);
   }
 
   ${CssSvg}
+  ${CssFocus}
+  ${CssDisabled}
+  ${CssResponsive}
 `,
   beta: css`
   padding: 0.8em 1.6em;
@@ -100,19 +129,24 @@ const variants: Variants = {
   color: var(--color-primary-500);
   border: 2px solid var(--color-primary-100);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-primary-600);
     border-color: var(--color-primary-200);
   }
 
   ${CssSvg}
+  ${CssFocus}
+  ${CssDisabled}
+  ${CssResponsive}
 `,
   gamma: css`
   position: relative;
   line-height: 1.5;
   color: var(--color-primary-400);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-primary-500);
   }
 
@@ -126,7 +160,8 @@ const variants: Variants = {
   color: var(--color-neutral-100);
   border: 2px solid var(--color-secondary-500);
 
-  &:hover {
+  &:hover,
+  &.active {
     background-color: var(--color-secondary-600);
     color: var(--color-neutral-100);
     border-color: var(--color-secondary-400);
@@ -138,19 +173,24 @@ const variants: Variants = {
   color: var(--color-secondary-500);
   border: 2px solid var(--color-secondary-500);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-secondary-600);
     border-color: var(--color-secondary-400);
   }
 
   ${CssSvg}
+  ${CssFocus}
+  ${CssDisabled}
+  ${CssResponsive}
 `,
   zeta: css`
   position: relative;
   line-height: 1.5;
   color: var(--color-secondary-500);
 
-  &:hover {
+  &:hover,
+  &.active {
     color: var(--color-secondary-600);
   }
 

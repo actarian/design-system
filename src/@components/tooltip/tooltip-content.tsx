@@ -1,0 +1,110 @@
+import { Transition } from '@components';
+import { useClasses, useClickAnyWhere, usePortal, useResize } from '@hooks';
+import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import styled from 'styled-components';
+import { getRect } from './tooltip-helper';
+import TooltipIcon from './tooltip-icon';
+import { defaultTooltipPosition, getPosition, TooltipPosition } from './tooltip-placement';
+import { Placement, SnippetTypes } from './tooltip-props';
+
+interface Props {
+  className?: string;
+  hideArrow: boolean;
+  iconOffset: TooltipIconOffset;
+  offset: number;
+  parent?: MutableRefObject<HTMLElement | null> | undefined;
+  placement: Placement;
+  type: SnippetTypes;
+  visible: boolean;
+};
+
+export type TooltipIconOffset = {
+  x: string;
+  y: string;
+};
+
+const StyledTooltipContent = styled.div<{ rect: TooltipPosition, iconOffset: TooltipIconOffset, hasShadow: boolean }>`
+  --tooltip-icon-offset-x: ${props => props.iconOffset.x};
+  --tooltip-icon-offset-y: ${props => props.iconOffset.y};
+  --tooltip-content-bg: var(--color-neutral-100);
+  box-sizing: border-box;
+  position: absolute;
+  top: ${props => props.rect.top};
+  left: ${props => props.rect.left};
+  transform: ${props => props.rect.transform};
+  background-color: var(--tooltip-content-bg);
+  color: var(--color-neutral-900);
+  border-radius: var(--border-radius);
+  padding: 0;
+  z-index: 1000;
+  box-shadow: ${props => props.hasShadow ? 'var(--shadow-lg)' : 'none'};
+  width: 'auto';
+  height: 'auto';
+
+  .inner {
+    box-sizing: border-box;
+    position: relative;
+    font-size: 1;
+    padding: 0.65rem 0.9rem 0.65rem 0.9rem;
+    height: 100%;
+  }
+`;
+
+const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
+  children,
+  parent,
+  visible,
+  offset,
+  iconOffset,
+  placement,
+  type,
+  className,
+  hideArrow,
+}) => {
+  const portal = usePortal('tooltip');
+  const selfRef = useRef<HTMLDivElement>(null);
+  const [rect, setRect] = useState<TooltipPosition>(defaultTooltipPosition);
+  const hasShadow = type === 'default';
+  const classes = useClasses('tooltip-content', className);
+  if (!parent) {
+    return null;
+  }
+
+  const updateRect = () => {
+    const position = getPosition(placement, getRect(parent), offset);
+    setRect(position);
+  };
+
+  useResize(updateRect);
+  useClickAnyWhere(() => updateRect());
+
+  useEffect(() => {
+    updateRect();
+  }, [visible])
+
+  const preventHandler = (event: React.MouseEvent<HTMLDivElement>) => {
+    event.stopPropagation();
+    event.nativeEvent.stopImmediatePropagation();
+  };
+
+  if (!portal) {
+    return null;
+  }
+
+  const props = { rect, iconOffset, hasShadow };
+
+  return createPortal(
+    <Transition visible={visible}>
+      <StyledTooltipContent {...props} className={classes} ref={selfRef} onClick={preventHandler}>
+        <div className="inner">
+          {!hideArrow && <TooltipIcon placement={placement} shadow={hasShadow} />}
+          {children}
+        </div>
+      </StyledTooltipContent>
+    </Transition>,
+    portal,
+  )
+}
+
+export default TooltipContent;
