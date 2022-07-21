@@ -1,10 +1,11 @@
-import Link, { LinkProps } from 'next/link'
-import { useRouter } from 'next/router'
-import React, { Children } from 'react'
+import Link, { LinkProps } from 'next/link';
+import { useRouter } from 'next/router';
+import React, { Children } from 'react';
 
 export interface NavLinkProps extends LinkProps {
-  children: React.ReactElement,
-  activeClassName?: string,
+  children: React.ReactElement;
+  activeClassName?: string;
+  scrollToHash?: boolean;
 }
 
 const NavLink = ({ children, activeClassName = 'active', ...props }: NavLinkProps) => {

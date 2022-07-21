@@ -9,6 +9,8 @@ export { default as Code } from './code/code';
 export { ContainerFluid, default as Container } from './container/container';
 export { default as Divider } from './divider/divider';
 export { default as Drawer } from './drawer/drawer';
+export { default as Dropdown } from './dropdown/dropdown';
+export { default as Ellipsis } from './ellipsis/ellipsis';
 export { default as Flex } from './flex/flex';
 export { FlexRow } from './flex/flex-row';
 export { default as Grid } from './grid/grid';

@@ -1,4 +1,5 @@
 export { default as Checkbox } from './checkbox/checkbox';
+export { default as CustomSelect } from './custom-select/select';
 export { default as Field } from './field/field';
 export { default as Input } from './input/input';
 export { default as Label } from './label/label';

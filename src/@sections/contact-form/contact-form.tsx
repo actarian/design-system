@@ -1,23 +1,14 @@
 import { Box, Button, Flex, Grid } from '@components';
 import { ComponentProps } from '@components/types';
-import { Checkbox, Field, Input, Label, Radio, Select, TextArea } from '@forms';
+import { Checkbox, CustomSelect, Field, Input, Label, Radio, Select, TextArea } from '@forms';
 import { Send } from '@icons';
 import React from 'react';
 
-import styled from 'styled-components';
 
 type Props = {
 }
 
 export type ContactFormProps = ComponentProps<Props, HTMLDivElement>;
-
-const ContactFormContainer = styled.div<ContactFormProps>`
-  padding: 6rem 0 4rem 0;
-  // border-top: 1px solid var(--color-neutral-200);
-  // border-bottom: 1px solid var(--color-neutral-200);
-  // background: var(--color-neutral-900);
-  // color: var(--color-neutral-100);
-`;
 
 const ContactForm = (props: ContactFormProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +45,35 @@ const ContactForm = (props: ContactFormProps) => {
               <option>Germania</option>
               <option>Stati Uniti</option>
             </Select>
+          </Field>
+        </Grid>
+        <Grid md={6}>
+          <Field>
+            <Label>CustomSelect</Label>
+            <CustomSelect name='country' id='country' defaultValue='Italia' placeholder="select a value.." type="default">
+              <CustomSelect.Option value="it">Italia</CustomSelect.Option>
+              <CustomSelect.Option value="ca">Canada</CustomSelect.Option>
+              <CustomSelect.Option value="fr">Francia</CustomSelect.Option>
+              <CustomSelect.Option value="de">Germania</CustomSelect.Option>
+              <CustomSelect.Option value="us">Stati Uniti</CustomSelect.Option>
+            </CustomSelect>
+          </Field>
+        </Grid>
+        <Grid md={6}>
+          <Field>
+            <Label>CustomSelect Multiple</Label>
+            <CustomSelect placeholder="Frameworks" multiple initialValue={['1', '3', '4', '6']}>
+              <CustomSelect.Label>Framework</CustomSelect.Label>
+              <CustomSelect.Option value="1">React</CustomSelect.Option>
+              <CustomSelect.Option value="2">Angular</CustomSelect.Option>
+              <CustomSelect.Option value="3">Vue</CustomSelect.Option>
+              <CustomSelect.Divider />
+              <CustomSelect.Option value="4">Rails</CustomSelect.Option>
+              <CustomSelect.Option value="5">Sinatra</CustomSelect.Option>
+              <CustomSelect.Divider />
+              <CustomSelect.Option value="6">Express</CustomSelect.Option>
+              <CustomSelect.Option value="7">Koa</CustomSelect.Option>
+            </CustomSelect>
           </Field>
         </Grid>
         <Grid>

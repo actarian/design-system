@@ -4,6 +4,7 @@ export { useClasses } from './useClasses/useClasses';
 export { useClickAnyWhere } from './useClickAnyWhere/useClickAnyWhere';
 export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrentState } from './useCurrentState/useCurrentState';
+export { useDomObserver } from './useDomObserver/useDomObserver';
 export { useDrawer } from './useDrawer/useDrawer';
 export { useEventListener } from './useEventListener/useEventListener';
 export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
@@ -15,5 +16,6 @@ export { useScroll } from './useScroll/useScroll';
 export { useSSR } from './useSSR/useSSR';
 export { useSwiperIndex } from './useSwiperIndex/useSwiperIndex';
 export { useUI } from './useUI/useUI';
+export { useWarning } from './useWarning/useWarning';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 

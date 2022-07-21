@@ -39,8 +39,8 @@ const StyledTooltipContent = styled.div<{ rect: TooltipPosition, iconOffset: Too
   border-radius: var(--border-radius);
   padding: 0;
   z-index: 1000;
-  filter: drop-shadow(0px 0px 1px var(--color-neutral-300));
   box-shadow: ${props => props.hasShadow ? 'var(--shadow-xs)' : 'none'};
+  filter: drop-shadow(0px 0px 1px var(--color-neutral-300));
   width: 'auto';
   height: 'auto';
 

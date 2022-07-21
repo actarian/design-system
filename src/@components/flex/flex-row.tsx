@@ -12,7 +12,7 @@ export const FlexRow = styled.div<FlexRowProps>`
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
-  margin: 0 auto;
+  // margin: 0 auto;
   gap: 0.5rem;
   ${props => getCssResponsive(props)}
 `;

@@ -157,5 +157,4 @@ export const isMac = (): boolean => {
   return navigator.platform.toUpperCase().indexOf('MAC') >= 0
 }
 
-export const isCSSNumberValue = (value?: string | number) =>
-  value !== undefined && !Number.isNaN(+value);
+export const isCSSNumberValue = (value?: string | number) => value !== undefined && !Number.isNaN(+value);

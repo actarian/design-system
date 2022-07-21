@@ -52,6 +52,12 @@ const StyledRadioInput = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
   ${props => getCssResponsive(props)}
 `
 
@@ -60,14 +66,20 @@ const StyledRadioIcon = styled.div`
   margin-right: 0.5rem;
   color: var(--color-neutral-300);
   pointer-events: none;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  transition: outline-color 150ms ease-in 0s, color 200ms ease-out 0s;
 
   input:checked ~ & {
     color: var(--color-primary-500);
   }
 
+  input:not(:disabled):hover ~ & {
+    outline-color: var(--color-neutral-300);
+  }
+
   input:focus ~ & {
-    outline: 2px solid var(--color-primary-100);
-    outline-offset: 2px;
+    outline-color: var(--color-primary-100);
   }
   ${props => getCssResponsive(props)}
 `

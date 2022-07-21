@@ -84,7 +84,7 @@ export default function Contact() {
             </Container>
           </Section>
 
-          <Section>
+          <Section id="contact-request">
             <Container>
               <Divider marginBottom="4rem">Contact Request</Divider>
               <ContactForm></ContactForm>
