@@ -313,9 +313,8 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
         )}
       </StyledSelect>
     </SelectContext.Provider>
-  )
-},
-)
+  );
+});
 
 Select.displayName = 'Select';
 

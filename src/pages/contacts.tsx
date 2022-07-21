@@ -1,4 +1,4 @@
-import { Container, Divider, Grid, Layout, Media, Page, Section, Text } from '@components';
+import { Container, Divider, Flex, Grid, Layout, Media, Page, Section, Tabs, Text } from '@components';
 import { BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHead, Footer, Header, Split } from '@sections';
 import Head from 'next/head';
 
@@ -87,7 +87,51 @@ export default function Contact() {
           <Section id="contact-request">
             <Container>
               <Divider marginBottom="4rem">Contact Request</Divider>
-              <ContactForm></ContactForm>
+              <ContactForm />
+            </Container>
+          </Section>
+
+          <Section>
+            <Container>
+              <Divider marginBottom="4rem">Tabs</Divider>
+              <Tabs initialValue="1">
+                <Tabs.Item label="Marketing" value="1">
+
+                  <Grid.Row padding="4rem 0">
+                    <Grid md={4}>
+                      <Text type="2" fontWeight="700" marginBottom="1rem">Marketing.</Text>
+                    </Grid>
+                    <Grid md={8}>
+                      <Text type="8" maxWidth="60ch">Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.</Text>
+                      <Flex.Row marginTop="1rem">
+                        <Media width="3rem" height="3rem" circle>
+                          <img src="https://i.pravatar.cc/128?u=1" />
+                        </Media>
+                        <Text type="8" fontWeight="700">Tim Neutkens</Text>
+                      </Flex.Row>
+                    </Grid>
+                  </Grid.Row>
+
+                </Tabs.Item>
+                <Tabs.Item label="Ecommerce" value="2">
+
+                  <Grid.Row padding="4rem 0">
+                    <Grid md={4}>
+                      <Text type="2" fontWeight="700" marginBottom="1rem">Ecommerce.</Text>
+                    </Grid>
+                    <Grid md={8}>
+                      <Text type="8" maxWidth="60ch">Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.</Text>
+                      <Flex.Row marginTop="1rem">
+                        <Media width="3rem" height="3rem" circle>
+                          <img src="https://i.pravatar.cc/128?u=5" />
+                        </Media>
+                        <Text type="8" fontWeight="700">JJ Kasper</Text>
+                      </Flex.Row>
+                    </Grid>
+                  </Grid.Row>
+
+                </Tabs.Item>
+              </Tabs>
             </Container>
           </Section>
 

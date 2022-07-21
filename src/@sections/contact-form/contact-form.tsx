@@ -51,6 +51,7 @@ const ContactForm = (props: ContactFormProps) => {
           <Field>
             <Label>CustomSelect</Label>
             <CustomSelect name='country' id='country' defaultValue='Italia' placeholder="select a value.." type="default">
+              <CustomSelect.Label>Country</CustomSelect.Label>
               <CustomSelect.Option value="it">Italia</CustomSelect.Option>
               <CustomSelect.Option value="ca">Canada</CustomSelect.Option>
               <CustomSelect.Option value="fr">Francia</CustomSelect.Option>
