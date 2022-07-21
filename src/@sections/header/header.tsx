@@ -1,7 +1,8 @@
-import { Button, Container, Drawer, Flex, Nav, NavLink, Popover, Text } from '@components';
+import { Button, Container, Flex, Nav, NavLink, Popover, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { useDrawer, useScroll } from '@hooks';
 import { Hexagon, Menu, ShoppingCart, User } from '@icons';
+import { CartMini } from '@sections';
 
 import styled, { css } from 'styled-components';
 
@@ -107,13 +108,7 @@ const Header = (props: HeaderProps) => {
               <Button as="a" display='none' displaySm='block'><User width="2rem" height="2rem" /></Button>
             </NavLink>
             <Button as="a" onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
-            <Drawer visible={drawer == 'cart'} onClose={onCloseDrawer} placement="right">
-              <Drawer.Title>Drawer</Drawer.Title>
-              <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
-              <Drawer.Content>
-                <p>Some content contained within the drawer.</p>
-              </Drawer.Content>
-            </Drawer>
+            <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
             <NavLink href="#menu">
               <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
               </Button>

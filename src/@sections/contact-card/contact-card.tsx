@@ -18,7 +18,7 @@ export type ContactCardItem = {
   pressEmail?: string;
   note?: string;
   evidence?: boolean;
-  url?: string;
+  href?: string;
 }
 
 export type ContactCardProps = ComponentProps<Props, HTMLDivElement>;

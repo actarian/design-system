@@ -37,7 +37,7 @@ export type SwiperHeroItemMedia = {
 }
 
 export type SwiperHeroItemLink = {
-  url: string;
+  href: string;
   label: string;
 }
 
@@ -77,7 +77,7 @@ export default function SwiperHero(props: SwiperHeroProps) {
                 <Grid className='right' md={6} padding="3rem 0 6rem 0">
                   <Text type="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
-                    <Link href={item.link.url}>
+                    <Link href={item.link.href}>
                       <Button as="a" type="gamma"><Text fontWeight="700">{item.link.label}</Text> <ArrowRight /></Button>
                     </Link>}
                 </Grid>

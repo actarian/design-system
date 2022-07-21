@@ -8,7 +8,7 @@ type Props = {
 
 export type SplitItem = {
   id: number;
-  url: string;
+  href: string;
   title: string;
   media: {
     type: 'image' | 'video';
@@ -48,7 +48,7 @@ const Split = ({ item }: SplitProps) => {
 Split.defaultProps = {
   item: {
     id: 1,
-    url: '#new-arrivals',
+    href: '#new-arrivals',
     title: 'New Arrivals',
     media: {
       type: 'image',

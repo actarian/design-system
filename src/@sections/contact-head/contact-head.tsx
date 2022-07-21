@@ -9,7 +9,7 @@ type Props = {
 
 export type ContactHeadItem = {
   id: number;
-  url: string;
+  href: string;
   title: string;
   media: {
     type: 'image' | 'video';
@@ -99,7 +99,7 @@ const ContactHead = ({ item }: ContactHeadProps) => {
 ContactHead.defaultProps = {
   item: {
     id: 1,
-    url: '#new-arrivals',
+    href: '#new-arrivals',
     title: 'New Arrivals',
     media: {
       type: 'image',

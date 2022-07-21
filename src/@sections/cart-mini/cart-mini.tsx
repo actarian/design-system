@@ -1,0 +1,63 @@
+import { Button, Drawer, Flex, Text } from '@components';
+import { useCart, useCurrency, useUI } from '@hooks';
+import { ArrowRight, ShoppingCart } from '@icons';
+import { ReactNode } from 'react';
+import CartMiniItem from './cart-mini-item';
+
+export interface CartMiniProps {
+  children?: ReactNode;
+  visible: boolean;
+  onClose: () => void;
+}
+
+const CartMini = ({ visible, onClose }: CartMiniProps) => {
+
+  const { items } = useCart();
+
+  const totalAmount = items.reduce((p, c) => p + c.price * c.qty, 0);
+  const totalPrice = useCurrency(totalAmount);
+
+  const reduceUI = useUI(state => state.reduce);
+
+  function onSetDrawer(value?: string) {
+    reduceUI((state) => ({ drawer: value }));
+  }
+
+  function onBuy() {
+    return onSetDrawer();
+  }
+
+  return (
+    <Drawer visible={visible} onClose={onClose} placement="right">
+      <Drawer.Title>Shopping cart</Drawer.Title>
+      <Drawer.Subtitle>{items.length} items found</Drawer.Subtitle>
+      <Drawer.Content flex="1" display="flex" padding="0" width="100%" maxWidth="400px">
+        <Flex.Col justifyContent="space-between">
+          <Flex.Col flex="1">
+            {items && items.map((item, i) =>
+              <CartMiniItem key={i} item={item} />
+            )}
+          </Flex.Col>
+          <Flex.Row justifyContent="space-between" alignItems="center" padding="1rem 0 0.5rem 0">
+            <Text fontWeight="700">Subtotal</Text>
+            <Text fontWeight="700">{totalPrice}</Text>
+          </Flex.Row>
+          <Flex.Row justifyContent="space-between" alignItems="center" padding="0.5rem 0 1.5rem 0">
+            <Text>Shipping and taxes calculated at checkout</Text>
+          </Flex.Row>
+          <Button type="alfa" size="lg" justifyContent="center" onClick={() => onBuy()}>
+            <span>Checkout</span> <ShoppingCart />
+          </Button>
+          <Flex.Row justifyContent="center" alignItems="center" padding="1rem 0">
+            <span>or</span>
+            <Button type="gamma" onClick={onClose}>
+              <span>Continue shopping</span> <ArrowRight />
+            </Button>
+          </Flex.Row>
+        </Flex.Col>
+      </Drawer.Content>
+    </Drawer>
+  );
+};
+
+export default CartMini;

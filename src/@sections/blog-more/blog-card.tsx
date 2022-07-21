@@ -8,7 +8,7 @@ type Props = {
 
 export type BlogItem = {
   id: number;
-  url: string;
+  href: string;
   title: string;
   abstract: string;
   date: string | Date;
@@ -40,7 +40,7 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
     return formattedValue;
   };
   return (
-    <Link href={item.url}>
+    <Link href={item.href}>
       <Card {...props} hoverable>
         <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem">
           <img src={item.media.src} />
@@ -66,7 +66,7 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
 BlogCard.defaultProps = {
   item: {
     id: 1,
-    url: '#we-choose-to-go-to-the-moon',
+    href: '#we-choose-to-go-to-the-moon',
     title: 'We choose to go to the moon.',
     abstract: 'We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.',
     date: '2022-06-08T07:44:24.402Z',

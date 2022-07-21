@@ -8,7 +8,7 @@ type Props = {
 
 export type CategoryItem = {
   id: number;
-  url: string;
+  href: string;
   title: string;
   media: {
     type: 'image' | 'video';
@@ -20,7 +20,7 @@ export type CategoryCardProps = ComponentCssResponsiveProps<Props, HTMLDivElemen
 
 const CategoryCard = ({ item, ...props }: CategoryCardProps) => {
   return (
-    <Link href={item.url}>
+    <Link href={item.href}>
       <Card aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
         <Card.Background>
           <Media overlay>
@@ -39,7 +39,7 @@ const CategoryCard = ({ item, ...props }: CategoryCardProps) => {
 CategoryCard.defaultProps = {
   item: {
     id: 1,
-    url: '#new-arrivals',
+    href: '#new-arrivals',
     title: 'New Arrivals',
     media: {
       type: 'image',

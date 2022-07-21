@@ -27,7 +27,7 @@ const Products = ({ items }: ProductsProps) => {
 Products.defaultProps = {
   items: [{
     id: 1,
-    url: '#focus-paper-refill',
+    href: '#focus-paper-refill',
     title: 'Focus Paper Refill',
     abstract: '3 sizes available',
     price: 13,
@@ -37,7 +37,7 @@ Products.defaultProps = {
     },
   }, {
     id: 2,
-    url: '#focus-card-holder',
+    href: '#focus-card-holder',
     title: 'Focus Card Holder',
     abstract: 'Walnut',
     price: 64,
@@ -47,7 +47,7 @@ Products.defaultProps = {
     },
   }, {
     id: 3,
-    url: '#focus-carry-case',
+    href: '#focus-carry-case',
     title: 'Focus Carry Case',
     abstract: 'Heather Gray',
     price: 32,
@@ -57,7 +57,7 @@ Products.defaultProps = {
     },
   }, {
     id: 4,
-    url: '#focus-multi-pack',
+    href: '#focus-multi-pack',
     title: 'Focus Paper Refill',
     abstract: '3 refill packs',
     price: 39,
@@ -67,7 +67,7 @@ Products.defaultProps = {
     }
    }, {
     id: 5,
-    url: '#machined-mechanical-pencil',
+    href: '#machined-mechanical-pencil',
     title: 'Machined Mechanical Pencil',
     abstract: 'Black and brass',
     price: 35,
@@ -77,7 +77,7 @@ Products.defaultProps = {
     },
   }, {
     id: 6,
-    url: '#brass-scissors',
+    href: '#brass-scissors',
     title: 'Brass Scissors',
     abstract: 'Includes brass stand',
     price: 50,

@@ -216,7 +216,7 @@ type Props = {
 export type ButtonProps = ComponentCssResponsiveProps<Props, Element>;
 
 const StyledButton = styled.button<ButtonProps>`
-  display: inline-block;
+  // display: inline-block;
   border: none;
   text-decoration: none;
   background: none;

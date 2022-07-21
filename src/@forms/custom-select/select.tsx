@@ -256,7 +256,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
   }), [inputRef, dropdownRef]);
 
   const onClear = (value: string) => {
-    console.log('onClear', value, clearable);
+    // console.log('onClear', value, clearable);
     if (clearable) {
       updateValue(value);
     }
@@ -289,8 +289,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
 
   const classes = useClasses('select', { active: selectFocus || visible, opened: visible, multiple, disabled }, className);
 
-  console.log(value, selectedChildren);
-
+  // console.log(value, selectedChildren);
   return (
     <SelectContext.Provider value={initialValue}>
       <StyledSelect ref={ref} className={classes} onClick={clickHandler} onMouseDown={mouseDownHandler}

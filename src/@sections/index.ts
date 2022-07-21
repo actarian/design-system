@@ -1,5 +1,6 @@
 export { default as BlogMore } from './blog-more/blog-more';
 export { default as BlogProposition } from './blog-proposition/blog-proposition';
+export { default as CartMini } from './cart-mini/cart-mini';
 export { default as CategoryProposition } from './category-proposition/category-proposition';
 export { default as Colors } from './colors/colors';
 export { default as ContactCard } from './contact-card/contact-card';

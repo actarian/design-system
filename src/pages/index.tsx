@@ -16,7 +16,7 @@ export default function Homepage() {
     title: 'Trusted Group',
     abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
     link: {
-      url: '#',
+      href: '#',
       label: 'Do you want to know more?',
     },
     media: {
@@ -28,7 +28,7 @@ export default function Homepage() {
     title: 'Expertise and tailor-made services',
     abstract: 'We support our clients to develop both new and existing chemical solutions.',
     link: {
-      url: '#',
+      href: '#',
       label: 'Do you want to know more?',
     },
     media: {
@@ -40,7 +40,7 @@ export default function Homepage() {
     title: 'Sustainable agriculture',
     abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
     link: {
-      url: '#',
+      href: '#',
       label: 'Do you want to know more?',
     },
     media: {

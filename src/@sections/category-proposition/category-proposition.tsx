@@ -39,7 +39,7 @@ const CategoryProposition = ({ items }: CategoryPropositionProps) => {
 CategoryProposition.defaultProps = {
   items: [{
     id: 1,
-    url: '#new-arrivals',
+    href: '#new-arrivals',
     title: 'New Arrivals',
     media: {
       type: 'image',
@@ -47,7 +47,7 @@ CategoryProposition.defaultProps = {
     },
   }, {
     id: 2,
-    url: '#accessories',
+    href: '#accessories',
     title: 'Accessories',
     media: {
       type: 'image',
@@ -55,7 +55,7 @@ CategoryProposition.defaultProps = {
     },
   }, {
     id: 3,
-    url: '#workspace',
+    href: '#workspace',
     title: 'Workspace',
     media: {
       type: 'image',
