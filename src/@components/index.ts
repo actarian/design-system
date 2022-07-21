@@ -1,3 +1,4 @@
+export { default as Accordion } from './accordion/accordion';
 export { default as Box } from './box/box';
 export { default as Breakpoint } from './breakpoint/breakpoint';
 export { default as ButtonGroup } from './button-group/button-group';
@@ -11,6 +12,7 @@ export { default as Divider } from './divider/divider';
 export { default as Drawer } from './drawer/drawer';
 export { default as Dropdown } from './dropdown/dropdown';
 export { default as Ellipsis } from './ellipsis/ellipsis';
+export { default as Expand } from './expand/expand';
 export { default as Flex } from './flex/flex';
 export { FlexRow } from './flex/flex-row';
 export { default as Grid } from './grid/grid';

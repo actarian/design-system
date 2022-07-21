@@ -1,4 +1,4 @@
-import { Container, Divider, Flex, Grid, Layout, Media, Page, Section, Tabs, Text } from '@components';
+import { Accordion, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Tabs, Text } from '@components';
 import { BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHead, Footer, Header, Split } from '@sections';
 import Head from 'next/head';
 
@@ -132,6 +132,24 @@ export default function Contact() {
 
                 </Tabs.Item>
               </Tabs>
+            </Container>
+          </Section>
+
+          <Section>
+            <Container>
+              <Divider marginBottom="4rem">Accordion</Divider>
+              <Accordion.Group>
+                <Accordion title="Question A">
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+                </Accordion>
+                <Accordion title="Question B">
+                  <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+                    sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</Text>
+                </Accordion>
+              </Accordion.Group>
             </Container>
           </Section>
 

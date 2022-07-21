@@ -28,7 +28,7 @@ export type PopoverProps = Props & Omit<TooltipProps, keyof ExcludeTooltipProps>
 
 const StyledTooltip = styled(Tooltip)`
   :global(.tooltip-content.popover > .inner) {
-    padding: 0.9rem 0 0.9rem 0;
+    padding: 0.9rem 0;
   }
 `;
 
@@ -43,7 +43,7 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   placement = 'bottom' as Placement,
   trigger = 'click' as PopoverTriggerTypes,
   visible: customVisible,
-  onVisibleChange = (() => {}) as TooltipOnVisibleChange,
+  onVisibleChange = (() => { }) as TooltipOnVisibleChange,
   content,
   children,
   disableItemsAutoClose = false,
@@ -59,9 +59,9 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
   };
 
   const value = useMemo<PopoverConfig>(() => ({
-      onItemClick: onChildClick,
-      disableItemsAutoClose,
-    }),   [disableItemsAutoClose]);
+    onItemClick: onChildClick,
+    disableItemsAutoClose,
+  }), [disableItemsAutoClose]);
 
   const classes = useClasses('popover', portalClassName);
 
@@ -106,3 +106,4 @@ type IPopover = typeof Popover & {
 };
 
 import PopoverItem from './popover-item';
+

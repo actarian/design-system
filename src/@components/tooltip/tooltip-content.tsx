@@ -47,7 +47,7 @@ const StyledTooltipContent = styled.div<{ rect: TooltipPosition, iconOffset: Too
   .inner {
     // box-sizing: border-box;
     position: relative;
-    padding: 0.65rem 0.9rem 0.65rem 0.9rem;
+    padding: 0.65rem 0.9rem;
     height: 100%;
   }
 `;

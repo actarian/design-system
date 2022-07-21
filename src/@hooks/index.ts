@@ -12,6 +12,7 @@ export { KeyCode, useKeyboard } from './useKeyboard/useKeyboard';
 export { useModal } from './useModal/useModal';
 export { usePortal } from './usePortal/usePortal';
 export { usePrevious } from './usePrevious/usePrevious';
+export { useRealSize } from './useRealSize/useRealSize';
 export { useResize } from './useResize/useResize';
 export { useScroll } from './useScroll/useScroll';
 export { useSSR } from './useSSR/useSSR';
