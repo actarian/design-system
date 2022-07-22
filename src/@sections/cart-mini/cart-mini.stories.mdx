@@ -1,0 +1,31 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import CartMini from './cart-mini';
+import CartMiniItem from './cart-mini-item';
+
+<Meta
+  title="Sections / Cart Mini"
+  component={CartMini}
+  subcomponents={{ CartMiniItem }}
+/>
+
+# Cart Mini
+
+A component to display a `Cart Mini`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/@sections/cart-mini)
+
+## Imports
+
+```js
+import { CartMini } from '@design-system';
+```
+
+## Example
+
+A basic example of `Cart Mini`.
+
+<Canvas>
+  <Story name="Cart Mini">
+    <CartMini visible={true} onClose={() => alert} />
+  </Story>
+</Canvas>

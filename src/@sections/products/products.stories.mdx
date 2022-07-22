@@ -1,5 +1,5 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
-import { Products } from '@sections';
+import Products from './products';
 import ProductCard from './product-card';
 
 <Meta
@@ -12,7 +12,7 @@ import ProductCard from './product-card';
 
 A component to display a `Products`.
 
-[View source](https://github.com/actarian/design-system/tree/main/@sections/products)
+[View source](https://github.com/actarian/design-system/tree/main/src/@sections/products)
 
 ## Imports
 
@@ -28,9 +28,6 @@ A basic example of `Products`.
   <Story name="Products">
     <Products />
   </Story>
-</Canvas>
-
-<Canvas>
   <Story name="Product Item">
     <ProductCard maxWidth="540px" margin="3rem" />
   </Story>
