@@ -1,5 +1,5 @@
 import { Accordion, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Tabs, Text } from '@components';
-import { BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHead, Footer, Header, Split } from '@sections';
+import { BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHero, Footer, Header, Split } from '@sections';
 import Head from 'next/head';
 
 export default function Contact() {
@@ -70,7 +70,7 @@ export default function Contact() {
 
           <Header sticky></Header>
 
-          <ContactHead />
+          <ContactHero />
 
           <Section>
             <Container>

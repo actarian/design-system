@@ -1,5 +1,6 @@
-import { Card, Flex, Media, Text } from '@components';
+import { Button, Card, Flex, Media, Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { ArrowRight } from '@icons';
 import Link from 'next/link';
 
 type Props = {
@@ -41,21 +42,28 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
   };
   return (
     <Link href={item.href}>
-      <Card {...props} hoverable>
+      <Card type="alfa" {...props} hoverable height="100%">
         <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem">
           <img src={item.media.src} />
         </Media>
-        <Card.Content>
+        <Card.Content flex="1">
           <Text type="5">{item.title}</Text>
           <Text type="8" marginBottom="1rem">{getDate(item.date)}</Text>
           <Text type="8">{item.abstract}</Text>
         </Card.Content>
         <Card.Footer marginTop="1rem">
-          <Flex.Row>
-            <Media width="3rem" height="3rem" circle>
-              <img src={item.author.media.src} />
-            </Media>
-            <Text type="8" fontWeight="700">{item.author.fullName}</Text>
+          <Flex.Row justifyContent="space-between">
+            <Flex>
+              <Media width="3rem" height="3rem" marginRight="0.75rem" circle>
+                <img src={item.author.media.src} />
+              </Media>
+              <Text type="8" fontWeight="700">{item.author.fullName}</Text>
+            </Flex>
+            {false &&
+              <Link href={item.href}>
+                <Button as="a" type="gamma"><Text>Read more</Text> <ArrowRight /></Button>
+              </Link>
+            }
           </Flex.Row>
         </Card.Footer>
       </Card>

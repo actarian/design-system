@@ -125,14 +125,14 @@ const variants: Variants = {
   beta: css`
   padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
-  background: var(--color-primary-100);
-  color: var(--color-primary-500);
-  border: 2px solid var(--color-primary-100);
+  background: var(--color-neutral-200);
+  border: 2px solid var(--color-neutral-200);
+  color: var(--color-neutral-700);
 
   &:hover,
   &.active {
-    color: var(--color-primary-600);
-    border-color: var(--color-primary-200);
+    border-color: var(--color-neutral-400);
+    color: var(--color-neutral-900);
   }
 
   ${CssSvg}

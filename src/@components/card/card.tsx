@@ -15,8 +15,8 @@ const variants: Variants = {
   // box-shadow: var(--card-shadow);
 `,
   beta: css`
-  // background: var(--color-neutral-900);
-  border-radius: 2px;
+  background: var(--color-neutral-200);
+  // border-radius: 2px;
 `,
   gamma: css`
   border: 1px solid var(--color-neutral-200);

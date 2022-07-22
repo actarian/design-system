@@ -21,9 +21,9 @@ export type ProductItem = {
   };
 }
 
-export type ProductCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ProductPropositionCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const ProductCard = ({ item, ...props }: ProductCardProps) => {
+const ProductPropositionCard = ({ item, ...props }: ProductPropositionCardProps) => {
   const cart = useCart();
   // const cartItem = cart.find(item);
   // const isAddedToCart = cartItem != null;
@@ -52,7 +52,7 @@ const ProductCard = ({ item, ...props }: ProductCardProps) => {
   )
 }
 
-ProductCard.defaultProps = {
+ProductPropositionCard.defaultProps = {
   item: {
     id: 1,
     href: '#focus-paper-refill',
@@ -61,9 +61,9 @@ ProductCard.defaultProps = {
     price: 13,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=21',
+      src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&w=960',
     },
   }
 };
 
-export default ProductCard;
+export default ProductPropositionCard;

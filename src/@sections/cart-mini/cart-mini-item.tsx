@@ -2,7 +2,7 @@ import { Button, Card, Flex, Media, Text } from '@components';
 import { Input } from '@forms';
 import { useCart, useCurrency, useMounted, useUI } from '@hooks';
 import { ICartItem } from '@hooks/useCart/useCart';
-import { MinusCircle, PlusCircle, Trash } from '@icons';
+import { Minus, Plus, Trash } from '@icons';
 import NextLink from 'next/link';
 
 export default function CartMiniItem({ item }: { item: ICartItem }) {
@@ -40,20 +40,23 @@ export default function CartMiniItem({ item }: { item: ICartItem }) {
   const mounted = useMounted();
   return (
     <>
-      <Card>
-        <Flex.Row>
-          <Media aspectRatio={1} flex="0 0 100px">
-            <img width="80px" height="80px" src={item.media.src} draggable={false} title={item.title} />
-          </Media>
-          <Card.Content padding="1rem" flex="1">
+      <Card marginBottom="2rem" paddingBottom="1rem" borderBottom="1px solid var(--color-neutral-300)">
+        <Flex.Row alignItems="flex-start">
+          <Flex>
+            <Media aspectRatio={1} width="80px" height="80px" flex="0 0 80px" rounded>
+              <img width="80px" height="80px" src={item.media.src} draggable={false} title={item.title} />
+            </Media>
+          </Flex>
+          <Card.Content flex="1" padding="0 1rem">
             <NextLink href={item.href || ''}>
-              <Text padding="1rem 0" onClick={closeDrawer}>{item.qty} x {item.title}</Text>
+              <Text type="9" fontWeight="700" onClick={closeDrawer}>{item.title}</Text>
             </NextLink>
+            <Text type="10" marginBottom="1rem">{item.abstract}</Text>
             <Flex.Row justifyContent="space-between">
-              <Button onClick={() => onSetQty(item.qty - 1)} ><MinusCircle width="20px" height="20px" /></Button>
-              <Input width="70px" placeholder="qty" value={item.qty.toString()} onChange={(e) => onSetQty(Number(e.target.value))} />
-              <Button size="xs" onClick={() => onSetQty(item.qty + 1)} ><PlusCircle width="20px" height="20px" /></Button>
-              <Text>{price}</Text>
+              <Button onClick={() => onSetQty(item.qty - 1)} ><Minus width="20px" height="20px" /></Button>
+              <Input flex="0 0 60px" padding="0.2rem" placeholder="qty" value={item.qty.toString()} onChange={(e) => onSetQty(Number(e.target.value))} />
+              <Button size="xs" onClick={() => onSetQty(item.qty + 1)} ><Plus width="20px" height="20px" /></Button>
+              <Text flex="0 0 80px" textAlign="right">{price}</Text>
               {mounted && <Button onClick={onRemove}><Trash width="20px" height="20px" /></Button>}
             </Flex.Row>
           </Card.Content>

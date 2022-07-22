@@ -1,0 +1,37 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import { CategoriesProposition } from '@sections';
+import CategoriesPropositionCard from './category-card';
+
+<Meta
+  title="Sections / Categories Proposition"
+  component={CategoriesProposition}
+  subcomponents={{ CategoriesPropositionCard }}
+/>
+
+# Categories Proposition
+
+A component to display a `Categories Proposition`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/@sections/categories-proposition)
+
+## Imports
+
+```js
+import { CategoriesProposition } from '@design-system';
+```
+
+## Example
+
+A basic example of `Categories Proposition`.
+
+<Canvas>
+  <Story name="Categories Proposition">
+    <CategoriesProposition />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Categories Card">
+    <CategoriesPropositionCard maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>

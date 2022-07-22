@@ -34,7 +34,7 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
     return `mailto:${value.trim()}`;
   }
   return (
-    <Card type="alfa" {...props}>
+    <Card type="beta" {...props}>
       <Card.Content padding="1rem" flex="1" justifyContent="space-between">
         <Text fontWeight="700" marginBottom="0.5rem">{item.name}</Text>
         <Text dangerouslySetInnerHTML={{ __html: item.address }}></Text>

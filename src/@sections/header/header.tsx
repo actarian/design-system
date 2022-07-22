@@ -74,7 +74,6 @@ const Header = (props: HeaderProps) => {
   }
   */
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
-
   return (
     <HeaderContainer {...containerProps}>
       <Container.Fluid>
@@ -89,8 +88,8 @@ const Header = (props: HeaderProps) => {
           </Flex>
           <Flex flex="1" justifyContent="center">
             <Nav.Row gap="3rem" display="none" displaySm="flex">
-              <NavLink href="#solutions">
-                <Button as="a" type="eta">Solutions</Button>
+              <NavLink href="/products">
+                <Button as="a" type="eta">Products</Button>
               </NavLink>
               <NavLink href="#magazine">
                 <Button as="a" type="eta">Magazine</Button>

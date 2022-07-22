@@ -70,6 +70,22 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   transition: border 150ms ease-in 0s, outline-color 150ms ease-in 0s, color 200ms ease-out 0s, box-shadow 200ms ease 0s;
   cursor: pointer;
 
+  .value {
+    display: inline-flex;
+    flex: 1;
+    height: 100%;
+    align-items: center;
+    line-height: 1;
+    padding: 0;
+    margin-right: 1.25em;
+    width: calc(100% - 1.25em);
+  }
+
+  .value,
+  .icon {
+    color: var(--color-neutral-900);
+  }
+
   &.disabled {
     cursor: not-allowed;
   }
@@ -77,6 +93,10 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   &.active:not(.disabled),
   &:hover:not(.disabled) {
     border-color: var(--color-neutral-300);
+
+    .icon {
+      color: var(--color-primary-500);
+    }
   }
 
   &.active:not(.disabled) {
@@ -100,49 +120,12 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
     }
   }
 
-  &.active.icon,
-  &:hover .icon {
-    color: ${props => props.disabled ? 'var(--color-primary-400)' : 'var(--color-primary-500)'};
-  }
-
-  .value {
-    display: inline-flex;
-    flex: 1;
-    height: 100%;
-    align-items: center;
-    line-height: 1;
-    padding: 0;
-    margin-right: 1.25em;
-    font-size: var(--form-font-size);
-    color: ${props => props.disabled ? 'var(--color-primary-400)' : 'var(--color-neutral-900)'};
-    width: calc(100% - 1.25em);
-
-    /*
-    & > :global(div),
-    & > :global(div:hover) {
-      border-radius: 0;
-      background-color: transparent;
-      padding: 0;
-      margin: 0;
-      color: inherit;
+  &.disabled {
+    .value,
+    .icon {
+      color: var(--color-primary-400);
     }
-    */
   }
-
-  /*
-  .icon_ {
-    position: absolute;
-    right: calc(var(--grid-column-gap) / 4);
-    top: 50%;
-    bottom: 0;
-    pointer-events: none;
-    transform: translateY(-50%) rotate(${props => props.visible ? '180' : '0'}deg);
-    transition: transform 200ms ease;
-    display: flex;
-    align-items: center;
-    color: var(--color-neutral-300);
-  }
-  */
 `;
 
 const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>(({

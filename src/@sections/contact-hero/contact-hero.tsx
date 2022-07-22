@@ -4,10 +4,10 @@ import { Search, Send } from '@icons';
 import { animate } from 'framer-motion';
 
 type Props = {
-  item: ContactHeadItem,
+  item: ContactHeroItem,
 }
 
-export type ContactHeadItem = {
+export type ContactHeroItem = {
   id: number;
   href: string;
   title: string;
@@ -17,9 +17,9 @@ export type ContactHeadItem = {
   };
 }
 
-export type ContactHeadProps = ComponentProps<Props, HTMLDivElement>;
+export type ContactHeroProps = ComponentProps<Props, HTMLDivElement>;
 
-const ContactHead = ({ item }: ContactHeadProps) => {
+const ContactHero = ({ item }: ContactHeroProps) => {
 
   // The handler to smoothly scroll the element into view
   const scrollToHash = (event: React.MouseEvent<HTMLElement>) => {
@@ -96,7 +96,7 @@ const ContactHead = ({ item }: ContactHeadProps) => {
   )
 }
 
-ContactHead.defaultProps = {
+ContactHero.defaultProps = {
   item: {
     id: 1,
     href: '#new-arrivals',
@@ -108,4 +108,4 @@ ContactHead.defaultProps = {
   }
 };
 
-export default ContactHead;
+export default ContactHero;

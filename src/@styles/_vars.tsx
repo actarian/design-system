@@ -94,9 +94,9 @@
   --shadow-xl: 0 1.5rem 5rem -0.6rem rgba(0, 0, 0, 0.6);
   --backdrop-opacity: 0.5;
   --color-neutral-100: #FFFFFF;
-  --color-neutral-200: #DFDFE2;
-  --color-neutral-300: #BFBFC5;
-  --color-neutral-400: #9F9FA8;
+  --color-neutral-200: #EFEFF2;
+  --color-neutral-300: #DBDBD7;
+  --color-neutral-400: #B1B1B1;
   --color-neutral-500: #7E7E8B;
   --color-neutral-600: #61616B;
   --color-neutral-700: #44444B;

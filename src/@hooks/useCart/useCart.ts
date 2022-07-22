@@ -65,6 +65,7 @@ export interface ICartItem extends ISchema {
     src: string;
   };
   title: string;
+  abstract: string;
   href: string;
   price: number;
   qty: number;

@@ -1,10 +1,15 @@
+import { ComponentProps } from '@components/types';
+import { getChildsByType } from '@components/utils';
 import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@hooks';
 import React, { MouseEvent, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Backdrop from '../backdrop/backdrop';
 import ModalButton from './modal-button';
+import ModalContent from './modal-content';
 import { ModalConfig, ModalContext } from './modal-context';
 import ModalFooter from './modal-footer';
+import ModalSubtitle from './modal-subtitle';
+import ModalTitle from './modal-title';
 import ModalWrapper from './modal-wrapper';
 
 const defaultProps = {
@@ -32,7 +37,7 @@ interface Props {
 
 export type ModalProps = ComponentProps<Props, HTMLDivElement>;
 
-const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
+const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
   ({ width, backdropClassName, positionClassName, layerClassName, wrapClassName,
     disableBackdropClick, keyboard, visible: customVisible, onClose, children, onContentClick }: React.PropsWithChildren<ModalProps> & typeof defaultProps) => { // !!! any
 
@@ -87,7 +92,14 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
           visible={visible} onClick={onBackdropClick} onContentClick={onContentClick}
           {...bindings}>
           <ModalWrapper className={wrapClassName} visible={visible}>
-            {otherChildren}
+            {false && otherChildren}
+            {(React.Children.map(otherChildren, child => {
+              if (React.isValidElement(child) && child.type === ModalTitle) {
+                return React.cloneElement(child, { props: child.props, onClose: child.props.onClose || onBackdropClick });
+              } else {
+                return child;
+              }
+            }))}
             {hasButtons && <ModalFooter>{buttonChildren}</ModalFooter>}
           </ModalWrapper>
         </Backdrop>
@@ -95,30 +107,26 @@ const ModalComponent: React.FC<React.PropsWithChildren<ModalProps | any>> =
       , portal);
   };
 
-ModalComponent.defaultProps = defaultProps;
-ModalComponent.displayName = 'Modal';
+Modal.defaultProps = defaultProps;
 
-import { ComponentProps } from '@components/types';
-import { getChildsByType } from '@components/utils';
-import ModalContent from './modal-content';
-import ModalSubtitle from './modal-subtitle';
-import ModalTitle from './modal-title';
+Modal.displayName = 'Modal';
 
-export type ModalComponentType = typeof ModalComponent & {
+(Modal as IModal).Title = ModalTitle;
+(Modal as IModal).Subtitle = ModalSubtitle;
+(Modal as IModal).Content = ModalContent;
+(Modal as IModal).Button = ModalButton;
+
+export default Modal as IModal;
+
+export type IModal = typeof Modal & {
   Title: typeof ModalTitle
   Subtitle: typeof ModalSubtitle
   Content: typeof ModalContent
   Button: typeof ModalButton
 };
 
-(ModalComponent as ModalComponentType).Title = ModalTitle;
-(ModalComponent as ModalComponentType).Subtitle = ModalSubtitle;
-(ModalComponent as ModalComponentType).Content = ModalContent;
-(ModalComponent as ModalComponentType).Button = ModalButton;
-
 export type { ModalButtonProps } from './modal-button';
 export type { ModalContentProps } from './modal-content';
 export type { ModalSubtitleProps } from './modal-subtitle';
 export type { ModalTitleProps } from './modal-title';
 
-export default ModalComponent as ModalComponentType;

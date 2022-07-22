@@ -1,4 +1,4 @@
-import { Button, Drawer, Flex, Text } from '@components';
+import { Button, Divider, Drawer, Flex, Text } from '@components';
 import { useCart, useCurrency, useUI } from '@hooks';
 import { ArrowRight, ShoppingCart } from '@icons';
 import { ReactNode } from 'react';
@@ -29,10 +29,14 @@ const CartMini = ({ visible, onClose }: CartMiniProps) => {
 
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
-      <Drawer.Title>Shopping cart</Drawer.Title>
-      <Drawer.Subtitle>{items.length} items found</Drawer.Subtitle>
+      <Drawer.Title>
+        <Text type="8" fontWeight="700">Shopping cart</Text>
+      </Drawer.Title>
+      <Drawer.Subtitle>
+        <Divider>{items.length} items found</Divider>
+      </Drawer.Subtitle>
       <Drawer.Content flex="1" display="flex" padding="0" width="100%" maxWidth="400px">
-        <Flex.Col justifyContent="space-between">
+        <Flex.Col justifyContent="space-between" paddingTop="3rem">
           <Flex.Col flex="1">
             {items && items.map((item, i) =>
               <CartMiniItem key={i} item={item} />

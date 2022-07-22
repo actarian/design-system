@@ -15,10 +15,9 @@ export const hasChild = (
 ): boolean => {
   const types = React.Children.map(children, item => {
     if (!React.isValidElement(item)) return null
-    return item.type
-  })
-
-  return (types || []).includes(child)
+    return item.type;
+  });
+  return (types || []).includes(child);
 }
 
 export const pickChild = (

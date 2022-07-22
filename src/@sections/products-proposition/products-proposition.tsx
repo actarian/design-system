@@ -1,21 +1,21 @@
 import { Container, Grid, Section } from '@components';
 import { ComponentProps } from '@components/types';
-import ProductCard, { ProductItem } from './product-card';
+import ProductPropositionCard, { ProductItem } from './products-proposition-card';
 
 type Props = {
   items: ProductItem[],
 }
 
-export type ProductsProps = ComponentProps<Props, HTMLDivElement>;
+export type ProductsPropositionProps = ComponentProps<Props, HTMLDivElement>;
 
-const Products = ({ items }: ProductsProps) => {
+const ProductsProposition = ({ items }: ProductsPropositionProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
         <Grid.Row columnGap="1rem" rowGap="2rem">
           {items.map((item, i) => (
             <Grid sm={6} md={4} key={i}>
-              <ProductCard item={item}></ProductCard>
+              <ProductPropositionCard item={item}></ProductPropositionCard>
             </Grid>
           ))}
         </Grid.Row>
@@ -24,7 +24,7 @@ const Products = ({ items }: ProductsProps) => {
   )
 }
 
-Products.defaultProps = {
+ProductsProposition.defaultProps = {
   items: [{
     id: 1,
     href: '#focus-paper-refill',
@@ -33,7 +33,7 @@ Products.defaultProps = {
     price: 13,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=21',
+      src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&h=960',
     },
   }, {
     id: 2,
@@ -43,7 +43,7 @@ Products.defaultProps = {
     price: 64,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=22',
+      src: 'https://unsplash.com/photos/-lN0HnySy7w/download?force=true&h=960',
     },
   }, {
     id: 3,
@@ -53,19 +53,19 @@ Products.defaultProps = {
     price: 32,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=23',
+      src: 'https://unsplash.com/photos/xcGSvYOLcwE/download?force=true&h=960',
     },
   }, {
     id: 4,
     href: '#focus-multi-pack',
-    title: 'Focus Paper Refill',
+    title: 'Focus Multi Pack',
     abstract: '3 refill packs',
     price: 39,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=24',
+      src: 'https://unsplash.com/photos/5u2qJ1YW91w/download?force=true&h=960',
     }
-   }, {
+  }, {
     id: 5,
     href: '#machined-mechanical-pencil',
     title: 'Machined Mechanical Pencil',
@@ -73,7 +73,7 @@ Products.defaultProps = {
     price: 35,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=25',
+      src: 'https://unsplash.com/photos/fxg4TT2T2xM/download?force=true&h=960',
     },
   }, {
     id: 6,
@@ -83,9 +83,9 @@ Products.defaultProps = {
     price: 50,
     media: {
       type: 'image',
-      src: 'https://picsum.photos/480/960?u=26',
+      src: 'https://unsplash.com/photos/-CtAY9dnZb8/download?force=true&h=960',
     },
   }]
 };
 
-export default Products;
+export default ProductsProposition;

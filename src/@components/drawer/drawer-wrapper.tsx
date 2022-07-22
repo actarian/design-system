@@ -143,14 +143,7 @@ const DrawerWrapper: React.FC<React.PropsWithChildren<DrawerWrapperProps | any>>
 
   return (
     <Transition name="wrapper" visible={visible} clearTime={300}>
-      <StyledWrapper
-        className={classes}
-        role="dialog"
-        tabIndex={-1}
-        transform={transform}
-        onKeyDown={onKeyDown}
-        ref={modalContent}
-        {...props}>
+      <StyledWrapper className={classes} role="dialog" tabIndex={-1} transform={transform} onKeyDown={onKeyDown} ref={modalContent} {...props}>
         <div tabIndex={0} className="hide-tab start" aria-hidden="true" ref={tabStart} />
         {children}
         <div tabIndex={0} className="hide-tab end" aria-hidden="true" ref={tabEnd} />

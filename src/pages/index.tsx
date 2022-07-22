@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
 import { Label } from '@forms';
 import { ChevronDown, ShoppingCart } from '@icons';
-import { BlogMore, BlogProposition, CategoryProposition, Colors, ContactForm, Footer, Header, Icons, Products, Proposition, Split, SwiperHero, Typography } from '@sections';
+import { BlogMore, BlogProposition, CategoriesProposition, Colors, ContactForm, Footer, Header, Icons, ProductsProposition, Proposition, Split, SwiperHero, Typography } from '@sections';
 import Head from 'next/head';
 import { useMemo } from 'react';
 
@@ -67,9 +67,9 @@ export default function Homepage() {
 
           <BlogMore />
 
-          <CategoryProposition />
+          <CategoriesProposition />
 
-          <Products />
+          <ProductsProposition />
 
           <Split />
 
