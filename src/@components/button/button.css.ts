@@ -155,7 +155,7 @@ export const CssButtonBeta = css`
 
   &:hover,
   &.active {
-    border-color: var(--color-neutral-400);
+    border-color: var(--color-neutral-300);
     color: var(--color-neutral-900);
   }
 

@@ -1,6 +1,6 @@
 import { Card, Flex, Media, Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
-import { useCart, useCurrency } from '@hooks';
+import { useCurrency } from '@hooks';
 import Link from 'next/link';
 
 type Props = {
@@ -21,22 +21,13 @@ export type ProductItem = {
   };
 }
 
-export type ProductPropositionCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
+export type ProductsPropositionCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const ProductPropositionCard = ({ item, ...props }: ProductPropositionCardProps) => {
-  const cart = useCart();
-  // const cartItem = cart.find(item);
-  // const isAddedToCart = cartItem != null;
-  // const [qty, setQty] = useState(isAddedToCart ? cartItem.qty : 1);
-  function onAddToCart() {
-    cart.add(item, 1);
-    // onSetDrawer('cart');
-  }
+const ProductsPropositionCard = ({ item, ...props }: ProductsPropositionCardProps) => {
   const price = useCurrency(item.price);
-
   return (
     <Link href={item.href}>
-      <Card {...props} hoverable onClick={onAddToCart}>
+      <Card {...props} hoverable>
         <Media aspectRatio={4 / 3} aspectRatioMd={3 / 4} borderRadius="0.4rem" marginBottom="1rem">
           <img src={item.media.src} />
         </Media>
@@ -52,10 +43,10 @@ const ProductPropositionCard = ({ item, ...props }: ProductPropositionCardProps)
   )
 }
 
-ProductPropositionCard.defaultProps = {
+ProductsPropositionCard.defaultProps = {
   item: {
     id: 1,
-    href: '#focus-paper-refill',
+    href: '/product',
     title: 'Focus Paper Refill',
     abstract: '3 sizes available',
     price: 13,
@@ -66,4 +57,4 @@ ProductPropositionCard.defaultProps = {
   }
 };
 
-export default ProductPropositionCard;
+export default ProductsPropositionCard;

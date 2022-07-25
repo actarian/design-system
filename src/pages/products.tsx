@@ -14,7 +14,7 @@ export default function Products() {
       <Layout>
         <Page>
 
-          <Header sticky></Header>
+          <Header sticky />
 
           <ProductsHero />
 
@@ -24,7 +24,7 @@ export default function Products() {
 
           <CategoryProposition />
 
-          <Footer></Footer>
+          <Footer />
 
         </Page>
       </Layout>

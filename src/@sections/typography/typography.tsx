@@ -1,8 +1,7 @@
 import { Box, Code, Flex, List, Section, Text } from '@components';
 import { FontSize } from '@components/text/text';
 import { ComponentProps } from '@components/types';
-import { useBreakpoint } from '@hooks';
-import { useContext } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 type Props = {
@@ -10,39 +9,49 @@ type Props = {
 
 export type TypographyProps = ComponentProps<Props, HTMLDivElement>;
 
+type TypographyTextProps = {
+  type: string, k: number, size: string, s: number
+};
+
+const TypographyText = React.forwardRef<HTMLDivElement, TypographyTextProps>(({ type, k, size, s }: TypographyTextProps, ref?: React.Ref<HTMLDivElement>) => {
+  switch (type) {
+    case 'primary':
+      return (<Text ref={ref} size={s + 1 as FontSize} textTransform="capitalize">{type} {s + 1}</Text>);
+    case 'secondary':
+      return (<Text.Secondary ref={ref} size={s + 1 as FontSize} textTransform="capitalize">{type} {s + 1}</Text.Secondary>);
+    default:
+      return null;
+  }
+});
+
+const TypographyItem = (props: { type: string, k: number, size: string, s: number }) => {
+  const ref = useRef(null);
+  const [px, setPx] = useState('0px');
+  useEffect(() => {
+    if (ref.current) {
+      setPx(window.getComputedStyle(ref.current).fontSize);
+    }
+  }, []);
+  return (
+    <List>
+      <TypographyText ref={ref} {...props} />
+      <Flex.Row justifyContent="space-between" paddingTop="1rem">
+        <Code>{props.size}</Code>
+        <Code>{px}</Code>
+      </Flex.Row>
+    </List>
+  );
+};
+
 const Typography = (props: TypographyProps) => {
   const theme = useContext(ThemeContext);
-  const renderText = (key: string, k: number, size: string, s: number) => {
-    switch (key) {
-      case 'primary':
-        return (<>
-          <Text size={s + 1 as FontSize} textTransform="capitalize">{key} {s + 1}</Text>
-        </>);
-      case 'secondary':
-        return (<>
-          <Text.Secondary type={s + 1 as FontSize} textTransform="capitalize">{key} {s + 1}</Text.Secondary>
-        </>);
-      default:
-        return null;
-    }
-  }
-  const breakpoint = useBreakpoint();
-  const remToPx = (size: string) => {
-    return parseFloat(size) * parseFloat(theme.base.fontSize[breakpoint.key]);
-  }
   return (
     <Section padding="3rem 0">
       {Object.keys(theme.font).map((key, k) => (
         <Box key={k} padding="0 1rem 3rem 1rem">
           <Code>{theme.font[key].family}</Code>
           {theme.font[key].size.map((size: string, s: number) => (
-            <List key={s}>
-              {renderText(key, k, size, s)}
-              <Flex.Row justifyContent="space-between" paddingTop="1rem">
-                <Code>{size}</Code>
-                <Code>{remToPx(size)}px</Code>
-              </Flex.Row>
-            </List>
+            <TypographyItem key={s} type={key} k={k} size={size} s={s} />
           ))}
         </Box>
       ))}

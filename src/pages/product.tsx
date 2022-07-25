@@ -1,7 +1,7 @@
-import { Button, Card, Container, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
+import { Breadcrumb, Button, Card, Container, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
 import { RadioColor, RadioOption, Rating } from '@forms';
 import { useCart, useCurrency, useDrawer } from '@hooks';
-import { Footer, Header } from '@sections';
+import { CategoryProposition, Footer, Header, ProductsIncentive, ProductsRelated } from '@sections';
 import Head from 'next/head';
 import { useState } from 'react';
 
@@ -55,10 +55,16 @@ export default function Product({ item, ...props }: Props) {
       <Layout>
         <Page>
 
-          <Header sticky></Header>
+          <Header sticky />
 
           <Section>
             <Container>
+
+              <Breadcrumb marginBottom="1rem">
+                <Breadcrumb.Item>Men</Breadcrumb.Item>
+                <Breadcrumb.Item href="#clothing">Clothing</Breadcrumb.Item>
+                <Breadcrumb.Item>Basic Tee 6-Pack</Breadcrumb.Item>
+              </Breadcrumb>
 
               <Grid.Row columnGap="2rem" rowGap="2rem">
                 <Grid sm={4} orderSm={4}>
@@ -163,7 +169,13 @@ export default function Product({ item, ...props }: Props) {
             </Container>
           </Section>
 
-          <Footer></Footer>
+          <ProductsIncentive />
+
+          <ProductsRelated />
+
+          <CategoryProposition />
+
+          <Footer />
 
         </Page>
       </Layout>

@@ -41,7 +41,7 @@ const StyledRadioColorButton = styled.div<RadioColorProps>`
 
   input:not(:disabled):hover ~ &,
   input:not(:disabled):active ~ & {
-    border-color: var(--color-neutral-400);
+    border-color: var(--color-neutral-300);
     color: var(--color-neutral-900);
   }
 

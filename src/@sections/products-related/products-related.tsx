@@ -1,21 +1,24 @@
-import { Container, Grid, Section } from '@components';
+import { Container, Flex, Grid, Section, Text } from '@components';
 import { ComponentProps } from '@components/types';
-import ProductsPropositionCard, { ProductItem } from './products-proposition-card';
+import ProductsRelatedCard, { ProductItem } from './products-related-card';
 
 type Props = {
   items: ProductItem[],
 }
 
-export type ProductsPropositionProps = ComponentProps<Props, HTMLDivElement>;
+export type ProductsRelatedProps = ComponentProps<Props, HTMLDivElement>;
 
-const ProductsProposition = ({ items }: ProductsPropositionProps) => {
+const ProductsRelated = ({ items }: ProductsRelatedProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
-        <Grid.Row columnGap="1rem" rowGap="2rem">
+        <Flex.Row justifyContent="space-between" marginBottom="1rem">
+          <Text size="7" fontWeight="700">Customers also bought</Text>
+        </Flex.Row>
+        <Grid.Row columnGap="1rem" rowGap="1rem">
           {items.map((item, i) => (
-            <Grid sm={6} md={4} key={i}>
-              <ProductsPropositionCard item={item}></ProductsPropositionCard>
+            <Grid sm={6} md={3} key={i}>
+              <ProductsRelatedCard item={item}></ProductsRelatedCard>
             </Grid>
           ))}
         </Grid.Row>
@@ -24,7 +27,7 @@ const ProductsProposition = ({ items }: ProductsPropositionProps) => {
   )
 }
 
-ProductsProposition.defaultProps = {
+ProductsRelated.defaultProps = {
   items: [{
     id: 1,
     href: '/product',
@@ -65,27 +68,7 @@ ProductsProposition.defaultProps = {
       type: 'image',
       src: 'https://unsplash.com/photos/5u2qJ1YW91w/download?force=true&h=960',
     }
-  }, {
-    id: 5,
-    href: '/product',
-    title: 'Machined Mechanical Pencil',
-    abstract: 'Black and brass',
-    price: 35,
-    media: {
-      type: 'image',
-      src: 'https://unsplash.com/photos/fxg4TT2T2xM/download?force=true&h=960',
-    },
-  }, {
-    id: 6,
-    href: '/product',
-    title: 'Brass Scissors',
-    abstract: 'Includes brass stand',
-    price: 50,
-    media: {
-      type: 'image',
-      src: 'https://unsplash.com/photos/-CtAY9dnZb8/download?force=true&h=960',
-    },
   }]
 };
 
-export default ProductsProposition;
+export default ProductsRelated;

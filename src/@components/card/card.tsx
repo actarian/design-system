@@ -40,7 +40,6 @@ export type CardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   // margin: 0 0 40px 0;
 
   ${props => getVariant(variants, props.type)}
@@ -53,13 +52,13 @@ const CardContainer = styled.div<CardProps>`
       justify-content: center;
       align-items: center;
       overflow: hidden;
-      &>* {
+      &>:not(.media-info) {
         transition: transform ease-in-out 200ms;
       }
     }
     &:hover {
       .media {
-        &>* {
+        &>:not(.media-info) {
           transform: scale(1.1);
         }
       }

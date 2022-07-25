@@ -59,7 +59,7 @@ export default function Homepage() {
       <Layout>
         <Page>
 
-          <Header fixed></Header>
+          <Header fixed />
 
           <SwiperHero items={items} />
 
@@ -288,7 +288,7 @@ export default function Homepage() {
 
           </>}
 
-          <Footer></Footer>
+          <Footer />
 
         </Page>
       </Layout>

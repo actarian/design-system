@@ -68,7 +68,7 @@ export default function Contact() {
       <Layout>
         <Page>
 
-          <Header sticky></Header>
+          <Header sticky />
 
           <ContactHero />
 
@@ -170,7 +170,7 @@ export default function Contact() {
             </Container>
           </Section>
 
-          <Footer></Footer>
+          <Footer />
 
         </Page>
       </Layout>

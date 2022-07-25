@@ -1,5 +1,6 @@
 export { default as Accordion } from './accordion/accordion';
 export { default as Box } from './box/box';
+export { default as Breadcrumb } from './breadcrumb/breadcrumb';
 export { default as Breakpoint } from './breakpoint/breakpoint';
 export { default as ButtonGroup } from './button-group/button-group';
 export { default as Button } from './button/button';
@@ -19,6 +20,7 @@ export { default as Grid } from './grid/grid';
 export { GridRow } from './grid/grid-row';
 export { default as Highlight } from './highlight/highlight';
 export { default as Layout } from './layout/layout';
+export { default as Link } from './link/link';
 export { default as List } from './list/list';
 export { default as Media } from './media/media';
 export { default as Modal } from './modal/modal';
