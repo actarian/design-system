@@ -1,17 +1,18 @@
+import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { useClasses } from '@hooks';
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
-import { NormalTypes, tupleNumber } from '../tooltip/tooltip-props';
+import styled, { css } from 'styled-components';
+import { tupleNumber } from '../../@components/tooltip/tooltip-props';
 import RatingIcon from './rating-icon';
 
-export type RatingTypes = NormalTypes;
 const ratingCountTuple = tupleNumber(2, 3, 4, 5, 6, 7, 8, 9, 10);
 const ratingValueTuple = tupleNumber(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 export type RatingValue = typeof ratingValueTuple[number];
 export type RatingCount = typeof ratingCountTuple[number];
 
 interface Props {
-  type?: RatingTypes;
+  size?: SizeVariant;
   className?: string;
   count?: RatingCount | number;
   icon?: JSX.Element;
@@ -22,17 +23,16 @@ interface Props {
   onLockedChange?: (locked: boolean) => void;
 }
 
-type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>
-export type RatingProps = Props & NativeAttrs
+export type RatingProps = ComponentCssResponsiveProps<Props, HTMLButtonElement>;
 
-const StyledRating = styled.div`
+const StyledRating = styled.div<RatingProps>`
   display: inline-flex;
   align-items: center;
 
   .icon {
-    width: 1em;
-    height: 1em;
-    margin-right: 0.5em;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.1em;
     color: var(--color-neutral-300);
     cursor: pointer;
 
@@ -44,7 +44,7 @@ const StyledRating = styled.div`
     }
 
     &.hovered {
-      color: var(--color-primary-500);
+      color: var(--color-neutral-900);
 
       :global(svg) {
         transform: scale(0.9);
@@ -57,10 +57,12 @@ const StyledRating = styled.div`
       cursor: default;
     }
   }
+
+  ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
+  ${props => getCssResponsive(props)}
 `
 
 const Rating: React.FC<RatingProps> = ({
-  type = 'default' as RatingTypes,
   className = '',
   count = 5 as RatingCount,
   icon = (<RatingIcon />) as JSX.Element,
@@ -107,14 +109,12 @@ const Rating: React.FC<RatingProps> = ({
   }, [customValue]);
 
   const ratingClassName = useClasses('rating', className);
-  const iconClassName = (index:number) => useClasses('icon', { hovered: index + 1 <= value });
+  const iconClassName = (index: number) => useClasses('icon', { hovered: index + 1 <= value });
 
   return (
     <StyledRating className={ratingClassName} {...props}>
       {[...Array(count)].map((_, index) => (
-        <div key={index} className={iconClassName(index)}
-          onMouseEnter={() => onMouseEnter(index + 1)}
-          onClick={() => onClick(index + 1)}>
+        <div key={index} className={iconClassName(index)} onMouseEnter={() => onMouseEnter(index + 1)} onClick={() => onClick(index + 1)}>
           {icon}
         </div>
       ))}

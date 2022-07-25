@@ -16,9 +16,7 @@ describe('Button', () => {
         <Button variant="alfa" />
         <Button variant="beta" />
         <Button variant="gamma" />
-        <Button variant="delta" />
-        <Button variant="epsilon" />
-        <Button variant="zeta" />
+        <Button variant="circle" />
       </div>,
     )
     expect(() => wrapper.unmount()).not.toThrow()

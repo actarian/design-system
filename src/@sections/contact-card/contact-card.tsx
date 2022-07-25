@@ -85,7 +85,7 @@ ContactCard.defaultProps = {
   item: {
     id: 1,
     name: 'Hexagon Headquarters',
-    address: 'I 20821 Meda (MB) Via Manzoni 20',
+    address: 'Via Manzoni 20, 20821 Meda (MB) Italy',
     phoneNumber: '+39.0362.75275',
     faxNumber: '+39.0362.75575',
     contactEmail: 'info@hexagon.eu',

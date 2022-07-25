@@ -238,9 +238,6 @@ export default function Homepage() {
                     <Button variant="alfa" as="a" onClick={onClick}><span>alfa</span> <ShoppingCart width="1rem" height="1rem" /></Button>
                     <Button variant="beta" as="a" onClick={onClick}><span>beta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
                     <Button variant="gamma" as="a" onClick={onClick}><span>gamma</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button variant="delta" as="a" onClick={onClick}><span>delta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button variant="epsilon" as="a" onClick={onClick}><span>epsilon</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button variant="zeta" as="a" onClick={onClick}><span>zeta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
                   </Flex.Row>
                 </Grid>
 

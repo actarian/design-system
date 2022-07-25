@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Product } from './product';
+
+<Meta
+  title="Pages / Product"
+  component={Product}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Product
+
+A component to display a `Product`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/pages/product.tsx)
+
+## Imports
+
+```js
+import { Product } from '@design-system';
+```
+
+## Example
+
+A basic example of `Product`.
+
+<Canvas>
+  <Story name="Product">
+    <Product />
+  </Story>
+</Canvas>

@@ -2,6 +2,17 @@ import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import styled, { css } from 'styled-components';
 
+const CssUl = css`
+  ul {
+    list-style: initial;
+    margin: 0 0 2em 1.1em;
+
+    &>li {
+      padding: 0.3em 0;
+    }
+  }
+`;
+
 export type FontSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 |
   '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15';
 
@@ -23,12 +34,14 @@ const Text = styled.div<TextProps>`
       font-weight: var(--font-primary-font-weight-${index}, normal);
     `;
   }}
-  ${props => getCssResponsive(props)}
   ${props => props.gradient ? css`
     background: -webkit-linear-gradient(0deg, var(--color-primary-500), var(--color-secondary-500));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   ` : ''}
+
+  ${CssUl}
+  ${props => getCssResponsive(props)}
 `;
 
 const TextSecondary = styled.div<TextProps>`
@@ -43,12 +56,14 @@ const TextSecondary = styled.div<TextProps>`
       font-weight: var(--font-secondary-font-weight-${index}, normal);
     `;
   }}
-  ${props => getCssResponsive(props)}
   ${props => props.gradient ? css`
     background: -webkit-linear-gradient(0deg, var(--color-primary-500), var(--color-secondary-500));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   ` : ''}
+
+  ${CssUl}
+  ${props => getCssResponsive(props)}
 `;
 
 const TextSROnly = styled.div<TextProps>`

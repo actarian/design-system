@@ -1,7 +1,7 @@
-import React, { useEffect, useImperativeHandle, useRef } from 'react';
+import React, { ComponentPropsWithRef, useEffect, useImperativeHandle, useRef } from 'react';
 import styled from 'styled-components';
 
-export type SelectInputProps = {
+export interface SelectInputProps extends ComponentPropsWithRef<'input'> {
   visible: boolean;
   onBlur: () => void;
   onFocus: () => void;

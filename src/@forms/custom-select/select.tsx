@@ -23,6 +23,7 @@ export type SelectTypes = NormalTypes;
 interface Props {
   disabled?: boolean;
   type?: SelectTypes;
+  name?: string;
   value?: string | string[];
   initialValue?: string | string[];
   placeholder?: React.ReactNode | string;
@@ -277,7 +278,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     <SelectContext.Provider value={initialValue}>
       <StyledSelect ref={ref} className={classes} onClick={clickHandler} onMouseDown={mouseDownHandler}
         {...props}>
-        <SelectInput ref={inputRef} visible={visible} onFocus={() => setSelectFocus(true)} onBlur={onInputBlur} />
+        <SelectInput ref={inputRef} name={props.name} visible={visible} onFocus={() => setSelectFocus(true)} onBlur={onInputBlur} />
         {isEmpty && (
           <span className="value placeholder">
             <Ellipsis>{placeholder}</Ellipsis>

@@ -6,8 +6,8 @@ export default function Products() {
   return (
     <>
       <Head>
-        <title>Productss</title>
-        <meta name="description" content="Productss description" />
+        <title>Products</title>
+        <meta name="description" content="Products description" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
