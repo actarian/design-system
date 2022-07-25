@@ -49,9 +49,9 @@ export default function CartMiniItem({ item }: { item: ICartItem }) {
           </Flex>
           <Card.Content flex="1" padding="0 1rem">
             <NextLink href={item.href || ''}>
-              <Text type="9" fontWeight="700" onClick={closeDrawer}>{item.title}</Text>
+              <Text size="9" fontWeight="700" onClick={closeDrawer}>{item.title}</Text>
             </NextLink>
-            <Text type="10" marginBottom="1rem">{item.abstract}</Text>
+            <Text size="10" marginBottom="1rem">{item.abstract}</Text>
             <Flex.Row justifyContent="space-between">
               <Button onClick={() => onSetQty(item.qty - 1)} ><Minus width="20px" height="20px" /></Button>
               <Input flex="0 0 60px" padding="0.2rem" placeholder="qty" value={item.qty.toString()} onChange={(e) => onSetQty(Number(e.target.value))} />

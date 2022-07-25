@@ -72,10 +72,10 @@ export default function SwiperHero(props: SwiperHeroProps) {
             <Container.Fluid>
               <Grid.Row>
                 <Grid className='left' md={6} padding="3rem 0 6rem 0">
-                  <Text type="2" fontWeight="700">{item.title}</Text>
+                  <Text size="2" fontWeight="700">{item.title}</Text>
                 </Grid>
                 <Grid className='right' md={6} padding="3rem 0 6rem 0">
-                  <Text type="6" marginBottom="1rem">{item.abstract}</Text>
+                  <Text size="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
                     <Link href={item.link.href}>
                       <Button as="a" type="gamma"><Text>{item.link.label}</Text> <ArrowRight /></Button>

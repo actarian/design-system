@@ -99,15 +99,15 @@ export default function Contact() {
 
                   <Grid.Row padding="4rem 0">
                     <Grid md={4}>
-                      <Text type="2" fontWeight="700" marginBottom="1rem">Marketing.</Text>
+                      <Text size="2" fontWeight="700" marginBottom="1rem">Marketing.</Text>
                     </Grid>
                     <Grid md={8}>
-                      <Text type="8" maxWidth="60ch">Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.</Text>
+                      <Text size="8" maxWidth="60ch">Heroes, feature sections, newsletter sign up forms — everything you need to build beautiful marketing websites.</Text>
                       <Flex.Row marginTop="1rem">
                         <Media width="3rem" height="3rem" circle>
                           <img src="https://i.pravatar.cc/128?u=1" />
                         </Media>
-                        <Text type="8" fontWeight="700">Tim Neutkens</Text>
+                        <Text size="8" fontWeight="700">Tim Neutkens</Text>
                       </Flex.Row>
                     </Grid>
                   </Grid.Row>
@@ -117,15 +117,15 @@ export default function Contact() {
 
                   <Grid.Row padding="4rem 0">
                     <Grid md={4}>
-                      <Text type="2" fontWeight="700" marginBottom="1rem">Ecommerce.</Text>
+                      <Text size="2" fontWeight="700" marginBottom="1rem">Ecommerce.</Text>
                     </Grid>
                     <Grid md={8}>
-                      <Text type="8" maxWidth="60ch">Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.</Text>
+                      <Text size="8" maxWidth="60ch">Checkout forms, shopping carts, product views — everything you need to build your next ecommerce front-end.</Text>
                       <Flex.Row marginTop="1rem">
                         <Media width="3rem" height="3rem" circle>
                           <img src="https://i.pravatar.cc/128?u=5" />
                         </Media>
-                        <Text type="8" fontWeight="700">JJ Kasper</Text>
+                        <Text size="8" fontWeight="700">JJ Kasper</Text>
                       </Flex.Row>
                     </Grid>
                   </Grid.Row>
@@ -166,7 +166,7 @@ export default function Contact() {
               </Media>
             </Section.Background>
             <Container textAlign='center'>
-              <Text type="1" fontWeight="700">Workbench.</Text>
+              <Text size="1" fontWeight="700">Workbench.</Text>
             </Container>
           </Section>
 

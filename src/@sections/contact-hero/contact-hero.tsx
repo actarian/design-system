@@ -69,9 +69,9 @@ const ContactHero = ({ item }: ContactHeroProps) => {
         <Grid.Row flex="1" columnGap="0">
           <Grid sm={6}>
             <Card.Content justifyContent="center" height="100%">
-              <Text type="10" marginBottom="0.5rem" textTransform="uppercase">Contacts</Text>
-              <Text type="1" marginBottom="2rem" fontWeight="700">Contacts</Text>
-              <Text type="7" marginBottom="3rem">
+              <Text size="10" marginBottom="0.5rem" textTransform="uppercase">Contacts</Text>
+              <Text size="1" marginBottom="2rem" fontWeight="700">Contacts</Text>
+              <Text size="7" marginBottom="3rem">
                 <span>Functional, contemporary products with an atypical and </span>
                 <Tooltip text={<>Perfect for working with a CMS.</>}>
                   <u>unmistakable</u>
@@ -82,9 +82,9 @@ const ContactHero = ({ item }: ContactHeroProps) => {
                 </Tooltip> <span>production technologies.</span>
               </Text>
               <Flex.Responsive>
-                <Button type="alfa"><span>Search agents</span> <Search /></Button>
+                <Button variant="alfa"><span>Search agents</span> <Search /></Button>
                 <NavLink href="#contact-request" passHref>
-                  <Button type="beta" onClick={scrollToHash}><span>Contact Us</span> <Send /></Button>
+                  <Button variant="beta" onClick={scrollToHash}><span>Contact Us</span> <Send /></Button>
                 </NavLink>
               </Flex.Responsive>
             </Card.Content>

@@ -82,7 +82,7 @@ const Header = (props: HeaderProps) => {
             <NavLink href="/">
               <Button as="a">
                 <Hexagon width="3rem" height="3rem" />
-                <Text type="6" padding="0 0.5rem">Hexagon</Text>
+                <Text size="6" padding="0 0.5rem">Hexagon</Text>
               </Button>
             </NavLink>
           </Flex>

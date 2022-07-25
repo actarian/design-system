@@ -97,7 +97,7 @@ const ContactForm = (props: ContactFormProps) => {
         </Grid>
         <Grid>
           <Flex.Row justifyContent="center">
-            <Button type="alfa" size="lg"><span>Submit</span> <Send /></Button>
+            <Button variant="alfa" size="lg"><span>Submit</span> <Send /></Button>
           </Flex.Row>
         </Grid>
       </Grid.Row>

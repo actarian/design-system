@@ -86,7 +86,7 @@ const ModalButtonComponent = React.forwardRef<HTMLButtonElement, React.PropsWith
     const overrideProps = { ...props, effect: false, ref: btnRef };
 
     return (
-      <StyledButton type="default" className={classes} {...overrideProps} onClick={onButtonClick}
+      <StyledButton variant="default" className={classes} {...overrideProps} onClick={onButtonClick}
       // disabled={disabled} // !!!
       >
         {children}

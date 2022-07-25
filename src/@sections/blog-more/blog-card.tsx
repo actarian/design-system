@@ -47,9 +47,9 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
           <img src={item.media.src} />
         </Media>
         <Card.Content flex="1">
-          <Text type="5">{item.title}</Text>
-          <Text type="8" marginBottom="1rem">{getDate(item.date)}</Text>
-          <Text type="8">{item.abstract}</Text>
+          <Text size="5">{item.title}</Text>
+          <Text size="8" marginBottom="1rem">{getDate(item.date)}</Text>
+          <Text size="8">{item.abstract}</Text>
         </Card.Content>
         <Card.Footer marginTop="1rem">
           <Flex.Row justifyContent="space-between">
@@ -57,7 +57,7 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
               <Media width="3rem" height="3rem" marginRight="0.75rem" circle>
                 <img src={item.author.media.src} />
               </Media>
-              <Text type="8" fontWeight="700">{item.author.fullName}</Text>
+              <Text size="8" fontWeight="700">{item.author.fullName}</Text>
             </Flex>
             {false &&
               <Link href={item.href}>

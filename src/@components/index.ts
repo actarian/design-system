@@ -26,6 +26,7 @@ export { default as NavLink } from './nav-link/nav-link';
 export { default as Nav } from './nav/nav';
 export { default as Page } from './page/page';
 export { default as Popover } from './popover/popover';
+export { default as Rating } from './rating/rating';
 export { default as Section } from './section/section';
 export { default as Swiper } from './swiper/swiper';
 export type { SwiperComponentProps } from './swiper/swiper';
@@ -35,4 +36,3 @@ export { default as Tooltip } from './tooltip/tooltip';
 export { default as Transition } from './transition/transition';
 export * from './types';
 export * from './utils';
-

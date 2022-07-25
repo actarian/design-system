@@ -37,13 +37,13 @@ const StyledSelectOption = styled.div`
   }
 
   &:hover:not(.disabled):not(.label):not(.active) {
-    background-color: var(--color-primary-100);
+    background-color: var(--color-neutral-200);
     color: var(--color-neutral-900);
   }
 
   &.active {
-    background-color: var(--color-primary-500);
-    color: var(--color-neutral-100);
+    background-color: var(--color-neutral-300);
+    color: var(--color-neutral-900);
   }
 
   &.divider {

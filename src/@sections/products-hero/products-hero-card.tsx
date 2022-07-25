@@ -28,8 +28,8 @@ const ProductsHeroCard = ({ item, ...props }: ProductsHeroCardProps) => {
           </Media>
         </Card.Background>
         <Card.Content padding="1rem" justifyContent="flex-end">
-          <Text type="10">{'Shop the collection'}</Text>
-          <Text type="8" fontWeight="700">{item.title}</Text>
+          <Text size="10">{'Shop the collection'}</Text>
+          <Text size="8" fontWeight="700">{item.title}</Text>
         </Card.Content>
       </Card>
     </Link>

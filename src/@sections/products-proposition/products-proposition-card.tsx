@@ -42,10 +42,10 @@ const ProductPropositionCard = ({ item, ...props }: ProductPropositionCardProps)
         </Media>
         <Card.Content>
           <Flex.Row justifyContent="space-between">
-            <Text type="8" fontWeight="700">{item.title}</Text>
-            <Text type="8" fontWeight="700">{price}</Text>
+            <Text size="8" fontWeight="700">{item.title}</Text>
+            <Text size="8" fontWeight="700">{price}</Text>
           </Flex.Row>
-          <Text type="8">{item.abstract}</Text>
+          <Text size="8">{item.abstract}</Text>
         </Card.Content>
       </Card>
     </Link>

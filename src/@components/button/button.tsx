@@ -1,6 +1,7 @@
 import { ComponentCssResponsiveProps, SizeVariant, Variant, Variants } from '@components/types';
 import { getCssResponsive, getVariant } from '@components/utils';
-import React from 'react';
+import { useClasses } from '@hooks';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 
 const CssResponsive = css`
@@ -18,8 +19,17 @@ const CssFocus = css`
   }
 `;
 
+const CssActive = css`
+  &:active,
+  &.active {
+    outline: 2px solid var(--color-primary-500);
+    outline-offset: 2px;
+  }
+`;
+
 const CssDisabled = css`
-  &:disabled {
+  &:disabled,
+  &.disabled {
     pointer-events: none;
     opacity: 0.5;
   }
@@ -119,6 +129,7 @@ const variants: Variants = {
 
   ${CssSvg}
   ${CssFocus}
+  ${CssActive}
   ${CssDisabled}
   ${CssResponsive}
 `,
@@ -137,6 +148,7 @@ const variants: Variants = {
 
   ${CssSvg}
   ${CssFocus}
+  ${CssActive}
   ${CssDisabled}
   ${CssResponsive}
 `,
@@ -181,6 +193,7 @@ const variants: Variants = {
 
   ${CssSvg}
   ${CssFocus}
+  ${CssActive}
   ${CssDisabled}
   ${CssResponsive}
 `,
@@ -204,18 +217,42 @@ const variants: Variants = {
   ${CssAfter}
   ${CssSvg}
   `,
+  circle: css`
+  width: 3em;
+  height: 3em;
+  border-radius: 50%;
+  background: var(--color-neutral-200);
+  border: 2px solid var(--color-neutral-200);
+  color: var(--color-neutral-700);
+
+  &>span {
+    font-size: 0;
+  }
+
+  &:hover,
+  &.active {
+    border-color: var(--color-neutral-400);
+    color: var(--color-neutral-900);
+  }
+
+  ${CssSvg}
+  ${CssFocus}
+  ${CssActive}
+  ${CssDisabled}
+  ${CssResponsive}
+`,
 };
 
-type Props = {
-  type?: Variant;
+interface Props extends ComponentPropsWithRef<'button'> {
+  variant?: Variant;
   size?: SizeVariant;
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
-}
+};
 
-export type ButtonProps = ComponentCssResponsiveProps<Props, Element>;
+export type ButtonProps = ComponentCssResponsiveProps<Props, HTMLButtonElement>;
 
-const StyledButton = styled.button<ButtonProps>`
+const StyledButton = styled.div<ButtonProps>`
   // display: inline-block;
   border: none;
   text-decoration: none;
@@ -230,13 +267,14 @@ const StyledButton = styled.button<ButtonProps>`
   transition-property: background-color, color, border;
   cursor: pointer;
 
-  ${props => getVariant(variants, props.type)}
+  ${props => getVariant(variants, props.variant)}
   ${props => (css`font-size: var(--button-size-${props.size || 'md'});`)}
   ${props => getCssResponsive(props)}
 `;
 
-const Button = React.forwardRef<Element, ButtonProps>((props: ButtonProps, ref?: React.Ref<Element>) => {
-  return (<StyledButton {...props} ref={ref}>{props.children}</StyledButton>);
+const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
+  const className = useClasses('button', { disabled: props.disabled });
+  return (<StyledButton ref={ref} className={className} as="button" {...props}>{props.children}</StyledButton>);
 });
 
 export default Button;

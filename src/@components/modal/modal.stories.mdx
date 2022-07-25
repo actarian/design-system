@@ -46,10 +46,10 @@ export const Basic = ({ data, ...args }) => {
   }
   return (<>
     <div style={{ margin: '0 1em' }}>
-      <Button type="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
       <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
         <Modal.Title>
-          <Text type="8" fontWeight="700">Modal Title</Text>
+          <Text size="8" fontWeight="700">Modal Title</Text>
         </Modal.Title>
         <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
         <Modal.Content>
@@ -73,10 +73,10 @@ export const Basic = ({ data, ...args }) => {
     setShowModal(false);
   }
   return (<>
-      <Button type="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
       <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
         <Modal.Title>
-          <Text type="8" fontWeight="700">Modal Title</Text>
+          <Text size="8" fontWeight="700">Modal Title</Text>
         </Modal.Title>
         <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
         <Modal.Content>

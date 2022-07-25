@@ -1,3 +1,4 @@
+import { Button } from '@components';
 import { useClasses } from '@hooks';
 import React from 'react';
 import styled from 'styled-components';
@@ -40,10 +41,18 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
 }) => {
   const classNames = useClasses('multiple-value', { disabled });
   return (
-    <StyledSelectMultipleValue className={classNames} disabled={disabled}>
+    <>
+    <Button variant="beta" size="sm" className={classNames} disabled={disabled}>
+      {children}
+      {!!onClear && <SelectIconClear onClick={onClear} />}
+    </Button>
+    {false &&
+      <StyledSelectMultipleValue className={classNames} disabled={disabled}>
       {children}
       {!!onClear && <SelectIconClear onClick={onClear} />}
     </StyledSelectMultipleValue>
+    }
+    </>
   )
 }
 

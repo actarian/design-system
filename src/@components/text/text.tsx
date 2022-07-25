@@ -6,7 +6,7 @@ export type FontSize = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 1
   '1' | '2' | '3' | '4' | '5' | '6' | '7' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15';
 
 type Props = {
-  type?: FontSize;
+  size?: FontSize;
   gradient?: boolean;
 }
 
@@ -14,9 +14,9 @@ export type TextProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const Text = styled.div<TextProps>`
   font-family: var(--font-primary-family);
-  ${({ type }) => {
-    if (!type) return '';
-    const index = (typeof type === 'string' ? parseInt(type) : type) - 1;
+  ${({ size }) => {
+    if (!size) return '';
+    const index = (typeof size === 'string' ? parseInt(size) : size) - 1;
     return css`
       font-size: var(--font-primary-size-${index}, 1rem);
       line-height: var(--font-primary-line-height-${index}, 1);
@@ -34,9 +34,9 @@ const Text = styled.div<TextProps>`
 const TextSecondary = styled.div<TextProps>`
   display: inline-block;
   font-family: var(--font-secondary-family);
-  ${({ type }) => {
-    if (!type) return '';
-    const index = (typeof type === 'string' ? parseInt(type) : type) - 1;
+  ${({ size }) => {
+    if (!size) return '';
+    const index = (typeof size === 'string' ? parseInt(size) : size) - 1;
     return css`
       font-size: var(--font-secondary-size-${index}, 1rem);
       line-height: var(--font-secondary-line-height-${index}, 1);
@@ -51,12 +51,26 @@ const TextSecondary = styled.div<TextProps>`
   ` : ''}
 `;
 
+const TextSROnly = styled.div<TextProps>`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+`;
+
 (Text as IText).Primary = Text;
 (Text as IText).Secondary = TextSecondary;
+(Text as IText).SROnly = TextSROnly;
 
 export default Text as IText;
 
 type IText = typeof Text & {
   Primary: typeof Text;
   Secondary: typeof TextSecondary;
+  SROnly: typeof TextSROnly;
 };

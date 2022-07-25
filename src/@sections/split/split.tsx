@@ -31,10 +31,10 @@ const Split = ({ item }: SplitProps) => {
           <Grid.Row flex="1" columnGap="0">
             <Grid sm={6} background="linear-gradient(90deg, var(--color-neutral-900), transparent)">
               <Card.Content justifyContent="center" height="100%" padding="2rem" paddingSm="5rem Max(2vw, Min(48px, 2.5vw))" textAlign="center" textAlignSm="left">
-                <Text type="10" marginBottom="0.5rem" textTransform="uppercase">Award winning support</Text>
-                <Text type="3" marginBottom="0.5rem">We're here to help</Text>
-                <Text type="7" marginBottom="3rem" maxWidthSm="40ch">And even if he's a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.</Text>
-                <Button type="beta"><span>Visit the help center</span> <PhoneCall /></Button>
+                <Text size="10" marginBottom="0.5rem" textTransform="uppercase">Award winning support</Text>
+                <Text size="3" marginBottom="0.5rem">We're here to help</Text>
+                <Text size="7" marginBottom="3rem" maxWidthSm="40ch">And even if he's a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.</Text>
+                <Button variant="beta"><span>Visit the help center</span> <PhoneCall /></Button>
               </Card.Content>
             </Grid>
             <Grid sm={6}></Grid>

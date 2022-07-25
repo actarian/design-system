@@ -30,7 +30,7 @@ const CartMini = ({ visible, onClose }: CartMiniProps) => {
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
       <Drawer.Title>
-        <Text type="8" fontWeight="700">Shopping cart</Text>
+        <Text size="8" fontWeight="700">Shopping cart</Text>
       </Drawer.Title>
       <Drawer.Subtitle>
         <Divider>{items.length} items found</Divider>
@@ -49,12 +49,12 @@ const CartMini = ({ visible, onClose }: CartMiniProps) => {
           <Flex.Row justifyContent="space-between" alignItems="center" padding="0.5rem 0 1.5rem 0">
             <Text>Shipping and taxes calculated at checkout</Text>
           </Flex.Row>
-          <Button type="alfa" size="lg" justifyContent="center" onClick={() => onBuy()}>
+          <Button variant="alfa" size="lg" position="sticky" bottom="1rem" justifyContent="center" onClick={() => onBuy()}>
             <span>Checkout</span> <ShoppingCart />
           </Button>
           <Flex.Row justifyContent="center" alignItems="center" padding="1rem 0">
             <span>or</span>
-            <Button type="gamma" onClick={onClose}>
+            <Button variant="gamma" onClick={onClose}>
               <span>Continue shopping</span> <ArrowRight />
             </Button>
           </Flex.Row>

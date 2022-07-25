@@ -40,7 +40,7 @@ const Icons = (props: IconsProps) => {
   return (
     <>
       <Container.Fluid padding="3rem 0">
-        <Text type="4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
+        <Text size="4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
         <Input name="search" placeholder="start typing..." onChange={onSearch} marginBottom="2rem" />
         <Flex.Row gap="1rem" justifyContent="center" flexWrap="wrap">
           {visibleIcons.map(icon => (
@@ -49,7 +49,7 @@ const Icons = (props: IconsProps) => {
                 <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
               </Media>
               <Card.Content textAlign="center">
-                <Text type="10">{icon.key}</Text>
+                <Text size="10">{icon.key}</Text>
               </Card.Content>
             </Card>
           ))}
@@ -57,7 +57,7 @@ const Icons = (props: IconsProps) => {
       </Container.Fluid>
       <Modal width="30rem" visible={showModal} onClose={() => onSetIcon(null)}>
         <Modal.Title>
-          <Text type="7" fontWeight="700">{icon && icon.key}</Text>
+          <Text size="7" fontWeight="700">{icon && icon.key}</Text>
         </Modal.Title>
         <Modal.Content>
           {icon &&
@@ -67,7 +67,7 @@ const Icons = (props: IconsProps) => {
           }
           <Code>{`import { ${icon && icon.key} } from '@icons';`}</Code>
         </Modal.Content>
-        <Modal.Button type="default" passive onClick={() => onSetIcon(null)}>Close</Modal.Button>
+        <Modal.Button variant="default" passive onClick={() => onSetIcon(null)}>Close</Modal.Button>
       </Modal>
     </>
   );

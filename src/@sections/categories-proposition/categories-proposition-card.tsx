@@ -28,8 +28,8 @@ const CategoriesPropositionCard = ({ item, ...props }: CategoriesPropositionCard
           </Media>
         </Card.Background>
         <Card.Content padding="1rem" justifyContent="flex-end">
-          <Text type="8" fontWeight="700">{item.title}</Text>
-          <Text type="10">{'Shop now'}</Text>
+          <Text size="8" fontWeight="700">{item.title}</Text>
+          <Text size="10">{'Shop now'}</Text>
         </Card.Content>
       </Card>
     </Link>

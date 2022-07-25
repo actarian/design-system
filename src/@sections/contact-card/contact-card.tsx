@@ -41,21 +41,21 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
         <Nav.Col gap="0" paddingTop="2rem">
           {item.phoneNumber && <>
             <Link href={getTelLink(item.phoneNumber)}>
-              <Button type="gamma">
+              <Button variant="gamma">
                 <Phone /> <span>{item.phoneNumber}</span>
               </Button>
             </Link>
           </>}
           {item.faxNumber && <>
             <Link href={getFaxLink(item.faxNumber)}>
-              <Button type="gamma">
+              <Button variant="gamma">
                 <Phone /> <span>{item.faxNumber}</span>
               </Button>
             </Link>
           </>}
           {item.contactEmail && <>
             <Link href={getMailToLink(item.contactEmail)}>
-              <Button type="gamma">
+              <Button variant="gamma">
                 <Phone /> <span>{item.contactEmail}</span>
               </Button>
             </Link>
@@ -63,9 +63,9 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
         </Nav.Col>
         {item.pressEmail && <>
           <Box paddingTop="1rem">
-            <Text type="10" fontWeight="700">Press requests</Text>
+            <Text size="10" fontWeight="700">Press requests</Text>
             <Link href={getMailToLink(item.pressEmail)}>
-              <Button type="gamma">
+              <Button variant="gamma">
                 <Phone /> <span>{item.pressEmail}</span>
               </Button>
             </Link>
@@ -73,7 +73,7 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
         </>}
         {item.note && <>
           <Box paddingTop="1rem">
-            <Text type="10" fontWeight="700">{item.note}</Text>
+            <Text size="10" fontWeight="700">{item.note}</Text>
           </Box>
         </>}
       </Card.Content>

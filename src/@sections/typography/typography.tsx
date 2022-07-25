@@ -16,7 +16,7 @@ const Typography = (props: TypographyProps) => {
     switch (key) {
       case 'primary':
         return (<>
-          <Text type={s + 1 as FontSize} textTransform="capitalize">{key} {s + 1}</Text>
+          <Text size={s + 1 as FontSize} textTransform="capitalize">{key} {s + 1}</Text>
         </>);
       case 'secondary':
         return (<>

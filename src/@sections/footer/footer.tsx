@@ -26,7 +26,7 @@ const Footer = (props: FooterProps) => {
         <Grid.Row>
           <Grid sm={12} md={4}>
             <Hexagon width="40px" height="40px" color="var(--color-neutral-100)" />
-            <Text type="7" marginTop="0.7rem">Making the world a better place through constructing elegant hierarchies.</Text>
+            <Text size="7" marginTop="0.7rem">Making the world a better place through constructing elegant hierarchies.</Text>
             <Flex.Row margin="1.5rem 0 3rem 0" gap="1.5rem">
               <Link href="#facebook"><Button as="a"><Facebook /></Button></Link>
               <Link href="#instagram"><Button as="a"><Instagram /></Button></Link>
@@ -37,7 +37,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text type="8">Solutions</Text>
+              <Text size="8">Solutions</Text>
               <Link href="#marketing"><Button as="a" type="eta">Marketing</Button></Link>
               <Link href="#analytics"><Button as="a" type="eta">Analytics</Button></Link>
               <Link href="#commerce"><Button as="a" type="eta">Commerce</Button></Link>
@@ -46,7 +46,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text type="8">Support</Text>
+              <Text size="8">Support</Text>
               <Link href="#pricing"><Button as="a" type="eta">Pricing</Button></Link>
               <Link href="#documentation"><Button as="a" type="eta">Documentation</Button></Link>
               <Link href="#guides"><Button as="a" type="eta">Guides</Button></Link>
@@ -55,7 +55,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text type="8">Company</Text>
+              <Text size="8">Company</Text>
               <Link href="#about"><Button as="a" type="eta">About</Button></Link>
               <Link href="#blog"><Button as="a" type="eta">Blog</Button></Link>
               <Link href="#jobs"><Button as="a" type="eta">Jobs</Button></Link>
@@ -65,7 +65,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text type="8">Legal</Text>
+              <Text size="8">Legal</Text>
               <Link href="#claim"><Button as="a" type="eta">Claim</Button></Link>
               <Link href="#privacy"><Button as="a" type="eta">Privacy</Button></Link>
               <Link href="#terms"><Button as="a" type="eta">Terms</Button></Link>
@@ -74,7 +74,7 @@ const Footer = (props: FooterProps) => {
         </Grid.Row>
         <Grid.Row>
           <Grid paddingTop="1rem">
-            <Text type="9">©{getYear()} websolute spa • P.I. 02063520411, Capitale sociale Eur 194.084,34 i.v., REA PU</Text>
+            <Text size="9">©{getYear()} websolute spa • P.I. 02063520411, Capitale sociale Eur 194.084,34 i.v., REA PU</Text>
           </Grid>
         </Grid.Row>
       </Container.Fluid>

@@ -21,9 +21,9 @@ const ProductsHero = ({ items }: ProductsHeroProps) => {
         <Card.Content marginBottom="30vh">
           <Container.Fluid>
             <Flex.Col alignItems="center">
-              <Text type="2" fontWeight="700" marginBottom="1rem">Mid-Season Sale</Text>
-              {false && <Text type="8">We combine technology and creativity for the farmers of today and tomorrow.</Text>}
-              <Button type="alfa" size="lg">Shop Collection</Button>
+              <Text size="2" fontWeight="700" marginBottom="1rem">Mid-Season Sale</Text>
+              {false && <Text size="8">We combine technology and creativity for the farmers of today and tomorrow.</Text>}
+              <Button variant="alfa" size="lg">Shop Collection</Button>
             </Flex.Col>
           </Container.Fluid>
         </Card.Content>
