@@ -56,7 +56,7 @@ export default {
         </>
       ),
       source: {
-        code: '<Button type="default" onClick={() => {}}>Button</Button>',
+        code: '<Button variant="default" onClick={() => {}}>Button</Button>',
         language: "tsx",
         type: "auto",
       },

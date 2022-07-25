@@ -1,7 +1,7 @@
 import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
 import { Label } from '@forms';
 import { ChevronDown, ShoppingCart } from '@icons';
-import { BlogMore, BlogProposition, Colors, ContactForm, Footer, Header, Icons, Proposition, SwiperHero, Typography } from '@sections';
+import { BlogMore, BlogProposition, CategoriesProposition, Colors, ContactForm, Footer, Header, Icons, ProductsProposition, Proposition, Split, SwiperHero, Typography } from '@sections';
 import Head from 'next/head';
 import { useMemo } from 'react';
 
@@ -13,22 +13,10 @@ export default function Homepage() {
 
   const items = useMemo(() => [{
     id: 1,
-    title: 'Sustainable agriculture',
-    abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
-    link: {
-      url: '#',
-      label: 'Do you want to know more?',
-    },
-    media: {
-      type: 'video',
-      src: 'https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
-    }
-  }, {
-    id: 2,
     title: 'Trusted Group',
     abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
     link: {
-      url: '#',
+      href: '#',
       label: 'Do you want to know more?',
     },
     media: {
@@ -36,21 +24,33 @@ export default function Homepage() {
       src: 'https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600',
     }
   }, {
-    id: 3,
+    id: 2,
     title: 'Expertise and tailor-made services',
     abstract: 'We support our clients to develop both new and existing chemical solutions.',
     link: {
-      url: '#',
+      href: '#',
       label: 'Do you want to know more?',
     },
     media: {
       type: 'image',
       src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
     }
+  }, {
+    id: 3,
+    title: 'Sustainable agriculture',
+    abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
+    link: {
+      href: '#',
+      label: 'Do you want to know more?',
+    },
+    media: {
+      type: 'video',
+      src: 'https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
+    }
   }], []);
 
   return (
-    <div>
+    <>
       <Head>
         <title>Homepage</title>
         <meta name="description" content="Homepage description" />
@@ -59,7 +59,7 @@ export default function Homepage() {
       <Layout>
         <Page>
 
-          <Header fixed></Header>
+          <Header fixed />
 
           <SwiperHero items={items} />
 
@@ -67,17 +67,29 @@ export default function Homepage() {
 
           <BlogMore />
 
+          <CategoriesProposition />
+
+          <ProductsProposition />
+
+          <Split />
+
           <Proposition />
 
           <Section padding="3rem 0">
             <Container>
-              <Text type="2" fontWeight="700" textAlign="center">Workbench</Text>
+              <Flex.Row justifyContent="center">
+                <Text size="1" as="span" fontWeight="700" gradient>Workbench</Text>
+              </Flex.Row>
             </Container>
           </Section>
 
           <Divider marginBottom="4rem">Forms</Divider>
 
-          <ContactForm></ContactForm>
+          <Section>
+            <Container>
+              <ContactForm></ContactForm>
+            </Container>
+          </Section>
 
           <Divider marginBottom="4rem">Buttons</Divider>
 
@@ -85,27 +97,27 @@ export default function Homepage() {
             <Container>
               <Label>Alfa</Label>
               <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button type="alfa" size="xs" as="button">Button Xs</Button>
-                <Button type="alfa" size="sm" as="button">Button Sm</Button>
-                <Button type="alfa" size="md" as="button">Button Md</Button>
-                <Button type="alfa" size="lg" as="button">Button Lg</Button>
-                <Button type="alfa" size="xl" as="button">Button Xl</Button>
+                <Button variant="alfa" size="xs" as="button">Button Xs</Button>
+                <Button variant="alfa" size="sm" as="button">Button Sm</Button>
+                <Button variant="alfa" size="md" as="button">Button Md</Button>
+                <Button variant="alfa" size="lg" as="button">Button Lg</Button>
+                <Button variant="alfa" size="xl" as="button">Button Xl</Button>
               </Flex.Col>
               <Label>Beta</Label>
               <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button type="beta" size="xs" as="button">Button Xs</Button>
-                <Button type="beta" size="sm" as="button">Button Sm</Button>
-                <Button type="beta" size="md" as="button">Button Md</Button>
-                <Button type="beta" size="lg" as="button">Button Lg</Button>
-                <Button type="beta" size="xl" as="button">Button Xl</Button>
+                <Button variant="beta" size="xs" as="button">Button Xs</Button>
+                <Button variant="beta" size="sm" as="button">Button Sm</Button>
+                <Button variant="beta" size="md" as="button">Button Md</Button>
+                <Button variant="beta" size="lg" as="button">Button Lg</Button>
+                <Button variant="beta" size="xl" as="button">Button Xl</Button>
               </Flex.Col>
               <Label>Gamma</Label>
               <Flex.Col flexDirectionSm='row' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button type="gamma" size="xs" as="button">Button Xs</Button>
-                <Button type="gamma" size="sm" as="button">Button Sm</Button>
-                <Button type="gamma" size="md" as="button">Button Md</Button>
-                <Button type="gamma" size="lg" as="button">Button Lg</Button>
-                <Button type="gamma" size="xl" as="button">Button Xl</Button>
+                <Button variant="gamma" size="xs" as="button">Button Xs</Button>
+                <Button variant="gamma" size="sm" as="button">Button Sm</Button>
+                <Button variant="gamma" size="md" as="button">Button Md</Button>
+                <Button variant="gamma" size="lg" as="button">Button Lg</Button>
+                <Button variant="gamma" size="xl" as="button">Button Xl</Button>
               </Flex.Col>
             </Container>
           </Section>
@@ -129,17 +141,17 @@ export default function Homepage() {
           <Section>
             <Container marginBottom="1rem">
               <ButtonGroup style={{ width: '40rem' }}>
-                <Button type="default">Read documentation</Button>
-                <Button type="default">View on Github</Button>
-                <Button type="default"><span>Open</span> <ChevronDown /></Button>
+                <Button variant="default">Read documentation</Button>
+                <Button variant="default">View on Github</Button>
+                <Button variant="default"><span>Open</span> <ChevronDown /></Button>
               </ButtonGroup>
             </Container>
 
             <Container>
               <ButtonGroup vertical>
-                <Button type="default">Read documentation</Button>
-                <Button type="default">View on Github</Button>
-                <Button type="default"><span>Open</span> <ChevronDown /></Button>
+                <Button variant="default">Read documentation</Button>
+                <Button variant="default">View on Github</Button>
+                <Button variant="default"><span>Open</span> <ChevronDown /></Button>
               </ButtonGroup>
             </Container>
           </Section>
@@ -151,7 +163,7 @@ export default function Homepage() {
               </Media>
             </Section.Background>
             <Container textAlign='center'>
-              <Text type="1" fontWeight="700">Workbench.</Text>
+              <Text size="1" fontWeight="700">Workbench.</Text>
             </Container>
           </Section>
 
@@ -167,8 +179,8 @@ export default function Homepage() {
                       <img src={'https://picsum.photos/640/480?u=6'} />
                     </Media>
                     <Card.Content padding='1rem'>
-                      <Text type="6">Title</Text>
-                      <Text type="7">Abstract</Text>
+                      <Text size="6">Title</Text>
+                      <Text size="7">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
@@ -178,8 +190,8 @@ export default function Homepage() {
                       <img src={'https://picsum.photos/640/480?u=7'} />
                     </Media>
                     <Card.Content padding='1rem'>
-                      <Text type="6">Title</Text>
-                      <Text type="7">Abstract</Text>
+                      <Text size="6">Title</Text>
+                      <Text size="7">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
@@ -191,19 +203,19 @@ export default function Homepage() {
                       </Media>
                     </Card.Background>
                     <Card.Content padding='1rem'>
-                      <Text type="6">Title</Text>
-                      <Text type="7">Abstract</Text>
+                      <Text size="6">Title</Text>
+                      <Text size="7">Abstract</Text>
                     </Card.Content>
                   </Card>
                 </Grid>
                 <Grid sm={6} md={4}>
                   <Card type="delta" aspectRatio={1 / 1}>
                     <Card.Content padding='1rem'>
-                      <Text type="6">Title</Text>
-                      <Text type="7">Abstract</Text>
+                      <Text size="6">Title</Text>
+                      <Text size="7">Abstract</Text>
                     </Card.Content>
                     <Card.Footer padding='1rem'>
-                      <Text type="8">Description</Text>
+                      <Text size="8">Description</Text>
                     </Card.Footer>
                   </Card>
                 </Grid>
@@ -219,16 +231,13 @@ export default function Homepage() {
             <Container.Fluid padding="3rem 0">
               <Grid.Row>
                 <Grid className="debug" sm={6}>
-                  <Text type="1" as="h1">Index</Text>
+                  <Text size="1" as="h1">Index</Text>
                 </Grid>
                 <Grid className="debug" sm={6}>
                   <Flex.Row gap="1rem">
-                    <Button type="alfa" as="a" onClick={onClick}><span>alfa</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button type="beta" as="a" onClick={onClick}><span>beta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button type="gamma" as="a" onClick={onClick}><span>gamma</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button type="delta" as="a" onClick={onClick}><span>delta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button type="epsilon" as="a" onClick={onClick}><span>epsilon</span> <ShoppingCart width="1rem" height="1rem" /></Button>
-                    <Button type="zeta" as="a" onClick={onClick}><span>zeta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
+                    <Button variant="alfa" as="a" onClick={onClick}><span>alfa</span> <ShoppingCart width="1rem" height="1rem" /></Button>
+                    <Button variant="beta" as="a" onClick={onClick}><span>beta</span> <ShoppingCart width="1rem" height="1rem" /></Button>
+                    <Button variant="gamma" as="a" onClick={onClick}><span>gamma</span> <ShoppingCart width="1rem" height="1rem" /></Button>
                   </Flex.Row>
                 </Grid>
 
@@ -279,10 +288,10 @@ export default function Homepage() {
 
           </>}
 
-          <Footer></Footer>
+          <Footer />
 
         </Page>
       </Layout>
-    </div>
+    </>
   )
 }

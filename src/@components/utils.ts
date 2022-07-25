@@ -25,7 +25,7 @@ export function getContainer(props: ThemeProps, fluid?: boolean) {
         const value = theme.mediaQuery[key];
         return `
 @media(min-width: ${value}px) {
-  max-width: ${theme.maxWidth[key]};
+  max-width: ${theme.container.maxWidth[key]};
 }
 `
       }).join('\n');

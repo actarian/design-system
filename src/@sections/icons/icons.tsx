@@ -1,21 +1,36 @@
-import { Card, Container, Flex, Media, Text } from '@components';
+import { Card, Code, Container, Flex, Media, Modal, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { Input } from '@forms';
-import { Icons } from '@icons/icons';
+import { Icons as IconList } from '@icons/icons';
 import { createElement, Suspense, useMemo, useState } from 'react';
 
 type Props = {
 }
 
-export type ColorsProps = ComponentProps<Props, HTMLDivElement>;
+export type IIcon = {
+  key: string;
+  component: React.ReactElement;
+}
 
-const Colors = (props: ColorsProps) => {
-  const iconsList = useMemo(() => {
-    return Object.keys(Icons).map((key) => {
-      return { key, component: Icons[key] };
+export type IconsProps = ComponentProps<Props, HTMLDivElement>;
+
+const Icons = (props: IconsProps) => {
+  const [showModal, setShowModal] = useState(false);
+  const [icon, setIcon] = useState<IIcon | null>(null);
+  const onSetIcon = (icon = null) => {
+    const visible = icon !== null;
+    console.log('onSetIcon', icon, visible);
+    setShowModal(visible);
+    if (visible) {
+      setIcon(icon);
+    }
+  }
+  const iconsList = useMemo<IIcon[]>(() => {
+    return Object.keys(IconList).map((key) => {
+      return { key, component: IconList[key] };
     });
   }, []);
-  const [visibleIcons, setVisibleIcons] = useState(iconsList);
+  const [visibleIcons, setVisibleIcons] = useState<IIcon[]>(iconsList);
   function onSearch(event: React.ChangeEvent<HTMLInputElement>) {
     const query = event.target.value.toLowerCase();
     // console.log(query);
@@ -23,23 +38,39 @@ const Colors = (props: ColorsProps) => {
     setVisibleIcons(icons);
   }
   return (
-    <Container.Fluid padding="3rem 0">
-      <Text type="4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
-      <Input name="search" placeholder="start typing..." onChange={onSearch} marginBottom="2rem" />
-      <Flex.Row gap="1rem" justifyContent="center">
-        {visibleIcons.map(icon => (
-          <Card key={icon.key} type="alfa" flexGrow="1" width="180px" padding="0.5rem" border="2px solid var(--color-neutral-200)">
-            <Media height="64px">
+    <>
+      <Container.Fluid padding="3rem 0">
+        <Text size="4" fontWeight="700" marginBottom="2rem">Search Icon</Text>
+        <Input name="search" placeholder="start typing..." onChange={onSearch} marginBottom="2rem" />
+        <Flex.Row gap="1rem" justifyContent="center" flexWrap="wrap">
+          {visibleIcons.map(icon => (
+            <Card key={icon.key} onClick={() => onSetIcon(icon)} type="alfa" flexGrow="1" width="180px" padding="0.5rem" border="2px solid var(--color-neutral-200)" hoverable>
+              <Media padding="1rem" height="4rem">
+                <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
+              </Media>
+              <Card.Content textAlign="center">
+                <Text size="10">{icon.key}</Text>
+              </Card.Content>
+            </Card>
+          ))}
+        </Flex.Row>
+      </Container.Fluid>
+      <Modal width="30rem" visible={showModal} onClose={() => onSetIcon(null)}>
+        <Modal.Title>
+          <Text size="7" fontWeight="700">{icon && icon.key}</Text>
+        </Modal.Title>
+        <Modal.Content>
+          {icon &&
+            <Media height="5rem" padding="1rem" marginBottom="1rem">
               <Suspense fallback={<div>Loading...</div>}>{createElement(icon.component, {})}</Suspense>
             </Media>
-            <Card.Content alignItems="center">
-              <Text type="9">{icon.key}</Text>
-            </Card.Content>
-          </Card>
-        ))}
-      </Flex.Row>
-    </Container.Fluid>
+          }
+          <Code>{`import { ${icon && icon.key} } from '@icons';`}</Code>
+        </Modal.Content>
+        <Modal.Button variant="default" passive onClick={() => onSetIcon(null)}>Close</Modal.Button>
+      </Modal>
+    </>
   );
 }
 
-export default Colors;
+export default Icons;

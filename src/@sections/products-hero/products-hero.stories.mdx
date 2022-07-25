@@ -1,0 +1,34 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import ProductsHero from './products-hero';
+import ProductsHeroCard from './products-hero-card';
+
+<Meta
+  title="Sections / Products Proposition"
+  component={ProductsHero}
+  subcomponents={{ ProductsHeroCard }}
+/>
+
+# Products Proposition
+
+A component to display a `ProductsHero`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/@sections/products-hero)
+
+## Imports
+
+```js
+import { ProductsHero } from '@design-system';
+```
+
+## Example
+
+A basic example of `ProductsHero`.
+
+<Canvas>
+  <Story name="ProductsHero">
+    <ProductsHero />
+  </Story>
+  <Story name="Product Item">
+    <ProductsHeroCard maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>

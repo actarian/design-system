@@ -20,7 +20,7 @@ import Link from 'next/link';
 
 A component to display a `Modal`.
 
-[View source](https://github.com/actarian/design-system/tree/main/@components/modal)
+[View source](https://github.com/actarian/design-system/tree/main/src/@components/modal)
 
 ## Imports
 
@@ -46,9 +46,11 @@ export const Basic = ({ data, ...args }) => {
   }
   return (<>
     <div style={{ margin: '0 1em' }}>
-      <Button type="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
       <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
-        <Modal.Title>Modal Title</Modal.Title>
+        <Modal.Title>
+          <Text size="8" fontWeight="700">Modal Title</Text>
+        </Modal.Title>
         <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
         <Modal.Content>
           <p>Modal content lorem ispum.</p>
@@ -71,9 +73,11 @@ export const Basic = ({ data, ...args }) => {
     setShowModal(false);
   }
   return (<>
-      <Button type="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenModal}>Open Modal</Button>
       <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
-        <Modal.Title>Modal Title</Modal.Title>
+        <Modal.Title>
+          <Text size="8" fontWeight="700">Modal Title</Text>
+        </Modal.Title>
         <Modal.Subtitle>Modal Subtitle</Modal.Subtitle>
         <Modal.Content>
           <p>Modal content lorem ispum.</p>

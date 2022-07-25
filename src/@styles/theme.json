@@ -12,10 +12,10 @@
     "primary": {
       "family": "-apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'",
       "size": [
-        "6.25rem",
-        "4.5rem",
-        "2.75rem",
-        "2.5rem",
+        "Min(6.25rem, 16vw)",
+        "Min(4.5rem, 11.5vw)",
+        "Min(2.75rem, 7vw)",
+        "Min(2.5rem, 6.4vw)",
         "2.25rem",
         "1.875rem",
         "1.5rem",
@@ -82,19 +82,28 @@
     "columnGap": "Max(4vw, Min(96px, 5vw))",
     "rowGap": "0"
   },
-  "maxWidth": {
-    "xs": "calc(100% - var(--grid-column-gap) * 2)",
-    "sm": "calc(100% - var(--grid-column-gap) * 2)",
-    "md": "Min(928px, calc(100% - var(--grid-column-gap) * 2))",
-    "lg": "Min(1344px, calc(100% - var(--grid-column-gap) * 4))",
-    "xl": "Min(1204px, calc(100% - var(--grid-column-gap) * 6))"
-  },
   "mediaQuery": {
     "xs": 0,
     "sm": 768,
     "md": 1024,
     "lg": 1440,
     "xl": 1600
+  },
+  "container": {
+    "maxWidth": {
+      "xs": "calc(100% - var(--grid-column-gap) * 2)",
+      "sm": "calc(100% - var(--grid-column-gap) * 2)",
+      "md": "calc(1024px - var(--grid-column-gap) * 2)",
+      "lg": "calc(1440px - var(--grid-column-gap) * 2)",
+      "xl": "calc(1600px - var(--grid-column-gap) * 2)"
+    }
+  },
+  "maxWidth": {
+    "xs": "calc(100% - var(--grid-column-gap) * 2)",
+    "sm": "calc(100% - var(--grid-column-gap) * 2)",
+    "md": "Min(928px, calc(100% - var(--grid-column-gap) * 2))",
+    "lg": "Min(1344px, calc(100% - var(--grid-column-gap) * 4))",
+    "xl": "Min(1204px, calc(100% - var(--grid-column-gap) * 6))"
   },
   "button": {
     "size": {
@@ -113,7 +122,11 @@
     "radius": "0.5em"
   },
   "shadow": {
-    "lg": "0 1rem 4rem -0.5rem rgba(0, 0, 0, 0.9)"
+    "xs": "0 0.3rem 1rem -0.2rem rgba(0, 0, 0, 0.2)",
+    "sm": "0 0.6rem 2rem -0.3rem rgba(0, 0, 0, 0.3)",
+    "md": "0 0.9rem 3rem -0.4rem rgba(0, 0, 0, 0.4)",
+    "lg": "0 1.2rem 4rem -0.5rem rgba(0, 0, 0, 0.5)",
+    "xl": "0 1.5rem 5rem -0.6rem rgba(0, 0, 0, 0.6)"
   },
   "backdrop": {
     "opacity": 0.5
@@ -121,9 +134,9 @@
   "color": {
     "neutral": {
       "100": "#FFFFFF",
-      "200": "#DFDFE2",
-      "300": "#BFBFC5",
-      "400": "#9F9FA8",
+      "200": "#EFEFF2",
+      "300": "#DBDBD7",
+      "400": "#B1B1B1",
       "500": "#7E7E8B",
       "600": "#61616B",
       "700": "#44444B",

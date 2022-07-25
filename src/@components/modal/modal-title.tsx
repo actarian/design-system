@@ -1,13 +1,12 @@
+import { Button } from '@components';
 import { ComponentProps } from '@components/types';
+import { X } from '@icons';
 import React from 'react';
 import styled from 'styled-components';
 
-const defaultProps = {
-  className: '',
-};
-
 interface Props {
   className?: string;
+  onClose?: () => void;
 }
 
 export type ModalTitleProps = ComponentProps<Props, HTMLDivElement>;
@@ -17,26 +16,32 @@ const StyledTitle = styled.h2`
   margin: 0;
   padding: 0;
   display: inline-flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
-  word-break: break-word;
-  text-transform: capitalize;
-  line-height: 1.6;
-  font-weight: normal;
-  font-size: 1.5rem;
-  color: var(--color-neutral-900);
+  margin-bottom: 1rem;
+  // text-align: center;
+  // line-height: 1.6;
+  // font-weight: normal;
+  // font-size: 1.5rem;
+  // color: var(--color-neutral-900);
+  // text-transform: capitalize;
+  // word-break: break-word;
 `;
 
-const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalTitleProps> & typeof defaultProps) => { // !!! any
+const ModalTitleComponent: React.FC<React.PropsWithChildren<ModalTitleProps | any>> = ({
+  className = '',
+  onClose = () => { },
+  children,
+  ...props
+}: React.PropsWithChildren<ModalTitleProps>) => { // !!! any
   return (
     <StyledTitle className={className} {...props}>
       {children}
+      <Button onClick={onClose}><X /></Button>
     </StyledTitle>
   )
 }
 
-ModalTitleComponent.defaultProps = defaultProps;
 ModalTitleComponent.displayName = 'ModalTitle';
 
 export default ModalTitleComponent;

@@ -15,6 +15,7 @@ const DownArrowSvg = (props: SVGProps<SVGSVGElement>) => (
 );
 
 const DownArrow = styled(DownArrowSvg)`
+  flex-shrink: 0;
   width: 24px;
   height: 24px;
   margin-left: -2.8rem;
@@ -34,10 +35,16 @@ const StyledSelectSelect = styled.div`
   color: inherit;
   background-color: transparent;
   border-color: var(--color-neutral-200);
+  transition: border 150ms ease-in 0s, outline 150ms ease-in 0s, color 200ms ease-out 0s;
+  cursor: pointer;
 
-  &::placeholder {
-    color: inherit;
-    opacity: 0.3;
+  &.disabled {
+    cursor: not-allowed;
+  }
+
+  &.active:not(.disabled),
+  &:hover:not(.disabled) {
+    border-color: var(--color-neutral-300);
   }
 
   &:focus-visible {
@@ -48,6 +55,12 @@ const StyledSelectSelect = styled.div`
       opacity: 0.5;
     }
   }
+
+  &::placeholder {
+    color: inherit;
+    opacity: 0.3;
+  }
+
   ${props => getCssResponsive(props)}
 `;
 
@@ -63,15 +76,6 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (
     <DownArrow />
   </StyledSelect>
 ));
-
-/*
-<DownArrow
-      sx={{
-        ml: -28,
-        alignSelf: 'center',
-        pointerEvents: 'none',
-      }}
-      */
 
 export default Select;
 

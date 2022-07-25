@@ -9,7 +9,7 @@ export type HeroProps = ComponentProps<Props, HTMLDivElement>;
 const Hero = (props: HeroProps) => {
   return (
     <Section padding="0">
-      <Card justifyContent="flex-end" height="100vh" margin="0">
+      <Card justifyContent="flex-end" height="100vh">
         <Card.Background>
           <Media overlay>
             <img draggable={false} alt="Trusted Group" src="https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600" />
@@ -19,10 +19,10 @@ const Hero = (props: HeroProps) => {
           <Container.Fluid>
             <Grid.Row>
               <Grid md={6} padding="3rem 0">
-                <Text type="2" fontWeight="700">Sustainable agriculture</Text>
+                <Text size="2" fontWeight="700">Sustainable agriculture</Text>
               </Grid>
               <Grid md={6} padding="3rem 0">
-                <Text type="6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
+                <Text size="6">We combine technology and creativity for the farmers of today and tomorrow.</Text>
               </Grid>
             </Grid.Row>
           </Container.Fluid>

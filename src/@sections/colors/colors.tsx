@@ -27,8 +27,8 @@ const Colors = (props: ColorsProps) => {
               justifyContent="center"
               backgroundColor={theme.color[key][size]}
             >
-              <Text type="10" color={theme.color[key][(parseInt(size) >= 500 ? '100' : '900')]}>{key} {size}</Text>
-              <Text type="10" color={theme.color[key][(parseInt(size) >= 500 ? '100' : '900')]}>{theme.color[key][size]}</Text>
+              <Text size="10" color={theme.color[key][(parseInt(size) >= 500 ? '100' : '900')]}>{key} {size}</Text>
+              <Text size="10" color={theme.color[key][(parseInt(size) >= 500 ? '100' : '900')]}>{theme.color[key][size]}</Text>
               {false && <Code fontSize="0.8rem" position="absolute" right="0.3rem" bottom="0.3rem">{theme.color[key][size]}</Code>}
             </Flex>
           ))}

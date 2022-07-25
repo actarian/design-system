@@ -1,6 +1,7 @@
 import Background from '@components/background/background';
 import { ComponentCssResponsiveProps, Variant, Variants } from '@components/types';
 import { getAspectResponsive, getCssResponsive, getVariant, hasChildOfType } from '@components/utils';
+import React from 'react';
 import styled, { css } from 'styled-components';
 import { CardContent } from './card-content';
 import { CardFooter } from './card-footer';
@@ -9,21 +10,21 @@ const variants: Variants = {
   default: css`
 `,
   alfa: css`
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   border-radius: 0.5em;
   // box-shadow: var(--card-shadow);
 `,
   beta: css`
-  // background: var(--color-neutral-900);
-  border-radius: 2px;
+  background: var(--color-neutral-200);
+  // border-radius: 2px;
 `,
   gamma: css`
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
 `,
   delta: css`
-  border: 1px solid var(--color-neutral-100);
+  border: 1px solid var(--color-neutral-200);
   border-radius: 20px;
   box-shadow: var(--card-shadow);
 `
@@ -31,7 +32,7 @@ const variants: Variants = {
 
 type Props = {
   type?: Variant;
-  bordered?: boolean;
+  hoverable?: boolean;
 };
 
 export type CardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
@@ -39,13 +40,30 @@ export type CardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 const CardContainer = styled.div<CardProps>`
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   // margin: 0 0 40px 0;
 
   ${props => getVariant(variants, props.type)}
   ${props => getCssResponsive(props)}
   ${props => getAspectResponsive(props)};
-
+  ${props => props.hoverable ? css`
+    cursor: pointer;
+    .media {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      &>:not(.media-info) {
+        transition: transform ease-in-out 200ms;
+      }
+    }
+    &:hover {
+      .media {
+        &>:not(.media-info) {
+          transform: scale(1.1);
+        }
+      }
+    }
+  ` : ''}
   ${props => hasBackground(props) ? css`
     color: var(--color-neutral-100);
     position: relative;
@@ -103,13 +121,9 @@ function hasBackground(props: CardProps): boolean {
   return hasChildOfType(props.children, Background);
 }
 
-const Card = (props: CardProps) => {
-  return (
-    <CardContainer {...props}>
-      {props.children}
-    </CardContainer>
-  );
-}
+const Card = React.forwardRef<Element, CardProps>((props: CardProps, ref?: React.Ref<Element>) => {
+  return (<CardContainer {...props} ref={ref}>{props.children}</CardContainer>);
+});
 
 (Card as ICard).Background = Background;
 (Card as ICard).Content = CardContent;

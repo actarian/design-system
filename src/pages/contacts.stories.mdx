@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Contacts } from './contacts';
+
+<Meta
+  title="Pages / Contacts"
+  component={Contacts}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Contacts
+
+A component to display a `Contacts`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/pages/contacts.tsx)
+
+## Imports
+
+```js
+import { Contacts } from '@design-system';
+```
+
+## Example
+
+A basic example of `Contacts`.
+
+<Canvas>
+  <Story name="Contacts">
+    <Contacts />
+  </Story>
+</Canvas>

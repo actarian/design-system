@@ -20,16 +20,21 @@ export function useBreakpoint(): Breakpoint {
   const breakpoints: BreakpointType[] = Object.keys(theme.mediaQuery) as BreakpointType[];
   const values: number[] = Object.values(theme.mediaQuery);
 
-  const breakpoint = useMemo(() => values.reduce((p, c, i) => {
-    if (c < windowSize.width) {
-      p.key = breakpoints[i];
-      p.min = c;
-      p.max = c;
-    } else if (p.min === p.max) {
-      p.max = c;
-    }
-    return p;
-  }, { key: 'xs' as BreakpointType, min: 0, max: Number.POSITIVE_INFINITY }), [windowSize.width]);
+  const breakpoint = useMemo(() => {
+    const breakpoint = values.reduce((p, c, i) => {
+      if (c < windowSize.width) {
+        p.key = breakpoints[i];
+        p.min = c;
+        if (i + 1 < values.length) {
+          p.max = values[i + 1];
+        } else {
+          p.max = Number.POSITIVE_INFINITY;
+        }
+      }
+      return p;
+    }, { key: 'xs' as BreakpointType, min: -Number.NEGATIVE_INFINITY, max: -Number.NEGATIVE_INFINITY });
+    return breakpoint;
+  }, [windowSize.width]);
 
   return breakpoint;
 }

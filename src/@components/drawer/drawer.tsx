@@ -10,13 +10,13 @@ import DrawerWrapper from './drawer-wrapper';
 import { DrawerPlacement } from './helper';
 
 interface Props {
-  visible?: boolean
-  keyboard?: boolean
-  disableBackdropClick?: boolean
-  onClose?: () => void
-  onContentClick?: (event: MouseEvent<HTMLElement>) => void
-  wrapClassName?: string
-  placement?: DrawerPlacement
+  visible?: boolean;
+  keyboard?: boolean;
+  disableBackdropClick?: boolean;
+  onClose?: () => void;
+  onContentClick?: (event: MouseEvent<HTMLElement>) => void;
+  wrapClassName?: string;
+  placement?: DrawerPlacement;
 }
 
 export type DrawerProps = ComponentProps<Props, HTMLDivElement>;
@@ -26,21 +26,27 @@ const defaultProps = {
   keyboard: true,
   disableBackdropClick: false,
   placement: 'right' as DrawerPlacement,
-}
+};
 
-const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
-  visible: customVisible,
+const Drawer: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
+  /*
+  wrapClassName = '',
+  keyboard = true,
+  disableBackdropClick = false,
+  placement = 'right' as DrawerPlacement,
+  */
+  wrapClassName,
   keyboard,
   disableBackdropClick,
+  visible: customVisible,
   onClose,
   onContentClick,
-  wrapClassName,
   children,
   ...props
 }: React.PropsWithChildren<DrawerProps> & typeof defaultProps) => {
-  const portal = usePortal('drawer')
-  const [visible, setVisible] = useState<boolean>(false)
-  const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 })
+  const portal = usePortal('drawer');
+  const [visible, setVisible] = useState<boolean>(false);
+  const [, setBodyHidden] = useBodyScroll(null, { delayReset: 300 });
 
   const closeDrawer = () => {
     if (onClose) {
@@ -76,35 +82,36 @@ const DrawerComponent: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
   }
 
   return createPortal(
-    <Backdrop
-      width="100%"
-      visible={visible}
-      onClick={onBackdropClick}
-      onContentClick={onContentClick}
-      {...bindings}>
+    <Backdrop width="100%" visible={visible} onClick={onBackdropClick} onContentClick={onContentClick} {...bindings}>
       <DrawerWrapper className={wrapClassName} visible={visible} {...props}>
-        {children}
+        {(React.Children.map(children, child => {
+          if (React.isValidElement(child) && child.type === ModalTitle) {
+            return React.cloneElement(child, { props: child.props, onClose: child.props.onClose || onBackdropClick });
+          } else {
+            return child;
+          }
+        }))}
       </DrawerWrapper>
     </Backdrop>,
     portal,
   )
 }
 
-DrawerComponent.defaultProps = defaultProps;
-DrawerComponent.displayName = 'Drawer';
+Drawer.defaultProps = defaultProps;
 
-export type DrawerComponentType = typeof DrawerComponent & {
+Drawer.displayName = 'Drawer';
+
+(Drawer as IDrawer).Title = ModalTitle;
+(Drawer as IDrawer).Subtitle = ModalSubtitle;
+(Drawer as IDrawer).Content = ModalContent;
+
+export default Drawer as IDrawer;
+
+type IDrawer = typeof Drawer & {
   Title: typeof ModalTitle;
   Subtitle: typeof ModalSubtitle;
   Content: typeof ModalContent;
 };
 
-(DrawerComponent as DrawerComponentType).Title = ModalTitle;
-(DrawerComponent as DrawerComponentType).Subtitle = ModalSubtitle;
-(DrawerComponent as DrawerComponentType).Content = ModalContent;
+export type { ModalContentProps as DrawerContentProps, ModalSubtitleProps as DrawerSubtitleProps, ModalTitleProps as DrawerTitleProps } from '../modal/modal';
 
-export type {
-  ModalContentProps as DrawerContentProps, ModalSubtitleProps as DrawerSubtitleProps, ModalTitleProps as DrawerTitleProps
-} from '../modal/modal';
-
-export default DrawerComponent as DrawerComponentType;

@@ -1,5 +1,6 @@
 import { Button, Card, Flex, Media, Text } from '@components';
-import { ComponentProps } from '@components/types';
+import { ComponentCssResponsiveProps } from '@components/types';
+import { ArrowRight } from '@icons';
 import Link from 'next/link';
 
 type Props = {
@@ -7,25 +8,25 @@ type Props = {
 }
 
 export type BlogItem = {
-  id: number,
-  url: string,
-  title: string,
-  abstract: string,
-  date: string | Date,
+  id: number;
+  href: string;
+  title: string;
+  abstract: string;
+  date: string | Date;
   media: {
-    type: 'image' | 'video',
-    src: string,
-  },
+    type: 'image' | 'video';
+    src: string;
+  };
   author: {
-    fullName: string,
+    fullName: string;
     media: {
-      type: 'image',
-      src: string,
-    }
-  },
+      type: 'image';
+      src: string;
+    };
+  };
 }
 
-export type BlogCardProps = ComponentProps<Props, HTMLDivElement>;
+export type BlogCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const BlogCard = ({ item, ...props }: BlogCardProps) => {
   const getDate = (value: Date | string): string => {
@@ -40,35 +41,40 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
     return formattedValue;
   };
   return (
-    <Card {...props}>
-      <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} marginBottom="1rem">
-        <img src={item.media.src} />
-      </Media>
-      <Card.Content>
-        <Link href={item.url}>
-          <Button type="gamma" as="a" marginBottom="1rem">
-            <Text type="5">{item.title}</Text>
-          </Button>
-        </Link>
-        <Text type="8" marginBottom="1rem">{getDate(item.date)}</Text>
-        <Text type="8">{item.abstract}</Text>
-      </Card.Content>
-      <Card.Footer marginTop="1rem">
-        <Flex.Row>
-          <Media width="3rem" height="3rem" circle>
-            <img src={item.author.media.src} />
-          </Media>
-          <Text type="8" fontWeight="700">{item.author.fullName}</Text>
-        </Flex.Row>
-      </Card.Footer>
-    </Card>
+    <Link href={item.href}>
+      <Card type="alfa" {...props} hoverable height="100%">
+        <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem">
+          <img src={item.media.src} />
+        </Media>
+        <Card.Content flex="1">
+          <Text size="5">{item.title}</Text>
+          <Text size="8" marginBottom="1rem">{getDate(item.date)}</Text>
+          <Text size="8">{item.abstract}</Text>
+        </Card.Content>
+        <Card.Footer marginTop="1rem">
+          <Flex.Row justifyContent="space-between">
+            <Flex>
+              <Media width="3rem" height="3rem" marginRight="0.75rem" circle>
+                <img src={item.author.media.src} />
+              </Media>
+              <Text size="8" fontWeight="700">{item.author.fullName}</Text>
+            </Flex>
+            {false &&
+              <Link href={item.href}>
+                <Button as="a" type="gamma"><Text>Read more</Text> <ArrowRight /></Button>
+              </Link>
+            }
+          </Flex.Row>
+        </Card.Footer>
+      </Card>
+    </Link>
   )
 }
 
 BlogCard.defaultProps = {
   item: {
     id: 1,
-    url: '#we-choose-to-go-to-the-moon',
+    href: '#we-choose-to-go-to-the-moon',
     title: 'We choose to go to the moon.',
     abstract: 'We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.',
     date: '2022-06-08T07:44:24.402Z',

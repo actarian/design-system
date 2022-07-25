@@ -19,7 +19,7 @@ import Link from 'next/link';
 # Drawer
 
 A component to display a `Drawer`.
-[View source](https://github.com/actarian/design-system/tree/main/@components/drawer)
+[View source](https://github.com/actarian/design-system/tree/main/src/@components/drawer)
 
 ## Imports
 
@@ -45,9 +45,11 @@ export const Basic = ({ data, ...args }) => {
   }
   return (<>
     <div style={{ margin: '0 1em' }}>
-      <Button type="default" marginBottom="1rem" onClick={onOpenDrawer}>Open Drawer</Button>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenDrawer}>Open Drawer</Button>
       <Drawer visible={showDrawer} onClose={() => onCloseDrawer()} placement="right">
-        <Drawer.Title>Drawer</Drawer.Title>
+        <Drawer.Title>
+          <Text size="8" fontWeight="700">Drawer</Text>
+        </Drawer.Title>
         <Drawer.Subtitle>This is a drawer</Drawer.Subtitle>
         <Drawer.Content>
           <p>Some content contained within the drawer.</p>
@@ -68,9 +70,11 @@ export const Basic = ({ data, ...args }) => {
     setShowDrawer(false);
   }
   return (<>
-      <Button type="default" marginBottom="1rem" onClick={onOpenDrawer}>Open Drawer</Button>
+      <Button variant="default" marginBottom="1rem" onClick={onOpenDrawer}>Open Drawer</Button>
       <Drawer width="30rem" visible={showDrawer} onClose={onCloseDrawer}>
-        <Drawer.Title>Drawer Title</Drawer.Title>
+        <Drawer.Title>
+          <Text size="8" fontWeight="700">Drawer</Text>
+        </Drawer.Title>
         <Drawer.Subtitle>Drawer Subtitle</Drawer.Subtitle>
         <Drawer.Content>
           <p>Drawer content lorem ispum.</p>

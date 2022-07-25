@@ -11,7 +11,7 @@ import { default as Header, HeaderProps } from './header';
 
 A component to display a `Header`.
 
-[View source](https://github.com/actarian/design-system/tree/main/@sections/header)
+[View source](https://github.com/actarian/design-system/tree/main/src/@sections/header)
 
 ## Imports
 
@@ -30,7 +30,12 @@ import { Header } from '@design-system';
 A basic example of `Header`.
 
 <Canvas>
-  <Story name="Header">
-    <Header backgroundColor="black"></Header>
+  <Story name="default">
+    <div style={{ backgroundColor: 'var(--color-neutral-900)' }}>
+      <Header />
+    </div>
+  </Story>
+  <Story name="sticky">
+    <Header sticky />
   </Story>
 </Canvas>

@@ -12,13 +12,11 @@ describe('Button', () => {
   it('should support all types', () => {
     const wrapper = mount(
       <div>
-        <Button type="default" />
-        <Button type="alfa" />
-        <Button type="beta" />
-        <Button type="gamma" />
-        <Button type="delta" />
-        <Button type="epsilon" />
-        <Button type="zeta" />
+        <Button variant="default" />
+        <Button variant="alfa" />
+        <Button variant="beta" />
+        <Button variant="gamma" />
+        <Button variant="circle" />
       </div>,
     )
     expect(() => wrapper.unmount()).not.toThrow()
