@@ -39,7 +39,7 @@ const CategoriesProposition = ({ items }: CategoriesPropositionProps) => {
 CategoriesProposition.defaultProps = {
   items: [{
     id: 1,
-    href: '#new-arrivals',
+    href: '/category',
     title: 'New Arrivals',
     media: {
       type: 'image',
@@ -47,7 +47,7 @@ CategoriesProposition.defaultProps = {
     },
   }, {
     id: 2,
-    href: '#accessories',
+    href: '/category',
     title: 'Accessories',
     media: {
       type: 'image',
@@ -55,7 +55,7 @@ CategoriesProposition.defaultProps = {
     },
   }, {
     id: 3,
-    href: '#workspace',
+    href: '/category',
     title: 'Workspace',
     media: {
       type: 'image',

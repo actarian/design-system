@@ -43,11 +43,13 @@ const StyledAccordion = styled.div`
     justify-content: space-between;
     align-items: center;
     color: var(--color-neutral-900);
-
+    user-select: none;
+    /*
     & > span {
       margin: 0;
       font-size: 1.5em;
     }
+    */
   }
 
   .subtitle {

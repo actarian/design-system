@@ -15,14 +15,13 @@ export type ModalSubtitleProps = ComponentProps<Props, HTMLDivElement>;
 const StyledSubtitle = styled.div`
   font-weight: normal;
   display: inline-block;
+  padding: 1rem;
+  font-size: 0.875rem;
+  line-height: 1.5em;
   text-align: center;
   word-break: break-word;
   text-transform: uppercase;
   color: var(--color-primary-500);
-  font-size: 0.875rem;
-  line-height: 1.5em;
-  padding: 0;
-  margin: 0;
 `;
 
 const ModalSubtitleComponent: React.FC<React.PropsWithChildren<ModalSubtitleProps | any>> = ({ className, children, ...props }: React.PropsWithChildren<ModalSubtitleProps> & typeof defaultProps) => { // !!! any

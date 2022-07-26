@@ -10,7 +10,7 @@ export type FlexRowProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 export const FlexRow = styled.div<FlexRowProps>`
   display: flex;
   align-items: center;
-  width: 100%;
+  // width: 100%;
   // flex-wrap: wrap;
   // margin: 0 auto;
   gap: 0.5rem;

@@ -15,14 +15,18 @@ type NativeAttrs = Omit<React.HTMLAttributes<any>, keyof Props>;
 export type AccordionGroupProps = Props & NativeAttrs;
 
 const StyledAccordionGroup = styled.div`
+  /*
   width: auto;
   height: auto;
   padding: 0 0.6rem;
   margin: 0;
+  */
 
+  /*
   & > :global(div + div) {
     border-top: none;
   }
+  */
 `;
 
 const AccordionGroup: React.FC<React.PropsWithChildren<AccordionGroupProps>> = ({

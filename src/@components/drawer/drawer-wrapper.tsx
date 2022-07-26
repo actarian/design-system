@@ -38,9 +38,6 @@ const StyledWrapper = styled.div<{ transform: any }>`
   transform: ${props => props.transform.initial};
   transition: opacity, transform 400ms cubic-bezier(0.1, 0.6, 0.1, 1);
   font-size: 1em;
-  --modal-wrapper-padding-left: 1.3125rem;
-  --modal-wrapper-padding-right: 1.3125rem;
-  padding: 1.3125rem var(--modal-wrapper-padding-right) 1.3125rem var(--modal-wrapper-padding-left);
   margin: 0;
 
   &.top,

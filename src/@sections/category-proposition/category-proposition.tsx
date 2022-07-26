@@ -45,7 +45,7 @@ const CategoryProposition = ({ item }: CategoryPropositionProps) => {
 CategoryProposition.defaultProps = {
   item: {
     id: 1,
-    href: '#new-arrivals',
+    href: '/category',
     title: 'New Arrivals',
     media: {
       type: 'image',

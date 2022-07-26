@@ -61,8 +61,8 @@ export default function Product({ item, ...props }: Props) {
             <Container>
 
               <Breadcrumb marginBottom="1rem">
-                <Breadcrumb.Item>Men</Breadcrumb.Item>
-                <Breadcrumb.Item href="#clothing">Clothing</Breadcrumb.Item>
+                <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
+                <Breadcrumb.Item href="/category">Men</Breadcrumb.Item>
                 <Breadcrumb.Item>Basic Tee 6-Pack</Breadcrumb.Item>
               </Breadcrumb>
 

@@ -21,8 +21,6 @@ const StyledWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   // max-width: 100%;
-  margin: 0;
-  padding: 1rem;
   vertical-align: middle;
   overflow: hidden;
   outline: none;

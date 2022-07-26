@@ -13,12 +13,10 @@ export type ModalTitleProps = ComponentProps<Props, HTMLDivElement>;
 
 const StyledTitle = styled.h2`
   flex-shrink: 0;
-  margin: 0;
-  padding: 0;
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1rem;
+  padding: 1rem;
   // text-align: center;
   // line-height: 1.6;
   // font-weight: normal;

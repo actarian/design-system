@@ -38,37 +38,37 @@ const Footer = (props: FooterProps) => {
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8">Solutions</Text>
-              <Link href="#marketing"><Button as="a" type="eta">Marketing</Button></Link>
-              <Link href="#analytics"><Button as="a" type="eta">Analytics</Button></Link>
-              <Link href="#commerce"><Button as="a" type="eta">Commerce</Button></Link>
-              <Link href="#insights"><Button as="a" type="eta">Insights</Button></Link>
+              <Link href="#marketing"><Button variant="eta" as="a">Marketing</Button></Link>
+              <Link href="#analytics"><Button variant="eta" as="a">Analytics</Button></Link>
+              <Link href="#commerce"><Button variant="eta" as="a">Commerce</Button></Link>
+              <Link href="#insights"><Button variant="eta" as="a">Insights</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8">Support</Text>
-              <Link href="#pricing"><Button as="a" type="eta">Pricing</Button></Link>
-              <Link href="#documentation"><Button as="a" type="eta">Documentation</Button></Link>
-              <Link href="#guides"><Button as="a" type="eta">Guides</Button></Link>
-              <Link href="#api-status"><Button as="a" type="eta">API Status</Button></Link>
+              <Link href="#pricing"><Button variant="eta" as="a">Pricing</Button></Link>
+              <Link href="#documentation"><Button variant="eta" as="a">Documentation</Button></Link>
+              <Link href="#guides"><Button variant="eta" as="a">Guides</Button></Link>
+              <Link href="#api-status"><Button variant="eta" as="a">API Status</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8">Company</Text>
-              <Link href="#about"><Button as="a" type="eta">About</Button></Link>
-              <Link href="#blog"><Button as="a" type="eta">Blog</Button></Link>
-              <Link href="#jobs"><Button as="a" type="eta">Jobs</Button></Link>
-              <Link href="#press"><Button as="a" type="eta">Press</Button></Link>
-              <Link href="#partners"><Button as="a" type="eta">Partners</Button></Link>
+              <Link href="#about"><Button variant="eta" as="a">About</Button></Link>
+              <Link href="#blog"><Button variant="eta" as="a">Blog</Button></Link>
+              <Link href="#jobs"><Button variant="eta" as="a">Jobs</Button></Link>
+              <Link href="#press"><Button variant="eta" as="a">Press</Button></Link>
+              <Link href="#partners"><Button variant="eta" as="a">Partners</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8">Legal</Text>
-              <Link href="#claim"><Button as="a" type="eta">Claim</Button></Link>
-              <Link href="#privacy"><Button as="a" type="eta">Privacy</Button></Link>
-              <Link href="#terms"><Button as="a" type="eta">Terms</Button></Link>
+              <Link href="#claim"><Button variant="eta" as="a">Claim</Button></Link>
+              <Link href="#privacy"><Button variant="eta" as="a">Privacy</Button></Link>
+              <Link href="#terms"><Button variant="eta" as="a">Terms</Button></Link>
             </Nav.Col>
           </Grid>
         </Grid.Row>

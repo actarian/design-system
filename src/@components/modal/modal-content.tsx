@@ -16,10 +16,9 @@ export type ModalContentProps = ComponentCssResponsiveProps<Props, HTMLDivElemen
 
 const StyleContent = styled.div`
   position: relative;
-  text-align: left;
+  padding: 2rem 1rem;
   font-size: 1rem;
-  padding: 1.3125rem 1.3125rem 0.6625rem 1.3125rem;
-  margin: 0;
+  text-align: left;
 
   & > :global(*:first-child) {
     margin-top: 0;

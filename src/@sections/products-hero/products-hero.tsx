@@ -44,7 +44,7 @@ const ProductsHero = ({ items }: ProductsHeroProps) => {
 ProductsHero.defaultProps = {
   items: [{
     id: 1,
-    href: '#womens',
+    href: '/category',
     title: 'Women\'s',
     media: {
       type: 'image',
@@ -52,7 +52,7 @@ ProductsHero.defaultProps = {
     },
   }, {
     id: 2,
-    href: '#mens',
+    href: '/category',
     title: 'Men\'s',
     media: {
       type: 'image',
@@ -60,7 +60,7 @@ ProductsHero.defaultProps = {
     },
   }, {
     id: 3,
-    href: '#desk-accessories',
+    href: '/category',
     title: 'Desk accessories',
     media: {
       type: 'image',

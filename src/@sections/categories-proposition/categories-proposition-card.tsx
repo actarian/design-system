@@ -39,7 +39,7 @@ const CategoriesPropositionCard = ({ item, ...props }: CategoriesPropositionCard
 CategoriesPropositionCard.defaultProps = {
   item: {
     id: 1,
-    href: '#new-arrivals',
+    href: '/category',
     title: 'New Arrivals',
     media: {
       type: 'image',

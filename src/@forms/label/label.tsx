@@ -1,5 +1,6 @@
 import { Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
+import { getCssResponsive } from '@components/utils';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -12,8 +13,10 @@ const StyledLabel = styled(Text)`
   display: flex;
   align-items: center;
   width: 100%;
-  font-weight: 700;
+  // font-weight: 700;
   margin-bottom: 0.5rem;
+
+  ${props => getCssResponsive(props)}
 `;
 
 const Label = forwardRef<HTMLLabelElement, LabelProps>((props, ref) => (

@@ -1,8 +1,9 @@
-import { Button, Container, Flex, Nav, NavLink, Popover, Text } from '@components';
+import { Button, Container, Flex, Modal, Nav, NavLink, Popover, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { useDrawer, useScroll } from '@hooks';
-import { Hexagon, Menu, ShoppingCart, User } from '@icons';
+import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@icons';
 import { CartMini } from '@sections';
+import { useState } from 'react';
 
 import styled, { css } from 'styled-components';
 
@@ -55,10 +56,10 @@ export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
 const SubMenu = () => (
   <Nav.Col>
     <NavLink href="#link-1">
-      <Button as="a" type="eta">Link 1</Button>
+      <Button variant="eta" as="a">Link 1</Button>
     </NavLink>
     <NavLink href="#link-2">
-      <Button as="a" type="eta">Link 2</Button>
+      <Button variant="eta" as="a">Link 2</Button>
     </NavLink>
   </Nav.Col>
 )
@@ -66,6 +67,14 @@ const SubMenu = () => (
 const Header = (props: HeaderProps) => {
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+
+
+  const [showModal, setShowModal] = useState(false);
+  const onOpenModal = () => setShowModal(true);
+  const onCloseModal = (_: any) => {
+    setShowModal(false);
+  }
+
   /*
   const [showDrawer, setShowDrawer] = useState(false);
   const onOpenDrawer = () => setShowDrawer(true);
@@ -89,24 +98,35 @@ const Header = (props: HeaderProps) => {
           <Flex flex="1" justifyContent="center">
             <Nav.Row gap="3rem" display="none" displaySm="flex">
               <NavLink href="/products">
-                <Button as="a" type="eta">Products</Button>
+                <Button variant="eta" as="a">Products</Button>
               </NavLink>
               <NavLink href="#magazine">
-                <Button as="a" type="eta">Magazine</Button>
+                <Button variant="eta" as="a">Magazine</Button>
               </NavLink>
               <NavLink href="/contacts">
-                <Button as="a" type="eta">Contacts</Button>
+                <Button variant="eta" as="a">Contacts</Button>
               </NavLink>
               <Popover content={SubMenu}>
-                <Button as="a" type="eta">More</Button>
+                <Button variant="eta" as="a">More</Button>
               </Popover>
             </Nav.Row>
           </Flex>
           <Flex gap="1rem">
-            <NavLink href="#auth">
-              <Button as="a" display='none' displaySm='block'><User width="2rem" height="2rem" /></Button>
-            </NavLink>
-            <Button as="a" onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
+            <Button display='none' displaySm='block' onClick={() => onOpenModal()}><User width="2rem" height="2rem" /></Button>
+
+            <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
+              <Modal.Title>
+                <Text size="7" fontWeight="700">Foreign Market detected</Text>
+              </Modal.Title>
+              <Modal.Subtitle>Attention Please.</Modal.Subtitle>
+              <Modal.Content>
+                <p>You seem to be browsing a different market than yours.</p>
+              </Modal.Content>
+              <Modal.Button variant="default" passive onClick={onCloseModal}>Proceed</Modal.Button>
+              <Modal.Button variant="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
+            </Modal>
+
+            <Button onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
             <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
             <NavLink href="#menu">
               <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
