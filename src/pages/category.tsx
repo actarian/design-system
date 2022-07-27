@@ -1,5 +1,5 @@
-import { Breadcrumb, Button, Container, Flex, Grid, Layout, Media, Nav, Page, Popover, Section, Text } from '@components';
-import { useDrawer } from '@hooks';
+import { Breadcrumb, Button, Container, Flex, Grid, Layout, Media, Nav, NavLink, Page, Popover, Section, Text } from '@components';
+import { useDrawer, useScrollTo } from '@hooks';
 import { ChevronDown, Filter } from '@icons';
 import { CategoryProposition, Footer, Header, ProductsIncentive } from '@sections';
 import { ProductsRelatedProps } from '@sections/products-related/products-related';
@@ -28,6 +28,7 @@ const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
 
 export default function Category({ items }: ProductsRelatedProps) {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
+  const scrollTo = useScrollTo();
   return (
     <>
       <Head>
@@ -61,8 +62,10 @@ export default function Category({ items }: ProductsRelatedProps) {
                     <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
                   </Breadcrumb>
                   <Text size="2" fontWeight="700" marginBottom="1rem">Summer styles are finally here</Text>
-                  <Text size="7" marginBottom="1rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.</Text>
-                  <Button variant="alfa" size="lg">Shop Collection</Button>
+                  <Text size="7" marginBottom="2rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.</Text>
+                  <NavLink href="#serp" passHref>
+                    <Button variant="alfa" onClick={scrollTo}>Shop Collection</Button>
+                  </NavLink>
                 </Grid>
                 <Grid md={6}>
                   <Grid.Row columns="3" columnGap="1rem" rowGap="1rem">
@@ -93,7 +96,7 @@ export default function Category({ items }: ProductsRelatedProps) {
             </Container>
           </Section>
 
-          <Section padding="3rem 0">
+          <Section padding="3rem 0" id="serp">
             <Container>
               <Flex.Row justifyContent="space-between" alignItems="flex-end" paddingBottom="1rem" borderBottom="1px solid var(--color-neutral-200)" marginBottom="1.5rem">
                 <Text size="5" fontWeight="700">New Arrivals</Text>

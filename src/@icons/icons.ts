@@ -278,6 +278,7 @@ export { default as Volume2 } from './components/volume-2';
 export { default as VolumeX } from './components/volume-x';
 export { default as Volume } from './components/volume';
 export { default as Watch } from './components/watch';
+export { default as Websolute } from './components/websolute';
 export { default as WifiOff } from './components/wifi-off';
 export { default as Wifi } from './components/wifi';
 export { default as Wind } from './components/wind';
@@ -567,6 +568,7 @@ export const Icons = {
   VolumeX: lazy(() => import('./components/volume-x')),
   Volume: lazy(() => import('./components/volume')),
   Watch: lazy(() => import('./components/watch')),
+  Websolute: lazy(() => import('./components/websolute')),
   WifiOff: lazy(() => import('./components/wifi-off')),
   Wifi: lazy(() => import('./components/wifi')),
   Wind: lazy(() => import('./components/wind')),

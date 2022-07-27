@@ -8,6 +8,7 @@ export { useCurrency } from './useCurrency/useCurrency';
 export { useCurrentState } from './useCurrentState/useCurrentState';
 export { useDomObserver } from './useDomObserver/useDomObserver';
 export { useDrawer } from './useDrawer/useDrawer';
+export { useElementSize } from './useElementSize/useElementSize';
 export { useEventListener } from './useEventListener/useEventListener';
 export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
 export { KeyCode, useKeyboard } from './useKeyboard/useKeyboard';
@@ -18,8 +19,10 @@ export { usePrevious } from './usePrevious/usePrevious';
 export { useRealSize } from './useRealSize/useRealSize';
 export { useResize } from './useResize/useResize';
 export { useScroll } from './useScroll/useScroll';
+export { useScrollTo } from './useScrollTo/useScrollTo';
 export { useSSR } from './useSSR/useSSR';
 export { useSwiperIndex } from './useSwiperIndex/useSwiperIndex';
 export { useUI } from './useUI/useUI';
 export { useWarning } from './useWarning/useWarning';
 export { useWindowSize } from './useWindowSize/useWindowSize';
+

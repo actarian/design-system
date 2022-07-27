@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as Category } from './category';
+
+<Meta
+  title="Pages / Category"
+  component={Category}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# Category
+
+A component to display a `Category`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/pages/category.tsx)
+
+## Imports
+
+```js
+import { Category } from '@design-system';
+```
+
+## Example
+
+A basic example of `Category`.
+
+<Canvas>
+  <Story name="Category">
+    <Category />
+  </Story>
+</Canvas>

@@ -13,7 +13,7 @@ export type ProductsHeroProps = ComponentProps<Props, HTMLDivElement>;
 const ProductsHero = ({ items }: ProductsHeroProps) => {
   return (
     <Section padding="0">
-      <Card justifyContent="center" height="100vh">
+      <Card justifyContent="center" height="90vh">
         <Card.Background>
           <Media overlay={0.5}>
             <img draggable={false} alt="Products" src="https://unsplash.com/photos/FV3GConVSss/download?force=true&w=1600" />

@@ -1,6 +1,6 @@
 import { Button, Container, Flex, Grid, Nav, Text } from '@components';
 import { ComponentProps } from '@components/types';
-import { Facebook, Github, Hexagon, Instagram, Linkedin, Twitter } from '@icons';
+import { Facebook, Github, Hexagon, Instagram, Linkedin, Twitter, Websolute } from '@icons';
 import Link from 'next/link';
 
 import styled from 'styled-components';
@@ -37,7 +37,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text size="8">Solutions</Text>
+              <Text size="8" color="var(--color-neutral-500)">Solutions</Text>
               <Link href="#marketing"><Button variant="eta" as="a">Marketing</Button></Link>
               <Link href="#analytics"><Button variant="eta" as="a">Analytics</Button></Link>
               <Link href="#commerce"><Button variant="eta" as="a">Commerce</Button></Link>
@@ -46,7 +46,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text size="8">Support</Text>
+              <Text size="8" color="var(--color-neutral-500)">Support</Text>
               <Link href="#pricing"><Button variant="eta" as="a">Pricing</Button></Link>
               <Link href="#documentation"><Button variant="eta" as="a">Documentation</Button></Link>
               <Link href="#guides"><Button variant="eta" as="a">Guides</Button></Link>
@@ -55,7 +55,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text size="8">Company</Text>
+              <Text size="8" color="var(--color-neutral-500)">Company</Text>
               <Link href="#about"><Button variant="eta" as="a">About</Button></Link>
               <Link href="#blog"><Button variant="eta" as="a">Blog</Button></Link>
               <Link href="#jobs"><Button variant="eta" as="a">Jobs</Button></Link>
@@ -65,7 +65,7 @@ const Footer = (props: FooterProps) => {
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-              <Text size="8">Legal</Text>
+              <Text size="8" color="var(--color-neutral-500)">Legal</Text>
               <Link href="#claim"><Button variant="eta" as="a">Claim</Button></Link>
               <Link href="#privacy"><Button variant="eta" as="a">Privacy</Button></Link>
               <Link href="#terms"><Button variant="eta" as="a">Terms</Button></Link>
@@ -74,7 +74,10 @@ const Footer = (props: FooterProps) => {
         </Grid.Row>
         <Grid.Row>
           <Grid paddingTop="1rem">
-            <Text size="9">©{getYear()} websolute spa • P.I. 02063520411, Capitale sociale Eur 194.084,34 i.v., REA PU</Text>
+            <Flex.Row justifyContent="space-between">
+              <Text size="10" color="var(--color-neutral-500)">©{getYear()} websolute spa - PI 02063520411 - Capitale sociale Eur 194.084,34 i.v., REA PU</Text>
+              <Link href="https://www.websolute.com" target="_blank"><Button as="a"><Websolute /></Button></Link>
+            </Flex.Row>
           </Grid>
         </Grid.Row>
       </Container.Fluid>

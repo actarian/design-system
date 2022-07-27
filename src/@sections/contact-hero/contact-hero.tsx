@@ -1,7 +1,7 @@
 import { Button, Card, Container, Flex, Grid, NavLink, Section, Text, Tooltip } from '@components';
 import { ComponentProps } from '@components/types';
+import { useScrollTo } from '@hooks';
 import { Search, Send } from '@icons';
-import { animate } from 'framer-motion';
 
 type Props = {
   item: ContactHeroItem,
@@ -20,49 +20,7 @@ export type ContactHeroItem = {
 export type ContactHeroProps = ComponentProps<Props, HTMLDivElement>;
 
 const ContactHero = ({ item }: ContactHeroProps) => {
-
-  // The handler to smoothly scroll the element into view
-  const scrollToHash = (event: React.MouseEvent<HTMLElement>) => {
-    if (typeof window !== 'undefined') {
-      const href = event.currentTarget.getAttribute('href');
-      if (href?.indexOf('#')) {
-        const hashId = `#${href.split('#')[1]}`;
-        // console.log('NavLink.onClick', event.currentTarget.getAttribute('href'), hashId);
-        // Get the hash from the url
-        // const hashId = window.location.hash;
-        if (hashId) {
-          // Use the hash to find the first element with that id
-          const element = document.querySelector(hashId);
-          // console.log('NavLink.element', element);
-          if (element) {
-            const rect = element.getBoundingClientRect();
-            // console.log(rect);
-            const from = window.scrollY;
-            const to = window.scrollY + (rect.top - window.scrollY);
-            // const to = window.scrollY + ((rect.top - window.innerHeight * 0.25) - window.scrollY);
-            const duration = Math.abs((to - from) / 2000);
-            // console.log(from, to, duration);
-            animate(from, to, { duration, onUpdate: v => window.scrollTo(0, v) });
-            /*
-            console.log(window.scrollY);
-            setTimeout(() => {
-              console.log(window.scrollY);
-            }, 100);
-            */
-            /*
-            // Smooth scroll to that elment
-            element.scrollIntoView({
-              behavior: 'smooth',
-              block: 'center',
-              inline: 'nearest',
-            });
-            */
-          }
-        }
-      }
-    }
-  }
-
+  const scrollTo = useScrollTo();
   return (
     <Section>
       <Container.Fluid>
@@ -84,7 +42,7 @@ const ContactHero = ({ item }: ContactHeroProps) => {
               <Flex.Responsive>
                 <Button variant="alfa"><span>Search agents</span> <Search /></Button>
                 <NavLink href="#contact-request" passHref>
-                  <Button variant="beta" onClick={scrollToHash}><span>Contact Us</span> <Send /></Button>
+                  <Button variant="beta" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>
                 </NavLink>
               </Flex.Responsive>
             </Card.Content>
