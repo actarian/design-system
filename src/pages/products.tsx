@@ -14,7 +14,7 @@ export default function Products() {
       <Layout>
         <Page>
 
-          <Header sticky />
+          <Header fixed />
 
           <ProductsHero />
 

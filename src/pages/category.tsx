@@ -8,9 +8,10 @@ import ProductsSearchFilters from '@sections/products-search/products-search-fil
 import ProductsSearchFiltersModal from '@sections/products-search/products-search-filters-modal';
 import { motion } from 'framer-motion';
 import Head from 'next/head';
+import { ReactNode } from 'react';
 
 const SortMenu = () => (
-  <Nav.Col>
+  <Nav.Col minWidth="150px">
     <Button variant="eta" as="a">Most Popular</Button>
     <Button variant="eta" as="a">Best Rating</Button>
     <Button variant="eta" as="a">Newest</Button>
@@ -19,10 +20,11 @@ const SortMenu = () => (
   </Nav.Col>
 )
 
-const adiv = <motion.div
-  animate={{ rotate: 180 }}
-  transition={{ repeat: Infinity, repeatDelay: 1 }}
-/>
+const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
+  initial={{ position: 'absolute', width: '100%', height: '100vh', top: '-50vh', y: 0 }}
+  animate={{ y: '50vh' }}
+  transition={{ ease: 'linear', duration: 4, repeat: Infinity, repeatDelay: 0 }}
+>{children}</motion.div>);
 
 export default function Category({ items }: ProductsRelatedProps) {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
@@ -39,27 +41,31 @@ export default function Category({ items }: ProductsRelatedProps) {
 
           <Header sticky />
 
-          <Section>
-            <Container>
-
-              <Breadcrumb marginBottom="1rem">
-                <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
-                <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
-              </Breadcrumb>
-
-            </Container>
-          </Section>
+          {false &&
+            <Section borderBottom="1px solid var(--color-neutral-200)">
+              <Container>
+                <Breadcrumb>
+                  <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
+                  <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
+                </Breadcrumb>
+              </Container>
+            </Section>
+          }
 
           <Section overflow="hidden">
             <Container padding="3rem 0">
               <Grid.Row>
                 <Grid md={6}>
+                  <Breadcrumb marginBottom="0.5rem">
+                    <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
+                    <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
+                  </Breadcrumb>
                   <Text size="2" fontWeight="700" marginBottom="1rem">Summer styles are finally here</Text>
                   <Text size="7" marginBottom="1rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.</Text>
                   <Button variant="alfa" size="lg">Shop Collection</Button>
                 </Grid>
-                <Grid md={6} position="relative">
-                  <Grid.Row as={adiv.type} columns="3" columnGap="1rem" rowGap="1rem" position="absolute">
+                <Grid md={6}>
+                  <Grid.Row columns="3" columnGap="1rem" rowGap="1rem">
                     <Media rounded>
                       <img src="/new-arrivals/01.jpg" />
                     </Media>
@@ -78,7 +84,7 @@ export default function Category({ items }: ProductsRelatedProps) {
                     <Media rounded>
                       <img src="/new-arrivals/06.jpg" />
                     </Media>
-                    <Media rounded>
+                    <Media rounded display="none">
                       <img src="/new-arrivals/07.jpg" />
                     </Media>
                   </Grid.Row>

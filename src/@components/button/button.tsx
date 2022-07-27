@@ -5,6 +5,17 @@ import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
 import { CssButtonAlfa, CssButtonBeta, CssButtonCircle, CssButtonDefault, CssButtonDelta, CssButtonEpsilon, CssButtonEta, CssButtonGamma, CssButtonZeta, CssDefault } from './button.css';
 
+/*
+primary
+secondary
+outline
+ghost
+nav
+link
+underline
+circle
+*/
+
 const variants: Variants = {
   default: CssButtonDefault,
   alfa: CssButtonAlfa,

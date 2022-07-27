@@ -36,7 +36,7 @@ const CartMini = ({ visible, onClose }: CartMiniProps) => {
         <Divider>{items.length} items found</Divider>
       </Drawer.Subtitle>
       <Drawer.Content flex="1" display="flex" width="100vw" maxWidth="400px">
-        <Flex.Col justifyContent="space-between" paddingTop="3rem">
+        <Flex.Col justifyContent="space-between">
           <Flex.Col flex="1">
             {items && items.map((item, i) =>
               <CartMiniItem key={i} item={item} />
