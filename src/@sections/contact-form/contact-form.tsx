@@ -19,14 +19,14 @@ const ContactForm = (props: ContactFormProps) => {
       <Grid.Row rowGap='1rem'>
         <Grid md={6}>
           <Field>
-            <Label>First name</Label>
-            <Input placeholder="First name" onChange={onChange} />
+            <Label>Name</Label>
+            <Input placeholder="Name" onChange={onChange} />
           </Field>
         </Grid>
         <Grid md={6}>
           <Field>
-            <Label>Last name</Label>
-            <Input placeholder="Last name" />
+            <Label>Surname</Label>
+            <Input placeholder="Surname" />
           </Field>
         </Grid>
         <Grid md={6}>
@@ -97,7 +97,7 @@ const ContactForm = (props: ContactFormProps) => {
         </Grid>
         <Grid>
           <Flex.Row justifyContent="center">
-            <Button variant="alfa" size="lg"><span>Submit</span> <Send /></Button>
+            <Button variant="primary" size="lg"><span>Submit</span> <Send /></Button>
           </Flex.Row>
         </Grid>
       </Grid.Row>

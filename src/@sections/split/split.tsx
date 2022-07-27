@@ -34,7 +34,7 @@ const Split = ({ item }: SplitProps) => {
                 <Text size="10" marginBottom="0.5rem" textTransform="uppercase">Award winning support</Text>
                 <Text size="3" marginBottom="0.5rem">We're here to help</Text>
                 <Text size="7" marginBottom="3rem" maxWidthSm="40ch">And even if he's a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.</Text>
-                <Button variant="beta"><span>Visit the help center</span> <PhoneCall /></Button>
+                <Button variant="secondary"><span>Visit the help center</span> <PhoneCall /></Button>
               </Card.Content>
             </Grid>
             <Grid sm={6}></Grid>

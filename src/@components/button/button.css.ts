@@ -110,6 +110,29 @@ export const CssAfter = css`
 }
 `;
 
+export const CssAfterInverted = css`
+&:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scale(1, 1);
+  transform-origin: left;
+  transition: transform ease 200ms;
+}
+
+&:hover,
+&.active {
+  &:after {
+    transform: scale(0, 1);
+  }
+}
+`;
+
 export const CssButtonDefault = css`
   padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
@@ -125,7 +148,7 @@ export const CssButtonDefault = css`
   ${CssSvg}
 `;
 
-export const CssButtonAlfa = css`
+export const CssButtonPrimary = css`
   padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   background: var(--color-primary-500);
@@ -146,7 +169,7 @@ export const CssButtonAlfa = css`
   ${CssResponsive}
 `;
 
-export const CssButtonBeta = css`
+export const CssButtonSecondary = css`
   padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
   background: var(--color-neutral-200);
@@ -166,7 +189,49 @@ export const CssButtonBeta = css`
   ${CssResponsive}
 `;
 
-export const CssButtonGamma = css`
+export const CssButtonOutline = css`
+  padding: 0.8em 1.6em;
+  border-radius: var(--button-border-radius);
+  background: transparent;
+  border: 2px solid var(--color-primary-500);
+  color: var(--color-primary-500);
+
+  &:hover,
+  &.active {
+    background: transparent;
+    border-color: var(--color-primary-600);
+    color: var(--color-primary-600);
+  }
+
+  ${CssSvg}
+  ${CssFocus}
+  ${CssActive}
+  ${CssDisabled}
+  ${CssResponsive}
+`;
+
+export const CssButtonGhost = css`
+  padding: 0.8em 1.6em;
+  border-radius: var(--button-border-radius);
+  background: transparent;
+  border: 2px solid transparent;
+  color: var(--color-neutral-700);
+
+  &:hover,
+  &.active {
+    background: transparent;
+    border-color: var(--color-neutral-300);
+    color: var(--color-neutral-900);
+  }
+
+  ${CssSvg}
+  ${CssFocus}
+  ${CssActive}
+  ${CssDisabled}
+  ${CssResponsive}
+`;
+
+export const CssButtonLink = css`
   position: relative;
   line-height: 1.5;
   color: var(--color-primary-400);
@@ -179,6 +244,28 @@ export const CssButtonGamma = css`
   ${CssAfter}
   ${CssSvg}
 `;
+
+export const CssButtonUnderline = css`
+  position: relative;
+  line-height: 1.5;
+  color: var(--color-primary-400);
+
+  &:hover,
+  &.active {
+    color: var(--color-primary-500);
+  }
+
+  ${CssAfterInverted}
+  ${CssSvg}
+`;
+
+export const CssButtonNav = css`
+  position: relative;
+  line-height: 1.5;
+
+  ${CssAfter}
+  ${CssSvg}
+  `;
 
 export const CssButtonDelta = css`
   padding: 0.8em 1.6em;
@@ -228,15 +315,8 @@ export const CssButtonZeta = css`
   ${CssSvg}
 `;
 
-export const CssButtonEta = css`
-  position: relative;
-  line-height: 1.5;
-
-  ${CssAfter}
-  ${CssSvg}
-  `;
-
 export const CssButtonCircle = css`
+  justify-content: center;
   width: 3em;
   height: 3em;
   border-radius: 50%;

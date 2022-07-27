@@ -1,23 +1,15 @@
-import { ModalProps } from '@components/modal/modal';
-import { Dispatch, MutableRefObject, SetStateAction } from 'react';
-import { useCurrentState } from '../useCurrentState/useCurrentState';
+import { IUIStateValue, useUI } from '@hooks/useUI/useUI';
 
-export type ModalHooksBindings = Pick<ModalProps, 'visible' | 'onClose'>;
-
-export function useModal(initialVisible: boolean = false): {
-  visible: boolean,
-  setVisible: Dispatch<SetStateAction<boolean>>,
-  currentRef: MutableRefObject<boolean>,
-  bindings: ModalHooksBindings
-} {
-  const [visible, setVisible, currentRef] = useCurrentState<boolean>(initialVisible);
-  return {
-    visible,
-    setVisible,
-    currentRef,
-    bindings: {
-      visible,
-      onClose: () => setVisible(false),
-    }
-  };
+export function useModal(): [modal: IUIStateValue, open: (value?: string) => void, close: () => void] {
+  const [modal, reduceUI] = useUI(state => [state.modal, state.reduce]);
+  function onSetModal(value?: string | number) {
+    reduceUI((state) => ({ modal: value }));
+  }
+  function onOpenModal(value?: string | number) {
+    return onSetModal(value);
+  }
+  function onCloseModal() {
+    return onSetModal();
+  }
+  return [modal, onOpenModal, onCloseModal];
 }

@@ -78,7 +78,7 @@ export default function SwiperHero(props: SwiperHeroProps) {
                   <Text size="6" marginBottom="1rem">{item.abstract}</Text>
                   {item.link &&
                     <Link href={item.link.href}>
-                      <Button variant="gamma" as="a"><Text>{item.link.label}</Text> <ArrowRight /></Button>
+                      <Button variant="link" as="a"><Text>{item.link.label}</Text> <ArrowRight /></Button>
                     </Link>}
                 </Grid>
               </Grid.Row>

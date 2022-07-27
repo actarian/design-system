@@ -41,21 +41,21 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
         <Nav.Col gap="0" paddingTop="2rem">
           {item.phoneNumber && <>
             <Link href={getTelLink(item.phoneNumber)}>
-              <Button variant="gamma">
+              <Button variant="link">
                 <Phone /> <span>{item.phoneNumber}</span>
               </Button>
             </Link>
           </>}
           {item.faxNumber && <>
             <Link href={getFaxLink(item.faxNumber)}>
-              <Button variant="gamma">
+              <Button variant="link">
                 <Phone /> <span>{item.faxNumber}</span>
               </Button>
             </Link>
           </>}
           {item.contactEmail && <>
             <Link href={getMailToLink(item.contactEmail)}>
-              <Button variant="gamma">
+              <Button variant="link">
                 <Phone /> <span>{item.contactEmail}</span>
               </Button>
             </Link>
@@ -65,7 +65,7 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
           <Box paddingTop="1rem">
             <Text size="10" fontWeight="700">Press requests</Text>
             <Link href={getMailToLink(item.pressEmail)}>
-              <Button variant="gamma">
+              <Button variant="link">
                 <Phone /> <span>{item.pressEmail}</span>
               </Button>
             </Link>

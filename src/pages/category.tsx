@@ -12,11 +12,11 @@ import { ReactNode } from 'react';
 
 const SortMenu = () => (
   <Nav.Col minWidth="150px">
-    <Button variant="eta" as="a">Most Popular</Button>
-    <Button variant="eta" as="a">Best Rating</Button>
-    <Button variant="eta" as="a">Newest</Button>
-    <Button variant="eta" as="a">Price: Low to High</Button>
-    <Button variant="eta" as="a">Price: High to Low</Button>
+    <Button variant="nav" as="a">Most Popular</Button>
+    <Button variant="nav" as="a">Best Rating</Button>
+    <Button variant="nav" as="a">Newest</Button>
+    <Button variant="nav" as="a">Price: Low to High</Button>
+    <Button variant="nav" as="a">Price: High to Low</Button>
   </Nav.Col>
 )
 
@@ -64,7 +64,7 @@ export default function Category({ items }: ProductsRelatedProps) {
                   <Text size="2" fontWeight="700" marginBottom="1rem">Summer styles are finally here</Text>
                   <Text size="7" marginBottom="2rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.</Text>
                   <NavLink href="#serp" passHref>
-                    <Button variant="alfa" onClick={scrollTo}>Shop Collection</Button>
+                    <Button variant="primary" onClick={scrollTo}>Shop Collection</Button>
                   </NavLink>
                 </Grid>
                 <Grid md={6}>
@@ -102,9 +102,9 @@ export default function Category({ items }: ProductsRelatedProps) {
                 <Text size="5" fontWeight="700">New Arrivals</Text>
                 <Flex.Row justifyContent="flex-end">
                   <Popover content={SortMenu}>
-                    <Button variant="eta"><span>Sort</span> <ChevronDown /></Button>
+                    <Button variant="nav"><span>Sort</span> <ChevronDown /></Button>
                   </Popover>
-                  <Button variant="eta" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><Filter /></Button>
+                  <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><Filter /></Button>
                   <ProductsSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
                 </Flex.Row>
               </Flex.Row>

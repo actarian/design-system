@@ -11,11 +11,11 @@ const ProductsSearchFilters = ({ ...props }: ProductsSearchFiltersProps) => {
   return (
     <>
       <Nav.Col marginBottom="2rem" fontSize="0.9rem">
-        <Button variant="eta" as="a">Totes</Button>
-        <Button variant="eta" as="a">Backpacks</Button>
-        <Button variant="eta" as="a">Travel Bags</Button>
-        <Button variant="eta" as="a">Hip Bags</Button>
-        <Button variant="eta" as="a">Laptop Sleeves</Button>
+        <Button variant="nav" as="a">Totes</Button>
+        <Button variant="nav" as="a">Backpacks</Button>
+        <Button variant="nav" as="a">Travel Bags</Button>
+        <Button variant="nav" as="a">Hip Bags</Button>
+        <Button variant="nav" as="a">Laptop Sleeves</Button>
       </Nav.Col>
       <Accordion.Group>
         <Accordion title="Color">

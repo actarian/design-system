@@ -13,9 +13,9 @@ describe('Button', () => {
     const wrapper = mount(
       <div>
         <Button variant="default" />
-        <Button variant="alfa" />
-        <Button variant="beta" />
-        <Button variant="gamma" />
+        <Button variant="primary" />
+        <Button variant="secondary" />
+        <Button variant="link" />
         <Button variant="circle" />
       </div>,
     )

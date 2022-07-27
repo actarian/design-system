@@ -52,7 +52,7 @@ const ProductsRelatedCard = ({ item, ...props }: ProductsRelatedCardProps) => {
           </Link>
         </Flex.Row>
         <Text size="9" marginBottom="2rem">{item.abstract}</Text>
-        <Button variant="beta" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
+        <Button variant="secondary" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
       </Card.Content>
     </Card>
   )

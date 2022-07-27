@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 import { css, FlattenInterpolation } from 'styled-components';
 import { CssMap, CssResponsiveProps } from './css';
-import { GridProps, ThemeProps, Variant } from './types';
+import { GridProps, ThemeProps } from './types';
 
 export function setClass<T>(className: string) {
   return (props: T) => {
@@ -129,7 +129,7 @@ export function eachMedia(props: ThemeProps, callback: (key: string) => string |
   }
 }
 
-export function getVariant(variants: { [key in Variant]?: FlattenInterpolation<any> }, type?: Variant) {
+export function getVariant<T extends string>(variants: { [key in T]?: FlattenInterpolation<any> }, type?: T) {
   return (type && variants[type]) ? variants[type] : '';
 }
 

@@ -30,7 +30,7 @@ const BlogMore = ({ items }: BlogMoreProps) => {
                 </Media>
                 <Card.Content>
                   <Link href="#we-choose-to-go-to-the-moon">
-                    <Button variant="gamma" as="a" marginBottom="1rem">
+                    <Button variant="link" as="a" marginBottom="1rem">
                       <Text size="5">We choose to go to the moon.</Text>
                     </Button>
                   </Link>
@@ -54,7 +54,7 @@ const BlogMore = ({ items }: BlogMoreProps) => {
                 </Media>
                 <Card.Content>
                   <Link href="#the-view-of-the-earth-from-the-moon">
-                    <Button variant="gamma" as="a" marginBottom="1rem">
+                    <Button variant="link" as="a" marginBottom="1rem">
                       <Text size="5">The earth from the moon.</Text>
                     </Button>
                   </Link>

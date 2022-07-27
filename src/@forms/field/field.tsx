@@ -12,6 +12,11 @@ const StyledField = styled.div<FieldProps>`
   display: flex;
   flex-direction: column;
   margin-bottom: 0.5rem;
+
+  label {
+    font-weight: 500;
+  }
+
   ${props => getCssResponsive(props)}
 `;
 

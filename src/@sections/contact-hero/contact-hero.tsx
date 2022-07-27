@@ -40,9 +40,9 @@ const ContactHero = ({ item }: ContactHeroProps) => {
                 </Tooltip> <span>production technologies.</span>
               </Text>
               <Flex.Responsive>
-                <Button variant="alfa"><span>Search agents</span> <Search /></Button>
+                <Button variant="primary"><span>Search agents</span> <Search /></Button>
                 <NavLink href="#contact-request" passHref>
-                  <Button variant="beta" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>
+                  <Button variant="secondary" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>
                 </NavLink>
               </Flex.Responsive>
             </Card.Content>

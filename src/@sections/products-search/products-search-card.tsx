@@ -51,7 +51,7 @@ const ProductsRelatedCard = ({ item, ...props }: ProductsRelatedCardProps) => {
         <Text size="8" fontWeight="600" marginBottom="1rem">{price}</Text>
         {false && <>
           <Text size="10" marginBottom="2rem">{item.abstract}</Text>
-          <Button variant="beta" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
+          <Button variant="secondary" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
         </>}
       </Card.Content>
     </Card>

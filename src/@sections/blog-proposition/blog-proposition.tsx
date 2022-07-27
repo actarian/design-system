@@ -28,7 +28,7 @@ const BlogProposition = (props: BlogPropositionProps) => {
               </Flex>
               {false &&
                 <Link href="#blog">
-                  <Button variant="gamma" as="a"><Text>Read more</Text> <ArrowRight /></Button>
+                  <Button variant="link" as="a"><Text>Read more</Text> <ArrowRight /></Button>
                 </Link>
               }
             </Flex.Row>

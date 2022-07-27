@@ -4,6 +4,8 @@ import { CssResponsiveProps } from './css';
 
 export type Variant = 'default' | 'circle' | 'alfa' | 'beta' | 'gamma' | 'delta' | 'epsilon' | 'zeta' | 'eta' | 'theta' | 'iota' | 'kappa' | 'lambda' | 'mu' | 'nu' | 'xi' | 'omicron' | 'pi' | 'rho' | 'sigma' | 'tau' | 'upsilon' | 'phi' | 'psi' | 'chi' | 'omega';
 
+export type VariantOf<T extends string> = { [key in T]?: FlattenInterpolation<any> };
+
 export type Variants = { [key in Variant]?: FlattenInterpolation<any> };
 
 export type TextVariant = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'h7' | 'h8' | 'default' | 'small' | 'smaller' | 'smallest';

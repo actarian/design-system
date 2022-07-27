@@ -17,7 +17,7 @@ const CategoriesProposition = ({ items }: CategoriesPropositionProps) => {
         <Flex.Row justifyContent="space-between" marginBottom="1rem">
           <Text size="7" fontWeight="700">Shop by category</Text>
           <Link href="#categories">
-            <Button variant="gamma"><span>Browse all categories</span> <ArrowRight /></Button>
+            <Button variant="link"><span>Browse all categories</span> <ArrowRight /></Button>
           </Link>
         </Flex.Row>
         <Grid.Row columnGap="1rem" rowGap="1rem">

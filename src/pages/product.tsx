@@ -163,7 +163,7 @@ export default function Product({ item, ...props }: Props) {
                     <RadioOption value="2XL">2XL</RadioOption>
                     <RadioOption value="3XL">3XL</RadioOption>
                   </RadioOption.Group>
-                  <Button variant="alfa" type="submit" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
+                  <Button variant="primary" type="submit" width="100%" justifyContent="center" onClick={onAddToCart}>Add to bag</Button>
                 </Grid>
               </Grid.Row>
             </Container>

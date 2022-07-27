@@ -38,37 +38,37 @@ const Footer = (props: FooterProps) => {
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Solutions</Text>
-              <Link href="#marketing"><Button variant="eta" as="a">Marketing</Button></Link>
-              <Link href="#analytics"><Button variant="eta" as="a">Analytics</Button></Link>
-              <Link href="#commerce"><Button variant="eta" as="a">Commerce</Button></Link>
-              <Link href="#insights"><Button variant="eta" as="a">Insights</Button></Link>
+              <Link href="#marketing"><Button variant="nav" as="a">Marketing</Button></Link>
+              <Link href="#analytics"><Button variant="nav" as="a">Analytics</Button></Link>
+              <Link href="#commerce"><Button variant="nav" as="a">Commerce</Button></Link>
+              <Link href="#insights"><Button variant="nav" as="a">Insights</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Support</Text>
-              <Link href="#pricing"><Button variant="eta" as="a">Pricing</Button></Link>
-              <Link href="#documentation"><Button variant="eta" as="a">Documentation</Button></Link>
-              <Link href="#guides"><Button variant="eta" as="a">Guides</Button></Link>
-              <Link href="#api-status"><Button variant="eta" as="a">API Status</Button></Link>
+              <Link href="#pricing"><Button variant="nav" as="a">Pricing</Button></Link>
+              <Link href="#documentation"><Button variant="nav" as="a">Documentation</Button></Link>
+              <Link href="#guides"><Button variant="nav" as="a">Guides</Button></Link>
+              <Link href="#api-status"><Button variant="nav" as="a">API Status</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Company</Text>
-              <Link href="#about"><Button variant="eta" as="a">About</Button></Link>
-              <Link href="#blog"><Button variant="eta" as="a">Blog</Button></Link>
-              <Link href="#jobs"><Button variant="eta" as="a">Jobs</Button></Link>
-              <Link href="#press"><Button variant="eta" as="a">Press</Button></Link>
-              <Link href="#partners"><Button variant="eta" as="a">Partners</Button></Link>
+              <Link href="#about"><Button variant="nav" as="a">About</Button></Link>
+              <Link href="#blog"><Button variant="nav" as="a">Blog</Button></Link>
+              <Link href="#jobs"><Button variant="nav" as="a">Jobs</Button></Link>
+              <Link href="#press"><Button variant="nav" as="a">Press</Button></Link>
+              <Link href="#partners"><Button variant="nav" as="a">Partners</Button></Link>
             </Nav.Col>
           </Grid>
           <Grid xs={6} sm={3} md={2}>
             <Nav.Col marginBottom="2rem" fontSize="0.9rem">
               <Text size="8" color="var(--color-neutral-500)">Legal</Text>
-              <Link href="#claim"><Button variant="eta" as="a">Claim</Button></Link>
-              <Link href="#privacy"><Button variant="eta" as="a">Privacy</Button></Link>
-              <Link href="#terms"><Button variant="eta" as="a">Terms</Button></Link>
+              <Link href="#claim"><Button variant="nav" as="a">Claim</Button></Link>
+              <Link href="#privacy"><Button variant="nav" as="a">Privacy</Button></Link>
+              <Link href="#terms"><Button variant="nav" as="a">Terms</Button></Link>
             </Nav.Col>
           </Grid>
         </Grid.Row>

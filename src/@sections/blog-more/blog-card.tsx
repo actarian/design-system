@@ -61,7 +61,7 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
             </Flex>
             {false &&
               <Link href={item.href}>
-                <Button variant="gamma" as="a"><Text>Read more</Text> <ArrowRight /></Button>
+                <Button variant="link" as="a"><Text>Read more</Text> <ArrowRight /></Button>
               </Link>
             }
           </Flex.Row>

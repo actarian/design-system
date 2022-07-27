@@ -24,7 +24,7 @@ const ProductsHero = ({ items }: ProductsHeroProps) => {
             <Flex.Col alignItems="center">
               <Text size="2" fontWeight="700" marginBottom="1rem">Mid-Season Sale</Text>
               {false && <Text size="8">We combine technology and creativity for the farmers of today and tomorrow.</Text>}
-              <Link href="/category"><Button variant="alfa" as="a" size="lg">Shop Collection</Button></Link>
+              <Link href="/category"><Button variant="primary" as="a" size="lg">Shop Collection</Button></Link>
             </Flex.Col>
           </Container.Fluid>
         </Card.Content>

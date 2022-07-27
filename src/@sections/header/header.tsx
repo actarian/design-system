@@ -1,9 +1,9 @@
 import { Button, Container, Flex, Modal, Nav, NavLink, Popover, Text } from '@components';
 import { ComponentProps } from '@components/types';
-import { useDrawer, useScroll } from '@hooks';
+import { useDrawer, useModal, useScroll } from '@hooks';
 import { ArrowRight, Hexagon, Menu, ShoppingCart, User } from '@icons';
 import { CartMini } from '@sections';
-import { useState } from 'react';
+import AuthDrawer from '@sections/auth/auth-drawer';
 
 import styled, { css } from 'styled-components';
 
@@ -56,10 +56,10 @@ export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
 const SubMenu = () => (
   <Nav.Col>
     <NavLink href="#link-1">
-      <Button variant="eta" as="a">Link 1</Button>
+      <Button variant="nav" as="a">Link 1</Button>
     </NavLink>
     <NavLink href="#link-2">
-      <Button variant="eta" as="a">Link 2</Button>
+      <Button variant="nav" as="a">Link 2</Button>
     </NavLink>
   </Nav.Col>
 )
@@ -67,76 +67,65 @@ const SubMenu = () => (
 const Header = (props: HeaderProps) => {
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-
-
-  const [showModal, setShowModal] = useState(false);
-  const onOpenModal = () => setShowModal(true);
-  const onCloseModal = (_: any) => {
-    setShowModal(false);
-  }
-
-  /*
-  const [showDrawer, setShowDrawer] = useState(false);
-  const onOpenDrawer = () => setShowDrawer(true);
-  const onCloseDrawer = () => {
-    setShowDrawer(false);
-  }
-  */
+  const [modal, onOpenModal, onCloseModal] = useModal();
   const containerProps: HeaderContainerProps = { ...props, scrolled: scroll.top > 0 };
   return (
-    <HeaderContainer {...containerProps}>
-      <Container.Fluid>
-        <Flex.Row gap="1rem" gapSm="3rem">
-          <Flex>
-            <NavLink href="/">
-              <Button as="a">
-                <Hexagon width="3rem" height="3rem" />
-                <Text size="6" padding="0 0.5rem">Hexagon</Text>
-              </Button>
-            </NavLink>
-          </Flex>
-          <Flex flex="1" justifyContent="center">
-            <Nav.Row gap="3rem" display="none" displaySm="flex">
-              <NavLink href="/products">
-                <Button variant="eta" as="a">Products</Button>
+    <>
+      <HeaderContainer {...containerProps}>
+        <Container.Fluid>
+          <Flex.Row gap="1rem" gapSm="3rem">
+            <Flex>
+              <NavLink href="/">
+                <Button as="a">
+                  <Hexagon width="3rem" height="3rem" />
+                  <Text size="6" padding="0 0.5rem">Hexagon</Text>
+                </Button>
               </NavLink>
-              <NavLink href="#magazine">
-                <Button variant="eta" as="a">Magazine</Button>
+            </Flex>
+            <Flex flex="1" justifyContent="center">
+              <Nav.Row gap="3rem" display="none" displaySm="flex">
+                <NavLink href="/products">
+                  <Button variant="nav" as="a">Products</Button>
+                </NavLink>
+                <NavLink href="#magazine">
+                  <Button variant="nav" as="a">Magazine</Button>
+                </NavLink>
+                <NavLink href="/contacts">
+                  <Button variant="nav" as="a">Contacts</Button>
+                </NavLink>
+                <Popover content={SubMenu}>
+                  <Button variant="nav" as="a">More</Button>
+                </Popover>
+              </Nav.Row>
+            </Flex>
+            <Flex gap="1rem">
+              <Button display='none' displaySm='block' onClick={() => onOpenDrawer('auth')}><User width="2rem" height="2rem" /></Button>
+              <Button onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
+              <NavLink href="#menu">
+                <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
+                </Button>
               </NavLink>
-              <NavLink href="/contacts">
-                <Button variant="eta" as="a">Contacts</Button>
-              </NavLink>
-              <Popover content={SubMenu}>
-                <Button variant="eta" as="a">More</Button>
-              </Popover>
-            </Nav.Row>
-          </Flex>
-          <Flex gap="1rem">
-            <Button display='none' displaySm='block' onClick={() => onOpenModal()}><User width="2rem" height="2rem" /></Button>
+            </Flex>
+          </Flex.Row>
+        </Container.Fluid>
+        {props.children}
+      </HeaderContainer>
 
-            <Modal width="30rem" visible={showModal} onClose={onCloseModal}>
-              <Modal.Title>
-                <Text size="7" fontWeight="700">Foreign Market detected</Text>
-              </Modal.Title>
-              <Modal.Subtitle>Attention Please.</Modal.Subtitle>
-              <Modal.Content>
-                <p>You seem to be browsing a different market than yours.</p>
-              </Modal.Content>
-              <Modal.Button variant="default" passive onClick={onCloseModal}>Proceed</Modal.Button>
-              <Modal.Button variant="alfa"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
-            </Modal>
+      <Modal width="30rem" visible={modal == 'foreign-market'} onClose={onCloseModal}>
+        <Modal.Title>
+          <Text size="7" fontWeight="700">Foreign Market detected</Text>
+        </Modal.Title>
+        <Modal.Subtitle>Attention Please.</Modal.Subtitle>
+        <Modal.Content>
+          <p>You seem to be browsing a different market than yours.</p>
+        </Modal.Content>
+        <Modal.Button variant="default" passive onClick={onCloseModal}>Proceed</Modal.Button>
+        <Modal.Button variant="primary"><span>Change to Italy</span> <ArrowRight /></Modal.Button>
+      </Modal>
 
-            <Button onClick={() => onOpenDrawer('cart')}><ShoppingCart width="2rem" height="2rem" /></Button>
-            <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
-            <NavLink href="#menu">
-              <Button as="a" displaySm='none'><Menu width="2rem" height="2rem" />
-              </Button>
-            </NavLink>
-          </Flex>
-        </Flex.Row>
-      </Container.Fluid>
-      {props.children}
-    </HeaderContainer>
+      <AuthDrawer visible={drawer == 'auth'} onClose={onCloseDrawer} />
+      <CartMini visible={drawer == 'cart'} onClose={onCloseDrawer} />
+    </>
   );
 }
 

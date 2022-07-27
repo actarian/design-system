@@ -34,17 +34,19 @@ const DividerTitle = styled.span<DividerProps>`
   position: absolute;
   left: 50%;
   top: 50%;
-  margin-top: -2px;
+  margin-top: -1px;
   min-height: 100%;
   display: inline-flex;
   align-items: center;
   transform: translate(-50%, -50%);
   padding: 0 0.75em;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 0.8rem;
   text-transform: uppercase;
   background-color: var(--color-neutral-100);
-  color: var(--color-neutral-900);
+  color: var(--color-neutral-400);
   z-index: 1;
+  white-space: nowrap;
 `;
 
 const Divider = (props: DividerProps) => {

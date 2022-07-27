@@ -1,35 +1,28 @@
-import { ComponentCssResponsiveProps, SizeVariant, Variant, Variants } from '@components/types';
+import { ComponentCssResponsiveProps, SizeVariant, VariantOf } from '@components/types';
 import { getCssResponsive, getVariant } from '@components/utils';
 import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled, { css } from 'styled-components';
-import { CssButtonAlfa, CssButtonBeta, CssButtonCircle, CssButtonDefault, CssButtonDelta, CssButtonEpsilon, CssButtonEta, CssButtonGamma, CssButtonZeta, CssDefault } from './button.css';
+import { CssButtonCircle, CssButtonDefault, CssButtonGhost, CssButtonLink, CssButtonNav, CssButtonOutline, CssButtonPrimary, CssButtonSecondary, CssButtonUnderline, CssDefault } from './button.css';
 
-/*
-primary
-secondary
-outline
-ghost
-nav
-link
-underline
-circle
-*/
+export type ButtonVariant = 'default' | 'primary' | 'secondary' | 'outline' | 'ghost' | 'link' | 'underline' | 'nav' | 'circle';
 
-const variants: Variants = {
+export type ButtonVariants = VariantOf<ButtonVariant>;
+
+const variants: ButtonVariants = {
   default: CssButtonDefault,
-  alfa: CssButtonAlfa,
-  beta: CssButtonBeta,
-  gamma: CssButtonGamma,
-  delta: CssButtonDelta,
-  epsilon: CssButtonEpsilon,
-  zeta: CssButtonZeta,
-  eta: CssButtonEta,
+  primary: CssButtonPrimary,
+  secondary: CssButtonSecondary,
+  outline: CssButtonOutline,
+  ghost: CssButtonGhost,
+  link: CssButtonLink,
+  underline: CssButtonUnderline,
+  nav: CssButtonNav,
   circle: CssButtonCircle,
 };
 
 interface Props extends ComponentPropsWithRef<'button'> {
-  variant?: Variant;
+  variant?: ButtonVariant;
   size?: SizeVariant;
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
