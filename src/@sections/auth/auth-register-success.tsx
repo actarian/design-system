@@ -18,7 +18,7 @@ const AuthRegisterSuccess = ({ onNavToLogin }: AuthRegisterSuccessProps) => {
         <Text size="6" fontWeight="700">Thank you for registering</Text>
         <Text size="9" marginBottom="2rem">A confimation email has been sent to your address. Please check your inbox.</Text>
         <Text size="6" fontWeight="700">Ready to login?</Text>
-        <Button variant="outline" onClick={onLogin}>Login</Button>
+        <Button variant="primary" onClick={onLogin}>Login</Button>
       </Flex.Col>
     </Flex.Col>
   );

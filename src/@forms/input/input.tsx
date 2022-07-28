@@ -1,5 +1,6 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -11,7 +12,7 @@ export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 const StyledInput = styled.div<InputProps>`
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding: var(--form-padding);
   appearance: none;
   font-size: var(--form-font-size);
   line-height: var(--form-line-height);
@@ -49,8 +50,11 @@ const StyledInput = styled.div<InputProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Input = forwardRef<HTMLInputElement, InputProps>((props, ref) => (
-  <StyledInput ref={ref} as='input' type='text' {...props} />
-));
+const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...props }, ref) => {
+  const classNames = useClasses('input', className);
+  return (
+    <StyledInput ref={ref} className={classNames} as='input' type='text' {...props} />
+  );
+});
 
 export default Input;

@@ -74,7 +74,8 @@
   },
   "form": {
     "fontSize": "1.125rem",
-    "lineHeight": "1.625"
+    "lineHeight": "1.6",
+    "padding": "0.8em"
   },
   "grid": {
     "columns": 12,

@@ -18,7 +18,7 @@ const AuthForgotSuccess = ({ onNavToLogin }: AuthForgotSuccessProps) => {
         <Text size="6" fontWeight="700">Password recovery</Text>
         <Text size="9" marginBottom="2rem">An email has been sent. please check your inbox.</Text>
         <Text size="6" fontWeight="700">Ready to login?</Text>
-        <Button variant="outline" onClick={onLogin}>Login</Button>
+        <Button variant="primary" onClick={onLogin}>Login</Button>
       </Flex.Col>
     </Flex.Col>
   );

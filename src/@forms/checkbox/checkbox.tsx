@@ -1,6 +1,7 @@
 
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { CheckboxIcon } from './checkbox-icon';
@@ -51,12 +52,14 @@ const StyledCheckbox = styled.div<CheckboxProps>`
   ${props => getCssResponsive(props)}
 `
 
-// // variant = 'radio',
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => (
-  <StyledCheckbox>
-    <StyledCheckboxInput ref={ref} as='input' type='checkbox' {...props} />
-    <StyledCheckboxIcon as={CheckboxIcon} aria-hidden='true' className={className} />
-  </StyledCheckbox>
-))
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => {
+  const classNames = useClasses('checkbox', className);
+  return (
+    <StyledCheckbox className={classNames}>
+      <StyledCheckboxInput ref={ref} as='input' type='checkbox' {...props} />
+      <StyledCheckboxIcon as={CheckboxIcon} aria-hidden='true' />
+    </StyledCheckbox>
+  );
+});
 
 export default Checkbox;

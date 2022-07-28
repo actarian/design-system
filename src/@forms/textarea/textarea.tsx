@@ -1,5 +1,6 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { forwardRef } from 'react';
 import styled from 'styled-components';
 
@@ -11,7 +12,7 @@ export type TextAreaProps = ComponentCssResponsiveProps<Props, HTMLTextAreaEleme
 const StyledTextArea = styled.div`
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding: var(--form-padding);
   appearance: none;
   font-size: var(--form-font-size);
   line-height: var(--form-line-height);
@@ -21,7 +22,7 @@ const StyledTextArea = styled.div`
   background-color: transparent;
   border-color: var(--color-neutral-200);
   resize: vertical;
-  min-height: 4rem;
+  min-height: 4em;
   transition: border 150ms ease-in 0s, outline 150ms ease-in 0s, color 200ms ease-out 0s;
   cursor: pointer;
 
@@ -51,8 +52,17 @@ const StyledTextArea = styled.div`
   ${props => getCssResponsive(props)}
 `;
 
-const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>((props, ref) => (
-  <StyledTextArea ref={ref} as='textarea' {...props} />
-));
+const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(({
+  children,
+  className,
+  ...props
+}, ref) => {
+  const classNames = useClasses('textarea', className);
+  return (
+    <StyledTextArea ref={ref} className={classNames} as='textarea' {...props}>
+      {children}
+    </StyledTextArea>
+  );
+});
 
 export default TextArea;

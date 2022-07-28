@@ -59,7 +59,8 @@
   --font-secondary-line-height-10: 1.7;
   --font-secondary-line-height-11: 1.8;
   --form-font-size: 1.125rem;
-  --form-line-height: 1.625;
+  --form-line-height: 1.6;
+  --form-padding: 0.8em;
   --grid-columns: 12;
   --grid-size: 1fr;
   --grid-column-gap: Max(4vw, Min(96px, 5vw));

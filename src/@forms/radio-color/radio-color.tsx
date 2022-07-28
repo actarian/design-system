@@ -3,6 +3,7 @@ import { Text } from '@components';
 import { CssDefault } from '@components/button/button.css';
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled, { css } from 'styled-components';
 import RadioColorGroup from './radio-color-group';
@@ -71,20 +72,22 @@ const StyledRadioColor = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-// // variant = 'radio',
 const RadioColor = forwardRef<HTMLInputElement, RadioColorProps>(({
   color = 'white',
   children,
   className,
   ...props
-}, ref) => (
-  <StyledRadioColor>
-    <StyledRadioColorInput ref={ref} as='input' type='radio' {...props} />
-    <StyledRadioColorButton as="button" backgroundColor={color} size={props.size}>
-      <Text.SROnly>{children}</Text.SROnly>
-    </StyledRadioColorButton>
-  </StyledRadioColor>
-));
+}, ref) => {
+  const classNames = useClasses('radio-color', className);
+  return (
+    <StyledRadioColor className={classNames}>
+      <StyledRadioColorInput ref={ref} as='input' type='radio' {...props} />
+      <StyledRadioColorButton as="button" backgroundColor={color} size={props.size}>
+        <Text.SROnly>{children}</Text.SROnly>
+      </StyledRadioColorButton>
+    </StyledRadioColor>
+  );
+});
 
 (RadioColor as IRadioColor).Group = RadioColorGroup;
 

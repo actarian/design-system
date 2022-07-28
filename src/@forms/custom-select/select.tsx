@@ -49,14 +49,9 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   display: inline-flex;
   justify-content: space-between;
   align-items: center;
-  /*
-  width: 100%;
-  max-width: 90vw;
-  min-width: 11.5em;
-  */
   overflow: hidden;
   white-space: nowrap;
-  padding: 1rem;
+  padding: var(--form-padding);
   appearance: none;
   font-size: var(--form-font-size);
   line-height: var(--form-line-height);
@@ -114,7 +109,8 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   }
 
   &.multiple {
-    padding: 0.675rem;
+    padding: calc(var(--form-padding) * 0.675);
+    // padding: 0.675rem;
 
     .placeholder {
       padding: 0.563rem 0;
@@ -285,7 +281,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
           </span>
         )}
         {value && (multiple ?
-          <Flex.Row maxWidth="calc(100% - 1.5rem)">{selectedChildren}</Flex.Row> :
+          <Flex.Row flexWrap="wrap" maxWidth="calc(100% - 1.5rem)">{selectedChildren}</Flex.Row> :
           <span className="value">{selectedChildren}</span>
         )}
         <SelectDropdown ref={dropdownRef} className={dropdownClassName} visible={visible} dropdownStyle={dropdownStyle} disableMatchWidth={disableMatchWidth} getPopupContainer={getPopupContainer}>

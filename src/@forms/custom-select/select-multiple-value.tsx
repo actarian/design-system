@@ -43,12 +43,12 @@ const SelectMultipleValue: React.FC<React.PropsWithChildren<Props>> = ({
   return (
     <>
       <Button variant="secondary" size="sm" className={classNames} disabled={disabled}>
-        {children}
+        <span>{children}</span>
         {!!onClear && <SelectIconClear onClick={onClear} />}
       </Button>
       {false &&
         <StyledSelectMultipleValue className={classNames} disabled={disabled}>
-          {children}
+          <span>{children}</span>
           {!!onClear && <SelectIconClear onClick={onClear} />}
         </StyledSelectMultipleValue>
       }

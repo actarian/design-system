@@ -1,5 +1,6 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 
@@ -26,7 +27,7 @@ const DownArrow = styled(DownArrowSvg)`
 const StyledSelectSelect = styled.div`
   display: block;
   width: 100%;
-  padding: 1rem;
+  padding: var(--form-padding);
   appearance: none;
   font-size: var(--form-font-size);
   line-height: var(--form-line-height);
@@ -70,12 +71,18 @@ const StyledSelect = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-const Select = forwardRef<HTMLSelectElement, SelectProps>((props, ref) => (
-  <StyledSelect>
-    <StyledSelectSelect ref={ref} as='select' {...props} />
-    <DownArrow />
-  </StyledSelect>
-));
+const Select = forwardRef<HTMLSelectElement, SelectProps>(({
+  className,
+  ...props
+}, ref) => {
+  const classNames = useClasses('select', className);
+  return (
+    <StyledSelect className={classNames}>
+      <StyledSelectSelect ref={ref} as='select' {...props} />
+      <DownArrow />
+    </StyledSelect>
+  );
+});
 
 export default Select;
 

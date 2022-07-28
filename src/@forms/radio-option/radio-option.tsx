@@ -2,6 +2,7 @@
 import { CssDefault } from '@components/button/button.css';
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef, ReactNode, SVGProps } from 'react';
 import styled, { css } from 'styled-components';
 import RadioOptionGroup from './radio-option-group';
@@ -107,15 +108,18 @@ const RadioOption = forwardRef<HTMLInputElement, RadioOptionProps>(({
   children,
   className,
   ...props
-}, ref) => (
-  <StyledRadioOption size={props.size}>
-    <StyledRadioOptionInput ref={ref} as='input' type='radio' {...props} />
-    <StyledRadioOptionButton as="button" size={props.size}>
-      <span>{children}</span>
-    </StyledRadioOptionButton>
-    <RadioOptionDisabled className="line" />
-  </StyledRadioOption>
-));
+}, ref) => {
+  const classNames = useClasses('radio-option', className);
+  return (
+    <StyledRadioOption size={props.size} className={classNames}>
+      <StyledRadioOptionInput ref={ref} as='input' type='radio' {...props} />
+      <StyledRadioOptionButton as="button" size={props.size}>
+        <span>{children}</span>
+      </StyledRadioOptionButton>
+      <RadioOptionDisabled className="line" />
+    </StyledRadioOption>
+  );
+});
 
 (RadioOption as IRadioOption).Group = RadioOptionGroup;
 

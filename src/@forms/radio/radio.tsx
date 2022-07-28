@@ -1,6 +1,7 @@
 
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { RadioIcon } from './radio-icon';
@@ -50,12 +51,14 @@ const StyledRadio = styled.div`
   ${props => getCssResponsive(props)}
 `
 
-// // variant = 'radio',
-const Radio = forwardRef<HTMLInputElement, RadioProps>(({ className, ...props }, ref) => (
-  <StyledRadio>
-    <StyledRadioInput ref={ref} as='input' type='radio' {...props} />
-    <StyledRadioIcon as={RadioIcon} aria-hidden='true' className={className} />
-  </StyledRadio>
-));
+const Radio = forwardRef<HTMLInputElement, RadioProps>(({ className, ...props }, ref) => {
+  const classNames = useClasses('radio', className);
+  return (
+    <StyledRadio className={classNames}>
+      <StyledRadioInput ref={ref} as='input' type='radio' {...props} />
+      <StyledRadioIcon as={RadioIcon} aria-hidden='true' />
+    </StyledRadio>
+  );
+});
 
 export default Radio;
