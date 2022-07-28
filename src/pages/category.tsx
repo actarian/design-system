@@ -1,6 +1,6 @@
-import { Breadcrumb, Button, Container, Flex, Grid, Layout, Media, Nav, NavLink, Page, Popover, Section, Text } from '@components';
+import { Breadcrumb, Button, Container, Flex, Grid, Layout, Media, Nav, NavLink, Page, Pagination, Popover, Section, Text } from '@components';
 import { useDrawer, useScrollTo } from '@hooks';
-import { ChevronDown, Filter } from '@icons';
+import { ChevronDown, ChevronLeft, ChevronRight, Filter } from '@icons';
 import { CategoryProposition, Footer, Header, ProductsIncentive } from '@sections';
 import { ProductsRelatedProps } from '@sections/products-related/products-related';
 import ProductsSearchCard from '@sections/products-search/products-search-card';
@@ -120,6 +120,12 @@ export default function Category({ items }: ProductsRelatedProps) {
                       </Grid>
                     ))}
                   </Grid.Row>
+
+                  <Pagination count={5} margin="2rem 0">
+                    <Pagination.Previous><ChevronLeft /></Pagination.Previous>
+                    <Pagination.Next><ChevronRight /></Pagination.Next>
+                  </Pagination>
+
                 </Grid>
               </Grid.Row>
             </Container>

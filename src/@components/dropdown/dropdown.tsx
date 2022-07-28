@@ -27,10 +27,11 @@ const defaultRect: ReactiveDomReact = {
 };
 
 const StyledDropdown = styled.div<{ rect: ReactiveDomReact }>`
-    position: absolute;
-    top: ${props => props.rect.top + 2}px;
-    left: ${props => props.rect.left}px;
-    z-index: 1100;
+  position: absolute;
+  top: ${props => props.rect.top + 2}px;
+  left: ${props => props.rect.left}px;
+  z-index: 1100;
+
   &.width-match {
     width: ${props => props.rect.width}px;
   }
