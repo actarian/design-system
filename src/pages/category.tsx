@@ -1,34 +1,9 @@
-import { Breadcrumb, Button, Container, Flex, Grid, Layout, Media, Nav, NavLink, Page, Pagination, Popover, Section, Text } from '@components';
-import { useDrawer, useScrollTo } from '@hooks';
-import { ChevronDown, ChevronLeft, ChevronRight, Filter } from '@icons';
-import { CategoryProposition, Footer, Header, ProductsIncentive } from '@sections';
+import { Breadcrumb, Container, Layout, Page, Section } from '@components';
+import { CategoryHero, CategoryProposition, Footer, Header, ProductsIncentive, ProductsSearch } from '@sections';
 import { ProductsRelatedProps } from '@sections/products-related/products-related';
-import ProductsSearchCard from '@sections/products-search/products-search-card';
-import ProductsSearchFilters from '@sections/products-search/products-search-filters';
-import ProductsSearchFiltersModal from '@sections/products-search/products-search-filters-modal';
-import { motion } from 'framer-motion';
 import Head from 'next/head';
-import { ReactNode } from 'react';
-
-const SortMenu = () => (
-  <Nav.Col minWidth="150px">
-    <Button variant="nav" as="a">Most Popular</Button>
-    <Button variant="nav" as="a">Best Rating</Button>
-    <Button variant="nav" as="a">Newest</Button>
-    <Button variant="nav" as="a">Price: Low to High</Button>
-    <Button variant="nav" as="a">Price: High to Low</Button>
-  </Nav.Col>
-)
-
-const ADiv = ({ children }: { children?: ReactNode }) => (<motion.div
-  initial={{ position: 'absolute', width: '100%', height: '100vh', top: '-50vh', y: 0 }}
-  animate={{ y: '50vh' }}
-  transition={{ ease: 'linear', duration: 4, repeat: Infinity, repeatDelay: 0 }}
->{children}</motion.div>);
 
 export default function Category({ items }: ProductsRelatedProps) {
-  const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
-  const scrollTo = useScrollTo();
   return (
     <>
       <Head>
@@ -53,83 +28,9 @@ export default function Category({ items }: ProductsRelatedProps) {
             </Section>
           }
 
-          <Section overflow="hidden">
-            <Container padding="3rem 0">
-              <Grid.Row>
-                <Grid md={6}>
-                  <Breadcrumb marginBottom="0.5rem">
-                    <Breadcrumb.Item href="/products">Shop</Breadcrumb.Item>
-                    <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
-                  </Breadcrumb>
-                  <Text size="2" fontWeight="700" marginBottom="1rem">Summer styles are finally here</Text>
-                  <Text size="7" marginBottom="2rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.</Text>
-                  <NavLink href="#serp" passHref>
-                    <Button variant="primary" onClick={scrollTo}>Shop Collection</Button>
-                  </NavLink>
-                </Grid>
-                <Grid md={6}>
-                  <Grid.Row columns="3" columnGap="1rem" rowGap="1rem">
-                    <Media rounded>
-                      <img src="/new-arrivals/01.jpg" />
-                    </Media>
-                    <Media rounded>
-                      <img src="/new-arrivals/02.jpg" />
-                    </Media>
-                    <Media rounded>
-                      <img src="/new-arrivals/03.jpg" />
-                    </Media>
-                    <Media rounded>
-                      <img src="/new-arrivals/04.jpg" />
-                    </Media>
-                    <Media rounded>
-                      <img src="/new-arrivals/05.jpg" />
-                    </Media>
-                    <Media rounded>
-                      <img src="/new-arrivals/06.jpg" />
-                    </Media>
-                    <Media rounded display="none">
-                      <img src="/new-arrivals/07.jpg" />
-                    </Media>
-                  </Grid.Row>
-                </Grid>
-              </Grid.Row>
-            </Container>
-          </Section>
+          <CategoryHero />
 
-          <Section padding="3rem 0" id="serp">
-            <Container>
-              <Flex.Row justifyContent="space-between" alignItems="flex-end" paddingBottom="1rem" borderBottom="1px solid var(--color-neutral-200)" marginBottom="1.5rem">
-                <Text size="5" fontWeight="700">New Arrivals</Text>
-                <Flex.Row justifyContent="flex-end">
-                  <Popover content={SortMenu}>
-                    <Button variant="nav"><span>Sort</span> <ChevronDown /></Button>
-                  </Popover>
-                  <Button variant="nav" display="block" displaySm="none" onClick={() => onOpenDrawer('filters')}><Filter /></Button>
-                  <ProductsSearchFiltersModal visible={drawer == 'filters'} onClose={onCloseDrawer} />
-                </Flex.Row>
-              </Flex.Row>
-              <Grid.Row>
-                <Grid display="none" displaySm="block" sm={4} md={3}>
-                  <ProductsSearchFilters />
-                </Grid>
-                <Grid sm={8} md={9}>
-                  <Grid.Row columnGap="1rem" rowGap="1rem">
-                    {items.map((item, i) => (
-                      <Grid sm={6} md={3} key={i}>
-                        <ProductsSearchCard item={item}></ProductsSearchCard>
-                      </Grid>
-                    ))}
-                  </Grid.Row>
-
-                  <Pagination count={5} margin="2rem 0">
-                    <Pagination.Previous><ChevronLeft /></Pagination.Previous>
-                    <Pagination.Next><ChevronRight /></Pagination.Next>
-                  </Pagination>
-
-                </Grid>
-              </Grid.Row>
-            </Container>
-          </Section>
+          <ProductsSearch id="serp" padding="3rem 0" items={items}></ProductsSearch>
 
           <CategoryProposition />
 

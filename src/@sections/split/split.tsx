@@ -1,15 +1,24 @@
 import { Button, Card, Container, Grid, Media, Section, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { PhoneCall } from '@icons';
+import Link from 'next/link';
 
 type Props = {
   item: SplitItem,
 }
 
+export type SplitItemLink = {
+  href: string;
+  label: string;
+}
+
 export type SplitItem = {
   id: number;
   href: string;
+  caption: string;
   title: string;
+  abstract: string;
+  link: SplitItemLink;
   media: {
     type: 'image' | 'video';
     src: string;
@@ -22,19 +31,28 @@ const Split = ({ item }: SplitProps) => {
   return (
     <Section>
       <Container.Fluid>
-        <Card borderRadius="0.4rem">
+        <Card borderRadius="0.4rem" overflow="hidden">
           <Card.Background>
-            <Media overlay backgroundColor="var(--color-primary-500)">
-              <img src={item.media.src} style={{ mixBlendMode: 'multiply' }} />
+            <Media overlay={0.3}>
+              <img src={item.media.src} />
             </Media>
+            {false &&
+              <Media overlay={0.2} backgroundColor="var(--color-neutral-500)">
+                <img src={item.media.src} style={{ mixBlendMode: 'multiply' }} />
+              </Media>
+            }
           </Card.Background>
           <Grid.Row flex="1" columnGap="0">
             <Grid sm={6} background="linear-gradient(90deg, var(--color-neutral-900), transparent)">
               <Card.Content justifyContent="center" height="100%" padding="2rem" paddingSm="5rem Max(2vw, Min(48px, 2.5vw))" textAlign="center" textAlignSm="left">
-                <Text size="10" marginBottom="0.5rem" textTransform="uppercase">Award winning support</Text>
-                <Text size="3" marginBottom="0.5rem">We're here to help</Text>
-                <Text size="7" marginBottom="3rem" maxWidthSm="40ch">And even if he's a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.</Text>
-                <Button variant="secondary"><span>Visit the help center</span> <PhoneCall /></Button>
+                <Text size="10" marginBottom="0.5rem" textTransform="uppercase">{item.caption}</Text>
+                <Text size="3" marginBottom="0.5rem">{item.title}</Text>
+                <Text size="7" marginBottom="3rem" maxWidthSm="40ch">{item.abstract}</Text>
+                {item.link &&
+                  <Link href={item.link.href}>
+                    <Button variant="secondary"><span>{item.link.label}</span> <PhoneCall /></Button>
+                  </Link>
+                }
               </Card.Content>
             </Grid>
             <Grid sm={6}></Grid>
@@ -48,12 +66,18 @@ const Split = ({ item }: SplitProps) => {
 Split.defaultProps = {
   item: {
     id: 1,
-    href: '#new-arrivals',
-    title: 'New Arrivals',
+    href: '#support',
+    caption: 'Award winning support',
+    title: 'We\'re here to help',
+    abstract: 'And even if he\'s a lazy man, and the Dude was certainly that quite possibly the laziest in Los Angeles County.',
+    link: {
+      href: '#support',
+      label: 'Visit the help center'
+    },
     media: {
       type: 'image',
-      src: 'https://picsum.photos/960/960?u=31',
-    },
+      src: 'https://unsplash.com/photos/ePpaQC2c1xA/download?force=true&w=1920',
+    }
   }
 };
 

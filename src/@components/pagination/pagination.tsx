@@ -70,10 +70,10 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
   }
 
   const values = useMemo<PaginationConfig>(() => ({
-      isFirst: page <= 1,
-      isLast: page >= count,
-      update,
-    }),   [page, count]);
+    isFirst: page <= 1,
+    isLast: page >= count,
+    update,
+  }), [page, count]);
 
   useEffect(() => {
     onChange && onChange(page);

@@ -267,54 +267,6 @@ export const CssButtonNav = css`
   ${CssSvg}
   `;
 
-export const CssButtonDelta = css`
-  padding: 0.8em 1.6em;
-  border-radius: var(--button-border-radius);
-  background: var(--color-secondary-500);
-  color: var(--color-neutral-100);
-  border: 2px solid var(--color-secondary-500);
-
-  &:hover,
-  &.active {
-    background-color: var(--color-secondary-600);
-    color: var(--color-neutral-100);
-    border-color: var(--color-secondary-400);
-  }
-  `;
-
-export const CssButtonEpsilon = css`
-  padding: 0.8em 1.6em;
-  border-radius: var(--button-border-radius);
-  color: var(--color-secondary-500);
-  border: 2px solid var(--color-secondary-500);
-
-  &:hover,
-  &.active {
-    color: var(--color-secondary-600);
-    border-color: var(--color-secondary-400);
-  }
-
-  ${CssSvg}
-  ${CssFocus}
-  ${CssActive}
-  ${CssDisabled}
-  ${CssResponsive}
-`;
-
-export const CssButtonZeta = css`
-  position: relative;
-  line-height: 1.5;
-  color: var(--color-secondary-500);
-
-  &:hover,
-  &.active {
-    color: var(--color-secondary-600);
-  }
-
-  ${CssAfter}
-  ${CssSvg}
-`;
-
 export const CssButtonCircle = css`
   justify-content: center;
   width: 3em;

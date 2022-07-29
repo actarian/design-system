@@ -75,88 +75,92 @@ export default function Homepage() {
 
           <Proposition />
 
-          <Section padding="3rem 0">
+          <Section padding="3rem 0" backgroundColor="var(--color-neutral-900)">
             <Container>
               <Flex.Row justifyContent="center">
-                <Text size="1" as="span" fontWeight="700" gradient>Workbench</Text>
+                <Text size="1" as="span" fontWeight="700" gradient>Workbench.</Text>
               </Flex.Row>
             </Container>
           </Section>
 
-          <Divider marginBottom="4rem">Forms</Divider>
+          {false &&
+            <>
+              <Divider marginBottom="4rem">Forms</Divider>
 
-          <Section>
-            <Container>
-              <ContactForm></ContactForm>
-            </Container>
-          </Section>
+              <Section>
+                <Container>
+                  <ContactForm></ContactForm>
+                </Container>
+              </Section>
 
-          <Divider marginBottom="4rem">Buttons</Divider>
+              <Divider marginBottom="4rem">Buttons</Divider>
 
-          <Section>
-            <Container>
-              <Label>XL</Label>
-              <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button variant="default" size="xl" as="button">default</Button>
-                <Button variant="primary" size="xl" as="button">primary</Button>
-                <Button variant="secondary" size="xl" as="button">secondary</Button>
-                <Button variant="outline" size="xl" as="button">outline</Button>
-                <Button variant="ghost" size="xl" as="button">ghost</Button>
-                <Button variant="link" size="xl" as="button">link</Button>
-                <Button variant="underline" size="xl" as="button">underline</Button>
-                <Button variant="nav" size="xl" as="button">nav</Button>
-                <Button variant="circle" size="xl" as="button"></Button>
-              </Flex.Col>
-              <Label>LG</Label>
-              <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button variant="default" size="lg" as="button">default</Button>
-                <Button variant="primary" size="lg" as="button">primary</Button>
-                <Button variant="secondary" size="lg" as="button">secondary</Button>
-                <Button variant="outline" size="lg" as="button">outline</Button>
-                <Button variant="ghost" size="lg" as="button">ghost</Button>
-                <Button variant="link" size="lg" as="button">link</Button>
-                <Button variant="underline" size="lg" as="button">underline</Button>
-                <Button variant="nav" size="lg" as="button">nav</Button>
-                <Button variant="circle" size="lg" as="button"></Button>
-              </Flex.Col>
-              <Label>MD</Label>
-              <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button variant="default" size="md" as="button">default</Button>
-                <Button variant="primary" size="md" as="button">primary</Button>
-                <Button variant="secondary" size="md" as="button">secondary</Button>
-                <Button variant="outline" size="md" as="button">outline</Button>
-                <Button variant="ghost" size="md" as="button">ghost</Button>
-                <Button variant="link" size="md" as="button">link</Button>
-                <Button variant="underline" size="md" as="button">underline</Button>
-                <Button variant="nav" size="md" as="button">nav</Button>
-                <Button variant="circle" size="md" as="button"></Button>
-              </Flex.Col>
-              <Label>SM</Label>
-              <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button variant="default" size="sm" as="button">default</Button>
-                <Button variant="primary" size="sm" as="button">primary</Button>
-                <Button variant="secondary" size="sm" as="button">secondary</Button>
-                <Button variant="outline" size="sm" as="button">outline</Button>
-                <Button variant="ghost" size="sm" as="button">ghost</Button>
-                <Button variant="link" size="sm" as="button">link</Button>
-                <Button variant="underline" size="sm" as="button">underline</Button>
-                <Button variant="nav" size="sm" as="button">nav</Button>
-                <Button variant="circle" size="sm" as="button"></Button>
-              </Flex.Col>
-              <Label>XS</Label>
-              <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
-                <Button variant="default" size="xs" as="button">default</Button>
-                <Button variant="primary" size="xs" as="button">primary</Button>
-                <Button variant="secondary" size="xs" as="button">secondary</Button>
-                <Button variant="outline" size="xs" as="button">outline</Button>
-                <Button variant="ghost" size="xs" as="button">ghost</Button>
-                <Button variant="link" size="xs" as="button">link</Button>
-                <Button variant="underline" size="xs" as="button">underline</Button>
-                <Button variant="nav" size="xs" as="button">nav</Button>
-                <Button variant="circle" size="xs" as="button"></Button>
-              </Flex.Col>
-            </Container>
-          </Section>
+              <Section>
+                <Container>
+                  <Label>XL</Label>
+                  <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                    <Button variant="default" size="xl" as="button">default</Button>
+                    <Button variant="primary" size="xl" as="button">primary</Button>
+                    <Button variant="secondary" size="xl" as="button">secondary</Button>
+                    <Button variant="outline" size="xl" as="button">outline</Button>
+                    <Button variant="ghost" size="xl" as="button">ghost</Button>
+                    <Button variant="link" size="xl" as="button">link</Button>
+                    <Button variant="underline" size="xl" as="button">underline</Button>
+                    <Button variant="nav" size="xl" as="button">nav</Button>
+                    <Button variant="circle" size="xl" as="button"></Button>
+                  </Flex.Col>
+                  <Label>LG</Label>
+                  <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                    <Button variant="default" size="lg" as="button">default</Button>
+                    <Button variant="primary" size="lg" as="button">primary</Button>
+                    <Button variant="secondary" size="lg" as="button">secondary</Button>
+                    <Button variant="outline" size="lg" as="button">outline</Button>
+                    <Button variant="ghost" size="lg" as="button">ghost</Button>
+                    <Button variant="link" size="lg" as="button">link</Button>
+                    <Button variant="underline" size="lg" as="button">underline</Button>
+                    <Button variant="nav" size="lg" as="button">nav</Button>
+                    <Button variant="circle" size="lg" as="button"></Button>
+                  </Flex.Col>
+                  <Label>MD</Label>
+                  <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                    <Button variant="default" size="md" as="button">default</Button>
+                    <Button variant="primary" size="md" as="button">primary</Button>
+                    <Button variant="secondary" size="md" as="button">secondary</Button>
+                    <Button variant="outline" size="md" as="button">outline</Button>
+                    <Button variant="ghost" size="md" as="button">ghost</Button>
+                    <Button variant="link" size="md" as="button">link</Button>
+                    <Button variant="underline" size="md" as="button">underline</Button>
+                    <Button variant="nav" size="md" as="button">nav</Button>
+                    <Button variant="circle" size="md" as="button"></Button>
+                  </Flex.Col>
+                  <Label>SM</Label>
+                  <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                    <Button variant="default" size="sm" as="button">default</Button>
+                    <Button variant="primary" size="sm" as="button">primary</Button>
+                    <Button variant="secondary" size="sm" as="button">secondary</Button>
+                    <Button variant="outline" size="sm" as="button">outline</Button>
+                    <Button variant="ghost" size="sm" as="button">ghost</Button>
+                    <Button variant="link" size="sm" as="button">link</Button>
+                    <Button variant="underline" size="sm" as="button">underline</Button>
+                    <Button variant="nav" size="sm" as="button">nav</Button>
+                    <Button variant="circle" size="sm" as="button"></Button>
+                  </Flex.Col>
+                  <Label>XS</Label>
+                  <Flex.Col flexDirectionSm='row' flexWrap='wrap' justifyContent="space-between" alignItems="center" gap="0.5rem" padding="1rem 0">
+                    <Button variant="default" size="xs" as="button">default</Button>
+                    <Button variant="primary" size="xs" as="button">primary</Button>
+                    <Button variant="secondary" size="xs" as="button">secondary</Button>
+                    <Button variant="outline" size="xs" as="button">outline</Button>
+                    <Button variant="ghost" size="xs" as="button">ghost</Button>
+                    <Button variant="link" size="xs" as="button">link</Button>
+                    <Button variant="underline" size="xs" as="button">underline</Button>
+                    <Button variant="nav" size="xs" as="button">nav</Button>
+                    <Button variant="circle" size="xs" as="button"></Button>
+                  </Flex.Col>
+                </Container>
+              </Section>
+
+            </>}
 
           {false && <>
             <Divider marginBottom="4rem">Typography</Divider>
@@ -172,24 +176,25 @@ export default function Homepage() {
             <Icons></Icons>
           </>}
 
-          <Divider marginBottom="4rem">Button Group</Divider>
+          {false && <>
+            <Divider marginBottom="4rem">Button Group</Divider>
 
-          <Section>
-            <Container marginBottom="1rem">
-              <ButtonGroup width="100%" maxWidth="40rem">
-                <Button variant="default">Read documentation</Button>
-                <Button variant="default"><span>Open</span> <ChevronDown /></Button>
-              </ButtonGroup>
-            </Container>
-
-            <Container>
-              <ButtonGroup vertical>
-                <Button variant="default">Read documentation</Button>
-                <Button variant="default">View on Github</Button>
-                <Button variant="default"><span>Open</span> <ChevronDown /></Button>
-              </ButtonGroup>
-            </Container>
-          </Section>
+            <Section>
+              <Container marginBottom="1rem">
+                <ButtonGroup width="100%" maxWidth="40rem">
+                  <Button variant="default">Read documentation</Button>
+                  <Button variant="default"><span>Open</span> <ChevronDown /></Button>
+                </ButtonGroup>
+              </Container>
+              <Container>
+                <ButtonGroup vertical>
+                  <Button variant="default">Read documentation</Button>
+                  <Button variant="default">View on Github</Button>
+                  <Button variant="default"><span>Open</span> <ChevronDown /></Button>
+                </ButtonGroup>
+              </Container>
+            </Section>
+          </>}
 
           <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
             <Section.Background>

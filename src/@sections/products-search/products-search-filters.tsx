@@ -9,7 +9,7 @@ export type ProductsSearchFiltersProps = ComponentCssResponsiveProps<Props, HTML
 
 const ProductsSearchFilters = ({ ...props }: ProductsSearchFiltersProps) => {
   return (
-    <>
+    <Box {...props}>
       <Nav.Col marginBottom="2rem" fontSize="0.9rem">
         <Button variant="nav" as="a">Totes</Button>
         <Button variant="nav" as="a">Backpacks</Button>
@@ -48,7 +48,7 @@ const ProductsSearchFilters = ({ ...props }: ProductsSearchFiltersProps) => {
           </Box>
         </Accordion>
       </Accordion.Group>
-    </>
+    </Box>
   )
 }
 

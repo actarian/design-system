@@ -15,4 +15,4 @@ const defaultContext = {};
 
 export const PaginationContext = React.createContext<PaginationConfig>(defaultContext);
 
-export const usePaginationContext = (): PaginationConfig =>   React.useContext<PaginationConfig>(PaginationContext);
+export const usePaginationContext = (): PaginationConfig => React.useContext<PaginationConfig>(PaginationContext);

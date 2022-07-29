@@ -1,0 +1,51 @@
+import { Meta, Story, Canvas } from '@storybook/addon-docs';
+import ProductsSearch from './products-search';
+import ProductsSearchCard from './products-search-card';
+import ProductsSearchFilters from './products-search-filters';
+import ProductsSearchFiltersModal from './products-search-filters-modal';
+
+<Meta
+  title="Sections / Products Search"
+  component={ProductsSearch}
+  subcomponents={{ ProductsSearchCard, ProductsSearchFilters, ProductsSearchFiltersModal }}
+/>
+
+# Products Search
+
+A component to display a `Products Search`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/@sections/products-search)
+
+## Imports
+
+```js
+import { ProductsSearch } from '@design-system';
+```
+
+## Example
+
+A basic example of `Products Search`.
+
+<Canvas>
+  <Story name="Products Search">
+    <ProductsSearch />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Products Search Card">
+    <ProductsSearchCard maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Products Search Filters">
+    <ProductsSearchFilters maxWidth="540px" margin="3rem" />
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Products Search Filters Modal">
+    <ProductsSearchFiltersModal visible={true} onClose={() => alert} />
+  </Story>
+</Canvas>

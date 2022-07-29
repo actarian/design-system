@@ -4,16 +4,10 @@ import PaginationItem from './pagination-item';
 
 export type PaginationPreviousProps = React.ButtonHTMLAttributes<any>;
 
-const PaginationPrevious: React.FC<React.PropsWithChildren<PaginationPreviousProps>> = ({
-  children,
-  ...props
-}) => {
+const PaginationPrevious: React.FC<React.PropsWithChildren<PaginationPreviousProps>> = ({ children, ...props }) => {
   const { update, isFirst } = usePaginationContext();
   return (
-    <PaginationItem
-      onClick={() => update && update('prev')}
-      disabled={isFirst}
-      {...props}>
+    <PaginationItem disabled={isFirst} onClick={() => update && update('prev')} {...props}>
       {children}
     </PaginationItem>
   );

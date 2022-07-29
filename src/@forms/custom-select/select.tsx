@@ -1,5 +1,4 @@
 import { Ellipsis, Flex, getChildsByType } from '@components';
-import { NormalTypes } from '@components/tooltip/tooltip-props';
 import { useClasses, useCurrentState } from '@hooks';
 import React, { CSSProperties, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
@@ -18,11 +17,8 @@ export type SelectRef = {
   scrollTo?: (options?: ScrollToOptions) => void;
 };
 
-export type SelectTypes = NormalTypes;
-
 interface Props {
   disabled?: boolean;
-  type?: SelectTypes;
   name?: string;
   value?: string | string[];
   initialValue?: string | string[];
@@ -127,7 +123,6 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
 
 const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>(({
   disabled = false,
-  type = 'default' as SelectTypes,
   pure = false,
   multiple = false,
   clearable = true,

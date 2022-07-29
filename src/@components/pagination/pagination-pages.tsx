@@ -29,20 +29,17 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
   const pagesArray = useMemo(() => [...new Array(showPages)], [showPages]);
 
   const renderItem = useCallback((value: number, active: number) => (
-    <PaginationItem
-      key={`pagination-item-${value}`}
-      active={value === active}
-      onClick={() => setPage(value)}>
+    <PaginationItem key={`pagination-item-${value}`} active={value === active} onClick={() => setPage(value)}>
       {value}
     </PaginationItem>
   ), []);
 
-  const startPages = pagesArray.map((_, index) => {
+  const renderStartItems = pagesArray.map((_, index) => {
     const value = index + 2;
     return renderItem(value, current);
   });
 
-  const middlePages = pagesArray.map((_, index) => {
+  const renderMiddleItems = pagesArray.map((_, index) => {
     const middleIndexNumber = middleNumber - (index + 1);
     const value = current - middleIndexNumber;
     return (
@@ -52,7 +49,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
     );
   });
 
-  const endPages = pagesArray.map((_, index) => {
+  const renderEndItems = pagesArray.map((_, index) => {
     const value = count - (showPages - index);
     return renderItem(value, current);
   });
@@ -77,14 +74,11 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
     <>
       {renderItem(1, current)}
       {showBeforeEllipsis && (
-        <PaginationEllipsis key="pagination-ellipsis-before" isBefore onClick={() => setPage(last => (last - 5 >= 1 ? last - 5 : 1))}
-        />
+        <PaginationEllipsis key="pagination-ellipsis-before" isBefore onClick={() => setPage(last => (last - 5 >= 1 ? last - 5 : 1))} />
       )}
-      {showBeforeEllipsis && showAfterEllipsis
-        ? middlePages
-        : showBeforeEllipsis
-          ? endPages
-          : startPages}
+      {showBeforeEllipsis && showAfterEllipsis ? renderMiddleItems :
+        (showBeforeEllipsis ? renderEndItems : renderStartItems)
+      }
       {showAfterEllipsis && (
         <PaginationEllipsis key="pagination-ellipsis-after" onClick={() => setPage(last => (last + 5 <= count ? last + 5 : count))} />
       )}

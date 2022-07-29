@@ -69,16 +69,11 @@ const StyledPaginationItem = styled.div`
   }
 `
 
-const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({
-  active,
-  children,
-  disabled,
-  onClick,
-  ...props
-}) => {
-  const classes = useClasses({ active, disabled });
+const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = ({ children, active, disabled, onClick, ...props }) => {
 
-  const clickHandler = (event: React.MouseEvent) => {
+  const className = useClasses({ active, disabled });
+
+  const onClick_ = (event: React.MouseEvent) => {
     if (disabled) {
       return;
     }
@@ -87,7 +82,7 @@ const PaginationItem: React.FC<React.PropsWithChildren<PaginationItemProps>> = (
 
   return (
     <StyledPaginationItem as="li">
-      <button className={classes} onClick={clickHandler} {...props}>
+      <button className={className} onClick={onClick_} {...props}>
         {children}
       </button>
     </StyledPaginationItem>

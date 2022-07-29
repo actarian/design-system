@@ -62,8 +62,6 @@ const placement = tuple(
 
 const dividerAlign = tuple('start', 'center', 'end', 'left', 'right')
 
-export type ButtonTypes = typeof buttonTypes[number]
-
 export type NormalTypes = typeof normalTypes[number]
 
 export type SnippetTypes = typeof snippetTypes[number]
