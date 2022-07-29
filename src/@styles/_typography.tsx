@@ -14,7 +14,7 @@ body {
 * {
   outline-offset: 0.2rem;
   &:focus-visible {
-    outline: 2px solid var(--color-neutral-400);
+    outline: 2px solid var(--color-primary-200);
   }
 }
 */

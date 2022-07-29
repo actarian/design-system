@@ -36,7 +36,7 @@ const StyledSelectSelect = styled.div`
   color: inherit;
   background-color: transparent;
   border-color: var(--color-neutral-200);
-  transition: border 150ms ease-in 0s, outline 150ms ease-in 0s, color 200ms ease-out 0s;
+  transition: border 150ms ease-in 0s, outline-color 150ms ease-in 0s, color 200ms ease-out 0s;
   cursor: pointer;
 
   &.disabled {
@@ -49,7 +49,7 @@ const StyledSelectSelect = styled.div`
   }
 
   &:focus-visible {
-    outline: 2px solid var(--color-primary-100);
+    outline: 2px solid var(--color-primary-200);
     outline-offset: 2px;
 
     &::placeholder {

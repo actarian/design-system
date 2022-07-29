@@ -11,8 +11,8 @@ export const CssDefault = css`
   align-items: center;
   font-size: 1em;
   line-height: 1;
-  transition: ease 200ms;
-  transition-property: background-color, color, border;
+  transition: ease 150ms;
+  transition-property: background-color, color, border-color, outline-color, opacity;
   cursor: pointer;
 `;
 
@@ -27,7 +27,7 @@ export const CssResponsive = css`
 export const CssFocus = css`
 &:focus,
 &:active {
-  outline: 2px solid var(--color-primary-100);
+  outline: 2px solid var(--color-primary-200);
   outline-offset: 2px;
 }
 `;
@@ -172,14 +172,14 @@ export const CssButtonPrimary = css`
 export const CssButtonSecondary = css`
   padding: 0.8em 1.6em;
   border-radius: var(--button-border-radius);
-  background: var(--color-neutral-200);
-  border: 2px solid var(--color-neutral-200);
-  color: var(--color-neutral-700);
+  background: var(--color-primary-100);
+  border: 2px solid var(--color-primary-100);
+  color: var(--color-primary-500);
 
   &:hover,
   &.active {
-    border-color: var(--color-neutral-300);
-    color: var(--color-neutral-900);
+    border-color: var(--color-primary-300);
+    color: var(--color-primary-600);
   }
 
   ${CssSvg}

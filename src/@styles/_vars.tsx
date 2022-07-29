@@ -5,9 +5,9 @@
 :root {
   --base-font-size-xs: 14px;
   --base-font-size-sm: 15px;
-  --base-font-size-md: 16px;
-  --base-font-size-lg: 17px;
-  --base-font-size-xl: 18px;
+  --base-font-size-md: 15px;
+  --base-font-size-lg: 16px;
+  --base-font-size-xl: 16px;
   --font-primary-family: -apple-system, 'Helvetica Neue', 'Segoe UI', Roboto, Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   --font-primary-size-0: Min(6.25rem, 16vw);
   --font-primary-size-1: Min(4.5rem, 11.5vw);
@@ -103,9 +103,9 @@
   --color-neutral-700: #44444B;
   --color-neutral-800: #27272B;
   --color-neutral-900: #09090A;
-  --color-primary-100: #DAE2FD;
-  --color-primary-200: #B6C8FC;
-  --color-primary-300: #90A0F7;
+  --color-primary-100: #F4F5FB;
+  --color-primary-200: #C4D2F9;
+  --color-primary-300: #9EAEF5;
   --color-primary-400: #727CEF;
   --color-primary-500: #4F46E5;
   --color-primary-600: #3A33C4;

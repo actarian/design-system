@@ -92,7 +92,7 @@ const StyledSelect = styled.div<SelectProps & { visible?: boolean }>`
   }
 
   &.active:not(.disabled) {
-    outline-color: var(--color-primary-100);
+    outline-color: var(--color-primary-200);
 
     .placeholder {
       opacity: 0.5;

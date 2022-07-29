@@ -42,7 +42,7 @@ const StyledRadioIcon = styled.div`
   }
 
   input:focus ~ & {
-    outline-color: var(--color-primary-100);
+    outline-color: var(--color-primary-200);
   }
 `
 

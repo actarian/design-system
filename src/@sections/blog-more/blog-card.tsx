@@ -42,7 +42,7 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
   };
   return (
     <Link href={item.href}>
-      <Card type="alfa" {...props} hoverable height="100%">
+      <Card height="100%" hoverable {...props}>
         <Media aspectRatio={4 / 3} aspectRatioMd={5 / 3} borderRadius="0.4rem" marginBottom="1rem">
           <img src={item.media.src} />
         </Media>

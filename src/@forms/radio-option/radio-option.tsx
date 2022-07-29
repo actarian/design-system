@@ -62,6 +62,7 @@ const StyledRadioOptionButton = styled.div<RadioOptionProps>`
   color: var(--color-neutral-700);
   outline: 2px solid transparent;
   outline-offset: 2px;
+  transition: outline-color .1s ease-in-out, border-color .1s ease-in-out, color .1s ease-in-out;
 
   input:not(:disabled):hover ~ & {
     border-color: var(--color-neutral-300);
@@ -70,7 +71,7 @@ const StyledRadioOptionButton = styled.div<RadioOptionProps>`
 
   input:focus ~ &,
   input:active ~ & {
-    outline-color: var(--color-primary-100);
+    outline-color: var(--color-primary-200);
   }
 
   input:checked ~ &,
