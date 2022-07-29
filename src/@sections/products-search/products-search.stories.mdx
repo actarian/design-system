@@ -5,14 +5,14 @@ import ProductsSearchFilters from './products-search-filters';
 import ProductsSearchFiltersModal from './products-search-filters-modal';
 
 <Meta
-  title="Sections / Products Search"
+  title="Sections / ProductsSearch"
   component={ProductsSearch}
   subcomponents={{ ProductsSearchCard, ProductsSearchFilters, ProductsSearchFiltersModal }}
 />
 
-# Products Search
+# ProductsSearch
 
-A component to display a `Products Search`.
+A component to display a `ProductsSearch`.
 
 [View source](https://github.com/actarian/design-system/tree/main/src/@sections/products-search)
 
@@ -24,28 +24,28 @@ import { ProductsSearch } from '@design-system';
 
 ## Example
 
-A basic example of `Products Search`.
+A basic example of `ProductsSearch`.
 
 <Canvas>
-  <Story name="Products Search">
+  <Story name="ProductsSearch">
     <ProductsSearch />
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="Products Search Card">
+  <Story name="ProductsSearchCard">
     <ProductsSearchCard maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="Products Search Filters">
+  <Story name="ProductsSearchFilters">
     <ProductsSearchFilters maxWidth="540px" margin="3rem" />
   </Story>
 </Canvas>
 
 <Canvas>
-  <Story name="Products Search Filters Modal">
+  <Story name="ProductsSearchFiltersModal">
     <ProductsSearchFiltersModal visible={true} onClose={() => alert} />
   </Story>
 </Canvas>

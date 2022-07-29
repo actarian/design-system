@@ -1,10 +1,12 @@
 import { Meta, Story, Canvas } from '@storybook/addon-docs';
 import { Section, Container } from '@components';
 import Auth from './auth';
+import AuthDrawer from './auth-drawer';
 
 <Meta
   title="Sections / Auth"
   component={Auth}
+  subcomponents={{ AuthDrawer }}
 />
 
 # Auth
@@ -30,5 +32,11 @@ A basic example of `Auth`.
         <Auth />
       </Container>
     </Section>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="AuthDrawer">
+    <AuthDrawer visible={true} onClose={() => alert} />
   </Story>
 </Canvas>
