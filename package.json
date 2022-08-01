@@ -27,6 +27,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.16.7",
+    "@googlemaps/react-wrapper": "^1.1.35",
+    "@googlemaps/typescript-guards": "^2.0.1",
     "@storybook/addon-actions": "^6.5.9",
     "@storybook/addon-essentials": "^6.5.9",
     "@storybook/addon-links": "^6.5.9",
@@ -35,6 +37,7 @@
     "@storybook/react": "^6.5.9",
     "@svgr/webpack": "^6.2.1",
     "@types/enzyme": "^3.10.8",
+    "@types/google.maps": "^3.49.2",
     "@types/jest": "^26.0.23",
     "@types/react": "^18.0.14",
     "@types/react-dom": "^18.0.5",
@@ -48,6 +51,7 @@
     "eslint-config-prettier": "^6.11.0",
     "eslint-config-ts-lambdas": "^1.2.3",
     "eslint-plugin-react": "^7.22.0",
+    "fast-equals": "^4.0.1",
     "framer-motion": "^6.3.16",
     "jest": "^27.0.5",
     "next": "^12.2.2",
@@ -68,11 +72,15 @@
     "zustand": "^4.0.0-rc.1"
   },
   "peerDependencies": {
+    "@googlemaps/react-wrapper": ">=1.1.35",
+    "fast-equals": ">=4.0.1",
     "framer-motion": ">=6.3.16",
     "react": ">=16.9.0",
     "react-dom": ">=16.9.0",
     "styled-components": ">=5.3.5",
     "swiper": ">=8.2.6",
     "zustand": ">=4.0.0-rc.1"
+  },
+  "dependencies": {
   }
 }

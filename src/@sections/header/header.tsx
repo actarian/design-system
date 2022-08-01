@@ -55,8 +55,8 @@ export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
 
 const SubMenu = () => (
   <Nav.Col>
-    <NavLink href="#link-1">
-      <Button variant="nav" as="a">Link 1</Button>
+    <NavLink href="/store-locator">
+      <Button variant="nav" as="a">Store locator</Button>
     </NavLink>
     <NavLink href="#link-2">
       <Button variant="nav" as="a">Link 2</Button>
