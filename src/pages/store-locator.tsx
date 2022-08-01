@@ -1,9 +1,10 @@
 import { Layout, Page } from '@components';
-import GoogleMap from '@components/google-map/google-map';
 import { Footer, Header, Split } from '@sections';
+import StoreLocatorMap, { StoreLocatorItem } from '@sections/store-locator/store-locator-map';
 import Head from 'next/head';
+import STORES from '../@sections/store-locator/store-locator-data.json';
 
-export default function StoreLocator() {
+export default function StoreLocator({ items }: { items: StoreLocatorItem[] }) {
   return (
     <>
       <Head>
@@ -17,7 +18,7 @@ export default function StoreLocator() {
 
           <Header sticky />
 
-          <GoogleMap />
+          <StoreLocatorMap items={items} />
 
           <Split />
 
@@ -27,4 +28,11 @@ export default function StoreLocator() {
       </Layout>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const props = { items: STORES };
+  return {
+    props,
+  };
 }

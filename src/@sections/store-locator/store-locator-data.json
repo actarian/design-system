@@ -1,0 +1,8287 @@
+[
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.8636808529746,
+      "lng": 12.8157234191894
+    },
+    "name": "GAN DESIGN LAB",
+    "address": "Via M.R. Imbriani, 14",
+    "city": "Bari",
+    "zipCode": "70121",
+    "province": "BA",
+    "phone": "",
+    "id": 8184,
+    "email": "info@gandesignlab.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.4415419,
+      "lng": 12.8496113
+    },
+    "name": "ARREDAMENTI CAMILLETTI",
+    "address": "Via Crocefisso 41/A",
+    "city": "Sassoferrato",
+    "zipCode": "60041",
+    "province": "AN",
+    "phone": "+39 0732 959436",
+    "id": 319,
+    "email": "info@arredamenticamilletti.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.5289563,
+      "lng": 11.7580433000001
+    },
+    "name": "STUDIO D'INTERNI",
+    "address": "Via Guglielmo Fracassi, 1",
+    "city": "Castiglion Fibocchi",
+    "zipCode": "52029",
+    "province": "AR",
+    "phone": "+39 0575 47055",
+    "id": 572,
+    "email": "info@studiodiinterni.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.5676555,
+      "lng": 12.6117991
+    },
+    "name": "TOMASSINI ARREDAMENTI",
+    "address": "Via Curio Fornaci, 3 - Zona Industriale Maratta",
+    "city": "Terni",
+    "zipCode": "05100",
+    "province": "TR",
+    "phone": "+39 0744 305276",
+    "id": 32661,
+    "email": "info@tomassiniarredamenti.it",
+    "website": "www.tomassiniarredamenti.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.720196,
+      "lng": 10.946885
+    },
+    "name": "BORGIOLI ARREDAMENTO",
+    "address": "Via del Giglio, 40",
+    "city": "Empoli",
+    "zipCode": "50053",
+    "province": "FI",
+    "phone": "+39 0571 711555",
+    "id": 323,
+    "email": "info@borgioliarredamento.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.743318,
+      "lng": 13.806302
+    },
+    "name": "DI PAOLO ARREDAMENTI",
+    "address": "Viale Cesare Battisti, 80",
+    "city": "Bellante",
+    "zipCode": "64020",
+    "province": "TE",
+    "phone": "+39 0861 616436",
+    "id": 10366,
+    "email": "info@dipaoloarredamenti.it",
+    "website": "www.dipaoloarredamenti.it/punti-vendita/bellante",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.5310663,
+      "lng": 10.8606471000001
+    },
+    "name": "MANCINI ITALIAN DESIGN & ART S.r.l.",
+    "address": "Piazza San Lorenzo, 1",
+    "city": "Reggio Emilia",
+    "zipCode": "41053",
+    "province": "RE",
+    "phone": "",
+    "id": 7430,
+    "email": "info@mancinimida.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.4764997,
+      "lng": 11.6960854
+    },
+    "name": "AD DAL POZZO",
+    "address": "Via Giuseppe Mazzini, 24",
+    "city": "Grisignano Di Zocco",
+    "zipCode": "36040",
+    "province": "VI",
+    "phone": "+39 0444 614521",
+    "id": 325,
+    "email": "info@arredodalpozzo.it",
+    "website": "www.arredodalpozzo.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.0163157,
+      "lng": 10.7267263
+    },
+    "name": "MONDINI ARREDAMENTI SRL",
+    "address": "Via Fiorini - S.S. Cisa Loc. Croce del Gallo",
+    "city": "Suzzara",
+    "zipCode": "46029",
+    "province": "MN",
+    "phone": "",
+    "id": 9543,
+    "email": "nicolo.mondini@mondiniarredamenti.it",
+    "website": "www.mondiniarredamenti.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.6734926,
+      "lng": 11.9592068
+    },
+    "name": "INTERNI D'INSIEME S.A.S. DI TONELLO MAURIZIO & C.",
+    "address": "Via Sile, 24",
+    "city": "Castelfranco Veneto",
+    "zipCode": "31033",
+    "province": "TV",
+    "phone": "+39 0423 724004",
+    "id": 365,
+    "email": "interni.dinsieme@hotmail.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.8090095,
+      "lng": 12.6222376
+    },
+    "name": "L'AMBIENTE SRL",
+    "address": "Via Pordenone, 27",
+    "city": "Motta Di Livenza",
+    "zipCode": "31045",
+    "province": "TV",
+    "phone": "+39 0422 863768",
+    "id": 345,
+    "email": "comunicazioni@lambiente.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.6849569091805,
+      "lng": 11.7715501785278
+    },
+    "name": "BASSO ARREDAMENTI",
+    "address": "Via Sole, 15",
+    "city": "Tezze Sul Brenta",
+    "zipCode": "36056",
+    "province": "VI",
+    "phone": "+39 042 4560321",
+    "id": 31011,
+    "email": "commerciale@bassoarredamenti.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.609343,
+      "lng": 11.499513
+    },
+    "name": "FONTANA SRL",
+    "address": "Strada Statale Pasubio, 17",
+    "city": "Costabissara",
+    "zipCode": "36030",
+    "province": "VI",
+    "phone": "+39 0444 557013",
+    "id": 314,
+    "email": "perinemanuela@fontanasrl.net",
+    "website": "www.fontanasrl.net",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.0404263,
+      "lng": 10.0442853
+    },
+    "name": "INTERNI NOW",
+    "address": "Via del Bravo, 14",
+    "city": "Carrara",
+    "zipCode": "54033",
+    "province": "MS",
+    "phone": "+39 0585 633084",
+    "id": 564,
+    "email": "Info@interninow.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.0404263,
+      "lng": 10.0442853
+    },
+    "name": "FORTE IN | SHOWROOM INTERNI NOW",
+    "address": "Via Provinciale, 69",
+    "city": "Forte dei Marmi",
+    "zipCode": "55042",
+    "province": "LU",
+    "phone": "+39 0584 874079",
+    "id": 32486,
+    "email": "info@interninow.it",
+    "website": "www.intnow.it/it/forte-in-forte-dei-marmi/",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.8936412,
+      "lng": 12.4151597
+    },
+    "name": "FRATTALI SRL",
+    "address": "Via Aurelia, 678",
+    "city": "Roma",
+    "zipCode": "00165",
+    "province": "RM",
+    "phone": "+39 06 66418943",
+    "id": 3954,
+    "email": "infoaurelia@frattali.org",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.8583531,
+      "lng": 12.5994668
+    },
+    "name": "REMIGI INTERNI",
+    "address": "Via Stefano Della Bella, 5/7",
+    "city": "Roma",
+    "zipCode": "00133",
+    "province": "RM",
+    "phone": "+39 06  20419966",
+    "id": 343,
+    "email": "remigiinterni@gmail.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.0659487,
+      "lng": 13.2346283
+    },
+    "name": "CUMINI EMPORIO",
+    "address": "Via Porta Nuova, 13",
+    "city": "Udine",
+    "zipCode": "33100",
+    "province": "UD",
+    "phone": "+39 0432 506495",
+    "id": 33719,
+    "email": "emporio@cumini.com",
+    "website": "www.cumininteriors.com",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.467831,
+      "lng": 10.5430866
+    },
+    "name": "NOVAOTTO | SHOWROOM MEDICEREAM",
+    "address": "Via Tommaso dal Molin, 2",
+    "city": "Desenzano del Garda",
+    "zipCode": "25015",
+    "province": "BS",
+    "phone": "+39 030 7285156",
+    "id": 31617,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.2607199,
+      "lng": 13.1081284
+    },
+    "name": "CUMINI INTERIORS",
+    "address": "Via San Daniele, 1  ",
+    "city": "Gemona Del Friuli",
+    "zipCode": "33013",
+    "province": "UD",
+    "phone": "+39 0432 971181",
+    "id": 328,
+    "email": "casa@cumini.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.0310564,
+      "lng": 14.4638929
+    },
+    "name": "KULT INTERIER d.o.o.",
+    "address": "Cesta v Gorice 34B Poslovni Objekt Imparo",
+    "city": "Ljubljana",
+    "zipCode": "1000",
+    "province": "",
+    "phone": "+386 8 2053865",
+    "id": 4422,
+    "email": "info@kultinterier.si",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 200,
+      "name": "Slovenia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.8707899,
+      "lng": 9.6413303
+    },
+    "name": "CLASSICDESIGN.IT SRL",
+    "address": "Via Acerbi, 44",
+    "city": "Ponte dell'Olio",
+    "zipCode": "29028",
+    "province": "PC",
+    "phone": "+39 0523 874003",
+    "id": 8285,
+    "email": "info@classicdesign.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.5303879,
+      "lng": 10.1821136999999
+    },
+    "name": "ZENUCCHI DESIGN CODE",
+    "address": "Via Orzinuovi, 129",
+    "city": "Brescia",
+    "zipCode": "25125",
+    "province": "BS",
+    "phone": "+39 030 3776654",
+    "id": 289,
+    "email": "info@zenucchi.it",
+    "website": "www.zenucchi.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.278763,
+      "lng": 9.45822699999997
+    },
+    "name": "ARREDO BONGIORNI",
+    "address": "Via Leonardo Da Vinci, 15",
+    "city": "Pieve Fissiraga",
+    "zipCode": "26854",
+    "province": "LO",
+    "phone": "+39 0371 239940",
+    "id": 3027,
+    "email": "arredobongiorni@arredobongiorni.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.713705,
+      "lng": 9.88175
+    },
+    "name": "ZENUCCHI DESIGN CODE",
+    "address": "Piazzale Alberto Meli, 80",
+    "city": "Luzzana",
+    "zipCode": "24069",
+    "province": "BG",
+    "phone": "+39 035 822484",
+    "id": 313,
+    "email": "info@zenucchi.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.57095,
+      "lng": 9.64335
+    },
+    "name": "LAZZARINI ARREDAMENTO",
+    "address": "Via Provinciale, 15",
+    "city": "Lurano",
+    "zipCode": "24050",
+    "province": "BG",
+    "phone": "+39 035 4877483",
+    "id": 285,
+    "email": "lazzariniarredamento@virgilio.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.6101754,
+      "lng": 14.3589288
+    },
+    "name": "ROOMS-ATELIER ARMW GMBH",
+    "address": "Miegererstraße 25B",
+    "city": "Ebenthal in Kärnten",
+    "zipCode": "A-9065",
+    "province": "",
+    "phone": "+43 463 2646790",
+    "id": 154,
+    "email": "office@rooms.co.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.810849,
+      "lng": 15.9816482
+    },
+    "name": "THEMELIA",
+    "address": "Palmotićeva ul. 26",
+    "city": "Zagreb",
+    "zipCode": "1000",
+    "province": "",
+    "phone": "+385 14922764",
+    "id": 163,
+    "email": "themelia@themelia.hr",
+    "website": "www.themelia.hr",
+    "related": null,
+    "country": {
+      "id": 53,
+      "name": "Croatia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.4722564,
+      "lng": 9.2062775
+    },
+    "name": "SPOTTI S.R.L.",
+    "address": "Viale Piave, 27",
+    "city": "Milano",
+    "zipCode": "20129",
+    "province": "MI",
+    "phone": "+39 02 781953 ",
+    "id": 342,
+    "email": "consegne@spotti.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 9,
+      "name": "Hexagon: Atelier"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.469235471705,
+      "lng": 9.2019510269165
+    },
+    "name": "GIORGETTI ATELIER",
+    "address": "Via Serbelloni, 14",
+    "city": "Milano",
+    "zipCode": "20122",
+    "province": "MI",
+    "phone": "+39 02 9937 2000",
+    "id": 30618,
+    "email": "atelier@hexagon.eu",
+    "website": "",
+    "related": {
+      "id": 2596,
+      "url": "/it/en/atelier-store/atelier-milan"
+    },
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.4639743,
+      "lng": 9.1975533
+    },
+    "name": "Bredaquaranta",
+    "address": "Via Durini, 5",
+    "city": "Milano",
+    "zipCode": "20122",
+    "province": "MI",
+    "phone": "+39 02 36638440",
+    "id": 41287,
+    "email": "durini@bredaquaranta.it",
+    "website": "www.bredaquaranta.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.4730426,
+      "lng": 9.1898976
+    },
+    "name": "Bredaquaranta",
+    "address": "via Fatebenefratelli 10",
+    "city": "Milano",
+    "zipCode": "20121",
+    "province": "MI",
+    "phone": "+39 02 36557430",
+    "id": 350,
+    "email": "marketing@bredaquaranta.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.6071069,
+      "lng": 9.236
+    },
+    "name": "UNOVIAMATTEOTTI",
+    "address": "Via G. Matteotti, 1",
+    "city": "Lissone",
+    "zipCode": "20851",
+    "province": "MB",
+    "phone": "+39 039 484916",
+    "id": 305,
+    "email": "info@unoviamatteotti.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.61142,
+      "lng": 9.23592819999999
+    },
+    "name": "GELOSA S.r.l.",
+    "address": "Via Matteotti, 84",
+    "city": "Lissone",
+    "zipCode": "20851",
+    "province": "MB",
+    "phone": "+39 039 482683",
+    "id": 6777,
+    "email": "info@gelosaarredi.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.5807043,
+      "lng": 9.1820067
+    },
+    "name": "CARNABY S.R.L.",
+    "address": "Via Nuova Valassina, 350",
+    "city": "Lissone",
+    "zipCode": "20851",
+    "province": "MB",
+    "phone": "+39 039 483267",
+    "id": 312,
+    "email": "info@carnabysrl.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.6820007,
+      "lng": 9.2181689
+    },
+    "name": "INTERNI S.P.A",
+    "address": "Via Achille Grandi, 73",
+    "city": "Verano Brianza",
+    "zipCode": "20843",
+    "province": "MB",
+    "phone": "+39 0362 902641",
+    "id": 322,
+    "email": "verano@internionline.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.7226245,
+      "lng": 9.2151528
+    },
+    "name": "SALVIONI DESIGN SOLUTIONS",
+    "address": "Via Don C. Gnocchi, 1",
+    "city": "Inverigo",
+    "zipCode": "22044",
+    "province": "CO",
+    "phone": "+39 031 3591311",
+    "id": 294,
+    "email": "info@salvioniarredamenti.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.6581932,
+      "lng": 9.1350771
+    },
+    "name": "VAGO FORNITURE",
+    "address": "Corso Guglielmo Marconi, 52",
+    "city": "Barlassina",
+    "zipCode": "20825",
+    "province": "MB",
+    "phone": "+39 0362 565906",
+    "id": 293,
+    "email": "info@vago.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.4557865,
+      "lng": 15.5294489
+    },
+    "name": "D'ANGELO ARREDAMENTI",
+    "address": "Via Paolo Telesforo, 178",
+    "city": "Foggia",
+    "zipCode": "71122",
+    "province": "FG",
+    "phone": "+39 0881 741743",
+    "id": 2850,
+    "email": "dangelo@dangeloarredamenti.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.9297926,
+      "lng": 14.2626214
+    },
+    "name": "ARREDAMENTI TROMBETTA",
+    "address": "Corso Giuseppe Garibaldi, 180",
+    "city": "Grumo Nevano",
+    "zipCode": "80028",
+    "province": "NA",
+    "phone": "+39 081 8337494",
+    "id": 324,
+    "email": "info@arredamentitrombetta.it",
+    "website": "www.arredamentitrombetta.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.8350948,
+      "lng": 14.2193839
+    },
+    "name": "FRANCHINO MARIO & CO. SAS",
+    "address": "Via Domiziana, 249",
+    "city": "Mondragone",
+    "zipCode": "81034",
+    "province": "CE",
+    "phone": "+39 081 7617591",
+    "id": 4290,
+    "email": "info@franchino.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.6021477,
+      "lng": 8.8902418
+    },
+    "name": "6B ARREDAMENTI",
+    "address": "Viale Giuseppe Borri, 6B",
+    "city": "Castellanza",
+    "zipCode": "21053",
+    "province": "VA",
+    "phone": "+39 0331 1773048",
+    "id": 280,
+    "email": "sara@6b-arredamenti.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.810179,
+      "lng": 9.0746204
+    },
+    "name": "PEVERELLI ARREDAMENTI",
+    "address": "Via Recchi 2/A",
+    "city": "Como",
+    "zipCode": "22100",
+    "province": "CO",
+    "phone": "+39 031 264688",
+    "id": 299,
+    "email": "info-como@peverelliarredamenti.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.9065795,
+      "lng": 14.7483112
+    },
+    "name": "2C ARREDAMENTI CORBETTA CIMNAGHI",
+    "address": "Via Nazionale Torrette, 390",
+    "city": "Mercogliano",
+    "zipCode": "83013",
+    "province": "AV",
+    "phone": "+ 39 0825 681146",
+    "id": 32691,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.004373,
+      "lng": 8.169558
+    },
+    "name": "A.D.M. ARREDAMENTI MELGRATI M.& S. S.A.S.",
+    "address": "Viale Hanbury, 3",
+    "city": "Alassio",
+    "zipCode": "17021",
+    "province": "SV",
+    "phone": "+39 0182 644557",
+    "id": 367,
+    "email": "silvio.melgrati@uno.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.1381282,
+      "lng": 8.45190330000003
+    },
+    "name": "PAGLIANO ARREDAMENTI",
+    "address": "Via Paleologi, 30",
+    "city": "Casale Monferrato",
+    "zipCode": "15033",
+    "province": "AL",
+    "phone": "+39 0142 73695",
+    "id": 10378,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.8728137,
+      "lng": 8.9776621
+    },
+    "name": "ARREDAMENTI BERNASCONI",
+    "address": "Via Borromini 8",
+    "city": "Mendrisio",
+    "zipCode": "06850",
+    "province": "",
+    "phone": "+41 91 6461878",
+    "id": 286,
+    "email": "info@arredamentibernasconi.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.9869267,
+      "lng": 8.9391381
+    },
+    "name": "INTERNI ARREDAMENTI",
+    "address": "Via Alla Sguancia 5",
+    "city": "Pazzallo",
+    "zipCode": "6912",
+    "province": "",
+    "phone": "+41 91 9949433",
+    "id": 273,
+    "email": "interni@interni-arredamenti.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.0072567,
+      "lng": 8.95121619999998
+    },
+    "name": "SALVIONI LUGANO DESIGN SOLUTIONS",
+    "address": "Via Ferruccio Pelli 2",
+    "city": "Lugano",
+    "zipCode": "6900",
+    "province": "",
+    "phone": "+41 (0) 91 9213525",
+    "id": 496,
+    "email": "info.online@salvionilugano.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.68147,
+      "lng": 8.06705
+    },
+    "name": "MARCARINO ARREDAMENTI",
+    "address": "Fraz. San Rocco Seno d'Elvio, 3",
+    "city": "Alba",
+    "zipCode": "12051",
+    "province": "CN",
+    "phone": "+39 0173 441914",
+    "id": 315,
+    "email": "marcarino@marcarino.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.3385661,
+      "lng": 11.855234
+    },
+    "name": "Wetscher GmbH & CO.KG",
+    "address": "Zillertal Bundestr.",
+    "city": "Fügen",
+    "zipCode": "6263",
+    "province": "",
+    "phone": "+ 43 5288 6000",
+    "id": 171,
+    "email": "mail@wetscher.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.2768865,
+      "lng": 11.4378986
+    },
+    "name": "Reiter Design GmbH",
+    "address": "Haller Str. 201",
+    "city": "Innsbruck",
+    "zipCode": "6040",
+    "province": "",
+    "phone": "+43 512 24433346",
+    "id": 174,
+    "email": "a.peer@reiter.design",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.155916,
+      "lng": 8.9706502
+    },
+    "name": "DELCO' MOBILI",
+    "address": "via Gorelle 1",
+    "city": "S. Antonino",
+    "zipCode": "6592",
+    "province": "",
+    "phone": "+41 91 2242727",
+    "id": 326,
+    "email": "info@delcomobili.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.3678395,
+      "lng": 11.8489124
+    },
+    "name": "Möbel Freudling GmbH",
+    "address": "Gewerbeweg 3",
+    "city": "Fügen",
+    "zipCode": "6263",
+    "province": "",
+    "phone": "+43 5288 62215",
+    "id": 3773,
+    "email": "wohndesign@freudling.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.4443943,
+      "lng": 12.3949001999999
+    },
+    "name": "Kitzbüheler Werkstätten",
+    "address": "Jochberger Strasse 1",
+    "city": "Kitzbühel",
+    "zipCode": "6370",
+    "province": "",
+    "phone": "+43 5356 64757",
+    "id": 3100,
+    "email": "office@kitzwerk.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.8538471,
+      "lng": 15.7416409
+    },
+    "name": "Schaden Lebensräume",
+    "address": "Jagerberg 91",
+    "city": "Jagerberg",
+    "zipCode": "A-8091",
+    "province": "",
+    "phone": "+43 31 848209",
+    "id": 3111,
+    "email": "office@schaden.co.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.0719813,
+      "lng": 15.4481501
+    },
+    "name": "René Rauschl Interior Design GmbH",
+    "address": "Leonhardstraße 4",
+    "city": "Graz",
+    "zipCode": "8010",
+    "province": "",
+    "phone": "+43 (0) 664 50 55 842",
+    "id": 32919,
+    "email": "rene.rauschl@gmx.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.2215,
+      "lng": 16.28524
+    },
+    "name": "GAN DESIGN LAB",
+    "address": "Don R. Lotti, 68",
+    "city": "Andria",
+    "zipCode": "76123",
+    "province": "BT",
+    "phone": "+39 0883 896 390",
+    "id": 8464,
+    "email": "info@gandesignlab.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.8659272,
+      "lng": 7.6677652
+    },
+    "name": "ARREDAMENTI FOGLIARINI",
+    "address": "SP59, km 9,6,",
+    "city": "Perinaldo",
+    "zipCode": "18032",
+    "province": "IM",
+    "phone": "+39 0184 672023",
+    "id": 357,
+    "email": "info@fogliarini.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.7478781,
+      "lng": 7.43480439999996
+    },
+    "name": "SABRINA MONTECARLO",
+    "address": "Avenue Princesse Grace, 39",
+    "city": "Monaco",
+    "zipCode": "98000",
+    "province": "",
+    "phone": "+377 97 975760",
+    "id": 741,
+    "email": "contact@sabrinamontecarlo.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 148,
+      "name": "Monaco"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.7471502,
+      "lng": 7.4315322
+    },
+    "name": "WOOD WORK MONACO",
+    "address": "15, Boulevard d'Italie",
+    "city": "Monaco",
+    "zipCode": "MC 98000",
+    "province": "",
+    "phone": "+377 93 302226",
+    "id": 134,
+    "email": "sima.ganoudi@woodwork.mc",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 148,
+      "name": "Monaco"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.7999128,
+      "lng": 13.0538216
+    },
+    "name": "SCHÖNER WOHNEN",
+    "address": "Imbergstrasse 43 & 51-55",
+    "city": "Salzburg",
+    "zipCode": "5020",
+    "province": "",
+    "phone": "+43 662 640474",
+    "id": 480,
+    "email": "info@schoener-wohnen.cc",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.8077787,
+      "lng": 13.0457464
+    },
+    "name": "FAMLER EINRICHTUNGEN",
+    "address": "Haydnstraße 16",
+    "city": "Salzburg",
+    "zipCode": "5020",
+    "province": "",
+    "phone": "+ 43 662 8746400",
+    "id": 472,
+    "email": "info@famler.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.5805699,
+      "lng": 15.6746906
+    },
+    "name": "INTERNI ESPRESSIONI",
+    "address": "Via Roma, 154",
+    "city": "Tito",
+    "zipCode": "85050",
+    "province": "PZ",
+    "phone": "+39 0971 798648",
+    "id": 6254,
+    "email": "info@interniespressioni.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.1676767,
+      "lng": 9.5075617
+    },
+    "name": "THÖNY WOHNEN",
+    "address": "Bahnhofstr. 16",
+    "city": "Schaan",
+    "zipCode": "9494",
+    "province": "",
+    "phone": "+42 32374141",
+    "id": 321,
+    "email": "info@moebelthoeny.li",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 127,
+      "name": "Liechtenstein"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.2893633,
+      "lng": 9.6208819
+    },
+    "name": "Reiter Design GmbH",
+    "address": "Bundesstraße 102",
+    "city": "Rankweil",
+    "zipCode": "6839",
+    "province": "",
+    "phone": "+43 5522 81770",
+    "id": 165,
+    "email": "office@reiter.design",
+    "website": "www.reiter.design",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.4215675,
+      "lng": 9.7371046
+    },
+    "name": "Höttges",
+    "address": "Rhomberg's Fabrik, Färbergasse 15",
+    "city": "Dornbirn",
+    "zipCode": "6850",
+    "province": "",
+    "phone": "+43 (0)55 72 22175",
+    "id": 41288,
+    "email": "office@hoettges.at",
+    "website": "https://www.xn--httges-wxa.at/home",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.816093,
+      "lng": 16.54169
+    },
+    "name": "CARLUCCI HOME PROJECT",
+    "address": "Via Selva, 224",
+    "city": "Altamura",
+    "zipCode": "70022",
+    "province": "BA",
+    "phone": "+39 080 3146657",
+    "id": 2929,
+    "email": "info@carlucciarredamento.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.5509893,
+      "lng": 7.0259393
+    },
+    "name": "DANISH DESIGN HOUSE",
+    "address": "Rond-Point Duboys d'Angers",
+    "city": "Cannes",
+    "zipCode": "06400",
+    "province": "",
+    "phone": "+33 4 93686866",
+    "id": 141,
+    "email": "info@danishdesignhouse.net",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 67,
+      "name": "France"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.0686362,
+      "lng": 11.6734983
+    },
+    "name": "Casa Idea GmbH",
+    "address": "Putzbrunner Str. 75",
+    "city": "Ottobrunn",
+    "zipCode": "85521",
+    "province": "",
+    "phone": "+49 (0) 89 81305535",
+    "id": 10361,
+    "email": "info@casa-idea.de",
+    "website": "www.casa-idea.de",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.5459657,
+      "lng": 9.684346
+    },
+    "name": "Viktor Einrichtungen",
+    "address": "Ludwigstrasse 22",
+    "city": "Lindau",
+    "zipCode": "88131",
+    "province": "",
+    "phone": "+49 (0) 8373 8349",
+    "id": 232,
+    "email": "lindau@viktor-einrichtungen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.54593,
+      "lng": 9.68291
+    },
+    "name": "Böhm - Die Einrichtung",
+    "address": "Maximilianstr. 21",
+    "city": "Lindau",
+    "zipCode": "88131",
+    "province": "",
+    "phone": "+49 (0) 8382 6051",
+    "id": 206,
+    "email": "boehm.dieeinrichtungen@t-online.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.5609572,
+      "lng": 9.6852935
+    },
+    "name": "DIE EINRICHTUNGSLOUNGE GMBH & CO. KG",
+    "address": "Friedrichshafener Str. 57",
+    "city": "Lindau",
+    "zipCode": "88131",
+    "province": "",
+    "phone": "+49 (0) 8382 2748031",
+    "id": 237,
+    "email": "waldburg-zeil@dieeinrichtungslounge.com",
+    "website": "www.dieeinrichtungslounge.com",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.416657,
+      "lng": 9.2510096
+    },
+    "name": "WIDMER WOHNEN",
+    "address": "St. Gallenstr.71",
+    "city": "Gossau",
+    "zipCode": "09200",
+    "province": "",
+    "phone": "+41 71 3800411",
+    "id": 10357,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.1364438,
+      "lng": 11.5787611
+    },
+    "name": "BÖHMLER EINRICHTUNGSHAUS GMBH",
+    "address": "Tal 11",
+    "city": "München",
+    "zipCode": "80331",
+    "province": "",
+    "phone": "+49 (0) 89 21360",
+    "id": 255,
+    "email": "info@boehmler.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.1405643,
+      "lng": 11.5725545
+    },
+    "name": "Neue Werkstätten Einrichtungshaus",
+    "address": "Promenadenplatz 8",
+    "city": "München",
+    "zipCode": "80333",
+    "province": "",
+    "phone": "+49 (0) 89 2420500",
+    "id": 221,
+    "email": "angela.brandner@neue-werkstaetten.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.1507619,
+      "lng": 11.5402716
+    },
+    "name": "Egetemeier Wohnkultur GmbH",
+    "address": "Nymphenburger Str. 121",
+    "city": "München",
+    "zipCode": "80636",
+    "province": "",
+    "phone": "+49 (0) 89 595512",
+    "id": 207,
+    "email": "info@egetemeier.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.72642,
+      "lng": 9.82008
+    },
+    "name": "JOCHAM WOHNCOCKTAIL",
+    "address": "Ungerhaus 2",
+    "city": "Wangen",
+    "zipCode": "88239",
+    "province": "",
+    "phone": "+49 (0) 7506 9550",
+    "id": 251,
+    "email": "info@jocham-wangen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.2734052,
+      "lng": 12.1485693
+    },
+    "name": "Thalmeier Einrichtungen GmbH",
+    "address": "Marienplatz 1",
+    "city": "Dorfen",
+    "zipCode": "84405",
+    "province": "",
+    "phone": "+49 (0) 8081 93670",
+    "id": 228,
+    "email": "einrichtungen@thalmeier.org",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.4628952,
+      "lng": 9.0552311
+    },
+    "name": "GAMMA AG EINRICHTUNGSHAUS",
+    "address": "St. Gallerstrasse 45",
+    "city": "Wil",
+    "zipCode": "09500",
+    "province": "",
+    "phone": "+41 71 9148888",
+    "id": 316,
+    "email": "info@gamma.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.303746,
+      "lng": 11.9070494
+    },
+    "name": "Thalmeier Einrichtungen GmbH",
+    "address": "Haager Straße 10",
+    "city": "Erding",
+    "zipCode": "85435",
+    "province": "",
+    "phone": "+49 (0) 8122 95984-30",
+    "id": 527,
+    "email": "erding@thalmeier.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.0221911,
+      "lng": 8.2934104
+    },
+    "name": "MÖBEL AMREIN AG",
+    "address": "Schlundstr. 80",
+    "city": "Kriens",
+    "zipCode": "6010",
+    "province": "",
+    "phone": "+41 41 3185005",
+    "id": 283,
+    "email": "info@amrein.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.7833671,
+      "lng": 9.6099677
+    },
+    "name": "MAURER WOHNEN KG",
+    "address": "Eisenbahnstr. 26",
+    "city": "Ravensburg",
+    "zipCode": "88212",
+    "province": "",
+    "phone": "+49 (0) 751 362340",
+    "id": 272,
+    "email": "info@maurer-wohnen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.3009984,
+      "lng": 14.2931842
+    },
+    "name": "Schantl Interiors",
+    "address": "Dametzstraße 53",
+    "city": "Linz",
+    "zipCode": "4020",
+    "province": "",
+    "phone": "+43 732 779863",
+    "id": 144,
+    "email": "info@schantl.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.3405626,
+      "lng": 8.56785709999997
+    },
+    "name": "CONCEPT CI INTERIORS",
+    "address": "Seestrasse 37",
+    "city": "Zollikon",
+    "zipCode": "8702",
+    "province": "",
+    "phone": "+41 44 3962200",
+    "id": 4098,
+    "email": "info@ci-interiors.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.68595,
+      "lng": 9.15259
+    },
+    "name": "Leopold Fretz GmbH & Co. KG",
+    "address": "Fürstenbergstr. 38-41",
+    "city": "Konstanz",
+    "zipCode": "78467",
+    "province": "",
+    "phone": "+49 (0) 7531 924090",
+    "id": 210,
+    "email": "kontakt@fretz.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.3635371,
+      "lng": 8.5481945
+    },
+    "name": "OTTAGONO+RECHSTEINER INNENEINRICHTUNGEN AG",
+    "address": "Dufourstrasse 29",
+    "city": "Zürich",
+    "zipCode": "8008",
+    "province": "",
+    "phone": "+41 44 2014500",
+    "id": 310,
+    "email": "info@ottagono.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.4191162,
+      "lng": 8.6306159
+    },
+    "name": "ZINGG-LAMPRECHT AG",
+    "address": "Stationstrasse 1-3",
+    "city": "Bruettisellen",
+    "zipCode": "08306",
+    "province": "",
+    "phone": "+41 43 2557070",
+    "id": 275,
+    "email": "info@zingg-lamprecht.ch",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.6994937,
+      "lng": 17.3382117
+    },
+    "name": "ILH Srl | MASTROVITO ESPRESSIONI",
+    "address": "Via Taranto, 41",
+    "city": "Martina Franca",
+    "zipCode": "74015",
+    "province": "TA",
+    "phone": "+39 080 4301775",
+    "id": 32689,
+    "email": "martina@mastrovitoespressioni.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.48228,
+      "lng": 11.70977
+    },
+    "name": "BIRGIT OTTE INTERIOR GMBH",
+    "address": "Im Schlossgutfeld 1-2",
+    "city": "Wolfersdorf",
+    "zipCode": "85395",
+    "province": "",
+    "phone": "+49 (0) 8168 9989055",
+    "id": 245,
+    "email": "info@birgitotte.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.0992744,
+      "lng": 9.7877366
+    },
+    "name": "Heinzel Einrichtungen",
+    "address": "Gymnasiumstr. 20",
+    "city": "Biberach",
+    "zipCode": "88400",
+    "province": "",
+    "phone": "+49 (0) 7351 80169",
+    "id": 198,
+    "email": "heinzel_einrichtungen@t-online.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.2279755,
+      "lng": 9.882367
+    },
+    "name": "MÖBEL MOCK EINRICHTUNGEN",
+    "address": "Rabenstr. 25",
+    "city": "Laupheim",
+    "zipCode": "88471",
+    "province": "",
+    "phone": "+49 (0) 7392 3606",
+    "id": 281,
+    "email": "kontakt@moebelmock.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.4407135,
+      "lng": 6.8912563
+    },
+    "name": "VIQUERAT DECORATION",
+    "address": "Rue Du Lac,107",
+    "city": "Clarens-Montreux",
+    "zipCode": "1815",
+    "province": "",
+    "phone": "+41 21 9642221",
+    "id": 306,
+    "email": "info@viqueratdecoration.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.6341584,
+      "lng": 8.2834371
+    },
+    "name": "Seipp Wohnen GmbH",
+    "address": "Schaffhauser Str. 36",
+    "city": "Tiengen",
+    "zipCode": "79761",
+    "province": "",
+    "phone": "+49 (0) 7741 60900",
+    "id": 246,
+    "email": "s.berger@seipp.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.6227488,
+      "lng": 8.2158569
+    },
+    "name": "Seipp Wohnen",
+    "address": "Bismarckstr. 35",
+    "city": "Waldshut",
+    "zipCode": "79761",
+    "province": "",
+    "phone": "+49 (0) 7751 8360",
+    "id": 236,
+    "email": "wohnen@seipp.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.8056527,
+      "lng": 7.1583156
+    },
+    "name": "STYLEDESIGN CARRIERO",
+    "address": "Rue de Lausanne 53",
+    "city": "Fribourg",
+    "zipCode": "01700",
+    "province": "",
+    "phone": "+41 26 3231750",
+    "id": 295,
+    "email": "webmaster@styledesigninteriors.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.4312748,
+      "lng": 19.2627982
+    },
+    "name": "ARTEFACTO+ Design Center d.o.o.",
+    "address": "Bulevar Svetog Petra Cetinjskog Ulica II",
+    "city": "Podgorica",
+    "zipCode": "81000",
+    "province": "",
+    "phone": "+381 11 3226467",
+    "id": 155,
+    "email": "info@artefactoplus.me",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 246,
+      "name": "Montenegro"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.98062,
+      "lng": 8.80394
+    },
+    "name": "Schatz GmbH & Co. KG",
+    "address": "Möhringer Str. 114",
+    "city": "Tuttlingen",
+    "zipCode": "78532",
+    "province": "",
+    "phone": "+49 (0) 7461 94940",
+    "id": 216,
+    "email": "info@schatz-wohnen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.2041253,
+      "lng": 16.3560047
+    },
+    "name": "SMART LIVING GmbH",
+    "address": "Burggasse 7-9",
+    "city": "Wien",
+    "zipCode": "1070",
+    "province": "",
+    "phone": "+43 1 5352505",
+    "id": 145,
+    "email": "office@smartliving.co.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.2081743,
+      "lng": 16.3738189
+    },
+    "name": "Filiali by ROOMS GmbH",
+    "address": "Leonhardstraße 4",
+    "city": "Wien",
+    "zipCode": "1030",
+    "province": "",
+    "phone": "+43 1 710 50 24",
+    "id": 32920,
+    "email": "vienna@rooms.co.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.2116619,
+      "lng": 16.3653828
+    },
+    "name": "Einwaller & Partner GmbH",
+    "address": "Freyung 3",
+    "city": "Wien",
+    "zipCode": "1010",
+    "province": "",
+    "phone": "+43 1 5353730",
+    "id": 140,
+    "email": "web@einwaller.cc",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.2106049,
+      "lng": 16.3718196
+    },
+    "name": "JSE Steinwender Interiors GmbH",
+    "address": "Wipplingerstraße 10",
+    "city": "Wien",
+    "zipCode": "1010",
+    "province": "",
+    "phone": "+43 1 53333020",
+    "id": 153,
+    "email": "verkauf@viktorsteinwender.at",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 13,
+      "name": "Austria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.6466677,
+      "lng": 7.7785269
+    },
+    "name": "Einrichten Schweigert KG",
+    "address": "Hauptstr. 28",
+    "city": "Maulburg",
+    "zipCode": "79689",
+    "province": "",
+    "phone": "+49 (0) 7622 39930",
+    "id": 186,
+    "email": "info@schweigert.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.6244615,
+      "lng": 9.8300041
+    },
+    "name": "STECK EINRICHTUNGSHAUS",
+    "address": "Stuttgarter Str. 50",
+    "city": "Geislingen/Steige",
+    "zipCode": "73312",
+    "province": "",
+    "phone": "+49 (0) 7331 95490",
+    "id": 262,
+    "email": "steck-wohnen@t-online.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.1309878,
+      "lng": 17.113642
+    },
+    "name": "ZENO SHOWROOM",
+    "address": "Atrium - Einsteinova 9",
+    "city": "Bratislava",
+    "zipCode": "",
+    "province": "",
+    "phone": "+421 903 634868",
+    "id": 168,
+    "email": "info@zeno.sk",
+    "website": "www.zeno.sk",
+    "related": null,
+    "country": {
+      "id": 199,
+      "name": "Slovakia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 46.2001877,
+      "lng": 6.1493768
+    },
+    "name": "Camille Aryeh interiors & Architecture",
+    "address": "7 place du bourg-de-four",
+    "city": "Genève",
+    "zipCode": "1204",
+    "province": "",
+    "phone": "+41 22 8102555",
+    "id": 9152,
+    "email": "info@aryeharchitecture.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 209,
+      "name": "Switzerland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.7013446,
+      "lng": 9.6597419
+    },
+    "name": "Einrichtungshaus Grimm GmbH & Co.",
+    "address": "Mittlere Karlstr. 93",
+    "city": "Göppingen",
+    "zipCode": "73033",
+    "province": "",
+    "phone": "+49 (0) 7161 963370",
+    "id": 194,
+    "email": "info@grimm-einrichtungen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.3597107,
+      "lng": 18.1594975
+    },
+    "name": "MAXXI DI CONOCI VALENTINA",
+    "address": "Via Taranto, 110",
+    "city": "Lecce",
+    "zipCode": "73100",
+    "province": "LE",
+    "phone": "+39 0832 090126",
+    "id": 358,
+    "email": "info@maxxilecce.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.67495,
+      "lng": 9.37614
+    },
+    "name": "Behr Einrichtungen",
+    "address": "Behrstr. 100",
+    "city": "Wendlingen",
+    "zipCode": "73240",
+    "province": "",
+    "phone": "+49 (0) 7024 469590",
+    "id": 188,
+    "email": "info@behr-einrichtung.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.9959298,
+      "lng": 7.8444486
+    },
+    "name": "Krämer Einrichtungen GmbH",
+    "address": "Bertoldstr. 49",
+    "city": "Freiburg",
+    "zipCode": "79098",
+    "province": "",
+    "phone": "+49 (0) 761 368050",
+    "id": 213,
+    "email": "info@kraemer-einrichtungen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.6992186,
+      "lng": 9.2207993
+    },
+    "name": "HESELSCHWERDT GMBH CREATIVES HANDWERK",
+    "address": "Neuhauser Str. 57",
+    "city": "Stuttgart",
+    "zipCode": "70599",
+    "province": "",
+    "phone": "+49 (0) 711 457687",
+    "id": 250,
+    "email": "info@heselschwerdt.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.800995,
+      "lng": 9.1728096
+    },
+    "name": "ARCHITARE Barbara Benz Einrichten",
+    "address": "Stresemannstraße 1, Killesberghöhe",
+    "city": "Stuttgart",
+    "zipCode": "70192",
+    "province": "",
+    "phone": "+49 (0) 711 63500",
+    "id": 256,
+    "email": "fleiner@architare.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.7172237,
+      "lng": 8.885376
+    },
+    "name": "WOHNKONZEPTE ALEXANDER MEEH",
+    "address": "Rathausplatz 4",
+    "city": "Grafenau",
+    "zipCode": "71120",
+    "province": "",
+    "phone": "+49 (0) 7033 304333",
+    "id": 253,
+    "email": "alexander@meeh.de",
+    "website": "www.meeh.de",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.8132706,
+      "lng": 20.4693034
+    },
+    "name": "ARTEFACTO",
+    "address": "Svetogorska 39",
+    "city": "Beograd",
+    "zipCode": "1100",
+    "province": "",
+    "phone": "+381 11 3226467",
+    "id": 159,
+    "email": "info@artefacto.rs",
+    "website": "www.artefacto.rs",
+    "related": null,
+    "country": {
+      "id": 248,
+      "name": "Serbia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.35551,
+      "lng": 11.2571
+    },
+    "name": "Pfaff Interior & Design",
+    "address": "Zum Schwarzachtal 3a",
+    "city": "Schwarzenbruck",
+    "zipCode": "90592",
+    "province": "",
+    "phone": "+49 (0) 9128 922122",
+    "id": 3069,
+    "email": "info@jpfaff.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.3393,
+      "lng": 7.85531
+    },
+    "name": "ERNST SCHAUB KG",
+    "address": "Schwarzwaldstr. 15",
+    "city": "Lahr",
+    "zipCode": "77933",
+    "province": "",
+    "phone": "+49 (0) 7821 9247-0",
+    "id": 249,
+    "email": "info@schaub-einrichtungen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.11055,
+      "lng": 9.73413
+    },
+    "name": "GRÄTER EINRICHTUNG",
+    "address": "Mauerstr. 21",
+    "city": "Schwäbisch Hall",
+    "zipCode": "74523",
+    "province": "",
+    "phone": "+49 (0) 791 7427",
+    "id": 258,
+    "email": "graeter-einrichtung@t-online.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 47.500933,
+      "lng": 19.048129
+    },
+    "name": "INTERNI BUDAPEST",
+    "address": "Vigyázó Ferenc u. 3",
+    "city": "Budapest",
+    "zipCode": "1051",
+    "province": "",
+    "phone": "+36 12690708",
+    "id": 150,
+    "email": "Info@internibudapest.hu",
+    "website": "www.internibudapest.hu",
+    "related": null,
+    "country": {
+      "id": 92,
+      "name": "Hungary"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.452992,
+      "lng": 11.077437
+    },
+    "name": "DESIGNFUNKTION",
+    "address": "Hauptmarkt 2",
+    "city": "Nürnberg",
+    "zipCode": "90403",
+    "province": "",
+    "phone": "+49 (0) 911 99804 - 0",
+    "id": 535,
+    "email": "nuernberg@designfunktion.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.4530071,
+      "lng": 11.0749991
+    },
+    "name": "Renner Raum & Idee",
+    "address": "Trödelmarkt 10-26",
+    "city": "Nürnberg",
+    "zipCode": "90403",
+    "province": "",
+    "phone": "+49 (0) 911 232839",
+    "id": 215,
+    "email": "renner@renner-raumundidee.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.3056697,
+      "lng": 10.167676
+    },
+    "name": "M. Jursa GmbH Einrichtungshaus",
+    "address": "Lerchenweg 4",
+    "city": "Insingen",
+    "zipCode": "91610",
+    "province": "",
+    "phone": "+49 (0) 9869 1244",
+    "id": 229,
+    "email": "Info@jursa.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.8999758,
+      "lng": 8.669562
+    },
+    "name": "Schweizer Wohnen GmbH",
+    "address": "Karlsruher Str. 10",
+    "city": "Pforzheim",
+    "zipCode": "75719",
+    "province": "",
+    "phone": "+49 (0) 7231 91660",
+    "id": 226,
+    "email": "info@gwinner-schweizer.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.7550405,
+      "lng": 8.24087759999998
+    },
+    "name": "IP Interior Design",
+    "address": "Ludwig-Wilhelm-Straße 22",
+    "city": "Baden-Baden",
+    "zipCode": "76530",
+    "province": "",
+    "phone": "+49 (0) 7221 33824",
+    "id": 7066,
+    "email": "info@ip-interior-design.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 38.1257824,
+      "lng": 13.3557946
+    },
+    "name": "SCILLUFO ARREDAMENTI",
+    "address": "Via Nicolò Gallo, 8",
+    "city": "Palermo",
+    "zipCode": "90139",
+    "province": "PA",
+    "phone": "+39 091 6124383",
+    "id": 330,
+    "email": "info@scillufoarredamenti.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.5953196,
+      "lng": 11.00551
+    },
+    "name": "DÖRFLER Intern. Wohnkultur",
+    "address": "Friedrichstraße 3-5",
+    "city": "Erlangen",
+    "zipCode": "91054",
+    "province": "",
+    "phone": "+49 (0) 9131 26038",
+    "id": 200,
+    "email": "info@doerfler.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.2384045,
+      "lng": 19.9160993
+    },
+    "name": "VEKO",
+    "address": "Rruga Industriale 62 Km 1 Tr-Dr",
+    "city": "Tirana",
+    "zipCode": "P.C. 1029",
+    "province": "",
+    "phone": "+355 42 407401",
+    "id": 10355,
+    "email": "info@veko-al.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 2,
+      "name": "Albania"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.007077,
+      "lng": 8.3926984
+    },
+    "name": "BURGER inneneinrichtung GmbH",
+    "address": "Waldstr. 89-91",
+    "city": "Karlsruhe",
+    "zipCode": "76133",
+    "province": "",
+    "phone": "+49 (0) 721 9132221",
+    "id": 261,
+    "email": "info@burger.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.8814136,
+      "lng": 12.4976346
+    },
+    "name": "LOMBARDO ARREDI",
+    "address": "Contrada Birgi Nivaloro, 131/A",
+    "city": "Marsala",
+    "zipCode": "91025",
+    "province": "TP",
+    "phone": "+39 0923 966218",
+    "id": 9290,
+    "email": "info@lombardoarredi.it",
+    "website": "www.lombardoarredi.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 38.1962701,
+      "lng": 15.5537337
+    },
+    "name": "FRANCA MOLLURA ARREDAMENTI",
+    "address": "Via XXIV Maggio, 96/161",
+    "city": "Messina",
+    "zipCode": "98122",
+    "province": "ME",
+    "phone": "+39 090 42135",
+    "id": 361,
+    "email": "info@francamollura.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.9457698,
+      "lng": 11.5775878
+    },
+    "name": "SCHAUTZ EINRICHTUNGEN",
+    "address": "Luitpoldplatz 10",
+    "city": "Bayreuth",
+    "zipCode": "95444",
+    "province": "",
+    "phone": "+49 (0) 921 789110",
+    "id": 259,
+    "email": "info@schautz.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 38.1365592,
+      "lng": 15.5230679
+    },
+    "name": "MOHD MOLLURA HOME DESIGN",
+    "address": "SS 114 Orientale Sicula, Km 6, 400,",
+    "city": "Tremestieri",
+    "zipCode": "98128",
+    "province": "ME",
+    "phone": "+39 090 6258945",
+    "id": 340,
+    "email": "info@mohd.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.8944174,
+      "lng": 10.8854368
+    },
+    "name": "S O M M E R EINRICHTUNG GBR",
+    "address": "Kapuzinerstraße 34 /  Eingang Holzmarkt",
+    "city": "Bamberg",
+    "zipCode": "96047",
+    "province": "",
+    "phone": "+49 (0) 951 51953670",
+    "id": 3074,
+    "email": "info@sommer-einrichtung.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.6629138,
+      "lng": 21.1655028
+    },
+    "name": "ARCHIDES",
+    "address": "Rr. Bekim Berisha nr. 1",
+    "city": "Prishtine",
+    "zipCode": "",
+    "province": "",
+    "phone": "+377 044 115145",
+    "id": 178,
+    "email": "gbaholli@consultant.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 119,
+      "name": "Kosovo"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.0901841,
+      "lng": 14.4251142
+    },
+    "name": "NOBIS STUDIO",
+    "address": "Dlouha' 32",
+    "city": "Praha 1",
+    "zipCode": "110 00",
+    "province": "",
+    "phone": "+420 222 212859",
+    "id": 149,
+    "email": "studio@nobis.cz",
+    "website": "www.nobis.cz",
+    "related": null,
+    "country": {
+      "id": 176,
+      "name": "Czech Republic"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.5640933,
+      "lng": 8.7074531
+    },
+    "name": "Einrichtungshaus Willi Jäger GmbH",
+    "address": "Hauptstr. 91",
+    "city": "Birkenau",
+    "zipCode": "69488",
+    "province": "",
+    "phone": "+49 (0) 6201 3980",
+    "id": 212,
+    "email": "mail@jaeger-birkenau.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.0371298,
+      "lng": 10.2372407
+    },
+    "name": "La Cucina GmbH",
+    "address": "Carl-Zeiss-Str. 9",
+    "city": "Schweinfurt",
+    "zipCode": "97424",
+    "province": "",
+    "phone": "+49 (0) 9721 207220",
+    "id": 233,
+    "email": "info@lacucina-kuechen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.2598803,
+      "lng": 10.9636004
+    },
+    "name": "WOHNDESIGN HIRSCH",
+    "address": "Webergasse 22a-24",
+    "city": "Coburg",
+    "zipCode": "96450",
+    "province": "",
+    "phone": "+49 (0) 9561 80210",
+    "id": 270,
+    "email": "info@hirsch-wohndesign.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.5150053,
+      "lng": 15.1008715
+    },
+    "name": "ARREDAMENTO ABITARE",
+    "address": "Via Pasubio, 2",
+    "city": "Catania",
+    "zipCode": "95129",
+    "province": "CT",
+    "phone": "+39 095 376766",
+    "id": 10008,
+    "email": "info@arredamentoabitare.it",
+    "website": "www.arredamentoabitare.it",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.3086,
+      "lng": 13.644407
+    },
+    "name": "MILIA LIVING HOME",
+    "address": "Viale Aldo Moro, 236",
+    "city": "Favara",
+    "zipCode": "92026",
+    "province": "AG",
+    "phone": "+39 0922 420200",
+    "id": 811,
+    "email": "customerservice@miliashop.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.1142025,
+      "lng": 8.9133475
+    },
+    "name": "Meiser GmbH & Co. KG",
+    "address": "Ludwigstr. 71",
+    "city": "Hanau-Steinheim",
+    "zipCode": "63456",
+    "province": "",
+    "phone": "+49 (0) 6181 67340",
+    "id": 239,
+    "email": "k.mieth@meiser-wohnen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.120992,
+      "lng": 8.7716975
+    },
+    "name": "Heide & Bechthold GmbH",
+    "address": "Schießhüttenstr. 16",
+    "city": "Frankfurt",
+    "zipCode": "60386",
+    "province": "",
+    "phone": "+49 (0) 69 9421660",
+    "id": 201,
+    "email": "c.heide@heide-bechthold.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.2110026,
+      "lng": 14.6414291
+    },
+    "name": "INTERNI ATTAGUILE",
+    "address": "Viale Raffaele Failla, 31",
+    "city": "Grammichele",
+    "zipCode": "95042",
+    "province": "CT",
+    "phone": "+39 0933 940234",
+    "id": 7603,
+    "email": "info@interniattaguille.it",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 114,
+      "name": "Italy"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.00289,
+      "lng": 8.27029
+    },
+    "name": "Holz Einrichtungshaus KG",
+    "address": "Flachsmarktstr. 13-17",
+    "city": "Mainz",
+    "zipCode": "55116",
+    "province": "",
+    "phone": "+49 (0) 6131 288550",
+    "id": 208,
+    "email": "info@einrichtungshaus-holz.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.2245531,
+      "lng": 8.6222108
+    },
+    "name": "MÖBEL MEISS",
+    "address": "Louisenstr. 98",
+    "city": "Bad Homburg",
+    "zipCode": "61348",
+    "province": "",
+    "phone": "+49 (0) 6172 67900",
+    "id": 211,
+    "email": "info@moebelmeiss.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.8671021,
+      "lng": 9.7115141
+    },
+    "name": "ELLENBERGER WOHNDESIGN",
+    "address": "Breitenstr. 46",
+    "city": "Bad Hersfeld",
+    "zipCode": "36251",
+    "province": "",
+    "phone": "+49 (0) 6621 51220",
+    "id": 248,
+    "email": "info@wohndesign-ellenberger.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.6108075,
+      "lng": 6.1323854
+    },
+    "name": "Rullem décoration d'intérieurs",
+    "address": "6 Rue de la Reine",
+    "city": "Luxembourg",
+    "zipCode": "2418",
+    "province": "",
+    "phone": "+35 2 22 49 42",
+    "id": 31528,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 129,
+      "name": "Luxembourg"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.6115185,
+      "lng": 6.1281911
+    },
+    "name": "MOBILIER BONN",
+    "address": "7 Rue Philippe II",
+    "city": "Luxembourg",
+    "zipCode": "2340",
+    "province": "",
+    "phone": "+352 22 3201",
+    "id": 125,
+    "email": "info@bonn.lu",
+    "website": "www.bonn.lu",
+    "related": null,
+    "country": {
+      "id": 129,
+      "name": "Luxembourg"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.2406514,
+      "lng": 3.0325855
+    },
+    "name": "EUROMUEBLE BRU",
+    "address": "Ctra. Figueres a Roses, km 33'5",
+    "city": "Fortià",
+    "zipCode": "17469",
+    "province": "",
+    "phone": "+34 972 503962",
+    "id": 288,
+    "email": "info@euromoblebru.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.3393809,
+      "lng": 12.3754247
+    },
+    "name": "INTERIEURTEAM GmbH",
+    "address": "Mädlerpassage Grimmaische Straße 2 – 4",
+    "city": "Leipzig",
+    "zipCode": "4109",
+    "province": "",
+    "phone": "+49 (0) 341 3191260",
+    "id": 284,
+    "email": "info@interieurteam.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.3398754,
+      "lng": 12.3720464
+    },
+    "name": "Deutsche Werkstätten",
+    "address": "Thomaskirchhof 20",
+    "city": "Leipzig",
+    "zipCode": "04109",
+    "province": "",
+    "phone": "+49 (0) 341 26897513",
+    "id": 519,
+    "email": "leipzig@dwh.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.6864742,
+      "lng": 7.6437029
+    },
+    "name": "Peter Schmidt Wohnen",
+    "address": "Wilhelmstraße 42",
+    "city": "Altenkirchen",
+    "zipCode": "57610",
+    "province": "",
+    "phone": "+49 (0) 2681 6202",
+    "id": 32877,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.6439793,
+      "lng": 7.2284996
+    },
+    "name": "WALKEMBACH EINRICHTUNGSHAUS GMBH",
+    "address": "Hauptstr. 82",
+    "city": "Bad Honnef",
+    "zipCode": "53604",
+    "province": "",
+    "phone": "+49 (0) 2224 2471",
+    "id": 282,
+    "email": "info@walkembach.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.638891,
+      "lng": 23.334623
+    },
+    "name": "ARTGRES",
+    "address": "Boulevard Simeonovsko Shose 91",
+    "city": "Sofia",
+    "zipCode": "1734",
+    "province": "",
+    "phone": "+359 2 8312032",
+    "id": 10373,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 32,
+      "name": "Bulgaria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.6803,
+      "lng": 7.16395
+    },
+    "name": "VS INTERIOR DESIGN",
+    "address": "Koblenzer Strasse 121-123",
+    "city": "Bonn Bad-Godesberg",
+    "zipCode": "53177",
+    "province": "",
+    "phone": "+49 (0) 228 93296866",
+    "id": 274,
+    "email": "info@vs-interiordesign.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.6251727,
+      "lng": 23.3732651
+    },
+    "name": "Idea International",
+    "address": "Ring Tower, Okolovrasten pat str. 251",
+    "city": "Sofia",
+    "zipCode": "1715",
+    "province": "",
+    "phone": "+359 898 67 90 60",
+    "id": 32328,
+    "email": "office@idea.bg/en",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 32,
+      "name": "Bulgaria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.952317,
+      "lng": 2.27748500000007
+    },
+    "name": "Idees",
+    "address": "Carretera de Roda-Pol.Industrial Malloles",
+    "city": "Vic",
+    "zipCode": "08500",
+    "province": "",
+    "phone": "+34 93 8890307",
+    "id": 3539,
+    "email": "web@ideesdisseny.com",
+    "website": "www.ideesdisseny.com",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.964788,
+      "lng": 7.1541819
+    },
+    "name": "PATT EINRICHTUNGEN GMBH",
+    "address": "Falltorstr. 2-6",
+    "city": "Bergisch Gladbach",
+    "zipCode": "51429",
+    "province": "",
+    "phone": "+49 (0) 2204 95470",
+    "id": 300,
+    "email": "info@patt-wohnen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.9434528,
+      "lng": 6.9419043
+    },
+    "name": "GIORGETTI STORE",
+    "address": "Kaiser-Wilhelm-Ring 30-32",
+    "city": "Köln",
+    "zipCode": "D 50672",
+    "province": "",
+    "phone": "+49 (0) 221 12071851",
+    "id": 181,
+    "email": "info@hexagon.de",
+    "website": "hexagon.de",
+    "related": {
+      "id": 2611,
+      "url": "/it/en/atelier-store/cologne"
+    },
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.9056326,
+      "lng": 10.4290107
+    },
+    "name": "Altmann Wohnkonzepte",
+    "address": "Wohldenbergstr. 22-23",
+    "city": "Goslar",
+    "zipCode": "38640",
+    "province": "",
+    "phone": "+49 (0) 5321 303233",
+    "id": 235,
+    "email": "jaltmann@altmann-goslar.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.3938908,
+      "lng": 2.15831090000006
+    },
+    "name": "Gunni & Trentino Barcelona",
+    "address": "Roselló, 214",
+    "city": "Barcelona",
+    "zipCode": "08008",
+    "province": "",
+    "phone": "+34 932 411494",
+    "id": 3552,
+    "email": "barcelona@gth.es",
+    "website": "www.gunnitrentino.es",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.396359,
+      "lng": 2.1410567
+    },
+    "name": "Espai Rö",
+    "address": "Carrer Ferrán Agulló, 14 local",
+    "city": "Barcelona",
+    "zipCode": "08021",
+    "province": "",
+    "phone": "+34 936 672962, +34 669 405728",
+    "id": 9833,
+    "email": "info@espairo.com",
+    "website": "www.espairo.com",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.232341,
+      "lng": 6.7468423
+    },
+    "name": "Malzkorn Interiors",
+    "address": "Lanker Straße 3-5",
+    "city": "Düsseldorf",
+    "zipCode": "40545",
+    "province": "",
+    "phone": "+49 (0) 211 554874",
+    "id": 311,
+    "email": "dm.malzkorn@gmx.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2986891,
+      "lng": 6.8477602
+    },
+    "name": "Form und Raum",
+    "address": "Lintorfer Str. 31",
+    "city": "Ratingen",
+    "zipCode": "40878",
+    "province": "",
+    "phone": "+49 (0) 2102 27037",
+    "id": 230,
+    "email": "info@form-raum.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.7767854,
+      "lng": 8.3241824
+    },
+    "name": "Christmann GmbH",
+    "address": "Rietberger Str. 9",
+    "city": "Langenberg",
+    "zipCode": "33449",
+    "province": "",
+    "phone": "+49 (0) 5248 81060",
+    "id": 191,
+    "email": "info@christmann.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.3012553,
+      "lng": 6.73636999999997
+    },
+    "name": "Malzkorn Interiors",
+    "address": "Kaiserswerther Markt 43",
+    "city": "Düsseldorf",
+    "zipCode": "40489",
+    "province": "",
+    "phone": "+49 (0) 211 43615726",
+    "id": 7537,
+    "email": "dm.malzkorn@gmx.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.4542834,
+      "lng": 7.0092028
+    },
+    "name": "KRAMM EINRICHTUNGSHAUS GmbH",
+    "address": "Lindenallee 10-24",
+    "city": "Essen",
+    "zipCode": "45127",
+    "province": "",
+    "phone": "+49 (0) 201 1778830",
+    "id": 223,
+    "email": "info@kramm-wohnen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.8968604,
+      "lng": 8.3693095
+    },
+    "name": "Hunke & Bullmann GmbH",
+    "address": "Kolbeplatz 4",
+    "city": "Gütersloh",
+    "zipCode": "33330",
+    "province": "",
+    "phone": "+49 (0) 5241 95000",
+    "id": 217,
+    "email": "info@hunke-bullmann.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.3467342,
+      "lng": 6.5408346
+    },
+    "name": "design collection Franz Knuffmann",
+    "address": "Birkschenweg 2",
+    "city": "Krefeld",
+    "zipCode": "47803",
+    "province": "",
+    "phone": "+49 (0) 2151 9272600",
+    "id": 205,
+    "email": "info@design-collection.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.4843708,
+      "lng": 13.2628363
+    },
+    "name": "Ulrich Stein Einrichtungen GmbH",
+    "address": "Douglasstraße 9, Villa Harteneck",
+    "city": "Berlin",
+    "zipCode": "14193",
+    "province": "",
+    "phone": "+49 (0) 30 96596769",
+    "id": 320,
+    "email": "as@ulrichstein.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.499495,
+      "lng": 13.3185408
+    },
+    "name": "Thomas Herrendorf Inneneinrichtungen GmbH & Co. KG",
+    "address": "Lietzenburger Str. 99",
+    "city": "Berlin",
+    "zipCode": "10707",
+    "province": "",
+    "phone": "+49 (0) 30 8838838",
+    "id": 222,
+    "email": "mail@thomas-herrendorf.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.5053205,
+      "lng": 13.3274954
+    },
+    "name": "LIPARI design",
+    "address": "Kantstr.154a",
+    "city": "Berlin",
+    "zipCode": "10623",
+    "province": "",
+    "phone": "+49 (0) 30 31014188",
+    "id": 6942,
+    "email": "info@lipari-design.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2008347,
+      "lng": 6.0038385
+    },
+    "name": "SIJBEN WOONCENTER B.V.",
+    "address": "Maasnielderweg 33",
+    "city": "Roermond",
+    "zipCode": "6042 CX",
+    "province": "",
+    "phone": "+31 0475 392828",
+    "id": 97,
+    "email": "info@sijben.nl",
+    "website": "www.sijben.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2297204,
+      "lng": 6.0356067
+    },
+    "name": "HAWINKELS INTERIEUR",
+    "address": "Rjksweg Zuid 18",
+    "city": "Swalmen",
+    "zipCode": "6071 HW",
+    "province": "",
+    "phone": "+31 0475 50 19 28",
+    "id": 113,
+    "email": "info@hawinkelsinterieur.nl",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.8085119,
+      "lng": 5.1090568
+    },
+    "name": "LONCIN",
+    "address": "Grote Steenweg 85",
+    "city": "Zoutleeuw",
+    "zipCode": "3440",
+    "province": "",
+    "phone": "+32 11 78 16 61",
+    "id": 31527,
+    "email": "",
+    "website": "www.loncin.be",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.3809488,
+      "lng": 9.7461551
+    },
+    "name": "Bock Inneneinrichtungen GmbH & Co. KG",
+    "address": "Friesenstr. 15-19",
+    "city": "Hannover",
+    "zipCode": "30161",
+    "province": "",
+    "phone": "+49 (0) 511 340200",
+    "id": 196,
+    "email": "info@hansgbock.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.8543967,
+      "lng": 2.33446739999999
+    },
+    "name": "GIORGETTI STORE",
+    "address": "Rue de l’Abbaye 10",
+    "city": "Paris",
+    "zipCode": "75006",
+    "province": "",
+    "phone": "+33 1 42019825",
+    "id": 3586,
+    "email": "info@hexagonparis.fr",
+    "website": "",
+    "related": {
+      "id": 2602,
+      "url": "/it/en/atelier-store/paris"
+    },
+    "country": {
+      "id": 67,
+      "name": "France"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.8584177,
+      "lng": 2.3258106
+    },
+    "name": "SILVERA UNIVERSITE",
+    "address": "47, Rue de L'Université",
+    "city": "Paris",
+    "zipCode": "75007",
+    "province": "",
+    "phone": "+33 1 45482106",
+    "id": 132,
+    "email": "contact@silvera.fr",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 67,
+      "name": "France"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.769196,
+      "lng": 6.8390029
+    },
+    "name": "HETKAMP EINRICHTEN UND MODE GMBH & CO. KG",
+    "address": "Weseler Str. 8",
+    "city": "Raesfeld",
+    "zipCode": "46348",
+    "province": "",
+    "phone": "+49 (0) 2865 60940",
+    "id": 260,
+    "email": "info@hetkamp.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 39.5312664,
+      "lng": 2.5089759
+    },
+    "name": "Stork Interior Design y Cocina S.L.",
+    "address": "Calle Islas Baleares 37, Poligono Son Bugadelles, Santa Ponsa",
+    "city": "Marbella",
+    "zipCode": "07180",
+    "province": "",
+    "phone": "+34 971 694154",
+    "id": 3422,
+    "email": "info@stork-mallorca.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.3516578,
+      "lng": 5.46233529999995
+    },
+    "name": "STUDIO BLOEMEX",
+    "address": "Leenderweg 13",
+    "city": "Valkenswaard",
+    "zipCode": "5554 CK",
+    "province": "",
+    "phone": "+31 40 2043781",
+    "id": 927,
+    "email": "info@bloemex.nl",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.8481808,
+      "lng": 4.35516280000002
+    },
+    "name": "Ligne",
+    "address": "Galerie du Roi 14",
+    "city": "Bruxelles",
+    "zipCode": "1000",
+    "province": "",
+    "phone": "+32 2 5116030",
+    "id": 7436,
+    "email": "info@ligne.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.7901519,
+      "lng": 6.13746
+    },
+    "name": "Rexing Einrichtungshaus",
+    "address": "Kavariner Str. 39-41",
+    "city": "Kleve",
+    "zipCode": "47533",
+    "province": "",
+    "phone": "+49 (0) 2821 24427",
+    "id": 225,
+    "email": "info@rexing.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2763842,
+      "lng": 4.9549068
+    },
+    "name": "MASTER MEUBEL NV",
+    "address": "Steenweg op Diest 111",
+    "city": "Turnhout",
+    "zipCode": "2300",
+    "province": "",
+    "phone": "+32 14 416113",
+    "id": 118,
+    "email": "admin@mastermeubel.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.9445784,
+      "lng": 4.3260333
+    },
+    "name": "Vanhie",
+    "address": "Vilvoordsesteenweg 172",
+    "city": "Meise",
+    "zipCode": "1860",
+    "province": "",
+    "phone": "0032 (0)2 272 01 72",
+    "id": 32170,
+    "email": "info@vanhie.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2414099,
+      "lng": 4.5847426
+    },
+    "name": "BOURBON-SLEECKX",
+    "address": "Turnhoutsebaan 217-221",
+    "city": "Schilde",
+    "zipCode": "2970",
+    "province": "",
+    "phone": "+32 3 3830669",
+    "id": 120,
+    "email": "info@bourbon-sleeckx.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2634557,
+      "lng": 4.55491770000003
+    },
+    "name": "De Vos Interieur",
+    "address": "Kerkstraat 37",
+    "city": "Gravenwezel",
+    "zipCode": "2970",
+    "province": "",
+    "phone": "+32 3 6802020",
+    "id": 2356,
+    "email": "info@devos-interieur.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 9,
+      "name": "Hexagon: Atelier"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2106791,
+      "lng": 4.4066706
+    },
+    "name": "GIORGETTI ATELIER",
+    "address": "Britselei 16",
+    "city": "Antwerpen",
+    "zipCode": "2000",
+    "province": "",
+    "phone": "+32 3 3361694",
+    "id": 108,
+    "email": "atelier@hexagonantwerp.be",
+    "website": "",
+    "related": {
+      "id": 2593,
+      "url": "/it/en/atelier-store/antwerp"
+    },
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.0036491,
+      "lng": 3.8819796
+    },
+    "name": "OOSTERLINCK WOONINRICHTING",
+    "address": "Hoenderstraat 45",
+    "city": "Wetteren",
+    "zipCode": "9230",
+    "province": "",
+    "phone": "+32 9 3690999",
+    "id": 117,
+    "email": "info@wooninrichting-oosterlinck.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.1654608,
+      "lng": 4.1373265
+    },
+    "name": "SWINNEN STORE",
+    "address": "Onze Lieve Vrouwstraat 24",
+    "city": "Sint Niklaas",
+    "zipCode": "9100",
+    "province": "",
+    "phone": "+32 3 7101151",
+    "id": 121,
+    "email": "info@swinnenstore.com",
+    "website": "www.swinnenstore.be",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.1493658,
+      "lng": 6.1925809
+    },
+    "name": "EIJERKAMP / CILO",
+    "address": "Gerritsenweg 11 G",
+    "city": "Zutphen",
+    "zipCode": "7202 BP",
+    "province": "",
+    "phone": "+31 57 5583656",
+    "id": 101,
+    "email": "info@cilo.nl",
+    "website": "www.cilo.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.9463071,
+      "lng": 5.5172166
+    },
+    "name": "Doornebal Interieurs",
+    "address": "Dr. van Noortstraat 7",
+    "city": "Lienden",
+    "zipCode": "4033 AA",
+    "province": "",
+    "phone": "+31 0344 602914",
+    "id": 100,
+    "email": "info@doornebal.nl",
+    "website": "www.doornebal.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 53.2509141,
+      "lng": 10.4121183
+    },
+    "name": "Thomas Cordes Einrichtungen",
+    "address": "Auf dem Kauf 6",
+    "city": "Lüneburg",
+    "zipCode": "21335",
+    "province": "",
+    "phone": "+49 (0) 4131 38483",
+    "id": 238,
+    "email": "cordes.einrichtungen@t-online.de",
+    "website": "www.thomascordes.de",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 53.05655,
+      "lng": 9.02816
+    },
+    "name": "Einrichtungshaus Kehlbeck",
+    "address": "Industriestr. 1",
+    "city": "Oyten",
+    "zipCode": "22876",
+    "province": "",
+    "phone": "+49 (0) 4207 911515",
+    "id": 203,
+    "email": "kehlbeck@kehlbeck.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2740576,
+      "lng": 3.9083073
+    },
+    "name": "POT INTERIEUR",
+    "address": "Nieuwendijk 89",
+    "city": "Axel",
+    "zipCode": "4571 LH",
+    "province": "",
+    "phone": "+31 0115 532526",
+    "id": 104,
+    "email": "verkoop@pot.nl",
+    "website": "www.pot.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 44.4267674,
+      "lng": 26.1025384
+    },
+    "name": "OSEA INTERIORS",
+    "address": "Str.George Enescu nr.36-42, Sector 1",
+    "city": "BUCURESTI",
+    "zipCode": "010308",
+    "province": "",
+    "phone": "+40741333100",
+    "id": 33731,
+    "email": "office@oseainteriors.com",
+    "website": "www.oseainteriors.com",
+    "related": null,
+    "country": {
+      "id": 181,
+      "name": "Romania"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.9339185,
+      "lng": 3.1554386
+    },
+    "name": "'T CASTEELKEN",
+    "address": "Sint-Petrus-en-Paulusstraat 2",
+    "city": "Roeselare-Rumbeke",
+    "zipCode": "8800",
+    "province": "",
+    "phone": "+32 51 209811",
+    "id": 115,
+    "email": "info@casteelken.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.5153457,
+      "lng": 6.0979674
+    },
+    "name": "NIBOURG INTERIEURS B.V.",
+    "address": "Spinhuisplein 2",
+    "city": "Zwolle",
+    "zipCode": "8011 ZZ",
+    "province": "",
+    "phone": "+31 038 4223088",
+    "id": 96,
+    "email": "info@nibourginterieurs.nl",
+    "website": "www.nibourginterieurs.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.7941219,
+      "lng": 6.7958961
+    },
+    "name": "HET OUDE AMBACHT STIJLVOL WONEN",
+    "address": "Dorpsstraat 5",
+    "city": "Noord Sleen",
+    "zipCode": "7846 AS",
+    "province": "",
+    "phone": "+31 591 361656",
+    "id": 112,
+    "email": "info@het-oude-ambacht.nl",
+    "website": "www.het-oude-ambacht.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.2086666,
+      "lng": 3.2306829
+    },
+    "name": "MICHELANGELO BUONARROTI INTERIORS",
+    "address": "Predikherenstraat 19",
+    "city": "Brugge",
+    "zipCode": "8000",
+    "province": "",
+    "phone": "+32 50 337632",
+    "id": 114,
+    "email": "info@michelangelo-interiors.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.3246775,
+      "lng": 3.29669109999998
+    },
+    "name": "RR CORNER",
+    "address": "Kustlaan 68",
+    "city": "Knokke-Zoute",
+    "zipCode": "8300",
+    "province": "",
+    "phone": "+32 50 622 133",
+    "id": 2348,
+    "email": "corner@rrinterieur.be",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 19,
+      "name": "Belgium"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 53.5448157,
+      "lng": 9.9493238
+    },
+    "name": "Scala Wohnen GmbH",
+    "address": "Kleiner Burstah 12/NikolaiKontor",
+    "city": "Hamburg",
+    "zipCode": "20457",
+    "province": "",
+    "phone": "+49 (0) 40 37519881",
+    "id": 3256,
+    "email": "vh@scala-wohnen.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 53.5448157,
+      "lng": 9.9493238
+    },
+    "name": "CLIC Inneneinrichtung GmbH",
+    "address": "Große Elbstraße 68",
+    "city": "Hamburg",
+    "zipCode": "22767",
+    "province": "",
+    "phone": "+49 (0) 40 46896890",
+    "id": 267,
+    "email": "info@clic.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 53.5505007,
+      "lng": 9.9877951
+    },
+    "name": "Bornhold - Die Einrichter GmbH & Co. KG",
+    "address": "Neuer Wall 70-82",
+    "city": "Hamburg",
+    "zipCode": "20354",
+    "province": "",
+    "phone": "+49 (0) 40 471020",
+    "id": 183,
+    "email": "info@bornhold-die-einrichter.de",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 72,
+      "name": "Germany"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.2891382,
+      "lng": 4.8420807
+    },
+    "name": "CO VAN DER HORST",
+    "address": "Binderij 2",
+    "city": "Amstelveen",
+    "zipCode": "1185 ZJ",
+    "province": "",
+    "phone": "+31 020 6412505",
+    "id": 98,
+    "email": "info@vanderhorst.nl",
+    "website": "www.covanderhorst.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.2298517,
+      "lng": 21.0181227
+    },
+    "name": "Space Design",
+    "address": "Nowogrodzka 11",
+    "city": "Warsaw",
+    "zipCode": "00-513",
+    "province": "",
+    "phone": "+48 723 088883",
+    "id": 9761,
+    "email": "hello@space-design.pl",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 172,
+      "name": "Poland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.254324,
+      "lng": 20.9794298
+    },
+    "name": "IDEAMM",
+    "address": "Otworzyliśmy Krucza 24/26",
+    "city": "Warszawa",
+    "zipCode": "",
+    "province": "",
+    "phone": "+48 505 106905",
+    "id": 4196,
+    "email": "z.bartosz@ideamm.pl",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 172,
+      "name": "Poland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.254324,
+      "lng": 20.9794298
+    },
+    "name": "ATELIER MESMETRIC",
+    "address": "ul. Burakowska 5/7",
+    "city": "Warszawa",
+    "zipCode": "01-066",
+    "province": "",
+    "phone": "+48 797 333998",
+    "id": 148,
+    "email": "info@mesmetric.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 172,
+      "name": "Poland"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.0861353,
+      "lng": 4.27862389999996
+    },
+    "name": "LINEA DESIGN",
+    "address": "Valeriusstraat 94",
+    "city": "Den Haag",
+    "zipCode": "2517 HT",
+    "province": "",
+    "phone": "+31 70 3606044",
+    "id": 3137,
+    "email": "info@lineadesign.nl",
+    "website": "www.lineadesign.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 38.0141557,
+      "lng": 23.784271
+    },
+    "name": "DELOUDIS SA",
+    "address": "217 Kifisias Ave. & Parnassou 2 Str.",
+    "city": "Athens",
+    "zipCode": "15124",
+    "province": "",
+    "phone": "+30 210 8061759",
+    "id": 129,
+    "email": "info@deloudis.gr",
+    "website": "www.deloudis.gr",
+    "related": null,
+    "country": {
+      "id": 79,
+      "name": "Greece"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 52.6361572,
+      "lng": 4.7483228
+    },
+    "name": "VAN TIL INTERIEUR",
+    "address": "Noorderkade 1038",
+    "city": "Alkmaar",
+    "zipCode": "1823 CJ",
+    "province": "",
+    "phone": "+31 72 5112760",
+    "id": 107,
+    "email": "info@vantil.nl",
+    "website": "www.vantil.nl",
+    "related": null,
+    "country": {
+      "id": 163,
+      "name": "Netherlands"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.4869943,
+      "lng": -0.148414600000024
+    },
+    "name": "TOLLGÅRD DESIGN GROUP",
+    "address": "Grosvenor Waterside Gatliff Road SW1W",
+    "city": "London",
+    "zipCode": "8QN",
+    "province": "",
+    "phone": "+44 0207 5753185",
+    "id": 7678,
+    "email": "info@tollgard.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.4758933,
+      "lng": -0.183071899999959
+    },
+    "name": "TOLLGÅRD DESIGN GROUP",
+    "address": "Chelsea Harbour Design Centre 1st Floor, Centre Dome",
+    "city": "London",
+    "zipCode": "SW10 OXE",
+    "province": "",
+    "phone": "+44 208 0672123",
+    "id": 7701,
+    "email": "info@tollgard.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.4916127,
+      "lng": -0.1723721
+    },
+    "name": "GIORGETTI STORE",
+    "address": "Fulham Road 52-58 SW3 6HH London",
+    "city": "Londra",
+    "zipCode": "",
+    "province": "",
+    "phone": "+44 2 075810022",
+    "id": 7858,
+    "email": "info@hexagonuk.com",
+    "website": "www.hexagonuk.com",
+    "related": {
+      "id": 2612,
+      "url": "/it/en/atelier-store/london"
+    },
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.5157854,
+      "lng": -0.151436200000035
+    },
+    "name": "GLOBAL LUXURY",
+    "address": "87-89 Wigmore Street",
+    "city": "Londra",
+    "zipCode": "W1U 1DL",
+    "province": "",
+    "phone": "+44 207 4868445",
+    "id": 6132,
+    "email": "info@globalluxurylondon.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.5157854,
+      "lng": -0.151436200000035
+    },
+    "name": "Tollgard Showroom & Studio",
+    "address": "Grosvenor Waterside, Gatliff Road",
+    "city": "Londra",
+    "zipCode": "SW1W 8QN",
+    "province": "",
+    "phone": "+44 (0)20 7952 6070",
+    "id": 32592,
+    "email": "info@tollgard.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.5157854,
+      "lng": -0.151436200000035
+    },
+    "name": "CHAPLINS",
+    "address": "477-507 Uxbridge Road",
+    "city": "Hatch End",
+    "zipCode": "HA5 4JS",
+    "province": "",
+    "phone": "+44 (0) 20 8421 1779",
+    "id": 32657,
+    "email": "sales@chaplins.co.uk",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.680143,
+      "lng": 12.581238
+    },
+    "name": "INTERSTUDIO Home",
+    "address": "Galleri K, 1. sal, Pilestræde 12E",
+    "city": "København",
+    "zipCode": "DK-1112",
+    "province": "",
+    "phone": "+45 3526 3100",
+    "id": 10362,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 55,
+      "name": "Denmark"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.6898174,
+      "lng": 13.2200412
+    },
+    "name": "TORNBO MÖBLER",
+    "address": "Kalkstensvägen 23",
+    "city": "Lund",
+    "zipCode": "22478",
+    "province": "",
+    "phone": "+46 46 184488",
+    "id": 160,
+    "email": "info@tornbo.se",
+    "website": "www.tornbo.se",
+    "related": null,
+    "country": {
+      "id": 208,
+      "name": "Sweden"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 50.75263,
+      "lng": -1.71411999999998
+    },
+    "name": "DREAM DESIGN",
+    "address": "Unit 5 Somerford Business Park, Wilverley Road,",
+    "city": "Christchurch, Dorset",
+    "zipCode": "BH23 3RU",
+    "province": "",
+    "phone": "+44 1202 879997",
+    "id": 331,
+    "email": "enquiries@dreamdesign.co.uk",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.9877574,
+      "lng": -1.1345135
+    },
+    "name": "QUARTA MOBILIARIO CONTEMPORANEO",
+    "address": "Callejón de Burruezo, 1",
+    "city": "Murcia",
+    "zipCode": "30005",
+    "province": "",
+    "phone": "+34 968 281837",
+    "id": 265,
+    "email": "info@quarta.es",
+    "website": "www.quarta.es",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 56.090095,
+      "lng": 12.7446238
+    },
+    "name": "Inredningsgalleriet",
+    "address": "Kanongatan 155, Väla Norra",
+    "city": "Helsingborg",
+    "zipCode": "",
+    "province": "",
+    "phone": "+46 42 142505",
+    "id": 137,
+    "email": "info@nredningsgalleriet.se",
+    "website": "www.inredningsgalleriet.se",
+    "related": null,
+    "country": {
+      "id": 208,
+      "name": "Sweden"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.086168,
+      "lng": 29.032306
+    },
+    "name": "ISMETMOBILYA",
+    "address": "Nispetiye Cad. Alkent Yolu – S. Ahmet Acarkan Sok. No: 9 Etiler",
+    "city": "Istanbul",
+    "zipCode": "80650",
+    "province": null,
+    "phone": "+90 212 2878727",
+    "id": 10549,
+    "email": "ismetmobilya@mynet.com",
+    "website": "www.ismetmobilya.com.tr",
+    "related": null,
+    "country": {
+      "id": 222,
+      "name": "Turkey"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.9746464,
+      "lng": 29.0543045
+    },
+    "name": "Konak Mobilya",
+    "address": "Bagdat Cad. No: 189/A, Ciftehavuzlar",
+    "city": "Istanbul",
+    "zipCode": "34730",
+    "province": "",
+    "phone": "+90 216 3555530",
+    "id": 9466,
+    "email": "irem@konakmobilya.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 222,
+      "name": "Turkey"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.4483916,
+      "lng": -3.68980339999996
+    },
+    "name": "Gunni & Trentino Madrid",
+    "address": "Paseo de La Habana, 3",
+    "city": "Madrid",
+    "zipCode": "28036",
+    "province": "",
+    "phone": "+34 911 960127",
+    "id": 3567,
+    "email": "madrid@gth.es",
+    "website": "www.gunnitrentino.es",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 54.896468,
+      "lng": 23.913199
+    },
+    "name": "STUDIO CASA INTERJERO SALONAS",
+    "address": "Daukanto str. 13",
+    "city": "Kaunas",
+    "zipCode": "LT 44305",
+    "province": "",
+    "phone": "+370 37792555",
+    "id": 139,
+    "email": "info@studiocasa.lt",
+    "website": "www.studiocasa.lt",
+    "related": null,
+    "country": {
+      "id": 128,
+      "name": "Lithuania"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 56.9785529,
+      "lng": 24.1360372
+    },
+    "name": "KRASSKY",
+    "address": "Duntes iela 11",
+    "city": "Riga",
+    "zipCode": "LV-1013",
+    "province": "",
+    "phone": "+371 67781400",
+    "id": 147,
+    "email": "krassky@krassky.lv",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 123,
+      "name": "Latvia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 36.51005,
+      "lng": -4.904537
+    },
+    "name": "Pedro Peña",
+    "address": "C.C.Tembo. Bloque C. CN 340",
+    "city": "Marbella",
+    "zipCode": "29602",
+    "province": "",
+    "phone": "+34 952 824962",
+    "id": 3579,
+    "email": "info@pedropena.com",
+    "website": "www.pedropena.com",
+    "related": null,
+    "country": {
+      "id": 202,
+      "name": "Spain"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.142464,
+      "lng": -8.6143653
+    },
+    "name": "Causaefeito-decorações Lda",
+    "address": "R. de Mouzinho da Silveira 35",
+    "city": "Porto",
+    "zipCode": "4050-419",
+    "province": "",
+    "phone": "+351 22 3394650",
+    "id": 8278,
+    "email": "carla.pinto@causaefeito.com.pt",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 173,
+      "name": "Portugal"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 59.8646266,
+      "lng": 10.4886393
+    },
+    "name": "Blåmann Møbler AS",
+    "address": "Fekjan 3",
+    "city": "Nesbru",
+    "zipCode": "1394",
+    "province": "",
+    "phone": "+47 66 846828",
+    "id": 138,
+    "email": "blamann@blamann.com ",
+    "website": "www.blamannmobler.no",
+    "related": null,
+    "country": {
+      "id": 159,
+      "name": "Norway"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 54.5838972,
+      "lng": -5.9441196
+    },
+    "name": "KRIS TURNBULL",
+    "address": "135, Lisburn Road",
+    "city": "Belfast",
+    "zipCode": "BT9 7AG",
+    "province": "",
+    "phone": "+44 28 90688600",
+    "id": 266,
+    "email": "sales@kristurnbull.com",
+    "website": "www.kristurnbull.com",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.8726012,
+      "lng": -4.2827307
+    },
+    "name": "DESIGNWORKS",
+    "address": "38 Gibson Street",
+    "city": "Glasgow",
+    "zipCode": "G12 8NX",
+    "province": null,
+    "phone": "+44 141 3399520",
+    "id": 10555,
+    "email": "Joanna@designworks-scotland.co.uk",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 95,
+      "name": "United Kingdom"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 60.7965831,
+      "lng": 10.6891382
+    },
+    "name": "Kiil Interiør Design AS",
+    "address": "Øvre Torvgate 11",
+    "city": "Gjøvik",
+    "zipCode": "2821",
+    "province": "",
+    "phone": "+47 61 247380",
+    "id": 146,
+    "email": "gjovik@kiil.no",
+    "website": "www.kiil.no",
+    "related": null,
+    "country": {
+      "id": 159,
+      "name": "Norway"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 35.1682517,
+      "lng": 33.3601434
+    },
+    "name": "ESSERE",
+    "address": "25 Demosthenis Severis Ave. 1080 P.O. BOX 28339",
+    "city": "Nicosia",
+    "zipCode": "",
+    "province": "",
+    "phone": "+357 22445353",
+    "id": 3754,
+    "email": "info@essere.com.cy",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 42,
+      "name": "Cyprus"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 34.6867322,
+      "lng": 33.0548525
+    },
+    "name": "DELOUDIS SA",
+    "address": "Maximos Plaza 217E Leoforos Archiepiskopou Makariou III",
+    "city": "Limassol",
+    "zipCode": "3105",
+    "province": "",
+    "phone": "+357 25333420",
+    "id": 10390,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 42,
+      "name": "Cyprus"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.0471235,
+      "lng": 38.9723345
+    },
+    "name": "HOME DESIGN",
+    "address": "Babushkina str. 246",
+    "city": "Krasnodar",
+    "zipCode": "350020",
+    "province": "",
+    "phone": "+7 861 2156557",
+    "id": 167,
+    "email": "info@homedesign-co.ru",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 33.5901172,
+      "lng": -7.6263183
+    },
+    "name": "HWM Maroc",
+    "address": "17 Bd Moulay Youssef",
+    "city": "Casablanca",
+    "zipCode": "20000",
+    "province": "",
+    "phone": "+212 6 61215788",
+    "id": 99,
+    "email": "jouaknine@hwm.ma",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 140,
+      "name": "Morocco"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 33.591606,
+      "lng": -7.645201
+    },
+    "name": "Klarte International Architecture & Design",
+    "address": "3 rue Bab El Mendeb Triangle d'or",
+    "city": "Casablanca",
+    "zipCode": "",
+    "province": "",
+    "phone": "+212 522 250 857",
+    "id": 10301,
+    "email": "Klarte@klarte.ma",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 140,
+      "name": "Morocco"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 59.9342118,
+      "lng": 30.3141251
+    },
+    "name": "ROSSI Grand",
+    "address": "Bolshaya Morskaya st. 26",
+    "city": "St. Petersburg",
+    "zipCode": "",
+    "province": "",
+    "phone": "+7 812 3157600",
+    "id": 179,
+    "email": "rossi.info@yandex.ru",
+    "website": "www.rossi-grand.ru",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.723064,
+      "lng": 37.5777849
+    },
+    "name": "EXTRA CLASS INTERIORS",
+    "address": "Komsomolskiy prospect, 35",
+    "city": "Moscow",
+    "zipCode": "",
+    "province": "",
+    "phone": "+7 495 9541753",
+    "id": 3222,
+    "email": "info@extraint.ru",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.7141969,
+      "lng": 37.589162
+    },
+    "name": "GIORGETTI STORE",
+    "address": "Extra Class Interiors Komsomolskiy prosp., 37",
+    "city": "Moscow",
+    "zipCode": "119146",
+    "province": "",
+    "phone": "+7 495 6091180",
+    "id": 7981,
+    "email": "info@extraint.ru",
+    "website": "",
+    "related": {
+      "id": 2609,
+      "url": "/it/en/atelier-store/moscow-2-en"
+    },
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.744701,
+      "lng": 37.576695
+    },
+    "name": "INTERIOR MARKET",
+    "address": "Rostovskaya Naberezhnaya, 1",
+    "city": "Moscow",
+    "zipCode": "119121",
+    "province": "",
+    "phone": "+7 495 5450551",
+    "id": 7607,
+    "email": "info@interior-market.ru",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.750643,
+      "lng": 37.5823669
+    },
+    "name": "STUDIO OBJECT",
+    "address": "1/2 Novinsky Boulevard",
+    "city": "Moscow",
+    "zipCode": "",
+    "province": "",
+    "phone": "+7 499 2414846",
+    "id": 7630,
+    "email": "novinsky@studio-object.ru",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.7794471611897,
+      "lng": 37.5870762029022
+    },
+    "name": "Contract projects Office Solutions LTD",
+    "address": "4th Lesnoy lane, 4",
+    "city": "Moscow",
+    "zipCode": "125047",
+    "province": "",
+    "phone": "+7 495 2585599",
+    "id": 9165,
+    "email": "info@office-solutions.ru",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.774425,
+      "lng": 37.604552
+    },
+    "name": "FLAT INTERIORS",
+    "address": "Dolgorukovskaya str. 2",
+    "city": "Moscow",
+    "zipCode": "127006",
+    "province": "",
+    "phone": "+7 495 7883300",
+    "id": 166,
+    "email": "flat@flat-interiors.ru",
+    "website": "www.flat-interiors.ru",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 30.0444196,
+      "lng": 31.2357116
+    },
+    "name": "ART OF FORM",
+    "address": "KM 38 Cairo/Alex Desert road El Shiekh Zayed,",
+    "city": "Cairo",
+    "zipCode": "12451",
+    "province": "",
+    "phone": "+20 2 01110061900",
+    "id": 152,
+    "email": "info@artofform.com.eg",
+    "website": "www.art-of-form.com",
+    "related": null,
+    "country": {
+      "id": 58,
+      "name": "Egypt"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 33.9096388,
+      "lng": 35.5824005
+    },
+    "name": "OBEGI HOME",
+    "address": "Jal El Dib Highway, Jal El Dib",
+    "city": "Beirut",
+    "zipCode": "",
+    "province": "",
+    "phone": "+961 4 711623",
+    "id": 133,
+    "email": "Beirut@obegihome.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 124,
+      "name": "Lebanon"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 32.1606516,
+      "lng": 34.8068943
+    },
+    "name": "TOLLMAN’S",
+    "address": "3, Hamenofim Str. Herzelia Pituach",
+    "city": "Tel Aviv",
+    "zipCode": "46725",
+    "province": "",
+    "phone": "+972 9 9554531",
+    "id": 124,
+    "email": "info@tollmans.co.il",
+    "website": "www.tollmans.co.il",
+    "related": null,
+    "country": {
+      "id": 113,
+      "name": "Israel"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 31.9453666,
+      "lng": 35.9283716
+    },
+    "name": "Andrea’s design N art",
+    "address": "Zahran Gate, floor B1 Isma’eel Haqqi Abdoh no. 25 Al Suwaifia",
+    "city": "Amman",
+    "zipCode": "",
+    "province": "",
+    "phone": "+962 6 5856669",
+    "id": 143,
+    "email": "info@andreasdna.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 77,
+      "name": "Jordan"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 56.3178636,
+      "lng": 44.0607548
+    },
+    "name": "CALIPSO",
+    "address": "Rodionova str. 23/A",
+    "city": "Nizhny Novgorod",
+    "zipCode": "603093",
+    "province": "",
+    "phone": "+7 831 2789117",
+    "id": 10356,
+    "email": "",
+    "website": "www.calipso.ru",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.7287867,
+      "lng": 44.7278644
+    },
+    "name": "SAPHARELI",
+    "address": "7a  B.Zhgenti st.",
+    "city": "Tbilisi",
+    "zipCode": "0183",
+    "province": "",
+    "phone": "+995 322 040011",
+    "id": 8064,
+    "email": "Info@saphareli.ge",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 70,
+      "name": "Georgia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.7287496,
+      "lng": 44.7661945
+    },
+    "name": "MOTIF LTD.",
+    "address": "Budapeshti st. 7",
+    "city": "Tbilisi",
+    "zipCode": "0160",
+    "province": "",
+    "phone": "+995 32 389192",
+    "id": 7830,
+    "email": "info@motif.ge",
+    "website": "www.motif.ge",
+    "related": null,
+    "country": {
+      "id": 70,
+      "name": "Georgia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.7287496,
+      "lng": 44.7661945
+    },
+    "name": "MOTIF LTD.",
+    "address": "Chavchavadze Ave. 50",
+    "city": "Tbilisi",
+    "zipCode": "0179",
+    "province": "",
+    "phone": "+995 32 389192",
+    "id": 130,
+    "email": "info@motif.ge",
+    "website": "www.motif.ge",
+    "related": null,
+    "country": {
+      "id": 70,
+      "name": "Georgia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.1801676,
+      "lng": 44.5035847
+    },
+    "name": "EUROLUCE INTERIORS LLC",
+    "address": "1 Leo St",
+    "city": "Yerevan",
+    "zipCode": "",
+    "province": "",
+    "phone": "+374 10 536 797",
+    "id": 136,
+    "email": "info@euroluceinteriors.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 10,
+      "name": "Armenia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.7764985,
+      "lng": 49.1284383
+    },
+    "name": "SOLO CENTRE",
+    "address": "Esperanto str. 16",
+    "city": "Kazan",
+    "zipCode": "420107",
+    "province": null,
+    "phone": "+7 843 5705873",
+    "id": 10563,
+    "email": "koeln@mi.ru",
+    "website": "www.koeln-kzn.ru",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.4002229,
+      "lng": 49.8397288
+    },
+    "name": "COLLEZIONE ITALIA",
+    "address": "Hasan Aliyev 139A,",
+    "city": "Baku",
+    "zipCode": "AZ 1110",
+    "province": "",
+    "phone": "+994 12 5681100",
+    "id": 131,
+    "email": "office@collezioneitalia.az",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 14,
+      "name": "Azerbaijan"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 57.987846,
+      "lng": 56.2456295
+    },
+    "name": "DEN I NOCH",
+    "address": "Komsomolskiy prospect, 86",
+    "city": "Perm",
+    "zipCode": "614010",
+    "province": null,
+    "phone": "+7 342 2443223",
+    "id": 10548,
+    "email": "giorno_e_notte@mail.ru",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 29.3392856,
+      "lng": 47.940597
+    },
+    "name": "PRO DESIGN GROUP",
+    "address": "Al Tilal Mall, Shuwaikh",
+    "city": "Kuwait City",
+    "zipCode": "",
+    "province": "",
+    "phone": "+965 222 55205",
+    "id": 10353,
+    "email": "",
+    "website": "www.pro-design.com",
+    "related": null,
+    "country": {
+      "id": 120,
+      "name": "Kuwait"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 21.2854067,
+      "lng": 39.2375507
+    },
+    "name": "UDG DESIGN GALLERY",
+    "address": "Prince Sultan Rd، Al-Rawdah dist.",
+    "city": "Jeddah",
+    "zipCode": "",
+    "province": "",
+    "phone": "+966 12 6980798",
+    "id": 126,
+    "email": "sales@udg.com.sa",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 8,
+      "name": "Saudi Arabia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 25.2653605,
+      "lng": 51.4981728
+    },
+    "name": "DESIGN LOUNGE",
+    "address": "Althuraya Souq, Salwa Road",
+    "city": "Doha",
+    "zipCode": "",
+    "province": "",
+    "phone": "+974 4451 6627",
+    "id": 127,
+    "email": "info@designlounge.me",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 175,
+      "name": "Qatar"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 6.4360035,
+      "lng": 3.4353814
+    },
+    "name": "KITCHENS & ACCESSORIES",
+    "address": "7B Sir Samuel Manuwa St. Victoria Island",
+    "city": "Lagos",
+    "zipCode": "106104",
+    "province": "",
+    "phone": "+234 1 270 7399",
+    "id": 33128,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 157,
+      "name": "Nigeria"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 25.141303,
+      "lng": 55.1853429
+    },
+    "name": "OBEGI HOME",
+    "address": "Jumeira Beach Road, next to Burj Al Arab",
+    "city": "Dubai",
+    "zipCode": "127072",
+    "province": "",
+    "phone": "+971 4 3948161 . +971 4 3948162",
+    "id": 135,
+    "email": "dubai@obegihome.com",
+    "website": "www.obegihome.com",
+    "related": null,
+    "country": {
+      "id": 60,
+      "name": "United Arab Emirates"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 55.00975,
+      "lng": 82.936626
+    },
+    "name": "RELAN ZERO",
+    "address": "Inskaya Str., 56 3rd floor",
+    "city": "Novosibirsk",
+    "zipCode": "630102",
+    "province": "",
+    "phone": "+7 383 2644633",
+    "id": 170,
+    "email": "relan@relan-zero.ru",
+    "website": "www.relan-zero.ru",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 28.4956835,
+      "lng": 77.1664945
+    },
+    "name": "GIORGETTI DESIGN STUDIO",
+    "address": "357, Mehrauli-Gurgaon Rd, Sultanpur, New Delhi, Delhi 110030, India",
+    "city": "New Delhi",
+    "zipCode": "110030",
+    "province": "",
+    "phone": "",
+    "id": 10347,
+    "email": "",
+    "website": "",
+    "related": {
+      "id": 2592,
+      "url": "/it/en/atelier-store/new-delhi"
+    },
+    "country": {
+      "id": 93,
+      "name": "India"
+    }
+  },
+  {
+    "category": {
+      "id": 9,
+      "name": "Hexagon: Atelier"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 19.0756146,
+      "lng": 72.8388983
+    },
+    "name": "GIORGETTI ATELIER",
+    "address": "Sangolda, Floor No 10 & 11, Plot No 17, St. Francis Road, Santacruz, West",
+    "city": "Mumbai",
+    "zipCode": "400054",
+    "province": "",
+    "phone": "+91 0845 1000984",
+    "id": 8004,
+    "email": "info@sourcesunlimited.co.in",
+    "website": "",
+    "related": {
+      "id": 2597,
+      "url": "/it/en/atelier-store/mumbai"
+    },
+    "country": {
+      "id": 93,
+      "name": "India"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 53.9130121,
+      "lng": 102.0389454
+    },
+    "name": "PERFETTO INTERIORS",
+    "address": "Bograda st.,1",
+    "city": "Irkutsk",
+    "zipCode": "664025",
+    "province": "",
+    "phone": "+7 395 2201435",
+    "id": 158,
+    "email": "rmakarov2007@yandex.ru",
+    "website": "www.perfetto-irk.ru",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 45.5195791,
+      "lng": -73.5854559
+    },
+    "name": "Latitude Nord",
+    "address": "4410, Boul. Saint-Laurent",
+    "city": "Montréal",
+    "zipCode": "H2W 1Z5",
+    "province": "",
+    "phone": "+1 514 2870762",
+    "id": 177,
+    "email": "info@latnord.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 37,
+      "name": "Canada"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 42.3427479,
+      "lng": -71.0649102
+    },
+    "name": "GIORGETTI STORE",
+    "address": "450 Harrison Avenue, Suite 19",
+    "city": "Boston",
+    "zipCode": "MA 02118",
+    "province": "",
+    "phone": "+1 888 2466451",
+    "id": 175,
+    "email": "info@hexagonboston.com",
+    "website": "www.hexagonboston.com",
+    "related": {
+      "id": 2605,
+      "url": "/it/en/atelier-store/boston"
+    },
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 40.7504872,
+      "lng": -73.9806266
+    },
+    "name": "GIORGETTI USA INC Corporate Office",
+    "address": "261 Madison Ave, Unit 1030",
+    "city": "New York",
+    "zipCode": "",
+    "province": "",
+    "phone": "+1 212 8893261",
+    "id": 187,
+    "email": "info@hexagonusa.com",
+    "website": "www.hexagonusa.com",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 39.1546165,
+      "lng": -84.4276435
+    },
+    "name": "VOLTAGE",
+    "address": "3209 Madison Road",
+    "city": "Cincinnati",
+    "zipCode": "OH 45209",
+    "province": "",
+    "phone": "+1 513 8715483",
+    "id": 202,
+    "email": "info@voltagefurniture.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -26.0894766,
+      "lng": 28.0788155
+    },
+    "name": "IL Lusso PTY LTD",
+    "address": "39 Commerce Crescent, Kramerville - Sandton",
+    "city": "Johannesburg",
+    "zipCode": "2031",
+    "province": "",
+    "phone": "+27 (0) 10 6002100",
+    "id": 7958,
+    "email": "info@illusso.co.za",
+    "website": "www.illusso.co.za",
+    "related": {
+      "id": 2610,
+      "url": "/it/en/atelier-store/johannesburg"
+    },
+    "country": {
+      "id": 205,
+      "name": "South Africa"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 39.915521,
+      "lng": 116.421274
+    },
+    "name": "GIORGETTI STORE",
+    "address": "B1-L17&B2, Peninsula Hotel, No.8 Jinyu Lane, Dongcheng District",
+    "city": "Beijing",
+    "zipCode": "1000100",
+    "province": "",
+    "phone": "+86 010 85221508",
+    "id": 6727,
+    "email": "marketing@domustiandi.com",
+    "website": "",
+    "related": {
+      "id": 2607,
+      "url": "/it/en/atelier-store/beijing"
+    },
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 39.9339228,
+      "lng": 116.4668614
+    },
+    "name": "BEIJING CLASSIC LIVING CO.,LTD",
+    "address": "No.10 Nongzhanguan South Road, Chaoyang District",
+    "city": "Beijing",
+    "zipCode": "100125",
+    "province": "",
+    "phone": "+86 10 65060099",
+    "id": 77,
+    "email": "info@classicliving.com.cn",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 33.786028,
+      "lng": -84.409386
+    },
+    "name": "SWITCH MODERN",
+    "address": "670 14th Street",
+    "city": "Atlanta",
+    "zipCode": "GA  30318",
+    "province": "",
+    "phone": "+1 404 6050196",
+    "id": 176,
+    "email": "info@switchmodern.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 41.5895517,
+      "lng": -93.6108912
+    },
+    "name": "PROJECTS CONTEMPORARY FURNITURE",
+    "address": "501 East Locust Street, Iowa",
+    "city": "Des Moines",
+    "zipCode": "50309",
+    "province": "",
+    "phone": "+1 515 5571833",
+    "id": 180,
+    "email": "sales@projectsfurniture.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 51.0426699,
+      "lng": -114.0775168
+    },
+    "name": "SHAUN FORD",
+    "address": "715 11th Avenue SW",
+    "city": "Calgary, AB",
+    "zipCode": "T2R 0E3",
+    "province": "",
+    "phone": "+1 403 2550333",
+    "id": 3082,
+    "email": "info@shaunfordandco.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 37,
+      "name": "Canada"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 48.4778354288997,
+      "lng": 135.050901516008
+    },
+    "name": "VIVID",
+    "address": "Turgeneva str., 96",
+    "city": "Khabarovsk",
+    "zipCode": "680028",
+    "province": "",
+    "phone": "+7 914 2148887",
+    "id": 8089,
+    "email": "info@vivid.space",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 182,
+      "name": "Russian Federation"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 27.3429066,
+      "lng": -82.5426916
+    },
+    "name": "HOME RESOURCE",
+    "address": "741 Central Avenue",
+    "city": "Sarasota",
+    "zipCode": "FL 34236",
+    "province": "",
+    "phone": "+1 941 3666690",
+    "id": 190,
+    "email": "info@homeresource.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 36.113501,
+      "lng": -95.9757037
+    },
+    "name": "S R HUGHES",
+    "address": "3410 S. Peoria #100",
+    "city": "Tulsa",
+    "zipCode": "OK  74120",
+    "province": "",
+    "phone": "+1 918 7425515",
+    "id": 192,
+    "email": "showroom@srhughes.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 32.013526,
+      "lng": 118.73497
+    },
+    "name": "NANJING YONGLONG",
+    "address": "No. 168 Jiangdong zhong Road Jianye District",
+    "city": "Nanjing",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 025 68526668",
+    "id": 3645,
+    "email": "info@yonglong-furniture.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 13.730718,
+      "lng": 100.581781
+    },
+    "name": "Euro Creations Gallery at Thonglor",
+    "address": "119 Sukhumvit 55, North Klong Ton, Wattana",
+    "city": "Bangkok",
+    "zipCode": "10110",
+    "province": "",
+    "phone": "+66 2 7129555",
+    "id": 93,
+    "email": "marketing@eurocreations.co.th",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 211,
+      "name": "Thailand"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 43.47918,
+      "lng": -110.7606088
+    },
+    "name": "WRJ Design Showroom",
+    "address": "30 South King Street",
+    "city": "Jackson",
+    "zipCode": "WY 83001-0910",
+    "province": "",
+    "phone": "+1 307 2004881",
+    "id": 1392,
+    "email": "info@wrjdesign.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 49.2836066,
+      "lng": -123.1055905
+    },
+    "name": "INFORM INTERIORS A",
+    "address": "50 Water St",
+    "city": "Vancouver",
+    "zipCode": "BC V6B 1A4",
+    "province": "",
+    "phone": "+1 604 6823868",
+    "id": 169,
+    "email": "info@informinteriors.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 37,
+      "name": "Canada"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.5092152022448,
+      "lng": 127.05997467041
+    },
+    "name": "GIORGETTI STORE SEOUL - HYUNDAI LIVART",
+    "address": "118, Hakdong-ro, Gangnam-gu",
+    "city": "Seoul",
+    "zipCode": "",
+    "province": "",
+    "phone": "+82 02 511 2155",
+    "id": 41246,
+    "email": "",
+    "website": "",
+    "related": {
+      "id": 8827,
+      "url": "/it/en/atelier-store/seoul"
+    },
+    "country": {
+      "id": 50,
+      "name": "Korea, South"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.5086154,
+      "lng": 127.0597808
+    },
+    "name": "HYUNDAI LIVART",
+    "address": "4F, Hyundai department store, 517, Teheran-ro, Gangnam-gu",
+    "city": "Seoul",
+    "zipCode": "",
+    "province": "",
+    "phone": "+82 02 3467 8446",
+    "id": 30668,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 50,
+      "name": "Korea, South"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 37.3897865,
+      "lng": 127.1098561
+    },
+    "name": "HYUNDAI LIVART",
+    "address": "8F, Hyundai department store, 20, Pangyoyeok-ro 146beon-gil, Bundang-gu, Gyeonggi-do",
+    "city": "Seongnam-si",
+    "zipCode": "",
+    "province": "",
+    "phone": "+82 031 5170 2844",
+    "id": 30670,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 50,
+      "name": "Korea, South"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 39.7612762,
+      "lng": -104.9830559
+    },
+    "name": "SOLESDI",
+    "address": "2800 Walnut Street",
+    "city": "Denver",
+    "zipCode": "80205",
+    "province": "",
+    "phone": "+1 303 9996334",
+    "id": 199,
+    "email": "infodenver@solesdi.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 32.7952922,
+      "lng": -96.8193991
+    },
+    "name": "SCOTT + COONER DALLAS",
+    "address": "1617 Hi-Line Drive #100",
+    "city": "Dallas",
+    "zipCode": "TX  75207",
+    "province": "",
+    "phone": "+1 214 7489838",
+    "id": 182,
+    "email": "info@scottcooner.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 30.2149695,
+      "lng": 120.1791217
+    },
+    "name": "Hangzhou For D Home Furniture",
+    "address": "9 Feiyunjiang Road",
+    "city": "Hangzhou",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 400 885 7770",
+    "id": 81,
+    "email": "marketing@fordcasa.com",
+    "website": "www.fordcasa.com",
+    "related": null,
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 31.174993,
+      "lng": 121.379467
+    },
+    "name": "GIORGETTI STORE SHANGHAI - MINHANG DISTRICT",
+    "address": "No. 1265 Wuzhong Road, Bldg. B - 8F Shanghai",
+    "city": "SHANGHAI",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 400 820 9220",
+    "id": 32509,
+    "email": "luxury@tiamantti.com",
+    "website": "",
+    "related": {
+      "id": 7808,
+      "url": "/it/en/atelier-store/shanghai-2"
+    },
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 31.22811,
+      "lng": 121.45648
+    },
+    "name": "GIORGETTI STORE SHANGHAI - JING’AN DISTRICT",
+    "address": "No.1369 West Nanjing Road",
+    "city": "Shanghai",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 21 6330 0660",
+    "id": 32508,
+    "email": "info@arealiving.cn",
+    "website": "",
+    "related": {
+      "id": 7804,
+      "url": "/it/en/atelier-store/shanghai"
+    },
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 31.2410182,
+      "lng": 121.4806403
+    },
+    "name": "AREA LIVING",
+    "address": "No.600, Building N 5 ,ShanXi N. Road",
+    "city": "Shanghai",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 21 60751000",
+    "id": 82,
+    "email": "info@arealiving.cn",
+    "website": "www.arealiving.cn",
+    "related": null,
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 22.9517839,
+      "lng": 113.086135
+    },
+    "name": "GIORGETTI STORE",
+    "address": "5-6F, Louvre International Furniture Exhibition Center,  Shunde District, Foshan, Guangdong",
+    "city": "Foshan City",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 400 1881222",
+    "id": 2554,
+    "email": "service@louvre-furniture.com",
+    "website": "www.louvre-furniture.com",
+    "related": {
+      "id": 2589,
+      "url": "/it/en/atelier-store/foshan"
+    },
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 23.1255329761317,
+      "lng": 113.345045757079
+    },
+    "name": "GIORGETTI STORE",
+    "address": "4F, Building C, Louvre Furnishing Art Center,  No. 666, the middle section of Huangpu Dadao. Tianhe District, Guangzhou, Guangdong",
+    "city": "Guangzhou",
+    "zipCode": "528315",
+    "province": "",
+    "phone": "+86 400 1881222",
+    "id": 9318,
+    "email": "service@louvre-furniture.com",
+    "website": "www.louvre-group.cn",
+    "related": {
+      "id": 2608,
+      "url": "/it/en/atelier-store/guangzhou-en"
+    },
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -15.827034,
+      "lng": -47.953467
+    },
+    "name": "CASUAL MOVEIS - BRASILIA",
+    "address": "SGCV Sul Lote 22 - Loja 143/146 - Shopping Casa Park",
+    "city": "Brasilia",
+    "zipCode": "DF",
+    "province": "",
+    "phone": "+55 61 32023922",
+    "id": 10360,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 30,
+      "name": "Brazil"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 29.7408785,
+      "lng": -95.4193838
+    },
+    "name": "CASA",
+    "address": "2800 Kirby Dr.",
+    "city": "Houston",
+    "zipCode": "TX 77098",
+    "province": "",
+    "phone": "+1 713 7148105",
+    "id": 185,
+    "email": "info@casa-houston.com",
+    "website": "www.casa-houston.com",
+    "related": {
+      "id": 2601,
+      "url": "/it/en/atelier-store/houston"
+    },
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 29.86198,
+      "lng": 121.58993
+    },
+    "name": "GIORGETTI STORE",
+    "address": "No. 1751, East Zhongshan Road, Yinzhou District",
+    "city": "NINGBO",
+    "zipCode": "",
+    "province": "",
+    "phone": "0574-87996565 / +86 13736183000",
+    "id": 32507,
+    "email": "527459155@qq.com",
+    "website": "",
+    "related": {
+      "id": 7510,
+      "url": "/it/en/atelier-store/ningbo"
+    },
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 22.543096,
+      "lng": 114.057865
+    },
+    "name": "Ritz Design Co., Ltd",
+    "address": "Unit 024-028, Floor F1, OCT Coastal  O'PLAZA, Nanshan District",
+    "city": "Shenzhen",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 755 86717889",
+    "id": 83,
+    "email": "info@ritzshanghai.com",
+    "website": "www.ritzliving.com",
+    "related": null,
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -19.9410402,
+      "lng": -43.9311843
+    },
+    "name": "CASUAL MOVEIS - BELO HORIZONTE",
+    "address": "Rua Andaluzita, 125 - Carmo",
+    "city": "Belo Horizonte",
+    "zipCode": "MG",
+    "province": "",
+    "phone": "+55  31 36549285",
+    "id": 10358,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 30,
+      "name": "Brazil"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 22.2792412,
+      "lng": 114.1783749
+    },
+    "name": "Colourliving",
+    "address": "333 Lockhart Road, Wan Chai",
+    "city": "",
+    "zipCode": "",
+    "province": "",
+    "phone": "+852 2295 6263",
+    "id": 33899,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 91,
+      "name": "Hong Kong"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 30.2699662,
+      "lng": -97.7431756
+    },
+    "name": "SCOTT + COONER AUSTIN",
+    "address": "115 West 8th Street",
+    "city": "Austin",
+    "zipCode": "TX  78701",
+    "province": "",
+    "phone": "+1 512 4800436",
+    "id": 173,
+    "email": "wendy@scottcooner.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 24.479833,
+      "lng": 118.089425
+    },
+    "name": "Xiamen CasaBella Co. Ltd",
+    "address": "SCE Building, No.208, Gaoqi Nanwu Road",
+    "city": "Xiamen",
+    "zipCode": "",
+    "province": "",
+    "phone": "+86 0592 5668399",
+    "id": 86,
+    "email": "info@casabellamobili.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 41,
+      "name": "China"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 4.662094,
+      "lng": -74.0515615
+    },
+    "name": "CASA HECHIZOO",
+    "address": "Calle 79b # 7-85",
+    "city": "Bogotà",
+    "zipCode": "",
+    "province": "",
+    "phone": "+571 7470583",
+    "id": 32595,
+    "email": "info@hechizoo.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 45,
+      "name": "Colombia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 25.0329694,
+      "lng": 121.5654177
+    },
+    "name": "YI&C FURNITURE & PROJECT CONSULTING Co., Ltd.",
+    "address": "23, Lane 252, Sec. 1 - Tun Hua S. Road",
+    "city": "Taipei",
+    "zipCode": "",
+    "province": "",
+    "phone": "+886 2 27766628",
+    "id": 92,
+    "email": "yi8chang@ms65.hinet.net",
+    "website": "www.yi8c.com",
+    "related": null,
+    "country": {
+      "id": 212,
+      "name": "Taiwan"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 10.8230989,
+      "lng": 106.6296638
+    },
+    "name": "EURASIA CONCEPT CORPORATION",
+    "address": "Times Square building, 22-36 Nguyen Hue Boulevard & 57-69F Dong Khoi Street, Ben Nghe Ward, District 1",
+    "city": "Ho Chi Minh City",
+    "zipCode": "",
+    "province": "",
+    "phone": "+848 3838 9911",
+    "id": 10350,
+    "email": "",
+    "website": "",
+    "related": {
+      "id": 2590,
+      "url": "/it/en/atelier-store/ho-chi-minh-city"
+    },
+    "country": {
+      "id": 232,
+      "name": "Vietnam"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -23.6021599,
+      "lng": -46.6924588
+    },
+    "name": "CASUAL INTERIORES",
+    "address": "Ronaldo Sampaio Ferreira Building Praça João Duran Alonso, 34 – 15° andar – Brooklin",
+    "city": "São Paulo",
+    "zipCode": "SP",
+    "province": "",
+    "phone": "+55 11 51031019",
+    "id": 10351,
+    "email": "",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 30,
+      "name": "Brazil"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 3.1613896,
+      "lng": 101.7201644
+    },
+    "name": "Space Furniture Kuala Lumpur",
+    "address": "106 Jalan Maarof, Bangsar, 59000",
+    "city": "Kuala Lumpur",
+    "zipCode": "59000",
+    "province": "",
+    "phone": "+603 2201 6000",
+    "id": 91,
+    "email": "info@spacefurniture.com.my",
+    "website": "www.spacefurniture.com",
+    "related": null,
+    "country": {
+      "id": 134,
+      "name": "Malaysia"
+    }
+  },
+  {
+    "category": {
+      "id": 9,
+      "name": "Hexagon: Atelier"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 1.2998558,
+      "lng": 103.850615
+    },
+    "name": "Space Furniture",
+    "address": "77 Bencoolen Street",
+    "city": "Singapore",
+    "zipCode": "189653",
+    "province": "",
+    "phone": "+65 64150000",
+    "id": 10349,
+    "email": "",
+    "website": "www.spacefurniture.com",
+    "related": {
+      "id": 2599,
+      "url": "/it/en/atelier-store/singapore"
+    },
+    "country": {
+      "id": 197,
+      "name": "Singapore"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 34.0762167,
+      "lng": -118.3705041
+    },
+    "name": "GIORGETTI STORE",
+    "address": "Robina Benson - Melrose Ave 8315,",
+    "city": "Los Angeles - CA",
+    "zipCode": "90069",
+    "province": "",
+    "phone": "+1 323 5910888",
+    "id": 10380,
+    "email": "",
+    "website": "",
+    "related": {
+      "id": 2613,
+      "url": "/it/en/atelier-store/los-angeles"
+    },
+    "country": {
+      "id": 204,
+      "name": "United States"
+    }
+  },
+  {
+    "category": {
+      "id": 8,
+      "name": "Hexagon: Store"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 19.4192123,
+      "lng": -99.2153987
+    },
+    "name": "GIORGETTI STORE",
+    "address": "Monte Everest 635, Lomas De Chapultepec",
+    "city": "Mexico City",
+    "zipCode": "05100",
+    "province": "",
+    "phone": "",
+    "id": 1241,
+    "email": "info@hexagonmx.com",
+    "website": "",
+    "related": {
+      "id": 2600,
+      "url": "/it/en/atelier-store/mexico-city"
+    },
+    "country": {
+      "id": 145,
+      "name": "Mexico"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 19.382277,
+      "lng": -99.2676637
+    },
+    "name": "BENETTI CASA",
+    "address": "Pabellón Bosques - Loc. 153 Prolongación Bosques de Reforma #1813",
+    "city": "Lomas de Vista Hermosa",
+    "zipCode": "",
+    "province": "",
+    "phone": "+52 55 21675008",
+    "id": 209,
+    "email": "contacto@benetticasa.com",
+    "website": "www.benetticasa.com",
+    "related": null,
+    "country": {
+      "id": 145,
+      "name": "Mexico"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": 14.553297,
+      "lng": 121.0442481
+    },
+    "name": "FURNITALIA",
+    "address": "30th St. Corner Rizal Drive - Crescent Park - West Bonifacio, Global City - Taguig City",
+    "city": "Manila",
+    "zipCode": "",
+    "province": "",
+    "phone": "+63 2 5626401",
+    "id": 87,
+    "email": "gmphils@witco.com.ph",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 65,
+      "name": "Philippines"
+    }
+  },
+  {
+    "category": {
+      "id": 9,
+      "name": "Hexagon: Atelier"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -6.252347,
+      "lng": 106.834699
+    },
+    "name": "GIORGETTI ATELIER PT. PRODOTTI INDONESIA",
+    "address": "Jl. Duren Tiga No. 33 Pancoran Selatan",
+    "city": "Jakarta",
+    "zipCode": "12760",
+    "province": "",
+    "phone": "+62 21 7991521",
+    "id": 90,
+    "email": "info@prodotti-id.com",
+    "website": "",
+    "related": {
+      "id": 2595,
+      "url": "/it/en/atelier-store/jakarta"
+    },
+    "country": {
+      "id": 94,
+      "name": "Indonesia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -34.9429295,
+      "lng": -54.931952
+    },
+    "name": "CASSONI ARTE EN MUEBLES",
+    "address": "Avda Italia y Pedragosa Sierra P.5",
+    "city": "Punta del Este",
+    "zipCode": "",
+    "province": "",
+    "phone": "+598 4248 8632",
+    "id": 32596,
+    "email": "contact@cassoni.com",
+    "website": "",
+    "related": null,
+    "country": {
+      "id": 228,
+      "name": "Uruguay"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -33.9176247,
+      "lng": 151.1937474
+    },
+    "name": "SPACE FURNITURE Ltd. Pty Ltd.",
+    "address": "Sydney Showroom 84, O'Riordan Street",
+    "city": "Sydney",
+    "zipCode": "NSW 2015",
+    "province": "",
+    "phone": "+61 2 83397588",
+    "id": 109,
+    "email": "info@spacefurniture.com.au",
+    "website": "www.spacefurniture.com",
+    "related": null,
+    "country": {
+      "id": 12,
+      "name": "Australia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -33.9176247,
+      "lng": 151.1937474
+    },
+    "name": "SPACE FURNITURE Ltd. Pty Ltd.",
+    "address": "Melbourne Showroom 629 Church Street Richmond",
+    "city": "Melbourne",
+    "zipCode": "VIC 3121",
+    "province": "",
+    "phone": "+61 3 94263000",
+    "id": 116,
+    "email": "info@spacefurniture.com.au",
+    "website": "www.spacefurniture.com",
+    "related": null,
+    "country": {
+      "id": 12,
+      "name": "Australia"
+    }
+  },
+  {
+    "category": {
+      "id": 10,
+      "name": "Hexagon: Distributori"
+    },
+    "rank": 1,
+    "distance": 0.0,
+    "position": {
+      "lat": -36.8665658,
+      "lng": 174.763289
+    },
+    "name": "ECC LIGHTING AND LIVING Ltd",
+    "address": "39 Nugent Street, Grafton",
+    "city": "Auckland",
+    "zipCode": "1023",
+    "province": "",
+    "phone": "+64 9 3799680",
+    "id": 95,
+    "email": "living@ecc.co.nz",
+    "website": "www.ecc.co.nz",
+    "related": null,
+    "country": {
+      "id": 161,
+      "name": "New Zealand"
+    }
+  }
+]
