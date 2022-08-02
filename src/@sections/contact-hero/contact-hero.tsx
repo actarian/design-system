@@ -2,6 +2,7 @@ import { Button, Card, Container, Flex, Grid, NavLink, Section, Text, Tooltip } 
 import { ComponentProps } from '@components/types';
 import { useScrollTo } from '@hooks';
 import { Search, Send } from '@icons';
+import Link from 'next/link';
 
 type Props = {
   item: ContactHeroItem,
@@ -40,7 +41,9 @@ const ContactHero = ({ item }: ContactHeroProps) => {
                 </Tooltip> <span>production technologies.</span>
               </Text>
               <Flex.Responsive>
-                <Button variant="primary"><span>Search agents</span> <Search /></Button>
+                <Link href="/store-locator">
+                  <Button variant="primary"><span>Search dealers</span> <Search /></Button>
+                </Link>
                 <NavLink href="#contact-request" passHref>
                   <Button variant="secondary" onClick={scrollTo}><span>Contact Us</span> <Send /></Button>
                 </NavLink>

@@ -1,0 +1,30 @@
+[
+  {
+    "id": "category",
+    "title": "Tipology",
+    "mode": "select",
+    "features": [
+      {
+        "value": 8,
+        "label": "Hexagon Store"
+      },
+      {
+        "value": 9,
+        "label": "Hexagon Atelier"
+      },
+      {
+        "value": 10,
+        "label": "Dealers"
+      },
+      {
+        "value": 11,
+        "label": "Retailers"
+      }
+    ]
+  },
+  {
+    "id": "bounds",
+    "title": "Bounds",
+    "mode": "query"
+  }
+]

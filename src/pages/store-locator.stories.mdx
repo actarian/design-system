@@ -1,0 +1,30 @@
+import { ArgsTable, Meta, Story, Canvas } from '@storybook/addon-docs';
+import { default as StoreLocator } from './store-locator';
+
+<Meta
+  title="Pages / StoreLocator"
+  component={StoreLocator}
+  parameters={{ backgrounds: { disable: true, grid: { disable: true } } }}
+/>
+
+# StoreLocator
+
+A component to display a `StoreLocator`.
+
+[View source](https://github.com/actarian/design-system/tree/main/src/pages/store-locator.tsx)
+
+## Imports
+
+```js
+import { StoreLocator } from '@design-system';
+```
+
+## Example
+
+A basic example of `StoreLocator`.
+
+<Canvas>
+  <Story name="StoreLocator">
+    <StoreLocator />
+  </Story>
+</Canvas>

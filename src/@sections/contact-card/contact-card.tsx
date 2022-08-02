@@ -11,7 +11,11 @@ type Props = {
 export type ContactCardItem = {
   id: number;
   name: string;
-  address: string;
+  address?: string;
+  province?: string;
+  zipCode?: string;
+  city?: string;
+  country?: { id: number, name: string };
   phoneNumber?: string;
   faxNumber?: string;
   contactEmail?: string;
@@ -24,6 +28,22 @@ export type ContactCardItem = {
 export type ContactCardProps = ComponentProps<Props, HTMLDivElement>;
 
 const ContactCard = ({ item, ...props }: ContactCardProps) => {
+  const getAddressLine2 = (): string => {
+    const a = [];
+    if (item.zipCode) {
+      a.push(item.zipCode);
+    }
+    if (item.city) {
+      a.push(item.city);
+    }
+    if (item.province) {
+      a.push(item.province);
+    }
+    if (item.country) {
+      a.push(item.country.name);
+    }
+    return a.join(', ');
+  }
   const getTelLink = (value: string): string => {
     return `tel:${value.replace(/D/g, '')}`;
   }
@@ -33,11 +53,13 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
   const getMailToLink = (value: string): string => {
     return `mailto:${value.trim()}`;
   }
+  const addressLine2 = getAddressLine2();
   return (
-    <Card background="var(--color-primary-100)" {...props}>
-      <Card.Content padding="1rem" flex="1" justifyContent="space-between">
+    <Card borderTop="2px solid var(--color-primary-100)" {...props}>
+      <Card.Content padding="1rem 0" flex="1" justifyContent="space-between">
         <Text fontWeight="700" marginBottom="0.5rem">{item.name}</Text>
-        <Text dangerouslySetInnerHTML={{ __html: item.address }}></Text>
+        {item.address && <Text dangerouslySetInnerHTML={{ __html: item.address }}></Text>}
+        {addressLine2 && <Text>{addressLine2}</Text>}
         <Nav.Col gap="0" paddingTop="2rem">
           {item.phoneNumber && <>
             <Link href={getTelLink(item.phoneNumber)}>

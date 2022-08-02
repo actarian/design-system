@@ -2,12 +2,12 @@
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import React, { useEffect, useState } from 'react';
 import { useGoogleMapContext } from "./google-map-context";
-import { IMarker } from './google-map-marker';
+import { IGeoLocalized } from "./google-map.service";
 
 export interface GoogleMapMarkerClustererProps {
-  items: IMarker[];
+  items: IGeoLocalized[];
   map?: google.maps.Map,
-  onClick?: (item: IMarker) => void;
+  onClick?: (item: IGeoLocalized) => void;
 }
 
 const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
@@ -21,7 +21,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
 
   const [clusterer, setClusterer] = useState<MarkerClusterer>();
 
-  const onClick_ = (item: IMarker) => {
+  const onClick_ = (item: IGeoLocalized) => {
     if (onClick) {
       onClick(item);
     }
@@ -62,7 +62,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
       clusterer.clearMarkers();
     }
     if (map && markers) {
-      console.log('MarkerClusterer 2', map);
+      // console.log('MarkerClusterer 2', map);
       /*
       const instance = new MarkerClusterer(map, markers, {
         imagePath: `/map/cluster-`,

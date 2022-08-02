@@ -1,10 +1,12 @@
 import { Layout, Page } from '@components';
-import { Footer, Header, Split } from '@sections';
-import StoreLocatorMap, { StoreLocatorItem } from '@sections/store-locator/store-locator-map';
+import { IFeatureType } from '@hooks/useFilters/filter';
+import { Footer, Header, Split, StoreLocatoHead, StoreLocatoMap } from '@sections';
+import { StoreLocatorItem } from '@sections/store-locator/store-locator-map';
 import Head from 'next/head';
-import STORES from '../@sections/store-locator/store-locator-data.json';
+import STORES from '../@sections/store-locator/store-locator-all.json';
+import STORES_FEATURES from '../@sections/store-locator/store-locator-features.json';
 
-export default function StoreLocator({ items }: { items: StoreLocatorItem[] }) {
+export default function StoreLocator({ items, featureTypes }: { items: StoreLocatorItem[], featureTypes: IFeatureType[] }) {
   return (
     <>
       <Head>
@@ -18,7 +20,9 @@ export default function StoreLocator({ items }: { items: StoreLocatorItem[] }) {
 
           <Header sticky />
 
-          <StoreLocatorMap items={items} />
+          <StoreLocatoHead />
+
+          <StoreLocatoMap items={items} featureTypes={featureTypes} />
 
           <Split />
 
@@ -31,7 +35,12 @@ export default function StoreLocator({ items }: { items: StoreLocatorItem[] }) {
 }
 
 export async function getStaticProps() {
-  const props = { items: STORES };
+  const props = {
+    items: STORES.sort((a, b) => {
+      return a.rank - b.rank;
+    }),
+    featureTypes: STORES_FEATURES
+  };
   return {
     props,
   };

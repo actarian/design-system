@@ -4,7 +4,7 @@ export const GoogleMapStyle: google.maps.MapTypeStyle[] = [
     "elementType": "labels.text.fill",
     "stylers": [
       {
-        "color": "#444444"
+        "color": "#27272B"
       }
     ]
   },
@@ -13,7 +13,7 @@ export const GoogleMapStyle: google.maps.MapTypeStyle[] = [
     "elementType": "all",
     "stylers": [
       {
-        "color": "#f2f2f2"
+        "color": "#F4F5FB"
       }
     ]
   },
@@ -70,7 +70,7 @@ export const GoogleMapStyle: google.maps.MapTypeStyle[] = [
     "elementType": "all",
     "stylers": [
       {
-        "color": "#e2e0df"
+        "color": "#E4E5EB"
       },
       {
         "visibility": "on"
