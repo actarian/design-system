@@ -33,7 +33,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
         url: `/map/marker-sm.png`,
         size: new google.maps.Size(24, 32),
         origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(17, 34),
+        anchor: new google.maps.Point(12, 32),
         // scaledSize: new google.maps.Size(25, 25)
       };
       const marker = new google.maps.Marker({

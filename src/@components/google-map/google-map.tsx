@@ -71,9 +71,11 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
       }
     }
     return () => {
+      /*
       if (map) {
         map.unbindAll();
       }
+      */
     }
   }, [map, onLoad, onIdle, onClick]);
 
