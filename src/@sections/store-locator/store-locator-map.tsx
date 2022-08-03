@@ -6,6 +6,7 @@ import { GoogleMapLoader, GoogleMapLoaderStatus } from '@components/google-map/g
 import GoogleMapMarker from '@components/google-map/google-map-marker';
 import GoogleMapMarkerClusterer from '@components/google-map/google-map-markerclusterer';
 import { autocompleteSource, calculateDistances, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
+import { InputGroup } from '@forms';
 import Autocomplete from '@forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '@forms/autocomplete/autocomplete-context';
 import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@hooks';
@@ -224,9 +225,12 @@ const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocato
 
   return (
     <>
-      <Section borderTop="1px solid var(--color-neutral-300)">
+      <Section padding="0 0 2rem 0">
         <Container>
           <Flex.Row>
+            <InputGroup name="search" placeholder="search...">
+              <InputGroup.Input />
+            </InputGroup>
             <Autocomplete name="search" placeholder="search..." source={autocompleteSource} onSelect={onSelect}></Autocomplete>
           </Flex.Row>
         </Container>

@@ -1,7 +1,7 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import { useClasses } from '@hooks';
-import { ComponentPropsWithRef, forwardRef, useState } from 'react';
+import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 
 interface Props extends ComponentPropsWithRef<'input'> {
@@ -53,26 +53,10 @@ const StyledInput = styled.div<InputProps>`
 const Input = forwardRef<HTMLInputElement, InputProps>(({
   type = 'text',
   className,
-  onFocus,
-  onBlur,
   ...props }, ref) => {
-  const [focus, setFocus] = useState<boolean>(false);
-  const classNames = useClasses('input', {
-    focus,
-    disabled: props.disabled,
-    readonly: props.readOnly,
-    hidden: props.hidden,
-  }, className);
-  const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
-    onFocus && onFocus(event);
-    setFocus(true);
-  }
-  const onBlur_ = (event: React.FocusEvent<HTMLInputElement>) => {
-    onBlur && onBlur(event);
-    setFocus(false);
-  }
+  const classNames = useClasses('input', className);
   return (
-    <StyledInput ref={ref} className={classNames} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
+    <StyledInput ref={ref} className={classNames} as='input' type={type} {...props} />
   );
 });
 

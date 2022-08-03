@@ -1,15 +1,17 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
+import Input from '@forms/input/input';
 import { useClasses } from '@hooks';
-import { ComponentPropsWithRef, forwardRef, useState } from 'react';
+import { ComponentPropsWithRef, forwardRef, ReactNode } from 'react';
 import styled from 'styled-components';
 
 interface Props extends ComponentPropsWithRef<'input'> {
+  children?: ReactNode;
 };
 
-export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
+export type InputGroupProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
-const StyledInput = styled.div<InputProps>`
+const StyledInputGroup = styled.div<InputGroupProps>`
   display: block;
   width: 100%;
   padding: var(--form-padding);
@@ -50,30 +52,22 @@ const StyledInput = styled.div<InputProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Input = forwardRef<HTMLInputElement, InputProps>(({
-  type = 'text',
+const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
+  children,
   className,
-  onFocus,
-  onBlur,
   ...props }, ref) => {
-  const [focus, setFocus] = useState<boolean>(false);
-  const classNames = useClasses('input', {
-    focus,
-    disabled: props.disabled,
-    readonly: props.readOnly,
-    hidden: props.hidden,
-  }, className);
-  const onFocus_ = (event: React.FocusEvent<HTMLInputElement>) => {
-    onFocus && onFocus(event);
-    setFocus(true);
-  }
-  const onBlur_ = (event: React.FocusEvent<HTMLInputElement>) => {
-    onBlur && onBlur(event);
-    setFocus(false);
-  }
+  const classNames = useClasses('input-group', className);
   return (
-    <StyledInput ref={ref} className={classNames} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
+    <StyledInputGroup className={classNames} as="div" {...props}>
+      {children}
+    </StyledInputGroup>
   );
 });
 
-export default Input;
+(InputGroup as IInputGroup).Input = Input;
+
+export default InputGroup as IInputGroup;
+
+type IInputGroup = typeof InputGroup & {
+  Input: typeof Input;
+};

@@ -15,11 +15,11 @@ export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
 
 const StoreLocatorHead = ({ item }: StoreLocatorHeadProps) => {
   return (
-    <Section>
+    <Section padding="2rem 0">
       <Container textAlign="center">
-        <Text size="10" marginBottom="0.5rem" textTransform="uppercase">{item.category}</Text>
-        <Text size="2" marginBottom="2rem" fontWeight="700">{item.title}</Text>
-        <Text size="8" margin="0 auto 3rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
+        <Text size="10" textTransform="uppercase">{item.category}</Text>
+        <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
+        <Text size="8" margin="0 auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
       </Container>
     </Section>
   )
