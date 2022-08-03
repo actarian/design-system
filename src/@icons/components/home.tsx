@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Home from '../icons/home.svg';
+import HomeSvg from '../icons/home.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Home {...props} ref={ref} />);
+const Home = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<HomeSvg {...props} ref={ref} />);
 });
+
+Home.displayName = 'Home';
+
+export default Home;
 
 // export default () => <Home />;
         

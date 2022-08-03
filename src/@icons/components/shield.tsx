@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Shield from '../icons/shield.svg';
+import ShieldSvg from '../icons/shield.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Shield {...props} ref={ref} />);
+const Shield = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ShieldSvg {...props} ref={ref} />);
 });
+
+Shield.displayName = 'Shield';
+
+export default Shield;
 
 // export default () => <Shield />;
         

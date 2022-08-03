@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ToggleLeft from '../icons/toggle-left.svg';
+import ToggleLeftSvg from '../icons/toggle-left.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ToggleLeft {...props} ref={ref} />);
+const ToggleLeft = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ToggleLeftSvg {...props} ref={ref} />);
 });
+
+ToggleLeft.displayName = 'ToggleLeft';
+
+export default ToggleLeft;
 
 // export default () => <ToggleLeft />;
         

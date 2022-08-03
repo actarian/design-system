@@ -6,7 +6,7 @@ export interface AuthForgotSuccessProps {
   onNavToLogin?: () => void;
 }
 
-const AuthForgotSuccess = ({ onNavToLogin }: AuthForgotSuccessProps) => {
+const AuthForgotSuccess: React.FC<AuthForgotSuccessProps> = ({ onNavToLogin }: AuthForgotSuccessProps) => {
   const onLogin = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();

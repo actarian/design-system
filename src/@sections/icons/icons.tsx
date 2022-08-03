@@ -2,22 +2,22 @@ import { Card, Code, Container, Flex, Media, Modal, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { Input } from '@forms';
 import { Icons as IconList } from '@icons/icons';
-import { createElement, Suspense, useMemo, useState } from 'react';
+import { createElement, FunctionComponent, Suspense, useMemo, useState } from 'react';
 
 type Props = {
 }
 
 export type IIcon = {
   key: string;
-  component: React.ReactElement;
+  component: FunctionComponent<unknown>;
 }
 
 export type IconsProps = ComponentProps<Props, HTMLDivElement>;
 
-const Icons = (props: IconsProps) => {
+const Icons: React.FC<IconsProps> = (props: IconsProps) => {
   const [showModal, setShowModal] = useState(false);
   const [icon, setIcon] = useState<IIcon | null>(null);
-  const onSetIcon = (icon = null) => {
+  const onSetIcon = (icon: IIcon | null = null) => {
     const visible = icon !== null;
     console.log('onSetIcon', icon, visible);
     setShowModal(visible);
@@ -27,7 +27,7 @@ const Icons = (props: IconsProps) => {
   }
   const iconsList = useMemo<IIcon[]>(() => {
     return Object.keys(IconList).map((key) => {
-      return { key, component: IconList[key] };
+      return { key, component: IconList[key as keyof typeof IconList] as unknown as FunctionComponent<unknown> };
     });
   }, []);
   const [visibleIcons, setVisibleIcons] = useState<IIcon[]>(iconsList);

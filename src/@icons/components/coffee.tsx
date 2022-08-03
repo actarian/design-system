@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Coffee from '../icons/coffee.svg';
+import CoffeeSvg from '../icons/coffee.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Coffee {...props} ref={ref} />);
+const Coffee = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CoffeeSvg {...props} ref={ref} />);
 });
+
+Coffee.displayName = 'Coffee';
+
+export default Coffee;
 
 // export default () => <Coffee />;
         

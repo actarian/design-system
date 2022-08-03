@@ -15,14 +15,13 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
 
   const [marker, setMarker] = useState<google.maps.Marker>();
 
-  const onClick_ = (event: MouseEvent<HTMLElement>) => {
-    if (onClick) {
-      onClick(event);
-    }
-  };
-
   useEffect(() => {
     if (!marker && map) {
+      const onClick_ = (event: MouseEvent<HTMLElement>) => {
+        if (onClick) {
+          onClick(event);
+        }
+      };
       const instance = new google.maps.Marker();
       instance.setMap(map || null);
       instance.addListener('click', onClick_)
@@ -35,7 +34,7 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
         marker.unbindAll()
       }
     };
-  }, [marker, map]);
+  }, [marker, map, onClick]);
 
   useEffect(() => {
     if (marker) {

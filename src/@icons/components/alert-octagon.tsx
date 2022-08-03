@@ -1,10 +1,14 @@
 
 import React from 'react';
-import AlertOctagon from '../icons/alert-octagon.svg';
+import AlertOctagonSvg from '../icons/alert-octagon.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<AlertOctagon {...props} ref={ref} />);
+const AlertOctagon = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AlertOctagonSvg {...props} ref={ref} />);
 });
+
+AlertOctagon.displayName = 'AlertOctagon';
+
+export default AlertOctagon;
 
 // export default () => <AlertOctagon />;
         

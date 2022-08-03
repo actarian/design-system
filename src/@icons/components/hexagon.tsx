@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Hexagon from '../icons/hexagon.svg';
+import HexagonSvg from '../icons/hexagon.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Hexagon {...props} ref={ref} />);
+const Hexagon = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<HexagonSvg {...props} ref={ref} />);
 });
+
+Hexagon.displayName = 'Hexagon';
+
+export default Hexagon;
 
 // export default () => <Hexagon />;
         

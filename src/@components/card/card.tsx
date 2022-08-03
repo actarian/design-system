@@ -125,6 +125,8 @@ const Card = React.forwardRef<Element, CardProps>((props: CardProps, ref?: React
   return (<CardContainer {...props} ref={ref}>{props.children}</CardContainer>);
 });
 
+Card.displayName = 'Card';
+
 (Card as ICard).Background = Background;
 (Card as ICard).Content = CardContent;
 (Card as ICard).Footer = CardFooter;

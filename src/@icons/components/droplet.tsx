@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Droplet from '../icons/droplet.svg';
+import DropletSvg from '../icons/droplet.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Droplet {...props} ref={ref} />);
+const Droplet = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DropletSvg {...props} ref={ref} />);
 });
+
+Droplet.displayName = 'Droplet';
+
+export default Droplet;
 
 // export default () => <Droplet />;
         

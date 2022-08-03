@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Columns from '../icons/columns.svg';
+import ColumnsSvg from '../icons/columns.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Columns {...props} ref={ref} />);
+const Columns = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ColumnsSvg {...props} ref={ref} />);
 });
+
+Columns.displayName = 'Columns';
+
+export default Columns;
 
 // export default () => <Columns />;
         

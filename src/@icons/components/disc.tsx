@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Disc from '../icons/disc.svg';
+import DiscSvg from '../icons/disc.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Disc {...props} ref={ref} />);
+const Disc = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DiscSvg {...props} ref={ref} />);
 });
+
+Disc.displayName = 'Disc';
+
+export default Disc;
 
 // export default () => <Disc />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Github from '../icons/github.svg';
+import GithubSvg from '../icons/github.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Github {...props} ref={ref} />);
+const Github = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GithubSvg {...props} ref={ref} />);
 });
+
+Github.displayName = 'Github';
+
+export default Github;
 
 // export default () => <Github />;
         

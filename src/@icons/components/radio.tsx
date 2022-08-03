@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Radio from '../icons/radio.svg';
+import RadioSvg from '../icons/radio.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Radio {...props} ref={ref} />);
+const Radio = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<RadioSvg {...props} ref={ref} />);
 });
+
+Radio.displayName = 'Radio';
+
+export default Radio;
 
 // export default () => <Radio />;
         

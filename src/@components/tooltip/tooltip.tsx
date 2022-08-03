@@ -1,5 +1,5 @@
 import { useClasses, useClickOut } from '@hooks';
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import TooltipContent, { TooltipIconOffset } from './tooltip-content';
 import { getRect } from './tooltip-helper';
@@ -60,7 +60,7 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
   const [visible, setVisible] = useState<boolean>(initialVisible);
 
   const iconOffset = useMemo<TooltipIconOffset>(() => {
-    if (!ref?.current) {
+    if (!ref.current) {
       return { x: '0.75em', y: '0.75em' };
     }
     const rect = getRect(ref);
@@ -68,9 +68,9 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
       x: `${rect.width ? rect.width / 2 : 0}px`,
       y: `${rect.height ? rect.height / 2 : 0}px`,
     };
-  }, [ref?.current]);
+  }, [ref]);
 
-  const changeVisible = (nextState: boolean) => {
+  const changeVisible = useCallback((nextState: boolean) => {
     const clear = () => {
       clearTimeout(timer.current);
       timer.current = undefined;
@@ -87,14 +87,14 @@ const TooltipComponent: React.FC<React.PropsWithChildren<TooltipProps>> = ({
     }
     const leaveDelayWithoutClick = trigger === 'click' ? 0 : leaveDelay;
     timer.current = window.setTimeout(() => handler(false), leaveDelayWithoutClick);
-  };
+  }, [enterDelay, leaveDelay, onVisibleChange, trigger]);
 
   useEffect(() => {
     if (customVisible === undefined) {
       return;
     }
     changeVisible(customVisible);
-  }, [customVisible])
+  }, [changeVisible, customVisible])
 
   const onEnterLeave = (enter: boolean) => trigger === 'hover' && changeVisible(enter);
 

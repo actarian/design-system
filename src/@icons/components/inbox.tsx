@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Inbox from '../icons/inbox.svg';
+import InboxSvg from '../icons/inbox.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Inbox {...props} ref={ref} />);
+const Inbox = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<InboxSvg {...props} ref={ref} />);
 });
+
+Inbox.displayName = 'Inbox';
+
+export default Inbox;
 
 // export default () => <Inbox />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Layout from '../icons/layout.svg';
+import LayoutSvg from '../icons/layout.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Layout {...props} ref={ref} />);
+const Layout = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LayoutSvg {...props} ref={ref} />);
 });
+
+Layout.displayName = 'Layout';
+
+export default Layout;
 
 // export default () => <Layout />;
         

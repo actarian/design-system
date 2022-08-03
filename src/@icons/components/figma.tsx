@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Figma from '../icons/figma.svg';
+import FigmaSvg from '../icons/figma.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Figma {...props} ref={ref} />);
+const Figma = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FigmaSvg {...props} ref={ref} />);
 });
+
+Figma.displayName = 'Figma';
+
+export default Figma;
 
 // export default () => <Figma />;
         

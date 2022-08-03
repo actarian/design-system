@@ -1,10 +1,14 @@
 
 import React from 'react';
-import CheckCircle from '../icons/check-circle.svg';
+import CheckCircleSvg from '../icons/check-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<CheckCircle {...props} ref={ref} />);
+const CheckCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CheckCircleSvg {...props} ref={ref} />);
 });
+
+CheckCircle.displayName = 'CheckCircle';
+
+export default CheckCircle;
 
 // export default () => <CheckCircle />;
         

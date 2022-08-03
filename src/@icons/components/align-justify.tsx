@@ -1,10 +1,14 @@
 
 import React from 'react';
-import AlignJustify from '../icons/align-justify.svg';
+import AlignJustifySvg from '../icons/align-justify.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<AlignJustify {...props} ref={ref} />);
+const AlignJustify = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AlignJustifySvg {...props} ref={ref} />);
 });
+
+AlignJustify.displayName = 'AlignJustify';
+
+export default AlignJustify;
 
 // export default () => <AlignJustify />;
         

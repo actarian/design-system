@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Code from '../icons/code.svg';
+import CodeSvg from '../icons/code.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Code {...props} ref={ref} />);
+const Code = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CodeSvg {...props} ref={ref} />);
 });
+
+Code.displayName = 'Code';
+
+export default Code;
 
 // export default () => <Code />;
         

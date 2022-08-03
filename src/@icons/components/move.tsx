@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Move from '../icons/move.svg';
+import MoveSvg from '../icons/move.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Move {...props} ref={ref} />);
+const Move = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MoveSvg {...props} ref={ref} />);
 });
+
+Move.displayName = 'Move';
+
+export default Move;
 
 // export default () => <Move />;
         

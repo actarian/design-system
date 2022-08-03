@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Mic from '../icons/mic.svg';
+import MicSvg from '../icons/mic.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Mic {...props} ref={ref} />);
+const Mic = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MicSvg {...props} ref={ref} />);
 });
+
+Mic.displayName = 'Mic';
+
+export default Mic;
 
 // export default () => <Mic />;
         

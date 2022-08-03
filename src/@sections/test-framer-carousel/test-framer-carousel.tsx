@@ -1,7 +1,7 @@
 import { Carousel } from '@components/carousel/carousel';
 import { useMemo } from 'react';
 
-export default function TestFramerCarousel() {
+const TestFramerCarousel: React.FC<null> = () => {
 
   const items = useMemo(() => [{
     id: 1,
@@ -53,3 +53,5 @@ export default function TestFramerCarousel() {
     </div>
   )
 }
+
+export default TestFramerCarousel;

@@ -27,7 +27,7 @@ export type ContactCardItem = {
 
 export type ContactCardProps = ComponentProps<Props, HTMLDivElement>;
 
-const ContactCard = ({ item, ...props }: ContactCardProps) => {
+const ContactCard: React.FC<ContactCardProps> = ({ item, ...props }: ContactCardProps) => {
   const getAddressLine2 = (): string => {
     const a = [];
     if (item.zipCode) {
@@ -103,7 +103,7 @@ const ContactCard = ({ item, ...props }: ContactCardProps) => {
   )
 }
 
-ContactCard.defaultProps = {
+export const ContactCardDefaults = {
   item: {
     id: 1,
     name: 'Hexagon Headquarters',
@@ -116,5 +116,7 @@ ContactCard.defaultProps = {
     evidence: false,
   }
 };
+
+ContactCard.defaultProps = ContactCardDefaults;
 
 export default ContactCard;

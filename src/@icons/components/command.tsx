@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Command from '../icons/command.svg';
+import CommandSvg from '../icons/command.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Command {...props} ref={ref} />);
+const Command = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CommandSvg {...props} ref={ref} />);
 });
+
+Command.displayName = 'Command';
+
+export default Command;
 
 // export default () => <Command />;
         

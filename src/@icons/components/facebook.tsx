@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Facebook from '../icons/facebook.svg';
+import FacebookSvg from '../icons/facebook.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Facebook {...props} ref={ref} />);
+const Facebook = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FacebookSvg {...props} ref={ref} />);
 });
+
+Facebook.displayName = 'Facebook';
+
+export default Facebook;
 
 // export default () => <Facebook />;
         

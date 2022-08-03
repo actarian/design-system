@@ -16,4 +16,6 @@ const Layout = forwardRef<HTMLDivElement, LayoutProps>((props, ref) => (
   <StyledLayout ref={ref} as='div' {...props} />
 ));
 
+Layout.displayName = 'Layout';
+
 export default Layout;

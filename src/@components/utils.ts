@@ -156,7 +156,7 @@ export function isChildElement(parent: Element | null | undefined, child: Elemen
 }
 
 export function getChildsByType(children: ReactNode | undefined, child: React.ElementType): [ReactNode | undefined, ReactNode | undefined] {
-  let items: ReactNode[] = [];
+  const items: ReactNode[] = [];
   const others = React.Children.map(children, (item) => {
     if (!React.isValidElement(item)) {
       return item;

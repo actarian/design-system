@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Clock from '../icons/clock.svg';
+import ClockSvg from '../icons/clock.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Clock {...props} ref={ref} />);
+const Clock = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ClockSvg {...props} ref={ref} />);
 });
+
+Clock.displayName = 'Clock';
+
+export default Clock;
 
 // export default () => <Clock />;
         

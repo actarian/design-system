@@ -93,9 +93,7 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
 
   const classes = useClasses('accordion', { shadow }, className);
 
-  if (!title) {
-    useWarning('"title" is required.', 'Accordion');
-  }
+  useWarning(!title, '"title" is required.', 'Accordion');
 
   useEffect(() => {
     if (!values.length) {

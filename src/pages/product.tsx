@@ -1,5 +1,7 @@
-import { Breadcrumb, Container, Layout, Page, Section } from '@components';
+import { Breadcrumb, Container, Layout, MediaType, Page, Section } from '@components';
 import { CategoryProposition, Footer, Header, ProductOverview, ProductsIncentive, ProductsRelated } from '@sections';
+import { CategoryPropositionDefaults } from '@sections/category-proposition/category-proposition';
+import { ProductsRelatedDefaults } from '@sections/products-related/products-related';
 import Head from 'next/head';
 
 export type ProductItem = {
@@ -11,7 +13,7 @@ export type ProductItem = {
   price: number;
   date: string | Date;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   }[];
 }
@@ -51,9 +53,9 @@ export default function Product({ item, ...props }: Props) {
 
           <ProductsIncentive />
 
-          <ProductsRelated />
+          <ProductsRelated items={ProductsRelatedDefaults.items} />
 
-          <CategoryProposition />
+          <CategoryProposition item={CategoryPropositionDefaults.item} />
 
           <Footer />
 
@@ -71,16 +73,16 @@ Product.defaultProps = {
     abstract: 'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
     price: 36,
     media: [{
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-04.jpg',
     }, {
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-01.jpg',
     }, {
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-02.jpg',
     }, {
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-03.jpg',
     }],
   }

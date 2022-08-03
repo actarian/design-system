@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Box from '../icons/box.svg';
+import BoxSvg from '../icons/box.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Box {...props} ref={ref} />);
+const Box = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BoxSvg {...props} ref={ref} />);
 });
+
+Box.displayName = 'Box';
+
+export default Box;
 
 // export default () => <Box />;
         

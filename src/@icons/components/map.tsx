@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Map from '../icons/map.svg';
+import MapSvg from '../icons/map.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Map {...props} ref={ref} />);
+const Map = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MapSvg {...props} ref={ref} />);
 });
+
+Map.displayName = 'Map';
+
+export default Map;
 
 // export default () => <Map />;
         

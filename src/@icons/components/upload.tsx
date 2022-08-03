@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Upload from '../icons/upload.svg';
+import UploadSvg from '../icons/upload.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Upload {...props} ref={ref} />);
+const Upload = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<UploadSvg {...props} ref={ref} />);
 });
+
+Upload.displayName = 'Upload';
+
+export default Upload;
 
 // export default () => <Upload />;
         

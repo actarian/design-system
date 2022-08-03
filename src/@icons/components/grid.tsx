@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Grid from '../icons/grid.svg';
+import GridSvg from '../icons/grid.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Grid {...props} ref={ref} />);
+const Grid = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GridSvg {...props} ref={ref} />);
 });
+
+Grid.displayName = 'Grid';
+
+export default Grid;
 
 // export default () => <Grid />;
         

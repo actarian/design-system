@@ -1,10 +1,14 @@
 
 import React from 'react';
-import TrendingDown from '../icons/trending-down.svg';
+import TrendingDownSvg from '../icons/trending-down.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<TrendingDown {...props} ref={ref} />);
+const TrendingDown = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TrendingDownSvg {...props} ref={ref} />);
 });
+
+TrendingDown.displayName = 'TrendingDown';
+
+export default TrendingDown;
 
 // export default () => <TrendingDown />;
         

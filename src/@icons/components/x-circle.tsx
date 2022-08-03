@@ -1,10 +1,14 @@
 
 import React from 'react';
-import XCircle from '../icons/x-circle.svg';
+import XCircleSvg from '../icons/x-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<XCircle {...props} ref={ref} />);
+const XCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<XCircleSvg {...props} ref={ref} />);
 });
+
+XCircle.displayName = 'XCircle';
+
+export default XCircle;
 
 // export default () => <XCircle />;
         

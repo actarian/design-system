@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ZoomOut from '../icons/zoom-out.svg';
+import ZoomOutSvg from '../icons/zoom-out.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ZoomOut {...props} ref={ref} />);
+const ZoomOut = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ZoomOutSvg {...props} ref={ref} />);
 });
+
+ZoomOut.displayName = 'ZoomOut';
+
+export default ZoomOut;
 
 // export default () => <ZoomOut />;
         

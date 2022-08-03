@@ -8,7 +8,7 @@ export interface NavLinkProps extends LinkProps {
   scrollToHash?: boolean;
 }
 
-const NavLink = ({ children, activeClassName = 'active', ...props }: NavLinkProps) => {
+const NavLink: React.FC<NavLinkProps> = ({ children, activeClassName = 'active', ...props }: NavLinkProps) => {
   const { asPath } = useRouter();
   const child = Children.only(children);
   const childClassName = child.props.className || '';

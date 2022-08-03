@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Bold from '../icons/bold.svg';
+import BoldSvg from '../icons/bold.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Bold {...props} ref={ref} />);
+const Bold = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BoldSvg {...props} ref={ref} />);
 });
+
+Bold.displayName = 'Bold';
+
+export default Bold;
 
 // export default () => <Bold />;
         

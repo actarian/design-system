@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Pocket from '../icons/pocket.svg';
+import PocketSvg from '../icons/pocket.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Pocket {...props} ref={ref} />);
+const Pocket = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PocketSvg {...props} ref={ref} />);
 });
+
+Pocket.displayName = 'Pocket';
+
+export default Pocket;
 
 // export default () => <Pocket />;
         

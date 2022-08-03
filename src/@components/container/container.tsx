@@ -20,6 +20,8 @@ export const ContainerFluid = React.forwardRef<Element, ContainerProps>((props: 
   return (<Container {...props} ref={ref} fluid>{props.children}</Container>);
 });
 
+ContainerFluid.displayName = 'ContainerFluid';
+
 (Container as IContainer).Fluid = ContainerFluid;
 
 export default Container as IContainer;

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Framer from '../icons/framer.svg';
+import FramerSvg from '../icons/framer.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Framer {...props} ref={ref} />);
+const Framer = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FramerSvg {...props} ref={ref} />);
 });
+
+Framer.displayName = 'Framer';
+
+export default Framer;
 
 // export default () => <Framer />;
         

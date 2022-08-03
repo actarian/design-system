@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Paperclip from '../icons/paperclip.svg';
+import PaperclipSvg from '../icons/paperclip.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Paperclip {...props} ref={ref} />);
+const Paperclip = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PaperclipSvg {...props} ref={ref} />);
 });
+
+Paperclip.displayName = 'Paperclip';
+
+export default Paperclip;
 
 // export default () => <Paperclip />;
         

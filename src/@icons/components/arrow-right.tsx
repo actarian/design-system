@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ArrowRight from '../icons/arrow-right.svg';
+import ArrowRightSvg from '../icons/arrow-right.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ArrowRight {...props} ref={ref} />);
+const ArrowRight = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ArrowRightSvg {...props} ref={ref} />);
 });
+
+ArrowRight.displayName = 'ArrowRight';
+
+export default ArrowRight;
 
 // export default () => <ArrowRight />;
         

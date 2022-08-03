@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Mail from '../icons/mail.svg';
+import MailSvg from '../icons/mail.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Mail {...props} ref={ref} />);
+const Mail = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MailSvg {...props} ref={ref} />);
 });
+
+Mail.displayName = 'Mail';
+
+export default Mail;
 
 // export default () => <Mail />;
         

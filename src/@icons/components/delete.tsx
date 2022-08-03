@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Delete from '../icons/delete.svg';
+import DeleteSvg from '../icons/delete.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Delete {...props} ref={ref} />);
+const Delete = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DeleteSvg {...props} ref={ref} />);
 });
+
+Delete.displayName = 'Delete';
+
+export default Delete;
 
 // export default () => <Delete />;
         

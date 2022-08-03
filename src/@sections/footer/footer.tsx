@@ -16,7 +16,7 @@ const FooterContainer = styled.div<FooterProps>`
   color: var(--color-neutral-100);
 `;
 
-const Footer = (props: FooterProps) => {
+const Footer: React.FC<FooterProps> = (props: FooterProps) => {
   function getYear() {
     return new Date().getFullYear();
   }

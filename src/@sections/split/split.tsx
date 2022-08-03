@@ -1,4 +1,4 @@
-import { Button, Card, Container, Grid, Media, Section, Text } from '@components';
+import { Button, Card, Container, Grid, Media, MediaType, Section, Text } from '@components';
 import { ComponentProps } from '@components/types';
 import { PhoneCall } from '@icons';
 import Link from 'next/link';
@@ -20,14 +20,14 @@ export type SplitItem = {
   abstract: string;
   link: SplitItemLink;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   };
 }
 
 export type SplitProps = ComponentProps<Props, HTMLDivElement>;
 
-const Split = ({ item }: SplitProps) => {
+const Split: React.FC<SplitProps> = ({ item }: SplitProps) => {
   return (
     <Section>
       <Container.Fluid>
@@ -63,7 +63,7 @@ const Split = ({ item }: SplitProps) => {
   )
 }
 
-Split.defaultProps = {
+export const SplitDefaults = {
   item: {
     id: 1,
     href: '#support',
@@ -75,10 +75,12 @@ Split.defaultProps = {
       label: 'Visit the help center'
     },
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/ePpaQC2c1xA/download?force=true&w=1920',
     }
   }
 };
+
+Split.defaultProps = SplitDefaults;
 
 export default Split;

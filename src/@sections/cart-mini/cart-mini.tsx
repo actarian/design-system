@@ -10,7 +10,7 @@ export interface CartMiniProps {
   onClose: () => void;
 }
 
-const CartMini = ({ visible, onClose }: CartMiniProps) => {
+const CartMini: React.FC<CartMiniProps> = ({ visible, onClose }: CartMiniProps) => {
 
   const { items } = useCart();
 

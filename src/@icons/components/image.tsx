@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Image from '../icons/image.svg';
+import ImageSvg from '../icons/image.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Image {...props} ref={ref} />);
+const Image = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ImageSvg {...props} ref={ref} />);
 });
+
+Image.displayName = 'Image';
+
+export default Image;
 
 // export default () => <Image />;
         

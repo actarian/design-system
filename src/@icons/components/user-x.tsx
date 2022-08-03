@@ -1,10 +1,14 @@
 
 import React from 'react';
-import UserX from '../icons/user-x.svg';
+import UserXSvg from '../icons/user-x.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<UserX {...props} ref={ref} />);
+const UserX = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<UserXSvg {...props} ref={ref} />);
 });
+
+UserX.displayName = 'UserX';
+
+export default UserX;
 
 // export default () => <UserX />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Meh from '../icons/meh.svg';
+import MehSvg from '../icons/meh.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Meh {...props} ref={ref} />);
+const Meh = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MehSvg {...props} ref={ref} />);
 });
+
+Meh.displayName = 'Meh';
+
+export default Meh;
 
 // export default () => <Meh />;
         

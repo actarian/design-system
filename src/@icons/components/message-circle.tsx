@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MessageCircle from '../icons/message-circle.svg';
+import MessageCircleSvg from '../icons/message-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MessageCircle {...props} ref={ref} />);
+const MessageCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MessageCircleSvg {...props} ref={ref} />);
 });
+
+MessageCircle.displayName = 'MessageCircle';
+
+export default MessageCircle;
 
 // export default () => <MessageCircle />;
         

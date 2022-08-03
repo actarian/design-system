@@ -19,7 +19,7 @@ import Dots from './store-locator-dots';
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 const USE_CLUSTERER = false;
 
-export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: any) {
+export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: any): boolean {
   switch (key) {
     case 'bounds':
       if (value && typeof value.contains === 'function') {
@@ -48,7 +48,7 @@ export type StoreLocatorHeadItem = {
 
 export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
 
-const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHeadProps) => {
+const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], featureTypes = [] }: StoreLocatorHeadProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParams();
@@ -96,7 +96,7 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
     const filterParams = filtersToParams(filters);
     // replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
     replaceParamsSilently({ filter: filterParams });
-  };
+  }
 
   const onLoad = (map: google.maps.Map) => {
     console.log('StoreLocatorMap.onLoad', map);
@@ -122,10 +122,10 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
 
   const onBoundsDebounced = useDebounce(onBounds);
 
-  const onMapClick = (e: google.maps.MapMouseEvent) => {
+  const onMapClick = (event: google.maps.MapMouseEvent) => {
     // console.log('StoreLocatorMap.onMapClick');
     // avoid directly mutating state
-    // setMarkers([...markers, { position: e.latLng! }]);
+    // setMarkers([...markers, { position: event.latLng! }]);
   };
 
   const onMarkerClick = (marker: IGeoLocalized) => {
@@ -183,12 +183,12 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
           minimumBounds = new google.maps.LatLngBounds();
           for (let i = 0; i < 2; i++) {
             const item = items[i];
-            let lat1 = item.position.lat;
-            let lng1 = item.position.lng;
+            const lat1 = item.position.lat;
+            const lng1 = item.position.lng;
             const p1 = new google.maps.LatLng(lat1, lng1);
             minimumBounds.extend(p1);
-            let lat2 = lat + (lat - lat1);
-            let lng2 = lng + (lng - lng1);
+            const lat2 = lat + (lat - lat1);
+            const lng2 = lng + (lng - lng1);
             const p2 = new google.maps.LatLng(lat2, lng2);
             minimumBounds.extend(p2);
           }
@@ -222,7 +222,7 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
     }
   }
 
-  async function onSelect(item_: IAutocompleteItem) {
+  async function onAutocomplete(item_: IAutocompleteItem) {
     const item = item_ as IAutocompleteResult;
     // console.log('onSelect', item);
     if (!item) {
@@ -231,7 +231,7 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
     if ('geometry' in item) {
       setPlace(item as unknown as IAutocompleteResultDetail);
     } else if (typeof item.getDetails === 'function' && map) {
-      let place = await item.getDetails(map);
+      const place = await item.getDetails(map);
       setPlace(place);
     }
   }
@@ -245,11 +245,11 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
           <Text size="8" margin="0 auto 2rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
           <Flex.Row>
-            <Autocomplete background="var(--color-neutral-100)" name="search" placeholder="search..." source={autocompleteSource} onSelect={onSelect}></Autocomplete>
+            <Autocomplete background="var(--color-neutral-100)" name="search" placeholder="search..." source={autocompleteSource} onAutocomplete={onAutocomplete}></Autocomplete>
           </Flex.Row>
         </Container>
       </Section>
-      <GoogleMapLoader apiKey={API_KEY} language="it" region="it" libraries={['places']} skeleton={GoogleMapSkeleton} onStatus={onStatus}>
+      <GoogleMapLoader apiKey={API_KEY} language="it" region="it" libraries={['places']} skeleton={() => <GoogleMapSkeleton></GoogleMapSkeleton>} onStatus={onStatus}>
         <GoogleMap {...options} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
           {USE_CLUSTERER ?
             <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
@@ -275,7 +275,7 @@ const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHe
   );
 }
 
-StoreLocatorMap.defaultProps = {
+export const StoreLocatorMapDefaults = {
   item: {
     category: 'Stores',
     title: 'Search for dealers',
@@ -284,28 +284,30 @@ StoreLocatorMap.defaultProps = {
   }
 };
 
+StoreLocatorMap.defaultProps = StoreLocatorMapDefaults;
+
 export default StoreLocatorMap;
 
 export interface StoreLocatorItem extends IGeoLocalized {
-  id: number,
-  name: string,
-  address: string,
-  zipCode: string,
-  city: string,
-  province: string,
+  id: number;
+  name: string;
+  address: string;
+  zipCode: string;
+  city: string;
+  province: string;
   country: {
-    id: number,
+    id: number;
     name: string
-  },
-  phoneNumber?: string,
-  faxNumber?: string,
-  contactEmail?: string,
-  website: string,
+  };
+  phoneNumber?: string;
+  faxNumber?: string;
+  contactEmail?: string;
+  website: string;
   category: {
-    id: number,
+    id: number;
     name: string
-  },
-  rank: number,
-  distance: number,
-  related: any
+  };
+  rank: number;
+  distance: number;
+  related: any;
 }

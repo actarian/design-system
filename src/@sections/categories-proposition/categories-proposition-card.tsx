@@ -1,4 +1,4 @@
-import { Card, Media, Text } from '@components';
+import { Card, Media, MediaType, Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
 import Link from 'next/link';
 
@@ -11,14 +11,14 @@ export type CategoriesPropositionItem = {
   href: string;
   title: string;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   };
 }
 
 export type CategoriesPropositionCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const CategoriesPropositionCard = ({ item, ...props }: CategoriesPropositionCardProps) => {
+const CategoriesPropositionCard: React.FC<CategoriesPropositionCardProps> = ({ item, ...props }: CategoriesPropositionCardProps) => {
   return (
     <Link href={item.href}>
       <Card aspectRatio={2 / 1} {...props} hoverable borderRadius="0.4rem" justifyContent="flex-end">
@@ -36,16 +36,18 @@ const CategoriesPropositionCard = ({ item, ...props }: CategoriesPropositionCard
   )
 }
 
-CategoriesPropositionCard.defaultProps = {
+export const CategoriesPropositionCardDefaults = {
   item: {
     id: 1,
     href: '/category',
     title: 'New Arrivals',
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://picsum.photos/960/960?u=31',
     },
   }
 };
+
+CategoriesPropositionCard.defaultProps = CategoriesPropositionCardDefaults;
 
 export default CategoriesPropositionCard;

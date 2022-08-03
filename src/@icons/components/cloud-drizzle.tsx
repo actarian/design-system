@@ -1,10 +1,14 @@
 
 import React from 'react';
-import CloudDrizzle from '../icons/cloud-drizzle.svg';
+import CloudDrizzleSvg from '../icons/cloud-drizzle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<CloudDrizzle {...props} ref={ref} />);
+const CloudDrizzle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CloudDrizzleSvg {...props} ref={ref} />);
 });
+
+CloudDrizzle.displayName = 'CloudDrizzle';
+
+export default CloudDrizzle;
 
 // export default () => <CloudDrizzle />;
         

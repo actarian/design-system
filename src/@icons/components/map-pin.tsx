@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MapPin from '../icons/map-pin.svg';
+import MapPinSvg from '../icons/map-pin.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MapPin {...props} ref={ref} />);
+const MapPin = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MapPinSvg {...props} ref={ref} />);
 });
+
+MapPin.displayName = 'MapPin';
+
+export default MapPin;
 
 // export default () => <MapPin />;
         

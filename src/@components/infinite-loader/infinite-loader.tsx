@@ -10,7 +10,7 @@ type Props = {
   children?: ReactNode;
 }
 
-export type InfiniteLoaderProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;;
+export type InfiniteLoaderProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
 const StyledInfiniteLoader = styled.div<InfiniteLoaderProps>`
   display: flex;

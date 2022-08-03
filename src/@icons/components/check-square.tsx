@@ -1,10 +1,14 @@
 
 import React from 'react';
-import CheckSquare from '../icons/check-square.svg';
+import CheckSquareSvg from '../icons/check-square.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<CheckSquare {...props} ref={ref} />);
+const CheckSquare = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CheckSquareSvg {...props} ref={ref} />);
 });
+
+CheckSquare.displayName = 'CheckSquare';
+
+export default CheckSquare;
 
 // export default () => <CheckSquare />;
         

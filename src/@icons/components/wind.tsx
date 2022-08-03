@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Wind from '../icons/wind.svg';
+import WindSvg from '../icons/wind.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Wind {...props} ref={ref} />);
+const Wind = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<WindSvg {...props} ref={ref} />);
 });
+
+Wind.displayName = 'Wind';
+
+export default Wind;
 
 // export default () => <Wind />;
         

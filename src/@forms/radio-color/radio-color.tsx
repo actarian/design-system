@@ -12,7 +12,7 @@ interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   color?: string;
   size?: SizeVariant;
   children?: ReactNode;
-};
+}
 
 export type RadioColorProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -89,6 +89,8 @@ const RadioColor = forwardRef<HTMLInputElement, RadioColorProps>(({
     </StyledRadioColor>
   );
 });
+
+RadioColor.displayName = 'RadioColor';
 
 (RadioColor as IRadioColor).Group = RadioColorGroup;
 

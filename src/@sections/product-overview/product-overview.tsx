@@ -1,4 +1,4 @@
-import { Button, Container, Flex, Grid, Section, Text } from '@components';
+import { Button, Container, Flex, Grid, MediaType, Section, Text } from '@components';
 import { RadioColor, RadioOption, Rating } from '@forms';
 import { useCart, useCurrency, useDrawer } from '@hooks';
 import { useState } from 'react';
@@ -11,19 +11,17 @@ export type ProductItem = {
   title: string;
   abstract: string;
   price: number;
-  date: string | Date;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   }[];
 }
 
-type Props = {
+type ProductOverviewProps = {
   item: ProductItem
 }
 
-function ProductOverview({ item, ...props }: Props) {
-
+const ProductOverview: React.FC<ProductOverviewProps> = ({ item, ...props }: ProductOverviewProps) => {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
 
   const cart = useCart();
@@ -63,7 +61,7 @@ function ProductOverview({ item, ...props }: Props) {
               </ul>
             </Text>
             <Text size="9" fontWeight="700" marginBottom="1rem">Details</Text>
-            <Text size="9" marginBottom="1rem">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.</Text>
+            <Text size="9" marginBottom="1rem">The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming &ldquo;Charcoal Gray&rdquo; limited release.</Text>
           </Grid>
           <Grid md={4}>
             <Text size="4" marginBottom="1rem">{price}</Text>
@@ -107,31 +105,34 @@ function ProductOverview({ item, ...props }: Props) {
         </Grid.Row>
       </Container>
     </Section>
-  )
+  );
 }
 
-ProductOverview.defaultProps = {
+export const ProductOverviewDefaults = {
   item: {
     id: 1,
+    schema: 'product',
     href: '/product',
     title: 'Basic Tee 6-Pack',
     abstract: 'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
     price: 36,
     media: [{
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-04.jpg',
     }, {
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-01.jpg',
     }, {
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-02.jpg',
     }, {
-      type: 'image',
+      type: MediaType.Image,
       src: '/product-03.jpg',
     }],
   }
 };
+
+ProductOverview.defaultProps = ProductOverviewDefaults;
 
 (ProductOverview as IProductOverview).Gallery = ProductOverviewGallery;
 

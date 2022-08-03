@@ -9,7 +9,7 @@ export interface AuthForgotProps {
   onNavToRegister?: () => void;
 }
 
-const AuthForgot = ({ onPasswordSent, onNavToLogin, onNavToRegister }: AuthForgotProps) => {
+const AuthForgot: React.FC<AuthForgotProps> = ({ onPasswordSent, onNavToLogin, onNavToRegister }: AuthForgotProps) => {
   const onSend = () => {
     if (typeof onPasswordSent === 'function') {
       onPasswordSent();

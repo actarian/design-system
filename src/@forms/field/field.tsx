@@ -28,4 +28,6 @@ const Field = forwardRef<HTMLDivElement, FieldProps>(({ className, ...props }, r
   );
 });
 
+Field.displayName = 'Field';
+
 export default Field;

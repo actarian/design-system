@@ -1,10 +1,14 @@
 
 import React from 'react';
-import AlertTriangle from '../icons/alert-triangle.svg';
+import AlertTriangleSvg from '../icons/alert-triangle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<AlertTriangle {...props} ref={ref} />);
+const AlertTriangle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AlertTriangleSvg {...props} ref={ref} />);
 });
+
+AlertTriangle.displayName = 'AlertTriangle';
+
+export default AlertTriangle;
 
 // export default () => <AlertTriangle />;
         

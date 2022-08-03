@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Bookmark from '../icons/bookmark.svg';
+import BookmarkSvg from '../icons/bookmark.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Bookmark {...props} ref={ref} />);
+const Bookmark = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BookmarkSvg {...props} ref={ref} />);
 });
+
+Bookmark.displayName = 'Bookmark';
+
+export default Bookmark;
 
 // export default () => <Bookmark />;
         

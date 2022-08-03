@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ArrowDownCircle from '../icons/arrow-down-circle.svg';
+import ArrowDownCircleSvg from '../icons/arrow-down-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ArrowDownCircle {...props} ref={ref} />);
+const ArrowDownCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ArrowDownCircleSvg {...props} ref={ref} />);
 });
+
+ArrowDownCircle.displayName = 'ArrowDownCircle';
+
+export default ArrowDownCircle;
 
 // export default () => <ArrowDownCircle />;
         

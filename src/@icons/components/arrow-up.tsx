@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ArrowUp from '../icons/arrow-up.svg';
+import ArrowUpSvg from '../icons/arrow-up.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ArrowUp {...props} ref={ref} />);
+const ArrowUp = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ArrowUpSvg {...props} ref={ref} />);
 });
+
+ArrowUp.displayName = 'ArrowUp';
+
+export default ArrowUp;
 
 // export default () => <ArrowUp />;
         

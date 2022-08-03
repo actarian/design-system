@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Shuffle from '../icons/shuffle.svg';
+import ShuffleSvg from '../icons/shuffle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Shuffle {...props} ref={ref} />);
+const Shuffle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ShuffleSvg {...props} ref={ref} />);
 });
+
+Shuffle.displayName = 'Shuffle';
+
+export default Shuffle;
 
 // export default () => <Shuffle />;
         

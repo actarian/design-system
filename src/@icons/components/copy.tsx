@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Copy from '../icons/copy.svg';
+import CopySvg from '../icons/copy.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Copy {...props} ref={ref} />);
+const Copy = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CopySvg {...props} ref={ref} />);
 });
+
+Copy.displayName = 'Copy';
+
+export default Copy;
 
 // export default () => <Copy />;
         

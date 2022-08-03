@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Bluetooth from '../icons/bluetooth.svg';
+import BluetoothSvg from '../icons/bluetooth.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Bluetooth {...props} ref={ref} />);
+const Bluetooth = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BluetoothSvg {...props} ref={ref} />);
 });
+
+Bluetooth.displayName = 'Bluetooth';
+
+export default Bluetooth;
 
 // export default () => <Bluetooth />;
         

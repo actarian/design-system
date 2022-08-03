@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Percent from '../icons/percent.svg';
+import PercentSvg from '../icons/percent.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Percent {...props} ref={ref} />);
+const Percent = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PercentSvg {...props} ref={ref} />);
 });
+
+Percent.displayName = 'Percent';
+
+export default Percent;
 
 // export default () => <Percent />;
         

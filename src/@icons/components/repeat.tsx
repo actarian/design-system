@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Repeat from '../icons/repeat.svg';
+import RepeatSvg from '../icons/repeat.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Repeat {...props} ref={ref} />);
+const Repeat = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<RepeatSvg {...props} ref={ref} />);
 });
+
+Repeat.displayName = 'Repeat';
+
+export default Repeat;
 
 // export default () => <Repeat />;
         

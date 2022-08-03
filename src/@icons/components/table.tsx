@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Table from '../icons/table.svg';
+import TableSvg from '../icons/table.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Table {...props} ref={ref} />);
+const Table = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TableSvg {...props} ref={ref} />);
 });
+
+Table.displayName = 'Table';
+
+export default Table;
 
 // export default () => <Table />;
         

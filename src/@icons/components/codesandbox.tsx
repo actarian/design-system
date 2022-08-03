@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Codesandbox from '../icons/codesandbox.svg';
+import CodesandboxSvg from '../icons/codesandbox.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Codesandbox {...props} ref={ref} />);
+const Codesandbox = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CodesandboxSvg {...props} ref={ref} />);
 });
+
+Codesandbox.displayName = 'Codesandbox';
+
+export default Codesandbox;
 
 // export default () => <Codesandbox />;
         

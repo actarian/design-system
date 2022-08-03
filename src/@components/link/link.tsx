@@ -5,7 +5,6 @@ import LinkIcon from './link-icon';
 
 export interface Props {
   href?: string;
-  color?: boolean;
   icon?: boolean;
   underline?: boolean;
   className?: string;
@@ -44,7 +43,6 @@ const StyledLink = styled.div`
 
 const Link = React.forwardRef<HTMLAnchorElement, React.PropsWithChildren<LinkProps>>(({
   href = '',
-  color = false,
   icon = false,
   underline = false,
   className = '',

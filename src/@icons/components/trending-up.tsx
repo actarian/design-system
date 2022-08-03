@@ -1,10 +1,14 @@
 
 import React from 'react';
-import TrendingUp from '../icons/trending-up.svg';
+import TrendingUpSvg from '../icons/trending-up.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<TrendingUp {...props} ref={ref} />);
+const TrendingUp = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TrendingUpSvg {...props} ref={ref} />);
 });
+
+TrendingUp.displayName = 'TrendingUp';
+
+export default TrendingUp;
 
 // export default () => <TrendingUp />;
         

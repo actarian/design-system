@@ -1,5 +1,6 @@
 import { Breadcrumb, Container, Layout, Page, Section } from '@components';
 import { CategoryHero, CategoryProposition, Footer, Header, ProductsIncentive, ProductsSearch } from '@sections';
+import { CategoryPropositionDefaults } from '@sections/category-proposition/category-proposition';
 import { ProductsRelatedProps } from '@sections/products-related/products-related';
 import Head from 'next/head';
 
@@ -32,7 +33,7 @@ export default function Category({ items }: ProductsRelatedProps) {
 
           <ProductsSearch id="serp" padding="3rem 0" items={items}></ProductsSearch>
 
-          <CategoryProposition />
+          <CategoryProposition item={CategoryPropositionDefaults.item} />
 
           <ProductsIncentive />
 

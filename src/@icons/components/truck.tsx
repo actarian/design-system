@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Truck from '../icons/truck.svg';
+import TruckSvg from '../icons/truck.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Truck {...props} ref={ref} />);
+const Truck = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TruckSvg {...props} ref={ref} />);
 });
+
+Truck.displayName = 'Truck';
+
+export default Truck;
 
 // export default () => <Truck />;
         

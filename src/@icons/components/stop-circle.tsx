@@ -1,10 +1,14 @@
 
 import React from 'react';
-import StopCircle from '../icons/stop-circle.svg';
+import StopCircleSvg from '../icons/stop-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<StopCircle {...props} ref={ref} />);
+const StopCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<StopCircleSvg {...props} ref={ref} />);
 });
+
+StopCircle.displayName = 'StopCircle';
+
+export default StopCircle;
 
 // export default () => <StopCircle />;
         

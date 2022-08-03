@@ -8,7 +8,7 @@ type Props = {
 
 export type ColorsProps = ComponentProps<Props, HTMLDivElement>;
 
-const Colors = (props: ColorsProps) => {
+const Colors: React.FC<ColorsProps> = (props: ColorsProps) => {
   const theme = useContext(ThemeContext);
   const keys = Object.keys(theme.color);
   // const sizes = new Array(9).fill().map((_, i) => (i + 1) * 100);

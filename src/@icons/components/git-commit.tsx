@@ -1,10 +1,14 @@
 
 import React from 'react';
-import GitCommit from '../icons/git-commit.svg';
+import GitCommitSvg from '../icons/git-commit.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<GitCommit {...props} ref={ref} />);
+const GitCommit = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GitCommitSvg {...props} ref={ref} />);
 });
+
+GitCommit.displayName = 'GitCommit';
+
+export default GitCommit;
 
 // export default () => <GitCommit />;
         

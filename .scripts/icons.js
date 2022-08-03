@@ -27,11 +27,15 @@ async function rebuild(directory, fileName = null) {
       const icons = fileNames.map((fileName, i) => (`  ${classNames[i]}: lazy(() => import('./components/${fileName.replace('.svg', '')}'))`));
       const promises = fileNames.map((fileName, i) => fsWrite(path.join(directory, `../components/${fileName.replace('.svg', '.tsx')}`), `
 import React from 'react';
-import ${classNames[i]} from '../icons/${fileName}';
+import ${classNames[i]}Svg from '../icons/${fileName}';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<${classNames[i]} {...props} ref={ref} />);
+const ${classNames[i]} = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<${classNames[i]}Svg {...props} ref={ref} />);
 });
+
+${classNames[i]}.displayName = '${classNames[i]}';
+
+export default ${classNames[i]};
 
 // export default () => <${classNames[i]} />;
         `, 'utf8'));

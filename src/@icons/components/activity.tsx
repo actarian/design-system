@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Activity from '../icons/activity.svg';
+import ActivitySvg from '../icons/activity.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Activity {...props} ref={ref} />);
+const Activity = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ActivitySvg {...props} ref={ref} />);
 });
+
+Activity.displayName = 'Activity';
+
+export default Activity;
 
 // export default () => <Activity />;
         

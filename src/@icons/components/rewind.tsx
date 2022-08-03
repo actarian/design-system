@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Rewind from '../icons/rewind.svg';
+import RewindSvg from '../icons/rewind.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Rewind {...props} ref={ref} />);
+const Rewind = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<RewindSvg {...props} ref={ref} />);
 });
+
+Rewind.displayName = 'Rewind';
+
+export default Rewind;
 
 // export default () => <Rewind />;
         

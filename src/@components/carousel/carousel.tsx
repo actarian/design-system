@@ -21,7 +21,7 @@ const transition: AnimationOptions<any> = {
   bounce: 0,
 };
 
-export const Carousel: React.FunctionComponent<CarouselProps> = ({ children }) => {
+export const Carousel: React.FC<CarouselProps> = ({ children }) => {
   const x = useMotionValue(0);
   const containerRef = React.useRef<HTMLDivElement>(null);
 

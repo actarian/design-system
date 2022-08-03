@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Compass from '../icons/compass.svg';
+import CompassSvg from '../icons/compass.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Compass {...props} ref={ref} />);
+const Compass = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CompassSvg {...props} ref={ref} />);
 });
+
+Compass.displayName = 'Compass';
+
+export default Compass;
 
 // export default () => <Compass />;
         

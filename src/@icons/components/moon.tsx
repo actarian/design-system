@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Moon from '../icons/moon.svg';
+import MoonSvg from '../icons/moon.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Moon {...props} ref={ref} />);
+const Moon = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MoonSvg {...props} ref={ref} />);
 });
+
+Moon.displayName = 'Moon';
+
+export default Moon;
 
 // export default () => <Moon />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Anchor from '../icons/anchor.svg';
+import AnchorSvg from '../icons/anchor.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Anchor {...props} ref={ref} />);
+const Anchor = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AnchorSvg {...props} ref={ref} />);
 });
+
+Anchor.displayName = 'Anchor';
+
+export default Anchor;
 
 // export default () => <Anchor />;
         

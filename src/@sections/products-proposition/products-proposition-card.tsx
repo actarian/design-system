@@ -1,29 +1,27 @@
-import { Card, Flex, Media, Text } from '@components';
+import { Card, Flex, Media, MediaType, Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
 import { useCurrency } from '@hooks';
 import Link from 'next/link';
 
 type Props = {
-  item: ProductItem
+  item: ProductsPropositionItem
 }
 
-export type ProductItem = {
+export type ProductsPropositionItem = {
   id: number;
-  schema: string;
   href: string;
   title: string;
   abstract: string;
   price: number;
-  date: string | Date;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   };
 }
 
 export type ProductsPropositionCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const ProductsPropositionCard = ({ item, ...props }: ProductsPropositionCardProps) => {
+const ProductsPropositionCard: React.FC<ProductsPropositionCardProps> = ({ item, ...props }: ProductsPropositionCardProps) => {
   const price = useCurrency(item.price);
   return (
     <Link href={item.href}>
@@ -43,7 +41,7 @@ const ProductsPropositionCard = ({ item, ...props }: ProductsPropositionCardProp
   )
 }
 
-ProductsPropositionCard.defaultProps = {
+export const ProductsPropositionCardDefaults = {
   item: {
     id: 1,
     href: '/product',
@@ -51,10 +49,12 @@ ProductsPropositionCard.defaultProps = {
     abstract: '3 sizes available',
     price: 13,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&w=960',
     },
   }
 };
+
+ProductsPropositionCard.defaultProps = ProductsPropositionCardDefaults;
 
 export default ProductsPropositionCard;

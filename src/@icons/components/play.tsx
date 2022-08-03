@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Play from '../icons/play.svg';
+import PlaySvg from '../icons/play.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Play {...props} ref={ref} />);
+const Play = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PlaySvg {...props} ref={ref} />);
 });
+
+Play.displayName = 'Play';
+
+export default Play;
 
 // export default () => <Play />;
         

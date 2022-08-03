@@ -1,7 +1,7 @@
 import { Box, Code, Flex, List, Section, Text } from '@components';
 import { FontSize } from '@components/text/text';
 import { ComponentProps } from '@components/types';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { ComponentPropsWithRef, useContext, useEffect, useRef, useState } from 'react';
 import { ThemeContext } from 'styled-components';
 
 type Props = {
@@ -9,11 +9,11 @@ type Props = {
 
 export type TypographyProps = ComponentProps<Props, HTMLDivElement>;
 
-type TypographyTextProps = {
+interface TypographyTextProps extends ComponentPropsWithRef<'div'> {
   type: string, k: number, size: string, s: number
-};
+}
 
-const TypographyText = React.forwardRef<HTMLDivElement, TypographyTextProps>(({ type, k, size, s }: TypographyTextProps, ref?: React.Ref<HTMLDivElement>) => {
+const TypographyText: React.FC<TypographyTextProps> = React.forwardRef<HTMLDivElement, TypographyTextProps>(({ type, k, size, s }: TypographyTextProps, ref?: React.Ref<HTMLDivElement>) => {
   switch (type) {
     case 'primary':
       return (<Text ref={ref} size={s + 1 as FontSize} textTransform="capitalize">{type} {s + 1}</Text>);
@@ -24,8 +24,10 @@ const TypographyText = React.forwardRef<HTMLDivElement, TypographyTextProps>(({ 
   }
 });
 
+TypographyText.displayName = 'TypographyText';
+
 const TypographyItem = (props: { type: string, k: number, size: string, s: number }) => {
-  const ref = useRef(null);
+  const ref = useRef<HTMLDivElement>(null);
   const [px, setPx] = useState('0px');
   useEffect(() => {
     if (ref.current) {

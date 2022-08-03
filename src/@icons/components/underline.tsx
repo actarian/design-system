@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Underline from '../icons/underline.svg';
+import UnderlineSvg from '../icons/underline.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Underline {...props} ref={ref} />);
+const Underline = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<UnderlineSvg {...props} ref={ref} />);
 });
+
+Underline.displayName = 'Underline';
+
+export default Underline;
 
 // export default () => <Underline />;
         

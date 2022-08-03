@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Dribbble from '../icons/dribbble.svg';
+import DribbbleSvg from '../icons/dribbble.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Dribbble {...props} ref={ref} />);
+const Dribbble = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DribbbleSvg {...props} ref={ref} />);
 });
+
+Dribbble.displayName = 'Dribbble';
+
+export default Dribbble;
 
 // export default () => <Dribbble />;
         

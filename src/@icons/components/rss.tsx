@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Rss from '../icons/rss.svg';
+import RssSvg from '../icons/rss.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Rss {...props} ref={ref} />);
+const Rss = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<RssSvg {...props} ref={ref} />);
 });
+
+Rss.displayName = 'Rss';
+
+export default Rss;
 
 // export default () => <Rss />;
         

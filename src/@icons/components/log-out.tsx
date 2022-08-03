@@ -1,10 +1,14 @@
 
 import React from 'react';
-import LogOut from '../icons/log-out.svg';
+import LogOutSvg from '../icons/log-out.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<LogOut {...props} ref={ref} />);
+const LogOut = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LogOutSvg {...props} ref={ref} />);
 });
+
+LogOut.displayName = 'LogOut';
+
+export default LogOut;
 
 // export default () => <LogOut />;
         

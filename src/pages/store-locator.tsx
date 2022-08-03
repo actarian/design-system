@@ -1,7 +1,8 @@
 import { Layout, Page } from '@components';
 import { IFeatureType } from '@hooks/useFilters/filter';
 import { Footer, Header, Split, StoreLocatorSearch } from '@sections';
-import { StoreLocatorItem } from '@sections/store-locator/store-locator-map';
+import { SplitDefaults } from '@sections/split/split';
+import { StoreLocatorItem, StoreLocatorMapDefaults } from '@sections/store-locator/store-locator-map';
 import Head from 'next/head';
 import STORES from '../@sections/store-locator/store-locator-all.json';
 import STORES_FEATURES from '../@sections/store-locator/store-locator-features.json';
@@ -20,9 +21,9 @@ export default function StoreLocator({ items, featureTypes }: { items: StoreLoca
 
           <Header sticky />
 
-          <StoreLocatorSearch items={items} featureTypes={featureTypes} />
+          <StoreLocatorSearch item={StoreLocatorMapDefaults.item} items={items} featureTypes={featureTypes} />
 
-          <Split />
+          <Split item={SplitDefaults.item} />
 
           <Footer />
 

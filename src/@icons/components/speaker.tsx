@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Speaker from '../icons/speaker.svg';
+import SpeakerSvg from '../icons/speaker.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Speaker {...props} ref={ref} />);
+const Speaker = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SpeakerSvg {...props} ref={ref} />);
 });
+
+Speaker.displayName = 'Speaker';
+
+export default Speaker;
 
 // export default () => <Speaker />;
         

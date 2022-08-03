@@ -1,10 +1,14 @@
 
 import React from 'react';
-import CornerLeftUp from '../icons/corner-left-up.svg';
+import CornerLeftUpSvg from '../icons/corner-left-up.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<CornerLeftUp {...props} ref={ref} />);
+const CornerLeftUp = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CornerLeftUpSvg {...props} ref={ref} />);
 });
+
+CornerLeftUp.displayName = 'CornerLeftUp';
+
+export default CornerLeftUp;
 
 // export default () => <CornerLeftUp />;
         

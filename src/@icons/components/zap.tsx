@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Zap from '../icons/zap.svg';
+import ZapSvg from '../icons/zap.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Zap {...props} ref={ref} />);
+const Zap = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ZapSvg {...props} ref={ref} />);
 });
+
+Zap.displayName = 'Zap';
+
+export default Zap;
 
 // export default () => <Zap />;
         

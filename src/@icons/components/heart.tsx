@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Heart from '../icons/heart.svg';
+import HeartSvg from '../icons/heart.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Heart {...props} ref={ref} />);
+const Heart = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<HeartSvg {...props} ref={ref} />);
 });
+
+Heart.displayName = 'Heart';
+
+export default Heart;
 
 // export default () => <Heart />;
         

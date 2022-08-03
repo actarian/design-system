@@ -1,10 +1,5 @@
+import { Svg, SvgProps } from '@components';
 import styled from 'styled-components';
-
-const Svg = styled.svg.attrs({
-  version: '1.1',
-  xmlns: 'http://www.w3.org/2000/svg',
-  xmlnsXlink: 'http://www.w3.org/1999/xlink',
-})``;
 
 const StyledDots = styled(Svg)`
   position: absolute;
@@ -37,8 +32,8 @@ const StyledDots = styled(Svg)`
   }
 `;
 
-const Dots = ({ className }: { className?: string }) => (
-  <StyledDots viewBox="0 0 1440 635" className={className}>
+const Dots: React.FC<SvgProps> = ({ className, ...props }: SvgProps) => (
+  <StyledDots viewBox="0 0 1440 635" className={className} {...props}>
     <path d="M863,4.3c2.8,0,5.1-2.3,5.1-5.1s-2.3-5.1-5.1-5.1s-5.1,2.3-5.1,5.1S860.1,4.3,863,4.3z" />
     <circle cx="833.1" cy="4.5" r="4.9" />
     <circle cx="803" cy="8.7" r="4.9" />

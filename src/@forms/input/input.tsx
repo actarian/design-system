@@ -5,7 +5,7 @@ import { ComponentPropsWithRef, forwardRef, useState } from 'react';
 import styled from 'styled-components';
 
 interface Props extends ComponentPropsWithRef<'input'> {
-};
+}
 
 export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -75,5 +75,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     <StyledInput ref={ref} className={classNames} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
   );
 });
+
+Input.displayName = 'Input';
 
 export default Input;

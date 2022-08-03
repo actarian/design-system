@@ -7,7 +7,7 @@ type Props = {
 
 export type ProductsSearchFiltersProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const ProductsSearchFilters = ({ ...props }: ProductsSearchFiltersProps) => {
+const ProductsSearchFilters: React.FC<ProductsSearchFiltersProps> = ({ ...props }: ProductsSearchFiltersProps) => {
   return (
     <Box {...props}>
       <Nav.Col marginBottom="2rem" fontSize="0.9rem">

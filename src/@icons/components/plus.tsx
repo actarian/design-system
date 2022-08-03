@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Plus from '../icons/plus.svg';
+import PlusSvg from '../icons/plus.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Plus {...props} ref={ref} />);
+const Plus = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PlusSvg {...props} ref={ref} />);
 });
+
+Plus.displayName = 'Plus';
+
+export default Plus;
 
 // export default () => <Plus />;
         

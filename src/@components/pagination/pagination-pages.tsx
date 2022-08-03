@@ -18,13 +18,13 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
 
   const middleNumber = (showPages + 1) / 2;
 
-  const [showBeforeEllipsis, showAfterEllipsis] = useMemo(() => {
+  const [showBeforeEllipsis, showAfterEllipsis] = useMemo((): [boolean, boolean] => {
     const showEllipsis = count > limit;
     return [
       showEllipsis && current > middleNumber + 1,
       showEllipsis && current < count - middleNumber,
     ];
-  }, [current, showPages, middleNumber, count, limit]);
+  }, [current, middleNumber, count, limit]);
 
   const pagesArray = useMemo(() => [...new Array(showPages)], [showPages]);
 
@@ -32,7 +32,7 @@ const PaginationPages: React.FC<Props> = ({ limit, count, current, setPage }) =>
     <PaginationItem key={`pagination-item-${value}`} active={value === active} onClick={() => setPage(value)}>
       {value}
     </PaginationItem>
-  ), []);
+  ), [setPage]);
 
   const renderStartItems = pagesArray.map((_, index) => {
     const value = index + 2;

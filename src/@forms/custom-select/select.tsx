@@ -1,6 +1,6 @@
 import { Ellipsis, Flex, getChildsByType } from '@components';
 import { useClasses, useCurrentState } from '@hooks';
-import React, { CSSProperties, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import React, { CSSProperties, useCallback, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { SelectConfig, SelectContext } from './select-context';
 import StyledSelectDivider from './select-divider';
@@ -170,12 +170,12 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     return value.length === 0;
   }, [value]);
 
-  const updateVisible = (next: boolean) => {
+  const updateVisible = useCallback((next: boolean) => {
     onDropdownVisibleChange(next);
     setVisible(next);
-  };
+  }, [onDropdownVisibleChange]);
 
-  const updateValue = (next: string) => {
+  const updateValue = useCallback((next: string) => {
     setValue(last => {
       if (!Array.isArray(last)) {
         return next;
@@ -189,7 +189,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     if (!multiple) {
       updateVisible(false);
     }
-  };
+  }, [multiple, onChange, setValue, updateVisible, valueRef]);
 
   const initialValue: SelectConfig = useMemo(() => ({
     disableAll: disabled,
@@ -198,7 +198,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     ref,
     updateValue,
     updateVisible,
-  }), [visible, disabled, ref, value, multiple]);
+  }), [disabled, visible, value, updateValue, updateVisible]);
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
@@ -222,7 +222,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
       return;
     }
     setValue(valueProp);
-  }, [valueProp]);
+  }, [setValue, valueProp]);
 
   useImperativeHandle(selectRef, () => ({
     focus: () => inputRef.current?.focus(),
@@ -230,14 +230,13 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     scrollTo: options => dropdownRef.current?.scrollTo(options),
   }), [inputRef, dropdownRef]);
 
-  const onClear = (value: string) => {
-    // console.log('onClear', value, clearable);
-    if (clearable) {
-      updateValue(value);
-    }
-  };
-
   const selectedChildren = useMemo(() => {
+    const onClear = (value: string) => {
+      // console.log('onClear', value, clearable);
+      if (clearable) {
+        updateValue(value);
+      }
+    };
     const values = Array.isArray(value) ? value : [value];
     const [optionChildren] = getChildsByType(children, SelectOption);
     return React.Children.map(optionChildren, (child: any) => { // !!! any
@@ -255,7 +254,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
         </SelectMultipleValue>
       );
     });
-  }, [value, children, multiple]);
+  }, [value, children, clearable, updateValue, multiple, disabled]);
 
   const onInputBlur = () => {
     updateVisible(false);

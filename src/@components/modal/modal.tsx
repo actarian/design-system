@@ -1,7 +1,7 @@
 import { ComponentProps } from '@components/types';
 import { getChildsByType } from '@components/utils';
 import { KeyCode, useBodyScroll, useKeyboard, usePortal } from '@hooks';
-import React, { MouseEvent, useEffect, useMemo, useState } from 'react';
+import React, { MouseEvent, useCallback, useEffect, useMemo, useState } from 'react';
 import { createPortal } from 'react-dom';
 import Backdrop from '../backdrop/backdrop';
 import ModalButton from './modal-button';
@@ -51,13 +51,13 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
 
     const hasButtons = buttonChildren && React.Children.count(buttonChildren) > 0;
 
-    const close = () => {
+    const close = useCallback(() => {
       if (onClose) {
         onClose();
       }
       setVisible(false);
       setBodyHidden(false);
-    }
+    }, [onClose, setBodyHidden]);
 
     useEffect(() => {
       if (typeof customVisible === 'undefined') {
@@ -65,7 +65,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
       }
       setVisible(customVisible);
       setBodyHidden(customVisible);
-    }, [customVisible]);
+    }, [customVisible, setBodyHidden]);
 
     const { bindings } = useKeyboard(() => {
       if (keyboard) {
@@ -79,7 +79,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
       }
     }
 
-    const modalContextValue: ModalConfig = useMemo(() => ({ close }), []);
+    const modalContextValue: ModalConfig = useMemo(() => ({ close }), [close]);
 
     if (!portal) {
       return null;

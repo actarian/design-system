@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Unlock from '../icons/unlock.svg';
+import UnlockSvg from '../icons/unlock.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Unlock {...props} ref={ref} />);
+const Unlock = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<UnlockSvg {...props} ref={ref} />);
 });
+
+Unlock.displayName = 'Unlock';
+
+export default Unlock;
 
 // export default () => <Unlock />;
         

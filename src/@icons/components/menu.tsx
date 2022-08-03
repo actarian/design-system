@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Menu from '../icons/menu.svg';
+import MenuSvg from '../icons/menu.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Menu {...props} ref={ref} />);
+const Menu = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MenuSvg {...props} ref={ref} />);
 });
+
+Menu.displayName = 'Menu';
+
+export default Menu;
 
 // export default () => <Menu />;
         

@@ -2,7 +2,7 @@ import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import styled from 'styled-components';
 
-type Props = {}
+type Props = {};
 
 export type LoadingProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 

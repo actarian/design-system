@@ -1,4 +1,4 @@
-import { Button, Card, Flex, Media, Text } from '@components';
+import { Button, Card, Flex, Media, MediaType, Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
 import { ArrowRight } from '@icons';
 import Link from 'next/link';
@@ -14,13 +14,13 @@ export type BlogItem = {
   abstract: string;
   date: string | Date;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   };
   author: {
     fullName: string;
     media: {
-      type: 'image';
+      type: MediaType;
       src: string;
     };
   };
@@ -28,7 +28,7 @@ export type BlogItem = {
 
 export type BlogCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const BlogCard = ({ item, ...props }: BlogCardProps) => {
+const BlogCard: React.FC<BlogCardProps> = ({ item, ...props }: BlogCardProps) => {
   const getDate = (value: Date | string): string => {
     const date = value instanceof Date ? value : new Date(value);
     const options: Intl.DateTimeFormatOptions = {
@@ -71,7 +71,7 @@ const BlogCard = ({ item, ...props }: BlogCardProps) => {
   )
 }
 
-BlogCard.defaultProps = {
+export const BlogCardDefaults = {
   item: {
     id: 1,
     href: '#we-choose-to-go-to-the-moon',
@@ -79,17 +79,19 @@ BlogCard.defaultProps = {
     abstract: 'We choose to go to the moon in this decade and do the other things, not because they are easy, but because they are hard, because that goal will serve to organize and measure the best of our energies and skills, because that challenge is one that we are willing to accept, one we are unwilling to postpone, and one which we intend to win, and the others, too.',
     date: '2022-06-08T07:44:24.402Z',
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://picsum.photos/640/480?u=2',
     },
     author: {
       fullName: 'Joe Haddad',
       media: {
-        type: 'image',
+        type: MediaType.Image,
         src: 'https://i.pravatar.cc/128?u=4',
       }
     }
   }
 };
+
+BlogCard.defaultProps = BlogCardDefaults;
 
 export default BlogCard;

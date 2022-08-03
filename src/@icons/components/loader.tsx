@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Loader from '../icons/loader.svg';
+import LoaderSvg from '../icons/loader.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Loader {...props} ref={ref} />);
+const Loader = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LoaderSvg {...props} ref={ref} />);
 });
+
+Loader.displayName = 'Loader';
+
+export default Loader;
 
 // export default () => <Loader />;
         

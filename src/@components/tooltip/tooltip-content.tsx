@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Transition } from '@components';
 import { useClasses, useClickAnyWhere, usePortal, useResize } from '@hooks';
-import React, { MutableRefObject, useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, useCallback, useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import styled from 'styled-components';
 import { getRect } from './tooltip-helper';
@@ -17,7 +18,7 @@ interface Props {
   placement: Placement;
   type: SnippetTypes;
   visible: boolean;
-};
+}
 
 export type TooltipIconOffset = {
   x: string;
@@ -72,17 +73,17 @@ const TooltipContent: React.FC<React.PropsWithChildren<Props>> = ({
     return null;
   }
 
-  const updateRect = () => {
+  const updateRect = useCallback(() => {
     const position = getPosition(placement, getRect(parent), offset);
     setRect(position);
-  };
+  }, [offset, parent, placement]);
 
   useResize(updateRect);
   useClickAnyWhere(() => updateRect());
 
   useEffect(() => {
     updateRect();
-  }, [visible])
+  }, [updateRect, visible])
 
   const preventHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();

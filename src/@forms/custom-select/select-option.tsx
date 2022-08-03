@@ -85,9 +85,7 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
 
   const isLabel = useMemo(() => label || divider, [label, divider]);
 
-  if (!isLabel && valueProp === undefined) {
-    useWarning('The props "value" is required.', 'Select Option');
-  }
+  useWarning(!isLabel && valueProp === undefined, 'The props "value" is required.', 'Select Option');
 
   const optionValue: string = valueProp || children as string || '';
 

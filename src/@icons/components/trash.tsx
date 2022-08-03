@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Trash from '../icons/trash.svg';
+import TrashSvg from '../icons/trash.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Trash {...props} ref={ref} />);
+const Trash = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TrashSvg {...props} ref={ref} />);
 });
+
+Trash.displayName = 'Trash';
+
+export default Trash;
 
 // export default () => <Trash />;
         

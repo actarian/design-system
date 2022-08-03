@@ -1,10 +1,14 @@
 
 import React from 'react';
-import FileText from '../icons/file-text.svg';
+import FileTextSvg from '../icons/file-text.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<FileText {...props} ref={ref} />);
+const FileText = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FileTextSvg {...props} ref={ref} />);
 });
+
+FileText.displayName = 'FileText';
+
+export default FileText;
 
 // export default () => <FileText />;
         

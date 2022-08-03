@@ -10,7 +10,7 @@ import RadioOptionGroup from './radio-option-group';
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   size?: SizeVariant;
   children?: ReactNode;
-};
+}
 
 export type RadioOptionProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -121,6 +121,8 @@ const RadioOption = forwardRef<HTMLInputElement, RadioOptionProps>(({
     </StyledRadioOption>
   );
 });
+
+RadioOption.displayName = 'RadioOption';
 
 (RadioOption as IRadioOption).Group = RadioOptionGroup;
 

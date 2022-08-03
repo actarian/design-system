@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Info from '../icons/info.svg';
+import InfoSvg from '../icons/info.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Info {...props} ref={ref} />);
+const Info = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<InfoSvg {...props} ref={ref} />);
 });
+
+Info.displayName = 'Info';
+
+export default Info;
 
 // export default () => <Info />;
         

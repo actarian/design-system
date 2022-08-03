@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Feather from '../icons/feather.svg';
+import FeatherSvg from '../icons/feather.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Feather {...props} ref={ref} />);
+const Feather = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FeatherSvg {...props} ref={ref} />);
 });
+
+Feather.displayName = 'Feather';
+
+export default Feather;
 
 // export default () => <Feather />;
         

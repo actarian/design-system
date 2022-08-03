@@ -1,10 +1,14 @@
 
 import React from 'react';
-import RefreshCcw from '../icons/refresh-ccw.svg';
+import RefreshCcwSvg from '../icons/refresh-ccw.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<RefreshCcw {...props} ref={ref} />);
+const RefreshCcw = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<RefreshCcwSvg {...props} ref={ref} />);
 });
+
+RefreshCcw.displayName = 'RefreshCcw';
+
+export default RefreshCcw;
 
 // export default () => <RefreshCcw />;
         

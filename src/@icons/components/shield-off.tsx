@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ShieldOff from '../icons/shield-off.svg';
+import ShieldOffSvg from '../icons/shield-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ShieldOff {...props} ref={ref} />);
+const ShieldOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ShieldOffSvg {...props} ref={ref} />);
 });
+
+ShieldOff.displayName = 'ShieldOff';
+
+export default ShieldOff;
 
 // export default () => <ShieldOff />;
         

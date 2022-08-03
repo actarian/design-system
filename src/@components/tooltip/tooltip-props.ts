@@ -1,6 +1,6 @@
-export const tuple = <T extends string[]>(...args: T) => args
+export const tuple = <T extends string[]>(...args: T): string[] => args;
 
-export const tupleNumber = <T extends number[]>(...args: T) => args
+export const tupleNumber = <T extends number[]>(...args: T): number[] => args;
 
 const buttonTypes = tuple(
   'default',

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Chrome from '../icons/chrome.svg';
+import ChromeSvg from '../icons/chrome.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Chrome {...props} ref={ref} />);
+const Chrome = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ChromeSvg {...props} ref={ref} />);
 });
+
+Chrome.displayName = 'Chrome';
+
+export default Chrome;
 
 // export default () => <Chrome />;
         

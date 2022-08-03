@@ -1,17 +1,17 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import { useClasses } from '@hooks';
-import { ComponentPropsWithRef, forwardRef, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { ComponentPropsWithRef, forwardRef, useCallback, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { AutocompleteContext, IAutocomplete, IAutocompleteItem } from './autocomplete-context';
 import AutocompleteDropdown from './autocomplete-dropdown';
-import { useHighligth } from './autocomplete-highlight';
+import { autocompleteHighligth } from './autocomplete-highlight';
 
 interface Props extends ComponentPropsWithRef<'input'> {
   source: (query: string) => Promise<IAutocompleteItem[]>;
-  onSelect?: (value: IAutocompleteItem) => void;
+  onAutocomplete?: (value: IAutocompleteItem) => void;
   onDropdownVisibleChange?: (visible: boolean) => void;
-};
+}
 
 export type AutocompleteProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -79,10 +79,10 @@ const StyledAutocomplete = styled.div<AutocompleteProps>`
 `;
 
 const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
-  onDropdownVisibleChange = () => { },
-  source,
-  onSelect,
   className,
+  source,
+  onDropdownVisibleChange = () => { },
+  onAutocomplete,
   ...props
 }, ref) => {
 
@@ -102,10 +102,10 @@ const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
 
   const [selectFocus, setSelectFocus] = useState<boolean>(false);
 
-  const updateVisible = (next: boolean) => {
+  const updateVisible = useCallback((next: boolean) => {
     onDropdownVisibleChange(next);
     setVisible(next);
-  };
+  }, [onDropdownVisibleChange]);
 
   const onFocus = () => {
     setSelectFocus(true);
@@ -126,27 +126,28 @@ const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
     setItems(items);
   }
 
-  const onSelect_ = (item: IAutocompleteItem) => {
+  const onAutocomplete_ = (item: IAutocompleteItem) => {
     setValue(item);
     if (item) {
       setInnerValue(item.name);
     }
-    onSelect && onSelect(item);
+    onAutocomplete && onAutocomplete(item);
   };
 
-  const updateValue = (item: IAutocompleteItem) => {
-    setInnerValue(item.name);
-    onSelect && onSelect(item);
-    updateVisible(false);
-  };
-
-  const context: IAutocomplete = useMemo(() => ({
-    visible,
-    value,
-    ref: innerRef,
-    updateValue,
-    updateVisible,
-  }), [visible, innerRef, value]);
+  const context: IAutocomplete = useMemo(() => {
+    const updateValue = (item: IAutocompleteItem) => {
+      setInnerValue(item.name);
+      onAutocomplete && onAutocomplete(item);
+      updateVisible(false);
+    };
+    return {
+      visible,
+      value,
+      ref: innerRef,
+      updateValue,
+      updateVisible,
+    };
+  }, [visible, value, updateVisible, onAutocomplete]);
 
   const classNames = useClasses('input', className);
   return (
@@ -155,12 +156,14 @@ const Autocomplete = forwardRef<HTMLInputElement, AutocompleteProps>(({
         <StyledAutocomplete ref={innerRef} className={classNames} as='input' type='text' value={innerValue} onFocus={onFocus} onBlur={onBlur} onChange={onChange_} {...props} />
         <AutocompleteDropdown ref={dropdownRef} visible={items.length > 0}>
           {items.map((item, i) => (
-            <StyledAutocompleteItem key={i} onClick={() => onSelect_(item)} dangerouslySetInnerHTML={{ __html: useHighligth(item.name, innerRef.current?.value) }}></StyledAutocompleteItem>
+            <StyledAutocompleteItem key={i} onClick={() => onAutocomplete_(item)} dangerouslySetInnerHTML={{ __html: autocompleteHighligth(item.name, innerRef.current?.value) }}></StyledAutocompleteItem>
           ))}
         </AutocompleteDropdown>
       </AutocompleteContext.Provider>
     </>
   );
 });
+
+Autocomplete.displayName = 'Autocomplete';
 
 export default Autocomplete;

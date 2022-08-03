@@ -1,10 +1,14 @@
 
 import React from 'react';
-import CloudOff from '../icons/cloud-off.svg';
+import CloudOffSvg from '../icons/cloud-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<CloudOff {...props} ref={ref} />);
+const CloudOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CloudOffSvg {...props} ref={ref} />);
 });
+
+CloudOff.displayName = 'CloudOff';
+
+export default CloudOff;
 
 // export default () => <CloudOff />;
         

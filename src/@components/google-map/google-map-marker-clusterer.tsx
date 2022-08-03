@@ -21,13 +21,12 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
 
   const [clusterer, setClusterer] = useState<MarkerClusterer>();
 
-  const onClick_ = (item: IGeoLocalized) => {
-    if (onClick) {
-      onClick(item);
-    }
-  }
-
   useEffect(() => {
+    const onClick_ = (item: IGeoLocalized) => {
+      if (onClick) {
+        onClick(item);
+      }
+    }
     const instances = items.map(item => {
       const icon = {
         url: `/map/marker-sm.png`,
@@ -55,7 +54,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
         });
       }
     };
-  }, [items]);
+  }, [items, map, markers, onClick]);
 
   useEffect(() => {
     if (clusterer) {
@@ -124,7 +123,7 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
         clusterer.clearMarkers();
       }
     };
-  }, [map, markers]);
+  }, [clusterer, map, markers]);
 
   /*
   useEffect(() => {

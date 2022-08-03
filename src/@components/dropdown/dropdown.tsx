@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Transition } from '@components';
 import { useClasses, useClickAnyWhere, useDomObserver, usePortal, useResize, useWarning } from '@hooks';
 import React, { MutableRefObject, useEffect, useState } from 'react';
@@ -63,9 +64,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     if (getPopupContainer && getPopupContainer()) {
       const element = getPopupContainer();
       const style = window.getComputedStyle(element as HTMLDivElement);
-      if (style.position === 'static') {
-        useWarning('The element specified by "getPopupContainer" must have "position" set.');
-      }
+      useWarning(style.position === 'static', 'The element specified by "getPopupContainer" must have "position" set.');
     }
   }
 
@@ -126,5 +125,7 @@ const Dropdown: React.FC<React.PropsWithChildren<Props>> = React.memo(({
     portal,
   );
 });
+
+Dropdown.displayName = 'Dropdown';
 
 export default Dropdown

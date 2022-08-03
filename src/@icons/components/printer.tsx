@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Printer from '../icons/printer.svg';
+import PrinterSvg from '../icons/printer.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Printer {...props} ref={ref} />);
+const Printer = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PrinterSvg {...props} ref={ref} />);
 });
+
+Printer.displayName = 'Printer';
+
+export default Printer;
 
 // export default () => <Printer />;
         

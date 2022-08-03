@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Frown from '../icons/frown.svg';
+import FrownSvg from '../icons/frown.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Frown {...props} ref={ref} />);
+const Frown = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FrownSvg {...props} ref={ref} />);
 });
+
+Frown.displayName = 'Frown';
+
+export default Frown;
 
 // export default () => <Frown />;
         

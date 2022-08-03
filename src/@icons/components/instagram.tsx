@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Instagram from '../icons/instagram.svg';
+import InstagramSvg from '../icons/instagram.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Instagram {...props} ref={ref} />);
+const Instagram = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<InstagramSvg {...props} ref={ref} />);
 });
+
+Instagram.displayName = 'Instagram';
+
+export default Instagram;
 
 // export default () => <Instagram />;
         

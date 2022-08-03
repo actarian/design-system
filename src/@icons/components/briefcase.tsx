@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Briefcase from '../icons/briefcase.svg';
+import BriefcaseSvg from '../icons/briefcase.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Briefcase {...props} ref={ref} />);
+const Briefcase = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BriefcaseSvg {...props} ref={ref} />);
 });
+
+Briefcase.displayName = 'Briefcase';
+
+export default Briefcase;
 
 // export default () => <Briefcase />;
         

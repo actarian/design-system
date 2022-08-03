@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Youtube from '../icons/youtube.svg';
+import YoutubeSvg from '../icons/youtube.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Youtube {...props} ref={ref} />);
+const Youtube = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<YoutubeSvg {...props} ref={ref} />);
 });
+
+Youtube.displayName = 'Youtube';
+
+export default Youtube;
 
 // export default () => <Youtube />;
         

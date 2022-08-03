@@ -1,10 +1,14 @@
 
 import React from 'react';
-import DownloadCloud from '../icons/download-cloud.svg';
+import DownloadCloudSvg from '../icons/download-cloud.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<DownloadCloud {...props} ref={ref} />);
+const DownloadCloud = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DownloadCloudSvg {...props} ref={ref} />);
 });
+
+DownloadCloud.displayName = 'DownloadCloud';
+
+export default DownloadCloud;
 
 // export default () => <DownloadCloud />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Cast from '../icons/cast.svg';
+import CastSvg from '../icons/cast.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Cast {...props} ref={ref} />);
+const Cast = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CastSvg {...props} ref={ref} />);
 });
+
+Cast.displayName = 'Cast';
+
+export default Cast;
 
 // export default () => <Cast />;
         

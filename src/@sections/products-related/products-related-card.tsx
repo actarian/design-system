@@ -1,29 +1,28 @@
-import { Button, Card, Flex, Media, Text } from '@components';
+import { Button, Card, Flex, Media, MediaType, Text } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
 import { useCart, useCurrency, useDrawer } from '@hooks';
 import Link from 'next/link';
 
 type Props = {
-  item: ProductItem
+  item: ProductsRelatedItem
 }
 
-export type ProductItem = {
+export type ProductsRelatedItem = {
   id: number;
   schema: string;
   href: string;
   title: string;
   abstract: string;
   price: number;
-  date: string | Date;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   };
 }
 
 export type ProductsRelatedCardProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const ProductsRelatedCard = ({ item, ...props }: ProductsRelatedCardProps) => {
+const ProductsRelatedCard: React.FC<ProductsRelatedCardProps> = ({ item, ...props }: ProductsRelatedCardProps) => {
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const cart = useCart();
   // const cartItem = cart.find(item);
@@ -58,18 +57,21 @@ const ProductsRelatedCard = ({ item, ...props }: ProductsRelatedCardProps) => {
   )
 }
 
-ProductsRelatedCard.defaultProps = {
+export const ProductsRelatedCardDefaults = {
   item: {
     id: 1,
+    schema: 'product',
     href: '/product',
     title: 'Focus Paper Refill',
     abstract: '3 sizes available',
     price: 13,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&w=960',
     },
   }
 };
+
+ProductsRelatedCard.defaultProps = ProductsRelatedCardDefaults;
 
 export default ProductsRelatedCard;

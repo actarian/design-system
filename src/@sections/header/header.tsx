@@ -64,7 +64,7 @@ const SubMenu = () => (
   </Nav.Col>
 )
 
-const Header = (props: HeaderProps) => {
+const Header: React.FC<HeaderProps> = (props: HeaderProps) => {
   const scroll = useScroll();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   const [modal, onOpenModal, onCloseModal] = useModal();

@@ -8,7 +8,7 @@ type Props = {
 
 export type PropositionProps = ComponentProps<Props, HTMLDivElement>;
 
-const Proposition = (props: PropositionProps) => {
+const Proposition: React.FC<PropositionProps> = (props: PropositionProps) => {
   const [modal, onOpenModal, onCloseModal] = useModal();
   const [drawer, onOpenDrawer, onCloseDrawer] = useDrawer();
   return (

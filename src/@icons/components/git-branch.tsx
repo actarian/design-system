@@ -1,10 +1,14 @@
 
 import React from 'react';
-import GitBranch from '../icons/git-branch.svg';
+import GitBranchSvg from '../icons/git-branch.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<GitBranch {...props} ref={ref} />);
+const GitBranch = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GitBranchSvg {...props} ref={ref} />);
 });
+
+GitBranch.displayName = 'GitBranch';
+
+export default GitBranch;
 
 // export default () => <GitBranch />;
         

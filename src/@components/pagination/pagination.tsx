@@ -60,30 +60,31 @@ const Pagination: React.FC<React.PropsWithChildren<PaginationProps>> = ({
     ];
   }, [prevChildren, nextChildren]);
 
-  const update = (type: PaginationUpdateType) => {
-    if (type === 'prev' && pageRef.current > 1) {
-      setPage(last => last - 1);
+  const values = useMemo<PaginationConfig>(() => {
+    const update = (type: PaginationUpdateType) => {
+      if (type === 'prev' && pageRef.current > 1) {
+        setPage(last => last - 1);
+      }
+      if (type === 'next' && pageRef.current < count) {
+        setPage(last => last + 1);
+      }
     }
-    if (type === 'next' && pageRef.current < count) {
-      setPage(last => last + 1);
-    }
-  }
-
-  const values = useMemo<PaginationConfig>(() => ({
-    isFirst: page <= 1,
-    isLast: page >= count,
-    update,
-  }), [page, count]);
+    return {
+      isFirst: page <= 1,
+      isLast: page >= count,
+      update,
+    };
+  }, [page, count, pageRef, setPage]);
 
   useEffect(() => {
     onChange && onChange(page);
-  }, [page]);
+  }, [onChange, page]);
 
   useEffect(() => {
     if (customPage !== undefined) {
       setPage(customPage);
     }
-  }, [customPage]);
+  }, [customPage, setPage]);
 
   return (
     <PaginationContext.Provider value={values}>

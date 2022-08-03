@@ -53,7 +53,7 @@ export type SwiperHeroProps = {
   items: SwiperHeroItem[];
 } & SwiperProps;
 
-export default function SwiperHero(props: SwiperHeroProps) {
+const SwiperHero: React.FC<SwiperHeroProps> = (props: SwiperHeroProps) => {
   const items = props.items;
   return (
     <Swiper {...props} navigation pagination={{ clickable: true }}>
@@ -89,3 +89,5 @@ export default function SwiperHero(props: SwiperHeroProps) {
     </Swiper>
   )
 }
+
+export default SwiperHero;

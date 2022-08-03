@@ -1,10 +1,14 @@
 
 import React from 'react';
-import WifiOff from '../icons/wifi-off.svg';
+import WifiOffSvg from '../icons/wifi-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<WifiOff {...props} ref={ref} />);
+const WifiOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<WifiOffSvg {...props} ref={ref} />);
 });
+
+WifiOff.displayName = 'WifiOff';
+
+export default WifiOff;
 
 // export default () => <WifiOff />;
         

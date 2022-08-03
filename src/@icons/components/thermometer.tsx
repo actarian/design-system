@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Thermometer from '../icons/thermometer.svg';
+import ThermometerSvg from '../icons/thermometer.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Thermometer {...props} ref={ref} />);
+const Thermometer = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ThermometerSvg {...props} ref={ref} />);
 });
+
+Thermometer.displayName = 'Thermometer';
+
+export default Thermometer;
 
 // export default () => <Thermometer />;
         

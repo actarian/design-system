@@ -1,10 +1,14 @@
 
 import React from 'react';
-import SkipBack from '../icons/skip-back.svg';
+import SkipBackSvg from '../icons/skip-back.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<SkipBack {...props} ref={ref} />);
+const SkipBack = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SkipBackSvg {...props} ref={ref} />);
 });
+
+SkipBack.displayName = 'SkipBack';
+
+export default SkipBack;
 
 // export default () => <SkipBack />;
         

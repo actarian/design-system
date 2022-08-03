@@ -8,7 +8,7 @@ export interface AuthDrawerProps {
   onClose: () => void;
 }
 
-const AuthDrawer = ({ visible, onClose }: AuthDrawerProps) => {
+const AuthDrawer: React.FC<AuthDrawerProps> = ({ visible, onClose }: AuthDrawerProps) => {
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
       <Drawer.Title>

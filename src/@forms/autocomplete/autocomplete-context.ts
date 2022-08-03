@@ -8,7 +8,7 @@ const defaultContext = {
 export interface IAutocompleteItem {
   id: any,
   name: string;
-};
+}
 
 export interface IAutocomplete {
   visible?: boolean;

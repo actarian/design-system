@@ -5,7 +5,7 @@ import { ICartItem } from '@hooks/useCart/useCart';
 import { Minus, Plus, Trash } from '@icons';
 import NextLink from 'next/link';
 
-export default function CartMiniItem({ item }: { item: ICartItem }) {
+const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem }) => {
 
   const price = useCurrency(item.price * item.qty);
 
@@ -65,3 +65,5 @@ export default function CartMiniItem({ item }: { item: ICartItem }) {
     </>
   );
 }
+
+export default CartMiniItem;

@@ -1,5 +1,5 @@
 import { useClasses } from '@hooks';
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import styled from 'styled-components';
 import Tooltip, { TooltipOnVisibleChange, TooltipProps } from '../tooltip/tooltip';
 import { Placement, TriggerTypes } from '../tooltip/tooltip-props';
@@ -54,28 +54,29 @@ const Popover: React.FC<React.PropsWithChildren<PopoverProps>> = ({
 
   const textNode = useMemo(() => getReactNode(content), [content]);
 
-  const onChildClick = () => {
-    onPopoverVisibleChange(false);
-  };
-
-  const value = useMemo<PopoverConfig>(() => ({
-    onItemClick: onChildClick,
-    disableItemsAutoClose,
-  }), [disableItemsAutoClose]);
-
-  const classes = useClasses('popover', portalClassName);
-
-  const onPopoverVisibleChange = (next: boolean) => {
+  const onPopoverVisibleChange = useCallback((next: boolean) => {
     setVisible(next);
     onVisibleChange(next);
-  };
+  }, [onVisibleChange]);
+
+  const value = useMemo<PopoverConfig>(() => {
+    const onChildClick = () => {
+      onPopoverVisibleChange(false);
+    };
+    return {
+      onItemClick: onChildClick,
+      disableItemsAutoClose,
+    };
+  }, [disableItemsAutoClose, onPopoverVisibleChange]);
+
+  const classes = useClasses('popover', portalClassName);
 
   useEffect(() => {
     if (customVisible === undefined) {
       return;
     }
     onPopoverVisibleChange(customVisible);
-  }, [customVisible]);
+  }, [customVisible, onPopoverVisibleChange]);
 
   return (
     <PopoverContext.Provider value={value}>

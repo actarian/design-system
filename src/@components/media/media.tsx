@@ -2,6 +2,11 @@ import { ComponentCssResponsiveProps } from '@components/types';
 import { getAspectResponsive, getCssResponsive } from '@components/utils';
 import styled, { css } from 'styled-components';
 
+export enum MediaType {
+  Image = 'image',
+  Video = 'video',
+}
+
 type Props = {
   circle?: boolean;
   rounded?: boolean;

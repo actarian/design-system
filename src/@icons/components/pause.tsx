@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Pause from '../icons/pause.svg';
+import PauseSvg from '../icons/pause.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Pause {...props} ref={ref} />);
+const Pause = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PauseSvg {...props} ref={ref} />);
 });
+
+Pause.displayName = 'Pause';
+
+export default Pause;
 
 // export default () => <Pause />;
         

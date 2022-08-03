@@ -44,5 +44,5 @@
     "importsNotUsedAsValues": "preserve",
   },
   "exclude": ["node_modules", ".next", "out", "storybook-static"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "@components/button/button.stories.__tsx", "src/@styles/theme.js"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/@styles/theme.js"]
 }

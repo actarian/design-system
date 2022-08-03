@@ -1,10 +1,14 @@
 
 import React from 'react';
-import FastForward from '../icons/fast-forward.svg';
+import FastForwardSvg from '../icons/fast-forward.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<FastForward {...props} ref={ref} />);
+const FastForward = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FastForwardSvg {...props} ref={ref} />);
 });
+
+FastForward.displayName = 'FastForward';
+
+export default FastForward;
 
 // export default () => <FastForward />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Tool from '../icons/tool.svg';
+import ToolSvg from '../icons/tool.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Tool {...props} ref={ref} />);
+const Tool = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ToolSvg {...props} ref={ref} />);
 });
+
+Tool.displayName = 'Tool';
+
+export default Tool;
 
 // export default () => <Tool />;
         

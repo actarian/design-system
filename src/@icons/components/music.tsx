@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Music from '../icons/music.svg';
+import MusicSvg from '../icons/music.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Music {...props} ref={ref} />);
+const Music = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MusicSvg {...props} ref={ref} />);
 });
+
+Music.displayName = 'Music';
+
+export default Music;
 
 // export default () => <Music />;
         

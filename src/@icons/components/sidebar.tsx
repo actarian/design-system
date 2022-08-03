@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Sidebar from '../icons/sidebar.svg';
+import SidebarSvg from '../icons/sidebar.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Sidebar {...props} ref={ref} />);
+const Sidebar = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SidebarSvg {...props} ref={ref} />);
 });
+
+Sidebar.displayName = 'Sidebar';
+
+export default Sidebar;
 
 // export default () => <Sidebar />;
         

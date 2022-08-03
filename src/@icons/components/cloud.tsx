@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Cloud from '../icons/cloud.svg';
+import CloudSvg from '../icons/cloud.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Cloud {...props} ref={ref} />);
+const Cloud = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CloudSvg {...props} ref={ref} />);
 });
+
+Cloud.displayName = 'Cloud';
+
+export default Cloud;
 
 // export default () => <Cloud />;
         

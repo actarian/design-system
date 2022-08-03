@@ -14,7 +14,7 @@ function encodeHTML(text: string) {
     .replace(/>/g, '&gt;');
 }
 
-export function useHighligth(text: string, query: string | string[] | undefined): string {
+export function autocompleteHighligth(text: string, query: string | string[] | undefined): string {
   if (!query) {
     return text;
   }

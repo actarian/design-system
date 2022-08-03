@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Camera from '../icons/camera.svg';
+import CameraSvg from '../icons/camera.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Camera {...props} ref={ref} />);
+const Camera = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CameraSvg {...props} ref={ref} />);
 });
+
+Camera.displayName = 'Camera';
+
+export default Camera;
 
 // export default () => <Camera />;
         

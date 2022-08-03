@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Terminal from '../icons/terminal.svg';
+import TerminalSvg from '../icons/terminal.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Terminal {...props} ref={ref} />);
+const Terminal = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TerminalSvg {...props} ref={ref} />);
 });
+
+Terminal.displayName = 'Terminal';
+
+export default Terminal;
 
 // export default () => <Terminal />;
         

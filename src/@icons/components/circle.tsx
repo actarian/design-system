@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Circle from '../icons/circle.svg';
+import CircleSvg from '../icons/circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Circle {...props} ref={ref} />);
+const Circle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CircleSvg {...props} ref={ref} />);
 });
+
+Circle.displayName = 'Circle';
+
+export default Circle;
 
 // export default () => <Circle />;
         

@@ -41,7 +41,7 @@ export function calculateDistance(lat1: number, lon1: number, lat2: number, lon2
   }
 }
 
-export function getBounds(items: IGeoLocalized[], count: number = Number.POSITIVE_INFINITY) {
+export function getBounds(items: IGeoLocalized[], count: number = Number.POSITIVE_INFINITY): google.maps.LatLngBounds {
   const bounds = new google.maps.LatLngBounds();
   items.forEach((item, i) => {
     if (i < count) {

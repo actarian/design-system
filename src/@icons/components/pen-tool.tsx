@@ -1,10 +1,14 @@
 
 import React from 'react';
-import PenTool from '../icons/pen-tool.svg';
+import PenToolSvg from '../icons/pen-tool.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<PenTool {...props} ref={ref} />);
+const PenTool = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PenToolSvg {...props} ref={ref} />);
 });
+
+PenTool.displayName = 'PenTool';
+
+export default PenTool;
 
 // export default () => <PenTool />;
         

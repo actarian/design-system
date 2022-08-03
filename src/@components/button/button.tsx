@@ -26,7 +26,7 @@ interface Props extends ComponentPropsWithRef<'button'> {
   size?: SizeVariant;
   // htmlType?: React.ButtonHTMLAttributes<any>['type']
   // onClick?: React.MouseEventHandler<HTMLButtonElement>
-};
+}
 
 export type ButtonProps = ComponentCssResponsiveProps<Props, HTMLButtonElement>;
 
@@ -41,5 +41,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>((props, ref) => {
   const className = useClasses('button', { disabled: props.disabled });
   return (<StyledButton ref={ref} className={className} as="button" {...props}>{props.children}</StyledButton>);
 });
+
+Button.displayName = 'Button';
 
 export default Button;

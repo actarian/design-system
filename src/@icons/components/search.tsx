@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Search from '../icons/search.svg';
+import SearchSvg from '../icons/search.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Search {...props} ref={ref} />);
+const Search = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SearchSvg {...props} ref={ref} />);
 });
+
+Search.displayName = 'Search';
+
+export default Search;
 
 // export default () => <Search />;
         

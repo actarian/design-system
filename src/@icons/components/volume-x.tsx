@@ -1,10 +1,14 @@
 
 import React from 'react';
-import VolumeX from '../icons/volume-x.svg';
+import VolumeXSvg from '../icons/volume-x.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<VolumeX {...props} ref={ref} />);
+const VolumeX = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<VolumeXSvg {...props} ref={ref} />);
 });
+
+VolumeX.displayName = 'VolumeX';
+
+export default VolumeX;
 
 // export default () => <VolumeX />;
         

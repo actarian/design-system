@@ -6,7 +6,7 @@ type Props = {
 
 export type HeroProps = ComponentProps<Props, HTMLDivElement>;
 
-const Hero = (props: HeroProps) => {
+const Hero: React.FC<HeroProps> = (props: HeroProps) => {
   return (
     <Section padding="0">
       <Card justifyContent="flex-end" height="100vh">

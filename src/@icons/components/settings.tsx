@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Settings from '../icons/settings.svg';
+import SettingsSvg from '../icons/settings.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Settings {...props} ref={ref} />);
+const Settings = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SettingsSvg {...props} ref={ref} />);
 });
+
+Settings.displayName = 'Settings';
+
+export default Settings;
 
 // export default () => <Settings />;
         

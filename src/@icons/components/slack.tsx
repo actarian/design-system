@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Slack from '../icons/slack.svg';
+import SlackSvg from '../icons/slack.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Slack {...props} ref={ref} />);
+const Slack = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SlackSvg {...props} ref={ref} />);
 });
+
+Slack.displayName = 'Slack';
+
+export default Slack;
 
 // export default () => <Slack />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Minimize from '../icons/minimize.svg';
+import MinimizeSvg from '../icons/minimize.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Minimize {...props} ref={ref} />);
+const Minimize = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MinimizeSvg {...props} ref={ref} />);
 });
+
+Minimize.displayName = 'Minimize';
+
+export default Minimize;
 
 // export default () => <Minimize />;
         

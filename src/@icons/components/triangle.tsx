@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Triangle from '../icons/triangle.svg';
+import TriangleSvg from '../icons/triangle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Triangle {...props} ref={ref} />);
+const Triangle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TriangleSvg {...props} ref={ref} />);
 });
+
+Triangle.displayName = 'Triangle';
+
+export default Triangle;
 
 // export default () => <Triangle />;
         

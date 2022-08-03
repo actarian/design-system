@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MousePointer from '../icons/mouse-pointer.svg';
+import MousePointerSvg from '../icons/mouse-pointer.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MousePointer {...props} ref={ref} />);
+const MousePointer = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MousePointerSvg {...props} ref={ref} />);
 });
+
+MousePointer.displayName = 'MousePointer';
+
+export default MousePointer;
 
 // export default () => <MousePointer />;
         

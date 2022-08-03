@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Database from '../icons/database.svg';
+import DatabaseSvg from '../icons/database.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Database {...props} ref={ref} />);
+const Database = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DatabaseSvg {...props} ref={ref} />);
 });
+
+Database.displayName = 'Database';
+
+export default Database;
 
 // export default () => <Database />;
         

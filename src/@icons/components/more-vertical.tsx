@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MoreVertical from '../icons/more-vertical.svg';
+import MoreVerticalSvg from '../icons/more-vertical.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MoreVertical {...props} ref={ref} />);
+const MoreVertical = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MoreVerticalSvg {...props} ref={ref} />);
 });
+
+MoreVertical.displayName = 'MoreVertical';
+
+export default MoreVertical;
 
 // export default () => <MoreVertical />;
         

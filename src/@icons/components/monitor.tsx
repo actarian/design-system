@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Monitor from '../icons/monitor.svg';
+import MonitorSvg from '../icons/monitor.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Monitor {...props} ref={ref} />);
+const Monitor = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MonitorSvg {...props} ref={ref} />);
 });
+
+Monitor.displayName = 'Monitor';
+
+export default Monitor;
 
 // export default () => <Monitor />;
         

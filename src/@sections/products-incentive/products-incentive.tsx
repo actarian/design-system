@@ -7,7 +7,7 @@ type Props = {
 
 export type ProductsIncentiveProps = ComponentProps<Props, HTMLDivElement>;
 
-const ProductsIncentive = ({ }: ProductsIncentiveProps) => {
+const ProductsIncentive: React.FC<ProductsIncentiveProps> = ({ }: ProductsIncentiveProps) => {
   return (
     <Section padding="2rem 0">
       <Container>
@@ -16,7 +16,7 @@ const ProductsIncentive = ({ }: ProductsIncentiveProps) => {
             <Flex.Row padding="1rem 0">
               <Calendar width="2rem" height="2rem" color="var(--color-primary-500)" />
               <Box marginLeft="0.5rem">
-                <Text size="10">We'll replace it with a new one</Text>
+                <Text size="10">We&apos;ll replace it with a new one</Text>
                 <Text size="9" fontWeight="700">10-years all-inclusive warranty</Text>
               </Box>
             </Flex.Row>
@@ -45,7 +45,9 @@ const ProductsIncentive = ({ }: ProductsIncentiveProps) => {
   )
 }
 
-ProductsIncentive.defaultProps = {
+export const ProductsIncentiveDefaults = {
 };
+
+ProductsIncentive.defaultProps = ProductsIncentiveDefaults;
 
 export default ProductsIncentive;

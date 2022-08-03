@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Server from '../icons/server.svg';
+import ServerSvg from '../icons/server.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Server {...props} ref={ref} />);
+const Server = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ServerSvg {...props} ref={ref} />);
 });
+
+Server.displayName = 'Server';
+
+export default Server;
 
 // export default () => <Server />;
         

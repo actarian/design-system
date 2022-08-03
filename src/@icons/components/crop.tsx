@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Crop from '../icons/crop.svg';
+import CropSvg from '../icons/crop.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Crop {...props} ref={ref} />);
+const Crop = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CropSvg {...props} ref={ref} />);
 });
+
+Crop.displayName = 'Crop';
+
+export default Crop;
 
 // export default () => <Crop />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Sunrise from '../icons/sunrise.svg';
+import SunriseSvg from '../icons/sunrise.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Sunrise {...props} ref={ref} />);
+const Sunrise = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SunriseSvg {...props} ref={ref} />);
 });
+
+Sunrise.displayName = 'Sunrise';
+
+export default Sunrise;
 
 // export default () => <Sunrise />;
         

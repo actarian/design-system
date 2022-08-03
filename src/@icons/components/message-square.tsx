@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MessageSquare from '../icons/message-square.svg';
+import MessageSquareSvg from '../icons/message-square.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MessageSquare {...props} ref={ref} />);
+const MessageSquare = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MessageSquareSvg {...props} ref={ref} />);
 });
+
+MessageSquare.displayName = 'MessageSquare';
+
+export default MessageSquare;
 
 // export default () => <MessageSquare />;
         

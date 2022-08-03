@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Clipboard from '../icons/clipboard.svg';
+import ClipboardSvg from '../icons/clipboard.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Clipboard {...props} ref={ref} />);
+const Clipboard = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ClipboardSvg {...props} ref={ref} />);
 });
+
+Clipboard.displayName = 'Clipboard';
+
+export default Clipboard;
 
 // export default () => <Clipboard />;
         

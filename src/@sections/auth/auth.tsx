@@ -10,7 +10,7 @@ export interface AuthProps {
   children?: ReactNode;
 }
 
-const Auth = ({ }: AuthProps) => {
+const Auth: React.FC<AuthProps> = ({ }: AuthProps) => {
   const [, , onCloseDrawer] = useDrawer();
   const [view, setView] = useState('login');
   const onSignedIn = () => {

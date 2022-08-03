@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ShoppingCart from '../icons/shopping-cart.svg';
+import ShoppingCartSvg from '../icons/shopping-cart.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ShoppingCart {...props} ref={ref} />);
+const ShoppingCart = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ShoppingCartSvg {...props} ref={ref} />);
 });
+
+ShoppingCart.displayName = 'ShoppingCart';
+
+export default ShoppingCart;
 
 // export default () => <ShoppingCart />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import AtSign from '../icons/at-sign.svg';
+import AtSignSvg from '../icons/at-sign.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<AtSign {...props} ref={ref} />);
+const AtSign = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AtSignSvg {...props} ref={ref} />);
 });
+
+AtSign.displayName = 'AtSign';
+
+export default AtSign;
 
 // export default () => <AtSign />;
         

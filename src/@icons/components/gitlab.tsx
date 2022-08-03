@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Gitlab from '../icons/gitlab.svg';
+import GitlabSvg from '../icons/gitlab.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Gitlab {...props} ref={ref} />);
+const Gitlab = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GitlabSvg {...props} ref={ref} />);
 });
+
+Gitlab.displayName = 'Gitlab';
+
+export default Gitlab;
 
 // export default () => <Gitlab />;
         

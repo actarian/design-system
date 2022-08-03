@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Star from '../icons/star.svg';
+import StarSvg from '../icons/star.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Star {...props} ref={ref} />);
+const Star = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<StarSvg {...props} ref={ref} />);
 });
+
+Star.displayName = 'Star';
+
+export default Star;
 
 // export default () => <Star />;
         

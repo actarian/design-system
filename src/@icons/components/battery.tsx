@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Battery from '../icons/battery.svg';
+import BatterySvg from '../icons/battery.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Battery {...props} ref={ref} />);
+const Battery = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BatterySvg {...props} ref={ref} />);
 });
+
+Battery.displayName = 'Battery';
+
+export default Battery;
 
 // export default () => <Battery />;
         

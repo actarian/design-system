@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Codepen from '../icons/codepen.svg';
+import CodepenSvg from '../icons/codepen.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Codepen {...props} ref={ref} />);
+const Codepen = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CodepenSvg {...props} ref={ref} />);
 });
+
+Codepen.displayName = 'Codepen';
+
+export default Codepen;
 
 // export default () => <Codepen />;
         

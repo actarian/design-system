@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Tag from '../icons/tag.svg';
+import TagSvg from '../icons/tag.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Tag {...props} ref={ref} />);
+const Tag = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TagSvg {...props} ref={ref} />);
 });
+
+Tag.displayName = 'Tag';
+
+export default Tag;
 
 // export default () => <Tag />;
         

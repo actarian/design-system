@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ZoomIn from '../icons/zoom-in.svg';
+import ZoomInSvg from '../icons/zoom-in.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ZoomIn {...props} ref={ref} />);
+const ZoomIn = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ZoomInSvg {...props} ref={ref} />);
 });
+
+ZoomIn.displayName = 'ZoomIn';
+
+export default ZoomIn;
 
 // export default () => <ZoomIn />;
         

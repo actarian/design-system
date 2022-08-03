@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Flag from '../icons/flag.svg';
+import FlagSvg from '../icons/flag.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Flag {...props} ref={ref} />);
+const Flag = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FlagSvg {...props} ref={ref} />);
 });
+
+Flag.displayName = 'Flag';
+
+export default Flag;
 
 // export default () => <Flag />;
         

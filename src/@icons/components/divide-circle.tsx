@@ -1,10 +1,14 @@
 
 import React from 'react';
-import DivideCircle from '../icons/divide-circle.svg';
+import DivideCircleSvg from '../icons/divide-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<DivideCircle {...props} ref={ref} />);
+const DivideCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DivideCircleSvg {...props} ref={ref} />);
 });
+
+DivideCircle.displayName = 'DivideCircle';
+
+export default DivideCircle;
 
 // export default () => <DivideCircle />;
         

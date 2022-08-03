@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Send from '../icons/send.svg';
+import SendSvg from '../icons/send.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Send {...props} ref={ref} />);
+const Send = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SendSvg {...props} ref={ref} />);
 });
+
+Send.displayName = 'Send';
+
+export default Send;
 
 // export default () => <Send />;
         

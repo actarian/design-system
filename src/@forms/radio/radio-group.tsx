@@ -1,44 +1,50 @@
 
 import { Flex } from '@components';
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
-import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useMemo, useState } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   initialValue?: string;
   size?: SizeVariant;
   children?: ReactNode;
-};
+}
 
 export type RadioGroupProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
   children,
   className,
+  onChange,
   ...props
 }, ref) => {
   const [value, setValue] = useState(props.initialValue || null);
-  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+
+  const onChange_ = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    if (props.onChange) {
-      props.onChange(event);
+    if (onChange) {
+      onChange(event);
     }
     if (event.defaultPrevented) {
       return;
     }
-  };
+  }, [onChange]);
+
   const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
     React.cloneElement(child, child.props ? {
       ...child.props,
       size: child.props.size || props.size,
       checked: child.props.value === value,
-      onChange,
+      onChange_,
     } : null)
-  ), [children, value]);
+  ), [children, onChange_, props.size, value]);
+
   return (
-    <Flex flexWrap="wrap" gap="1rem" ref={ref} {...props}>
+    <Flex flexWrap="wrap" gap="1rem" ref={ref} className={className} {...props}>
       {mappedChildren}
     </Flex>
   );
 });
+
+RadioGroup.displayName = 'RadioGroup';
 
 export default RadioGroup;

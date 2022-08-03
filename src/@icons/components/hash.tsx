@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Hash from '../icons/hash.svg';
+import HashSvg from '../icons/hash.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Hash {...props} ref={ref} />);
+const Hash = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<HashSvg {...props} ref={ref} />);
 });
+
+Hash.displayName = 'Hash';
+
+export default Hash;
 
 // export default () => <Hash />;
         

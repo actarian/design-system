@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Wifi from '../icons/wifi.svg';
+import WifiSvg from '../icons/wifi.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Wifi {...props} ref={ref} />);
+const Wifi = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<WifiSvg {...props} ref={ref} />);
 });
+
+Wifi.displayName = 'Wifi';
+
+export default Wifi;
 
 // export default () => <Wifi />;
         

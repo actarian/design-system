@@ -1,10 +1,14 @@
 
 import React from 'react';
-import EyeOff from '../icons/eye-off.svg';
+import EyeOffSvg from '../icons/eye-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<EyeOff {...props} ref={ref} />);
+const EyeOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<EyeOffSvg {...props} ref={ref} />);
 });
+
+EyeOff.displayName = 'EyeOff';
+
+export default EyeOff;
 
 // export default () => <EyeOff />;
         

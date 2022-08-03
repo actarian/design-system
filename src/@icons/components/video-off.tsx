@@ -1,10 +1,14 @@
 
 import React from 'react';
-import VideoOff from '../icons/video-off.svg';
+import VideoOffSvg from '../icons/video-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<VideoOff {...props} ref={ref} />);
+const VideoOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<VideoOffSvg {...props} ref={ref} />);
 });
+
+VideoOff.displayName = 'VideoOff';
+
+export default VideoOff;
 
 // export default () => <VideoOff />;
         

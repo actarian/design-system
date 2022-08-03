@@ -1,6 +1,9 @@
 const warningStack: { [key: string]: boolean } = {};
 
-export function useWarning(message: string, component?: string) {
+export function useWarning(showWarning: boolean, message: string, component?: string): void {
+  if (!showWarning) {
+    return;
+  }
 
   const tag = component ? ` [${component}]` : ' ';
 

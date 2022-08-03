@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Watch from '../icons/watch.svg';
+import WatchSvg from '../icons/watch.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Watch {...props} ref={ref} />);
+const Watch = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<WatchSvg {...props} ref={ref} />);
 });
+
+Watch.displayName = 'Watch';
+
+export default Watch;
 
 // export default () => <Watch />;
         

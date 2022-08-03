@@ -1,10 +1,14 @@
 
 import React from 'react';
-import HelpCircle from '../icons/help-circle.svg';
+import HelpCircleSvg from '../icons/help-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<HelpCircle {...props} ref={ref} />);
+const HelpCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<HelpCircleSvg {...props} ref={ref} />);
 });
+
+HelpCircle.displayName = 'HelpCircle';
+
+export default HelpCircle;
 
 // export default () => <HelpCircle />;
         

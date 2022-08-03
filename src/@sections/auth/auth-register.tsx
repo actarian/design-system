@@ -8,7 +8,7 @@ export interface AuthSignUpProps {
   onNavToLogin?: () => void;
 }
 
-const AuthSignUp = ({ onSignedUp, onNavToLogin }: AuthSignUpProps) => {
+const AuthSignUp: React.FC<AuthSignUpProps> = ({ onSignedUp, onNavToLogin }: AuthSignUpProps) => {
   const onSignUp = () => {
     if (typeof onSignedUp === 'function') {
       onSignedUp();

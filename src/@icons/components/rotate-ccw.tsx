@@ -1,10 +1,14 @@
 
 import React from 'react';
-import RotateCcw from '../icons/rotate-ccw.svg';
+import RotateCcwSvg from '../icons/rotate-ccw.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<RotateCcw {...props} ref={ref} />);
+const RotateCcw = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<RotateCcwSvg {...props} ref={ref} />);
 });
+
+RotateCcw.displayName = 'RotateCcw';
+
+export default RotateCcw;
 
 // export default () => <RotateCcw />;
         

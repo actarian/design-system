@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Voicemail from '../icons/voicemail.svg';
+import VoicemailSvg from '../icons/voicemail.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Voicemail {...props} ref={ref} />);
+const Voicemail = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<VoicemailSvg {...props} ref={ref} />);
 });
+
+Voicemail.displayName = 'Voicemail';
+
+export default Voicemail;
 
 // export default () => <Voicemail />;
         

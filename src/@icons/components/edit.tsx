@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Edit from '../icons/edit.svg';
+import EditSvg from '../icons/edit.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Edit {...props} ref={ref} />);
+const Edit = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<EditSvg {...props} ref={ref} />);
 });
+
+Edit.displayName = 'Edit';
+
+export default Edit;
 
 // export default () => <Edit />;
         

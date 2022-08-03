@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Folder from '../icons/folder.svg';
+import FolderSvg from '../icons/folder.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Folder {...props} ref={ref} />);
+const Folder = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FolderSvg {...props} ref={ref} />);
 });
+
+Folder.displayName = 'Folder';
+
+export default Folder;
 
 // export default () => <Folder />;
         

@@ -1,10 +1,14 @@
 
 import React from 'react';
-import SkipForward from '../icons/skip-forward.svg';
+import SkipForwardSvg from '../icons/skip-forward.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<SkipForward {...props} ref={ref} />);
+const SkipForward = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SkipForwardSvg {...props} ref={ref} />);
 });
+
+SkipForward.displayName = 'SkipForward';
+
+export default SkipForward;
 
 // export default () => <SkipForward />;
         

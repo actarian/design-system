@@ -1,5 +1,8 @@
 import { Accordion, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Tabs, Text } from '@components';
 import { BlogMore, BlogProposition, ContactCard, ContactCardItem, ContactForm, ContactHero, Footer, Header, Split } from '@sections';
+import { BlogMoreDefaults } from '@sections/blog-more/blog-more';
+import { ContactHeroDefaults } from '@sections/contact-hero/contact-hero';
+import { SplitDefaults } from '@sections/split/split';
 import Head from 'next/head';
 
 export default function Contact() {
@@ -70,7 +73,7 @@ export default function Contact() {
 
           <Header sticky />
 
-          <ContactHero />
+          <ContactHero item={ContactHeroDefaults.item} />
 
           <Section>
             <Container>
@@ -153,11 +156,11 @@ export default function Contact() {
             </Container>
           </Section>
 
-          <Split />
+          <Split item={SplitDefaults.item} />
 
           <BlogProposition />
 
-          <BlogMore />
+          <BlogMore items={BlogMoreDefaults.items} />
 
           <Section aspectRatio={4 / 3} aspectRatioSm={2 / 1} aspectRatioMd={3 / 1} aspectRatioLg={4 / 1}>
             <Section.Background>

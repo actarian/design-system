@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Type from '../icons/type.svg';
+import TypeSvg from '../icons/type.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Type {...props} ref={ref} />);
+const Type = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TypeSvg {...props} ref={ref} />);
 });
+
+Type.displayName = 'Type';
+
+export default Type;
 
 // export default () => <Type />;
         

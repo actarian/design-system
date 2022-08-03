@@ -1,16 +1,15 @@
-import { Button, Card, Container, Flex, Grid, Media, Section, Text } from '@components';
+import { Button, Card, Container, Flex, Grid, Media, MediaType, Section, Text } from '@components';
 import { ComponentProps } from '@components/types';
-import { ProductItem } from '@sections/products-proposition/products-proposition-card';
 import Link from 'next/link';
 import ProductsHeroCard from './products-hero-card';
 
 type Props = {
-  items: ProductItem[],
+  items: ProductHeroItem[],
 }
 
 export type ProductsHeroProps = ComponentProps<Props, HTMLDivElement>;
 
-const ProductsHero = ({ items }: ProductsHeroProps) => {
+const ProductsHero: React.FC<ProductsHeroProps> = ({ items }: ProductsHeroProps) => {
   return (
     <Section padding="0">
       <Card justifyContent="center" height="90vh">
@@ -42,13 +41,23 @@ const ProductsHero = ({ items }: ProductsHeroProps) => {
   )
 }
 
-ProductsHero.defaultProps = {
+export type ProductHeroItem = {
+  id: number;
+  href: string;
+  title: string;
+  media: {
+    type: MediaType;
+    src: string;
+  };
+}
+
+export const ProductsHeroDefaults = {
   items: [{
     id: 1,
     href: '/category',
     title: 'Women\'s',
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/OVS3rqXq9gg/download?force=true&w=720',
     },
   }, {
@@ -56,7 +65,7 @@ ProductsHero.defaultProps = {
     href: '/category',
     title: 'Men\'s',
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/-au3XMzfhro/download?force=true&w=720',
     },
   }, {
@@ -64,10 +73,12 @@ ProductsHero.defaultProps = {
     href: '/category',
     title: 'Desk accessories',
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/RvPDe41lYBA/download?force=true&w=720',
     },
   }]
 };
+
+ProductsHero.defaultProps = ProductsHeroDefaults;
 
 export default ProductsHero;

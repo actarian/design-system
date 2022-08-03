@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Divide from '../icons/divide.svg';
+import DivideSvg from '../icons/divide.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Divide {...props} ref={ref} />);
+const Divide = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DivideSvg {...props} ref={ref} />);
 });
+
+Divide.displayName = 'Divide';
+
+export default Divide;
 
 // export default () => <Divide />;
         

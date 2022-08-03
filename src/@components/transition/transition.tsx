@@ -50,7 +50,7 @@ const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ 
       clearTimeout(timer);
       clearTimeout(clearClassesTimer);
     }
-  }, [visible, renderable]);
+  }, [visible, renderable, enterTime, leaveTime, name, clearTime]);
   if (!React.isValidElement(children) || !renderable) {
     return null;
   }

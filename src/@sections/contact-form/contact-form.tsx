@@ -10,7 +10,7 @@ type Props = {
 
 export type ContactFormProps = ComponentProps<Props, HTMLDivElement>;
 
-const ContactForm = (props: ContactFormProps) => {
+const ContactForm: React.FC<ContactFormProps> = (props: ContactFormProps) => {
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     console.log('ContactForm', e.target.value);
   }
@@ -51,7 +51,7 @@ const ContactForm = (props: ContactFormProps) => {
           <Grid md={6}>
             <Field>
               <Label>CustomSelect</Label>
-              <CustomSelect name='country' id='country' defaultValue='Italia' placeholder="select a value.." type="default">
+              <CustomSelect name='country' id='country' defaultValue='Italia' placeholder="select a value..">
                 <CustomSelect.Label>Country</CustomSelect.Label>
                 <CustomSelect.Option value="it">Italia</CustomSelect.Option>
                 <CustomSelect.Option value="ca">Canada</CustomSelect.Option>

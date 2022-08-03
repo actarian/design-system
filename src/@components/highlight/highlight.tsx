@@ -66,7 +66,7 @@ const Highlight: React.FC<HighlightProps> = ({
       top: `${rect.elementTop + (rect.height - height) / 2}px`,
       transition: isFirstVisible ? 'opacity' : 'opacity, width, left, top',
     }
-  }, [rect, hoverWidthRatio, hoverHeightRatio]);
+  }, [rect, hoverWidthRatio, hoverHeightRatio, isFirstVisible]);
 
   return (
     <StyledHighlight ref={ref} className={useClasses('highlight', { active: visible }, className)}

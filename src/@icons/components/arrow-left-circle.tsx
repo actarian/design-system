@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ArrowLeftCircle from '../icons/arrow-left-circle.svg';
+import ArrowLeftCircleSvg from '../icons/arrow-left-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ArrowLeftCircle {...props} ref={ref} />);
+const ArrowLeftCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ArrowLeftCircleSvg {...props} ref={ref} />);
 });
+
+ArrowLeftCircle.displayName = 'ArrowLeftCircle';
+
+export default ArrowLeftCircle;
 
 // export default () => <ArrowLeftCircle />;
         

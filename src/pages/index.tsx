@@ -1,7 +1,11 @@
-import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
+import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, MediaType, Page, Section, Text } from '@components';
 import { Label } from '@forms';
 import { ChevronDown, ShoppingCart } from '@icons';
 import { BlogMore, BlogProposition, CategoriesProposition, Colors, ContactForm, Footer, Header, Icons, ProductsProposition, Proposition, Split, SwiperHero, Typography } from '@sections';
+import { BlogMoreDefaults } from '@sections/blog-more/blog-more';
+import { CategoriesPropositionDefaults } from '@sections/categories-proposition/categories-proposition';
+import { ProductsPropositionDefaults } from '@sections/products-proposition/products-proposition';
+import { SplitDefaults } from '@sections/split/split';
 import Head from 'next/head';
 import { useMemo } from 'react';
 
@@ -20,7 +24,7 @@ export default function Homepage() {
       label: 'Do you want to know more?',
     },
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600',
     }
   }, {
@@ -32,7 +36,7 @@ export default function Homepage() {
       label: 'Do you want to know more?',
     },
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
     }
   }, {
@@ -44,7 +48,7 @@ export default function Homepage() {
       label: 'Do you want to know more?',
     },
     media: {
-      type: 'video',
+      type: MediaType.Video,
       src: 'https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
     }
   }], []);
@@ -65,13 +69,13 @@ export default function Homepage() {
 
           <BlogProposition />
 
-          <BlogMore />
+          <BlogMore items={BlogMoreDefaults.items} />
 
-          <CategoriesProposition />
+          <CategoriesProposition items={CategoriesPropositionDefaults.items} />
 
-          <ProductsProposition />
+          <ProductsProposition items={ProductsPropositionDefaults.items} />
 
-          <Split />
+          <Split item={SplitDefaults.item} />
 
           <Proposition />
 

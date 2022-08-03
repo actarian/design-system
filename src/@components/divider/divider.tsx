@@ -49,7 +49,7 @@ const DividerTitle = styled.span<DividerProps>`
   white-space: nowrap;
 `;
 
-const Divider = (props: DividerProps) => {
+const Divider: React.FC<DividerProps> = (props: DividerProps) => {
   return (
     <DividerContainer {...props}>
       {props.children && <DividerTitle {...props}>{props.children}</DividerTitle>}

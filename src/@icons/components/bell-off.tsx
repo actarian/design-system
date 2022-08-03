@@ -1,10 +1,14 @@
 
 import React from 'react';
-import BellOff from '../icons/bell-off.svg';
+import BellOffSvg from '../icons/bell-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<BellOff {...props} ref={ref} />);
+const BellOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BellOffSvg {...props} ref={ref} />);
 });
+
+BellOff.displayName = 'BellOff';
+
+export default BellOff;
 
 // export default () => <BellOff />;
         

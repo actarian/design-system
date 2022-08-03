@@ -1,10 +1,14 @@
 
 import React from 'react';
-import AlignCenter from '../icons/align-center.svg';
+import AlignCenterSvg from '../icons/align-center.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<AlignCenter {...props} ref={ref} />);
+const AlignCenter = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AlignCenterSvg {...props} ref={ref} />);
 });
+
+AlignCenter.displayName = 'AlignCenter';
+
+export default AlignCenter;
 
 // export default () => <AlignCenter />;
         

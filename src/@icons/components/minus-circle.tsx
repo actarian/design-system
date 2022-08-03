@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MinusCircle from '../icons/minus-circle.svg';
+import MinusCircleSvg from '../icons/minus-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MinusCircle {...props} ref={ref} />);
+const MinusCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MinusCircleSvg {...props} ref={ref} />);
 });
+
+MinusCircle.displayName = 'MinusCircle';
+
+export default MinusCircle;
 
 // export default () => <MinusCircle />;
         

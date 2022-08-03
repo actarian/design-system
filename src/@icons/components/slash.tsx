@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Slash from '../icons/slash.svg';
+import SlashSvg from '../icons/slash.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Slash {...props} ref={ref} />);
+const Slash = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SlashSvg {...props} ref={ref} />);
 });
+
+Slash.displayName = 'Slash';
+
+export default Slash;
 
 // export default () => <Slash />;
         

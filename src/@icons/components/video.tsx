@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Video from '../icons/video.svg';
+import VideoSvg from '../icons/video.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Video {...props} ref={ref} />);
+const Video = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<VideoSvg {...props} ref={ref} />);
 });
+
+Video.displayName = 'Video';
+
+export default Video;
 
 // export default () => <Video />;
         

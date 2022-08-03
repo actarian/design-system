@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ArrowDownLeft from '../icons/arrow-down-left.svg';
+import ArrowDownLeftSvg from '../icons/arrow-down-left.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ArrowDownLeft {...props} ref={ref} />);
+const ArrowDownLeft = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ArrowDownLeftSvg {...props} ref={ref} />);
 });
+
+ArrowDownLeft.displayName = 'ArrowDownLeft';
+
+export default ArrowDownLeft;
 
 // export default () => <ArrowDownLeft />;
         

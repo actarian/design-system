@@ -90,7 +90,7 @@ const StyledBackdrop = styled.div`
 const Backdrop: React.FC<React.PropsWithChildren<BackdropProps | any>> = React.memo(
   ({ children, onClick, visible, width, onContentClick, backdropClassName, positionClassName, layerClassName, ...props }: React.PropsWithChildren<BackdropProps> & typeof defaultProps) => { // !!! any
 
-    const [_, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false);
+    const [, setIsContentMouseDown, IsContentMouseDownRef] = useCurrentState(false);
 
     const clickHandler = (event: MouseEvent<HTMLElement>) => {
       if (IsContentMouseDownRef.current) {

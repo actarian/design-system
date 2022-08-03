@@ -45,7 +45,7 @@ const SwiperButtonNext = styled(SwiperButton)`
   right: var(--grid-column-gap);
 `;
 
-export const SwiperNext = () => {
+export const SwiperNext: React.FC<{}> = () => {
   const swiper = useSwiper();
   return (
     <SwiperButtonNext onClick={() => swiper.slideNext()}>
@@ -59,7 +59,7 @@ const SwiperButtonPrev = styled(SwiperButton)`
   left: var(--grid-column-gap);
 `;
 
-export const SwiperPrev = () => {
+export const SwiperPrev: React.FC<{}> = () => {
   const swiper = useSwiper();
   return (
     <SwiperButtonPrev onClick={() => swiper.slidePrev()}>

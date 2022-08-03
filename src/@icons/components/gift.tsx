@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Gift from '../icons/gift.svg';
+import GiftSvg from '../icons/gift.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Gift {...props} ref={ref} />);
+const Gift = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GiftSvg {...props} ref={ref} />);
 });
+
+Gift.displayName = 'Gift';
+
+export default Gift;
 
 // export default () => <Gift />;
         

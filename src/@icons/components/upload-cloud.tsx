@@ -1,10 +1,14 @@
 
 import React from 'react';
-import UploadCloud from '../icons/upload-cloud.svg';
+import UploadCloudSvg from '../icons/upload-cloud.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<UploadCloud {...props} ref={ref} />);
+const UploadCloud = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<UploadCloudSvg {...props} ref={ref} />);
 });
+
+UploadCloud.displayName = 'UploadCloud';
+
+export default UploadCloud;
 
 // export default () => <UploadCloud />;
         

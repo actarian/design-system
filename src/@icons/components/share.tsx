@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Share from '../icons/share.svg';
+import ShareSvg from '../icons/share.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Share {...props} ref={ref} />);
+const Share = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ShareSvg {...props} ref={ref} />);
 });
+
+Share.displayName = 'Share';
+
+export default Share;
 
 // export default () => <Share />;
         

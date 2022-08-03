@@ -1,10 +1,14 @@
 
 import React from 'react';
-import PlusCircle from '../icons/plus-circle.svg';
+import PlusCircleSvg from '../icons/plus-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<PlusCircle {...props} ref={ref} />);
+const PlusCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PlusCircleSvg {...props} ref={ref} />);
 });
+
+PlusCircle.displayName = 'PlusCircle';
+
+export default PlusCircle;
 
 // export default () => <PlusCircle />;
         

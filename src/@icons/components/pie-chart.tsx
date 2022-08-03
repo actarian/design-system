@@ -1,10 +1,14 @@
 
 import React from 'react';
-import PieChart from '../icons/pie-chart.svg';
+import PieChartSvg from '../icons/pie-chart.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<PieChart {...props} ref={ref} />);
+const PieChart = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PieChartSvg {...props} ref={ref} />);
 });
+
+PieChart.displayName = 'PieChart';
+
+export default PieChart;
 
 // export default () => <PieChart />;
         

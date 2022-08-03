@@ -1,10 +1,14 @@
 
 import React from 'react';
-import AlertCircle from '../icons/alert-circle.svg';
+import AlertCircleSvg from '../icons/alert-circle.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<AlertCircle {...props} ref={ref} />);
+const AlertCircle = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<AlertCircleSvg {...props} ref={ref} />);
 });
+
+AlertCircle.displayName = 'AlertCircle';
+
+export default AlertCircle;
 
 // export default () => <AlertCircle />;
         

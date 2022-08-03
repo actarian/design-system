@@ -6,7 +6,7 @@ export interface AuthRegisterSuccessProps {
   onNavToLogin?: () => void;
 }
 
-const AuthRegisterSuccess = ({ onNavToLogin }: AuthRegisterSuccessProps) => {
+const AuthRegisterSuccess: React.FC<AuthRegisterSuccessProps> = ({ onNavToLogin }: AuthRegisterSuccessProps) => {
   const onLogin = () => {
     if (typeof onNavToLogin === 'function') {
       onNavToLogin();

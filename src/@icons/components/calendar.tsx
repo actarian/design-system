@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Calendar from '../icons/calendar.svg';
+import CalendarSvg from '../icons/calendar.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Calendar {...props} ref={ref} />);
+const Calendar = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CalendarSvg {...props} ref={ref} />);
 });
+
+Calendar.displayName = 'Calendar';
+
+export default Calendar;
 
 // export default () => <Calendar />;
         

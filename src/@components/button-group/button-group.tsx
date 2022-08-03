@@ -99,4 +99,6 @@ const ButtonGroup = React.forwardRef<Element, ButtonGroupProps>(({ children, ...
   return (<StyledButtonGroup {...props} ref={ref}>{mappedChildren}</StyledButtonGroup>);
 });
 
+ButtonGroup.displayName = 'ButtonGroup';
+
 export default ButtonGroup;

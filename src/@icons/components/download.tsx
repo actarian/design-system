@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Download from '../icons/download.svg';
+import DownloadSvg from '../icons/download.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Download {...props} ref={ref} />);
+const Download = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<DownloadSvg {...props} ref={ref} />);
 });
+
+Download.displayName = 'Download';
+
+export default Download;
 
 // export default () => <Download />;
         

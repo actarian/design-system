@@ -1,5 +1,5 @@
 import { motion, MotionStyle, MotionValue, PanInfo } from 'framer-motion';
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 
 interface SlideProps {
   index: number;
@@ -14,7 +14,7 @@ const pageStyle: MotionStyle = {
   height: '100%',
 };
 
-export const Slide: FunctionComponent<SlideProps> = ({ index, renderSlide, x, onDragEnd }) => {
+export const Slide: React.FC<SlideProps> = ({ index, renderSlide, x, onDragEnd }) => {
   const child = React.useMemo(() => renderSlide({ index }), [index, renderSlide]);
   return (
     <motion.div

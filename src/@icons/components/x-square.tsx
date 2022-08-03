@@ -1,10 +1,14 @@
 
 import React from 'react';
-import XSquare from '../icons/x-square.svg';
+import XSquareSvg from '../icons/x-square.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<XSquare {...props} ref={ref} />);
+const XSquare = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<XSquareSvg {...props} ref={ref} />);
 });
+
+XSquare.displayName = 'XSquare';
+
+export default XSquare;
 
 // export default () => <XSquare />;
         

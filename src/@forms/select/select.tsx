@@ -5,7 +5,7 @@ import { ComponentPropsWithRef, forwardRef, SVGProps } from 'react';
 import styled from 'styled-components';
 
 interface Props extends ComponentPropsWithRef<'select'> {
-};
+}
 
 export type SelectProps = ComponentCssResponsiveProps<Props, HTMLSelectElement>;
 
@@ -83,6 +83,8 @@ const Select = forwardRef<HTMLSelectElement, SelectProps>(({
     </StyledSelect>
   );
 });
+
+Select.displayName = 'Select';
 
 export default Select;
 

@@ -6,7 +6,7 @@ export enum GoogleMapLoaderStatus {
   Loading = 'loading',
   Success = 'success',
   Error = 'error',
-};
+}
 
 export interface GoogleMapLoaderProps extends LoaderOptions {
   skeleton?: (status: GoogleMapLoaderStatus) => ReactElement;

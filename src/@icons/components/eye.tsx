@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Eye from '../icons/eye.svg';
+import EyeSvg from '../icons/eye.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Eye {...props} ref={ref} />);
+const Eye = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<EyeSvg {...props} ref={ref} />);
 });
+
+Eye.displayName = 'Eye';
+
+export default Eye;
 
 // export default () => <Eye />;
         

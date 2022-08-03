@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ThumbsDown from '../icons/thumbs-down.svg';
+import ThumbsDownSvg from '../icons/thumbs-down.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ThumbsDown {...props} ref={ref} />);
+const ThumbsDown = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ThumbsDownSvg {...props} ref={ref} />);
 });
+
+ThumbsDown.displayName = 'ThumbsDown';
+
+export default ThumbsDown;
 
 // export default () => <ThumbsDown />;
         

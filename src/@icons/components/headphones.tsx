@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Headphones from '../icons/headphones.svg';
+import HeadphonesSvg from '../icons/headphones.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Headphones {...props} ref={ref} />);
+const Headphones = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<HeadphonesSvg {...props} ref={ref} />);
 });
+
+Headphones.displayName = 'Headphones';
+
+export default Headphones;
 
 // export default () => <Headphones />;
         

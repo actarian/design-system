@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MoreHorizontal from '../icons/more-horizontal.svg';
+import MoreHorizontalSvg from '../icons/more-horizontal.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MoreHorizontal {...props} ref={ref} />);
+const MoreHorizontal = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MoreHorizontalSvg {...props} ref={ref} />);
 });
+
+MoreHorizontal.displayName = 'MoreHorizontal';
+
+export default MoreHorizontal;
 
 // export default () => <MoreHorizontal />;
         

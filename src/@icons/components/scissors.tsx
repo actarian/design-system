@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Scissors from '../icons/scissors.svg';
+import ScissorsSvg from '../icons/scissors.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Scissors {...props} ref={ref} />);
+const Scissors = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ScissorsSvg {...props} ref={ref} />);
 });
+
+Scissors.displayName = 'Scissors';
+
+export default Scissors;
 
 // export default () => <Scissors />;
         

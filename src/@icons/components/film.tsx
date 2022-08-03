@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Film from '../icons/film.svg';
+import FilmSvg from '../icons/film.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Film {...props} ref={ref} />);
+const Film = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<FilmSvg {...props} ref={ref} />);
 });
+
+Film.displayName = 'Film';
+
+export default Film;
 
 // export default () => <Film />;
         

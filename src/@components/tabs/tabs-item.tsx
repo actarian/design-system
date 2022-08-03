@@ -109,43 +109,36 @@ const TabsItem: React.FC<React.PropsWithChildren<TabsItemProps>> = ({
 
   const isActive = useMemo(() => currentValue === value, [currentValue, value]);
 
-  const TabsInternalCell: React.FC<TabsInternalCellProps> = ({
-    onClick,
-    onMouseOver,
-    activeClassName,
-    activeStyle,
-    hideBorder,
-  }) => {
-    const ref = useRef<HTMLDivElement | null>(null);
-
-    const { currentValue } = useTabsContext();
-
-    const active = currentValue === value;
-
-    const classes = useClasses('tab', { active, disabled, [activeClassName!]: active, 'hide-border': hideBorder });
-
-    const clickHandler = () => {
-      if (disabled) {
-        return;
-      }
-      onClick && onClick(value);
-    };
-
-    return (
-      <StyledInternalCell ref={ref} key={value}
-        label={label}
-        className={classes} style={active ? activeStyle : {}} role="button" data-geist="tab-item"
-        onMouseOver={onMouseOver} onClick={clickHandler}>
-        {label}
-      </StyledInternalCell>
-    )
-  }
-
-  TabsInternalCell.displayName = 'TabsInternalCell';
-
   useEffect(() => {
+    const TabsInternalCell: React.FC<TabsInternalCellProps> = ({
+      onClick,
+      onMouseOver,
+      activeClassName,
+      activeStyle,
+      hideBorder,
+    }) => {
+      const ref = useRef<HTMLDivElement | null>(null);
+      const { currentValue } = useTabsContext();
+      const active = currentValue === value;
+      const classes = useClasses('tab', { active, disabled, [activeClassName!]: active, 'hide-border': hideBorder });
+      const clickHandler = () => {
+        if (disabled) {
+          return;
+        }
+        onClick && onClick(value);
+      };
+      return (
+        <StyledInternalCell ref={ref} key={value}
+          label={label}
+          className={classes} style={active ? activeStyle : {}} role="button" data-geist="tab-item"
+          onMouseOver={onMouseOver} onClick={clickHandler}>
+          {label}
+        </StyledInternalCell>
+      )
+    }
+    TabsInternalCell.displayName = 'TabsInternalCell';
     register && register({ value, cell: TabsInternalCell });
-  }, [value, label, disabled]);
+  }, [value, label, disabled, register]);
 
   /* eslint-disable react/jsx-no-useless-fragment */
   return isActive ? <>{children}</> : null;

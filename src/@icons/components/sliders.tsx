@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Sliders from '../icons/sliders.svg';
+import SlidersSvg from '../icons/sliders.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Sliders {...props} ref={ref} />);
+const Sliders = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SlidersSvg {...props} ref={ref} />);
 });
+
+Sliders.displayName = 'Sliders';
+
+export default Sliders;
 
 // export default () => <Sliders />;
         

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import { useClasses } from '@hooks';

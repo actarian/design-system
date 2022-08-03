@@ -1,16 +1,16 @@
-import { Card, Container, Flex, Grid, Media, Section } from '@components';
+import { Card, Container, Flex, Grid, Media, MediaType, Section } from '@components';
 import { ComponentCssResponsiveProps } from '@components/types';
 
 type Props = {
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   }[]
 }
 
 export type ProductOverviewProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const ProductOverviewGallery = ({ media, ...props }: ProductOverviewProps) => {
+const ProductOverviewGallery: React.FC<ProductOverviewProps> = ({ media, ...props }: ProductOverviewProps) => {
   return (
     <Section {...props}>
       <Container>
@@ -57,20 +57,22 @@ const ProductOverviewGallery = ({ media, ...props }: ProductOverviewProps) => {
   )
 }
 
-ProductOverviewGallery.defaultProps = {
+export const ProductOverviewGalleryDefaults = {
   media: [{
-    type: 'image',
+    type: MediaType.Image,
     src: '/product-04.jpg',
   }, {
-    type: 'image',
+    type: MediaType.Image,
     src: '/product-01.jpg',
   }, {
-    type: 'image',
+    type: MediaType.Image,
     src: '/product-02.jpg',
   }, {
-    type: 'image',
+    type: MediaType.Image,
     src: '/product-03.jpg',
   }]
 };
+
+ProductOverviewGallery.defaultProps = ProductOverviewGalleryDefaults;
 
 export default ProductOverviewGallery;

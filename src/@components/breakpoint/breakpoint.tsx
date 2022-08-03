@@ -24,7 +24,7 @@ const StyledBreakpoint = styled.div<BreakpointProps>`
   ${props => getCssResponsive(props)}
 `;
 
-const Breakpoint = ((props: BreakpointProps) => {
+const Breakpoint: React.FC<BreakpointProps> = ((props: BreakpointProps) => {
   const breakpoint = useBreakpoint();
   return breakpoint.max > 0 ? (
     <StyledBreakpoint as='div' {...props}>{breakpoint.key} ({breakpoint.min}/{breakpoint.max < 50000 ? breakpoint.max : '∞'})</StyledBreakpoint>

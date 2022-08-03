@@ -1,10 +1,14 @@
 
 import React from 'react';
-import CreditCard from '../icons/credit-card.svg';
+import CreditCardSvg from '../icons/credit-card.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<CreditCard {...props} ref={ref} />);
+const CreditCard = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<CreditCardSvg {...props} ref={ref} />);
 });
+
+CreditCard.displayName = 'CreditCard';
+
+export default CreditCard;
 
 // export default () => <CreditCard />;
         

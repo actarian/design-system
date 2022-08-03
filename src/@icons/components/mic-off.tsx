@@ -1,10 +1,14 @@
 
 import React from 'react';
-import MicOff from '../icons/mic-off.svg';
+import MicOffSvg from '../icons/mic-off.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<MicOff {...props} ref={ref} />);
+const MicOff = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<MicOffSvg {...props} ref={ref} />);
 });
+
+MicOff.displayName = 'MicOff';
+
+export default MicOff;
 
 // export default () => <MicOff />;
         

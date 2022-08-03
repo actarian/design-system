@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Layers from '../icons/layers.svg';
+import LayersSvg from '../icons/layers.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Layers {...props} ref={ref} />);
+const Layers = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LayersSvg {...props} ref={ref} />);
 });
+
+Layers.displayName = 'Layers';
+
+export default Layers;
 
 // export default () => <Layers />;
         

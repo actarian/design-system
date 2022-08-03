@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ChevronRight from '../icons/chevron-right.svg';
+import ChevronRightSvg from '../icons/chevron-right.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ChevronRight {...props} ref={ref} />);
+const ChevronRight = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ChevronRightSvg {...props} ref={ref} />);
 });
+
+ChevronRight.displayName = 'ChevronRight';
+
+export default ChevronRight;
 
 // export default () => <ChevronRight />;
         

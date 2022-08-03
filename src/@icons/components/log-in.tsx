@@ -1,10 +1,14 @@
 
 import React from 'react';
-import LogIn from '../icons/log-in.svg';
+import LogInSvg from '../icons/log-in.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<LogIn {...props} ref={ref} />);
+const LogIn = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LogInSvg {...props} ref={ref} />);
 });
+
+LogIn.displayName = 'LogIn';
+
+export default LogIn;
 
 // export default () => <LogIn />;
         

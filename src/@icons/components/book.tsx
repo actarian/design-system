@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Book from '../icons/book.svg';
+import BookSvg from '../icons/book.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Book {...props} ref={ref} />);
+const Book = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BookSvg {...props} ref={ref} />);
 });
+
+Book.displayName = 'Book';
+
+export default Book;
 
 // export default () => <Book />;
         

@@ -15,7 +15,7 @@ type Props = {
 
 export type CategoryHeroProps = ComponentCssResponsiveProps<Props, HTMLDivElement>;
 
-const CategoryHero = ({ ...props }: CategoryHeroProps) => {
+const CategoryHero: React.FC<CategoryHeroProps> = ({ ...props }: CategoryHeroProps) => {
   const scrollTo = useScrollTo();
   return (
     <Section overflow="hidden" {...props}>
@@ -27,7 +27,7 @@ const CategoryHero = ({ ...props }: CategoryHeroProps) => {
               <Breadcrumb.Item>New Arrivals</Breadcrumb.Item>
             </Breadcrumb>
             <Text size="2" fontWeight="700" marginBottom="1rem">Summer styles are finally here</Text>
-            <Text size="7" marginBottom="2rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn't care if you live or die.</Text>
+            <Text size="7" marginBottom="2rem">This year, our new summer collection will shelter you from the harsh elements of a world that doesn&apos;t care if you live or die.</Text>
             <NavLink href="#serp" passHref>
               <Button variant="primary" onClick={scrollTo}>Shop Collection</Button>
             </NavLink>

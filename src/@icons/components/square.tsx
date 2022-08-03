@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Square from '../icons/square.svg';
+import SquareSvg from '../icons/square.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Square {...props} ref={ref} />);
+const Square = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SquareSvg {...props} ref={ref} />);
 });
+
+Square.displayName = 'Square';
+
+export default Square;
 
 // export default () => <Square />;
         

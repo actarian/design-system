@@ -8,7 +8,7 @@ type Props = {
 
 export type BlogPropositionProps = ComponentProps<Props, HTMLDivElement>;
 
-const BlogProposition = (props: BlogPropositionProps) => {
+const BlogProposition: React.FC<BlogPropositionProps> = (props: BlogPropositionProps) => {
   return (
     <Section padding="3rem 0">
       <Container>

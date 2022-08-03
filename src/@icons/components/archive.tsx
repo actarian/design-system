@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Archive from '../icons/archive.svg';
+import ArchiveSvg from '../icons/archive.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Archive {...props} ref={ref} />);
+const Archive = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ArchiveSvg {...props} ref={ref} />);
 });
+
+Archive.displayName = 'Archive';
+
+export default Archive;
 
 // export default () => <Archive />;
         

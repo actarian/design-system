@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Websolute from '../icons/websolute.svg';
+import WebsoluteSvg from '../icons/websolute.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Websolute {...props} ref={ref} />);
+const Websolute = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<WebsoluteSvg {...props} ref={ref} />);
 });
+
+Websolute.displayName = 'Websolute';
+
+export default Websolute;
 
 // export default () => <Websolute />;
         

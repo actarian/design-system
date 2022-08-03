@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { RadioIcon } from './radio-icon';
 
 interface Props extends ComponentPropsWithRef<'input'> {
-};
+}
 
 export type RadioProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -60,5 +60,7 @@ const Radio = forwardRef<HTMLInputElement, RadioProps>(({ className, ...props },
     </StyledRadio>
   );
 });
+
+Radio.displayName = 'Radio';
 
 export default Radio;

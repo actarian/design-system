@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Trello from '../icons/trello.svg';
+import TrelloSvg from '../icons/trello.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Trello {...props} ref={ref} />);
+const Trello = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<TrelloSvg {...props} ref={ref} />);
 });
+
+Trello.displayName = 'Trello';
+
+export default Trello;
 
 // export default () => <Trello />;
         

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 interface Props extends ComponentPropsWithRef<'input'> {
   children?: ReactNode;
-};
+}
 
 export type InputGroupProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -55,7 +55,8 @@ const StyledInputGroup = styled.div<InputGroupProps>`
 const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
   children,
   className,
-  ...props }, ref) => {
+  ...props
+}, ref) => {
   const classNames = useClasses('input-group', className);
   return (
     <StyledInputGroup className={classNames} as="div" {...props}>
@@ -63,6 +64,8 @@ const InputGroup = forwardRef<HTMLInputElement, InputGroupProps>(({
     </StyledInputGroup>
   );
 });
+
+InputGroup.displayName = 'InputGroup';
 
 (InputGroup as IInputGroup).Input = Input;
 

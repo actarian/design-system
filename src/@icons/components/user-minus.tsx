@@ -1,10 +1,14 @@
 
 import React from 'react';
-import UserMinus from '../icons/user-minus.svg';
+import UserMinusSvg from '../icons/user-minus.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<UserMinus {...props} ref={ref} />);
+const UserMinus = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<UserMinusSvg {...props} ref={ref} />);
 });
+
+UserMinus.displayName = 'UserMinus';
+
+export default UserMinus;
 
 // export default () => <UserMinus />;
         

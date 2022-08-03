@@ -1,14 +1,14 @@
-import { Container, Grid, Section } from '@components';
+import { Container, Grid, MediaType, Section } from '@components';
 import { ComponentProps } from '@components/types';
-import ProductsPropositionCard, { ProductItem } from './products-proposition-card';
+import ProductsPropositionCard, { ProductsPropositionItem } from './products-proposition-card';
 
 type Props = {
-  items: ProductItem[],
+  items: ProductsPropositionItem[],
 }
 
 export type ProductsPropositionProps = ComponentProps<Props, HTMLDivElement>;
 
-const ProductsProposition = ({ items }: ProductsPropositionProps) => {
+const ProductsProposition: React.FC<ProductsPropositionProps> = ({ items }: ProductsPropositionProps) => {
   return (
     <Section padding="3rem 0">
       <Container>
@@ -24,7 +24,7 @@ const ProductsProposition = ({ items }: ProductsPropositionProps) => {
   )
 }
 
-ProductsProposition.defaultProps = {
+export const ProductsPropositionDefaults = {
   items: [{
     id: 1,
     href: '/product',
@@ -32,7 +32,7 @@ ProductsProposition.defaultProps = {
     abstract: '3 sizes available',
     price: 13,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/q10VITrVYUM/download?force=true&h=960',
     },
   }, {
@@ -42,7 +42,7 @@ ProductsProposition.defaultProps = {
     abstract: 'Walnut',
     price: 64,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/-lN0HnySy7w/download?force=true&h=960',
     },
   }, {
@@ -52,7 +52,7 @@ ProductsProposition.defaultProps = {
     abstract: 'Heather Gray',
     price: 32,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/xcGSvYOLcwE/download?force=true&h=960',
     },
   }, {
@@ -62,7 +62,7 @@ ProductsProposition.defaultProps = {
     abstract: '3 refill packs',
     price: 39,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/5u2qJ1YW91w/download?force=true&h=960',
     }
   }, {
@@ -72,7 +72,7 @@ ProductsProposition.defaultProps = {
     abstract: 'Black and brass',
     price: 35,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/fxg4TT2T2xM/download?force=true&h=960',
     },
   }, {
@@ -82,10 +82,12 @@ ProductsProposition.defaultProps = {
     abstract: 'Includes brass stand',
     price: 50,
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://unsplash.com/photos/-CtAY9dnZb8/download?force=true&h=960',
     },
   }]
 };
+
+ProductsProposition.defaultProps = ProductsPropositionDefaults;
 
 export default ProductsProposition;

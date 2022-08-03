@@ -1,10 +1,14 @@
 
 import React from 'react';
-import XOctagon from '../icons/x-octagon.svg';
+import XOctagonSvg from '../icons/x-octagon.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<XOctagon {...props} ref={ref} />);
+const XOctagon = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<XOctagonSvg {...props} ref={ref} />);
 });
+
+XOctagon.displayName = 'XOctagon';
+
+export default XOctagon;
 
 // export default () => <XOctagon />;
         

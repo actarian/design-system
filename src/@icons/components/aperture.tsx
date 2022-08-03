@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Aperture from '../icons/aperture.svg';
+import ApertureSvg from '../icons/aperture.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Aperture {...props} ref={ref} />);
+const Aperture = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ApertureSvg {...props} ref={ref} />);
 });
+
+Aperture.displayName = 'Aperture';
+
+export default Aperture;
 
 // export default () => <Aperture />;
         

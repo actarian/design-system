@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Italic from '../icons/italic.svg';
+import ItalicSvg from '../icons/italic.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Italic {...props} ref={ref} />);
+const Italic = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ItalicSvg {...props} ref={ref} />);
 });
+
+Italic.displayName = 'Italic';
+
+export default Italic;
 
 // export default () => <Italic />;
         

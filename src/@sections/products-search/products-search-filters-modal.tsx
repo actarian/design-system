@@ -8,7 +8,7 @@ export interface ProductsSearchFiltersModalProps {
   onClose: () => void;
 }
 
-const ProductsSearchFiltersModal = ({ visible, onClose }: ProductsSearchFiltersModalProps) => {
+const ProductsSearchFiltersModal: React.FC<ProductsSearchFiltersModalProps> = ({ visible, onClose }: ProductsSearchFiltersModalProps) => {
   return (
     <Drawer visible={visible} onClose={onClose} placement="right">
       <Drawer.Title>

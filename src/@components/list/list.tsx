@@ -19,4 +19,6 @@ const List = forwardRef<HTMLDivElement, ListProps>((props, ref) => (
   <StyledList ref={ref} as='div' {...props} />
 ));
 
+List.displayName = 'List';
+
 export default List;

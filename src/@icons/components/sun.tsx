@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Sun from '../icons/sun.svg';
+import SunSvg from '../icons/sun.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Sun {...props} ref={ref} />);
+const Sun = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SunSvg {...props} ref={ref} />);
 });
+
+Sun.displayName = 'Sun';
+
+export default Sun;
 
 // export default () => <Sun />;
         

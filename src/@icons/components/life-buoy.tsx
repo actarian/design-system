@@ -1,10 +1,14 @@
 
 import React from 'react';
-import LifeBuoy from '../icons/life-buoy.svg';
+import LifeBuoySvg from '../icons/life-buoy.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<LifeBuoy {...props} ref={ref} />);
+const LifeBuoy = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LifeBuoySvg {...props} ref={ref} />);
 });
+
+LifeBuoy.displayName = 'LifeBuoy';
+
+export default LifeBuoy;
 
 // export default () => <LifeBuoy />;
         

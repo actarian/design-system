@@ -2,7 +2,6 @@ import { Box, ComponentCssResponsiveProps } from '@components';
 import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
-import { useDeepCompareEffectForMaps } from './google-map-hooks';
 import { GoogleMapStyle } from './google-map.style';
 
 export interface Props extends google.maps.MapOptions {
@@ -59,15 +58,17 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
         onLoad(map_);
       }
     }
-  }, [innerRef, map]);
+  }, [innerRef, map, onLoad, options]);
 
   // because React does not do deep comparisons, a custom hook is used
   // see discussion in https://github.com/googlemaps/js-samples/issues/946
+  /*
   useDeepCompareEffectForMaps(() => {
     if (map) {
       map.setOptions(options);
     }
   }, [map, options]);
+  */
 
   useEffect(() => {
     if (map) {
@@ -96,7 +97,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
       }
       */
     }
-  }, [map, onLoad, onIdle, onClick]);
+  }, [map, onLoad, onIdle, onClick, onBounds]);
 
   return (
     <GoogleMapContext.Provider value={contextValue}>
@@ -112,5 +113,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
     </GoogleMapContext.Provider>
   );
 });
+
+GoogleMap.displayName = 'GoogleMap';
 
 export default GoogleMap;

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 import { CheckboxIcon } from './checkbox-icon';
 
 interface Props extends ComponentPropsWithRef<'input'> {
-};
+}
 
 export type CheckboxProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
@@ -52,7 +52,7 @@ const StyledCheckbox = styled.div<CheckboxProps>`
   ${props => getCssResponsive(props)}
 `
 
-const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => {
+const Checkbox: React.FC<CheckboxProps> = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...props }, ref) => {
   const classNames = useClasses('checkbox', className);
   return (
     <StyledCheckbox className={classNames}>
@@ -61,5 +61,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(({ className, ...pr
     </StyledCheckbox>
   );
 });
+
+Checkbox.displayName = 'Checkbox';
 
 export default Checkbox;

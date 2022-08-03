@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Navigation2 from '../icons/navigation-2.svg';
+import Navigation2Svg from '../icons/navigation-2.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Navigation2 {...props} ref={ref} />);
+const Navigation2 = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<Navigation2Svg {...props} ref={ref} />);
 });
+
+Navigation2.displayName = 'Navigation2';
+
+export default Navigation2;
 
 // export default () => <Navigation2 />;
         

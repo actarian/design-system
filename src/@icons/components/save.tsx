@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Save from '../icons/save.svg';
+import SaveSvg from '../icons/save.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Save {...props} ref={ref} />);
+const Save = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<SaveSvg {...props} ref={ref} />);
 });
+
+Save.displayName = 'Save';
+
+export default Save;
 
 // export default () => <Save />;
         

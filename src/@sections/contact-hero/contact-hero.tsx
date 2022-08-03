@@ -1,4 +1,4 @@
-import { Button, Card, Container, Flex, Grid, NavLink, Section, Text, Tooltip } from '@components';
+import { Button, Card, Container, Flex, Grid, MediaType, NavLink, Section, Text, Tooltip } from '@components';
 import { ComponentProps } from '@components/types';
 import { useScrollTo } from '@hooks';
 import { Search, Send } from '@icons';
@@ -13,14 +13,14 @@ export type ContactHeroItem = {
   href: string;
   title: string;
   media: {
-    type: 'image' | 'video';
+    type: MediaType;
     src: string;
   };
 }
 
 export type ContactHeroProps = ComponentProps<Props, HTMLDivElement>;
 
-const ContactHero = ({ item }: ContactHeroProps) => {
+const ContactHero: React.FC<ContactHeroProps> = ({ item }: ContactHeroProps) => {
   const scrollTo = useScrollTo();
   return (
     <Section>
@@ -57,16 +57,18 @@ const ContactHero = ({ item }: ContactHeroProps) => {
   )
 }
 
-ContactHero.defaultProps = {
+export const ContactHeroDefaults = {
   item: {
     id: 1,
     href: '#new-arrivals',
     title: 'New Arrivals',
     media: {
-      type: 'image',
+      type: MediaType.Image,
       src: 'https://picsum.photos/960/960?u=31',
     },
   }
 };
+
+ContactHero.defaultProps = ContactHeroDefaults;
 
 export default ContactHero;

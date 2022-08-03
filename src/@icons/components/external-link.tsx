@@ -1,10 +1,14 @@
 
 import React from 'react';
-import ExternalLink from '../icons/external-link.svg';
+import ExternalLinkSvg from '../icons/external-link.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<ExternalLink {...props} ref={ref} />);
+const ExternalLink = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<ExternalLinkSvg {...props} ref={ref} />);
 });
+
+ExternalLink.displayName = 'ExternalLink';
+
+export default ExternalLink;
 
 // export default () => <ExternalLink />;
         

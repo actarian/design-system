@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Power from '../icons/power.svg';
+import PowerSvg from '../icons/power.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Power {...props} ref={ref} />);
+const Power = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PowerSvg {...props} ref={ref} />);
 });
+
+Power.displayName = 'Power';
+
+export default Power;
 
 // export default () => <Power />;
         

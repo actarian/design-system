@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Linkedin from '../icons/linkedin.svg';
+import LinkedinSvg from '../icons/linkedin.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Linkedin {...props} ref={ref} />);
+const Linkedin = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<LinkedinSvg {...props} ref={ref} />);
 });
+
+Linkedin.displayName = 'Linkedin';
+
+export default Linkedin;
 
 // export default () => <Linkedin />;
         

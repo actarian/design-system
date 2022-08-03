@@ -1,10 +1,14 @@
 
 import React from 'react';
-import BatteryCharging from '../icons/battery-charging.svg';
+import BatteryChargingSvg from '../icons/battery-charging.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<BatteryCharging {...props} ref={ref} />);
+const BatteryCharging = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<BatteryChargingSvg {...props} ref={ref} />);
 });
+
+BatteryCharging.displayName = 'BatteryCharging';
+
+export default BatteryCharging;
 
 // export default () => <BatteryCharging />;
         

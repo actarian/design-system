@@ -1,10 +1,14 @@
 
 import React from 'react';
-import GitMerge from '../icons/git-merge.svg';
+import GitMergeSvg from '../icons/git-merge.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<GitMerge {...props} ref={ref} />);
+const GitMerge = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<GitMergeSvg {...props} ref={ref} />);
 });
+
+GitMerge.displayName = 'GitMerge';
+
+export default GitMerge;
 
 // export default () => <GitMerge />;
         

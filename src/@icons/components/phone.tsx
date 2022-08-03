@@ -1,10 +1,14 @@
 
 import React from 'react';
-import Phone from '../icons/phone.svg';
+import PhoneSvg from '../icons/phone.svg';
 
-export default React.forwardRef<SVGSVGElement, any>((props, ref) => {
-  return (<Phone {...props} ref={ref} />);
+const Phone = React.forwardRef<SVGSVGElement, any>((props, ref) => {
+  return (<PhoneSvg {...props} ref={ref} />);
 });
+
+Phone.displayName = 'Phone';
+
+export default Phone;
 
 // export default () => <Phone />;
         
