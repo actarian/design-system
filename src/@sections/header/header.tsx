@@ -55,8 +55,8 @@ export type HeaderProps = ComponentProps<Props, HTMLDivElement>;
 
 const SubMenu = () => (
   <Nav.Col>
-    <NavLink href="/store-locator">
-      <Button variant="nav" as="a">Store locator</Button>
+    <NavLink href="#link-1">
+      <Button variant="nav" as="a">Link 1</Button>
     </NavLink>
     <NavLink href="#link-2">
       <Button variant="nav" as="a">Link 2</Button>
@@ -87,15 +87,15 @@ const Header = (props: HeaderProps) => {
                 <NavLink href="/products">
                   <Button variant="nav" as="a">Products</Button>
                 </NavLink>
-                <NavLink href="#magazine">
+                <Popover content={SubMenu}>
                   <Button variant="nav" as="a">Magazine</Button>
+                </Popover>
+                <NavLink href="/store-locator">
+                  <Button variant="nav" as="a">Stores</Button>
                 </NavLink>
                 <NavLink href="/contacts">
                   <Button variant="nav" as="a">Contacts</Button>
                 </NavLink>
-                <Popover content={SubMenu}>
-                  <Button variant="nav" as="a">More</Button>
-                </Popover>
               </Nav.Row>
             </Flex>
             <Flex gap="1rem">

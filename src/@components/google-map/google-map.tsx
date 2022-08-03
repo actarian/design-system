@@ -1,5 +1,5 @@
 import { Box, ComponentCssResponsiveProps } from '@components';
-import React, { forwardRef, ReactNode, useImperativeHandle, useMemo, useRef } from 'react';
+import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { useDeepCompareEffectForMaps } from './google-map-hooks';
@@ -44,14 +44,14 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
 
   useImperativeHandle(ref, () => innerRef.current as HTMLDivElement);
 
-  const [map, setMap] = React.useState<google.maps.Map>();
+  const [map, setMap] = useState<google.maps.Map>();
 
   const contextValue: IGoogleMapContext = useMemo(() => ({
     map,
     innerRef,
   }), [map, innerRef]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (innerRef.current && !map) {
       const map_ = new window.google.maps.Map(innerRef.current, options);
       setMap(map_);
@@ -69,7 +69,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
     }
   }, [map, options]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (map) {
       /*
       ['click', 'idle'].forEach((eventName) =>

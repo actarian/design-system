@@ -1,6 +1,6 @@
 import { Layout, Page } from '@components';
 import { IFeatureType } from '@hooks/useFilters/filter';
-import { Footer, Header, Split, StoreLocatoHead, StoreLocatoMap } from '@sections';
+import { Footer, Header, Split, StoreLocatorSearch } from '@sections';
 import { StoreLocatorItem } from '@sections/store-locator/store-locator-map';
 import Head from 'next/head';
 import STORES from '../@sections/store-locator/store-locator-all.json';
@@ -20,9 +20,7 @@ export default function StoreLocator({ items, featureTypes }: { items: StoreLoca
 
           <Header sticky />
 
-          <StoreLocatoHead />
-
-          <StoreLocatoMap items={items} featureTypes={featureTypes} />
+          <StoreLocatorSearch items={items} featureTypes={featureTypes} />
 
           <Split />
 

@@ -1,6 +1,11 @@
 import React, { MouseEvent, useEffect, useState } from 'react';
 import { useGoogleMapContext } from './google-map-context';
 
+export type InfoWindow = {
+  position: google.maps.LatLng;
+  content: string;
+}
+
 export interface GoogleMapInfoWindowProps extends google.maps.InfoWindowOptions {
   map?: google.maps.Map;
   position?: google.maps.LatLng;

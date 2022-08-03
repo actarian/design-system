@@ -22,7 +22,7 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
   };
 
   useEffect(() => {
-    if (!marker) {
+    if (!marker && map) {
       const instance = new google.maps.Marker();
       instance.setMap(map || null);
       instance.addListener('click', onClick_)
@@ -35,13 +35,14 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
         marker.unbindAll()
       }
     };
-  }, [marker]);
+  }, [marker, map]);
 
   useEffect(() => {
     if (marker) {
       marker.setOptions(options);
     }
   }, [marker, options]);
+
   return null;
 };
 

@@ -1,25 +1,23 @@
 // import GoogleMap from '@components/google-map/google-map';
-import { Container, Flex, Grid, InfiniteLoader, Section, Skeleton } from '@components';
+import { Container, Flex, Grid, InfiniteLoader, Section, Text } from '@components';
 import GoogleMap from '@components/google-map/google-map';
-import GoogleMapInfoWindow from '@components/google-map/google-map-info-window';
-import { GoogleMapLoader, GoogleMapLoaderStatus } from '@components/google-map/google-map-loader';
+import GoogleMapInfoWindow, { InfoWindow } from '@components/google-map/google-map-info-window';
+import GoogleMapLoader, { GoogleMapLoaderStatus } from '@components/google-map/google-map-loader';
 import GoogleMapMarker from '@components/google-map/google-map-marker';
-import GoogleMapMarkerClusterer from '@components/google-map/google-map-markerclusterer';
+import GoogleMapMarkerClusterer from '@components/google-map/google-map-marker-clusterer';
+import GoogleMapSkeleton from '@components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
-import { InputGroup } from '@forms';
+import { ComponentProps } from '@components/types';
 import Autocomplete from '@forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '@forms/autocomplete/autocomplete-context';
 import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@hooks';
 import { IFeatureType } from '@hooks/useFilters/filter';
 import ContactCard from '@sections/contact-card/contact-card';
 import { useCallback, useMemo, useState } from 'react';
+import Dots from './store-locator-dots';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
-const USE_CLUSTERER = true;
-
-const MapSkeleton = (status: GoogleMapLoaderStatus) => (
-  <Skeleton height="Min(100vw, 600px)" loading={true}></Skeleton>
-);
+const USE_CLUSTERER = false;
 
 export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: any) {
   switch (key) {
@@ -36,7 +34,21 @@ export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, valu
   }
 }
 
-const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocatorItem[], featureTypes: IFeatureType[] }) => {
+type Props = {
+  item: StoreLocatorHeadItem;
+  items: StoreLocatorItem[];
+  featureTypes: IFeatureType[];
+}
+
+export type StoreLocatorHeadItem = {
+  category: string;
+  title: string;
+  abstract: string;
+}
+
+export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
+
+const StoreLocatorMap = ({ item, items = [], featureTypes = [] }: StoreLocatorHeadProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParams();
@@ -48,7 +60,7 @@ const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocato
   const filterParams = params && params.filter;
   const { filteredItems, filters, setFilter, itemsWithOmittedKeys } = useFilters<StoreLocatorItem>(items, featureTypes, filterItem, filterParams);
 
-  const [visibleItems, loadMore, hasMore] = useInfiniteLoader(filteredItems);
+  const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
 
   const [infoWindow, setInfoWindow] = useState<InfoWindow>();
 
@@ -64,8 +76,8 @@ const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocato
   const options = useMemo(() => ({
     zoom,
     center,
-    // scrollwheel: false,
     gestureHandling: 'cooperative',
+    // scrollwheel: false,
     // overviewMapControl: true,
     // scaleControl: false,
     zoomControl: true,
@@ -148,8 +160,9 @@ const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocato
     setInfoWindow(undefined);
   };
 
-  function onLoader(status: string) {
-    if (status === 'SUCCESS') {
+  function onStatus(status: string) {
+    console.log('StoreLocatorMap.onStatus', status);
+    if (status === GoogleMapLoaderStatus.Success) {
       // console.log(window.google.maps);
     }
   }
@@ -225,22 +238,24 @@ const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocato
 
   return (
     <>
-      <Section padding="0 0 2rem 0">
-        <Container>
+      <Section padding="2rem 0" position="relative" overflow="hidden">
+        <Dots />
+        <Container position="relative" textAlign="center">
+          <Text size="10" textTransform="uppercase">{item.category}</Text>
+          <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
+          <Text size="8" margin="0 auto 2rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
           <Flex.Row>
-            <InputGroup name="search" placeholder="search...">
-              <InputGroup.Input />
-            </InputGroup>
-            <Autocomplete name="search" placeholder="search..." source={autocompleteSource} onSelect={onSelect}></Autocomplete>
+            <Autocomplete background="var(--color-neutral-100)" name="search" placeholder="search..." source={autocompleteSource} onSelect={onSelect}></Autocomplete>
           </Flex.Row>
         </Container>
       </Section>
-      <GoogleMapLoader apiKey={API_KEY} render={MapSkeleton} callback={onLoader} libraries={['places']} language="it" region="it">
+      <GoogleMapLoader apiKey={API_KEY} language="it" region="it" libraries={['places']} skeleton={GoogleMapSkeleton} onStatus={onStatus}>
         <GoogleMap {...options} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
-          {!USE_CLUSTERER && items.map((item, i) => (
-            <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
-          ))}
-          {USE_CLUSTERER && <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} />}
+          {USE_CLUSTERER ?
+            <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
+            items.map((item, i) => (
+              <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
+            ))}
           <GoogleMapInfoWindow {...infoWindow} onClose={onInfoWindowClose} />
         </GoogleMap>
       </GoogleMapLoader>
@@ -249,16 +264,25 @@ const StoreLocatorMap = ({ items = [], featureTypes = [] }: { items: StoreLocato
           <Grid.Row columnGap="1rem" rowGap="1rem">
             {visibleItems.map((item, i) => (
               <Grid key={i} sm={6} md={4} lg={3}>
-                <ContactCard item={item} height="100%" onClick={() => onItemClick(item)} hoverable={true} />
+                <ContactCard item={item} height="100%" hoverable={true} onClick={() => onItemClick(item)} />
               </Grid>
             ))}
           </Grid.Row>
-          {hasMore && <InfiniteLoader onMore={loadMore}>more</InfiniteLoader>}
+          {hasMore && <InfiniteLoader onMore={onMore}>more</InfiniteLoader>}
         </Container>
       </Section>
     </>
   );
 }
+
+StoreLocatorMap.defaultProps = {
+  item: {
+    category: 'Stores',
+    title: 'Search for dealers',
+    abstract: `<p>Hexagon is present through a network of authorised points of sale and distributors.</p>
+    <p>We therefore advise consumers to purchase only from these points of sale, which will be able to guarantee the originality and quality of the products as well as excellent design, sales and after-sales service.</p>`,
+  }
+};
 
 export default StoreLocatorMap;
 
@@ -284,9 +308,4 @@ export interface StoreLocatorItem extends IGeoLocalized {
   rank: number,
   distance: number,
   related: any
-}
-
-export type InfoWindow = {
-  position: google.maps.LatLng;
-  content: string;
 }
