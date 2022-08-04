@@ -1,19 +1,20 @@
 import { ComponentCssResponsiveProps } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import { useClasses } from '@hooks';
-import { ComponentPropsWithRef, forwardRef, useState } from 'react';
+import { ComponentPropsWithRef, forwardRef, ReactNode, useState } from 'react';
 import styled from 'styled-components';
 
 interface Props extends ComponentPropsWithRef<'input'> {
+  before?: ReactNode;
+  after?: ReactNode;
 }
 
 export type InputProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;
 
-const StyledInput = styled.div<InputProps>`
-  display: block;
+const StyledInputContainer = styled.div<InputProps>`
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: var(--form-padding);
-  appearance: none;
   font-size: var(--form-font-size);
   line-height: var(--form-line-height);
   border: 2px solid;
@@ -33,16 +34,25 @@ const StyledInput = styled.div<InputProps>`
     border-color: var(--color-neutral-300);
   }
 
-  &:focus-visible {
+  &.focus {
     outline: 2px solid var(--color-primary-200);
     outline-offset: 2px;
 
-    &::placeholder {
+    input::placeholder {
       opacity: 0.5;
     }
   }
 
-  &::placeholder {
+  &.hidden {
+    display: none;
+  }
+
+  input {
+    flex-grow: 1;
+    appearance: none;
+  }
+
+  input::placeholder {
     color: inherit;
     opacity: 0.3;
   }
@@ -50,7 +60,23 @@ const StyledInput = styled.div<InputProps>`
   ${props => getCssResponsive(props)}
 `;
 
+const StyledInput = styled.div<InputProps>`
+  display: block;
+  appearance: none;
+  padding: var(--form-padding);
+  font-size: var(--form-font-size);
+  line-height: var(--form-line-height);
+  color: inherit;
+  background-color: transparent;
+  border: none;
+  outline: none;
+
+  ${props => getCssResponsive(props)}
+`;
+
 const Input = forwardRef<HTMLInputElement, InputProps>(({
+  before,
+  after,
   type = 'text',
   className,
   onFocus,
@@ -72,7 +98,11 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     setFocus(false);
   }
   return (
-    <StyledInput ref={ref} className={classNames} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
+    <StyledInputContainer className={classNames}>
+      {before}
+      <StyledInput ref={ref} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
+      {after}
+    </StyledInputContainer>
   );
 });
 

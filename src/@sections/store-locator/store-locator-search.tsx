@@ -5,6 +5,7 @@ import GoogleMapInfoWindow, { InfoWindow } from '@components/google-map/google-m
 import GoogleMapLoader, { GoogleMapLoaderStatus } from '@components/google-map/google-map-loader';
 import GoogleMapMarker from '@components/google-map/google-map-marker';
 import GoogleMapMarkerClusterer from '@components/google-map/google-map-marker-clusterer';
+import GoogleMapMarkerClustererPlus from '@components/google-map/google-map-marker-clusterer-plus';
 import GoogleMapSkeleton from '@components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
 import { ComponentProps } from '@components/types';
@@ -17,7 +18,8 @@ import { useCallback, useMemo, useState } from 'react';
 import Dots from './store-locator-dots';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
-const USE_CLUSTERER = false;
+const USE_CLUSTERER = true;
+const USE_CLUSTERER_PLUS = false;
 
 export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: any): boolean {
   switch (key) {
@@ -48,7 +50,11 @@ export type StoreLocatorHeadItem = {
 
 export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
 
-const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], featureTypes = [] }: StoreLocatorHeadProps) => {
+const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
+  item,
+  items = [],
+  featureTypes = []
+}: StoreLocatorHeadProps) => {
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParams();
@@ -98,18 +104,18 @@ const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], fe
     replaceParamsSilently({ filter: filterParams });
   }
 
-  const onLoad = (map: google.maps.Map) => {
+  const onLoad = useCallback((map: google.maps.Map) => {
     console.log('StoreLocatorMap.onLoad', map);
     setMap(map);
-  };
+  }, []);
 
-  const onIdle = (m: google.maps.Map) => {
+  const onIdle = useCallback((map: google.maps.Map) => {
     // console.log('onIdle');
-    setZoom(m.getZoom()!);
-    setCenter(m.getCenter()!.toJSON());
-  };
+    setZoom(map.getZoom() as number);
+    setCenter((map.getCenter() as google.maps.LatLng).toJSON());
+  }, []);
 
-  const onBounds = (bounds: google.maps.LatLngBounds | undefined) => {
+  const onBounds = useCallback((bounds: google.maps.LatLngBounds | undefined) => {
     // this.bounds = bounds;
     const filterBounds = filters.find(x => x.id === 'bounds');
     // console.log('StoreLocatorMap.onBounds', bounds, filterBounds);
@@ -118,17 +124,17 @@ const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], fe
         setFilter(filterBounds, [bounds]);
       }
     }
-  }
+  }, [filters, setFilter]);
 
   const onBoundsDebounced = useDebounce(onBounds);
 
-  const onMapClick = (event: google.maps.MapMouseEvent) => {
+  const onMapClick = useCallback((event: google.maps.MapMouseEvent) => {
     // console.log('StoreLocatorMap.onMapClick');
     // avoid directly mutating state
     // setMarkers([...markers, { position: event.latLng! }]);
-  };
+  }, []);
 
-  const onMarkerClick = (marker: IGeoLocalized) => {
+  const onMarkerClick = useCallback((marker: IGeoLocalized) => {
     // console.log('onMarkerClick', marker);
     const item = marker as StoreLocatorItem;
     const content = /* html */`
@@ -146,7 +152,7 @@ const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], fe
       position: new google.maps.LatLng(marker.position.lat, marker.position.lng),
       content,
     });
-  };
+  }, []);
 
   const onItemClick = (item: StoreLocatorItem) => {
     if (map) {
@@ -177,9 +183,6 @@ const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], fe
           const lat = center?.lat() || 0;
           const lng = center?.lng() || 0;
           calculateDistances(items, { lat, lng });
-          items.sort((a, b) => {
-            return a.distance - b.distance;
-          });
           minimumBounds = new google.maps.LatLngBounds();
           for (let i = 0; i < 2; i++) {
             const item = items[i];
@@ -239,7 +242,7 @@ const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], fe
   return (
     <>
       <Section padding="2rem 0" position="relative" overflow="hidden">
-        <Dots />
+        {false && <Dots />}
         <Container position="relative" textAlign="center">
           <Text size="10" textTransform="uppercase">{item.category}</Text>
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
@@ -251,8 +254,8 @@ const StoreLocatorMap: React.FC<StoreLocatorHeadProps> = ({ item, items = [], fe
       </Section>
       <GoogleMapLoader apiKey={API_KEY} language="it" region="it" libraries={['places']} skeleton={() => <GoogleMapSkeleton></GoogleMapSkeleton>} onStatus={onStatus}>
         <GoogleMap {...options} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
-          {USE_CLUSTERER ?
-            <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
+          {USE_CLUSTERER ? <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
+            USE_CLUSTERER_PLUS ? <GoogleMapMarkerClustererPlus items={items} onClick={onMarkerClick} /> :
             items.map((item, i) => (
               <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
             ))}
@@ -284,17 +287,17 @@ export const StoreLocatorMapDefaults = {
   }
 };
 
-StoreLocatorMap.defaultProps = StoreLocatorMapDefaults;
+StoreLocatorSearch.defaultProps = StoreLocatorMapDefaults;
 
-export default StoreLocatorMap;
+export default StoreLocatorSearch;
 
 export interface StoreLocatorItem extends IGeoLocalized {
   id: number;
   name: string;
   address: string;
-  zipCode: string;
-  city: string;
-  province: string;
+  zipCode?: string;
+  city?: string;
+  province?: string;
   country: {
     id: number;
     name: string
@@ -302,12 +305,12 @@ export interface StoreLocatorItem extends IGeoLocalized {
   phoneNumber?: string;
   faxNumber?: string;
   contactEmail?: string;
-  website: string;
+  website?: string;
   category: {
     id: number;
     name: string
   };
   rank: number;
-  distance: number;
-  related: any;
+  distance?: number;
+  related?: any;
 }

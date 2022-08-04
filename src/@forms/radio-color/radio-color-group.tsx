@@ -34,7 +34,7 @@ const RadioColorGroup = forwardRef<HTMLDivElement, RadioColorGroupProps>(({
       ...child.props,
       size: child.props.size || props.size,
       checked: child.props.value === value,
-      onChange_,
+      onChange: onChange_,
     } : null)
   ), [children, onChange_, props.size, value]);
 

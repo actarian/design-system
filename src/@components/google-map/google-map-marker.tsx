@@ -16,25 +16,27 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
   const [marker, setMarker] = useState<google.maps.Marker>();
 
   useEffect(() => {
+    let instance:google.maps.Marker;
     if (!marker && map) {
       const onClick_ = (event: MouseEvent<HTMLElement>) => {
         if (onClick) {
           onClick(event);
         }
       };
-      const instance = new google.maps.Marker();
-      instance.setMap(map || null);
+      instance = new google.maps.Marker();
+      instance.setMap(map);
       instance.addListener('click', onClick_)
       setMarker(instance);
+    } else if (marker && map) {
+      marker.setMap(map);
     }
-    // remove marker from map on unmount
     return () => {
-      if (marker) {
-        marker.setMap(null);
-        marker.unbindAll()
+      if (instance) {
+        instance.setMap(null);
+        instance.unbindAll()
       }
     };
-  }, [marker, map, onClick]);
+  }, [marker, map]);
 
   useEffect(() => {
     if (marker) {

@@ -12,6 +12,9 @@ export function calculateDistances(items: IGeoLocalized[], center: IGeoPosition)
     items.forEach((item) => {
       item.distance = calculateDistance(item.position.lat, item.position.lng, center.lat, center.lng, 'K');
     });
+    items.sort((a, b) => {
+      return a.distance as number - (b.distance as number);
+    });
   }
   return items;
 }

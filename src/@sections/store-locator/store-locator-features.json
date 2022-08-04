@@ -1,6 +1,7 @@
 [
   {
     "id": "category",
+    "schema": "featureType",
     "title": "Tipology",
     "mode": "select",
     "features": [
@@ -24,6 +25,7 @@
   },
   {
     "id": "bounds",
+    "schema": "featureType",
     "title": "Bounds",
     "mode": "query"
   }

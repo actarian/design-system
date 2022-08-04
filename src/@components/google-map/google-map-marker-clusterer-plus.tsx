@@ -1,16 +1,15 @@
-// import MarkerClusterer from '@googlemaps/markerclustererplus';
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
+import MarkerClusterer, { ClusterIconStyle } from '@googlemaps/markerclustererplus';
 import React, { useEffect, useState } from 'react';
 import { useGoogleMapContext } from "./google-map-context";
 import { IGeoLocalized } from "./google-map.service";
 
-export interface GoogleMapMarkerClustererProps {
+export interface GoogleMapMarkerClustererPlusProps {
   items: IGeoLocalized[];
   map?: google.maps.Map,
   onClick?: (item: IGeoLocalized) => void;
 }
 
-const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
+const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> = ({
   items = [],
   onClick,
 }) => {
@@ -53,53 +52,12 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   useEffect(() => {
     let instance:MarkerClusterer;
     if (map && markers) {
-      // console.log('MarkerClusterer 2', map);
-      /*
-      const instance = new MarkerClusterer(map, markers, {
+      instance = new MarkerClusterer(map, markers, {
         imagePath: `/map/cluster-`,
       });
-      */
-      console.log('MarkerClusterer');
-      instance = new MarkerClusterer({
-        map,
-        markers,
-        // algorithm: new NoopAlgorithm({}),
-        // algorithm: new GridAlgorithm({ maxDistance: 40000 }),
-        // algorithm: new SuperClusterAlgorithm({}),
-        renderer: {
-          render: ({ markers, position }) => {
-            const count = markers ? markers.length : 0;
-            const size = Math.max(1, Math.min(5, Math.ceil(count / 5)));
-            const icon = {
-              url: `/map/cluster-${size}.png`,
-              size: new google.maps.Size(40 + size * 8, 40 + size * 8),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              // scaledSize: new google.maps.Size(25, 25)
-            };
-            return new google.maps.Marker({
-              position: {
-                lat: position.lat(),
-                lng: position.lng(),
-              },
-              map,
-              /*
-              // do not use label cause it is very slow
-              label: {
-                text: count.toString(),
-                color: 'white',
-                fontSize: '12px',
-              },
-              */
-              icon,
-            });
-          },
-        }
-      });
-      /*
       const styles = instance.getStyles();
       const sizes = [48, 56, 64, 72, 80];
-      styles.forEach((style: any, i: number) => {
+      styles.forEach((style: ClusterIconStyle, i: number) => {
         style.width = sizes[i];
         style.height = sizes[i];
         style.textLineHeight = sizes[i];
@@ -107,7 +65,6 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
         style.textColor = '#ffffff';
       });
       instance.setStyles(styles);
-      */
     }
     // remove clusterer from map on unmount
     return () => {
@@ -121,4 +78,4 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   return null;
 };
 
-export default GoogleMapMarkerClusterer;
+export default GoogleMapMarkerClustererPlus;

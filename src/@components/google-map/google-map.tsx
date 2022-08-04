@@ -51,7 +51,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
   }), [map, innerRef]);
 
   useEffect(() => {
-    if (innerRef.current && !map) {
+    if (!map && innerRef.current) {
       const map_ = new window.google.maps.Map(innerRef.current, options);
       setMap(map_);
       if (onLoad) {
@@ -91,6 +91,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
       }
     }
     return () => {
+      // meh
       /*
       if (map) {
         map.unbindAll();

@@ -21,7 +21,7 @@ export { default as ProductsRelated } from './products-related/products-related'
 export { default as ProductsSearch } from './products-search/products-search';
 export { default as Proposition } from './proposition/proposition';
 export { default as Split } from './split/split';
-export { default as StoreLocatorSearch } from './store-locator/store-locator-map';
+export { default as StoreLocatorSearch } from './store-locator/store-locator-search';
 export { default as SwiperHero } from './swiper-hero/swiper-hero';
 export { default as Typography } from './typography/typography';
 

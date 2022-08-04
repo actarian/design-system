@@ -2,7 +2,7 @@ export type IFeatureType = {
   id: string;
   schema: string;
   title: string;
-  features: any[];
+  features?: any[];
 };
 
 export enum FilterMode {
@@ -10,7 +10,7 @@ export enum FilterMode {
   AND = 'and',
   OR = 'or',
   QUERY = 'query',
-};
+}
 
 export interface IFilterOption {
   id: any; // IEquatable; !!! meh

@@ -35,7 +35,7 @@ const RadioOptionGroup = forwardRef<HTMLDivElement, RadioOptionGroupProps>(({
       ...child.props,
       size: child.props.size || size,
       checked: child.props.value === value,
-      onChange_,
+      onChange: onChange_,
     } : null)}</Grid>
   ), [children, onChange_, size, value]);
 
