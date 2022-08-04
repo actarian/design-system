@@ -16,7 +16,7 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
 
   const { map } = useGoogleMapContext();
 
-  const [markers, setMarkers] = useState<google.maps.Marker[]>();
+  const [markers, setMarkers] = useState<google.maps.Marker[]>([]);
 
   useEffect(() => {
     const onClick_ = (item: IGeoLocalized) => {
@@ -24,38 +24,41 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
         onClick(item);
       }
     }
-    const instances = items.map(item => {
-      const icon = {
-        url: `/map/marker-sm.png`,
-        size: new google.maps.Size(24, 32),
-        origin: new google.maps.Point(0, 0),
-        anchor: new google.maps.Point(12, 32),
-        // scaledSize: new google.maps.Size(25, 25)
-      };
-      const marker = new google.maps.Marker({
-        position: item.position,
-        icon,
-        map,
+    let markers_: google.maps.Marker[] = [];
+    if (items.length) {
+      markers_ = items.map(item => {
+        const icon = {
+          url: `/map/marker-sm.png`,
+          size: new google.maps.Size(24, 32),
+          origin: new google.maps.Point(0, 0),
+          anchor: new google.maps.Point(12, 32),
+          // scaledSize: new google.maps.Size(25, 25)
+        };
+        const marker = new google.maps.Marker({
+          position: item.position,
+          icon,
+          map,
+        });
+        marker.addListener('click', () => {
+          onClick_(item);
+        });
+        return marker;
       });
-      marker.addListener('click', () => {
-        onClick_(item);
-      });
-      return marker;
-    });
-    setMarkers(instances);
-    // remove marker from map on unmount
+      setMarkers(markers_);
+      // remove marker from map on unmount
+    }
     return () => {
-      instances.forEach(x => x.unbindAll());
+      markers_.forEach(x => x.unbindAll());
     };
   }, [items, map, onClick]);
 
   useEffect(() => {
-    let instance:MarkerClusterer;
+    let clusterer: MarkerClusterer;
     if (map && markers) {
-      instance = new MarkerClusterer(map, markers, {
+      clusterer = new MarkerClusterer(map, markers, {
         imagePath: `/map/cluster-`,
       });
-      const styles = instance.getStyles();
+      const styles = clusterer.getStyles();
       const sizes = [48, 56, 64, 72, 80];
       styles.forEach((style: ClusterIconStyle, i: number) => {
         style.width = sizes[i];
@@ -64,13 +67,13 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
         style.textSize = Math.floor(style.width / 5);
         style.textColor = '#ffffff';
       });
-      instance.setStyles(styles);
+      clusterer.setStyles(styles);
     }
     // remove clusterer from map on unmount
     return () => {
-      if (instance) {
-        instance.clearMarkers();
-        instance.setMap(null);
+      if (clusterer) {
+        clusterer.clearMarkers();
+        clusterer.setMap(null);
       }
     };
   }, [map, markers]);

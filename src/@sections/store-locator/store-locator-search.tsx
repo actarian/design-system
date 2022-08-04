@@ -7,7 +7,7 @@ import GoogleMapMarker from '@components/google-map/google-map-marker';
 import GoogleMapMarkerClusterer from '@components/google-map/google-map-marker-clusterer';
 import GoogleMapMarkerClustererPlus from '@components/google-map/google-map-marker-clusterer-plus';
 import GoogleMapSkeleton from '@components/google-map/google-map-skeleton';
-import { autocompleteSource, calculateDistances, findMe, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
+import { autocompleteSource, calculateDistances, findMe, geocode, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
 import { ComponentProps } from '@components/types';
 import Autocomplete from '@forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '@forms/autocomplete/autocomplete-context';
@@ -15,7 +15,7 @@ import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, us
 import { IFeatureType } from '@hooks/useFilters/filter';
 import { MapPin } from '@icons';
 import ContactCard from '@sections/contact-card/contact-card';
-import { useCallback, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Dots from './store-locator-dots';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
@@ -38,6 +38,8 @@ export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, valu
 }
 
 type Props = {
+  locale: string;
+  country: { id: string, name: string },
   item: StoreLocatorHeadItem;
   items: StoreLocatorItem[];
   featureTypes: IFeatureType[];
@@ -52,10 +54,14 @@ export type StoreLocatorHeadItem = {
 export type StoreLocatorHeadProps = ComponentProps<Props, HTMLDivElement>;
 
 const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
+  locale,
+  country,
   item,
-  items = [],
-  featureTypes = []
+  items,
+  featureTypes
 }: StoreLocatorHeadProps) => {
+
+  // useDebugChangedProps({ locale, country, item, items, featureTypes });
 
   // deserialize queryString encoded params
   const { params, replaceParamsSilently } = useSearchParams();
@@ -71,18 +77,16 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
 
   const [infoWindow, setInfoWindow] = useState<InfoWindow>();
 
-  const [zoom, setZoom] = useState(9);
+  // zoom defaults to world level
+  const [zoom, setZoom] = useState(3);
 
+  // center defaults to italy
   const [center, setCenter] = useState<google.maps.LatLngLiteral>({
-    lat: 43.6263318,
-    lng: 12.6790557,
+    lat: 41.87194,
+    lng: 12.56738,
   });
 
-  const [map, setMap] = useState<google.maps.Map>();
-
-  const autocompleteRef = useRef<HTMLInputElement>(null);
-
-  const options = useMemo(() => ({
+  const googleMapOptions = useMemo(() => ({
     zoom,
     center,
     gestureHandling: 'cooperative',
@@ -96,6 +100,33 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     fullscreenControl: true,
   }), [center, zoom]);
 
+  const [map, setMap] = useState<google.maps.Map>();
+
+  const autocompleteRef = useRef<HTMLInputElement>(null);
+
+  // centering on current country
+  useEffect(() => {
+    if (map) {
+      const fetchResults = async () => {
+        const results = await geocode({ 'address': country.name });
+        const place = results?.find(x => x.types.includes('country'));
+        if (place) {
+          if (place.geometry.viewport) {
+            map.fitBounds(place.geometry.viewport, 0);
+            console.log('fitBounds', place);
+          } else {
+            map.setCenter(place.geometry.location);
+            map.setZoom(6);
+            console.log('setCenter', place);
+          }
+        }
+      }
+      fetchResults().catch(error => {
+        console.log('StoreLocatorSearch.onFindMe.error', error)
+      });
+    }
+  }, [country, map]);
+
   // fires when user make a change on filters
   function onFilterChange(filter: Filter, values?: any[]) {
     console.log('StoreLocatorMap.onFilterChange', filter, values);
@@ -105,6 +136,88 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     const filterParams = filtersToParams(filters);
     // replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
     replaceParamsSilently({ filter: filterParams });
+  }
+
+  async function onFindMe() {
+    try {
+      const place = await findMe();
+      if (place) {
+        if (autocompleteRef.current) {
+          autocompleteRef.current.value = place.name;
+        }
+        setPlace(place);
+      }
+    } catch (error) {
+      console.log('StoreLocatorSearch.onFindMe.error', error);
+    }
+  }
+
+  async function onAutocomplete(item_: IAutocompleteItem) {
+    const item = item_ as IAutocompleteResult;
+    // console.log('onSelect', item);
+    if (!item) {
+      return;
+    }
+    if ('geometry' in item) {
+      setPlace(item as unknown as IAutocompleteResultDetail);
+    } else if (typeof item.getDetails === 'function' && map) {
+      const place = await item.getDetails(map);
+      setPlace(place);
+    }
+  }
+
+  function setPlace(place: { location?: google.maps.LatLngLiteral, geometry?: google.maps.places.PlaceGeometry | google.maps.GeocoderGeometry }) {
+    const items = itemsWithOmittedKeys('bounds');
+    if (map) {
+      if (place) {
+        const geometry = place.geometry;
+        const location = (geometry ? geometry.location : place.location);
+        let minimumBounds = null;
+        if (items.length >= 2) {
+          const center = location;
+          const lat = (typeof center?.lat === 'function' ? center?.lat() : center?.lat) || 0;
+          const lng = (typeof center?.lng === 'function' ? center?.lng() : center?.lng) || 0;
+          calculateDistances(items, { lat, lng });
+          minimumBounds = new google.maps.LatLngBounds();
+          for (let i = 0; i < 2; i++) {
+            const item = items[i];
+            const lat1 = item.position.lat;
+            const lng1 = item.position.lng;
+            const p1 = new google.maps.LatLng(lat1, lng1);
+            minimumBounds.extend(p1);
+            const lat2 = lat + (lat - lat1);
+            const lng2 = lng + (lng - lng1);
+            const p2 = new google.maps.LatLng(lat2, lng2);
+            minimumBounds.extend(p2);
+          }
+        }
+        if (geometry && geometry.viewport || minimumBounds) {
+          let bounds = (geometry && geometry.viewport) || new google.maps.LatLngBounds();
+          if (minimumBounds) {
+            bounds = bounds.union(minimumBounds);
+          }
+          /*
+          google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
+            this.setZoom(Math.min(11, this.getZoom()));
+          });
+          // meh
+          */
+          map.fitBounds(bounds, 0);
+        } else if (location) {
+          map.setCenter(location);
+          map.setZoom(11);
+        }
+      } else {
+        const bounds = getBounds(items);
+        /*
+        google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
+          this.setZoom(Math.min(11, this.getZoom()));
+        })
+        // meh;
+        */
+        map.fitBounds(bounds);
+      }
+    }
   }
 
   const onLoad = useCallback((map: google.maps.Map) => {
@@ -176,88 +289,6 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }
 
-  async function onFindMe() {
-    try {
-      const place = await findMe();
-      if (place) {
-        if (autocompleteRef.current) {
-          autocompleteRef.current.value = place.name;
-        }
-        setPlace(place);
-      }
-    } catch (error) {
-      console.log('StoreLocatorSearch.onFindMe.error', error);
-    }
-  }
-
-  function setPlace(place: { location?: google.maps.LatLngLiteral, geometry?: google.maps.places.PlaceGeometry | google.maps.GeocoderGeometry }) {
-    const items = itemsWithOmittedKeys('bounds');
-    if (map) {
-      if (place) {
-        const geometry = place.geometry;
-        const location = (geometry ? geometry.location : place.location);
-        let minimumBounds = null;
-        if (items.length >= 2) {
-          const center = location;
-          const lat = (typeof center?.lat === 'function' ? center?.lat() : center?.lat) || 0;
-          const lng = (typeof center?.lng === 'function' ? center?.lng() : center?.lng) || 0;
-          calculateDistances(items, { lat, lng });
-          minimumBounds = new google.maps.LatLngBounds();
-          for (let i = 0; i < 2; i++) {
-            const item = items[i];
-            const lat1 = item.position.lat;
-            const lng1 = item.position.lng;
-            const p1 = new google.maps.LatLng(lat1, lng1);
-            minimumBounds.extend(p1);
-            const lat2 = lat + (lat - lat1);
-            const lng2 = lng + (lng - lng1);
-            const p2 = new google.maps.LatLng(lat2, lng2);
-            minimumBounds.extend(p2);
-          }
-        }
-        if (geometry && geometry.viewport || minimumBounds) {
-          let bounds = (geometry && geometry.viewport) || new google.maps.LatLngBounds();
-          if (minimumBounds) {
-            bounds = bounds.union(minimumBounds);
-          }
-          /*
-          google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
-            this.setZoom(Math.min(11, this.getZoom()));
-          });
-          // meh
-          */
-          map.fitBounds(bounds, 0);
-        } else if (location) {
-          map.setCenter(location);
-          map.setZoom(11);
-        }
-      } else {
-        const bounds = getBounds(items);
-        /*
-        google.maps.event.addListenerOnce(map, 'zoom_changed', function() {
-          this.setZoom(Math.min(11, this.getZoom()));
-        })
-        // meh;
-        */
-        map.fitBounds(bounds);
-      }
-    }
-  }
-
-  async function onAutocomplete(item_: IAutocompleteItem) {
-    const item = item_ as IAutocompleteResult;
-    // console.log('onSelect', item);
-    if (!item) {
-      return;
-    }
-    if ('geometry' in item) {
-      setPlace(item as unknown as IAutocompleteResultDetail);
-    } else if (typeof item.getDetails === 'function' && map) {
-      const place = await item.getDetails(map);
-      setPlace(place);
-    }
-  }
-
   return (
     <>
       <Section padding="2rem 0" position="relative" overflow="hidden">
@@ -274,8 +305,8 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
           </Flex.Row>
         </Container>
       </Section>
-      <GoogleMapLoader apiKey={API_KEY} language="it" region="it" libraries={['places']} skeleton={() => <GoogleMapSkeleton></GoogleMapSkeleton>} onStatus={onStatus}>
-        <GoogleMap {...options} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
+      <GoogleMapLoader apiKey={API_KEY} language={locale} region={country.id} libraries={['places']} skeleton={() => <GoogleMapSkeleton></GoogleMapSkeleton>} onStatus={onStatus}>
+        <GoogleMap {...googleMapOptions} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
           {USE_CLUSTERER ? <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
             USE_CLUSTERER_PLUS ? <GoogleMapMarkerClustererPlus items={items} onClick={onMarkerClick} /> :
               items.map((item, i) => (
@@ -301,12 +332,17 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
 }
 
 export const StoreLocatorMapDefaults = {
+  locale: 'it',
+  country: {
+    id: 'it',
+    name: 'Italy',
+  },
   item: {
     category: 'Stores',
     title: 'Search for dealers',
     abstract: `<p>Hexagon is present through a network of authorised points of sale and distributors.</p>
     <p>We therefore advise consumers to purchase only from these points of sale, which will be able to guarantee the originality and quality of the products as well as excellent design, sales and after-sales service.</p>`,
-  }
+  },
 };
 
 StoreLocatorSearch.defaultProps = StoreLocatorMapDefaults;

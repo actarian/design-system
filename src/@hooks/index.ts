@@ -17,6 +17,7 @@ export { useClickOut } from './useClickOut/useClickOut';
 export { useCurrency } from './useCurrency/useCurrency';
 export { useCurrentState } from './useCurrentState/useCurrentState';
 export { useDebounce } from './useDebounce/useDebounce';
+export { useDebugChangedProps } from './useDebugChangedProps/useDebugChangedProps';
 export { useDomObserver } from './useDomObserver/useDomObserver';
 export { useDrawer } from './useDrawer/useDrawer';
 export { useElementSize } from './useElementSize/useElementSize';

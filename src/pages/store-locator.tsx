@@ -7,12 +7,7 @@ import Head from 'next/head';
 import STORES from '../@sections/store-locator/store-locator-all.json';
 import STORES_FEATURES from '../@sections/store-locator/store-locator-features.json';
 
-type StoreLocatorProps = {
-  items: StoreLocatorItem[];
-  featureTypes: IFeatureType[];
-}
-
-const StoreLocator: React.FC<StoreLocatorProps> = ({ items, featureTypes }) => {
+const StoreLocator: React.FC<StoreLocatorProps> = ({ locale, country, items = [], featureTypes = [] }) => {
   return (
     <>
       <Head>
@@ -26,7 +21,7 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ items, featureTypes }) => {
 
           <Header sticky />
 
-          <StoreLocatorSearch item={StoreLocatorMapDefaults.item} items={items} featureTypes={featureTypes} />
+          <StoreLocatorSearch locale={locale} country={country} item={StoreLocatorMapDefaults.item} items={items} featureTypes={featureTypes} />
 
           <Split item={SplitDefaults.item} />
 
@@ -40,8 +35,20 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ items, featureTypes }) => {
 
 export default StoreLocator;
 
+type StoreLocatorProps = {
+  locale: string;
+  country: { id: string, name: string },
+  items: StoreLocatorItem[];
+  featureTypes: IFeatureType[];
+}
+
 export async function getStaticProps(): Promise<{ props: StoreLocatorProps }> {
   const props = {
+    locale: 'it',
+    country: {
+      id: 'it',
+      name: 'Italy',
+    },
     items: STORES.sort((a, b) => {
       return a.rank - b.rank;
     }),
