@@ -1,4 +1,5 @@
 import { IAutocompleteItem } from "@forms/autocomplete/autocomplete-context";
+import { getCurrentPosition } from "@hooks/useGeolocation/geolocation.service";
 
 export type IGeoPosition = { lat: number, lng: number };
 
@@ -57,15 +58,23 @@ export function getBounds(items: IGeoLocalized[], count: number = Number.POSITIV
 
 let autocompleteService_: google.maps.places.AutocompleteService;
 export function getAutocompleteService(): google.maps.places.AutocompleteService {
-  if (!autocompleteService_) {
+  if (!autocompleteService_ && hasMaps()) {
     autocompleteService_ = new google.maps.places.AutocompleteService();
   }
   return autocompleteService_;
 }
 
+let geocoder_: google.maps.Geocoder;
+export function getGeocoder(): google.maps.Geocoder {
+  if (!geocoder_ && hasMaps()) {
+    geocoder_ = new google.maps.Geocoder();
+  }
+  return geocoder_;
+}
+
 let placeService_: google.maps.places.PlacesService;
 export function getPlacesService(map: google.maps.Map): google.maps.places.PlacesService {
-  if (!placeService_) {
+  if (!placeService_ && map) {
     placeService_ = new google.maps.places.PlacesService(map);
   }
   return placeService_;
@@ -94,7 +103,7 @@ export type IAutocompleteResultDetail = {
 
 export type IAutocompleteResultWithDetail = IAutocompleteResult & IAutocompleteResultDetail;
 
-export async function autocompleteSource(query: string): Promise<IAutocompleteResult[]> {
+export function autocompleteSource(query: string): Promise<IAutocompleteResult[]> {
   const autocompleteService = getAutocompleteService();
   return new Promise((resolve, reject) => {
     const options = {
@@ -173,4 +182,55 @@ export async function autocompleteSource(query: string): Promise<IAutocompleteRe
       }
     });
   });
+}
+
+export function geocode(request: google.maps.GeocoderRequest): Promise<google.maps.GeocoderResult[] | null> {
+  return new Promise((resolve, reject) => {
+    const geocoder = getGeocoder();
+    geocoder.geocode(request, (results, status) => {
+      if (status == 'OK') {
+        resolve(results);
+      } else {
+        reject(results);
+      }
+    });
+  });
+}
+
+export type IFindMeResult = {
+  id: string;
+  name: string;
+  location: google.maps.LatLngLiteral;
+  geometry?: google.maps.GeocoderGeometry;
+}
+
+export async function findMe(options?: PositionOptions, type = 'administrative_area_level_3'): Promise<IFindMeResult | null> {
+  if (!hasMaps()) {
+    throw ('google maps not available');
+  }
+  const position = await getCurrentPosition(options);
+  const location = {
+    lat: position.latitude as number,
+    lng: position.longitude as number,
+  };
+  const results = await geocode({ location });
+  let place = null;
+  if (results) {
+    place = results.find(x => x.types.includes(type));
+    if (place) {
+      const address = place.address_components.find(x => x.types.includes(type));
+      place = {
+        id: place.place_id,
+        name: address ? address.long_name : 'current location',
+        location,
+        geometry: place.geometry,
+      }
+    }
+  }
+  // console.log('StoreLocatorComponent.onGeolocation', place);
+  return place || null;
+}
+
+function hasMaps(): boolean {
+  return Boolean(google && google.maps);
 }

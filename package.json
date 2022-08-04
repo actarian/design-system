@@ -78,8 +78,6 @@
     "@googlemaps/js-api-loader": ">=1.14.3",
     "@googlemaps/markerclustererplus": ">=1.2.10",
     "@googlemaps/markerclusterer": ">=2.0.8",
-    "@react-google-maps/api": ">=2.12.1",
-    "@react-google-maps/marker-clusterer": ">=2.11.8",
     "fast-equals": ">=4.0.1",
     "framer-motion": ">=6.3.16",
     "lodash": ">=4.17.21",

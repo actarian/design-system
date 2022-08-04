@@ -1,17 +1,11 @@
 const warningStack: { [key: string]: boolean } = {};
 
-export function useWarning(showWarning: boolean, message: string, component?: string): void {
-  if (!showWarning) {
-    return;
-  }
-
-  const tag = component ? ` [${component}]` : ' ';
-
-  const log = `[DesignSystem]${tag}: ${message}`;
-
+export function consoleWarn(message: string, component?: string): void {
   if (typeof console === 'undefined') {
     return;
   }
+  const tag = component ? ` [${component}]` : ' ';
+  const log = `[DesignSystem]${tag}: ${message}`;
   if (warningStack[log]) {
     return;
   }

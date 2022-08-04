@@ -175,7 +175,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     setVisible(next);
   }, [onDropdownVisibleChange]);
 
-  const updateValue = useCallback((next: string) => {
+  const updateValue = (next: string) => {
     setValue(last => {
       if (!Array.isArray(last)) {
         return next;
@@ -189,7 +189,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     if (!multiple) {
       updateVisible(false);
     }
-  }, [multiple, onChange, setValue, updateVisible, valueRef]);
+  };
 
   const initialValue: SelectConfig = useMemo(() => ({
     disableAll: disabled,
@@ -198,7 +198,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     ref,
     updateValue,
     updateVisible,
-  }), [disabled, visible, value, updateValue, updateVisible]);
+  }), [disabled, visible, value]);
 
   const clickHandler = (event: React.MouseEvent<HTMLDivElement>) => {
     event.stopPropagation();
@@ -230,7 +230,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
     scrollTo: options => dropdownRef.current?.scrollTo(options),
   }), [inputRef, dropdownRef]);
 
-  const selectedChildren = useMemo(() => {
+  const selectedChildren = (() => {
     const onClear = (value: string) => {
       // console.log('onClear', value, clearable);
       if (clearable) {
@@ -254,7 +254,7 @@ const Select = React.forwardRef<SelectRef, React.PropsWithChildren<SelectProps>>
         </SelectMultipleValue>
       );
     });
-  }, [value, children, clearable, updateValue, multiple, disabled]);
+  })();
 
   const onInputBlur = () => {
     updateVisible(false);

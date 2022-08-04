@@ -1,5 +1,5 @@
 // import GoogleMap from '@components/google-map/google-map';
-import { Container, Flex, Grid, InfiniteLoader, Section, Text } from '@components';
+import { Button, Container, Flex, Grid, InfiniteLoader, Section, Text } from '@components';
 import GoogleMap from '@components/google-map/google-map';
 import GoogleMapInfoWindow, { InfoWindow } from '@components/google-map/google-map-info-window';
 import GoogleMapLoader, { GoogleMapLoaderStatus } from '@components/google-map/google-map-loader';
@@ -7,19 +7,20 @@ import GoogleMapMarker from '@components/google-map/google-map-marker';
 import GoogleMapMarkerClusterer from '@components/google-map/google-map-marker-clusterer';
 import GoogleMapMarkerClustererPlus from '@components/google-map/google-map-marker-clusterer-plus';
 import GoogleMapSkeleton from '@components/google-map/google-map-skeleton';
-import { autocompleteSource, calculateDistances, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
+import { autocompleteSource, calculateDistances, findMe, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
 import { ComponentProps } from '@components/types';
 import Autocomplete from '@forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '@forms/autocomplete/autocomplete-context';
 import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@hooks';
 import { IFeatureType } from '@hooks/useFilters/filter';
+import { MapPin } from '@icons';
 import ContactCard from '@sections/contact-card/contact-card';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useMemo, useRef, useState } from 'react';
 import Dots from './store-locator-dots';
 
 const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
-const USE_CLUSTERER = true;
-const USE_CLUSTERER_PLUS = false;
+const USE_CLUSTERER = false;
+const USE_CLUSTERER_PLUS = true;
 
 export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: any): boolean {
   switch (key) {
@@ -78,6 +79,8 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   });
 
   const [map, setMap] = useState<google.maps.Map>();
+
+  const autocompleteRef = useRef<HTMLInputElement>(null);
 
   const options = useMemo(() => ({
     zoom,
@@ -173,15 +176,31 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }
 
-  function setPlace(place: IAutocompleteResultDetail) {
+  async function onFindMe() {
+    try {
+      const place = await findMe();
+      if (place) {
+        if (autocompleteRef.current) {
+          autocompleteRef.current.value = place.name;
+        }
+        setPlace(place);
+      }
+    } catch (error) {
+      console.log('StoreLocatorSearch.onFindMe.error', error);
+    }
+  }
+
+  function setPlace(place: { location?: google.maps.LatLngLiteral, geometry?: google.maps.places.PlaceGeometry | google.maps.GeocoderGeometry }) {
     const items = itemsWithOmittedKeys('bounds');
     if (map) {
-      if (place && place.geometry) {
+      if (place) {
+        const geometry = place.geometry;
+        const location = (geometry ? geometry.location : place.location);
         let minimumBounds = null;
         if (items.length >= 2) {
-          const center = place.geometry.location;
-          const lat = center?.lat() || 0;
-          const lng = center?.lng() || 0;
+          const center = location;
+          const lat = (typeof center?.lat === 'function' ? center?.lat() : center?.lat) || 0;
+          const lng = (typeof center?.lng === 'function' ? center?.lng() : center?.lng) || 0;
           calculateDistances(items, { lat, lng });
           minimumBounds = new google.maps.LatLngBounds();
           for (let i = 0; i < 2; i++) {
@@ -196,8 +215,8 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
             minimumBounds.extend(p2);
           }
         }
-        if (place.geometry.viewport || minimumBounds) {
-          let bounds = place.geometry.viewport || new google.maps.LatLngBounds();
+        if (geometry && geometry.viewport || minimumBounds) {
+          let bounds = (geometry && geometry.viewport) || new google.maps.LatLngBounds();
           if (minimumBounds) {
             bounds = bounds.union(minimumBounds);
           }
@@ -208,8 +227,8 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
           // meh
           */
           map.fitBounds(bounds, 0);
-        } else if (place.geometry.location) {
-          map.setCenter(place.geometry.location);
+        } else if (location) {
+          map.setCenter(location);
           map.setZoom(11);
         }
       } else {
@@ -243,12 +262,15 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     <>
       <Section padding="2rem 0" position="relative" overflow="hidden">
         {false && <Dots />}
-        <Container position="relative" textAlign="center">
+        <Container position="relative" textAlign="center" maxWidthMd="80ch">
           <Text size="10" textTransform="uppercase">{item.category}</Text>
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
           <Text size="8" margin="0 auto 2rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
           <Flex.Row>
-            <Autocomplete background="var(--color-neutral-100)" name="search" placeholder="search..." source={autocompleteSource} onAutocomplete={onAutocomplete}></Autocomplete>
+            <Autocomplete background="var(--color-neutral-100)" name="search" placeholder="search..." source={autocompleteSource} onAutocomplete={onAutocomplete} ref={autocompleteRef}
+              before={<MapPin color="var(--color-neutral-300)" />}
+              after={<Button variant="outline" onClick={onFindMe}>find me</Button>}
+            />
           </Flex.Row>
         </Container>
       </Section>
@@ -256,9 +278,9 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
         <GoogleMap {...options} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
           {USE_CLUSTERER ? <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
             USE_CLUSTERER_PLUS ? <GoogleMapMarkerClustererPlus items={items} onClick={onMarkerClick} /> :
-            items.map((item, i) => (
-              <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
-            ))}
+              items.map((item, i) => (
+                <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
+              ))}
           <GoogleMapInfoWindow {...infoWindow} onClose={onInfoWindowClose} />
         </GoogleMap>
       </GoogleMapLoader>

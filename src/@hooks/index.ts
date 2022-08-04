@@ -7,6 +7,7 @@ export { getPagedItems, getPaginationInfo } from '@hooks/usePagination/paginatio
 export type { IPaginationInfo } from '@hooks/usePagination/pagination.service';
 export { usePagination } from '@hooks/usePagination/usePagination';
 export { decode, getSearchParams, pushSearchParams, replaceSearchParams, replaceSearchParamsSilently, updateSearchParams, useSearchParams } from '@hooks/useSearchParams/useSearchParams';
+export { consoleWarn } from './consoleWarn/consoleWarn';
 export { useBodyScroll } from './useBodyScroll/useBodyScroll';
 export { useBreakpoint } from './useBreakpoint/useBreakpoint';
 export { useCart } from './useCart/useCart';
@@ -20,6 +21,7 @@ export { useDomObserver } from './useDomObserver/useDomObserver';
 export { useDrawer } from './useDrawer/useDrawer';
 export { useElementSize } from './useElementSize/useElementSize';
 export { useEventListener } from './useEventListener/useEventListener';
+export { useGeolocation } from './useGeolocation/useGeolocation';
 export { useInfiniteLoader } from './useInfiniteLoader/useInfiniteLoader';
 export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect/useIsomorphicLayoutEffect';
 export { KeyCode, useKeyboard } from './useKeyboard/useKeyboard';
@@ -34,6 +36,5 @@ export { useScrollTo } from './useScrollTo/useScrollTo';
 export { useSSR } from './useSSR/useSSR';
 export { useSwiperIndex } from './useSwiperIndex/useSwiperIndex';
 export { useUI } from './useUI/useUI';
-export { useWarning } from './useWarning/useWarning';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 

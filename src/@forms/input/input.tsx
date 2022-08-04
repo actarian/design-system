@@ -22,6 +22,7 @@ const StyledInputContainer = styled.div<InputProps>`
   color: inherit;
   background-color: transparent;
   border-color: var(--color-neutral-200);
+  outline-color: transparent;
   transition: border 150ms ease-in 0s, outline-color 150ms ease-in 0s, color 200ms ease-out 0s;
   cursor: pointer;
 
@@ -57,6 +58,14 @@ const StyledInputContainer = styled.div<InputProps>`
     opacity: 0.3;
   }
 
+  &>:first-child:not(input) {
+    margin: 0 0.5em;
+  }
+
+  &>:last-child:not(input) {
+    margin: 0 0.5em;
+  }
+
   ${props => getCssResponsive(props)}
 `;
 
@@ -75,10 +84,10 @@ const StyledInput = styled.div<InputProps>`
 `;
 
 const Input = forwardRef<HTMLInputElement, InputProps>(({
+  className,
   before,
   after,
   type = 'text',
-  className,
   onFocus,
   onBlur,
   ...props }, ref) => {
@@ -98,7 +107,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({
     setFocus(false);
   }
   return (
-    <StyledInputContainer className={classNames}>
+    <StyledInputContainer className={classNames} {...props}>
       {before}
       <StyledInput ref={ref} as='input' type={type} onFocus={onFocus_} onBlur={onBlur_} {...props} />
       {after}

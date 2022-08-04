@@ -13,7 +13,6 @@ type StoreLocatorProps = {
 }
 
 const StoreLocator: React.FC<StoreLocatorProps> = ({ items, featureTypes }) => {
-  console.log(items.length);
   return (
     <>
       <Head>
@@ -41,7 +40,7 @@ const StoreLocator: React.FC<StoreLocatorProps> = ({ items, featureTypes }) => {
 
 export default StoreLocator;
 
-export async function getStaticProps():Promise<{ props: StoreLocatorProps }> {
+export async function getStaticProps(): Promise<{ props: StoreLocatorProps }> {
   const props = {
     items: STORES.sort((a, b) => {
       return a.rank - b.rank;

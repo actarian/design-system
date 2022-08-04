@@ -198,9 +198,9 @@ export const CssButtonOutline = css`
 
   &:hover,
   &.active {
-    background: transparent;
+    background: var(--color-primary-500);
     border-color: var(--color-primary-600);
-    color: var(--color-primary-600);
+    color: var(--color-neutral-100);
   }
 
   ${CssSvg}

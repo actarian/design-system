@@ -9,6 +9,7 @@
     // I suggest you add those two rules:
     // note you must disable the base rule as it can report incorrect errors
     "react/no-unescaped-entities": "warn",
+    "react-hooks/exhaustive-deps": "warn",
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-interface": "off",
     "@typescript-eslint/no-inferrable-types": "off",

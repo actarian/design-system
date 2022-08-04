@@ -1,12 +1,13 @@
 
-import { ComponentCssResponsiveProps } from '@components/types';
+import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
 import { getCssResponsive } from '@components/utils';
 import { useClasses } from '@hooks';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 import styled from 'styled-components';
 import { RadioIcon } from './radio-icon';
 
-interface Props extends ComponentPropsWithRef<'input'> {
+interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
+  size?: SizeVariant;
 }
 
 export type RadioProps = ComponentCssResponsiveProps<Props, HTMLInputElement>;

@@ -1,5 +1,5 @@
 import { Ellipsis } from '@components';
-import { useClasses, useWarning } from '@hooks';
+import { consoleWarn, useClasses } from '@hooks';
 import React, { useMemo } from 'react';
 import styled from 'styled-components';
 import { useSelectContext } from './select-context';
@@ -85,7 +85,9 @@ const SelectOption: React.FC<React.PropsWithChildren<SelectOptionProps>> = ({
 
   const isLabel = useMemo(() => label || divider, [label, divider]);
 
-  useWarning(!isLabel && valueProp === undefined, 'The props "value" is required.', 'Select Option');
+  if (!isLabel && valueProp === undefined) {
+    consoleWarn('The props "value" is required.', 'Select Option');
+  }
 
   const optionValue: string = valueProp || children as string || '';
 

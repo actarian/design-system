@@ -1,7 +1,8 @@
 
 import { Flex } from '@components';
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
-import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
+import Radio, { RadioProps } from './radio';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   initialValue?: string;
@@ -14,12 +15,13 @@ export type RadioGroupProps = ComponentCssResponsiveProps<Props, HTMLInputElemen
 const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
   children,
   className,
+  size,
   onChange,
   ...props
 }, ref) => {
   const [value, setValue] = useState(props.initialValue || null);
 
-  const onChange_ = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     if (onChange) {
       onChange(event);
@@ -27,16 +29,23 @@ const RadioGroup = forwardRef<HTMLDivElement, RadioGroupProps>(({
     if (event.defaultPrevented) {
       return;
     }
-  }, [onChange]);
+  };
 
-  const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
-    React.cloneElement(child, child.props ? {
-      ...child.props,
-      size: child.props.size || props.size,
-      checked: child.props.value === value,
-      onChange_,
-    } : null)
-  ), [children, onChange_, props.size, value]);
+  const mappedChildren = React.Children.map(children || [], (child) => {
+    if (!React.isValidElement<RadioProps>(child)) {
+      return child;
+    }
+    const item: ReactElement<RadioProps> = child;
+    if (item.type === Radio) {
+      return React.cloneElement(item, {
+        ...item.props,
+        size: item.props.size || size,
+        checked: item.props.value === value,
+        onChange: onChange_,
+      });
+    }
+    return child;
+  });
 
   return (
     <Flex flexWrap="wrap" gap="1rem" ref={ref} className={className} {...props}>

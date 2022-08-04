@@ -1,7 +1,8 @@
 
 import { Flex } from '@components';
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
-import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
+import RadioColor, { RadioColorProps } from './radio-color';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   initialValue?: string;
@@ -13,13 +14,14 @@ export type RadioColorGroupProps = ComponentCssResponsiveProps<Props, HTMLInputE
 
 const RadioColorGroup = forwardRef<HTMLDivElement, RadioColorGroupProps>(({
   children,
-  onChange,
   className,
+  size,
+  onChange,
   ...props
 }, ref) => {
   const [value, setValue] = useState(props.initialValue || null);
 
-  const onChange_ = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     if (onChange) {
       onChange(event);
@@ -27,16 +29,23 @@ const RadioColorGroup = forwardRef<HTMLDivElement, RadioColorGroupProps>(({
     if (event.defaultPrevented) {
       return;
     }
-  }, [onChange]);
+  };
 
-  const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
-    React.cloneElement(child, child.props ? {
-      ...child.props,
-      size: child.props.size || props.size,
-      checked: child.props.value === value,
-      onChange: onChange_,
-    } : null)
-  ), [children, onChange_, props.size, value]);
+  const mappedChildren = React.Children.map(children || [], (child) => {
+    if (!React.isValidElement<RadioColorProps>(child)) {
+      return child;
+    }
+    const item: ReactElement<RadioColorProps> = child;
+    if (item.type === RadioColor) {
+      return React.cloneElement(item, {
+        ...child.props,
+        size: child.props.size || size,
+        checked: child.props.value === value,
+        onChange: onChange_,
+      });
+    }
+    return child;
+  });
 
   return (
     <Flex flexWrap="wrap" gap="1rem" ref={ref} className={className} {...props}>

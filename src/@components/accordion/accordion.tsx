@@ -1,5 +1,5 @@
 import { Expand } from '@components';
-import { useClasses, useCurrentState, useWarning } from '@hooks';
+import { consoleWarn, useClasses, useCurrentState } from '@hooks';
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useAccordionContext } from './accordion-context';
@@ -93,7 +93,9 @@ const Accordion: React.FC<React.PropsWithChildren<AccordionProps>> = ({
 
   const classes = useClasses('accordion', { shadow }, className);
 
-  useWarning(!title, '"title" is required.', 'Accordion');
+  if (!title) {
+    consoleWarn('"title" is required.', 'Accordion');
+  }
 
   useEffect(() => {
     if (!values.length) {

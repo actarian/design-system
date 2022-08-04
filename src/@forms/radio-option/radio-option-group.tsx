@@ -1,7 +1,8 @@
 
 import { Grid } from '@components';
 import { ComponentCssResponsiveProps, SizeVariant } from '@components/types';
-import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useCallback, useMemo, useState } from 'react';
+import React, { ComponentPropsWithRef, forwardRef, ReactElement, ReactNode, useState } from 'react';
+import RadioOption, { RadioOptionProps } from './radio-option';
 
 interface Props extends Omit<ComponentPropsWithRef<'input'>, 'size'> {
   initialValue?: string;
@@ -20,7 +21,7 @@ const RadioOptionGroup = forwardRef<HTMLDivElement, RadioOptionGroupProps>(({
 }, ref) => {
   const [value, setValue] = useState(props.initialValue || null);
 
-  const onChange_ = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
+  const onChange_ = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
     if (onChange) {
       onChange(event);
@@ -28,16 +29,23 @@ const RadioOptionGroup = forwardRef<HTMLDivElement, RadioOptionGroupProps>(({
     if (event.defaultPrevented) {
       return;
     }
-  }, [onChange]);
+  };
 
-  const mappedChildren = useMemo(() => React.Children.map(children as any, (child: ReactElement) =>
-    <Grid xs={1}>{React.cloneElement(child, child.props ? {
-      ...child.props,
-      size: child.props.size || size,
-      checked: child.props.value === value,
-      onChange: onChange_,
-    } : null)}</Grid>
-  ), [children, onChange_, size, value]);
+  const mappedChildren = React.Children.map(children || [], (child) => {
+    if (!React.isValidElement<RadioOptionProps>(child)) {
+      return child;
+    }
+    const item: ReactElement<RadioOptionProps> = child;
+    if (item.type === RadioOption) {
+      return React.cloneElement(item, {
+        ...child.props,
+        size: child.props.size || size,
+        checked: child.props.value === value,
+        onChange: onChange_,
+      });
+    }
+    return child;
+  });
 
   return (
     <Grid.Row columns="4" columnGap="0.5rem" rowGap="0.5rem" ref={ref} className={className} {...props}>
