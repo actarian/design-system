@@ -39,3 +39,9 @@ export { useSwiperIndex } from './useSwiperIndex/useSwiperIndex';
 export { useUI } from './useUI/useUI';
 export { useWindowSize } from './useWindowSize/useWindowSize';
 
+/**
+ *
+ * useful hooks
+ * https://streamich.github.io/react-use
+ *
+ */

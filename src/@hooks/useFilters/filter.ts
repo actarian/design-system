@@ -1,8 +1,15 @@
+
+export type IFeatureId = string | number;
+
 export type IFeatureType = {
   id: string;
   schema: string;
   title: string;
-  features?: any[];
+  features?: {
+    id: IFeatureId,
+    title: string,
+    [key: string]: any
+  }[];
 };
 
 export enum FilterMode {
@@ -13,7 +20,7 @@ export enum FilterMode {
 }
 
 export interface IFilterOption {
-  id: any; // IEquatable; !!! meh
+  id: IFeatureId; // IEquatable; !!! meh
   title: string;
   count?: number;
   disabled?: boolean;

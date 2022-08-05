@@ -1,5 +1,5 @@
 import { Box, ComponentCssResponsiveProps } from '@components';
-import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
 import styled from 'styled-components';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { GoogleMapStyle } from './google-map.style';
@@ -39,38 +39,40 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
   options.center = options.center || { lat: 43.6263318, lng: 12.6790557 };
   options.styles = options.styles || GoogleMapStyle;
 
+  const mapRef = useRef<google.maps.Map>();
+
   const innerRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle(ref, () => innerRef.current as HTMLDivElement);
 
-  const [map, setMap] = useState<google.maps.Map>();
-
   const contextValue: IGoogleMapContext = useMemo(() => ({
-    map,
+    map: mapRef.current,
     innerRef,
-  }), [map, innerRef]);
+  }), [mapRef, innerRef]);
 
   useEffect(() => {
-    if (!map && innerRef.current) {
+    if (!mapRef.current && innerRef.current) {
       const map_ = new window.google.maps.Map(innerRef.current, options);
-      setMap(map_);
+      mapRef.current = map_;
       if (onLoad) {
         onLoad(map_);
       }
     }
-  }, [innerRef, map, onLoad, options]);
+  }, [innerRef, options]);
 
   // because React does not do deep comparisons, a custom hook is used
   // see discussion in https://github.com/googlemaps/js-samples/issues/946
   /*
   useDeepCompareEffectForMaps(() => {
+    const map = mapRef.current;
     if (map) {
       map.setOptions(options);
     }
-  }, [map, options]);
+  }, [mapRef, options]);
   */
 
   useEffect(() => {
+    const map = mapRef.current;
     if (map) {
       /*
       ['click', 'idle'].forEach((eventName) =>
@@ -98,7 +100,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
       }
       */
     }
-  }, [map, onLoad, onIdle, onClick, onBounds]);
+  }, [mapRef, onLoad, onIdle, onClick, onBounds]);
 
   return (
     <GoogleMapContext.Provider value={contextValue}>
@@ -109,7 +111,7 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
           return null;
         }
         // set the map prop on the child component
-        return React.cloneElement(child, { map });
+        return React.cloneElement(child, { map: mapRef.current });
       })}
     </GoogleMapContext.Provider>
   );

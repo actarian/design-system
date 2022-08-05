@@ -9,6 +9,7 @@ import GoogleMapMarkerClustererPlus from '@components/google-map/google-map-mark
 import GoogleMapSkeleton from '@components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, findMe, geocode, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
 import { ComponentProps } from '@components/types';
+import { RadioOption } from '@forms';
 import Autocomplete from '@forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '@forms/autocomplete/autocomplete-context';
 import { Filter, filtersToParams, useDebounce, useFilters, useInfiniteLoader, useSearchParams } from '@hooks';
@@ -73,8 +74,13 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   const filterParams = params && params.filter;
   const { filteredItems, filters, setFilter, itemsWithOmittedKeys } = useFilters<StoreLocatorItem>(items, featureTypes, filterItem, filterParams);
 
+  // list of filters bounds excluded
+  const otherFilters = filters.filter(x => x.id !== 'bounds');
+
+  // visible results paged by the infinite scroll loader
   const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
 
+  // google map info window current data
   const [infoWindow, setInfoWindow] = useState<InfoWindow>();
 
   // zoom defaults to world level
@@ -86,6 +92,13 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     lng: 12.56738,
   });
 
+  // reference of the map instance
+  const [map, setMap] = useState<google.maps.Map>();
+
+  // reference of the autocomplete input element
+  const autocompleteRef = useRef<HTMLInputElement>(null);
+
+  // options of the google map
   const googleMapOptions = useMemo(() => ({
     zoom,
     center,
@@ -100,10 +113,6 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     fullscreenControl: true,
   }), [center, zoom]);
 
-  const [map, setMap] = useState<google.maps.Map>();
-
-  const autocompleteRef = useRef<HTMLInputElement>(null);
-
   // centering on current country
   useEffect(() => {
     if (map) {
@@ -113,11 +122,11 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
         if (place) {
           if (place.geometry.viewport) {
             map.fitBounds(place.geometry.viewport, 0);
-            console.log('fitBounds', place);
+            // console.log('fitBounds', place);
           } else {
             map.setCenter(place.geometry.location);
             map.setZoom(6);
-            console.log('setCenter', place);
+            // console.log('setCenter', place);
           }
         }
       }
@@ -128,16 +137,18 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   }, [country, map]);
 
   // fires when user make a change on filters
-  function onFilterChange(filter: Filter, values?: any[]) {
-    console.log('StoreLocatorMap.onFilterChange', filter, values);
-    setFilter(filter, values);
+  function onSetFilter(filter: Filter, values: string[]) {
+    const ids = values.map(x => parseInt(x)).filter(x => x !== 0);
+    // console.log('StoreLocatorMap.onFilterChange', filter, ids);
+    setFilter(filter, ids);
     // pagination.goToPage(1);
     // serializing querystring filter
-    const filterParams = filtersToParams(filters);
+    const filterParams = filtersToParams(otherFilters);
     // replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
     replaceParamsSilently({ filter: filterParams });
   }
 
+  // geolocate current position
   async function onFindMe() {
     try {
       const place = await findMe();
@@ -152,6 +163,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }
 
+  // fires when user select a google autocomplete result
   async function onAutocomplete(item_: IAutocompleteItem) {
     const item = item_ as IAutocompleteResult;
     // console.log('onSelect', item);
@@ -166,6 +178,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }
 
+  // contains logic of setting the place and bounds of the google map
   function setPlace(place: { location?: google.maps.LatLngLiteral, geometry?: google.maps.places.PlaceGeometry | google.maps.GeocoderGeometry }) {
     const items = itemsWithOmittedKeys('bounds');
     if (map) {
@@ -220,17 +233,28 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }
 
+  // on google map current loading status
+  function onStatus(status: string) {
+    console.log('StoreLocatorMap.onStatus', status);
+    if (status === GoogleMapLoaderStatus.Success) {
+      // console.log(window.google.maps);
+    }
+  }
+
+  // on google map loaded
   const onLoad = useCallback((map: google.maps.Map) => {
     console.log('StoreLocatorMap.onLoad', map);
     setMap(map);
   }, []);
 
+  // on google map idle positioning status
   const onIdle = useCallback((map: google.maps.Map) => {
     // console.log('onIdle');
     setZoom(map.getZoom() as number);
     setCenter((map.getCenter() as google.maps.LatLng).toJSON());
   }, []);
 
+  // on google map did change bounds
   const onBounds = useCallback((bounds: google.maps.LatLngBounds | undefined) => {
     // this.bounds = bounds;
     const filterBounds = filters.find(x => x.id === 'bounds');
@@ -242,14 +266,16 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }, [filters, setFilter]);
 
+  // debounced version of the onBounds callback
   const onBoundsDebounced = useDebounce(onBounds);
 
-  const onMapClick = useCallback((event: google.maps.MapMouseEvent) => {
-    // console.log('StoreLocatorMap.onMapClick');
-    // avoid directly mutating state
-    // setMarkers([...markers, { position: event.latLng! }]);
-  }, []);
+  // fires when user close the google map info windo
+  const onInfoWindowClose = () => {
+    // console.log('onInfoWindowClose');
+    setInfoWindow(undefined);
+  };
 
+  // fires when user click on a marker
   const onMarkerClick = useCallback((marker: IGeoLocalized) => {
     // console.log('onMarkerClick', marker);
     const item = marker as StoreLocatorItem;
@@ -270,6 +296,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     });
   }, []);
 
+  // fires when user click on a result
   const onItemClick = (item: StoreLocatorItem) => {
     if (map) {
       map.setCenter(item.position);
@@ -277,17 +304,14 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
   }
 
-  const onInfoWindowClose = () => {
-    console.log('onInfoWindowClose');
-    setInfoWindow(undefined);
-  };
-
-  function onStatus(status: string) {
-    console.log('StoreLocatorMap.onStatus', status);
-    if (status === GoogleMapLoaderStatus.Success) {
-      // console.log(window.google.maps);
-    }
-  }
+  // when user click on the map (unused)
+  /*
+  const onMapClick = useCallback((event: google.maps.MapMouseEvent) => {
+    // console.log('StoreLocatorMap.onMapClick');
+    // avoid directly mutating state
+    // setMarkers([...markers, { position: event.latLng! }]);
+  }, []);
+  */
 
   return (
     <>
@@ -297,6 +321,14 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
           <Text size="10" textTransform="uppercase">{item.category}</Text>
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
           <Text size="8" margin="0 auto 2rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
+          {otherFilters && otherFilters.map((filter, f) => (
+            <RadioOption.Group key={f} size="sm" marginBottom="1rem" initialValue={filter.values.length ? filter.values[0].toString() : "0"} onChange={(event) => onSetFilter(filter, [event.target.value])}>
+              <RadioOption value="0">All</RadioOption>
+              {filter.options && filter.options.map((option, o) => (
+                <RadioOption key={o} value={option.id.toString()} disabled={option.count === 0}>{option.title}</RadioOption>
+              ))}
+            </RadioOption.Group>
+          ))}
           <Flex.Row>
             <Autocomplete background="var(--color-neutral-100)" name="search" placeholder="search..." source={autocompleteSource} onAutocomplete={onAutocomplete} ref={autocompleteRef}
               before={<MapPin color="var(--color-neutral-300)" />}
@@ -306,10 +338,12 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
         </Container>
       </Section>
       <GoogleMapLoader apiKey={API_KEY} language={locale} region={country.id} libraries={['places']} skeleton={() => <GoogleMapSkeleton></GoogleMapSkeleton>} onStatus={onStatus}>
-        <GoogleMap {...googleMapOptions} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced} onClick={onMapClick}>
-          {USE_CLUSTERER ? <GoogleMapMarkerClusterer items={items} onClick={onMarkerClick} /> :
-            USE_CLUSTERER_PLUS ? <GoogleMapMarkerClustererPlus items={items} onClick={onMarkerClick} /> :
-              items.map((item, i) => (
+        <GoogleMap {...googleMapOptions} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced}>
+          {USE_CLUSTERER ?
+            <GoogleMapMarkerClusterer items={filteredItems} onClick={onMarkerClick} /> :
+            USE_CLUSTERER_PLUS ?
+              <GoogleMapMarkerClustererPlus items={filteredItems} onClick={onMarkerClick} /> :
+              filteredItems.map((item, i) => (
                 <GoogleMapMarker key={i} position={item.position} icon={"/map/marker-sm.png"} onClick={() => onMarkerClick(item)} />
               ))}
           <GoogleMapInfoWindow {...infoWindow} onClose={onInfoWindowClose} />

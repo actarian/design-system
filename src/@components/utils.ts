@@ -129,8 +129,8 @@ export function eachMedia(props: ThemeProps, callback: (key: string) => string |
   }
 }
 
-export function getVariant<T extends string>(variants: { [key in T]?: FlattenInterpolation<any> }, type?: T) {
-  return (type && variants[type]) ? variants[type] : '';
+export function getVariant<T extends string>(variants: { [key in T]?: FlattenInterpolation<any> }, type?: T): FlattenInterpolation<any> | '' {
+  return (type && variants[type]) ? (variants[type] || '') : '';
 }
 
 function className_(...args: ({ [key: string]: boolean } | string)[]): string {

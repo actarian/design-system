@@ -93,12 +93,11 @@ const StyledRadioOptionButton = styled.div<RadioOptionProps>`
 const StyledRadioOption = styled.div<RadioOptionProps>`
   position: relative;
   display: flex;
-  min-height: 4rem;
-  font-size: 0;
+  min-height: 3.8em;
   line-height: 1;
 
   ${props => (css`
-  .line {
+  &, .line {
     font-size: var(--button-size-${props.size || 'md'});
   }
   `)}

@@ -6,20 +6,20 @@
     "mode": "select",
     "features": [
       {
-        "value": 8,
-        "label": "Hexagon Store"
+        "id": 8,
+        "title": "Hexagon Store"
       },
       {
-        "value": 9,
-        "label": "Hexagon Atelier"
+        "id": 9,
+        "title": "Hexagon Atelier"
       },
       {
-        "value": 10,
-        "label": "Dealers"
+        "id": 10,
+        "title": "Dealers"
       },
       {
-        "value": 11,
-        "label": "Retailers"
+        "id": 11,
+        "title": "Retailers"
       }
     ]
   },

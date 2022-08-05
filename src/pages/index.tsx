@@ -1,4 +1,4 @@
-import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, MediaType, Page, Section, Text } from '@components';
+import { Button, ButtonGroup, Card, Container, Divider, Flex, Grid, Layout, Media, Page, Section, Text } from '@components';
 import { Label } from '@forms';
 import { ChevronDown, ShoppingCart } from '@icons';
 import { BlogMore, BlogProposition, CategoriesProposition, Colors, ContactForm, Footer, Header, Icons, ProductsProposition, Proposition, Split, SwiperHero, Typography } from '@sections';
@@ -6,52 +6,14 @@ import { BlogMoreDefaults } from '@sections/blog-more/blog-more';
 import { CategoriesPropositionDefaults } from '@sections/categories-proposition/categories-proposition';
 import { ProductsPropositionDefaults } from '@sections/products-proposition/products-proposition';
 import { SplitDefaults } from '@sections/split/split';
+import { SwiperHeroDefaults } from '@sections/swiper-hero/swiper-hero';
 import Head from 'next/head';
-import { useMemo } from 'react';
 
 export default function Homepage() {
 
   const onClick = () => {
     alert('click!');
   }
-
-  const items = useMemo(() => [{
-    id: 1,
-    title: 'Trusted Group',
-    abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
-    link: {
-      href: '#',
-      label: 'Do you want to know more?',
-    },
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/1527pjeb6jg/download?force=true&w=1600',
-    }
-  }, {
-    id: 2,
-    title: 'Expertise and tailor-made services',
-    abstract: 'We support our clients to develop both new and existing chemical solutions.',
-    link: {
-      href: '#',
-      label: 'Do you want to know more?',
-    },
-    media: {
-      type: MediaType.Image,
-      src: 'https://unsplash.com/photos/9wg5jCEPBsw/download?force=true&w=1600',
-    }
-  }, {
-    id: 3,
-    title: 'Sustainable agriculture',
-    abstract: 'We combine technology and creativity for the farmers of today and tomorrow.',
-    link: {
-      href: '#',
-      label: 'Do you want to know more?',
-    },
-    media: {
-      type: MediaType.Video,
-      src: 'https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
-    }
-  }], []);
 
   return (
     <>
@@ -65,7 +27,7 @@ export default function Homepage() {
 
           <Header fixed />
 
-          <SwiperHero items={items} />
+          <SwiperHero items={SwiperHeroDefaults.items} />
 
           <BlogProposition />
 

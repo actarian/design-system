@@ -31,7 +31,7 @@ import { SwiperHero } from '@design-system';
 A basic example of `SwiperHero`.
 
 export const Basic = ({ data, ...args }) => {
-  const items = useMemo(() => [{
+  const items = [{
     id: 1,
     title: 'Trusted Group',
     abstract: 'We are the only private and independent Italian multinational in the agrotechnology sector.',
@@ -67,7 +67,7 @@ export const Basic = ({ data, ...args }) => {
       type: 'video',
       src: 'https://sipcamoxon.wslabs.it/downloads/2306/136/SIPCAM OXON_corporate_f3.mp4',
     }
-  }], []);
+  }];
   return (<>
     <SwiperHero items={items} />
   </>)
