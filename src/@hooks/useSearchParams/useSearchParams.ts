@@ -5,34 +5,36 @@ const USE_ENCRYPTION = true;
 
 export const isBrowser = typeof window !== 'undefined';
 
-function decode_(base64: string): string {
+function base64ToString(base64: string): string {
   if (!USE_ENCRYPTION) return base64;
   return isBrowser ? window.atob(base64) : Buffer.from(base64, 'base64').toString();
 }
 
-function encode_(text: string): string {
+function stringToBase64(text: string): string {
   if (!USE_ENCRYPTION) return text;
   return isBrowser ? window.btoa(text) : Buffer.from(text).toString('base64');
 }
 
-function searchParams_(url: string) {
-  // console.log('searchParams_', url);
+function stringToURLSearchParams(url: string):URLSearchParams {
+  // console.log('stringToURLSearchParams', url);
   return new URLSearchParams(url);
 }
 
-function has_(url: string, key: string) {
-  const params = searchParams_(url);
+/*
+function hasURLSearchParams(url: string, key: string):boolean {
+  const params = stringToURLSearchParams(url);
   return params.has(key);
 }
+*/
 
-function get_(url: string, key: string): any {
-  const params = searchParams_(url);
+function getURLSearchParams(url: string, key: string): string | null {
+  const params = stringToURLSearchParams(url);
   return params.get(key);
 }
 
-function set_(url: string, keyOrValue: any, value: any): URLSearchParams { // !!! any
-  const params = searchParams_(url);
-  if (typeof keyOrValue === 'string') {
+function setURLSearchParams(url: string, keyOrValue: string, value: string | null | undefined): URLSearchParams { // !!! any
+  const params = stringToURLSearchParams(url);
+  if (value != null) {
     params.set(keyOrValue, value);
   } else {
     params.set(keyOrValue, '');
@@ -42,6 +44,7 @@ function set_(url: string, keyOrValue: any, value: any): URLSearchParams { // !!
   // replace_(params);
 }
 
+/*
 function push_(params: URLSearchParams) {
   if (window.history) {
     const title = document.title;
@@ -49,6 +52,7 @@ function push_(params: URLSearchParams) {
     window.history.pushState(params.toString(), title, url);
   }
 }
+*/
 
 function replace_(params: URLSearchParams) {
   if (window.history) {
@@ -58,6 +62,7 @@ function replace_(params: URLSearchParams) {
   }
 }
 
+/*
 function replace__(from: string, to: string) {
   const history = window.history;
   if (history && history.replaceState) {
@@ -72,23 +77,23 @@ function replace__(from: string, to: string) {
     }
   }
 }
+*/
 
 function deserialize_(url: string, key?: string) {
-  const encoded = get_(url, 'params');
+  const encoded = getURLSearchParams(url, 'params');
   return decode(encoded, key);
 }
 
-function serialize_(url: string, value: any, key?: string): URLSearchParams {
-  let params = deserialize_(url);
+function serialize_(url: string, value: IParams, key?: string): URLSearchParams {
+  const params = deserialize_(url);
   const encoded = encode(params, value, key);
-  params = set_(url, 'params', encoded);
-  return params;
+  return setURLSearchParams(url, 'params', encoded);
 }
 
-export function decode(encoded?: string, key?: string): any {
+export function decode(encoded: string | null | undefined, key?: string): IParams {
   let decoded = null;
   if (encoded) {
-    const json = decode_(encoded);
+    const json = base64ToString(encoded);
     decoded = JSON.parse(json);
   }
   // console.log('useSearchParams.decode', decoded);
@@ -98,7 +103,7 @@ export function decode(encoded?: string, key?: string): any {
   return decoded || null;
 }
 
-function encode(params: any, value: any, key?: string) {
+function encode(params: IParams, value: IParams, key?: string) {
   params = params || {};
   let encoded = null;
   if (typeof key === 'string') {
@@ -108,7 +113,7 @@ function encode(params: any, value: any, key?: string) {
   }
   // console.log('useSearchParams.encode', params);
   const json = JSON.stringify(params);
-  encoded = encode_(json);
+  encoded = stringToBase64(json);
   return encoded;
 }
 
@@ -121,7 +126,7 @@ function searchParamsToObject_(params: URLSearchParams): { [key: string]: string
   return result;
 }
 
-export function getSearchParams(url: string, key?: string): any {
+export function getSearchParams(url: string, key?: string): {} | null {
   const components = url.split('?');
   const search = components[1] || '';
   const searchParams = new URLSearchParams(search);
@@ -131,7 +136,7 @@ export function getSearchParams(url: string, key?: string): any {
   return value;
 }
 
-export function updateSearchParams(currentPath: string, value: any, key?: string): { pathname: string, query: { [key: string]: string } } {
+export function updateSearchParams(currentPath: string, value: IParams, key?: string): { pathname: string, query: { [key: string]: string } } {
   const components = currentPath.split('?');
   const searchParams = serialize_(components[1] || '', value, key);
   const query = searchParamsToObject_(searchParams);
@@ -140,42 +145,51 @@ export function updateSearchParams(currentPath: string, value: any, key?: string
   return { pathname, query };
 }
 
-export function replaceSearchParams(router: NextRouter, value: any, key?: string) {
+export function replaceSearchParams(router: NextRouter, value: IParams, key?: string):void {
   const { pathname, query } = updateSearchParams(router.asPath, value, key);
   router.replace({ pathname, query });
 }
 
-export function pushSearchParams(router: NextRouter, value: any, key?: string) {
+export function pushSearchParams(router: NextRouter, value: IParams, key?: string):void {
   const { pathname, query } = updateSearchParams(router.asPath, value, key);
   router.push({ pathname, query });
 }
 
-export function replaceSearchParamsSilently(value: any, key?: string) {
+export function replaceSearchParamsSilently(value: IParams, key?: string):void {
   if (isBrowser) {
     const searchParams = serialize_(window.location.search, value, key);
     replace_(searchParams);
   }
 }
 
-export function useSearchParams(key?: string) {
+export function useSearchParams(key?: string): IUseSearchParamsResult {
   const router = useRouter();
 
   const initialValue = useMemo(() => {
     const value = getSearchParams(router.asPath, key);
     return value;
-  }, []);
+  }, [key, router.asPath]);
 
   const params = initialValue;
   // console.log('useSearchParams', params);
   // const [params, setParams_] = useState(initialValue);
 
-  const setParams = useCallback((params: any) => {
+  /*
+  const setParams = useCallback((params: IParams) => {
     replaceSearchParams(router, params, key);
-  }, [key]);
+  }, [key, router]);
+  */
 
-  const replaceParamsSilently = useCallback((params: any) => {
+  const replaceParamsSilently = useCallback((params: IParams) => {
     replaceSearchParamsSilently(params, key);
   }, [key]);
 
   return { params, replaceParamsSilently };
 }
+
+export type IUseSearchParamsResult = { params: IParams, replaceParamsSilently: (params:IParams) => void };
+
+export type IParams = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  [key:string]: any;
+} | null;

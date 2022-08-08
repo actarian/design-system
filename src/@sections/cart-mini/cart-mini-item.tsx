@@ -54,9 +54,9 @@ const CartMiniItem: React.FC<{ item: ICartItem }> = ({ item }: { item: ICartItem
             <Text size="10" marginBottom="1rem">{item.abstract}</Text>
             <Flex.Row justifyContent="space-between">
               <Button onClick={() => onSetQty(item.qty - 1)} ><Minus width="20px" height="20px" /></Button>
-              <Input flex="0 0 60px" padding="0.2rem" placeholder="qty" value={item.qty.toString()} onChange={(e) => onSetQty(Number(e.target.value))} />
+              <Input width="60px" padding="0.2rem" placeholder="qty" value={item.qty.toString()} onChange={(e) => onSetQty(Number(e.target.value))} />
               <Button size="xs" onClick={() => onSetQty(item.qty + 1)} ><Plus width="20px" height="20px" /></Button>
-              <Text flex="0 0 80px" textAlign="right">{price}</Text>
+              <Text width="80px" textAlign="right">{price}</Text>
               {mounted && <Button onClick={onRemove}><Trash width="20px" height="20px" /></Button>}
             </Flex.Row>
           </Card.Content>

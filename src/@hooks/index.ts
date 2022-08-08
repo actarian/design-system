@@ -1,8 +1,7 @@
 export { Filter, FilterMode } from '@hooks/useFilters/filter';
-export type { IFilter, IFilterOption } from '@hooks/useFilters/filter';
+export type { FilterParams, FilterValues, IFilter, IFilterOption } from '@hooks/useFilters/filter';
 export { filtersToParams, getFilteredItems, getFilters, setFilters } from '@hooks/useFilters/filter.service';
 export { useFilters } from '@hooks/useFilters/useFilters';
-export type { FilterParams, FilterValues } from '@hooks/useFilters/useFilters';
 export { getPagedItems, getPaginationInfo } from '@hooks/usePagination/pagination.service';
 export type { IPaginationInfo } from '@hooks/usePagination/pagination.service';
 export { usePagination } from '@hooks/usePagination/usePagination';

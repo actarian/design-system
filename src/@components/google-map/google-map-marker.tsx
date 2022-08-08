@@ -36,7 +36,7 @@ const GoogleMapMarker: React.FC<GoogleMapMarkerProps> = ({
         instance.unbindAll()
       }
     };
-  }, [marker, map]);
+  }, [marker, map, onClick]);
 
   useEffect(() => {
     if (marker) {

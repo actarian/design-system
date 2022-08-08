@@ -26,6 +26,9 @@ const GoogleMapInfoWindow: React.FC<GoogleMapInfoWindowProps> = ({
   const [infoWindow, setInfoWindow] = useState<google.maps.InfoWindow>();
 
   useEffect(() => {
+    if (!map) {
+      return;
+    }
     const onClose_ = (event: MouseEvent<HTMLElement>) => {
       if (onClose) {
         onClose(event);

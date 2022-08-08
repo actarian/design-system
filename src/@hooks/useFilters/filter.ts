@@ -1,14 +1,16 @@
+import { IEquatable } from '@core';
 
-export type IFeatureId = string | number;
+export type FilterParams = { [key: string]: IEquatable[] | null };
+export type FilterValues = IEquatable[][];
 
 export type IFeatureType = {
   id: string;
   schema: string;
   title: string;
   features?: {
-    id: IFeatureId,
-    title: string,
-    [key: string]: any
+    id: IEquatable;
+    title: string;
+    [key: string]: unknown;
   }[];
 };
 
@@ -20,7 +22,7 @@ export enum FilterMode {
 }
 
 export interface IFilterOption {
-  id: IFeatureId; // IEquatable; !!! meh
+  id: IEquatable;
   title: string;
   count?: number;
   disabled?: boolean;
@@ -31,16 +33,15 @@ export interface IFilter {
   title?: string;
   mode?: FilterMode;
   options?: IFilterOption[];
-  values?: any[];
+  values?: IEquatable[];
 }
 
-export class Filter {
-
+export class Filter<T> implements IFilter {
   id: string = 'filter';
   title: string = 'Filter';
   mode: FilterMode = FilterMode.OR;
   options: IFilterOption[] = [];
-  values: any[] = [];
+  values: IEquatable[] = [];
 
   constructor(options?: IFilter) {
     if (options) {
@@ -55,8 +56,8 @@ export class Filter {
     }
   }
 
-  static fromFeatureType(featureType: IFeatureType, mode: FilterMode = FilterMode.AND): Filter {
-    return new Filter({
+  static fromFeatureType<T>(featureType: IFeatureType, mode: FilterMode = FilterMode.AND): Filter<T> {
+    return new Filter<T>({
       id: featureType.id,
       title: featureType.title,
       mode,
@@ -64,11 +65,12 @@ export class Filter {
     });
   }
 
-  filter(item: any, value: any): boolean {
-    return item.featureIds.includes(value);
+  filter(item: T, value: IEquatable): boolean {
+    console.warn('filter not defined for', item, value);
+    return true;
   }
 
-  match(item: any): boolean {
+  match(item: T): boolean {
     let match: boolean;
     if (this.mode === FilterMode.OR) {
       // OR: if item has any of the selected values
@@ -86,7 +88,7 @@ export class Filter {
     return match;
   }
 
-  removeInvalidOptions(items: any[]): void {
+  removeInvalidOptions(items: T[]): void {
     if (this.options) {
       this.options = this.options.filter(option => {
         const hasItemWithOption = items.reduce((p, item) => {

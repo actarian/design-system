@@ -19,6 +19,8 @@
     "paths": {
       "@components*": ["src/@components*"],
       "@components": ["src/@components/index"],
+      "@core*": ["src/@core*"],
+      "@core": ["src/@core/index"],
       "@forms*": ["src/@forms*"],
       "@forms": ["src/@forms/index"],
       "@hooks*": ["src/@hooks*"],

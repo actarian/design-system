@@ -9,6 +9,7 @@ import GoogleMapMarkerClustererPlus from '@components/google-map/google-map-mark
 import GoogleMapSkeleton from '@components/google-map/google-map-skeleton';
 import { autocompleteSource, calculateDistances, findMe, geocode, getBounds, IAutocompleteResult, IAutocompleteResultDetail, IGeoLocalized } from '@components/google-map/google-map.service';
 import { ComponentProps } from '@components/types';
+import { IEquatable } from '@core';
 import { RadioOption } from '@forms';
 import Autocomplete from '@forms/autocomplete/autocomplete';
 import { IAutocompleteItem } from '@forms/autocomplete/autocomplete-context';
@@ -23,14 +24,9 @@ const API_KEY = process.env.NEXT_PUBLIC_GOOGLE_MAP_API_KEY || '';
 const USE_CLUSTERER = false;
 const USE_CLUSTERER_PLUS = true;
 
-export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: any): boolean {
+// this function filters the store locator items by bounds or category
+export function filterStoreLocatorItem(key: string, item: StoreLocatorItem, value: IEquatable): boolean {
   switch (key) {
-    case 'bounds':
-      if (value && typeof value.contains === 'function') {
-        // const position = new google.maps.LatLng(item.position.lat, item.position.lng);
-        return value.contains(item.position);
-      }
-      return true;
     case 'category':
       return item.category && item.category.id === value;
     default:
@@ -68,17 +64,16 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   const { params, replaceParamsSilently } = useSearchParams();
 
   // using item filter callback from service
-  const filterItem = useCallback(filterStoreLocatorItem, []);
+  const filterItem = filterStoreLocatorItem;
 
   // initialize filters with items, featureTypes and queryString params
-  const filterParams = params && params.filter;
-  const { filteredItems, filters, setFilter, itemsWithOmittedKeys } = useFilters<StoreLocatorItem>(items, featureTypes, filterItem, filterParams);
+  const { filteredItems, filters, setFilter } = useFilters<StoreLocatorItem>(items, featureTypes, filterItem, params?.filter);
 
-  // list of filters bounds excluded
-  const otherFilters = filters.filter(x => x.id !== 'bounds');
+  // bounds filtered items
+  const [boundsItems, setBoundsItems] = useState<StoreLocatorItem[]>(filteredItems);
 
   // visible results paged by the infinite scroll loader
-  const [visibleItems, onMore, hasMore] = useInfiniteLoader(filteredItems);
+  const [visibleItems, onMore, hasMore] = useInfiniteLoader(boundsItems);
 
   // google map info window current data
   const [infoWindow, setInfoWindow] = useState<InfoWindow>();
@@ -92,8 +87,14 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     lng: 12.56738,
   });
 
-  // reference of the map instance
+  // current map bounds
+  const [bounds, setBounds] = useState<google.maps.LatLngBounds>();
+
+  // reference of the map instance meh
   const [map, setMap] = useState<google.maps.Map>();
+
+  // reference to the map instance
+  const mapRef = useRef<google.maps.Map>(null);
 
   // reference of the autocomplete input element
   const autocompleteRef = useRef<HTMLInputElement>(null);
@@ -113,9 +114,14 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     fullscreenControl: true,
   }), [center, zoom]);
 
-  // centering on current country
+  // centering on the current country or the url bounds parameters
   useEffect(() => {
     if (map) {
+      if (params?.bounds && mapRef.current) {
+        mapRef.current.fitBounds(params.bounds, 0);
+        // setBounds(params.bounds);
+        return;
+      }
       const fetchResults = async () => {
         const results = await geocode({ 'address': country.name });
         const place = results?.find(x => x.types.includes('country'));
@@ -134,16 +140,27 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
         console.log('StoreLocatorSearch.onFindMe.error', error)
       });
     }
-  }, [country, map]);
+  }, [country, map, params?.bounds]);
+
+  // filtering items by bounds on bounds change
+  useEffect(() => {
+    let items: StoreLocatorItem[];
+    if (bounds) {
+      items = filteredItems.filter(item => bounds.contains(item.position));
+    } else {
+      items = [ ...filteredItems ];
+    }
+    setBoundsItems(items);
+  }, [filteredItems, bounds]);
 
   // fires when user make a change on filters
-  function onSetFilter(filter: Filter, values: string[]) {
+  function onSetFilter(filter: Filter<StoreLocatorItem>, values: string[]) {
     const ids = values.map(x => parseInt(x)).filter(x => x !== 0);
     // console.log('StoreLocatorMap.onFilterChange', filter, ids);
     setFilter(filter, ids);
     // pagination.goToPage(1);
     // serializing querystring filter
-    const filterParams = filtersToParams(otherFilters);
+    const filterParams = filtersToParams(filters);
     // replaceParamsSilently({ filter: filterParams, pagination: { page: 1 } });
     replaceParamsSilently({ filter: filterParams });
   }
@@ -172,15 +189,17 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
     }
     if ('geometry' in item) {
       setPlace(item as unknown as IAutocompleteResultDetail);
-    } else if (typeof item.getDetails === 'function' && map) {
-      const place = await item.getDetails(map);
+    } else if (typeof item.getDetails === 'function' && mapRef.current) {
+      const place = await item.getDetails(mapRef.current);
       setPlace(place);
     }
   }
 
   // contains logic of setting the place and bounds of the google map
   function setPlace(place: { location?: google.maps.LatLngLiteral, geometry?: google.maps.places.PlaceGeometry | google.maps.GeocoderGeometry }) {
-    const items = itemsWithOmittedKeys('bounds');
+    // const items = itemsWithOmittedKeys('bounds');
+    const items = filteredItems;
+    const map = mapRef.current;
     if (map) {
       if (place) {
         const geometry = place.geometry;
@@ -234,12 +253,12 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   }
 
   // on google map current loading status
-  function onStatus(status: string) {
+  const onStatus = useCallback((status: string) => {
     console.log('StoreLocatorMap.onStatus', status);
     if (status === GoogleMapLoaderStatus.Success) {
       // console.log(window.google.maps);
     }
-  }
+  }, []);
 
   // on google map loaded
   const onLoad = useCallback((map: google.maps.Map) => {
@@ -250,21 +269,16 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
   // on google map idle positioning status
   const onIdle = useCallback((map: google.maps.Map) => {
     // console.log('onIdle');
+    // meh
     setZoom(map.getZoom() as number);
     setCenter((map.getCenter() as google.maps.LatLng).toJSON());
   }, []);
 
   // on google map did change bounds
   const onBounds = useCallback((bounds: google.maps.LatLngBounds | undefined) => {
-    // this.bounds = bounds;
-    const filterBounds = filters.find(x => x.id === 'bounds');
-    // console.log('StoreLocatorMap.onBounds', bounds, filterBounds);
-    if (filterBounds) {
-      if (bounds) {
-        setFilter(filterBounds, [bounds]);
-      }
-    }
-  }, [filters, setFilter]);
+    setBounds(bounds);
+    replaceParamsSilently({ bounds });
+  }, [setBounds, replaceParamsSilently]);
 
   // debounced version of the onBounds callback
   const onBoundsDebounced = useDebounce(onBounds);
@@ -298,6 +312,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
 
   // fires when user click on a result
   const onItemClick = (item: StoreLocatorItem) => {
+    const map = mapRef.current;
     if (map) {
       map.setCenter(item.position);
       map.setZoom(11);
@@ -321,7 +336,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
           <Text size="10" textTransform="uppercase">{item.category}</Text>
           <Text size="2" marginBottom="1rem" fontWeight="700">{item.title}</Text>
           <Text size="8" margin="0 auto 2rem auto" maxWidth="70ch" dangerouslySetInnerHTML={{ __html: item.abstract }}></Text>
-          {otherFilters && otherFilters.map((filter, f) => (
+          {filters && filters.map((filter, f) => (
             <RadioOption.Group key={f} size="sm" marginBottom="1rem" initialValue={filter.values.length ? filter.values[0].toString() : "0"} onChange={(event) => onSetFilter(filter, [event.target.value])}>
               <RadioOption value="0">All</RadioOption>
               {filter.options && filter.options.map((option, o) => (
@@ -338,7 +353,7 @@ const StoreLocatorSearch: React.FC<StoreLocatorHeadProps> = ({
         </Container>
       </Section>
       <GoogleMapLoader apiKey={API_KEY} language={locale} region={country.id} libraries={['places']} skeleton={() => <GoogleMapSkeleton></GoogleMapSkeleton>} onStatus={onStatus}>
-        <GoogleMap {...googleMapOptions} height="Min(100vw, 600px)" position="relative" onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced}>
+        <GoogleMap {...googleMapOptions} height="Min(100vw, 600px)" position="relative" ref={mapRef} onLoad={onLoad} onIdle={onIdle} onBounds={onBoundsDebounced}>
           {USE_CLUSTERER ?
             <GoogleMapMarkerClusterer items={filteredItems} onClick={onMarkerClick} /> :
             USE_CLUSTERER_PLUS ?
@@ -404,5 +419,19 @@ export interface StoreLocatorItem extends IGeoLocalized {
   };
   rank: number;
   distance?: number;
-  related?: any;
+  related?: {
+    id: number;
+    url: string;
+  };
 }
+
+/*
+,
+  {
+    "id": "bounds",
+    "schema": "featureType",
+    "title": "Bounds",
+    "mode": "query"
+  }
+
+*/

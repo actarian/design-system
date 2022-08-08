@@ -1,9 +1,10 @@
+import { IEquatable } from '@core';
+import type { FilterParams } from './filter';
 import { Filter, FilterMode, IFeatureType } from './filter';
-import type { FilterParams } from './useFilters';
 
-export function getFilters<T>(items: T[], featureTypes: IFeatureType[], filterMap: (key: string, item: any, value: any) => boolean, params?: { [key: string]: any[] }): Filter[] {
+export function getFilters<T>(items: T[], featureTypes: IFeatureType[], filterMap: (key: string, item: T, value: IEquatable) => boolean, params?: FilterParams | null): Filter<T>[] {
   return featureTypes.map(featureType => {
-    const filter = Filter.fromFeatureType(featureType, FilterMode.OR);
+    const filter = Filter.fromFeatureType<T>(featureType, FilterMode.OR);
     filter.filter = (item, value) => {
       if (typeof filterMap === 'function') {
         return filterMap(featureType.id, item, value);
@@ -11,14 +12,14 @@ export function getFilters<T>(items: T[], featureTypes: IFeatureType[], filterMa
       return false;
     };
     filter.removeInvalidOptions(items);
-    if (params && params[filter.id]) {
-      filter.values = params[filter.id];
+    if (params && params[filter.id] != null) {
+      filter.values = params[filter.id] as IEquatable[];
     }
     return filter;
   });
 }
 
-export function getFilteredItems<T>(items: T[], selectedFilters: Filter[]): T[] {
+export function getFilteredItems<T>(items: T[], selectedFilters: Filter<T>[]): T[] {
   const filteredItems = items.filter(item => {
     let has = true;
     selectedFilters.forEach(filter => {
@@ -29,7 +30,7 @@ export function getFilteredItems<T>(items: T[], selectedFilters: Filter[]): T[] 
   return filteredItems;
 }
 
-export function setFilters<T>(items: T[], filters: Filter[], filter?: Filter, values?: any[]): T[] {
+export function setFilters<T>(items: T[], filters: Filter<T>[], filter?: Filter<T>, values?: IEquatable[]): T[] {
 
   // if passed featureType and values with set filter values
   if (filter) {
@@ -71,8 +72,8 @@ export function setFilters<T>(items: T[], filters: Filter[], filter?: Filter, va
   return filteredItems;
 }
 
-export function filtersToParams(filters: Filter[]): FilterParams | null {
-  let params: { [key: string]: any[] } = {};
+export function filtersToParams<T>(filters: Filter<T>[]): FilterParams | null {
+  const params: FilterParams = {};
   let any = false;
   filters.filter(x => x.hasAny()).forEach(filter => {
     params[filter.id] = filter.values;

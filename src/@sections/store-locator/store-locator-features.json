@@ -22,11 +22,5 @@
         "title": "Retailers"
       }
     ]
-  },
-  {
-    "id": "bounds",
-    "schema": "featureType",
-    "title": "Bounds",
-    "mode": "query"
   }
 ]

@@ -1,4 +1,4 @@
-import MarkerClusterer, { ClusterIconStyle } from '@googlemaps/markerclustererplus';
+import MarkerClustererPlus, { ClusterIconStyle } from '@googlemaps/markerclustererplus';
 import React, { useEffect, useState } from 'react';
 import { useGoogleMapContext } from "./google-map-context";
 import { IGeoLocalized } from "./google-map.service";
@@ -19,12 +19,16 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
   const [markers, setMarkers] = useState<google.maps.Marker[]>([]);
 
   useEffect(() => {
+    let markers_: google.maps.Marker[] = [];
+    if (!map) {
+      return;
+    }
     const onClick_ = (item: IGeoLocalized) => {
       if (onClick) {
         onClick(item);
       }
     }
-    let markers_: google.maps.Marker[] = [];
+    // markersDispose(markers);
     if (items.length) {
       markers_ = items.map(item => {
         const icon = {
@@ -48,14 +52,15 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
       // remove marker from map on unmount
     }
     return () => {
-      markers_.forEach(x => x.unbindAll());
+      markersDispose(markers_);
     };
   }, [items, map, onClick]);
 
   useEffect(() => {
-    let clusterer: MarkerClusterer;
+    let clusterer: MarkerClustererPlus;
     if (map && markers) {
-      clusterer = new MarkerClusterer(map, markers, {
+      console.log('clusterer init');
+      clusterer = new MarkerClustererPlus(map, markers, {
         imagePath: `/map/cluster-`,
       });
       const styles = clusterer.getStyles();
@@ -71,10 +76,9 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
     }
     // remove clusterer from map on unmount
     return () => {
-      if (clusterer) {
-        clusterer.clearMarkers();
-        clusterer.setMap(null);
-      }
+      console.log('clusterer dispose');
+      clustererDispose(clusterer);
+      markersDispose(markers);
     };
   }, [map, markers]);
 
@@ -82,3 +86,21 @@ const GoogleMapMarkerClustererPlus: React.FC<GoogleMapMarkerClustererPlusProps> 
 };
 
 export default GoogleMapMarkerClustererPlus;
+
+function markerDispose(marker:google.maps.Marker) {
+  marker.setMap(null);
+  marker.unbindAll();
+}
+
+function markersDispose(markers?:google.maps.Marker[]) {
+  if (markers) {
+    markers.forEach(x => markerDispose(x));
+  }
+}
+
+function clustererDispose(clusterer?: MarkerClustererPlus) {
+  if (clusterer) {
+    clusterer.clearMarkers();
+    clusterer.setMap(null);
+  }
+}

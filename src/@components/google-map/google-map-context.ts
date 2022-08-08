@@ -1,4 +1,4 @@
-import React, { MutableRefObject } from 'react';
+import React from 'react';
 
 const defaultContext = {
   map: undefined,
@@ -6,7 +6,6 @@ const defaultContext = {
 
 export interface IGoogleMapContext {
   map: google.maps.Map | undefined;
-  ref?: MutableRefObject<HTMLElement | null>;
 }
 
 export const GoogleMapContext = React.createContext<IGoogleMapContext>(defaultContext);

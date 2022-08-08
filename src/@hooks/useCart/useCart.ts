@@ -1,13 +1,8 @@
+import { IEquatable, ISchema } from '@core';
 import create, { StateCreator } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 const PERSIST = true;
-
-type IEquatable = number | string;
-type ISchema = {
-  id: IEquatable;
-  schema: string;
-}
 
 const cartStore: IStateCreator<ICartStore> = (set, get) => ({
   items: [],

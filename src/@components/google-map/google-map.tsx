@@ -1,5 +1,5 @@
 import { Box, ComponentCssResponsiveProps } from '@components';
-import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef } from 'react';
+import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { GoogleMapStyle } from './google-map.style';
@@ -24,7 +24,9 @@ const StyledBox = styled(Box)`
   }
 `;
 
-const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
+
+
+const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
   onLoad,
   onIdle,
   onBounds,
@@ -39,26 +41,28 @@ const GoogleMap = forwardRef<HTMLDivElement, GoogleMapProps>(({
   options.center = options.center || { lat: 43.6263318, lng: 12.6790557 };
   options.styles = options.styles || GoogleMapStyle;
 
+  const [map, setMap] = useState<google.maps.Map>();
+
   const mapRef = useRef<google.maps.Map>();
 
   const innerRef = useRef<HTMLDivElement>(null);
 
-  useImperativeHandle(ref, () => innerRef.current as HTMLDivElement);
+  useImperativeHandle(ref, () => mapRef.current as google.maps.Map); // switch to map
 
   const contextValue: IGoogleMapContext = useMemo(() => ({
-    map: mapRef.current,
-    innerRef,
-  }), [mapRef, innerRef]);
+    map,
+  }), [map]);
 
   useEffect(() => {
     if (!mapRef.current && innerRef.current) {
-      const map_ = new window.google.maps.Map(innerRef.current, options);
+      const map_ = new google.maps.Map(innerRef.current, options);
       mapRef.current = map_;
+      setMap(map_);
       if (onLoad) {
         onLoad(map_);
       }
     }
-  }, [innerRef, options]);
+  }, [options, onLoad]);
 
   // because React does not do deep comparisons, a custom hook is used
   // see discussion in https://github.com/googlemaps/js-samples/issues/946

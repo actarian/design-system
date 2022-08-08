@@ -20,12 +20,16 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
   const [markers, setMarkers] = useState<google.maps.Marker[]>();
 
   useEffect(() => {
+    let markers_:google.maps.Marker[] = [];
+    if (!map) {
+      return;
+    }
     const onClick_ = (item: IGeoLocalized) => {
       if (onClick) {
         onClick(item);
       }
     }
-    const instances = items.map(item => {
+    markers_ = items.map(item => {
       const icon = {
         url: `/map/marker-sm.png`,
         size: new google.maps.Size(24, 32),
@@ -43,10 +47,10 @@ const GoogleMapMarkerClusterer: React.FC<GoogleMapMarkerClustererProps> = ({
       });
       return marker;
     });
-    setMarkers(instances);
+    setMarkers(markers_);
     // remove marker from map on unmount
     return () => {
-      instances.forEach(x => x.unbindAll());
+      markers_.forEach(x => x.unbindAll());
     };
   }, [items, map, onClick]);
 
