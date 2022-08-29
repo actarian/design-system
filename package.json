@@ -30,12 +30,13 @@
     "@googlemaps/js-api-loader": "^1.14.3",
     "@googlemaps/markerclusterer": "^2.0.10",
     "@googlemaps/typescript-guards": "^2.0.2",
-    "@storybook/addon-actions": "^6.5.9",
-    "@storybook/addon-essentials": "^6.5.9",
-    "@storybook/addon-links": "^6.5.9",
-    "@storybook/builder-webpack5": "^6.5.9",
-    "@storybook/manager-webpack5": "^6.5.9",
-    "@storybook/react": "^6.5.9",
+    "@mdx-js/react": "^1.6.22",
+    "@storybook/addon-actions": "^6.5.10",
+    "@storybook/addon-essentials": "^6.5.10",
+    "@storybook/addon-links": "^6.5.10",
+    "@storybook/builder-webpack5": "^6.5.10",
+    "@storybook/manager-webpack5": "^6.5.10",
+    "@storybook/react": "^6.5.10",
     "@svgr/webpack": "^6.2.1",
     "@types/enzyme": "^3.10.8",
     "@types/google.maps": "^3.49.2",
@@ -87,5 +88,11 @@
     "swiper": ">=8.2.6",
     "zustand": ">=4.1.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "overrides": {
+    "@mdx-js/react": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    }
+  }
 }
