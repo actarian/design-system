@@ -2,6 +2,7 @@
 import React from 'react';
 import CodeSvg from '../icons/code.svg';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Code = React.forwardRef<SVGSVGElement, any>((props, ref) => {
   return (<CodeSvg {...props} ref={ref} />);
 });

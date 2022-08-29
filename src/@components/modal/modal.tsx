@@ -95,7 +95,7 @@ const Modal: React.FC<React.PropsWithChildren<ModalProps | any>> =
             {false && otherChildren}
             {(React.Children.map(otherChildren, child => {
               if (React.isValidElement(child) && child.type === ModalTitle) {
-                return React.cloneElement(child, { props: child.props, onClose: child.props.onClose || onBackdropClick });
+                return React.cloneElement(child, { ...child.props, onClose: child.props.onClose || onBackdropClick });
               } else {
                 return child;
               }

@@ -29,6 +29,7 @@ async function rebuild(directory, fileName = null) {
 import React from 'react';
 import ${classNames[i]}Svg from '../icons/${fileName}';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const ${classNames[i]} = React.forwardRef<SVGSVGElement, any>((props, ref) => {
   return (<${classNames[i]}Svg {...props} ref={ref} />);
 });

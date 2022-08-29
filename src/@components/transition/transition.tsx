@@ -18,7 +18,7 @@ const defaultProps = {
   name: 'transition',
 };
 
-export type TransitionProps = Props
+export type TransitionProps = Props;
 
 const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ children, className, visible, enterTime, leaveTime, clearTime, name, ...props }: React.PropsWithChildren<TransitionProps> & typeof defaultProps) => { // !!! any
 
@@ -51,10 +51,12 @@ const Transition: React.FC<React.PropsWithChildren<TransitionProps | any>> = ({ 
       clearTimeout(clearClassesTimer);
     }
   }, [visible, renderable, enterTime, leaveTime, name, clearTime]);
+
   if (!React.isValidElement(children) || !renderable) {
     return null;
   }
-  return React.cloneElement(children, { ...props, className: `${children.props.className} ${className} ${classes}` });
+
+  return React.cloneElement(children as React.ReactElement<{ className?: string }>, { ...props, className: `${children.props.className} ${className} ${classes}` });
 }
 
 Transition.defaultProps = defaultProps;

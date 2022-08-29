@@ -38,4 +38,4 @@ function getComputedValue(style: string, parentNum: number): number {
     style.includes('%') ? +style.split('%')[0] * parentNum * 0.01 : style
   );
   return Number.isNaN(+value) ? 0 : +value;
-};
+}

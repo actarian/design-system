@@ -2,6 +2,7 @@
 import React from 'react';
 import GridSvg from '../icons/grid.svg';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Grid = React.forwardRef<SVGSVGElement, any>((props, ref) => {
   return (<GridSvg {...props} ref={ref} />);
 });

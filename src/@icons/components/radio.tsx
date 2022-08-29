@@ -2,6 +2,7 @@
 import React from 'react';
 import RadioSvg from '../icons/radio.svg';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const Radio = React.forwardRef<SVGSVGElement, any>((props, ref) => {
   return (<RadioSvg {...props} ref={ref} />);
 });

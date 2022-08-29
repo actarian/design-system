@@ -1,5 +1,5 @@
 import { Box, ComponentCssResponsiveProps } from '@components';
-import React, { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
+import { forwardRef, ReactNode, useEffect, useImperativeHandle, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components';
 import { GoogleMapContext, IGoogleMapContext } from './google-map-context';
 import { GoogleMapStyle } from './google-map.style';
@@ -110,7 +110,14 @@ const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
     <GoogleMapContext.Provider value={contextValue}>
       <StyledBox ref={innerRef} id="map" {...options} />
       {children}
-      {false && React.Children.map(children, (child) => {
+    </GoogleMapContext.Provider>
+  );
+
+  /*
+  return (
+    <GoogleMapContext.Provider value={contextValue}>
+      <StyledBox ref={innerRef} id="map" {...options} />
+      {React.Children.map(children, (child) => {
         if (!React.isValidElement(child)) {
           return null;
         }
@@ -119,6 +126,7 @@ const GoogleMap = forwardRef<google.maps.Map, GoogleMapProps>(({
       })}
     </GoogleMapContext.Provider>
   );
+  */
 });
 
 GoogleMap.displayName = 'GoogleMap';

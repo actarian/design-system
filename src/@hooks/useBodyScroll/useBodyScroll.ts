@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 import { Dispatch, RefObject, SetStateAction, useEffect, useRef, useState } from 'react';
 
 const defaultOptions: BodyScrollOptions = {

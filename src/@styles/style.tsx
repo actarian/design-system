@@ -7,6 +7,7 @@ import { CssVars } from '@styles/_vars';
 import { createGlobalStyle } from 'styled-components';
 
 // Import Swiper styles
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import swiperCss from '!!raw-loader!swiper/css';
 // import 'swiper/css/navigation';

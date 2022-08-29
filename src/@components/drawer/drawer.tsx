@@ -86,7 +86,7 @@ const Drawer: React.FC<React.PropsWithChildren<DrawerProps | any>> = ({
       <DrawerWrapper className={wrapClassName} visible={visible} {...props}>
         {(React.Children.map(children, child => {
           if (React.isValidElement(child) && child.type === ModalTitle) {
-            return React.cloneElement(child, { props: child.props, onClose: child.props.onClose || onBackdropClick });
+            return React.cloneElement(child, { ...child.props, onClose: child.props.onClose || onBackdropClick });
           } else {
             return child;
           }
